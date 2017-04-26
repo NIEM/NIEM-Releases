@@ -1,33 +1,10 @@
 <?xml version="1.0" encoding="US-ASCII"?>
-<xs:schema targetNamespace="http://release.niem.gov/niem/domains/cbrn/4.0/" version="alpha1" xsi:schemaLocation="http://release.niem.gov/niem/appinfo/3.0/ ../../../appinfo/3.0/appinfo.xsd http://release.niem.gov/niem/conformanceTargets/3.0/ ../../../conformanceTargets/3.0/conformanceTargets.xsd http://release.niem.gov/niem/localTerminology/3.0/ ../../../localTerminology/3.0/localTerminology.xsd" ct:conformanceTargets="http://reference.niem.gov/niem/specification/naming-and-design-rules/3.0/#ReferenceSchemaDocument" xmlns:cbrn="http://release.niem.gov/niem/domains/cbrn/4.0/" xmlns:cbrncl="http://release.niem.gov/niem/codes/cbrncl/4.0/" xmlns:scr="http://release.niem.gov/niem/domains/screening/4.0/" xmlns:ct="http://release.niem.gov/niem/conformanceTargets/3.0/" xmlns:nc="http://release.niem.gov/niem/niem-core/4.0/" xmlns:term="http://release.niem.gov/niem/localTerminology/3.0/" xmlns:structures="http://release.niem.gov/niem/structures/3.0/" xmlns:appinfo="http://release.niem.gov/niem/appinfo/3.0/" xmlns:geo="http://release.niem.gov/niem/adapters/geospatial/4.0/" xmlns:j="http://release.niem.gov/niem/domains/jxdm/6.0/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:niem-xs="http://release.niem.gov/niem/proxy/xsd/4.0/">
+<xs:schema targetNamespace="http://release.niem.gov/niem/domains/cbrn/4.0/" version="beta1" xsi:schemaLocation="http://release.niem.gov/niem/appinfo/4.0/ ../../../appinfo/4.0/appinfo.xsd http://release.niem.gov/niem/conformanceTargets/3.0/ ../../../conformanceTargets/3.0/conformanceTargets.xsd" ct:conformanceTargets="http://reference.niem.gov/niem/specification/naming-and-design-rules/4.0/#ReferenceSchemaDocument" xmlns:cbrn="http://release.niem.gov/niem/domains/cbrn/4.0/" xmlns:cbrncl="http://release.niem.gov/niem/codes/cbrncl/4.0/" xmlns:structures="http://release.niem.gov/niem/structures/4.0/" xmlns:scr="http://release.niem.gov/niem/domains/screening/4.0/" xmlns:appinfo="http://release.niem.gov/niem/appinfo/4.0/" xmlns:nc="http://release.niem.gov/niem/niem-core/4.0/" xmlns:ct="http://release.niem.gov/niem/conformanceTargets/3.0/" xmlns:geo="http://release.niem.gov/niem/adapters/geospatial/4.0/" xmlns:j="http://release.niem.gov/niem/domains/jxdm/6.0/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:niem-xs="http://release.niem.gov/niem/proxy/xsd/4.0/">
   <xs:annotation>
     <xs:documentation>Chemical, Biological, Radiological, and Nuclear Domain</xs:documentation>
-    <xs:appinfo>
-      <term:LocalTerm term="XY" literal="A two dimensional array or pair of values for a data point"/>
-      <term:LocalTerm term="FWHM" literal="Full width at half maximum"/>
-      <term:LocalTerm term="KeV" literal="Kiloelectronvolts"/>
-      <term:LocalTerm term="UUID" literal="Universally Unique Identifier"/>
-      <term:LocalTerm term="uSv" literal="microsieverts"/>
-      <term:LocalTerm term="mR" literal="milliroentgen"/>
-      <term:LocalTerm term="n42Doc" literal="N42 XML document"/>
-      <term:LocalTerm term="CBRNE" literal="Chemical, Biological, Radiological, Nuclear and high- yield Explosives"/>
-      <term:LocalTerm term="Chem" literal="Chemical"/>
-      <term:LocalTerm term="X" literal="The first dimension"/>
-      <term:LocalTerm term="Geo" literal="Geographic"/>
-      <term:LocalTerm term="CM" literal="Centimeter"/>
-      <term:LocalTerm term="CPS" literal="Counts per second"/>
-      <term:LocalTerm term="MDA" literal="minimum detectable activity"/>
-      <term:LocalTerm term="UTF8" literal="UCS Transformation Format&#x2014;8-bit"/>
-      <term:LocalTerm term="Bio" literal="Biological"/>
-      <term:LocalTerm term="UID" literal="Unique Identifier"/>
-      <term:LocalTerm term="uSvh" literal="microsieverts per hour (uSv/h)"/>
-      <term:LocalTerm term="CC" literal="cubic centimeter (cc) units"/>
-      <term:LocalTerm term="MIME" literal="Multipurpose Internet Mail Extensions"/>
-      <term:LocalTerm term="mRh" literal="milliroentgen per hour (mR/h)"/>
-    </xs:appinfo>
   </xs:annotation>
   <xs:import schemaLocation="../../jxdm/6.0/jxdm.xsd" namespace="http://release.niem.gov/niem/domains/jxdm/6.0/"/>
-  <xs:import schemaLocation="../../../structures/3.0/structures.xsd" namespace="http://release.niem.gov/niem/structures/3.0/"/>
+  <xs:import schemaLocation="../../../structures/4.0/structures.xsd" namespace="http://release.niem.gov/niem/structures/4.0/"/>
   <xs:import schemaLocation="../../../codes/cbrncl/4.0/cbrncl.xsd" namespace="http://release.niem.gov/niem/codes/cbrncl/4.0/"/>
   <xs:import schemaLocation="../../../proxy/xsd/4.0/xs.xsd" namespace="http://release.niem.gov/niem/proxy/xsd/4.0/"/>
   <xs:import schemaLocation="../../../niem-core/4.0/niem-core.xsd" namespace="http://release.niem.gov/niem/niem-core/4.0/"/>
@@ -41,11 +18,11 @@
       <xs:extension base="structures:ObjectType">
         <xs:sequence>
           <xs:element ref="cbrn:AcknowledgingActivityName" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="nc:SystemUserName" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="cbrn:TraversalOperatingMode" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:SystemUserNameAbstract" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="cbrn:TraversalOperatingModeAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="cbrn:AcknowledgementDateTime" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="cbrn:AcknowledgementID" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="cbrn:CredentialsAuthentication" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="cbrn:CredentialsAuthenticationAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="cbrn:AcknowledgingAgency" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="cbrn:ScanIdentificationData" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="cbrn:AcknowledgementDataAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
@@ -330,7 +307,7 @@
     <xs:complexContent>
       <xs:extension base="cbrn:RemarksComplexObjectType">
         <xs:sequence>
-          <xs:element ref="cbrn:CharacteristicChoice" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="cbrn:CharacteristicChoiceAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="cbrn:CharacteristicsAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
       </xs:extension>
@@ -596,9 +573,9 @@
           <xs:element ref="cbrn:DetectionEventOnsetDateTime" minOccurs="1" maxOccurs="1"/>
           <xs:element ref="cbrn:DetectionEventLocationText" minOccurs="1" maxOccurs="1"/>
           <xs:element ref="cbrn:DetectionEventSiteID" minOccurs="0" maxOccurs="1"/>
-          <xs:element ref="cbrn:DetectionEventInstrumentData" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="cbrn:DetectionEventInstrumentDataAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="cbrn:DetectionEventUserEntryData" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="cbrn:DataFileChoice" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="cbrn:DataFileChoiceAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="cbrn:DetectionEventDataAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
       </xs:extension>
@@ -614,7 +591,7 @@
           <xs:element ref="cbrn:EncounterDeviceOperatorComments" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="cbrn:DetectionEventUUID" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="cbrn:EncounterDeviceOperatorText" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="nc:SystemUserName" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:SystemUserNameAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="cbrn:MeasuredItemDescriptionText" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="cbrn:Shielding" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="cbrn:DetectionEventUserEntryDataAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
@@ -770,7 +747,7 @@
     <xs:complexContent>
       <xs:extension base="cbrn:RemarksComplexObjectType">
         <xs:sequence>
-          <xs:element ref="cbrn:CoefficientOrBoundaryValuesChoice" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="cbrn:CoefficientOrBoundaryValuesChoiceAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="cbrn:EnergyValueList" minOccurs="0" maxOccurs="1"/>
           <xs:element ref="cbrn:EnergyDeviationValueList" minOccurs="0" maxOccurs="1"/>
           <xs:element ref="cbrn:CalibrationDateTime" minOccurs="0" maxOccurs="1"/>
@@ -988,8 +965,8 @@
           <xs:element ref="cbrn:ImageResolutionValue" minOccurs="0" maxOccurs="1"/>
           <xs:element ref="nc:ImageHeightValue" minOccurs="0" maxOccurs="1"/>
           <xs:element ref="nc:ImageWidthValue" minOccurs="0" maxOccurs="1"/>
-          <xs:element ref="cbrn:ImageOrientation" minOccurs="0" maxOccurs="1"/>
-          <xs:element ref="cbrn:ImagePerspective" minOccurs="0" maxOccurs="1"/>
+          <xs:element ref="cbrn:ImageOrientationAbstract" minOccurs="0" maxOccurs="1"/>
+          <xs:element ref="cbrn:ImagePerspectiveAbstract" minOccurs="0" maxOccurs="1"/>
           <xs:element ref="cbrn:ImageFileAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
       </xs:extension>
@@ -1003,10 +980,10 @@
       <xs:extension base="cbrn:RemarksComplexObjectType">
         <xs:sequence>
           <xs:element ref="cbrn:ScanIdentificationData" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="cbrn:ThreatLevelDetermination" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="cbrn:ThreatLevelDeterminationAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="cbrn:InspectionEventDateTime" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="nc:SystemUserName" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="cbrn:InspectionResolution" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:SystemUserNameAbstract" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="cbrn:InspectionResolutionAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="cbrn:InspectionDataAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
       </xs:extension>
@@ -1020,7 +997,7 @@
       <xs:extension base="structures:ObjectType">
         <xs:sequence>
           <xs:element ref="cbrn:LayerSequenceNumeric" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="cbrn:LayerMaterial" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="cbrn:LayerMaterialAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:ItemWidthMeasure" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="cbrn:LayerDensityValue" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="cbrn:LayerAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
@@ -1062,8 +1039,8 @@
       <xs:extension base="structures:ObjectType">
         <xs:sequence>
           <xs:element ref="cbrn:MeasuredItemID" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="cbrn:MeasuredItemIDKind" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="cbrn:IDAcquisitionMethod" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="cbrn:MeasuredItemIDKindAbstract" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="cbrn:IDAcquisitionMethodAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="cbrn:IDConfidenceCode" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="cbrn:EntryPersonID" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="cbrn:MeasuredItemIdentificationAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
@@ -1166,10 +1143,10 @@
           <xs:element ref="cbrn:EncodingMIMEKindText" minOccurs="0" maxOccurs="1"/>
           <xs:element ref="cbrn:MultimediaDeviceCategoryCode" minOccurs="0" maxOccurs="1"/>
           <xs:element ref="cbrn:MultimediaDeviceID" minOccurs="0" maxOccurs="1"/>
-          <xs:element ref="cbrn:ImagePerspective" minOccurs="0" maxOccurs="1"/>
+          <xs:element ref="cbrn:ImagePerspectiveAbstract" minOccurs="0" maxOccurs="1"/>
           <xs:element ref="nc:ImageWidthValue" minOccurs="0" maxOccurs="1"/>
           <xs:element ref="nc:ImageHeightValue" minOccurs="0" maxOccurs="1"/>
-          <xs:element ref="nc:BinaryObject" minOccurs="0" maxOccurs="1"/>
+          <xs:element ref="nc:BinaryObjectAbstract" minOccurs="0" maxOccurs="1"/>
           <xs:element ref="cbrn:RadItemInformation" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="cbrn:MultimediaDataAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
@@ -1291,7 +1268,7 @@
           <xs:element ref="cbrn:NuclideActivityValue" minOccurs="0" maxOccurs="1"/>
           <xs:element ref="cbrn:NuclideActivityUncertaintyValue" minOccurs="0" maxOccurs="1"/>
           <xs:element ref="cbrn:NuclideMinimumDetectableActivityValue" minOccurs="0" maxOccurs="1"/>
-          <xs:element ref="cbrn:NuclideIdentificationConfidence" minOccurs="1" maxOccurs="3"/>
+          <xs:element ref="cbrn:NuclideIdentificationConfidenceAbstract" minOccurs="1" maxOccurs="3"/>
           <xs:element ref="cbrn:NuclideCategoryDescriptionText" minOccurs="0" maxOccurs="1"/>
           <xs:element ref="cbrn:NuclideSourceGeometryCode" minOccurs="0" maxOccurs="1"/>
           <xs:element ref="cbrn:SourcePosition" minOccurs="0" maxOccurs="1"/>
@@ -1374,7 +1351,7 @@
         <xs:sequence>
           <xs:element ref="cbrn:MeanPhotonValue" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="cbrn:PhotonEnergyValue" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="cbrn:PhotonSource" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="cbrn:PhotonSourceAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="cbrn:PhotonDataAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
       </xs:extension>
@@ -1526,7 +1503,7 @@
           <xs:element ref="cbrn:RadItemInformation" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="cbrn:RadInstrumentInformation" minOccurs="1" maxOccurs="1"/>
           <xs:element ref="cbrn:RadDetectorInformation" minOccurs="1" maxOccurs="unbounded"/>
-          <xs:element ref="cbrn:RadInstrumentDataChoice" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="cbrn:RadInstrumentDataChoiceAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="cbrn:RadInstrumentDataAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
         <xs:attribute ref="cbrn:n42DocDateTime" use="required"/>
@@ -1741,7 +1718,7 @@
       <xs:extension base="structures:ObjectType">
         <xs:sequence>
           <xs:element ref="cbrn:ReportDateTime" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="cbrn:CredentialsAuthentication" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="cbrn:CredentialsAuthenticationAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:ActivityName" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="cbrn:ReportAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
@@ -1771,7 +1748,7 @@
     <xs:complexContent>
       <xs:extension base="structures:ObjectType">
         <xs:sequence>
-          <xs:element ref="nc:SystemUserName" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:SystemUserNameAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="cbrn:RequestScopeCode" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="cbrn:RequestDateTime" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="cbrn:RequestID" minOccurs="0" maxOccurs="unbounded"/>
@@ -1806,8 +1783,8 @@
       <xs:extension base="cbrn:RemarksComplexObjectType">
         <xs:sequence>
           <xs:element ref="cbrn:MeasuredItemID" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="cbrn:MeasuredItemKind" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="cbrn:MeasuredItemIDKind" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="cbrn:MeasuredItemKindAbstract" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="cbrn:MeasuredItemIDKindAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="cbrn:TraversalID" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="cbrn:DetectionEventUUID" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="cbrn:ScanQualityCode" minOccurs="0" maxOccurs="unbounded"/>
@@ -1856,7 +1833,7 @@
     <xs:complexContent>
       <xs:extension base="structures:ObjectType">
         <xs:sequence>
-          <xs:element ref="cbrn:SecondaryInspectionKind" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="cbrn:SecondaryInspectionKindAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="cbrn:SecondaryInspectionReferralReasonCode" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="cbrn:SecondaryInspectionReferralID" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="cbrn:SecondaryInspectionReferralAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
@@ -1872,8 +1849,8 @@
       <xs:extension base="structures:ObjectType">
         <xs:sequence>
           <xs:element ref="cbrn:SourceSystemFindingCategoryText" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="cbrn:InspectionThreatFinding" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="cbrn:SecondaryInspectionKind" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="cbrn:InspectionThreatFindingAbstract" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="cbrn:SecondaryInspectionKindAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="cbrn:SecondaryInspectionReferralID" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="cbrn:RadionuclideCode" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="cbrn:SecondaryInspectionResolutionAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
@@ -1922,7 +1899,7 @@
     <xs:complexContent>
       <xs:extension base="cbrn:RemarksComplexObjectType">
         <xs:sequence>
-          <xs:element ref="cbrn:SourcePositionChoice" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="cbrn:SourcePositionChoiceAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="cbrn:SourcePositionAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
       </xs:extension>
@@ -2008,7 +1985,7 @@
     <xs:complexContent>
       <xs:extension base="cbrn:RemarksComplexObjectType">
         <xs:sequence>
-          <xs:element ref="cbrn:StateVectorLocationChoice" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="cbrn:StateVectorLocationChoiceAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="cbrn:Orientation" minOccurs="0" maxOccurs="1"/>
           <xs:element ref="cbrn:SpeedValue" minOccurs="0" maxOccurs="1"/>
           <xs:element ref="cbrn:StateVectorAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
@@ -2041,9 +2018,9 @@
         <xs:sequence>
           <xs:element ref="cbrn:SystemEventDateTime" minOccurs="1" maxOccurs="1"/>
           <xs:element ref="cbrn:SystemEventName" minOccurs="0" maxOccurs="1"/>
-          <xs:element ref="nc:SystemOperatingMode" minOccurs="1" maxOccurs="1"/>
+          <xs:element ref="nc:SystemOperatingModeAbstract" minOccurs="1" maxOccurs="1"/>
           <xs:element ref="cbrn:SystemEventDescriptionText" minOccurs="0" maxOccurs="1"/>
-          <xs:element ref="nc:SystemUserName" minOccurs="0" maxOccurs="1"/>
+          <xs:element ref="nc:SystemUserNameAbstract" minOccurs="0" maxOccurs="1"/>
           <xs:element ref="cbrn:SystemEventAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
         <xs:attribute ref="cbrn:systemSimulatedIndicator" use="required"/>
@@ -2129,7 +2106,7 @@
           <xs:element ref="cbrn:TraversalID" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="cbrn:TraversalBeginDateTime" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="cbrn:TraversalEndDateTime" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="cbrn:TraversalOperatingMode" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="cbrn:TraversalOperatingModeAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="cbrn:DetectionEventData" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="cbrn:ConveyanceBoundForCode" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="cbrn:TraversalAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
@@ -2367,7 +2344,7 @@
       <xs:documentation>A description of the the success or failure status of a measurement analysis. If this element is omitted, the analysis is considered successful. The AnalysisResultDescription element shall be used to describe an analysis failure in detail.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="AnalysisResults" type="cbrn:AnalysisResultsType" substitutionGroup="cbrn:RadInstrumentDataChoice" nillable="true">
+  <xs:element name="AnalysisResults" type="cbrn:AnalysisResultsType" substitutionGroup="cbrn:RadInstrumentDataChoiceAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A collection of information resulting from an analysis of radiation measurements or derived data.</xs:documentation>
     </xs:annotation>
@@ -2392,7 +2369,7 @@
       <xs:documentation>An augmentation point for cbrn:ArrayXYType.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="AudioFile" type="cbrn:AudioFileType" substitutionGroup="cbrn:DataFileChoice" nillable="true">
+  <xs:element name="AudioFile" type="cbrn:AudioFileType" substitutionGroup="cbrn:DataFileChoiceAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A digital audio data file.</xs:documentation>
     </xs:annotation>
@@ -2508,7 +2485,7 @@ flac or fl32  FLAC</xs:documentation>
       <xs:documentation>An average background exposure rate reported in an analysis results, expressed in milliroentgen per hour (mR/h).</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="BioEncounterDeviceCategoryText" type="nc:TextType" substitutionGroup="scr:EncounterDeviceCategory" nillable="true">
+  <xs:element name="BioEncounterDeviceCategoryText" type="nc:TextType" substitutionGroup="scr:EncounterDeviceCategoryAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A Kind of device to capture biological data in the process of an encounter.</xs:documentation>
     </xs:annotation>
@@ -2663,12 +2640,12 @@ flac or fl32  FLAC</xs:documentation>
       <xs:documentation>An augmentation point for cbrn:CharacteristicType.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="CharacteristicChoice" abstract="true">
+  <xs:element name="CharacteristicChoiceAbstract" abstract="true">
     <xs:annotation>
       <xs:documentation>A data concept for an additional characteristic of something, such as a radiation instrument, detector, or item being inspected, or a group of such characteristics.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="CharacteristicGroup" type="cbrn:CharacteristicGroupType" substitutionGroup="cbrn:CharacteristicChoice" nillable="true">
+  <xs:element name="CharacteristicGroup" type="cbrn:CharacteristicGroupType" substitutionGroup="cbrn:CharacteristicChoiceAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A set of Characteristic grouped in some manner, such as health characteristics of an instrument subsystem or detector.</xs:documentation>
     </xs:annotation>
@@ -2708,17 +2685,17 @@ flac or fl32  FLAC</xs:documentation>
       <xs:documentation>An augmentation point for cbrn:CharacteristicsType.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="ChemEncounterDeviceCategoryText" type="nc:TextType" substitutionGroup="scr:EncounterDeviceCategory" nillable="true">
+  <xs:element name="ChemEncounterDeviceCategoryText" type="nc:TextType" substitutionGroup="scr:EncounterDeviceCategoryAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A kind of device to capture chemical data in the process of an encounter.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="CoefficientOrBoundaryValuesChoice" abstract="true">
+  <xs:element name="CoefficientOrBoundaryValuesChoiceAbstract" abstract="true">
     <xs:annotation>
       <xs:documentation>A data concept for Coefficient values or EnergyBoundary Values</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="CoefficientValueList" type="nc:DoubleListType" substitutionGroup="cbrn:CoefficientOrBoundaryValuesChoice" nillable="true">
+  <xs:element name="CoefficientValueList" type="nc:DoubleListType" substitutionGroup="cbrn:CoefficientOrBoundaryValuesChoiceAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A list of values of the coefficients of a second-order polynomial describing the energy calibration in which the energies are expressed in keV.</xs:documentation>
     </xs:annotation>
@@ -2843,22 +2820,22 @@ flac or fl32  FLAC</xs:documentation>
       <xs:documentation>A verfication of the authenticating credentials.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="CredentialsAuthentication" abstract="true">
+  <xs:element name="CredentialsAuthenticationAbstract" abstract="true">
     <xs:annotation>
       <xs:documentation>A data concept for the state of user credentials authentication.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="CredentialsAuthenticationCode" type="cbrncl:CredentialsAuthenticatedCodeType" substitutionGroup="cbrn:CredentialsAuthentication" nillable="true">
+  <xs:element name="CredentialsAuthenticationCode" type="cbrncl:CredentialsAuthenticatedCodeType" substitutionGroup="cbrn:CredentialsAuthenticationAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A state of user credential's authentication.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="CredentialsAuthenticationText" type="niem-xs:string" substitutionGroup="cbrn:CredentialsAuthentication" nillable="true">
+  <xs:element name="CredentialsAuthenticationText" type="niem-xs:string" substitutionGroup="cbrn:CredentialsAuthenticationAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A description of a state of user credential's authentication.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="DataFile" type="cbrn:DataFileType" substitutionGroup="cbrn:DataFileChoice" nillable="true">
+  <xs:element name="DataFile" type="cbrn:DataFileType" substitutionGroup="cbrn:DataFileChoiceAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A digital data file.</xs:documentation>
     </xs:annotation>
@@ -2923,7 +2900,7 @@ flac or fl32  FLAC</xs:documentation>
       <xs:documentation>A type of encoding that was used to encode a data file.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="DataFileChoice" abstract="true">
+  <xs:element name="DataFileChoiceAbstract" abstract="true">
     <xs:annotation>
       <xs:documentation>A data concept for a digital data file.</xs:documentation>
     </xs:annotation>
@@ -3098,7 +3075,7 @@ flac or fl32  FLAC</xs:documentation>
       <xs:documentation>A URI identifier for the data file</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="DerivedData" type="cbrn:DerivedDataType" substitutionGroup="cbrn:RadInstrumentDataChoice" nillable="true">
+  <xs:element name="DerivedData" type="cbrn:DerivedDataType" substitutionGroup="cbrn:RadInstrumentDataChoiceAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A set of all data derived from raw measured data for use in analysis.</xs:documentation>
     </xs:annotation>
@@ -3123,7 +3100,7 @@ flac or fl32  FLAC</xs:documentation>
       <xs:documentation>An identifier for a Detection Event applied by the site that performs the inspection activities of the Detection  Event.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="DetectionEventInstrumentData" abstract="true">
+  <xs:element name="DetectionEventInstrumentDataAbstract" abstract="true">
     <xs:annotation>
       <xs:documentation>A data concept for the set of data output by an instrument for a detection event. This includes the reported measurement and analysis data,  information about the instrument, and information about the item(s) which it is measuring/inspecting.</xs:documentation>
     </xs:annotation>
@@ -3248,7 +3225,7 @@ flac or fl32  FLAC</xs:documentation>
       <xs:documentation>A value for the elevation of a GeographicPoint in meters relative to the applicable datums ellipsoid.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="EmployeeID" type="niem-xs:string" substitutionGroup="nc:SystemUserName" nillable="true">
+  <xs:element name="EmployeeID" type="niem-xs:string" substitutionGroup="nc:SystemUserNameAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>An identifier for a person in the form of an employee id.</xs:documentation>
     </xs:annotation>
@@ -3308,12 +3285,12 @@ flac or fl32  FLAC</xs:documentation>
       <xs:documentation>An augmentation point for cbrn:EncounterRelationshipType.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="EnergyBoundaryValueList" type="cbrn:EnergiesKeVType" substitutionGroup="cbrn:CoefficientOrBoundaryValuesChoice" nillable="true">
+  <xs:element name="EnergyBoundaryValueList" type="cbrn:EnergiesKeVType" substitutionGroup="cbrn:CoefficientOrBoundaryValuesChoiceAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A list of energy values that indicate the energy of the start of each channel in a spectrum and the end of the last channel of the spectrum; the energies shall appear in the list in increasing order.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="EnergyCalibration" type="cbrn:EnergyCalibrationType" substitutionGroup="cbrn:RadInstrumentDataChoice" nillable="true">
+  <xs:element name="EnergyCalibration" type="cbrn:EnergyCalibrationType" substitutionGroup="cbrn:RadInstrumentDataChoiceAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>An EnergyCalibration that spectrum measurements can reference as applicable to a particular spectrum.</xs:documentation>
     </xs:annotation>
@@ -3333,7 +3310,7 @@ flac or fl32  FLAC</xs:documentation>
       <xs:documentation>A list of energy values, in units of keV; the energies shall appear in the list in strictly increasing order.  This element appears paired with an element that provides a corresponding list of other values, such as the EnergyDeviationValues, FWHMValues, or EfficiencyValues elements. The number and order of corresponding values in the pair of lists must match.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="EnergyWindows" type="cbrn:EnergyWindowsType" substitutionGroup="cbrn:RadInstrumentDataChoice" nillable="true">
+  <xs:element name="EnergyWindows" type="cbrn:EnergyWindowsType" substitutionGroup="cbrn:RadInstrumentDataChoiceAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A definition of a set of energy windows used in gross counting.</xs:documentation>
     </xs:annotation>
@@ -3398,7 +3375,7 @@ flac or fl32  FLAC</xs:documentation>
       <xs:documentation>A name of the XML tag at which an error occurred.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="ExplosivesEncounterDeviceCategoryText" type="nc:TextType" substitutionGroup="scr:EncounterDeviceCategory" nillable="true">
+  <xs:element name="ExplosivesEncounterDeviceCategoryText" type="nc:TextType" substitutionGroup="scr:EncounterDeviceCategoryAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A kind of device to capture explosives data in the process of an encounter.</xs:documentation>
     </xs:annotation>
@@ -3433,7 +3410,7 @@ flac or fl32  FLAC</xs:documentation>
       <xs:documentation>A measured radiation exposure rate value, in milliroentgen per hour (mR/h).</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="FWHMCalibration" type="cbrn:FWHMCalibrationType" substitutionGroup="cbrn:RadInstrumentDataChoice" nillable="true">
+  <xs:element name="FWHMCalibration" type="cbrn:FWHMCalibrationType" substitutionGroup="cbrn:RadInstrumentDataChoiceAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A FWHM calibration for a gamma radiation detector; i.e., FWHM as a function of energy.</xs:documentation>
     </xs:annotation>
@@ -3488,7 +3465,7 @@ flac or fl32  FLAC</xs:documentation>
       <xs:documentation>A text description of the normal Friday operating hours.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="FullEnergyPeakEfficiencyCalibration" type="cbrn:EfficiencyCalibrationType" substitutionGroup="cbrn:RadInstrumentDataChoice" nillable="true">
+  <xs:element name="FullEnergyPeakEfficiencyCalibration" type="cbrn:EfficiencyCalibrationType" substitutionGroup="cbrn:RadInstrumentDataChoiceAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A full-energy peak efficiency calibration. The full-energy peak efficiency at any value of energy is the ratio of the net counts in a peak at that energy to the number of photons emitted by a source at that energy.</xs:documentation>
     </xs:annotation>
@@ -3528,17 +3505,17 @@ flac or fl32  FLAC</xs:documentation>
       <xs:documentation>An augmentation point for cbrn:GrossCountsType.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="IDAcquisitionMethod" abstract="true">
+  <xs:element name="IDAcquisitionMethodAbstract" abstract="true">
     <xs:annotation>
       <xs:documentation>A data concept for a method of acquiring the identifier of an item.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="IDAcquisitionMethodCode" type="cbrncl:IDAcquisitionMethodCodeType" substitutionGroup="cbrn:IDAcquisitionMethod" nillable="true">
+  <xs:element name="IDAcquisitionMethodCode" type="cbrncl:IDAcquisitionMethodCodeType" substitutionGroup="cbrn:IDAcquisitionMethodAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A code for the method of acquiring the identifier of an item.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="IDAcquisitionMethodText" type="niem-xs:string" substitutionGroup="cbrn:IDAcquisitionMethod" nillable="true">
+  <xs:element name="IDAcquisitionMethodText" type="niem-xs:string" substitutionGroup="cbrn:IDAcquisitionMethodAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A description of the method of acquiring the identifier of an item.</xs:documentation>
     </xs:annotation>
@@ -3548,7 +3525,7 @@ flac or fl32  FLAC</xs:documentation>
       <xs:documentation>A code for the confidence that the measured item identifier is correct.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="ImageFile" type="cbrn:ImageFileType" substitutionGroup="cbrn:DataFileChoice" nillable="true">
+  <xs:element name="ImageFile" type="cbrn:ImageFileType" substitutionGroup="cbrn:DataFileChoiceAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A digital image data file.</xs:documentation>
     </xs:annotation>
@@ -3558,32 +3535,32 @@ flac or fl32  FLAC</xs:documentation>
       <xs:documentation>An augmentation point for cbrn:ImageFileType.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="ImageOrientation" abstract="true">
+  <xs:element name="ImageOrientationAbstract" abstract="true">
     <xs:annotation>
       <xs:documentation>A data concept for the viewing orientation of an image; i.e., portrait or landscape.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="ImageOrientationCode" type="cbrncl:ImageOrientationCodeType" substitutionGroup="cbrn:ImageOrientation" nillable="true">
+  <xs:element name="ImageOrientationCode" type="cbrncl:ImageOrientationCodeType" substitutionGroup="cbrn:ImageOrientationAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A code for the viewing orientation of an image; i.e., portrait or landscape.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="ImageOrientationText" type="niem-xs:string" substitutionGroup="cbrn:ImageOrientation" nillable="true">
+  <xs:element name="ImageOrientationText" type="niem-xs:string" substitutionGroup="cbrn:ImageOrientationAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A description of a viewing orientation of an image; i.e., portrait or landscape.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="ImagePerspective" abstract="true">
+  <xs:element name="ImagePerspectiveAbstract" abstract="true">
     <xs:annotation>
       <xs:documentation>A data concept for the viewing perspective of the subject of an image captured as a digital data file.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="ImagePerspectiveCode" type="cbrncl:ImagePerspectiveCodeType" substitutionGroup="cbrn:ImagePerspective" nillable="true">
+  <xs:element name="ImagePerspectiveCode" type="cbrncl:ImagePerspectiveCodeType" substitutionGroup="cbrn:ImagePerspectiveAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A code for the viewing perspective of the subject of an image captured as a digital data file.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="ImagePerspectiveText" type="niem-xs:string" substitutionGroup="cbrn:ImagePerspective" nillable="true">
+  <xs:element name="ImagePerspectiveText" type="niem-xs:string" substitutionGroup="cbrn:ImagePerspectiveAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A description of the viewing perspective of the subject of an image captured as a digital data file.</xs:documentation>
     </xs:annotation>
@@ -3623,47 +3600,47 @@ flac or fl32  FLAC</xs:documentation>
       <xs:documentation>A DateTime of an inspection event.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="InspectionResolution" abstract="true">
+  <xs:element name="InspectionResolutionAbstract" abstract="true">
     <xs:annotation>
       <xs:documentation>A data concept for the resolution of an inspection.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="InspectionResolutionCode" type="cbrncl:InspectionResolutionCodeType" substitutionGroup="cbrn:InspectionResolution" nillable="true">
+  <xs:element name="InspectionResolutionCode" type="cbrncl:InspectionResolutionCodeType" substitutionGroup="cbrn:InspectionResolutionAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A code for the findings resulting from inspection of an item of interest.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="InspectionResolutionText" type="niem-xs:string" substitutionGroup="cbrn:InspectionResolution" nillable="true">
+  <xs:element name="InspectionResolutionText" type="niem-xs:string" substitutionGroup="cbrn:InspectionResolutionAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A description of the findings resulting from inspection of an item of interest.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="InspectionThreatFinding" abstract="true">
+  <xs:element name="InspectionThreatFindingAbstract" abstract="true">
     <xs:annotation>
       <xs:documentation>A data concept for a category of threat found by an inspection.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="InspectionThreatFindingCode" type="cbrncl:InspectionThreatFindingCodeType" substitutionGroup="cbrn:InspectionThreatFinding" nillable="true">
+  <xs:element name="InspectionThreatFindingCode" type="cbrncl:InspectionThreatFindingCodeType" substitutionGroup="cbrn:InspectionThreatFindingAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A code for the category of threat found by an inspection.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="InspectionThreatFindingText" type="niem-xs:string" substitutionGroup="cbrn:InspectionThreatFinding" nillable="true">
+  <xs:element name="InspectionThreatFindingText" type="niem-xs:string" substitutionGroup="cbrn:InspectionThreatFindingAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A description of a threat found by an inspection.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="IntrinsicDoubleEscapePeakEfficiencyCalibration" type="cbrn:EfficiencyCalibrationType" substitutionGroup="cbrn:RadInstrumentDataChoice" nillable="true">
+  <xs:element name="IntrinsicDoubleEscapePeakEfficiencyCalibration" type="cbrn:EfficiencyCalibrationType" substitutionGroup="cbrn:RadInstrumentDataChoiceAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>An intrinsic double-escape peak efficiency calibration. The intrinsic double-escape peak efficiency at any value of energy is the ratio of the counts in the double-escape peak of that energy to the number of photons impinging on the radiation detector surface at that energy.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="IntrinsicFullEnergyPeakEfficiencyCalibration" type="cbrn:EfficiencyCalibrationType" substitutionGroup="cbrn:RadInstrumentDataChoice" nillable="true">
+  <xs:element name="IntrinsicFullEnergyPeakEfficiencyCalibration" type="cbrn:EfficiencyCalibrationType" substitutionGroup="cbrn:RadInstrumentDataChoiceAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>An intrinsic full-energy peak efficiency calibration. The intrinsic full-energy peak efficiency at any value of energy is the ratio of the net counts in a peak at that energy to the number of photons impinging on the radiation detector surface at that energy.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="IntrinsicSingleEscapePeakEfficiencyCalibration" type="cbrn:EfficiencyCalibrationType" substitutionGroup="cbrn:RadInstrumentDataChoice" nillable="true">
+  <xs:element name="IntrinsicSingleEscapePeakEfficiencyCalibration" type="cbrn:EfficiencyCalibrationType" substitutionGroup="cbrn:RadInstrumentDataChoiceAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>An intrinsic single-escape peak efficiency calibration. The intrinsic single-escape peak efficiency at any value of energy is the ratio of the counts in the single-escape peak of that energy to the number of photons impinging on the radiation detector surface at that energy.</xs:documentation>
     </xs:annotation>
@@ -3688,17 +3665,17 @@ flac or fl32  FLAC</xs:documentation>
       <xs:documentation>A shielding layer density expressed in unit of measure g/cm2.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="LayerMaterial" abstract="true">
+  <xs:element name="LayerMaterialAbstract" abstract="true">
     <xs:annotation>
       <xs:documentation>A data concept for the material of which a shielding layer is composed.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="LayerMaterialKindCode" type="cbrncl:LayerMaterialKindCodeType" substitutionGroup="cbrn:LayerMaterial" nillable="true">
+  <xs:element name="LayerMaterialKindCode" type="cbrncl:LayerMaterialKindCodeType" substitutionGroup="cbrn:LayerMaterialAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A kind of material of which a shielding layer is composed. If the kind is other, then a text description should also be provided.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="LayerMaterialText" type="niem-xs:string" substitutionGroup="cbrn:LayerMaterial" nillable="true">
+  <xs:element name="LayerMaterialText" type="niem-xs:string" substitutionGroup="cbrn:LayerMaterialAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A description of the material of which a shielding layer is composed.</xs:documentation>
     </xs:annotation>
@@ -3718,7 +3695,7 @@ flac or fl32  FLAC</xs:documentation>
       <xs:documentation>A duration during which a detection assembly is sensitive to the input signal. The value of LiveTimeDuration is always less than or equal to the value of RealTimeDuration, because it does not include the time that the radiation detector was unable to re</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="LocationDescriptionText" type="cbrn:LocationDescriptionType" substitutionGroup="cbrn:StateVectorLocationChoice" nillable="true">
+  <xs:element name="LocationDescriptionText" type="cbrn:LocationDescriptionType" substitutionGroup="cbrn:StateVectorLocationChoiceAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A free-form text description of the location of an object  (e.g., radiation measurement instrument, radiation detector, or measured item) or nuclide source.</xs:documentation>
     </xs:annotation>
@@ -3803,17 +3780,17 @@ flac or fl32  FLAC</xs:documentation>
       <xs:documentation>An Identifier of a measured item.  There is no required format for the ID value.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="MeasuredItemIDKind" abstract="true">
+  <xs:element name="MeasuredItemIDKindAbstract" abstract="true">
     <xs:annotation>
       <xs:documentation>A data concept for a kind of identifier used for identifying a measured item.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="MeasuredItemIDKindCode" type="cbrncl:MeasuredItemIDKindCodeType" substitutionGroup="cbrn:MeasuredItemIDKind" nillable="true">
+  <xs:element name="MeasuredItemIDKindCode" type="cbrncl:MeasuredItemIDKindCodeType" substitutionGroup="cbrn:MeasuredItemIDKindAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A code for a kind of identifier used for identifying a measured item.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="MeasuredItemIDKindText" type="niem-xs:string" substitutionGroup="cbrn:MeasuredItemIDKind" nillable="true">
+  <xs:element name="MeasuredItemIDKindText" type="niem-xs:string" substitutionGroup="cbrn:MeasuredItemIDKindAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A description of a kind of identifier used for identifying a measured item.</xs:documentation>
     </xs:annotation>
@@ -3828,17 +3805,17 @@ flac or fl32  FLAC</xs:documentation>
       <xs:documentation>An augmentation point for cbrn:MeasuredItemIdentificationType.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="MeasuredItemKind" abstract="true">
+  <xs:element name="MeasuredItemKindAbstract" abstract="true">
     <xs:annotation>
       <xs:documentation>A data concept for a  kind or general category of item that is being inspected.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="MeasuredItemKindCode" type="cbrncl:MeasuredItemKindCodeType" substitutionGroup="cbrn:MeasuredItemKind" nillable="true">
+  <xs:element name="MeasuredItemKindCode" type="cbrncl:MeasuredItemKindCodeType" substitutionGroup="cbrn:MeasuredItemKindAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A kind or general category of item that is being inspected.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="MeasuredItemKindText" type="niem-xs:string" substitutionGroup="cbrn:MeasuredItemKind" nillable="true">
+  <xs:element name="MeasuredItemKindText" type="niem-xs:string" substitutionGroup="cbrn:MeasuredItemKindAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A description of a kind or general category of item that is being inspected.</xs:documentation>
     </xs:annotation>
@@ -3973,7 +3950,7 @@ flac or fl32  FLAC</xs:documentation>
       <xs:documentation>A date-time at which capture of the multimedia data was started.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="MultimediaData" type="cbrn:MultimediaDataType" substitutionGroup="cbrn:RadInstrumentDataChoice" nillable="true">
+  <xs:element name="MultimediaData" type="cbrn:MultimediaDataType" substitutionGroup="cbrn:RadInstrumentDataChoiceAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A set of information about multimedia data - e.g., images, sound clips, movies, - regarding a measured item or a measurement environment.</xs:documentation>
     </xs:annotation>
@@ -4053,22 +4030,22 @@ flac or fl32  FLAC</xs:documentation>
       <xs:documentation>A description of the category of the nuclide.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="NuclideIDConfidenceDescriptionText" type="niem-xs:string" substitutionGroup="cbrn:NuclideIdentificationConfidence" nillable="true">
+  <xs:element name="NuclideIDConfidenceDescriptionText" type="niem-xs:string" substitutionGroup="cbrn:NuclideIdentificationConfidenceAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A free-form text description of the confidence in the identification status of this nuclide; for example, Low, Medium, High.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="NuclideIDConfidenceUncertaintyValue" type="cbrn:ZeroToOneDoubleType" substitutionGroup="cbrn:NuclideIdentificationConfidence" nillable="true">
+  <xs:element name="NuclideIDConfidenceUncertaintyValue" type="cbrn:ZeroToOneDoubleType" substitutionGroup="cbrn:NuclideIdentificationConfidenceAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A value for the 1-sigma absolute uncertainty in the value of NuclideIDConfidenceValue.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="NuclideIDConfidenceValue" type="cbrn:NuclideIDConfidenceValueType" substitutionGroup="cbrn:NuclideIdentificationConfidence" nillable="true">
+  <xs:element name="NuclideIDConfidenceValue" type="cbrn:NuclideIDConfidenceValueType" substitutionGroup="cbrn:NuclideIdentificationConfidenceAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>An Indication of confidence ranging from 0.0 to 100.0 percent, in the identification status of a nuclide, where increasing values indicate more certainty that the nuclide is present.  The interpretation of this value is dependent on the characteristics of the nuclide identification algorithm.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="NuclideIdentificationConfidence" abstract="true">
+  <xs:element name="NuclideIdentificationConfidenceAbstract" abstract="true">
     <xs:annotation>
       <xs:documentation>A data concept for the confidence of identification of a nuclide.</xs:documentation>
     </xs:annotation>
@@ -4148,7 +4125,7 @@ flac or fl32  FLAC</xs:documentation>
       <xs:documentation>A description of the point or object to which the RelativeLocation information (distance, inclination angle, azimuth angle) applies.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="ParentDeviceCategoryCodeText" type="nc:TextType" substitutionGroup="scr:EncounterDeviceCategory" nillable="true">
+  <xs:element name="ParentDeviceCategoryCodeText" type="nc:TextType" substitutionGroup="scr:EncounterDeviceCategoryAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A code for the category of a device that is the parent of the device identified by rn:RadEncounterDeviceID.</xs:documentation>
     </xs:annotation>
@@ -4173,17 +4150,17 @@ flac or fl32  FLAC</xs:documentation>
       <xs:documentation>A value for the mean energy of photons in MeV.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="PhotonSource" abstract="true">
+  <xs:element name="PhotonSourceAbstract" abstract="true">
     <xs:annotation>
       <xs:documentation>A data concept for a photon source for a radiographic device.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="PhotonSourceCode" type="cbrncl:PhotonSourceCodeType" substitutionGroup="cbrn:PhotonSource" nillable="true">
+  <xs:element name="PhotonSourceCode" type="cbrncl:PhotonSourceCodeType" substitutionGroup="cbrn:PhotonSourceAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A code for the photon source for a radiographic device.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="PhotonSourceText" type="niem-xs:string" substitutionGroup="cbrn:PhotonSource" nillable="true">
+  <xs:element name="PhotonSourceText" type="niem-xs:string" substitutionGroup="cbrn:PhotonSourceAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A description of the photon source for a radiographic device.</xs:documentation>
     </xs:annotation>
@@ -4303,12 +4280,12 @@ flac or fl32  FLAC</xs:documentation>
       <xs:documentation>A rectangular radiation detector's width, in centimeters (cm).</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="RadEncounterDeviceCategoryCodeText" type="nc:TextType" substitutionGroup="scr:EncounterDeviceCategory" nillable="true">
+  <xs:element name="RadEncounterDeviceCategoryCodeText" type="nc:TextType" substitutionGroup="scr:EncounterDeviceCategoryAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A category of device to capture radiation data in the process of an encounter.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="RadEncounterDeviceCategoryText" type="nc:TextType" substitutionGroup="scr:EncounterDeviceCategory" nillable="true">
+  <xs:element name="RadEncounterDeviceCategoryText" type="nc:TextType" substitutionGroup="scr:EncounterDeviceCategoryAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A kind of device to capture radiation data in the process of an encounter.</xs:documentation>
     </xs:annotation>
@@ -4338,7 +4315,7 @@ flac or fl32  FLAC</xs:documentation>
       <xs:documentation>A  description of the version of a particular radiation measurement instrument component.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="RadInstrumentData" type="cbrn:RadInstrumentDataType" substitutionGroup="cbrn:DetectionEventInstrumentData" nillable="true">
+  <xs:element name="RadInstrumentData" type="cbrn:RadInstrumentDataType" substitutionGroup="cbrn:DetectionEventInstrumentDataAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A set of all the measurement and analysis data reported by a radiation detection instrument, and all the reported information on the instrument, its radiation detector(s), and the item(s) it measured.</xs:documentation>
     </xs:annotation>
@@ -4348,7 +4325,7 @@ flac or fl32  FLAC</xs:documentation>
       <xs:documentation>An augmentation point for cbrn:RadInstrumentDataType.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="RadInstrumentDataChoice" abstract="true">
+  <xs:element name="RadInstrumentDataChoiceAbstract" abstract="true">
     <xs:annotation>
       <xs:documentation>A data concept for a variant of data that is generated by the rad instrument.</xs:documentation>
     </xs:annotation>
@@ -4488,7 +4465,7 @@ flac or fl32  FLAC</xs:documentation>
       <xs:documentation>An augmentation point for cbrn:RadItemStateType.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="RadMeasurement" type="cbrn:RadMeasurementType" substitutionGroup="cbrn:RadInstrumentDataChoice" nillable="true">
+  <xs:element name="RadMeasurement" type="cbrn:RadMeasurementType" substitutionGroup="cbrn:RadInstrumentDataChoiceAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A set of data for a radiation measurement at a particular StartDateTime, for a RealTimeDuration, of a particular MeasurementClassCode that consists of readings from any number of one or more of the following:  -  a radiation detector  - an occupancy sensor  - a positioning sensor that captures the location of a radiation measurement instrument, radiation detector, or measured item - the state of a radiation measurement instrument, radiation detector, or measured item</xs:documentation>
     </xs:annotation>
@@ -4498,7 +4475,7 @@ flac or fl32  FLAC</xs:documentation>
       <xs:documentation>An augmentation point for cbrn:RadMeasurementType.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="RadMeasurementGroup" type="cbrn:RadMeasurementGroupType" substitutionGroup="cbrn:RadInstrumentDataChoice" nillable="true">
+  <xs:element name="RadMeasurementGroup" type="cbrn:RadMeasurementGroupType" substitutionGroup="cbrn:RadInstrumentDataChoiceAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A group of RadMeasurements.</xs:documentation>
     </xs:annotation>
@@ -4608,7 +4585,7 @@ flac or fl32  FLAC</xs:documentation>
       <xs:documentation>A DateTime a relationship ended.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="RelativeLocation" type="cbrn:RelativeLocationType" substitutionGroup="cbrn:StateVectorLocationChoice" nillable="true">
+  <xs:element name="RelativeLocation" type="cbrn:RelativeLocationType" substitutionGroup="cbrn:StateVectorLocationChoiceAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A set of information describing the location of an object (i.e., radiation measurement instrument, radiation detector, or measured item) or a radiation source relative to a reference point (Origin).</xs:documentation>
     </xs:annotation>
@@ -4788,17 +4765,17 @@ flac or fl32  FLAC</xs:documentation>
       <xs:documentation>A text identification of the time zone that applies to a schedule.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="SecondaryInspectionKind" abstract="true">
+  <xs:element name="SecondaryInspectionKindAbstract" abstract="true">
     <xs:annotation>
       <xs:documentation>A data concept for a kind of secondary inspection</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="SecondaryInspectionKindCode" type="cbrncl:SecondaryInspectionKindCodeType" substitutionGroup="cbrn:SecondaryInspectionKind" nillable="true">
+  <xs:element name="SecondaryInspectionKindCode" type="cbrncl:SecondaryInspectionKindCodeType" substitutionGroup="cbrn:SecondaryInspectionKindAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A code describing a kind of secondary Inspection.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="SecondaryInspectionKindText" type="niem-xs:string" substitutionGroup="cbrn:SecondaryInspectionKind" nillable="true">
+  <xs:element name="SecondaryInspectionKindText" type="niem-xs:string" substitutionGroup="cbrn:SecondaryInspectionKindAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A description of a kind of secondary inspection.</xs:documentation>
     </xs:annotation>
@@ -4863,7 +4840,7 @@ flac or fl32  FLAC</xs:documentation>
       <xs:documentation>An augmentation point for cbrn:SourcePositionType.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="SourcePositionChoice" abstract="true">
+  <xs:element name="SourcePositionChoiceAbstract" abstract="true">
     <xs:annotation>
       <xs:documentation>A data concept for the variuos ways a souce position can be represented.</xs:documentation>
     </xs:annotation>
@@ -4968,7 +4945,7 @@ flac or fl32  FLAC</xs:documentation>
       <xs:documentation>An augmentation point for cbrn:StateVectorType.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="StateVectorLocationChoice" abstract="true">
+  <xs:element name="StateVectorLocationChoiceAbstract" abstract="true">
     <xs:annotation>
       <xs:documentation>A data concept for various location representation types</xs:documentation>
     </xs:annotation>
@@ -5003,27 +4980,27 @@ flac or fl32  FLAC</xs:documentation>
       <xs:documentation>A name of a system event.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="SystemOperatingModeCode" type="cbrncl:SystemOperatingModeCodeType" substitutionGroup="nc:SystemOperatingMode" nillable="true">
+  <xs:element name="SystemOperatingModeCode" type="cbrncl:SystemOperatingModeCodeType" substitutionGroup="nc:SystemOperatingModeAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A code for an operating mode of a system.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="SystemOperatingModeText" type="niem-xs:string" substitutionGroup="nc:SystemOperatingMode" nillable="true">
+  <xs:element name="SystemOperatingModeText" type="niem-xs:string" substitutionGroup="nc:SystemOperatingModeAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A description of a system operating mode.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="ThreatLevelDetermination" abstract="true">
+  <xs:element name="ThreatLevelDeterminationAbstract" abstract="true">
     <xs:annotation>
       <xs:documentation>A data concept for a threat level based on findings during an inspection.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="ThreatLevelDeterminationCode" type="cbrncl:ThreatLevelDeterminationCodeType" substitutionGroup="cbrn:ThreatLevelDetermination" nillable="true">
+  <xs:element name="ThreatLevelDeterminationCode" type="cbrncl:ThreatLevelDeterminationCodeType" substitutionGroup="cbrn:ThreatLevelDeterminationAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A  code for a threat level based on findings during an inspection.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="ThreatLevelDeterminationText" type="niem-xs:string" substitutionGroup="cbrn:ThreatLevelDetermination" nillable="true">
+  <xs:element name="ThreatLevelDeterminationText" type="niem-xs:string" substitutionGroup="cbrn:ThreatLevelDeterminationAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A description of a threat level based on findings during an inspection.</xs:documentation>
     </xs:annotation>
@@ -5058,7 +5035,7 @@ flac or fl32  FLAC</xs:documentation>
       <xs:documentation>A value for the  accumulated ambient dose equivalent over all measurements input to AnalysisResults, in microsieverts (Sv).</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="TotalEfficiencyCalibration" type="cbrn:EfficiencyCalibrationType" substitutionGroup="cbrn:RadInstrumentDataChoice" nillable="true">
+  <xs:element name="TotalEfficiencyCalibration" type="cbrn:EfficiencyCalibrationType" substitutionGroup="cbrn:RadInstrumentDataChoiceAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A total efficiency calibration. The total efficiency at any value of energy is the ratio of the total recorded pulses in a spectrum to the number of photons emitted from a source at that energy.</xs:documentation>
     </xs:annotation>
@@ -5103,17 +5080,17 @@ flac or fl32  FLAC</xs:documentation>
       <xs:documentation>A unqiue identifier of a traversal.  There is no required format for the ID value.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="TraversalOperatingMode" abstract="true">
+  <xs:element name="TraversalOperatingModeAbstract" abstract="true">
     <xs:annotation>
       <xs:documentation>A data concept for a Traversal operating mode.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="TraversalOperatingModeCode" type="cbrncl:TraversalOperatingModeCodeType" substitutionGroup="cbrn:TraversalOperatingMode" nillable="true">
+  <xs:element name="TraversalOperatingModeCode" type="cbrncl:TraversalOperatingModeCodeType" substitutionGroup="cbrn:TraversalOperatingModeAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A code for the operating mode of a traversal.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="TraversalOperatingModeText" type="niem-xs:string" substitutionGroup="cbrn:TraversalOperatingMode" nillable="true">
+  <xs:element name="TraversalOperatingModeText" type="niem-xs:string" substitutionGroup="cbrn:TraversalOperatingModeAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A description of a traversal operating mode.</xs:documentation>
     </xs:annotation>
@@ -5123,7 +5100,7 @@ flac or fl32  FLAC</xs:documentation>
       <xs:documentation>A text description of the normal Tuesday operating hours.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="UTF8BinaryObjectText" type="niem-xs:string" substitutionGroup="nc:BinaryObject" nillable="true">
+  <xs:element name="UTF8BinaryObjectText" type="niem-xs:string" substitutionGroup="nc:BinaryObjectAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A UTF8 binary encoding of data.</xs:documentation>
     </xs:annotation>
@@ -5133,7 +5110,7 @@ flac or fl32  FLAC</xs:documentation>
       <xs:documentation>A highest value of X for which an equation is valid.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="UserProperName" type="nc:PersonNameType" substitutionGroup="nc:SystemUserName" nillable="true">
+  <xs:element name="UserProperName" type="nc:PersonNameType" substitutionGroup="nc:SystemUserNameAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A name of a person in the form of an employee id.</xs:documentation>
     </xs:annotation>
@@ -5153,7 +5130,7 @@ flac or fl32  FLAC</xs:documentation>
       <xs:documentation>a data rate is the rate at which information being transferred. It is expressed in terms of [amount of information] per [unit of time].</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="VideoImageFile" type="cbrn:VideoImageFileType" substitutionGroup="cbrn:DataFileChoice" nillable="true">
+  <xs:element name="VideoImageFile" type="cbrn:VideoImageFileType" substitutionGroup="cbrn:DataFileChoiceAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A digital video image data file.</xs:documentation>
     </xs:annotation>

@@ -1,38 +1,10 @@
 <?xml version="1.0" encoding="US-ASCII"?>
-<xs:schema targetNamespace="http://release.niem.gov/niem/domains/maritime/4.0/" version="alpha1" xsi:schemaLocation="http://release.niem.gov/niem/appinfo/3.0/ ../../../appinfo/3.0/appinfo.xsd http://release.niem.gov/niem/conformanceTargets/3.0/ ../../../conformanceTargets/3.0/conformanceTargets.xsd http://release.niem.gov/niem/localTerminology/3.0/ ../../../localTerminology/3.0/localTerminology.xsd" ct:conformanceTargets="http://reference.niem.gov/niem/specification/naming-and-design-rules/3.0/#ReferenceSchemaDocument" xmlns:scr="http://release.niem.gov/niem/domains/screening/4.0/" xmlns:ct="http://release.niem.gov/niem/conformanceTargets/3.0/" xmlns:nc="http://release.niem.gov/niem/niem-core/4.0/" xmlns:term="http://release.niem.gov/niem/localTerminology/3.0/" xmlns:structures="http://release.niem.gov/niem/structures/3.0/" xmlns:appinfo="http://release.niem.gov/niem/appinfo/3.0/" xmlns:geo="http://release.niem.gov/niem/adapters/geospatial/4.0/" xmlns:hazmat="http://release.niem.gov/niem/codes/dot_hazmat/4.0/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:iso_3166="http://release.niem.gov/niem/codes/iso_3166-1/4.0/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:ncic="http://release.niem.gov/niem/codes/fbi_ncic/4.0/" xmlns:m="http://release.niem.gov/niem/domains/maritime/4.0/" xmlns:niem-xs="http://release.niem.gov/niem/proxy/xsd/4.0/">
+<xs:schema targetNamespace="http://release.niem.gov/niem/domains/maritime/4.0/" version="beta1" xsi:schemaLocation="http://release.niem.gov/niem/appinfo/4.0/ ../../../appinfo/4.0/appinfo.xsd http://release.niem.gov/niem/conformanceTargets/3.0/ ../../../conformanceTargets/3.0/conformanceTargets.xsd" ct:conformanceTargets="http://reference.niem.gov/niem/specification/naming-and-design-rules/4.0/#ReferenceSchemaDocument" xmlns:structures="http://release.niem.gov/niem/structures/4.0/" xmlns:appinfo="http://release.niem.gov/niem/appinfo/4.0/" xmlns:scr="http://release.niem.gov/niem/domains/screening/4.0/" xmlns:ct="http://release.niem.gov/niem/conformanceTargets/3.0/" xmlns:nc="http://release.niem.gov/niem/niem-core/4.0/" xmlns:geo="http://release.niem.gov/niem/adapters/geospatial/4.0/" xmlns:hazmat="http://release.niem.gov/niem/codes/dot_hazmat/4.0/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:iso_3166="http://release.niem.gov/niem/codes/iso_3166-1/4.0/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:ncic="http://release.niem.gov/niem/codes/fbi_ncic/4.0/" xmlns:m="http://release.niem.gov/niem/domains/maritime/4.0/" xmlns:niem-xs="http://release.niem.gov/niem/proxy/xsd/4.0/">
   <xs:annotation>
     <xs:documentation>Maritime</xs:documentation>
-    <xs:appinfo>
-      <term:LocalTerm term="MMSI" literal="Maritime Mobile Service Identity"/>
-      <term:LocalTerm term="ISPS" literal="International Ship and Port Facility Security"/>
-      <term:LocalTerm term="IRCS" literal="International Registered Call Sign"/>
-      <term:LocalTerm term="UNLOCODE" literal="United Nations Code for Trade and Transport Locations"/>
-      <term:LocalTerm term="TRDM" literal="US Transportation Command (USTRANSCOM) Reference Data Model (TRDM)"/>
-      <term:LocalTerm term="Helo" literal="helicopter"/>
-      <term:LocalTerm term="UN" literal="United Nations"/>
-      <term:LocalTerm term="DOC" literal="Document of Compliance"/>
-      <term:LocalTerm term="ISO" literal="International Organization for Standardization"/>
-      <term:LocalTerm term="COTP" literal="Captain of the Port"/>
-      <term:LocalTerm term="CANUSLexiconAPR07" literal="April 2007 Canada/USA Bi-National Vessel of Interest (VOI) Lexicon"/>
-      <term:LocalTerm term="Alpha3" definition="Three-letter"/>
-      <term:LocalTerm term="Alpha2" definition="Two-letter"/>
-      <term:LocalTerm term="ISSC" literal="International Ship Security Certificate"/>
-      <term:LocalTerm term="ISM" literal="International Safety Management"/>
-      <term:LocalTerm term="IMO" literal="International Maritime Organization"/>
-      <term:LocalTerm term="CANUS" literal="Canada/USA"/>
-      <term:LocalTerm term="APR" literal="April"/>
-      <term:LocalTerm term="UNECE" literal="United Nations Economic Commission for Europe"/>
-      <term:LocalTerm term="USMTF" literal="United States Message Text Format"/>
-      <term:LocalTerm term="SCONUM" literal="Ship Control Number"/>
-      <term:LocalTerm term="HIN" literal="Hull Identification Number"/>
-      <term:LocalTerm term="FIPS" literal="Federal Information Processing Standards"/>
-      <term:LocalTerm term="CVSSA" literal="Cruise Vessel Security and Safety Act"/>
-      <term:LocalTerm term="CDC" literal="Certain Dangerous Cargo"/>
-      <term:LocalTerm term="BE" literal="Basic Encyclopedia"/>
-    </xs:appinfo>
   </xs:annotation>
-  <xs:import schemaLocation="../../../structures/3.0/structures.xsd" namespace="http://release.niem.gov/niem/structures/3.0/"/>
-  <xs:import schemaLocation="../../../codes/iso_3166-1/4.0/iso_3166-1.xsd" namespace="http://release.niem.gov/niem/codes/iso_3166-1/4.0/"/>
+  <xs:import schemaLocation="../../../structures/4.0/structures.xsd" namespace="http://release.niem.gov/niem/structures/4.0/"/>
+  <xs:import schemaLocation="../../../codes/iso_3166-1/4.0/iso_3166.xsd" namespace="http://release.niem.gov/niem/codes/iso_3166-1/4.0/"/>
   <xs:import schemaLocation="../../../codes/dot_hazmat/4.0/dot_hazmat.xsd" namespace="http://release.niem.gov/niem/codes/dot_hazmat/4.0/"/>
   <xs:import schemaLocation="../../../proxy/xsd/4.0/xs.xsd" namespace="http://release.niem.gov/niem/proxy/xsd/4.0/"/>
   <xs:import schemaLocation="../../../niem-core/4.0/niem-core.xsd" namespace="http://release.niem.gov/niem/niem-core/4.0/"/>
@@ -485,7 +457,7 @@
     <xs:complexContent>
       <xs:extension base="structures:ObjectType">
         <xs:sequence>
-          <xs:element ref="m:COTPZoneRegion" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="m:COTPZoneRegionAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="m:COTPZoneContactInformation" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="m:COTPZoneGoverningEntity" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="m:CaptainOfThePortZoneAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
@@ -515,7 +487,7 @@
     <xs:complexContent>
       <xs:extension base="nc:ItemType">
         <xs:sequence>
-          <xs:element ref="m:CargoCategory" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="m:CargoCategoryAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="m:CargoChargeableWeightMeasure" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="m:CargoCustomsValueAmount" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="m:CargoDestinationLocation" minOccurs="0" maxOccurs="unbounded"/>
@@ -575,7 +547,7 @@
     <xs:complexContent>
       <xs:extension base="structures:ObjectType">
         <xs:sequence>
-          <xs:element ref="m:CrewNationality" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="m:CrewNationalityAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="m:CrewNationalityQuantity" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="m:CrewNationalityCountAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
@@ -1054,7 +1026,7 @@
     <xs:complexContent>
       <xs:extension base="m:PersonOnVesselType">
         <xs:sequence>
-          <xs:element ref="m:CrewRole" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="m:CrewRoleAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="m:CrewAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
       </xs:extension>
@@ -1072,8 +1044,8 @@
           <xs:element ref="m:HazmatDeclarationDescriptionText" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="m:HazmatDeclarationDestinationLocation" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="m:HazmatDeclarationFlashPointMeasure" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="m:HazmatDeclarationHazardLevel" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="m:HazmatDeclarationHazmatClass" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="m:HazmatDeclarationHazardLevelAbstract" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="m:HazmatDeclarationHazmatClassAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="m:HazmatDeclarationMaterialAmountMeasure" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="m:HazmatDeclarationOriginLocation" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="m:HazmatDeclarationUNHazmatCode" minOccurs="0" maxOccurs="unbounded"/>
@@ -1122,12 +1094,12 @@
     <xs:complexContent>
       <xs:extension base="structures:ObjectType">
         <xs:sequence>
-          <xs:element ref="m:InterestCategory" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="m:InterestCategoryAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="m:InterestDateRange" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="m:InterestDescriptionText" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="m:InterestLevel" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="m:InterestLevelAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="m:InterestLexiconSourceText" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="m:InterestNotificationCategory" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="m:InterestNotificationCategoryAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="m:InterestAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
       </xs:extension>
@@ -1140,9 +1112,9 @@
     <xs:complexContent>
       <xs:extension base="m:CertificateType">
         <xs:sequence>
-          <xs:element ref="m:ReasonInterimISSCIssued" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="m:ReasonInterimISSCIssuedAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="m:RecognizedISSCSecurityEntity" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="m:ISSCCategory" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="m:ISSCCategoryAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="m:VesselSecurityOfficerContactInformation" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="m:VesselSecurityPlanImplementedIndicator" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="m:InternationalShipSecurityCertificateAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
@@ -1157,10 +1129,10 @@
     <xs:complexContent>
       <xs:extension base="structures:AugmentationType">
         <xs:sequence>
-          <xs:element ref="m:COTPZoneRegion" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="m:COTPZoneRegionAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="m:LocationPointAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="m:LocationPort" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="m:LocationUNLOCODE" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="m:LocationUNLOCODEAbstract" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -1195,16 +1167,16 @@
           <xs:element ref="m:MerchantMarinerDocumentIssueDate" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="m:MerchantMarinerDocumentIssuerLocation" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="m:MerchantMarinerDocumentIssuingOrganization" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="m:MerchantMarinerDocumentRating" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="m:MerchantMarinerDocumentRatingAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="m:PersonAddress" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:PersonBirthDate" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="nc:PersonCitizenship" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="nc:PersonEyeColor" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="nc:PersonHairColor" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:PersonCitizenshipAbstract" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:PersonEyeColorAbstract" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:PersonHairColorAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:PersonHeightDescriptionText" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:PersonHeightMeasure" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:PersonName" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="nc:PersonSex" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:PersonSexAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:PersonSSNIdentification" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:PersonWeightDescriptionText" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:PersonWeightMeasure" minOccurs="0" maxOccurs="unbounded"/>
@@ -1246,7 +1218,7 @@
     <xs:complexContent>
       <xs:extension base="structures:ObjectType">
         <xs:sequence>
-          <xs:element ref="m:NonCrewNationality" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="m:NonCrewNationalityAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="m:NonCrewNationalityQuantity" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="m:NonCrewNationalityCountAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
@@ -1274,7 +1246,7 @@
       <xs:extension base="m:PersonOnVesselType">
         <xs:sequence>
           <xs:element ref="m:RecordLocatorIdentification" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="m:VesselPersonRole" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="m:VesselPersonRoleAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="m:NonCrewAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
       </xs:extension>
@@ -1303,7 +1275,7 @@
       <xs:extension base="structures:ObjectType">
         <xs:sequence>
           <xs:element ref="m:PersonCabinNumberText" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="m:PersonCountryOfResidence" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="m:PersonCountryOfResidenceAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="m:PersonDebarkationDate" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="m:PersonDebarkationLocation" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="m:PersonEmbarkationDate" minOccurs="0" maxOccurs="unbounded"/>
@@ -1324,13 +1296,13 @@
         <xs:sequence>
           <xs:element ref="m:PortAnchorageCapabilityText" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="m:PortBENumberText" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="m:PortCargoCapability" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="m:PortCode" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="m:PortCargoCapabilityAbstract" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="m:PortCodeAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="m:PortCOTPZone" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="m:PortDepth" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="m:PortDepthAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="m:PortDescriptionText" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="m:PortDockQuantity" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="m:PortGovernment" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="m:PortGovernmentAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="m:PortImage" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="m:PortISPSCompliantIndicator" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="m:PortMaximumVesselQuantity" minOccurs="0" maxOccurs="unbounded"/>
@@ -1338,8 +1310,8 @@
           <xs:element ref="m:PortOperationalStatus" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="m:PortPilotBoatQuantity" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="m:PortStrategicPortOfEmbarkationIndicator" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="m:PortThreatLevel" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="m:PortUNLOCODE" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="m:PortThreatLevelAbstract" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="m:PortUNLOCODEAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:LocationCountry" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:LocationState" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:LocationCityName" minOccurs="0" maxOccurs="unbounded"/>
@@ -1409,13 +1381,13 @@
         <xs:sequence>
           <xs:element ref="m:PersonAddress" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:PersonBirthDate" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="nc:PersonCitizenship" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="nc:PersonEyeColor" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="nc:PersonHairColor" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:PersonCitizenshipAbstract" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:PersonEyeColorAbstract" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:PersonHairColorAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:PersonHeightDescriptionText" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:PersonHeightMeasure" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:PersonName" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="nc:PersonSex" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:PersonSexAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:PersonSSNIdentification" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:PersonWeightDescriptionText" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:PersonWeightMeasure" minOccurs="0" maxOccurs="unbounded"/>
@@ -1423,7 +1395,7 @@
           <xs:element ref="m:SeamanLicenseIssueDate" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="m:SeamanLicenseIssuerLocation" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="m:SeamanLicenseIssuingOrganization" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="m:SeamanLicenseRating" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="m:SeamanLicenseRatingAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="m:SeamanLicenseAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
       </xs:extension>
@@ -1556,15 +1528,15 @@
           <xs:element ref="m:VesselBeamMeasure" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="m:VesselBuildDate" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="m:VesselCallSignText" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="m:VesselCargoCapability" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="m:VesselCargoCategory" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="m:VesselCargoCapabilityAbstract" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="m:VesselCargoCategoryAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="m:VesselCargoOnBoardIndicator" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="m:VesselCategory" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="m:VesselCategoryAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="m:VesselCDCCapableIndicator" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="m:VesselCDCCargoOnBoardIndicator" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="m:VesselCertificateOfFinancialResponsibilityOperator" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="m:VesselCharterer" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="m:VesselClass" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="m:VesselClassAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="m:VesselClassificationSocietyName" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="m:VesselContactInformation" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="m:VesselCraneQuantity" minOccurs="0" maxOccurs="unbounded"/>
@@ -1590,8 +1562,8 @@
           <xs:element ref="m:VesselHINText" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="m:VesselHoldsQuantity" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="m:VesselHomePort" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="m:VesselHullCategory" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="m:VesselHullColor" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="m:VesselHullCategoryAbstract" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="m:VesselHullColorAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="m:VesselHullNumberText" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="m:VesselIdentification" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="m:VesselImage" minOccurs="0" maxOccurs="unbounded"/>
@@ -1612,14 +1584,14 @@
           <xs:element ref="m:VesselMMSIText" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="m:VesselMovementDetails" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="m:VesselName" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="m:VesselNationalFlag" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="m:VesselNationalFlagAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="m:VesselNationalFlagImage" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="m:VesselNavigationStatus" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="m:VesselNetTonnageVolumeMeasure" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="m:VesselNonTankVesselResponsePlanIdentification" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="m:VesselNonTankVesselResponsePlanIndicator" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="m:VesselOfficialCoastGuardNumberText" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="m:VesselOperationalConditionOfEquipment" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="m:VesselOperationalConditionOfEquipmentAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="m:VesselOperator" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="m:VesselOverallLengthMeasure" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="m:VesselOwner" minOccurs="0" maxOccurs="unbounded"/>
@@ -1630,7 +1602,7 @@
           <xs:element ref="m:VesselStackQuantity" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="m:VesselStateIdentification" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="m:VesselSubCategoryText" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="m:VesselSuperstructureColor" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="m:VesselSuperstructureColorAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="m:VesselSuperstructureLocation" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="m:VesselTRDMText" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="m:VesselViolationHistorySummaryText" minOccurs="0" maxOccurs="unbounded"/>
@@ -1695,7 +1667,7 @@
       <xs:extension base="structures:ObjectType">
         <xs:sequence>
           <xs:element ref="m:VoyageBeginDateTime" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="m:VoyageCategory" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="m:VoyageCategoryAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="m:VoyageDestinationLocation" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="m:VoyageEndDateTime" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="m:VoyageIdentification" minOccurs="0" maxOccurs="unbounded"/>
@@ -1712,12 +1684,12 @@
       <xs:documentation>An arrival of a vessel in a port.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="CANUSLexiconAPR07CategoryCode" type="m:CANUSLexiconAPR07CategoryCodeType" substitutionGroup="m:InterestCategory" nillable="true">
+  <xs:element name="CANUSLexiconAPR07CategoryCode" type="m:CANUSLexiconAPR07CategoryCodeType" substitutionGroup="m:InterestCategoryAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A kind of threat as defined by the April 2007 Canada/USA Bi-National Vessel of Interest (VOI) Lexicon.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="CANUSLexiconAPR07ThreatCode" type="m:CANUSLexiconAPR07ThreatCodeType" substitutionGroup="m:InterestLevel" nillable="true">
+  <xs:element name="CANUSLexiconAPR07ThreatCode" type="m:CANUSLexiconAPR07ThreatCodeType" substitutionGroup="m:InterestLevelAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A level of threat as defined by the April 2007 Canada/USA Bi-National Vessel of Interest (VOI) Lexicon.</xs:documentation>
     </xs:annotation>
@@ -1747,17 +1719,17 @@
       <xs:documentation>An organization that is responsible for a Captain of the Port (COTP) zone.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="COTPZoneRegion" abstract="true">
+  <xs:element name="COTPZoneRegionAbstract" abstract="true">
     <xs:annotation>
       <xs:documentation>A data concept for a Captain of the Port (COTP) zone or region.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="COTPZoneRegionCode" type="m:COTPRegionCodeType" substitutionGroup="m:COTPZoneRegion" nillable="true">
+  <xs:element name="COTPZoneRegionCode" type="m:COTPRegionCodeType" substitutionGroup="m:COTPZoneRegionAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A Captain of the Port (COTP) zone code.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="COTPZoneRegionText" type="nc:TextType" substitutionGroup="m:COTPZoneRegion" nillable="true">
+  <xs:element name="COTPZoneRegionText" type="nc:TextType" substitutionGroup="m:COTPZoneRegionAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A region of a Captain of the Port (COTP) zone.</xs:documentation>
     </xs:annotation>
@@ -1782,12 +1754,12 @@
       <xs:documentation>An augmentation point for CargoType.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="CargoCategory" abstract="true">
+  <xs:element name="CargoCategoryAbstract" abstract="true">
     <xs:annotation>
       <xs:documentation>A data concept for a kind or category of cargo.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="CargoCategoryText" type="nc:TextType" substitutionGroup="m:CargoCategory" nillable="true">
+  <xs:element name="CargoCategoryText" type="nc:TextType" substitutionGroup="m:CargoCategoryAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A kind of cargo.</xs:documentation>
     </xs:annotation>
@@ -1947,7 +1919,7 @@
       <xs:documentation>An augmentation point for CrewListType.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="CrewNationality" abstract="true">
+  <xs:element name="CrewNationalityAbstract" abstract="true">
     <xs:annotation>
       <xs:documentation>A data concept for a nationality of one or more crew members on a vessel</xs:documentation>
     </xs:annotation>
@@ -1962,7 +1934,7 @@
       <xs:documentation>An augmentation point for CrewNationalityCountType.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="CrewNationalityISO3166Alpha2Code" type="iso_3166:CountryAlpha2CodeType" substitutionGroup="m:CrewNationality" nillable="true">
+  <xs:element name="CrewNationalityISO3166Alpha2Code" type="iso_3166:CountryAlpha2CodeType" substitutionGroup="m:CrewNationalityAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A nationality of a crew member or members</xs:documentation>
     </xs:annotation>
@@ -1982,17 +1954,17 @@
       <xs:documentation>A count of crew members of a particular nationality</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="CrewRole" abstract="true">
+  <xs:element name="CrewRoleAbstract" abstract="true">
     <xs:annotation>
       <xs:documentation>A data concept for a role a crew member fulfills on a vessel.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="CrewRoleCode" type="m:CrewRoleCodeType" substitutionGroup="m:CrewRole" nillable="true">
+  <xs:element name="CrewRoleCode" type="m:CrewRoleCodeType" substitutionGroup="m:CrewRoleAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A code for a role a crew member fulfills on a vessel.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="CrewRoleText" type="nc:TextType" substitutionGroup="m:CrewRole" nillable="true">
+  <xs:element name="CrewRoleText" type="nc:TextType" substitutionGroup="m:CrewRoleAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A role a crew member fulfills on a vessel.</xs:documentation>
     </xs:annotation>
@@ -2037,22 +2009,22 @@
       <xs:documentation>A measure of the lowest temperature at which a hazardous material can form an ignitable mixture in air.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="HazmatDeclarationHazardLevel" abstract="true">
+  <xs:element name="HazmatDeclarationHazardLevelAbstract" abstract="true">
     <xs:annotation>
       <xs:documentation>A data concept for an assessment of the degree of hazard pertaining to a hazardous material.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="HazmatDeclarationHazardLevelMeasure" type="nc:MeasureType" substitutionGroup="m:HazmatDeclarationHazardLevel" nillable="true">
+  <xs:element name="HazmatDeclarationHazardLevelMeasure" type="nc:MeasureType" substitutionGroup="m:HazmatDeclarationHazardLevelAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>An assessment of the degree of hazard pertaining to a hazardous material.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="HazmatDeclarationHazmatClass" abstract="true">
+  <xs:element name="HazmatDeclarationHazmatClassAbstract" abstract="true">
     <xs:annotation>
       <xs:documentation>A data concept for a US DOT (U.S. Department of Transportation) hazmat class pertaining to a hazardous material.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="HazmatDeclarationHazmatClassText" type="nc:TextType" substitutionGroup="m:HazmatDeclarationHazmatClass" nillable="true">
+  <xs:element name="HazmatDeclarationHazmatClassText" type="nc:TextType" substitutionGroup="m:HazmatDeclarationHazmatClassAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A US DOT (U.S. Department of Transportation) hazmat class pertaining to a hazardous material.</xs:documentation>
     </xs:annotation>
@@ -2067,7 +2039,7 @@
       <xs:documentation>An origin of a hazardous material.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="HazmatDeclarationUNHazmatCode" type="hazmat:HazmatUNCodeType" substitutionGroup="nc:SubstanceDesignator" nillable="true">
+  <xs:element name="HazmatDeclarationUNHazmatCode" type="hazmat:HazmatUNCodeType" substitutionGroup="nc:SubstanceAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A United Nations/North American (UN/NA) Hazardous Materials Code pertaining to a hazardous material.</xs:documentation>
     </xs:annotation>
@@ -2077,12 +2049,12 @@
       <xs:documentation>A set of textual content of a hazmat declaration page.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="ISSCCategory" abstract="true">
+  <xs:element name="ISSCCategoryAbstract" abstract="true">
     <xs:annotation>
       <xs:documentation>A data concept for a kind or category of International Ship Security Certificate (ISSC).</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="ISSCCategoryText" type="nc:TextType" substitutionGroup="m:ISSCCategory" nillable="true">
+  <xs:element name="ISSCCategoryText" type="nc:TextType" substitutionGroup="m:ISSCCategoryAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A kind of International Ship Security Certificate (ISSC).</xs:documentation>
     </xs:annotation>
@@ -2097,12 +2069,12 @@
       <xs:documentation>An augmentation point for InterestType.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="InterestCategory" abstract="true">
+  <xs:element name="InterestCategoryAbstract" abstract="true">
     <xs:annotation>
       <xs:documentation>A data concept for a kind of item of interest.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="InterestCategoryText" type="nc:TextType" substitutionGroup="m:InterestCategory" nillable="true">
+  <xs:element name="InterestCategoryText" type="nc:TextType" substitutionGroup="m:InterestCategoryAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A kind of an item of interest.</xs:documentation>
     </xs:annotation>
@@ -2117,12 +2089,12 @@
       <xs:documentation>A description of an item of interest.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="InterestLevel" abstract="true">
+  <xs:element name="InterestLevelAbstract" abstract="true">
     <xs:annotation>
       <xs:documentation>A data concept for a level or degree of interest.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="InterestLevelText" type="nc:TextType" substitutionGroup="m:InterestLevel" nillable="true">
+  <xs:element name="InterestLevelText" type="nc:TextType" substitutionGroup="m:InterestLevelAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A level or degree of interest.</xs:documentation>
     </xs:annotation>
@@ -2132,17 +2104,17 @@
       <xs:documentation>A definition source for interest level/category information. e.g. NORTHCOM, USMTF, etc.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="InterestNotificationCategory" abstract="true">
+  <xs:element name="InterestNotificationCategoryAbstract" abstract="true">
     <xs:annotation>
       <xs:documentation>A data concept for a kind of notification of an item of interest.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="InterestNotificationCategoryCode" type="m:InterestNotificationCategoryCodeType" substitutionGroup="m:InterestNotificationCategory" nillable="true">
+  <xs:element name="InterestNotificationCategoryCode" type="m:InterestNotificationCategoryCodeType" substitutionGroup="m:InterestNotificationCategoryAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A kind of a notification of an item of interest.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="InterestNotificationCategoryText" type="nc:TextType" substitutionGroup="m:InterestNotificationCategory" nillable="true">
+  <xs:element name="InterestNotificationCategoryText" type="nc:TextType" substitutionGroup="m:InterestNotificationCategoryAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A kind of a notification of an item of interest.</xs:documentation>
     </xs:annotation>
@@ -2242,12 +2214,12 @@
       <xs:documentation>A location identified by a port.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="LocationUNLOCODE" abstract="true">
+  <xs:element name="LocationUNLOCODEAbstract" abstract="true">
     <xs:annotation>
       <xs:documentation>A data concept for a location identified by a United Nations Location Code, also known as a UN/LOCODE (United Nations Code for Trade and Transport Locations).</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="LocationUNLOCODEText" type="nc:TextType" substitutionGroup="m:LocationUNLOCODE" nillable="true">
+  <xs:element name="LocationUNLOCODEText" type="nc:TextType" substitutionGroup="m:LocationUNLOCODEAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A location identified by a United Nations Location Code, also known as a UN/LOCODE (United Nations Code for Trade and Transport Locations).</xs:documentation>
     </xs:annotation>
@@ -2287,12 +2259,12 @@
       <xs:documentation>An issuer of a merchant mariner document.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="MerchantMarinerDocumentRating" abstract="true">
+  <xs:element name="MerchantMarinerDocumentRatingAbstract" abstract="true">
     <xs:annotation>
       <xs:documentation>A data concept for a rating on a merchant mariner document which authorizes the performance of certain shipboard duties or actions.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="MerchantMarinerDocumentRatingText" type="nc:TextType" substitutionGroup="m:MerchantMarinerDocumentRating" nillable="true">
+  <xs:element name="MerchantMarinerDocumentRatingText" type="nc:TextType" substitutionGroup="m:MerchantMarinerDocumentRatingAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A rating on a merchant mariner document which authorizes the performance of certain shipboard duties or actions.</xs:documentation>
     </xs:annotation>
@@ -2337,7 +2309,7 @@
       <xs:documentation>An augmentation point for NonCrewListType.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="NonCrewNationality" abstract="true">
+  <xs:element name="NonCrewNationalityAbstract" abstract="true">
     <xs:annotation>
       <xs:documentation>A data concept for a nationality of one or more passengers on a vessel</xs:documentation>
     </xs:annotation>
@@ -2352,7 +2324,7 @@
       <xs:documentation>An augmentation point for NonCrewNationalityCountType.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="NonCrewNationalityISO3166Alpha2Code" type="iso_3166:CountryAlpha2CodeType" substitutionGroup="m:NonCrewNationality" nillable="true">
+  <xs:element name="NonCrewNationalityISO3166Alpha2Code" type="iso_3166:CountryAlpha2CodeType" substitutionGroup="m:NonCrewNationalityAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A nationality of a passenger or passengers</xs:documentation>
     </xs:annotation>
@@ -2392,12 +2364,12 @@
       <xs:documentation>A cabin number on a vessel.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="PersonCountryOfResidence" abstract="true">
+  <xs:element name="PersonCountryOfResidenceAbstract" abstract="true">
     <xs:annotation>
       <xs:documentation>A data concept for a country of residence.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="PersonCountryOfResidenceISO3166Alpha2Code" type="iso_3166:CountryAlpha2CodeType" substitutionGroup="m:PersonCountryOfResidence" nillable="true">
+  <xs:element name="PersonCountryOfResidenceISO3166Alpha2Code" type="iso_3166:CountryAlpha2CodeType" substitutionGroup="m:PersonCountryOfResidenceAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A country of residence.</xs:documentation>
     </xs:annotation>
@@ -2467,32 +2439,32 @@
       <xs:documentation>A Captain of the Port (COTP) zone to which a port belongs.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="PortCargoCapability" abstract="true">
+  <xs:element name="PortCargoCapabilityAbstract" abstract="true">
     <xs:annotation>
       <xs:documentation>A data concept for a description of cargo capabilities of a port.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="PortCargoCapabilityText" type="nc:TextType" substitutionGroup="m:PortCargoCapability" nillable="true">
+  <xs:element name="PortCargoCapabilityText" type="nc:TextType" substitutionGroup="m:PortCargoCapabilityAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A description of the cargo capabilities of a port.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="PortCode" abstract="true">
+  <xs:element name="PortCodeAbstract" abstract="true">
     <xs:annotation>
       <xs:documentation>A data concept for a code to identify a port.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="PortCodeText" type="nc:TextType" substitutionGroup="m:PortCode" nillable="true">
+  <xs:element name="PortCodeText" type="nc:TextType" substitutionGroup="m:PortCodeAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A code to identify a port.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="PortDepth" abstract="true">
+  <xs:element name="PortDepthAbstract" abstract="true">
     <xs:annotation>
       <xs:documentation>A data concept for a water depth of a port that limits which vessels can make use of the port.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="PortDepthMeasure" type="nc:LengthMeasureType" substitutionGroup="m:PortDepth" nillable="true">
+  <xs:element name="PortDepthMeasure" type="nc:LengthMeasureType" substitutionGroup="m:PortDepthAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A measure of the water depth of a port that limits which vessels can make use of the port.</xs:documentation>
     </xs:annotation>
@@ -2507,17 +2479,17 @@
       <xs:documentation>A number of docks possessed by a port.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="PortGovernment" abstract="true">
+  <xs:element name="PortGovernmentAbstract" abstract="true">
     <xs:annotation>
       <xs:documentation>A data concept for a government which owns or operates a port, especially in the situation where a port is physically in one country but is owned or operated by another.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="PortGovernmentISO3166Alpha2Code" type="iso_3166:CountryAlpha2CodeType" substitutionGroup="m:PortGovernment" nillable="true">
+  <xs:element name="PortGovernmentISO3166Alpha2Code" type="iso_3166:CountryAlpha2CodeType" substitutionGroup="m:PortGovernmentAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A government which owns or operates a port, especially in the situation where a port is physically in one country but is owned or operated by another.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="PortGovernmentText" type="nc:TextType" substitutionGroup="m:PortGovernment" nillable="true">
+  <xs:element name="PortGovernmentText" type="nc:TextType" substitutionGroup="m:PortGovernmentAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A government which owns or operates a port, especially in the situation where a port is physically in one country but is owned or operated by another.</xs:documentation>
     </xs:annotation>
@@ -2557,22 +2529,22 @@
       <xs:documentation>True if troops, munitions, etc. can be loaded/unloaded at this port; false otherwise.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="PortThreatLevel" abstract="true">
+  <xs:element name="PortThreatLevelAbstract" abstract="true">
     <xs:annotation>
       <xs:documentation>A data concept for a threat level at a port.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="PortThreatLevelText" type="nc:TextType" substitutionGroup="m:PortThreatLevel" nillable="true">
+  <xs:element name="PortThreatLevelText" type="nc:TextType" substitutionGroup="m:PortThreatLevelAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A threat level at a port.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="PortUNLOCODE" abstract="true">
+  <xs:element name="PortUNLOCODEAbstract" abstract="true">
     <xs:annotation>
       <xs:documentation>A data concept for a United Nations Location Code of a maritime port, also known as a UN/LOCODE (United Nations Code for Trade and Transport Locations).</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="PortUNLOCODEText" type="nc:TextType" substitutionGroup="m:PortUNLOCODE" nillable="true">
+  <xs:element name="PortUNLOCODEText" type="nc:TextType" substitutionGroup="m:PortUNLOCODEAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A United Nations Location Code of a maritime port, also known as a UN/LOCODE (United Nations Code for Trade and Transport Locations).</xs:documentation>
     </xs:annotation>
@@ -2637,12 +2609,12 @@
       <xs:documentation>An augmentation point for PreviousForeignPortOfCallListType.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="ReasonInterimISSCIssued" abstract="true">
+  <xs:element name="ReasonInterimISSCIssuedAbstract" abstract="true">
     <xs:annotation>
       <xs:documentation>A data concept for a reason why an interim International Ship Security Certificate (ISSC) was issued.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="ReasonInterimISSCIssuedText" type="nc:TextType" substitutionGroup="m:ReasonInterimISSCIssued" nillable="true">
+  <xs:element name="ReasonInterimISSCIssuedText" type="nc:TextType" substitutionGroup="m:ReasonInterimISSCIssuedAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A reason why an interim International Ship Security Certificate (ISSC) was issued.</xs:documentation>
     </xs:annotation>
@@ -2692,12 +2664,12 @@
       <xs:documentation>An issuer of a seaman license.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="SeamanLicenseRating" abstract="true">
+  <xs:element name="SeamanLicenseRatingAbstract" abstract="true">
     <xs:annotation>
       <xs:documentation>A data concept for a rating on a seaman license which authorizes the performance of certain shipboard duties or actions.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="SeamanLicenseRatingText" type="nc:TextType" substitutionGroup="m:SeamanLicenseRating" nillable="true">
+  <xs:element name="SeamanLicenseRatingText" type="nc:TextType" substitutionGroup="m:SeamanLicenseRatingAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A rating on a seaman license which authorizes the performance of certain shipboard duties or actions.</xs:documentation>
     </xs:annotation>
@@ -2762,12 +2734,12 @@
       <xs:documentation>A status of a shipment.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="USMTFEnvironmentCategoryCode" type="m:USMTFEnvironmentCategoryCodeType" substitutionGroup="m:InterestCategory" nillable="true">
+  <xs:element name="USMTFEnvironmentCategoryCode" type="m:USMTFEnvironmentCategoryCodeType" substitutionGroup="m:InterestCategoryAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A kind of USMTF-defined environment code.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="USMTFThreatCode" type="m:USMTFThreatCodeType" substitutionGroup="m:InterestLevel" nillable="true">
+  <xs:element name="USMTFThreatCode" type="m:USMTFThreatCodeType" substitutionGroup="m:InterestLevelAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A USMTF-defined threat code.</xs:documentation>
     </xs:annotation>
@@ -2822,22 +2794,22 @@
       <xs:documentation>A call sign for a vessel.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="VesselCargoCapability" abstract="true">
+  <xs:element name="VesselCargoCapabilityAbstract" abstract="true">
     <xs:annotation>
       <xs:documentation>A data concept for a description of cargo capabilities of a vessel.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="VesselCargoCapabilityText" type="nc:TextType" substitutionGroup="m:VesselCargoCapability" nillable="true">
+  <xs:element name="VesselCargoCapabilityText" type="nc:TextType" substitutionGroup="m:VesselCargoCapabilityAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A description of cargo capabilities of a vessel.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="VesselCargoCategory" abstract="true">
+  <xs:element name="VesselCargoCategoryAbstract" abstract="true">
     <xs:annotation>
       <xs:documentation>A data concept for a kind of cargo that a vessel is carrying.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="VesselCargoCategoryText" type="nc:TextType" substitutionGroup="m:VesselCargoCategory" nillable="true">
+  <xs:element name="VesselCargoCategoryText" type="nc:TextType" substitutionGroup="m:VesselCargoCategoryAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A kind of cargo that a vessel is carrying. Cargo types may be categorized as DG=Dangerous Goods, HS=Harmful Substances, or MP=Marine Pollutants.</xs:documentation>
     </xs:annotation>
@@ -2847,12 +2819,12 @@
       <xs:documentation>True if a vessel is carrying cargo; false otherwise.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="VesselCategory" abstract="true">
+  <xs:element name="VesselCategoryAbstract" abstract="true">
     <xs:annotation>
       <xs:documentation>A data concept for a description of a type of a vessel based upon the purpose for which the vessel was designed or built.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="VesselCategoryText" type="nc:TextType" substitutionGroup="m:VesselCategory" nillable="true">
+  <xs:element name="VesselCategoryText" type="nc:TextType" substitutionGroup="m:VesselCategoryAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A kind of vessel based upon the purpose for which the vessel was designed or built.</xs:documentation>
     </xs:annotation>
@@ -2867,12 +2839,12 @@
       <xs:documentation>An entity that chartered a vessel.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="VesselClass" abstract="true">
+  <xs:element name="VesselClassAbstract" abstract="true">
     <xs:annotation>
       <xs:documentation>A data concept for a class or category of a vessel.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="VesselClassText" type="nc:TextType" substitutionGroup="m:VesselClass" nillable="true">
+  <xs:element name="VesselClassText" type="nc:TextType" substitutionGroup="m:VesselClassAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A class or category of a vessel.</xs:documentation>
     </xs:annotation>
@@ -3002,27 +2974,27 @@
       <xs:documentation>A home port of a vessel.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="VesselHullCategory" abstract="true">
+  <xs:element name="VesselHullCategoryAbstract" abstract="true">
     <xs:annotation>
       <xs:documentation>A data concept for a category or kind of a hull of a vessel.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="VesselHullCategoryText" type="nc:TextType" substitutionGroup="m:VesselHullCategory" nillable="true">
+  <xs:element name="VesselHullCategoryText" type="nc:TextType" substitutionGroup="m:VesselHullCategoryAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A kind of a hull of a vessel.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="VesselHullColor" abstract="true">
+  <xs:element name="VesselHullColorAbstract" abstract="true">
     <xs:annotation>
       <xs:documentation>A data concept for a primary color of the hull of a vessel.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="VesselHullColorCode" type="ncic:VCOCodeType" substitutionGroup="m:VesselHullColor" nillable="true">
+  <xs:element name="VesselHullColorCode" type="ncic:VCOCodeType" substitutionGroup="m:VesselHullColorAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A primary color of a hull of a vessel.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="VesselHullColorText" type="nc:TextType" substitutionGroup="m:VesselHullColor" nillable="true">
+  <xs:element name="VesselHullColorText" type="nc:TextType" substitutionGroup="m:VesselHullColorAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A primary color of a hull of a vessel.</xs:documentation>
     </xs:annotation>
@@ -3137,12 +3109,12 @@
       <xs:documentation>A name of a vessel.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="VesselNationalFlag" abstract="true">
+  <xs:element name="VesselNationalFlagAbstract" abstract="true">
     <xs:annotation>
       <xs:documentation>A data concept for a country under which a vessel sails.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="VesselNationalFlagISO3166Alpha2Code" type="iso_3166:CountryAlpha2CodeType" substitutionGroup="m:VesselNationalFlag" nillable="true">
+  <xs:element name="VesselNationalFlagISO3166Alpha2Code" type="iso_3166:CountryAlpha2CodeType" substitutionGroup="m:VesselNationalFlagAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A national flag under which a vessel sails.</xs:documentation>
     </xs:annotation>
@@ -3152,7 +3124,7 @@
       <xs:documentation>An image of a national flag under which a vessel sails.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="VesselNationalFlagText" type="nc:TextType" substitutionGroup="m:VesselNationalFlag" nillable="true">
+  <xs:element name="VesselNationalFlagText" type="nc:TextType" substitutionGroup="m:VesselNationalFlagAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A national flag under which a vessel sails.</xs:documentation>
     </xs:annotation>
@@ -3182,17 +3154,17 @@
       <xs:documentation>An Official United States Coast Guard Number (USCG Official Number) of a vessel.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="VesselOperationalConditionOfEquipment" abstract="true">
+  <xs:element name="VesselOperationalConditionOfEquipmentAbstract" abstract="true">
     <xs:annotation>
       <xs:documentation>A data concept for a description of the Operational Condition of Equipment (OCE) of a vessel.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="VesselOperationalConditionOfEquipmentCode" type="m:VesselOperationalConditionOfEquipmentCodeType" substitutionGroup="m:VesselOperationalConditionOfEquipment" nillable="true">
+  <xs:element name="VesselOperationalConditionOfEquipmentCode" type="m:VesselOperationalConditionOfEquipmentCodeType" substitutionGroup="m:VesselOperationalConditionOfEquipmentAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A code indicating the Operational Condition of Equipment (OCE) of a vessel.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="VesselOperationalConditionOfEquipmentDescriptionText" type="nc:TextType" substitutionGroup="m:VesselOperationalConditionOfEquipment" nillable="true">
+  <xs:element name="VesselOperationalConditionOfEquipmentDescriptionText" type="nc:TextType" substitutionGroup="m:VesselOperationalConditionOfEquipmentAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A description of the Operational Condition of Equipment (OCE) of a vessel.</xs:documentation>
     </xs:annotation>
@@ -3217,12 +3189,12 @@
       <xs:documentation>An entity that owns a vessel.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="VesselPersonRole" abstract="true">
+  <xs:element name="VesselPersonRoleAbstract" abstract="true">
     <xs:annotation>
       <xs:documentation>A data concept for a role that a non-crewmember plays aboard a vessel (e.g., passenger, maintenance person, stowaway).</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="VesselPersonRoleText" type="nc:TextType" substitutionGroup="m:VesselPersonRole" nillable="true">
+  <xs:element name="VesselPersonRoleText" type="nc:TextType" substitutionGroup="m:VesselPersonRoleAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A role that a non-crew person plays aboard a vessel (e.g., passenger, maintenance person, stowaway).</xs:documentation>
     </xs:annotation>
@@ -3272,17 +3244,17 @@
       <xs:documentation>A kind of vessel, a subcategory of VesselCategoryText.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="VesselSuperstructureColor" abstract="true">
+  <xs:element name="VesselSuperstructureColorAbstract" abstract="true">
     <xs:annotation>
       <xs:documentation>A data concept for a primary color of a superstructure of a vessel.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="VesselSuperstructureColorCode" type="ncic:VCOCodeType" substitutionGroup="m:VesselSuperstructureColor" nillable="true">
+  <xs:element name="VesselSuperstructureColorCode" type="ncic:VCOCodeType" substitutionGroup="m:VesselSuperstructureColorAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A primary color of a superstructure of a vessel.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="VesselSuperstructureColorText" type="nc:TextType" substitutionGroup="m:VesselSuperstructureColor" nillable="true">
+  <xs:element name="VesselSuperstructureColorText" type="nc:TextType" substitutionGroup="m:VesselSuperstructureColorAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A primary color of a superstructure of a vessel.</xs:documentation>
     </xs:annotation>
@@ -3362,12 +3334,12 @@
       <xs:documentation>A date and time a voyage begins.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="VoyageCategory" abstract="true">
+  <xs:element name="VoyageCategoryAbstract" abstract="true">
     <xs:annotation>
       <xs:documentation>A data concept for a kind of a voyage.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="VoyageCategoryText" type="nc:TextType" substitutionGroup="m:VoyageCategory" nillable="true">
+  <xs:element name="VoyageCategoryText" type="nc:TextType" substitutionGroup="m:VoyageCategoryAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A kind of a voyage.</xs:documentation>
     </xs:annotation>

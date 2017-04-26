@@ -1,29 +1,12 @@
 <?xml version="1.0" encoding="US-ASCII"?>
-<xs:schema targetNamespace="http://release.niem.gov/niem/domains/internationalTrade/4.0/" version="alpha1" xsi:schemaLocation="http://release.niem.gov/niem/appinfo/3.0/ ../../../appinfo/3.0/appinfo.xsd http://release.niem.gov/niem/conformanceTargets/3.0/ ../../../conformanceTargets/3.0/conformanceTargets.xsd http://release.niem.gov/niem/localTerminology/3.0/ ../../../localTerminology/3.0/localTerminology.xsd" ct:conformanceTargets="http://reference.niem.gov/niem/specification/naming-and-design-rules/3.0/#ReferenceSchemaDocument" xmlns:cbrn="http://release.niem.gov/niem/domains/cbrn/4.0/" xmlns:scr="http://release.niem.gov/niem/domains/screening/4.0/" xmlns:ct="http://release.niem.gov/niem/conformanceTargets/3.0/" xmlns:nc="http://release.niem.gov/niem/niem-core/4.0/" xmlns:term="http://release.niem.gov/niem/localTerminology/3.0/" xmlns:structures="http://release.niem.gov/niem/structures/3.0/" xmlns:appinfo="http://release.niem.gov/niem/appinfo/3.0/" xmlns:itcodes="http://release.niem.gov/niem/codes/it_codes/4.0/" xmlns:j="http://release.niem.gov/niem/domains/jxdm/6.0/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:iso_3166="http://release.niem.gov/niem/codes/iso_3166-1/4.0/" xmlns:it="http://release.niem.gov/niem/domains/internationalTrade/4.0/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:niem-xs="http://release.niem.gov/niem/proxy/xsd/4.0/">
+<xs:schema targetNamespace="http://release.niem.gov/niem/domains/internationalTrade/4.0/" version="beta1" xsi:schemaLocation="http://release.niem.gov/niem/appinfo/4.0/ ../../../appinfo/4.0/appinfo.xsd http://release.niem.gov/niem/conformanceTargets/3.0/ ../../../conformanceTargets/3.0/conformanceTargets.xsd" ct:conformanceTargets="http://reference.niem.gov/niem/specification/naming-and-design-rules/4.0/#ReferenceSchemaDocument" xmlns:cbrn="http://release.niem.gov/niem/domains/cbrn/4.0/" xmlns:structures="http://release.niem.gov/niem/structures/4.0/" xmlns:appinfo="http://release.niem.gov/niem/appinfo/4.0/" xmlns:scr="http://release.niem.gov/niem/domains/screening/4.0/" xmlns:ct="http://release.niem.gov/niem/conformanceTargets/3.0/" xmlns:nc="http://release.niem.gov/niem/niem-core/4.0/" xmlns:itcodes="http://release.niem.gov/niem/codes/it_codes/4.0/" xmlns:j="http://release.niem.gov/niem/domains/jxdm/6.0/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:iso_3166="http://release.niem.gov/niem/codes/iso_3166-1/4.0/" xmlns:it="http://release.niem.gov/niem/domains/internationalTrade/4.0/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:niem-xs="http://release.niem.gov/niem/proxy/xsd/4.0/">
   <xs:annotation>
     <xs:documentation>International Trade</xs:documentation>
-    <xs:appinfo>
-      <term:LocalTerm term="IATA" literal="International Air Transport Association"/>
-      <term:LocalTerm term="MFA" literal="Multi Fibre Arrangement"/>
-      <term:LocalTerm term="CHAI" literal="HMRC Charity application form"/>
-      <term:LocalTerm term="ISO" literal="International Organization for Standardization"/>
-      <term:LocalTerm term="INCOTERMS" literal="International Commercial Terms"/>
-      <term:LocalTerm term="IMO" literal="International Maritime Organization"/>
-      <term:LocalTerm term="SCAC" literal="Standard Carrier Alpha Code"/>
-      <term:LocalTerm term="UCR" literal="Unique Customs Reference"/>
-      <term:LocalTerm term="NTN" literal="National Training Numbers"/>
-      <term:LocalTerm term="EMS" literal="Emergency Medical Service"/>
-      <term:LocalTerm term="HTS" literal="Harmonized Tariff Schedule"/>
-      <term:LocalTerm term="ChA1" literal="HMRC Charity application form"/>
-      <term:LocalTerm term="UNDG" literal="United Nations Development Group"/>
-      <term:LocalTerm term="VIR" literal="Vehicle Inspection Report"/>
-      <term:LocalTerm term="WCO" literal="World Customs Organization"/>
-    </xs:appinfo>
   </xs:annotation>
   <xs:import schemaLocation="../../jxdm/6.0/jxdm.xsd" namespace="http://release.niem.gov/niem/domains/jxdm/6.0/"/>
-  <xs:import schemaLocation="../../../structures/3.0/structures.xsd" namespace="http://release.niem.gov/niem/structures/3.0/"/>
+  <xs:import schemaLocation="../../../structures/4.0/structures.xsd" namespace="http://release.niem.gov/niem/structures/4.0/"/>
   <xs:import schemaLocation="../../cbrn/4.0/cbrn.xsd" namespace="http://release.niem.gov/niem/domains/cbrn/4.0/"/>
-  <xs:import schemaLocation="../../../codes/iso_3166-1/4.0/iso_3166-1.xsd" namespace="http://release.niem.gov/niem/codes/iso_3166-1/4.0/"/>
+  <xs:import schemaLocation="../../../codes/iso_3166-1/4.0/iso_3166.xsd" namespace="http://release.niem.gov/niem/codes/iso_3166-1/4.0/"/>
   <xs:import schemaLocation="../../../proxy/xsd/4.0/xs.xsd" namespace="http://release.niem.gov/niem/proxy/xsd/4.0/"/>
   <xs:import schemaLocation="../../../niem-core/4.0/niem-core.xsd" namespace="http://release.niem.gov/niem/niem-core/4.0/"/>
   <xs:import schemaLocation="../../../codes/it_codes/4.0/it_codes.xsd" namespace="http://release.niem.gov/niem/codes/it_codes/4.0/"/>
@@ -38,7 +21,7 @@
           <xs:element ref="it:AdditionalDocumentName" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="it:AdditionalDocumentRefNumberID" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:Address" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="it:AdditionalDocumentCategory" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="it:AdditionalDocumentCategoryAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="it:AdditionalDocumentAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
       </xs:extension>
@@ -56,7 +39,7 @@
           <xs:element ref="it:InspectionRequestDate" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="it:CertificateContentText" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="scr:CountrySubdivisionName" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="scr:CountrySubdivisionCategory" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="scr:CountrySubdivisionCategoryAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="it:AdditionalInformationAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
       </xs:extension>
@@ -180,7 +163,7 @@
     <xs:complexContent>
       <xs:extension base="structures:ObjectType">
         <xs:sequence>
-          <xs:element ref="it:CarrierCodeDesignator" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="it:CarrierCodeAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="it:CarrierIdentification" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="it:CarrierIDCategory" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="it:CarrierName" minOccurs="0" maxOccurs="unbounded"/>
@@ -275,8 +258,8 @@
           <xs:element ref="it:ConsignmentItemIdentification" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="it:ConsignmentItemVolumeMeasure" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="it:HazardousMaterialData" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="it:ConsignmentItemShape" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="it:ExaminationPlace" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="it:ConsignmentItemShapeAbstract" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="it:ExaminationPlaceAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="it:ConsignmentItemAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
       </xs:extension>
@@ -646,7 +629,7 @@
           <xs:element ref="it:GoodsItemStatisticalValueAmount" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="it:CustomsValuationAmount" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="it:CustomsStatus" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="it:ExaminationPlace" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="it:ExaminationPlaceAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="it:GoodsItemAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
       </xs:extension>
@@ -688,8 +671,8 @@
     <xs:complexContent>
       <xs:extension base="nc:LocationType">
         <xs:sequence>
-          <xs:element ref="it:GoodsManufacturedCountryOrigin" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="it:GoodsManufacturedRegionOrigin" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="it:GoodsManufacturedCountryOriginAbstract" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="it:GoodsManufacturedRegionOriginAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="it:GoodsOriginAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
       </xs:extension>
@@ -725,7 +708,7 @@
           <xs:element ref="it:ForeignTradeZone" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="it:SequenceNumeric" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="it:ExitDate" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="it:GoodsCountryExport" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="it:GoodsCountryExportAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="it:GoodsShipmentAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
       </xs:extension>
@@ -856,7 +839,7 @@
           <xs:element ref="it:ItineraryArrivalDate" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="it:ItineraryDepartureDate" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="it:ItineraryLocationCategoryText" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="it:ItineraryLocationKind" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="it:ItineraryLocationKindAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="it:ItineraryAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
       </xs:extension>
@@ -987,7 +970,7 @@
         <xs:sequence>
           <xs:element ref="it:PaymentMethodCategoryText" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="it:ObligationGuarantee" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="it:DutyTaxPaymentMethod" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="it:DutyTaxPaymentMethodAbstract" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -1017,7 +1000,7 @@
           <xs:element ref="it:PackageItemQuantity" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="it:PackageShippingMarksDescriptionText" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="it:ConsignmentTotalPackageQuantity" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="it:PackageItemCategory" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="it:PackageItemCategoryAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="it:PackageAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
       </xs:extension>
@@ -1160,8 +1143,8 @@
         <xs:sequence>
           <xs:element ref="it:SealID" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="it:SealIssuerName" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="it:SealIntactStatus" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="it:SealVerificationStatus" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="it:SealIntactStatusAbstract" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="it:SealVerificationStatusAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="it:TradeParty" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="cbrn:RemarkText" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="it:SealAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
@@ -1192,7 +1175,7 @@
       <xs:extension base="structures:ObjectType">
         <xs:sequence>
           <xs:element ref="it:ContainerID" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="cbrn:IDAcquisitionMethod" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="cbrn:IDAcquisitionMethodAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="it:ShippingContainerIdentificationAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
       </xs:extension>
@@ -1248,8 +1231,8 @@
           <xs:element ref="it:ShippingContainerCargoItem" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="it:ShippingContainerLoadedText" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="it:ShippingContainerLegalStatusIndicator" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="it:ShippingContainerISO6346" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="it:ShippingContainerKind" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="it:ShippingContainerISO6346Abstract" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="it:ShippingContainerKindAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="cbrn:ConveyancePrimaryColorCode" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="cbrn:ConveyanceSecondaryColorCode" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="cbrn:RemarkText" minOccurs="0" maxOccurs="unbounded"/>
@@ -1366,7 +1349,7 @@
         <xs:sequence>
           <xs:element ref="it:TransportActivityLocation" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:LocationName" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="it:LocationActivity" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="it:LocationActivityAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:LocationCountry" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:LocationState" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="it:TransportActivityLocationAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
@@ -1454,7 +1437,7 @@
           <xs:element ref="it:TransportMeansConveyance" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="it:TransportMeansDeparture" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="it:TransportMeansItinerary" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="it:TransportMeansModeOfTransportation" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="it:TransportMeansModeOfTransportationAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="cbrn:RemarkText" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="it:TransportMeansAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
@@ -1508,7 +1491,7 @@
           <xs:element ref="it:CargoWarehouseDate" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="it:CargoWarehouseIdentification" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="it:NotifyParty" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="it:UnloadingLocationCategory" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="it:UnloadingLocationCategoryAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="it:UnloadingLocationAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
       </xs:extension>
@@ -1604,12 +1587,12 @@
       <xs:documentation>An augmentation point for AdditionalDocumentType.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="AdditionalDocumentCategory" abstract="true">
+  <xs:element name="AdditionalDocumentCategoryAbstract" abstract="true">
     <xs:annotation>
       <xs:documentation>A data concept for a code specifying the category of AdditionalDocument</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="AdditionalDocumentCategoryCode" type="itcodes:DocumentCategoryCodeType" substitutionGroup="it:AdditionalDocumentCategory" nillable="true">
+  <xs:element name="AdditionalDocumentCategoryCode" type="itcodes:DocumentCategoryCodeType" substitutionGroup="it:AdditionalDocumentCategoryAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A Code specifying the category of AdditionalDocument</xs:documentation>
     </xs:annotation>
@@ -1794,17 +1777,17 @@
       <xs:documentation>An augmentation point for CarrierType.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="CarrierCodeDesignator" abstract="true">
+  <xs:element name="CarrierCodeAbstract" abstract="true">
     <xs:annotation>
       <xs:documentation>A data concept for containing the code assigned to an organization recognized as an authorized conveyance owner</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="CarrierCodeText" type="nc:TextType" substitutionGroup="it:CarrierCodeDesignator" nillable="true">
+  <xs:element name="CarrierCodeText" type="nc:TextType" substitutionGroup="it:CarrierCodeAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A description of the code assigned  to an organization recognized as an authorized conveyance owner</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="CarrierCodeTextIATACarrierCodeText" type="nc:TextType" substitutionGroup="it:CarrierCodeDesignator" nillable="true">
+  <xs:element name="CarrierCodeTextIATACarrierCodeText" type="nc:TextType" substitutionGroup="it:CarrierCodeAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A code assigned  to an IATA organization recognized as an authorized conveyance owner</xs:documentation>
     </xs:annotation>
@@ -1969,12 +1952,12 @@
       <xs:documentation>An individual consignment item's packaging information.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="ConsignmentItemShape" abstract="true">
+  <xs:element name="ConsignmentItemShapeAbstract" abstract="true">
     <xs:annotation>
       <xs:documentation>A data concept for a shape of a consignment Item. If shape is Other, then a description should be provided in it:ConsignmentItemShapeDescriptionText.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="ConsignmentItemShapeCode" type="itcodes:ShapeCodeType" substitutionGroup="it:ConsignmentItemShape" nillable="true">
+  <xs:element name="ConsignmentItemShapeCode" type="itcodes:ShapeCodeType" substitutionGroup="it:ConsignmentItemShapeAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A shape of a consignment Item. If shape is Other, then a description should be provided in it:ConsignmentItemShapeDescriptionText.</xs:documentation>
     </xs:annotation>
@@ -2424,12 +2407,12 @@
       <xs:documentation>A kind of duty regime.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="DutyTaxPaymentMethod" abstract="true">
+  <xs:element name="DutyTaxPaymentMethodAbstract" abstract="true">
     <xs:annotation>
       <xs:documentation>A data concept for a code identifying the method of payment for the Duty Tax.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="DutyTaxPaymentMethodCode" type="itcodes:DutyTaxPaymentMethodCodeType" substitutionGroup="it:DutyTaxPaymentMethod" nillable="true">
+  <xs:element name="DutyTaxPaymentMethodCode" type="itcodes:DutyTaxPaymentMethodCodeType" substitutionGroup="it:DutyTaxPaymentMethodAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A code identifying the method of payment for the Duty Tax.</xs:documentation>
     </xs:annotation>
@@ -2494,12 +2477,12 @@
       <xs:documentation>A date which is estimated to be the date and time of departure of the means of transport.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="ExaminationPlace" abstract="true">
+  <xs:element name="ExaminationPlaceAbstract" abstract="true">
     <xs:annotation>
       <xs:documentation>A data concept for an identification of a place where goods are to be examined if this place is different from the place where the goods are located</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="ExaminationPlaceCode" type="itcodes:ExaminationPlaceCategoryCodeType" substitutionGroup="it:ExaminationPlace" nillable="true">
+  <xs:element name="ExaminationPlaceCode" type="itcodes:ExaminationPlaceCategoryCodeType" substitutionGroup="it:ExaminationPlaceAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>An identification of a place where goods are to be examined if this place is different from the place where the goods are located</xs:documentation>
     </xs:annotation>
@@ -2574,12 +2557,12 @@
       <xs:documentation>A name of the place in country from which the goods were initially dispatched to the importing country</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="GoodsCountryExport" abstract="true">
+  <xs:element name="GoodsCountryExportAbstract" abstract="true">
     <xs:annotation>
       <xs:documentation>A data concept for a code used to identify the original exporting country for goods; without any commercial transaction in intermediate countries.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="GoodsCountryExportCode" type="iso_3166:CountryAlpha2CodeType" substitutionGroup="it:GoodsCountryExport" nillable="true">
+  <xs:element name="GoodsCountryExportCode" type="iso_3166:CountryAlpha2CodeType" substitutionGroup="it:GoodsCountryExportAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A code used to identify the original exporting country for goods; without any commercial transaction in intermediate countries.</xs:documentation>
     </xs:annotation>
@@ -2674,22 +2657,22 @@
       <xs:documentation>A kind of place where goods are located.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="GoodsManufacturedCountryOrigin" abstract="true">
+  <xs:element name="GoodsManufacturedCountryOriginAbstract" abstract="true">
     <xs:annotation>
       <xs:documentation>A data concept for a code to identify the country in which the goods have been produced or manufactured, according to criteria laid down for the application of the Customs tariff or quantitative restrictions, or any measure related to trade.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="GoodsManufacturedCountryOriginCode" type="iso_3166:CountryAlpha2CodeType" substitutionGroup="it:GoodsManufacturedCountryOrigin" nillable="true">
+  <xs:element name="GoodsManufacturedCountryOriginCode" type="iso_3166:CountryAlpha2CodeType" substitutionGroup="it:GoodsManufacturedCountryOriginAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A code to identify the country in which the goods have been produced or manufactured, according to criteria laid down for the application of the Customs tariff or quantitative restrictions, or any measure related to trade.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="GoodsManufacturedRegionOrigin" abstract="true">
+  <xs:element name="GoodsManufacturedRegionOriginAbstract" abstract="true">
     <xs:annotation>
       <xs:documentation>A data concept for a region in which the goods have been produced or manufactured, according to criteria laid down for the purposes of application of the Customs tariff, or quantitative restrictions, or of any other measure related to trade.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="GoodsManufacturedRegionOriginCode" type="iso_3166:CountryAlpha2CodeType" substitutionGroup="it:GoodsManufacturedRegionOrigin" nillable="true">
+  <xs:element name="GoodsManufacturedRegionOriginCode" type="iso_3166:CountryAlpha2CodeType" substitutionGroup="it:GoodsManufacturedRegionOriginAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A region in which the goods have been produced or manufactured, according to criteria laid down for the purposes of application of the Customs tariff, or quantitative restrictions, or of any other measure related to trade.</xs:documentation>
     </xs:annotation>
@@ -3034,12 +3017,12 @@
       <xs:documentation>A kind of "port of call" or other location of the itinerary of the means of transport.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="ItineraryLocationKind" abstract="true">
+  <xs:element name="ItineraryLocationKindAbstract" abstract="true">
     <xs:annotation>
       <xs:documentation>A data concept for a kind of  itinerary location.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="ItineraryLocationKindCode" type="itcodes:LocationKindCodeType" substitutionGroup="it:ItineraryLocationKind" nillable="true">
+  <xs:element name="ItineraryLocationKindCode" type="itcodes:LocationKindCodeType" substitutionGroup="it:ItineraryLocationKindAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A kind of  itinerary location.</xs:documentation>
     </xs:annotation>
@@ -3099,17 +3082,17 @@
       <xs:documentation>An Organization, Person or Thing associated with processing a Cargo entry.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="LocationActivity" abstract="true">
+  <xs:element name="LocationActivityAbstract" abstract="true">
     <xs:annotation>
       <xs:documentation>A data concept for an activity name.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="LocationActivityCode" type="itcodes:LocationActivityCodeType" substitutionGroup="it:LocationActivity" nillable="true">
+  <xs:element name="LocationActivityCode" type="itcodes:LocationActivityCodeType" substitutionGroup="it:LocationActivityAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>An activity name.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="LocationCategoryCodeText" type="nc:TextType" substitutionGroup="nc:LocationCategory" nillable="true">
+  <xs:element name="LocationCategoryCodeText" type="nc:TextType" substitutionGroup="nc:LocationCategoryAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A category of operation performed at a given Location</xs:documentation>
     </xs:annotation>
@@ -3129,12 +3112,17 @@
       <xs:documentation>A category of location in the context of the activity under consideration(ex. Export port, import port..)</xs:documentation>
     </xs:annotation>
   </xs:element>
+  <xs:element name="LocationFunctionAbstract" abstract="true">
+    <xs:annotation>
+      <xs:documentation>A data concept for a Location Categorized on the Function that it performs</xs:documentation>
+    </xs:annotation>
+  </xs:element>
   <xs:element name="LocationFunctionAugmentationPoint" abstract="true">
     <xs:annotation>
       <xs:documentation>An augmentation point for LocationFunctionType.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="LocationFunctionCode" type="itcodes:LocationFunctionCodeType" substitutionGroup="it:LocationFunctionDesignator" nillable="true">
+  <xs:element name="LocationFunctionCode" type="itcodes:LocationFunctionCodeType" substitutionGroup="it:LocationFunctionAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A location categorized on the function that it performs</xs:documentation>
     </xs:annotation>
@@ -3142,11 +3130,6 @@
   <xs:element name="LocationFunctionDescriptionText" type="nc:TextType" nillable="true">
     <xs:annotation>
       <xs:documentation>A description of the function (as per WCO definition) that is conducted at the location.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="LocationFunctionDesignator" abstract="true">
-    <xs:annotation>
-      <xs:documentation>A data concept for a Location Categorized on the Function that it performs</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="MFACodeText" type="nc:TextType" nillable="true">
@@ -3315,12 +3298,12 @@
       <xs:documentation>A textual description of the package group code.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="PackageItemCategory" abstract="true">
+  <xs:element name="PackageItemCategoryAbstract" abstract="true">
     <xs:annotation>
       <xs:documentation>A data concept for a code specifying the type of package of an item.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="PackageItemCategoryCode" type="itcodes:UNECECategoryCodeType" substitutionGroup="it:PackageItemCategory" nillable="true">
+  <xs:element name="PackageItemCategoryCode" type="itcodes:UNECECategoryCodeType" substitutionGroup="it:PackageItemCategoryAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A code specifying the type of package of an item.</xs:documentation>
     </xs:annotation>
@@ -3510,12 +3493,17 @@
       <xs:documentation>A Category of the role played by an organization in the given context of the transaction(Ex. Clearing house, Brokerage house...)</xs:documentation>
     </xs:annotation>
   </xs:element>
+  <xs:element name="RoleOfOrganizationCategoryAbstract" abstract="true">
+    <xs:annotation>
+      <xs:documentation>A data concept for a role played by the Party/Organization in the given context of a transaction</xs:documentation>
+    </xs:annotation>
+  </xs:element>
   <xs:element name="RoleOfOrganizationCategoryAugmentationPoint" abstract="true">
     <xs:annotation>
       <xs:documentation>An augmentation point for RoleOfOrganizationCategoryType.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="RoleOfOrganizationCategoryCode" type="itcodes:RoleOfPartyCategoryCodeType" substitutionGroup="it:RoleOfOrganizationCategoryDesignator" nillable="true">
+  <xs:element name="RoleOfOrganizationCategoryCode" type="itcodes:RoleOfPartyCategoryCodeType" substitutionGroup="it:RoleOfOrganizationCategoryAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A role played by the Party/Organization in the given context of a transaction</xs:documentation>
     </xs:annotation>
@@ -3523,11 +3511,6 @@
   <xs:element name="RoleOfOrganizationCategoryDescriptionText" type="nc:TextType" nillable="true">
     <xs:annotation>
       <xs:documentation>A text description of the role played by the party/organization in a given transaction.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="RoleOfOrganizationCategoryDesignator" abstract="true">
-    <xs:annotation>
-      <xs:documentation>A data concept for a role played by the Party/Organization in the given context of a transaction</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="RoleOfParty" type="it:PartyType" nillable="true">
@@ -3540,7 +3523,12 @@
       <xs:documentation>A data type identifying the role of the Organization, Person or Thing associated with processing a Cargo entry.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="RoleOfPartyCategoryCode" type="itcodes:RoleOfPartyCategoryCodeType" substitutionGroup="it:RoleOfPartyCategoryDesignator" nillable="true">
+  <xs:element name="RoleOfPartyCategoryAbstract" abstract="true">
+    <xs:annotation>
+      <xs:documentation>A data concept for a role played by the Party/Organization in the given context of a transaction</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="RoleOfPartyCategoryCode" type="itcodes:RoleOfPartyCategoryCodeType" substitutionGroup="it:RoleOfPartyCategoryAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A role played by the Party/Organization in the given context of a transaction</xs:documentation>
     </xs:annotation>
@@ -3548,11 +3536,6 @@
   <xs:element name="RoleOfPartyCategoryDescriptionText" type="nc:TextType" nillable="true">
     <xs:annotation>
       <xs:documentation>A description of the role of the Party in a given context/transaction</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="RoleOfPartyCategoryDesignator" abstract="true">
-    <xs:annotation>
-      <xs:documentation>A data concept for a role played by the Party/Organization in the given context of a transaction</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="Seal" type="it:SealType" nillable="true">
@@ -3570,12 +3553,12 @@
       <xs:documentation>An identifier of a seal.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="SealIntactStatus" abstract="true">
+  <xs:element name="SealIntactStatusAbstract" abstract="true">
     <xs:annotation>
       <xs:documentation>A data concept for a condition status of a seal.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="SealIntactStatusCode" type="itcodes:SealIntactStatusCodeType" substitutionGroup="it:SealIntactStatus" nillable="true">
+  <xs:element name="SealIntactStatusCode" type="itcodes:SealIntactStatusCodeType" substitutionGroup="it:SealIntactStatusAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A description of the condition status of a seal.</xs:documentation>
     </xs:annotation>
@@ -3585,12 +3568,12 @@
       <xs:documentation>A name of the organization that issued a seal.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="SealVerificationStatus" abstract="true">
+  <xs:element name="SealVerificationStatusAbstract" abstract="true">
     <xs:annotation>
       <xs:documentation>A data concept for a seal verification state.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="SealVerificationStatusCode" type="itcodes:SealVerificationStatusCodeType" substitutionGroup="it:SealVerificationStatus" nillable="true">
+  <xs:element name="SealVerificationStatusCode" type="itcodes:SealVerificationStatusCodeType" substitutionGroup="it:SealVerificationStatusAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A seal verification state.</xs:documentation>
     </xs:annotation>
@@ -3660,12 +3643,12 @@
       <xs:documentation>A weight of a shipping container when empty.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="ShippingContainerISO6346" abstract="true">
+  <xs:element name="ShippingContainerISO6346Abstract" abstract="true">
     <xs:annotation>
       <xs:documentation>A data concept for a container ISO6346 code.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="ShippingContainerISO6346Code" type="itcodes:ContainerISO6346CodeType" substitutionGroup="it:ShippingContainerISO6346" nillable="true">
+  <xs:element name="ShippingContainerISO6346Code" type="itcodes:ContainerISO6346CodeType" substitutionGroup="it:ShippingContainerISO6346Abstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A container's ISO6346 code.</xs:documentation>
     </xs:annotation>
@@ -3680,12 +3663,12 @@
       <xs:documentation>An augmentation point for ContainerIdentificationType.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="ShippingContainerKind" abstract="true">
+  <xs:element name="ShippingContainerKindAbstract" abstract="true">
     <xs:annotation>
       <xs:documentation>A data concept for a description of a kind of container.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="ShippingContainerKindCode" type="itcodes:ContainerKindCodeType" substitutionGroup="it:ShippingContainerKind" nillable="true">
+  <xs:element name="ShippingContainerKindCode" type="itcodes:ContainerKindCodeType" substitutionGroup="it:ShippingContainerKindAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A description of a kind of container.</xs:documentation>
     </xs:annotation>
@@ -3785,19 +3768,19 @@
       <xs:documentation>A set of information about a trading party.</xs:documentation>
     </xs:annotation>
   </xs:element>
+  <xs:element name="TradePartyAbstract" abstract="true">
+    <xs:annotation>
+      <xs:documentation>A data concept for a role of an organization that issues a seal.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
   <xs:element name="TradePartyAugmentationPoint" abstract="true">
     <xs:annotation>
       <xs:documentation>An augmentation point for TradePartyType.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="TradePartyCode" type="itcodes:RoleOfPartyCategoryCodeType" substitutionGroup="it:TradePartyDesignator" nillable="true">
+  <xs:element name="TradePartyCode" type="itcodes:RoleOfPartyCategoryCodeType" substitutionGroup="it:TradePartyAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A role of an organization that issues a seal.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="TradePartyDesignator" abstract="true">
-    <xs:annotation>
-      <xs:documentation>A data concept for a role of an organization that issues a seal.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="TradeTerm" type="it:TradeTermType" nillable="true">
@@ -4015,12 +3998,12 @@
       <xs:documentation>An itinerary of the of the Transport Means</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="TransportMeansModeOfTransportation" abstract="true">
+  <xs:element name="TransportMeansModeOfTransportationAbstract" abstract="true">
     <xs:annotation>
       <xs:documentation>A data concept for a mode of means of transport like air, sea, land.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="TransportMeansModeOfTransportationCode" type="itcodes:TransportMeansCodeType" substitutionGroup="it:TransportMeansModeOfTransportation" nillable="true">
+  <xs:element name="TransportMeansModeOfTransportationCode" type="itcodes:TransportMeansCodeType" substitutionGroup="it:TransportMeansModeOfTransportationAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A mode of means of transport like air, sea, land.</xs:documentation>
     </xs:annotation>
@@ -4150,12 +4133,12 @@
       <xs:documentation>An augmentation point for UnloadingLocationType.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="UnloadingLocationCategory" abstract="true">
+  <xs:element name="UnloadingLocationCategoryAbstract" abstract="true">
     <xs:annotation>
       <xs:documentation>A data concept for a code to identify a seaport, airport, freight terminal, rail station or other place at which goods are unloaded from the transport means used for their carriage.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="UnloadingLocationCategoryCode" type="itcodes:LocationFunctionCodeType" substitutionGroup="it:UnloadingLocationCategory" nillable="true">
+  <xs:element name="UnloadingLocationCategoryCode" type="itcodes:LocationFunctionCodeType" substitutionGroup="it:UnloadingLocationCategoryAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A code to identify a seaport, airport, freight terminal, rail station or other place at which goods are unloaded from the transport means used for their carriage.</xs:documentation>
     </xs:annotation>
@@ -4205,19 +4188,19 @@
       <xs:documentation>A category of the document(ex. Whether it is a invoice, bill of lading..)</xs:documentation>
     </xs:annotation>
   </xs:element>
+  <xs:element name="WCODocumentCategoryAbstract" abstract="true">
+    <xs:annotation>
+      <xs:documentation>A data concept for a category of the document(ex. Whether it is a invoice, bill of lading..)</xs:documentation>
+    </xs:annotation>
+  </xs:element>
   <xs:element name="WCODocumentCategoryAugmentationPoint" abstract="true">
     <xs:annotation>
       <xs:documentation>An augmentation point for WCODocumentCategoryType.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="WCODocumentCategoryCode" type="itcodes:DocumentCategoryCodeType" substitutionGroup="it:WCODocumentCategoryDesignator" nillable="true">
+  <xs:element name="WCODocumentCategoryCode" type="itcodes:DocumentCategoryCodeType" substitutionGroup="it:WCODocumentCategoryAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A category of the document(ex. Whether it is a invoice, bill of lading..)</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="WCODocumentCategoryDesignator" abstract="true">
-    <xs:annotation>
-      <xs:documentation>A data concept for a category of the document(ex. Whether it is a invoice, bill of lading..)</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="WCODocumentFunctionCategory" type="it:WCODocumentFunctionCategoryType" nillable="true">
@@ -4225,19 +4208,19 @@
       <xs:documentation>A category of the document(ex. Whether it is a invoice, bill of lading..)</xs:documentation>
     </xs:annotation>
   </xs:element>
+  <xs:element name="WCODocumentFunctionCategoryAbstract" abstract="true">
+    <xs:annotation>
+      <xs:documentation>A data concept for a code indicating the function of a document.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
   <xs:element name="WCODocumentFunctionCategoryAugmentationPoint" abstract="true">
     <xs:annotation>
       <xs:documentation>An augmentation point for WCODocumentFunctionCategoryType.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="WCODocumentFunctionCategoryCode" type="itcodes:DocumentCategoryCodeType" substitutionGroup="it:WCODocumentFunctionCategoryDesignator" nillable="true">
+  <xs:element name="WCODocumentFunctionCategoryCode" type="itcodes:DocumentCategoryCodeType" substitutionGroup="it:WCODocumentFunctionCategoryAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A code indicating the function of a document.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="WCODocumentFunctionCategoryDesignator" abstract="true">
-    <xs:annotation>
-      <xs:documentation>A data concept for a code indicating the function of a document.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="WCODocumentNameCategoryAugmentationPoint" abstract="true">

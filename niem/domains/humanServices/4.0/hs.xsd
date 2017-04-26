@@ -1,26 +1,15 @@
 <?xml version="1.0" encoding="US-ASCII"?>
-<xs:schema targetNamespace="http://release.niem.gov/niem/domains/humanServices/4.0/" version="alpha1" xsi:schemaLocation="http://release.niem.gov/niem/appinfo/3.0/ ../../../appinfo/3.0/appinfo.xsd http://release.niem.gov/niem/conformanceTargets/3.0/ ../../../conformanceTargets/3.0/conformanceTargets.xsd http://release.niem.gov/niem/localTerminology/3.0/ ../../../localTerminology/3.0/localTerminology.xsd" ct:conformanceTargets="http://reference.niem.gov/niem/specification/naming-and-design-rules/3.0/#ReferenceSchemaDocument" xmlns:hs="http://release.niem.gov/niem/domains/humanServices/4.0/" xmlns:fips_6-4="http://release.niem.gov/niem/codes/fips_6-4/4.0/" xmlns:scr="http://release.niem.gov/niem/domains/screening/4.0/" xmlns:ct="http://release.niem.gov/niem/conformanceTargets/3.0/" xmlns:nc="http://release.niem.gov/niem/niem-core/4.0/" xmlns:term="http://release.niem.gov/niem/localTerminology/3.0/" xmlns:structures="http://release.niem.gov/niem/structures/3.0/" xmlns:appinfo="http://release.niem.gov/niem/appinfo/3.0/" xmlns:j="http://release.niem.gov/niem/domains/jxdm/6.0/" xmlns:im="http://release.niem.gov/niem/domains/immigration/4.0/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:niem-xs="http://release.niem.gov/niem/proxy/xsd/4.0/">
+<xs:schema targetNamespace="http://release.niem.gov/niem/domains/humanServices/4.0/" version="beta1" xsi:schemaLocation="http://release.niem.gov/niem/appinfo/4.0/ ../../../appinfo/4.0/appinfo.xsd http://release.niem.gov/niem/conformanceTargets/3.0/ ../../../conformanceTargets/3.0/conformanceTargets.xsd" ct:conformanceTargets="http://reference.niem.gov/niem/specification/naming-and-design-rules/4.0/#ReferenceSchemaDocument" xmlns:structures="http://release.niem.gov/niem/structures/4.0/" xmlns:hs="http://release.niem.gov/niem/domains/humanServices/4.0/" xmlns:scr="http://release.niem.gov/niem/domains/screening/4.0/" xmlns:appinfo="http://release.niem.gov/niem/appinfo/4.0/" xmlns:ct="http://release.niem.gov/niem/conformanceTargets/3.0/" xmlns:nc="http://release.niem.gov/niem/niem-core/4.0/" xmlns:j="http://release.niem.gov/niem/domains/jxdm/6.0/" xmlns:im="http://release.niem.gov/niem/domains/immigration/4.0/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:census="http://release.niem.gov/niem/codes/census_uscounty/4.0/" xmlns:niem-xs="http://release.niem.gov/niem/proxy/xsd/4.0/">
   <xs:annotation>
     <xs:documentation>Human Services</xs:documentation>
-    <xs:appinfo>
-      <term:LocalTerm term="Comp" literal="Compensation"/>
-      <term:LocalTerm term="EBT" literal="Electronic Benefit Transfer"/>
-      <term:LocalTerm term="FS" literal="Food Stamps"/>
-      <term:LocalTerm term="PARIS" literal="Public Assistance Reporting Information System"/>
-      <term:LocalTerm term="SSA" literal="Social Security Administration"/>
-      <term:LocalTerm term="SSI" literal="Supplemental Security Income"/>
-      <term:LocalTerm term="SSN" literal="Social Security Number"/>
-      <term:LocalTerm term="TANF" literal="Temporary Assistance to Needy Families"/>
-      <term:LocalTerm term="VA" literal="Veterans Affairs"/>
-    </xs:appinfo>
   </xs:annotation>
   <xs:import schemaLocation="../../jxdm/6.0/jxdm.xsd" namespace="http://release.niem.gov/niem/domains/jxdm/6.0/"/>
-  <xs:import schemaLocation="../../../structures/3.0/structures.xsd" namespace="http://release.niem.gov/niem/structures/3.0/"/>
+  <xs:import schemaLocation="../../../structures/4.0/structures.xsd" namespace="http://release.niem.gov/niem/structures/4.0/"/>
   <xs:import schemaLocation="../../../proxy/xsd/4.0/xs.xsd" namespace="http://release.niem.gov/niem/proxy/xsd/4.0/"/>
   <xs:import schemaLocation="../../../niem-core/4.0/niem-core.xsd" namespace="http://release.niem.gov/niem/niem-core/4.0/"/>
   <xs:import schemaLocation="../../immigration/4.0/immigration.xsd" namespace="http://release.niem.gov/niem/domains/immigration/4.0/"/>
   <xs:import schemaLocation="../../screening/4.0/screening.xsd" namespace="http://release.niem.gov/niem/domains/screening/4.0/"/>
-  <xs:import schemaLocation="../../../codes/fips_6-4/4.0/fips_6-4.xsd" namespace="http://release.niem.gov/niem/codes/fips_6-4/4.0/"/>
+  <xs:import schemaLocation="../../../codes/census_uscounty/4.0/census_uscounty.xsd" namespace="http://release.niem.gov/niem/codes/census_uscounty/4.0/"/>
   <xs:simpleType name="AFCARSPermanencyGoalCodeSimpleType">
     <xs:annotation>
       <xs:documentation>A data type for a list of case plan goals for permanency defined for the Adoption and Foster Care Analysis Reporting System in 45 CFR 1355, Appendix A, roman numeral VI.</xs:documentation>
@@ -258,7 +247,7 @@
     <xs:complexContent>
       <xs:extension base="nc:AssociationType">
         <xs:sequence>
-          <xs:element ref="hs:AdoptingParentRelationshipCategory" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="hs:AdoptingParentRelationshipCategoryAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="hs:AdoptionPlacedFromText" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="hs:AdoptionPlacementByText" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="hs:JuvenileReceivesSubsidyIndicator" minOccurs="0" maxOccurs="unbounded"/>
@@ -293,7 +282,7 @@
     <xs:complexContent>
       <xs:extension base="nc:ActivityType">
         <xs:sequence>
-          <xs:element ref="hs:AssessmentOutcomeScore" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="hs:AssessmentOutcomeScoreAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="hs:AssessmentOutcomeAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
       </xs:extension>
@@ -396,7 +385,7 @@
       <xs:extension base="nc:AssociationType">
         <xs:sequence>
           <xs:element ref="hs:Child" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="hs:PersonAssociationCategory" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="hs:PersonAssociationCategoryAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="hs:AssociatedPersonChildAssociationAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
       </xs:extension>
@@ -809,7 +798,7 @@
       <xs:extension base="structures:ObjectType">
         <xs:sequence>
           <xs:element ref="nc:RoleOfPerson" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="hs:CaseworkerCategory" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="hs:CaseworkerCategoryAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="hs:CaseworkerAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
       </xs:extension>
@@ -866,7 +855,7 @@
         <xs:sequence>
           <xs:element ref="hs:ChargeAllegationReportedDate" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="hs:ChargeAllegationLocalDescriptionText" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="hs:ChargeAllegationCategory" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="hs:ChargeAllegationCategoryAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="hs:ChargeAdjudication" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="j:BailBond" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
@@ -1197,7 +1186,7 @@
     <xs:complexContent>
       <xs:extension base="nc:InsuranceType">
         <xs:sequence>
-          <xs:element ref="hs:ChildSupportInsuranceCoverageOrderCategory" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="hs:ChildSupportInsuranceCoverageOrderCategoryAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="hs:ChildSupportInsuranceCoverageOrderAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
       </xs:extension>
@@ -1287,7 +1276,7 @@
         <xs:sequence>
           <xs:element ref="j:Charge" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:Person" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="hs:ChildWelfareChargeStatusCategory" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="hs:ChildWelfareChargeStatusCategoryAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="hs:ChildVictimChargeAssociationAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
       </xs:extension>
@@ -1304,7 +1293,7 @@
           <xs:element ref="hs:RemovalIndicator" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="hs:FatherUnknownText" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:RoleOfPerson" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="hs:PlacementChangeReason" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="hs:PlacementChangeReasonAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="hs:PlacementText" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="hs:ChildVictimAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
@@ -1380,9 +1369,9 @@
       <xs:extension base="nc:AssociationType">
         <xs:sequence>
           <xs:element ref="hs:ClientEntity" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="hs:AttorneyStatusCategory" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="hs:BasisOfAppointmentCategory" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="hs:RepresentationAppointmentCategory" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="hs:AttorneyStatusCategoryAbstract" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="hs:BasisOfAppointmentCategoryAbstract" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="hs:RepresentationAppointmentCategoryAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="hs:ClientAttorneyAssociationAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
       </xs:extension>
@@ -1433,7 +1422,7 @@
       <xs:extension base="nc:ActivityType">
         <xs:sequence>
           <xs:element ref="hs:ContactActivityCaseReportNumberIdentification" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="hs:ContactActivityCategory" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="hs:ContactActivityCategoryAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="hs:ContactActivityAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
       </xs:extension>
@@ -1527,9 +1516,9 @@
         <xs:sequence>
           <xs:element ref="hs:HistoryDetailsText" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="hs:PetitionReasonText" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="hs:ActionRequested" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="hs:CaseInitiationReason" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="hs:PetitionCategory" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="hs:ActionRequestedAbstract" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="hs:CaseInitiationReasonAbstract" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="hs:PetitionCategoryAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="hs:DependencyPetitionAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
       </xs:extension>
@@ -1951,13 +1940,13 @@
           <xs:element ref="hs:FosterCareCurrentPlacementDescriptionText" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="hs:FosterCareDischargeReasonDescriptionText" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="hs:FosterCareFirstRemovalDate" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="hs:FosterCareFundingSource" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="hs:FosterCareFundingSourceAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="hs:FosterCareLastRemovalDate" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="hs:FosterCareLiablePlacementCountyCode" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="hs:FosterCareMonthlyPaymentAmount" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="hs:FosterCarePreviousPlacementSettingsQuantity" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="hs:FosterCarePriorDischargeDate" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="hs:FosterCareRemovalReason" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="hs:FosterCareRemovalReasonAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="hs:FosterCareTotalRemovalQuantity" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="hs:MostRecentFosterCareReviewDate" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="hs:OutOfStatePlacementIndicator" minOccurs="0" maxOccurs="unbounded"/>
@@ -2158,7 +2147,7 @@
           <xs:element ref="hs:AbuseNeglectAllegationOriginationText" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="hs:AbuseNeglectDetailCategoryText" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="hs:AbuseNeglectInjury" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="hs:AbuseNeglectSeverity" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="hs:AbuseNeglectSeverityAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="hs:LawEnforcementReportedIndicator" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="hs:JuvenileAbuseNeglectAllegationAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
@@ -2201,7 +2190,7 @@
         <xs:sequence>
           <xs:element ref="hs:DueDate" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="hs:AssessmentAppealedIndicator" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="hs:JuvenileAggravatingMitigatingAssessmentCategory" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="hs:JuvenileAggravatingMitigatingAssessmentCategoryAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="hs:OffenderCulpabilityText" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="hs:OffenseCharacteristicsText" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="hs:PeerInfluenceDescriptionText" minOccurs="0" maxOccurs="unbounded"/>
@@ -2354,7 +2343,7 @@
       <xs:extension base="hs:JuvenileAssessmentType">
         <xs:sequence>
           <xs:element ref="hs:AbuseNeglectReportedIndicator" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="hs:AtIntakePresentingProblem" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="hs:AtIntakePresentingProblemAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="j:ChargeDescriptionText" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="hs:ClientWalkInIndicator" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="hs:JuvenileGangAffiliationIndicator" minOccurs="0" maxOccurs="unbounded"/>
@@ -2362,8 +2351,8 @@
           <xs:element ref="hs:ParentGangAffiliationIndicator" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="hs:PriorArrestDescriptionText" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="hs:PriorDetention" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="hs:PriorIntervention" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="hs:ProblemTreatmentHistory" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="hs:PriorInterventionAbstract" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="hs:ProblemTreatmentHistoryAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="hs:SuicideRiskOrRiskOfSelfHarmDescriptionText" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="hs:SuicideRiskOrRiskOfSelfHarmIndicator" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="hs:JuvenileIntakeAssessmentAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
@@ -2534,7 +2523,7 @@
           <xs:element ref="hs:JuvenileCulturalFactorsDescriptionText" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="hs:JuvenileDeceasedParentIndicator" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="hs:JuvenileEmotionalDisturbanceIndicator" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="hs:JuvenileFamilyFinancialProblem" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="hs:JuvenileFamilyFinancialProblemAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="hs:JuvenileFosterCarePlacementIndicator" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="hs:JuvenileFutureGoalDescriptionText" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="hs:JuvenileHomelessnessIndicator" minOccurs="0" maxOccurs="unbounded"/>
@@ -2555,7 +2544,7 @@
           <xs:element ref="hs:JuvenileRepeatOffenderIndicator" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:RoleOfPerson" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="hs:JuvenileSpecialNeedsIndicator" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="hs:JuvenileSpecialNeed" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="hs:JuvenileSpecialNeedAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="hs:JuvenileStrengthsInterestsDescriptionText" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="hs:JuvenileTroubledFriendsIndicator" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="hs:JuvenileAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
@@ -2570,8 +2559,8 @@
     <xs:complexContent>
       <xs:extension base="hs:ContactActivityType">
         <xs:sequence>
-          <xs:element ref="hs:LawEnforcementContactVehiclePosition" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="hs:LawEnforcementContactAttention" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="hs:LawEnforcementContactVehiclePositionAbstract" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="hs:LawEnforcementContactAttentionAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="hs:LawEnforcementContactActivityCriminalRecordClearanceIndicator" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="hs:LawEnforcementContactActivityGangMemberIndicator" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="hs:LawEnforcementContactActivityGangAssociateIndicator" minOccurs="0" maxOccurs="unbounded"/>
@@ -2785,7 +2774,7 @@
           <xs:element ref="hs:Dispenser" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="hs:MedicationDispensingDate" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="hs:MedicationDoseMeasure" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="hs:MedicationUseFrequency" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="hs:MedicationUseFrequencyAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="hs:MedicationLastTakenDate" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="hs:MedicationTreatmentReasonText" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="hs:PrescriptionUseInstructionsText" minOccurs="0" maxOccurs="unbounded"/>
@@ -2801,7 +2790,7 @@
     <xs:complexContent>
       <xs:extension base="nc:ActivityType">
         <xs:sequence>
-          <xs:element ref="hs:DevelopmentalDisabilityCategory" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="hs:DevelopmentalDisabilityCategoryAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="hs:MentalHealthHospitalizationHistoryDescriptionText" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="hs:MentalHealthHistoryDescriptionText" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="hs:MentalHealthDetailsAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
@@ -2857,7 +2846,7 @@
           <xs:element ref="hs:Child" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="hs:Parent" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="hs:HouseholdMemberIndicator" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="hs:ParentChildKinshipCategory" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="hs:ParentChildKinshipCategoryAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="hs:BiologicalParentDeterminationDescriptionText" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="hs:BiologicalParentDeterminationMethodCode" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="hs:TerminationParentalRightsDate" minOccurs="0" maxOccurs="unbounded"/>
@@ -3120,6 +3109,7 @@
           <xs:element ref="hs:HealthInsurance" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="hs:EnglishInterpreterRequiredIndicator" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="hs:RecentLifeChangesDescriptionText" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="hs:EmployerContactInformation" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -3371,7 +3361,7 @@
           <xs:element ref="hs:TargetPerson" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="hs:FamilyIdentification" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="hs:HouseholdMemberIndicator" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="hs:PersonOtherKinAssociationCategory" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="hs:PersonOtherKinAssociationCategoryAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="hs:PersonOtherKinAssociationAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
       </xs:extension>
@@ -3445,7 +3435,7 @@
         <xs:sequence>
           <xs:element ref="hs:Child" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="hs:Petitioner" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="hs:PersonAssociationCategory" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="hs:PersonAssociationCategoryAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="hs:PetitionerChildAssociationAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
       </xs:extension>
@@ -3637,9 +3627,9 @@
           <xs:element ref="hs:AdoptionFosterCareHomeStudyText" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="hs:ChangeOfSchoolIndicator" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="hs:ICPCPlacementApprovalIndicator" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="hs:LevelOfCareCategory" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="hs:PlacementChangeReason" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="hs:PlacementCategory" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="hs:LevelOfCareCategoryAbstract" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="hs:PlacementChangeReasonAbstract" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="hs:PlacementCategoryAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="hs:PlacementAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
       </xs:extension>
@@ -3749,7 +3739,7 @@
           <xs:element ref="hs:PriorDetentionActualReleaseDate" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="hs:PriorDetentionCompletionStatus" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="hs:PriorDetentionDescriptionText" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="hs:PriorDetentionHoldingForCounty" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="hs:PriorDetentionHoldingForCountyAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="hs:PriorDetentionIntakeDate" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="hs:PriorDetentionPoliceCase" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="hs:PriorDetentionReleaseCategoryText" minOccurs="0" maxOccurs="unbounded"/>
@@ -3956,7 +3946,7 @@
       <xs:extension base="hs:BiologicalParentChildAssociationType">
         <xs:sequence>
           <xs:element ref="hs:BiologicalParentDeterminationDate" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="hs:BiologicalParentDeterminationStatus" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="hs:BiologicalParentDeterminationStatusAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="hs:PutativeParentChildAssociationAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
       </xs:extension>
@@ -4241,7 +4231,7 @@
     <xs:complexContent>
       <xs:extension base="nc:ActivityType">
         <xs:sequence>
-          <xs:element ref="hs:SchoolAttendanceIssueCategory" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="hs:SchoolAttendanceIssueCategoryAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="hs:SchoolAttendanceIssueAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
       </xs:extension>
@@ -4296,7 +4286,7 @@
     <xs:complexContent>
       <xs:extension base="structures:ObjectType">
         <xs:sequence>
-          <xs:element ref="hs:SchoolClassLetterGrade" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="hs:SchoolClassLetterGradeAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="hs:SchoolClassName" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="hs:SchoolClassTeacherFullName" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="hs:SchoolClassTime" minOccurs="0" maxOccurs="unbounded"/>
@@ -4480,10 +4470,10 @@
     <xs:complexContent>
       <xs:extension base="structures:ObjectType">
         <xs:sequence>
-          <xs:element ref="hs:SpecialEducationDisability" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="hs:SpecialEducationDisabilityAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="hs:SpecialEducationEligibleDate" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="hs:SpecialEducationNeedDeterminationDate" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="hs:SpecialEducationNeedLevel" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="hs:SpecialEducationNeedLevelAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="hs:SpecialEducationDetailsAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
       </xs:extension>
@@ -4726,13 +4716,13 @@
       <xs:extension base="structures:ObjectType">
         <xs:sequence>
           <xs:element ref="nc:RoleOfPerson" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="hs:StudentCurrentEducationGradeLevel" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="hs:StudentCurrentEducationGradeLevelAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="hs:StudentCurrentEducationDescriptionText" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="hs:StudentCurrentEducationEnrollmentIndicator" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="hs:StudentCurrentEducationEnrollmentEndDate" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="hs:StudentCurrentEducationTruancyIndicator" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="hs:Education" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="hs:EducationalAdjustment" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="hs:EducationalAdjustmentAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="hs:StudentSpecialEducationEligibleIndicator" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="hs:StudentSpecialEducationDetails" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="hs:StudentSchoolConductChangeText" minOccurs="0" maxOccurs="unbounded"/>
@@ -4752,7 +4742,7 @@
         <xs:sequence>
           <xs:element ref="j:Subject" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="hs:Child" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="hs:PersonAssociationCategory" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="hs:PersonAssociationCategoryAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="hs:SubjectChildAssociationAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
       </xs:extension>
@@ -4766,7 +4756,7 @@
       <xs:extension base="nc:ActivityType">
         <xs:sequence>
           <xs:element ref="hs:DrugUseAgeMeasure" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="hs:DrugUseFrequency" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="hs:DrugUseFrequencyAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="hs:DrugUseIndicator" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="hs:PreferredDrugName" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:Substance" minOccurs="0" maxOccurs="unbounded"/>
@@ -6636,7 +6626,7 @@
         <xs:sequence>
           <xs:element ref="hs:ChangesMadeAffectingVisitationRightsText" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="hs:VisitationDuration" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="j:VisitationSupervisingOfficial" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="j:VisitationSupervisingOfficialAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="hs:VisitationTime" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="hs:VisitationPlanAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
@@ -6717,32 +6707,32 @@
       <xs:documentation>True if the case manager made an abuse or neglect report; false otherwise.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="AbuseNeglectSeverity" abstract="true">
+  <xs:element name="AbuseNeglectSeverityAbstract" abstract="true">
     <xs:annotation>
       <xs:documentation>A data concept for describing the severity of abuse or neglect.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="AbuseNeglectSeverityCode" type="hs:AbuseNeglectSeverityCodeType" substitutionGroup="hs:AbuseNeglectSeverity" nillable="true">
+  <xs:element name="AbuseNeglectSeverityCode" type="hs:AbuseNeglectSeverityCodeType" substitutionGroup="hs:AbuseNeglectSeverityAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A severity description of each type of abuse and/or neglect on a client.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="AbuseNeglectSeverityText" type="nc:TextType" substitutionGroup="hs:AbuseNeglectSeverity" nillable="true">
+  <xs:element name="AbuseNeglectSeverityText" type="nc:TextType" substitutionGroup="hs:AbuseNeglectSeverityAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A severity description of each type of abuse and/or neglect on a client.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="ActionRequested" abstract="true">
+  <xs:element name="ActionRequestedAbstract" abstract="true">
     <xs:annotation>
       <xs:documentation>A data concept for describing an agency's request for court action, based upon the needs of the child, youth, or family.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="ActionRequestedCode" type="hs:ActionRequestedCodeType" substitutionGroup="hs:ActionRequested" nillable="true">
+  <xs:element name="ActionRequestedCode" type="hs:ActionRequestedCodeType" substitutionGroup="hs:ActionRequestedAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A code indicating any of the actions being requested of the court e.g. what types of services the child needs  (e.g. mental health, medical, emergency, basic, therapeutic, habilitative).</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="ActionRequestedText" type="nc:TextType" substitutionGroup="hs:ActionRequested" nillable="true">
+  <xs:element name="ActionRequestedText" type="nc:TextType" substitutionGroup="hs:ActionRequestedAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>An action being requested.</xs:documentation>
     </xs:annotation>
@@ -6757,17 +6747,17 @@
       <xs:documentation>A facility administering an assessment.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="AdoptingParentRelationshipCategory" abstract="true">
+  <xs:element name="AdoptingParentRelationshipCategoryAbstract" abstract="true">
     <xs:annotation>
       <xs:documentation>A data concept for describing the relationship between a child and the adopting parent.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="AdoptingParentRelationshipCategoryCode" type="hs:AdoptingParentRelationshipCategoryCodeType" substitutionGroup="hs:AdoptingParentRelationshipCategory" nillable="true">
+  <xs:element name="AdoptingParentRelationshipCategoryCode" type="hs:AdoptingParentRelationshipCategoryCodeType" substitutionGroup="hs:AdoptingParentRelationshipCategoryAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A relationship of the child to the adopting parents.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="AdoptingParentRelationshipCategoryText" type="nc:TextType" substitutionGroup="hs:AdoptingParentRelationshipCategory" nillable="true">
+  <xs:element name="AdoptingParentRelationshipCategoryText" type="nc:TextType" substitutionGroup="hs:AdoptingParentRelationshipCategoryAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A kind of relationship between a child and the adopting parents.</xs:documentation>
     </xs:annotation>
@@ -6872,12 +6862,12 @@
       <xs:documentation>An augmentation point for AssessmentOutcomeType.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="AssessmentOutcomeScore" abstract="true">
+  <xs:element name="AssessmentOutcomeScoreAbstract" abstract="true">
     <xs:annotation>
       <xs:documentation>A data concept for expressing a score as the outcome of an assessment.  This element is a placeholder for the concept of a score; it is intended to be replaced by a structure representing an assessment instrument's actual scoring mechanism.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="AssessmentOutcomeScoreText" type="nc:TextType" substitutionGroup="hs:AssessmentOutcomeScore" nillable="true">
+  <xs:element name="AssessmentOutcomeScoreText" type="nc:TextType" substitutionGroup="hs:AssessmentOutcomeScoreAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A simple score as the outcome of an assessment.</xs:documentation>
     </xs:annotation>
@@ -6917,47 +6907,47 @@
       <xs:documentation>An augmentation point for AssociatedPersonChildAssociationType.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="AtIntakePresentingProblem" abstract="true">
+  <xs:element name="AtIntakePresentingProblemAbstract" abstract="true">
     <xs:annotation>
       <xs:documentation>A data concept for describing the problems a child, youth, or family presented at intake.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="AtIntakePresentingProblemCode" type="hs:PresentingProblemCodeType" substitutionGroup="hs:AtIntakePresentingProblem" nillable="true">
+  <xs:element name="AtIntakePresentingProblemCode" type="hs:PresentingProblemCodeType" substitutionGroup="hs:AtIntakePresentingProblemAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A problem presented at intake.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="AtIntakePresentingProblemText" type="nc:TextType" substitutionGroup="hs:AtIntakePresentingProblem" nillable="true">
+  <xs:element name="AtIntakePresentingProblemText" type="nc:TextType" substitutionGroup="hs:AtIntakePresentingProblemAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A problem presented at intake.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="AttorneyStatusCategory" abstract="true">
+  <xs:element name="AttorneyStatusCategoryAbstract" abstract="true">
     <xs:annotation>
       <xs:documentation>A data concept for expressing the role of an attorney, as it relates to the client.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="AttorneyStatusCategoryCode" type="hs:AttorneyStatusCodeType" substitutionGroup="hs:AttorneyStatusCategory" nillable="true">
+  <xs:element name="AttorneyStatusCategoryCode" type="hs:AttorneyStatusCodeType" substitutionGroup="hs:AttorneyStatusCategoryAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A code list describing the role of an attorney as it relates to their client.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="AttorneyStatusCategoryText" type="nc:TextType" substitutionGroup="hs:AttorneyStatusCategory" nillable="true">
+  <xs:element name="AttorneyStatusCategoryText" type="nc:TextType" substitutionGroup="hs:AttorneyStatusCategoryAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A kind of attorney, described in terms of the client represented.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="BasisOfAppointmentCategory" abstract="true">
+  <xs:element name="BasisOfAppointmentCategoryAbstract" abstract="true">
     <xs:annotation>
       <xs:documentation>A data concept for describing the rationale or factual findings that justify the court's appointment of an attorney for a party.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="BasisOfAppointmentCode" type="hs:BasisOfAppointmentCodeType" substitutionGroup="hs:BasisOfAppointmentCategory" nillable="true">
+  <xs:element name="BasisOfAppointmentCode" type="hs:BasisOfAppointmentCodeType" substitutionGroup="hs:BasisOfAppointmentCategoryAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A code list describing reasons that justify representation</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="BasisOfAppointmentText" type="nc:TextType" substitutionGroup="hs:BasisOfAppointmentCategory" nillable="true">
+  <xs:element name="BasisOfAppointmentText" type="nc:TextType" substitutionGroup="hs:BasisOfAppointmentCategoryAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A reason(s) that justifies representation.</xs:documentation>
     </xs:annotation>
@@ -6982,32 +6972,32 @@
       <xs:documentation>An additional description of the details about the determination of a biological relationship between a putative parent and a child (for example, findings regarding the location and date of conception, or the results of DNA tests).</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="BiologicalParentDeterminationMethod" abstract="true">
+  <xs:element name="BiologicalParentDeterminationMethodAbstract" abstract="true">
     <xs:annotation>
       <xs:documentation>A data concept for describing the method by which a biological relationship between a parent and child was legally determined.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="BiologicalParentDeterminationMethodCode" type="hs:BiologicalParentDeterminationMethodCodeType" substitutionGroup="hs:BiologicalParentDeterminationMethod" nillable="true">
+  <xs:element name="BiologicalParentDeterminationMethodCode" type="hs:BiologicalParentDeterminationMethodCodeType" substitutionGroup="hs:BiologicalParentDeterminationMethodAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A list of methods by which a biological relationship between a parent and child is legally established.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="BiologicalParentDeterminationMethodText" type="nc:TextType" substitutionGroup="hs:BiologicalParentDeterminationMethod" nillable="true">
+  <xs:element name="BiologicalParentDeterminationMethodText" type="nc:TextType" substitutionGroup="hs:BiologicalParentDeterminationMethodAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A narrative alternative to cyfs:BiologicalParentDeterminationMethodCode to describe the method by which a  biological relationship between a parent and child is legally determined.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="BiologicalParentDeterminationStatus" abstract="true">
+  <xs:element name="BiologicalParentDeterminationStatusAbstract" abstract="true">
     <xs:annotation>
       <xs:documentation>A data concept for describing the status of the determination of a biological relationship between a putative parent and a child.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="BiologicalParentDeterminationStatusCode" type="hs:BiologicalParentDeterminationStatusCodeType" substitutionGroup="hs:BiologicalParentDeterminationStatus" nillable="true">
+  <xs:element name="BiologicalParentDeterminationStatusCode" type="hs:BiologicalParentDeterminationStatusCodeType" substitutionGroup="hs:BiologicalParentDeterminationStatusAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A list that describes the status of the determination of a biological relationship between a putative parent and a child.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="BiologicalParentDeterminationStatusText" type="nc:TextType" substitutionGroup="hs:BiologicalParentDeterminationStatus" nillable="true">
+  <xs:element name="BiologicalParentDeterminationStatusText" type="nc:TextType" substitutionGroup="hs:BiologicalParentDeterminationStatusAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A narrative alternative to BiologicalParentDeterminationStatusCode to describe the status of the determination of a biological relationship between a putative parent and a child.</xs:documentation>
     </xs:annotation>
@@ -7022,17 +7012,17 @@
       <xs:documentation>A Filler Description Text field</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="CaseInitiationReason" abstract="true">
+  <xs:element name="CaseInitiationReasonAbstract" abstract="true">
     <xs:annotation>
       <xs:documentation>A data concept for expressing the procedural or factual reason for filing a case.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="CaseInitiationReasonCode" type="hs:CaseInitiationReasonCodeType" substitutionGroup="hs:CaseInitiationReason" nillable="true">
+  <xs:element name="CaseInitiationReasonCode" type="hs:CaseInitiationReasonCodeType" substitutionGroup="hs:CaseInitiationReasonAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A codified list of the reason  the case was initiated (new filing, reopening,  transfer in, severance).</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="CaseInitiationReasonText" type="nc:TextType" substitutionGroup="hs:CaseInitiationReason" nillable="true">
+  <xs:element name="CaseInitiationReasonText" type="nc:TextType" substitutionGroup="hs:CaseInitiationReasonAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A procedural reason to initiate a case regarding a specific child.  Please note that this is the textual counterpart to an enumeration, CaseInitiationReasonCode.</xs:documentation>
     </xs:annotation>
@@ -7062,12 +7052,12 @@
       <xs:documentation>A reference to the agency to which a case is referred.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="CaseWorkerCategoryCode" type="hs:CaseWorkerCategoryCodeType" substitutionGroup="hs:CaseworkerCategory" nillable="true">
+  <xs:element name="CaseWorkerCategoryCode" type="hs:CaseWorkerCategoryCodeType" substitutionGroup="hs:CaseworkerCategoryAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A case worker category.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="CaseWorkerInvolvementCategoryCode" type="hs:CaseworkerInvolvementCategoryCodeType" substitutionGroup="hs:CaseworkerCategory" nillable="true">
+  <xs:element name="CaseWorkerInvolvementCategoryCode" type="hs:CaseworkerInvolvementCategoryCodeType" substitutionGroup="hs:CaseworkerCategoryAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A code indicating the type of caseworker assigned e.g. investigation, ongoing, adoption, permanency, caseworker supervisor.</xs:documentation>
     </xs:annotation>
@@ -7102,12 +7092,12 @@
       <xs:documentation>An augmentation point for CaseworkerType.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="CaseworkerCategory" abstract="true">
+  <xs:element name="CaseworkerCategoryAbstract" abstract="true">
     <xs:annotation>
       <xs:documentation>A data concept for describing the category of caseworker assigned to a case.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="CaseworkerCategoryText" type="nc:TextType" substitutionGroup="hs:CaseworkerCategory" nillable="true">
+  <xs:element name="CaseworkerCategoryText" type="nc:TextType" substitutionGroup="hs:CaseworkerCategoryAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A kind of caseworker, described in terms of their function or program specialty.</xs:documentation>
     </xs:annotation>
@@ -7127,17 +7117,17 @@
       <xs:documentation>An adjudication result of  a juvenile.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="ChargeAllegationCategory" abstract="true">
+  <xs:element name="ChargeAllegationCategoryAbstract" abstract="true">
     <xs:annotation>
       <xs:documentation>A data concept for expressing the allegation of dependency, neglect, or abuse, using either the National Child Abuse and Neglect Data System (NCANDS) codes, a local enumeration, or text.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="ChargeAllegationCategoryCode" type="hs:ChargeAllegationCategoryCodeType" substitutionGroup="hs:ChargeAllegationCategory" nillable="true">
+  <xs:element name="ChargeAllegationCategoryCode" type="hs:ChargeAllegationCategoryCodeType" substitutionGroup="hs:ChargeAllegationCategoryAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A code indicating NCANDS (National Child Abuse and Neglect Data System) allegation categories.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="ChargeAllegationCategoryText" type="nc:TextType" substitutionGroup="hs:ChargeAllegationCategory" nillable="true">
+  <xs:element name="ChargeAllegationCategoryText" type="nc:TextType" substitutionGroup="hs:ChargeAllegationCategoryAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A kind of allegation of abuse or neglect.</xs:documentation>
     </xs:annotation>
@@ -7302,17 +7292,17 @@
       <xs:documentation>An augmentation point for ChildSupportInsuranceCoverageOrderType.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="ChildSupportInsuranceCoverageOrderCategory" abstract="true">
+  <xs:element name="ChildSupportInsuranceCoverageOrderCategoryAbstract" abstract="true">
     <xs:annotation>
       <xs:documentation>A data concept for describing the kinds of insurance coverage ordered in a child-support-enforcement case.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="ChildSupportInsuranceCoverageOrderCode" type="hs:ChildSupportInsuranceCoverageCodeType" substitutionGroup="hs:ChildSupportInsuranceCoverageOrderCategory" nillable="true">
+  <xs:element name="ChildSupportInsuranceCoverageOrderCode" type="hs:ChildSupportInsuranceCoverageCodeType" substitutionGroup="hs:ChildSupportInsuranceCoverageOrderCategoryAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A list of the kind(s) of insurance coverage ordered in a child-support-enforcement case.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="ChildSupportInsuranceCoverageOrderText" type="nc:TextType" substitutionGroup="hs:ChildSupportInsuranceCoverageOrderCategory" nillable="true">
+  <xs:element name="ChildSupportInsuranceCoverageOrderText" type="nc:TextType" substitutionGroup="hs:ChildSupportInsuranceCoverageOrderCategoryAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A description of the kind(s) of insurance coverage ordered in a child-support-enforcement case.</xs:documentation>
     </xs:annotation>
@@ -7392,17 +7382,17 @@
       <xs:documentation>An augmentation point for ChildWelfareCaseType.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="ChildWelfareChargeStatusCategory" abstract="true">
+  <xs:element name="ChildWelfareChargeStatusCategoryAbstract" abstract="true">
     <xs:annotation>
       <xs:documentation>A data concept for describing the status of an investigation or adjudication of a particular child welfare allegation.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="ChildWelfareChargeStatusCategoryCode" type="hs:ChildWelfareChargeStatusCategoryCodeType" substitutionGroup="hs:ChildWelfareChargeStatusCategory" nillable="true">
+  <xs:element name="ChildWelfareChargeStatusCategoryCode" type="hs:ChildWelfareChargeStatusCategoryCodeType" substitutionGroup="hs:ChildWelfareChargeStatusCategoryAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A current status of the associated charge</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="ChildWelfareChargeStatusCategoryText" type="nc:TextType" substitutionGroup="hs:ChildWelfareChargeStatusCategory" nillable="true">
+  <xs:element name="ChildWelfareChargeStatusCategoryText" type="nc:TextType" substitutionGroup="hs:ChildWelfareChargeStatusCategoryAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A kind of status of the investigation or adjudication of an allegation of abuse or neglect.</xs:documentation>
     </xs:annotation>
@@ -7457,17 +7447,17 @@
       <xs:documentation>An identification assigned to the report of a contact.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="ContactActivityCategory" abstract="true">
+  <xs:element name="ContactActivityCategoryAbstract" abstract="true">
     <xs:annotation>
       <xs:documentation>A data concept for expressing the setting of a contact between an agency representative and a child, youth, or family member.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="ContactActivityCategoryCode" type="hs:ContactActivityCategoryCodeType" substitutionGroup="hs:ContactActivityCategory" nillable="true">
+  <xs:element name="ContactActivityCategoryCode" type="hs:ContactActivityCategoryCodeType" substitutionGroup="hs:ContactActivityCategoryAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A contact activity category, e.g. field, office, walk-in, etc.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="ContactActivityCategoryText" type="nc:TextType" substitutionGroup="hs:ContactActivityCategory" nillable="true">
+  <xs:element name="ContactActivityCategoryText" type="nc:TextType" substitutionGroup="hs:ContactActivityCategoryAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A kind of contact, described in terms of the setting.</xs:documentation>
     </xs:annotation>
@@ -7607,17 +7597,17 @@
       <xs:documentation>An augmentation point for DependencyPetitionType.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="DevelopmentalDisabilityCategory" abstract="true">
+  <xs:element name="DevelopmentalDisabilityCategoryAbstract" abstract="true">
     <xs:annotation>
       <xs:documentation>A data concept for describing developmental disabilities.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="DevelopmentalDisabilityCategoryCode" type="hs:DevelopmentalDisabilityCodeType" substitutionGroup="hs:DevelopmentalDisabilityCategory" nillable="true">
+  <xs:element name="DevelopmentalDisabilityCategoryCode" type="hs:DevelopmentalDisabilityCodeType" substitutionGroup="hs:DevelopmentalDisabilityCategoryAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A code list that describes a person's developmental disabilities</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="DevelopmentalDisabilityCategoryText" type="nc:TextType" substitutionGroup="hs:DevelopmentalDisabilityCategory" nillable="true">
+  <xs:element name="DevelopmentalDisabilityCategoryText" type="nc:TextType" substitutionGroup="hs:DevelopmentalDisabilityCategoryAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A kind of developmental disability.</xs:documentation>
     </xs:annotation>
@@ -7647,17 +7637,17 @@
       <xs:documentation>An age at which the person first began using an illegal substance.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="DrugUseFrequency" abstract="true">
+  <xs:element name="DrugUseFrequencyAbstract" abstract="true">
     <xs:annotation>
       <xs:documentation>A data concept for expressing how often a person uses drugs.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="DrugUseFrequencyCode" type="hs:DrugUseFrequencyCodeType" substitutionGroup="hs:DrugUseFrequency" nillable="true">
+  <xs:element name="DrugUseFrequencyCode" type="hs:DrugUseFrequencyCodeType" substitutionGroup="hs:DrugUseFrequencyAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A code list describing how often the person uses drugs.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="DrugUseFrequencyDescriptionText" type="nc:TextType" substitutionGroup="hs:DrugUseFrequency" nillable="true">
+  <xs:element name="DrugUseFrequencyDescriptionText" type="nc:TextType" substitutionGroup="hs:DrugUseFrequencyAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A description of how often a person uses drugs.</xs:documentation>
     </xs:annotation>
@@ -7687,17 +7677,17 @@
       <xs:documentation>An education organization that currently has a juvenile enrolled as a student.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="EducationalAdjustment" abstract="true">
+  <xs:element name="EducationalAdjustmentAbstract" abstract="true">
     <xs:annotation>
       <xs:documentation>A data concept for describing the adjustment of a student in a school setting.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="EducationalAdjustmentCode" type="hs:EducationalAdjustmentCodeType" substitutionGroup="hs:EducationalAdjustment" nillable="true">
+  <xs:element name="EducationalAdjustmentCode" type="hs:EducationalAdjustmentCodeType" substitutionGroup="hs:EducationalAdjustmentAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>An adjustment of a juvenile in a school setting.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="EducationalAdjustmentText" type="nc:TextType" substitutionGroup="hs:EducationalAdjustment" nillable="true">
+  <xs:element name="EducationalAdjustmentText" type="nc:TextType" substitutionGroup="hs:EducationalAdjustmentAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>An adjustment of a juvenile in a school setting.</xs:documentation>
     </xs:annotation>
@@ -7742,7 +7732,7 @@
       <xs:documentation>A kind of Employer</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="EmployerContactInformationAssociation" type="nc:ContactInformationAssociationType" nillable="true">
+  <xs:element name="EmployerContactInformation" type="nc:ContactInformationType" nillable="true">
     <xs:annotation>
       <xs:documentation>An association between an employer and contact information.</xs:documentation>
     </xs:annotation>
@@ -7852,17 +7842,17 @@
       <xs:documentation>A date of first removal from a foster home.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="FosterCareFundingSource" abstract="true">
+  <xs:element name="FosterCareFundingSourceAbstract" abstract="true">
     <xs:annotation>
       <xs:documentation>A data concept for describing the source of funding for foster care.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="FosterCareFundingSourceCode" type="hs:FosterCareFundingSourceCodeType" substitutionGroup="hs:FosterCareFundingSource" nillable="true">
+  <xs:element name="FosterCareFundingSourceCode" type="hs:FosterCareFundingSourceCodeType" substitutionGroup="hs:FosterCareFundingSourceAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A source for foster care funding.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="FosterCareFundingSourceText" type="nc:TextType" substitutionGroup="hs:FosterCareFundingSource" nillable="true">
+  <xs:element name="FosterCareFundingSourceText" type="nc:TextType" substitutionGroup="hs:FosterCareFundingSourceAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A source for foster care funding.</xs:documentation>
     </xs:annotation>
@@ -7872,7 +7862,7 @@
       <xs:documentation>A date of most recent removal from a foster home.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="FosterCareLiablePlacementCountyCode" type="fips_6-4:USCountyCodeType" nillable="true">
+  <xs:element name="FosterCareLiablePlacementCountyCode" type="census:USCountyCodeType" nillable="true">
     <xs:annotation>
       <xs:documentation>A FIPs code of the legal liable county with the current placement setting.</xs:documentation>
     </xs:annotation>
@@ -7892,17 +7882,17 @@
       <xs:documentation>A date a juvenile was discharged from the most recent foster care episode.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="FosterCareRemovalReason" abstract="true">
+  <xs:element name="FosterCareRemovalReasonAbstract" abstract="true">
     <xs:annotation>
       <xs:documentation>A data concept for expressing the reasons a child or youth was removed from a foster care placement.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="FosterCareRemovalReasonCode" type="hs:FosterCareRemovalReasonCodeType" substitutionGroup="hs:FosterCareRemovalReason" nillable="true">
+  <xs:element name="FosterCareRemovalReasonCode" type="hs:FosterCareRemovalReasonCodeType" substitutionGroup="hs:FosterCareRemovalReasonAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A data type for reasons a child was removed from a foster care placement.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="FosterCareRemovalReasonText" type="nc:TextType" substitutionGroup="hs:FosterCareRemovalReason" nillable="true">
+  <xs:element name="FosterCareRemovalReasonText" type="nc:TextType" substitutionGroup="hs:FosterCareRemovalReasonAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A data type for reasons a child was removed from a foster care placement.</xs:documentation>
     </xs:annotation>
@@ -7977,17 +7967,17 @@
       <xs:documentation>A full name of the primarily insured person under a health insurance policy.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="HearingCategory" abstract="true">
+  <xs:element name="HearingCategoryAbstract" abstract="true">
     <xs:annotation>
       <xs:documentation>A data concept for describing the category of court event.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="HearingCategoryCode" type="hs:HearingCategoryCodeType" substitutionGroup="hs:HearingCategory" nillable="true">
+  <xs:element name="HearingCategoryCode" type="hs:HearingCategoryCodeType" substitutionGroup="hs:HearingCategoryAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A code that describes the type of hearing that is going to take place.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="HearingCategoryText" type="nc:TextType" substitutionGroup="hs:HearingCategory" nillable="true">
+  <xs:element name="HearingCategoryText" type="nc:TextType" substitutionGroup="hs:HearingCategoryAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A kind of court event.</xs:documentation>
     </xs:annotation>
@@ -8107,17 +8097,17 @@
       <xs:documentation>An augmentation point for JuvenileAggravatingMitigatingAssessmentType.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="JuvenileAggravatingMitigatingAssessmentCategory" abstract="true">
+  <xs:element name="JuvenileAggravatingMitigatingAssessmentCategoryAbstract" abstract="true">
     <xs:annotation>
       <xs:documentation>A data concept for describing whether an assessment is for aggravating or mitigating actions, behaviors, or conditions.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="JuvenileAggravatingMitigatingAssessmentCategoryCode" type="hs:JuvenileAggravatingMitigatingAssessmentCategoryCodeType" substitutionGroup="hs:JuvenileAggravatingMitigatingAssessmentCategory" nillable="true">
+  <xs:element name="JuvenileAggravatingMitigatingAssessmentCategoryCode" type="hs:JuvenileAggravatingMitigatingAssessmentCategoryCodeType" substitutionGroup="hs:JuvenileAggravatingMitigatingAssessmentCategoryAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>An enumeration that specifies whether an assessment is for Aggravating or Mitigating actions, behaviors, or conditions.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="JuvenileAggravatingMitigatingAssessmentCategoryText" type="nc:TextType" substitutionGroup="hs:JuvenileAggravatingMitigatingAssessmentCategory" nillable="true">
+  <xs:element name="JuvenileAggravatingMitigatingAssessmentCategoryText" type="nc:TextType" substitutionGroup="hs:JuvenileAggravatingMitigatingAssessmentCategoryAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A kind of assessment of a juvenile's aggravating or mitigating actions, behaviors, or other considerations.</xs:documentation>
     </xs:annotation>
@@ -8202,17 +8192,17 @@
       <xs:documentation>True if the juvenile has an emotional disturbance; false otherwise.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="JuvenileFamilyFinancialProblem" abstract="true">
+  <xs:element name="JuvenileFamilyFinancialProblemAbstract" abstract="true">
     <xs:annotation>
       <xs:documentation>A data concept for expressing the financial problems that a child or youth's family is experiencing.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="JuvenileFamilyFinancialProblemCode" type="hs:JuvenileFamilyFinancialProblemCodeType" substitutionGroup="hs:JuvenileFamilyFinancialProblem" nillable="true">
+  <xs:element name="JuvenileFamilyFinancialProblemCode" type="hs:JuvenileFamilyFinancialProblemCodeType" substitutionGroup="hs:JuvenileFamilyFinancialProblemAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A description of whether juvenile's family is experiencing financial problems.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="JuvenileFamilyFinancialProblemText" type="nc:TextType" substitutionGroup="hs:JuvenileFamilyFinancialProblem" nillable="true">
+  <xs:element name="JuvenileFamilyFinancialProblemText" type="nc:TextType" substitutionGroup="hs:JuvenileFamilyFinancialProblemAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A description of whether juvenile's family is experiencing financial problems.</xs:documentation>
     </xs:annotation>
@@ -8432,17 +8422,17 @@
       <xs:documentation>True if the person is a repeat offender; false otherwise.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="JuvenileSpecialNeed" abstract="true">
+  <xs:element name="JuvenileSpecialNeedAbstract" abstract="true">
     <xs:annotation>
       <xs:documentation>A data concept for describing the characteristics that states might define as special needs, which qualify a child or youth's adoption for a subsidy under Title IV-E of the Social Security Act.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="JuvenileSpecialNeedCode" type="hs:JuvenileSpecialNeedCodeType" substitutionGroup="hs:JuvenileSpecialNeed" nillable="true">
+  <xs:element name="JuvenileSpecialNeedCode" type="hs:JuvenileSpecialNeedCodeType" substitutionGroup="hs:JuvenileSpecialNeedAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>An enumerated list from the Adoption and Foster Care Annual Reporting System, 45 CFR 1355, appendix B (Adoption Data Elements), section III (Special Needs Status).</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="JuvenileSpecialNeedText" type="nc:TextType" substitutionGroup="hs:JuvenileSpecialNeed" nillable="true">
+  <xs:element name="JuvenileSpecialNeedText" type="nc:TextType" substitutionGroup="hs:JuvenileSpecialNeedAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A textual description of a state-defined characteristic that qualifies a child's adoption for a subsidy under Title IV-E of the Social Security Act.</xs:documentation>
     </xs:annotation>
@@ -8557,32 +8547,32 @@
       <xs:documentation>True if the juvenile has been identified as a gang member by a third party at the time of contact (for example, by a relative or informant); false otherwise.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="LawEnforcementContactAttention" abstract="true">
+  <xs:element name="LawEnforcementContactAttentionAbstract" abstract="true">
     <xs:annotation>
       <xs:documentation>A data concept for describing the law enforcement unit that might be required to pay special attention to a contact.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="LawEnforcementContactAttentionCode" type="hs:LawEnforcementContactAttentionCodeType" substitutionGroup="hs:LawEnforcementContactAttention" nillable="true">
+  <xs:element name="LawEnforcementContactAttentionCode" type="hs:LawEnforcementContactAttentionCodeType" substitutionGroup="hs:LawEnforcementContactAttentionAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A unit requiring special attention for the contact.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="LawEnforcementContactAttentionText" type="nc:TextType" substitutionGroup="hs:LawEnforcementContactAttention" nillable="true">
+  <xs:element name="LawEnforcementContactAttentionText" type="nc:TextType" substitutionGroup="hs:LawEnforcementContactAttentionAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A unit requiring special attention for the contact.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="LawEnforcementContactVehiclePosition" abstract="true">
+  <xs:element name="LawEnforcementContactVehiclePositionAbstract" abstract="true">
     <xs:annotation>
       <xs:documentation>A data concept for describing the physical position of a contact person in a vehicle.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="LawEnforcementContactVehiclePositionCode" type="hs:LawEnforcementContactVehiclePositionCodeType" substitutionGroup="hs:LawEnforcementContactVehiclePosition" nillable="true">
+  <xs:element name="LawEnforcementContactVehiclePositionCode" type="hs:LawEnforcementContactVehiclePositionCodeType" substitutionGroup="hs:LawEnforcementContactVehiclePositionAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A contact person's position in the vehicle, e.g. driver, passenger, pedestrian, etc.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="LawEnforcementContactVehiclePositionText" type="nc:TextType" substitutionGroup="hs:LawEnforcementContactVehiclePosition" nillable="true">
+  <xs:element name="LawEnforcementContactVehiclePositionText" type="nc:TextType" substitutionGroup="hs:LawEnforcementContactVehiclePositionAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A contact person's position in the vehicle, e.g. driver, passenger, pedestrian, etc.</xs:documentation>
     </xs:annotation>
@@ -8597,27 +8587,27 @@
       <xs:documentation>True if the child has been placed in an environment that the court has determined to be the least restrictive; false otherwise.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="LevelOfCareCategory" abstract="true">
+  <xs:element name="LevelOfCareCategoryAbstract" abstract="true">
     <xs:annotation>
       <xs:documentation>A data concept for expressing the restrictiveness of a child or youth's placement, using the Adoption and Safe Families Act (ASFA) codes, a local enumeration, or text.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="LevelOfCareCategoryCode" type="hs:LevelOfCareCodeType" substitutionGroup="hs:LevelOfCareCategory" nillable="true">
+  <xs:element name="LevelOfCareCategoryCode" type="hs:LevelOfCareCodeType" substitutionGroup="hs:LevelOfCareCategoryAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A code list that describes the restrictiveness of a placement as defined by the Adoption and Safe Families Act or state law</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="LevelOfCareCategoryText" type="nc:TextType" substitutionGroup="hs:LevelOfCareCategory" nillable="true">
+  <xs:element name="LevelOfCareCategoryText" type="nc:TextType" substitutionGroup="hs:LevelOfCareCategoryAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A kind of level of care, often expressed in terms of restrictiveness.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="MaritalStatusCategory" abstract="true">
+  <xs:element name="MaritalStatusCategoryAbstract" abstract="true">
     <xs:annotation>
       <xs:documentation>A data concept for the status of marriage between two people.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="MaritalStatusCategoryText" type="nc:TextType" substitutionGroup="hs:MaritalStatusCategory" nillable="true">
+  <xs:element name="MaritalStatusCategoryText" type="nc:TextType" substitutionGroup="hs:MaritalStatusCategoryAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A kind of status of marriage between two people</xs:documentation>
     </xs:annotation>
@@ -8677,17 +8667,17 @@
       <xs:documentation>An augmentation point for MedicationUseType.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="MedicationUseFrequency" abstract="true">
+  <xs:element name="MedicationUseFrequencyAbstract" abstract="true">
     <xs:annotation>
       <xs:documentation>A data concept for describing how often a person uses a medication.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="MedicationUseFrequencyCode" type="hs:MedicationUseFrequencyCodeType" substitutionGroup="hs:MedicationUseFrequency" nillable="true">
+  <xs:element name="MedicationUseFrequencyCode" type="hs:MedicationUseFrequencyCodeType" substitutionGroup="hs:MedicationUseFrequencyAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A frequency of medication use, e.g. daily with food, as needed for discomfort, not more than every 8 hours, etc.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="MedicationUseFrequencyText" type="nc:TextType" substitutionGroup="hs:MedicationUseFrequency" nillable="true">
+  <xs:element name="MedicationUseFrequencyText" type="nc:TextType" substitutionGroup="hs:MedicationUseFrequencyAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A frequency of medication use, e.g. daily with food, as needed for discomfort, not more than every 8 hours, etc.</xs:documentation>
     </xs:annotation>
@@ -8802,17 +8792,17 @@
       <xs:documentation>An augmentation point for ParentChildAssociationType.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="ParentChildKinshipCategory" abstract="true">
+  <xs:element name="ParentChildKinshipCategoryAbstract" abstract="true">
     <xs:annotation>
       <xs:documentation>A data concept for describing the nature of the relationship from a parent to a child.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="ParentChildKinshipCategoryCode" type="hs:ParentChildKinshipCategoryCodeType" substitutionGroup="hs:ParentChildKinshipCategory" nillable="true">
+  <xs:element name="ParentChildKinshipCategoryCode" type="hs:ParentChildKinshipCategoryCodeType" substitutionGroup="hs:ParentChildKinshipCategoryAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A code list that describes the nature of the relationship from a parent to a child.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="ParentChildKinshipCategoryText" type="nc:TextType" substitutionGroup="hs:ParentChildKinshipCategory" nillable="true">
+  <xs:element name="ParentChildKinshipCategoryText" type="nc:TextType" substitutionGroup="hs:ParentChildKinshipCategoryAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A kind of relationship from a parent to a child.</xs:documentation>
     </xs:annotation>
@@ -8852,12 +8842,12 @@
       <xs:documentation>A relationship of the perpetrator of an allegation to the juvenile.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="PersonAssociationCategory" abstract="true">
+  <xs:element name="PersonAssociationCategoryAbstract" abstract="true">
     <xs:annotation>
       <xs:documentation>A data concept for a kind of association between persons.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="PersonAssociationCategoryDescriptionText" type="nc:TextType" substitutionGroup="hs:PersonAssociationCategory" nillable="true">
+  <xs:element name="PersonAssociationCategoryDescriptionText" type="nc:TextType" substitutionGroup="hs:PersonAssociationCategoryAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A description of a kind of association between persons.</xs:documentation>
     </xs:annotation>
@@ -8887,17 +8877,17 @@
       <xs:documentation>An augmentation point for PersonOtherKinAssociationType.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="PersonOtherKinAssociationCategory" abstract="true">
+  <xs:element name="PersonOtherKinAssociationCategoryAbstract" abstract="true">
     <xs:annotation>
       <xs:documentation>A data concept for describing the kinship or other close personal relationship that exists from the source person to the target person.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="PersonOtherKinAssociationCategoryCode" type="hs:PersonOtherKinAssociationCodeType" substitutionGroup="hs:PersonOtherKinAssociationCategory" nillable="true">
+  <xs:element name="PersonOtherKinAssociationCategoryCode" type="hs:PersonOtherKinAssociationCodeType" substitutionGroup="hs:PersonOtherKinAssociationCategoryAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A code list that describes the nature of the kinship or other close personal relationship from a source person to a target person.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="PersonOtherKinAssociationCategoryText" type="nc:TextType" substitutionGroup="hs:PersonOtherKinAssociationCategory" nillable="true">
+  <xs:element name="PersonOtherKinAssociationCategoryText" type="nc:TextType" substitutionGroup="hs:PersonOtherKinAssociationCategoryAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A kind of kinship or other close personal relationship that exists from the source person to the target person.</xs:documentation>
     </xs:annotation>
@@ -8912,17 +8902,17 @@
       <xs:documentation>True if a child's biological parents were in a Person Union with each other at the time of the child''s conception; false otherwise.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="PetitionCategory" abstract="true">
+  <xs:element name="PetitionCategoryAbstract" abstract="true">
     <xs:annotation>
       <xs:documentation>A data concept for describing the legal status of the petition being filed.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="PetitionCategoryCode" type="hs:PetitionCategoryCodeType" substitutionGroup="hs:PetitionCategory" nillable="true">
+  <xs:element name="PetitionCategoryCode" type="hs:PetitionCategoryCodeType" substitutionGroup="hs:PetitionCategoryAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A code indicating the type  of petition being submitted.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="PetitionCategoryText" type="nc:TextType" substitutionGroup="hs:PetitionCategory" nillable="true">
+  <xs:element name="PetitionCategoryText" type="nc:TextType" substitutionGroup="hs:PetitionCategoryAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A kind of petition.</xs:documentation>
     </xs:annotation>
@@ -8977,12 +8967,12 @@
       <xs:documentation>An augmentation point for PlacementType.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="PlacementCategory" abstract="true">
+  <xs:element name="PlacementCategoryAbstract" abstract="true">
     <xs:annotation>
       <xs:documentation>A data concept for describing a child or youth's placement.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="PlacementCategoryCode" type="hs:PlacementLocationCodeType" substitutionGroup="hs:PlacementCategory" nillable="true">
+  <xs:element name="PlacementCategoryCode" type="hs:PlacementLocationCodeType" substitutionGroup="hs:PlacementCategoryAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A list that describes the type of placement (e.g., adoption, relative, etc.)</xs:documentation>
     </xs:annotation>
@@ -8992,22 +8982,22 @@
       <xs:documentation>A text field to indicate how the placement type is the least restrictive placement necessary.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="PlacementCategoryText" type="nc:TextType" substitutionGroup="hs:PlacementCategory" nillable="true">
+  <xs:element name="PlacementCategoryText" type="nc:TextType" substitutionGroup="hs:PlacementCategoryAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A kind of placement,</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="PlacementChangeReason" abstract="true">
+  <xs:element name="PlacementChangeReasonAbstract" abstract="true">
     <xs:annotation>
       <xs:documentation>A data concept for describing the reason a child or youth's placement was changed.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="PlacementChangeReasonCode" type="hs:ReasonForPlacementChangeCodeType" substitutionGroup="hs:PlacementChangeReason" nillable="true">
+  <xs:element name="PlacementChangeReasonCode" type="hs:ReasonForPlacementChangeCodeType" substitutionGroup="hs:PlacementChangeReasonAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A code list describing the reason for the change of placement (e.g., reunification, level of care lowered, etc.).</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="PlacementChangeReasonText" type="nc:TextType" substitutionGroup="hs:PlacementChangeReason" nillable="true">
+  <xs:element name="PlacementChangeReasonText" type="nc:TextType" substitutionGroup="hs:PlacementChangeReasonAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A reason a child or youth's placement was changed.</xs:documentation>
     </xs:annotation>
@@ -9127,17 +9117,17 @@
       <xs:documentation>A description of a prior detention of a person.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="PriorDetentionHoldingForCounty" abstract="true">
+  <xs:element name="PriorDetentionHoldingForCountyAbstract" abstract="true">
     <xs:annotation>
       <xs:documentation>A data concept for describing a county for whom a person was held in a prior detention.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="PriorDetentionHoldingForCountyCode" type="fips_6-4:USCountyCodeType" substitutionGroup="hs:PriorDetentionHoldingForCounty" nillable="true">
+  <xs:element name="PriorDetentionHoldingForCountyCode" type="census:USCountyCodeType" substitutionGroup="hs:PriorDetentionHoldingForCountyAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A county for whom a person was held in a prior detention.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="PriorDetentionHoldingForCountyText" type="nc:TextType" substitutionGroup="hs:PriorDetentionHoldingForCounty" nillable="true">
+  <xs:element name="PriorDetentionHoldingForCountyText" type="nc:TextType" substitutionGroup="hs:PriorDetentionHoldingForCountyAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A county for whom a person was held in a prior detention.</xs:documentation>
     </xs:annotation>
@@ -9182,17 +9172,17 @@
       <xs:documentation>A scheduled release date for a prior detention of a person.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="PriorIntervention" abstract="true">
+  <xs:element name="PriorInterventionAbstract" abstract="true">
     <xs:annotation>
       <xs:documentation>A data concept for describing a prior intervention.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="PriorInterventionCode" type="hs:PriorInterventionCodeType" substitutionGroup="hs:PriorIntervention" nillable="true">
+  <xs:element name="PriorInterventionCode" type="hs:PriorInterventionCodeType" substitutionGroup="hs:PriorInterventionAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>An enumeration of the kinds of prior interventions.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="PriorInterventionText" type="nc:TextType" substitutionGroup="hs:PriorIntervention" nillable="true">
+  <xs:element name="PriorInterventionText" type="nc:TextType" substitutionGroup="hs:PriorInterventionAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A narrative description of the kind of prior intervention.</xs:documentation>
     </xs:annotation>
@@ -9202,17 +9192,17 @@
       <xs:documentation>True if Current Probation or Parole Violation; false otherwise.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="ProblemTreatmentHistory" abstract="true">
+  <xs:element name="ProblemTreatmentHistoryAbstract" abstract="true">
     <xs:annotation>
       <xs:documentation>A data concept for describing a recommended treatment for the presented problem in a prior intervention.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="ProblemTreatmentHistoryCode" type="hs:ProblemTreatmentHistoryCodeType" substitutionGroup="hs:ProblemTreatmentHistory" nillable="true">
+  <xs:element name="ProblemTreatmentHistoryCode" type="hs:ProblemTreatmentHistoryCodeType" substitutionGroup="hs:ProblemTreatmentHistoryAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>An enumeration of the kinds of recommended treatment for the presented problem in a prior intervention</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="ProblemTreatmentHistoryText" type="nc:TextType" substitutionGroup="hs:ProblemTreatmentHistory" nillable="true">
+  <xs:element name="ProblemTreatmentHistoryText" type="nc:TextType" substitutionGroup="hs:ProblemTreatmentHistoryAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A narrative description of the kind of recommended treatment for the presented problem in a prior intervention.</xs:documentation>
     </xs:annotation>
@@ -9312,17 +9302,17 @@
       <xs:documentation>A date of the latest removal.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="RepresentationAppointmentCategory" abstract="true">
+  <xs:element name="RepresentationAppointmentCategoryAbstract" abstract="true">
     <xs:annotation>
       <xs:documentation>A data concept for describing an appointed legal representative's relationship to a client's other counsel.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="RepresentationAppointmentCode" type="hs:RepresentationAppointmentCategoryCodeType" substitutionGroup="hs:RepresentationAppointmentCategory" nillable="true">
+  <xs:element name="RepresentationAppointmentCode" type="hs:RepresentationAppointmentCategoryCodeType" substitutionGroup="hs:RepresentationAppointmentCategoryAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A code list describing the conditions under which counsel was appointed</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="RepresentationAppointmentText" type="nc:TextType" substitutionGroup="hs:RepresentationAppointmentCategory" nillable="true">
+  <xs:element name="RepresentationAppointmentText" type="nc:TextType" substitutionGroup="hs:RepresentationAppointmentCategoryAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A set of conditions under which counsel was appointed.</xs:documentation>
     </xs:annotation>
@@ -9372,17 +9362,17 @@
       <xs:documentation>An augmentation point for SchoolAttendanceIssueType.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="SchoolAttendanceIssueCategory" abstract="true">
+  <xs:element name="SchoolAttendanceIssueCategoryAbstract" abstract="true">
     <xs:annotation>
       <xs:documentation>A data concept for expressing the kind of school attendance issue a child or youth has.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="SchoolAttendanceIssueCode" type="hs:SchoolAttendanceIssueCategoryCodeType" substitutionGroup="hs:SchoolAttendanceIssueCategory" nillable="true">
+  <xs:element name="SchoolAttendanceIssueCode" type="hs:SchoolAttendanceIssueCategoryCodeType" substitutionGroup="hs:SchoolAttendanceIssueCategoryAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A type of school attendance issue that the student has.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="SchoolAttendanceIssueText" type="nc:TextType" substitutionGroup="hs:SchoolAttendanceIssueCategory" nillable="true">
+  <xs:element name="SchoolAttendanceIssueText" type="nc:TextType" substitutionGroup="hs:SchoolAttendanceIssueCategoryAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A type of school attendance issue that the student has.</xs:documentation>
     </xs:annotation>
@@ -9397,17 +9387,17 @@
       <xs:documentation>An augmentation point for SchoolClassType.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="SchoolClassLetterGrade" abstract="true">
+  <xs:element name="SchoolClassLetterGradeAbstract" abstract="true">
     <xs:annotation>
       <xs:documentation>A data concept for expressing a student's letter grade for an academic course.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="SchoolClassLetterGradeCode" type="hs:SchoolClassLetterGradeCodeType" substitutionGroup="hs:SchoolClassLetterGrade" nillable="true">
+  <xs:element name="SchoolClassLetterGradeCode" type="hs:SchoolClassLetterGradeCodeType" substitutionGroup="hs:SchoolClassLetterGradeAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A letter grade received in a school class.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="SchoolClassLetterGradeText" type="nc:TextType" substitutionGroup="hs:SchoolClassLetterGrade" nillable="true">
+  <xs:element name="SchoolClassLetterGradeText" type="nc:TextType" substitutionGroup="hs:SchoolClassLetterGradeAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A letter grade received in a school class.</xs:documentation>
     </xs:annotation>
@@ -9622,17 +9612,17 @@
       <xs:documentation>An augmentation point for SpecialEducationDetailsType.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="SpecialEducationDisability" abstract="true">
+  <xs:element name="SpecialEducationDisabilityAbstract" abstract="true">
     <xs:annotation>
       <xs:documentation>A data concept for describing a student's disability that requires special education.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="SpecialEducationDisabilityCode" type="hs:SpecialEducationDisabilityCodeType" substitutionGroup="hs:SpecialEducationDisability" nillable="true">
+  <xs:element name="SpecialEducationDisabilityCode" type="hs:SpecialEducationDisabilityCodeType" substitutionGroup="hs:SpecialEducationDisabilityAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A disability requiring special education.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="SpecialEducationDisabilityText" type="nc:TextType" substitutionGroup="hs:SpecialEducationDisability" nillable="true">
+  <xs:element name="SpecialEducationDisabilityText" type="nc:TextType" substitutionGroup="hs:SpecialEducationDisabilityAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A disability requiring special education.</xs:documentation>
     </xs:annotation>
@@ -9647,17 +9637,17 @@
       <xs:documentation>A date on which determination of need of special education is made.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="SpecialEducationNeedLevel" abstract="true">
+  <xs:element name="SpecialEducationNeedLevelAbstract" abstract="true">
     <xs:annotation>
       <xs:documentation>A data concept for describing the level of a student's need for special education, either in hours of services per week or in text.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="SpecialEducationNeedLevelCode" type="hs:SpecialEducationNeedLevelCodeType" substitutionGroup="hs:SpecialEducationNeedLevel" nillable="true">
+  <xs:element name="SpecialEducationNeedLevelCode" type="hs:SpecialEducationNeedLevelCodeType" substitutionGroup="hs:SpecialEducationNeedLevelAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A different level of need for special education.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="SpecialEducationNeedLevelText" type="nc:TextType" substitutionGroup="hs:SpecialEducationNeedLevel" nillable="true">
+  <xs:element name="SpecialEducationNeedLevelText" type="nc:TextType" substitutionGroup="hs:SpecialEducationNeedLevelAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A different level of need for special education.</xs:documentation>
     </xs:annotation>
@@ -9737,17 +9727,17 @@
       <xs:documentation>True if the juvenile is currently enrolled in an educational program; false otherwise.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="StudentCurrentEducationGradeLevel" abstract="true">
+  <xs:element name="StudentCurrentEducationGradeLevelAbstract" abstract="true">
     <xs:annotation>
       <xs:documentation>A data concept for expressing a student's current grade level in school, either between kindergarten and twelfth grade or in text.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="StudentCurrentEducationGradeLevelCode" type="hs:StudentEducationGradeLevelCodeType" substitutionGroup="hs:StudentCurrentEducationGradeLevel" nillable="true">
+  <xs:element name="StudentCurrentEducationGradeLevelCode" type="hs:StudentEducationGradeLevelCodeType" substitutionGroup="hs:StudentCurrentEducationGradeLevelAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A current grade level in school.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="StudentCurrentEducationGradeLevelText" type="nc:TextType" substitutionGroup="hs:StudentCurrentEducationGradeLevel" nillable="true">
+  <xs:element name="StudentCurrentEducationGradeLevelText" type="nc:TextType" substitutionGroup="hs:StudentCurrentEducationGradeLevelAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A current grade level in school.</xs:documentation>
     </xs:annotation>

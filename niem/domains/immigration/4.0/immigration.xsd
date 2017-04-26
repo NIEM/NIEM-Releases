@@ -1,27 +1,11 @@
 <?xml version="1.0" encoding="US-ASCII"?>
-<xs:schema targetNamespace="http://release.niem.gov/niem/domains/immigration/4.0/" version="alpha1" xsi:schemaLocation="http://release.niem.gov/niem/appinfo/3.0/ ../../../appinfo/3.0/appinfo.xsd http://release.niem.gov/niem/conformanceTargets/3.0/ ../../../conformanceTargets/3.0/conformanceTargets.xsd http://release.niem.gov/niem/localTerminology/3.0/ ../../../localTerminology/3.0/localTerminology.xsd" ct:conformanceTargets="http://reference.niem.gov/niem/specification/naming-and-design-rules/3.0/#ReferenceSchemaDocument" xmlns:hs="http://release.niem.gov/niem/domains/humanServices/4.0/" xmlns:scr="http://release.niem.gov/niem/domains/screening/4.0/" xmlns:ct="http://release.niem.gov/niem/conformanceTargets/3.0/" xmlns:nc="http://release.niem.gov/niem/niem-core/4.0/" xmlns:term="http://release.niem.gov/niem/localTerminology/3.0/" xmlns:structures="http://release.niem.gov/niem/structures/3.0/" xmlns:appinfo="http://release.niem.gov/niem/appinfo/3.0/" xmlns:j="http://release.niem.gov/niem/domains/jxdm/6.0/" xmlns:im="http://release.niem.gov/niem/domains/immigration/4.0/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:iso_3166="http://release.niem.gov/niem/codes/iso_3166-1/4.0/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:niem-xs="http://release.niem.gov/niem/proxy/xsd/4.0/">
+<xs:schema targetNamespace="http://release.niem.gov/niem/domains/immigration/4.0/" version="beta1" xsi:schemaLocation="http://release.niem.gov/niem/appinfo/4.0/ ../../../appinfo/4.0/appinfo.xsd http://release.niem.gov/niem/conformanceTargets/3.0/ ../../../conformanceTargets/3.0/conformanceTargets.xsd" ct:conformanceTargets="http://reference.niem.gov/niem/specification/naming-and-design-rules/4.0/#ReferenceSchemaDocument" xmlns:structures="http://release.niem.gov/niem/structures/4.0/" xmlns:hs="http://release.niem.gov/niem/domains/humanServices/4.0/" xmlns:scr="http://release.niem.gov/niem/domains/screening/4.0/" xmlns:appinfo="http://release.niem.gov/niem/appinfo/4.0/" xmlns:ct="http://release.niem.gov/niem/conformanceTargets/3.0/" xmlns:nc="http://release.niem.gov/niem/niem-core/4.0/" xmlns:j="http://release.niem.gov/niem/domains/jxdm/6.0/" xmlns:im="http://release.niem.gov/niem/domains/immigration/4.0/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:iso_3166="http://release.niem.gov/niem/codes/iso_3166-1/4.0/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:niem-xs="http://release.niem.gov/niem/proxy/xsd/4.0/">
   <xs:annotation>
     <xs:documentation>Immigration</xs:documentation>
-    <xs:appinfo>
-      <term:LocalTerm term="SEVIS" literal="Student and Exchange Visitor Information System"/>
-      <term:LocalTerm term="ICE" literal="Immigration and Customs Enforcement"/>
-      <term:LocalTerm term="PIN" literal="Personal Identification Number"/>
-      <term:LocalTerm term="M1" literal="M1 visa"/>
-      <term:LocalTerm term="Hague" definition="The Hague is the seat of government in the Netherlands, and the capital city of the province of South Holland."/>
-      <term:LocalTerm term="F2" literal="F-2 visa"/>
-      <term:LocalTerm term="F1" literal="F-1 visa"/>
-      <term:LocalTerm term="M2" literal="M2 visa"/>
-      <term:LocalTerm term="PL94-484" literal="Public Law 94-484"/>
-      <term:LocalTerm term="K9" literal="canine"/>
-      <term:LocalTerm term="SSN" literal="Social Security Number"/>
-      <term:LocalTerm term="J2" literal="J-2 visa"/>
-      <term:LocalTerm term="USCIS" literal="United States Citizenship and Immigration Services"/>
-      <term:LocalTerm term="I20s" literal="Form I-20"/>
-    </xs:appinfo>
   </xs:annotation>
   <xs:import schemaLocation="../../jxdm/6.0/jxdm.xsd" namespace="http://release.niem.gov/niem/domains/jxdm/6.0/"/>
-  <xs:import schemaLocation="../../../structures/3.0/structures.xsd" namespace="http://release.niem.gov/niem/structures/3.0/"/>
-  <xs:import schemaLocation="../../../codes/iso_3166-1/4.0/iso_3166-1.xsd" namespace="http://release.niem.gov/niem/codes/iso_3166-1/4.0/"/>
+  <xs:import schemaLocation="../../../structures/4.0/structures.xsd" namespace="http://release.niem.gov/niem/structures/4.0/"/>
+  <xs:import schemaLocation="../../../codes/iso_3166-1/4.0/iso_3166.xsd" namespace="http://release.niem.gov/niem/codes/iso_3166-1/4.0/"/>
   <xs:import schemaLocation="../../../proxy/xsd/4.0/xs.xsd" namespace="http://release.niem.gov/niem/proxy/xsd/4.0/"/>
   <xs:import schemaLocation="../../../niem-core/4.0/niem-core.xsd" namespace="http://release.niem.gov/niem/niem-core/4.0/"/>
   <xs:import schemaLocation="../../humanServices/4.0/hs.xsd" namespace="http://release.niem.gov/niem/domains/humanServices/4.0/"/>
@@ -232,7 +216,7 @@
           <xs:element ref="im:SchoolProvidedTermFundsAmount" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="im:TermTuitionFeeTotalAmount" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="im:TerminationReasonText" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="im:Termination" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="im:TerminationAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="im:EducationLevelText" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="im:AuthorizationToDropBelowFullTime" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="im:StudentEmployment" minOccurs="0" maxOccurs="unbounded"/>
@@ -302,7 +286,7 @@
           <xs:element ref="im:EmploymentTimeBasisText" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="im:EmploymentCategoryText" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="im:EmploymentDescriptionText" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="im:EmploymentTime" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="im:EmploymentTimeAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="im:AlienStudentEmploymentAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
       </xs:extension>
@@ -1956,15 +1940,15 @@
         <xs:sequence>
           <xs:element ref="im:CountryCapitalCityName" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="im:CountryLongFormName" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="im:CountryOfChargeability" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="im:CountryOfFormerAllegiance" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="im:CountryOfChargeabilityAbstract" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="im:CountryOfFormerAllegianceAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="im:CountryShortFormName" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="im:CountryValidFromDate" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="im:CountryValidToDate" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="im:DocumentIssuingAuthorityIndicator" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="im:HagueAdoptionConventionCountryIndicator" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="im:IndigenousPeoplesIndicator" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="im:LocationMotherCountry" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="im:LocationMotherCountryAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="im:SovereigntyStatusCode" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:LocationCountry" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="im:CountryAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
@@ -2581,7 +2565,7 @@
       <xs:extension base="structures:ObjectType">
         <xs:sequence>
           <xs:element ref="im:ArrivalDepartureNotProvidingReasonText" minOccurs="0" maxOccurs="1"/>
-          <xs:element ref="im:BenefitEvidenceCategory" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="im:BenefitEvidenceCategoryAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="im:BenefitEvidenceNotProvidedReasonText" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="im:ImmigrationBenefitEvidenceAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
@@ -2708,8 +2692,8 @@
           <xs:element ref="nc:PersonUnionAssociation" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:PersonEmploymentAssociation" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="im:ImmigrationBenefitRequester" minOccurs="1" maxOccurs="1"/>
-          <xs:element ref="im:ImmigrationBenefitApplication" minOccurs="0" maxOccurs="1"/>
-          <xs:element ref="im:ImmigrationBenefitEligibility" minOccurs="0" maxOccurs="1"/>
+          <xs:element ref="im:ImmigrationBenefitApplicationAbstract" minOccurs="0" maxOccurs="1"/>
+          <xs:element ref="im:ImmigrationBenefitEligibilityAbstract" minOccurs="0" maxOccurs="1"/>
           <xs:element ref="im:ImmigrationBenefitBeneficiary" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="im:ImmigrationBenefitDisabilityAccommodations" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="im:ImmigrationBenefitRepresentative" minOccurs="0" maxOccurs="1"/>
@@ -7774,7 +7758,7 @@
     <xs:complexContent>
       <xs:extension base="structures:ObjectType">
         <xs:sequence>
-          <xs:element ref="im:SubmittingEntity" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="im:SubmittingEntityAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="im:DocumentSubmittedDate" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="im:AlienNumberIdentification" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="im:ImmigrationDocumentSubmitterAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
@@ -8008,7 +7992,7 @@
           <xs:element ref="im:EmploymentAuthorizationEndDate" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="im:EmploymentAuthorizationStartDate" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="im:EmploymentAuthorizationText" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="j:EmploymentAssignedUnit" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="j:EmploymentAssignedUnitAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="im:EmploymentAuthorizationIndicator" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
       </xs:extension>
@@ -8860,17 +8844,17 @@
       <xs:documentation>A text string containing the statement provided in a declaration on a benefit request.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="BenefitEvidenceCategory" abstract="true">
+  <xs:element name="BenefitEvidenceCategoryAbstract" abstract="true">
     <xs:annotation>
       <xs:documentation>A data concept for evidence provided in support of a benefit request.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="BenefitEvidenceCategoryCode" type="im:BenefitEvidenceCategoryCodeType" substitutionGroup="im:BenefitEvidenceCategory" nillable="true">
+  <xs:element name="BenefitEvidenceCategoryCode" type="im:BenefitEvidenceCategoryCodeType" substitutionGroup="im:BenefitEvidenceCategoryAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A kind of evidence provided in support of a benefit request.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="BenefitEvidenceCategoryText" type="nc:TextType" substitutionGroup="im:BenefitEvidenceCategory" nillable="true">
+  <xs:element name="BenefitEvidenceCategoryText" type="nc:TextType" substitutionGroup="im:BenefitEvidenceCategoryAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A kind of evidence provided in support of a benefit request,</xs:documentation>
     </xs:annotation>
@@ -9015,22 +8999,22 @@
       <xs:documentation>A conventional long form of the country's name as approved by the US Board on Geographic Names. (List of valid values)</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="CountryOfChargeability" abstract="true">
+  <xs:element name="CountryOfChargeabilityAbstract" abstract="true">
     <xs:annotation>
       <xs:documentation>A data concept for a country to which an immigrant, in a numerically limited classification, can be charged by the U.S. Department of State for purposes of numerical control.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="CountryOfChargeabilityCode" type="iso_3166:CountryAlpha2CodeType" substitutionGroup="im:CountryOfChargeability" nillable="true">
+  <xs:element name="CountryOfChargeabilityCode" type="iso_3166:CountryAlpha2CodeType" substitutionGroup="im:CountryOfChargeabilityAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A country to which an immigrant, in a numerically limited classification, can be charged by the U.S. Department of State for purposes of numerical control.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="CountryOfFormerAllegiance" abstract="true">
+  <xs:element name="CountryOfFormerAllegianceAbstract" abstract="true">
     <xs:annotation>
       <xs:documentation>A data concept for a country to which allegiance was held in the past but does not currently hold.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="CountryOfFormerAllegianceCode" type="iso_3166:CountryAlpha2CodeType" substitutionGroup="im:CountryOfFormerAllegiance" nillable="true">
+  <xs:element name="CountryOfFormerAllegianceCode" type="iso_3166:CountryAlpha2CodeType" substitutionGroup="im:CountryOfFormerAllegianceAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A country to which allegiance was held in the past but does not currently hold.</xs:documentation>
     </xs:annotation>
@@ -9305,12 +9289,12 @@
       <xs:documentation>A field describing the alien student employment.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="EmploymentTime" abstract="true">
+  <xs:element name="EmploymentTimeAbstract" abstract="true">
     <xs:annotation>
       <xs:documentation>A data concept for the kind of alien student employment time code.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="EmploymentTimeBasisCodeText" type="nc:TextType" substitutionGroup="im:EmploymentTime" nillable="true">
+  <xs:element name="EmploymentTimeBasisCodeText" type="nc:TextType" substitutionGroup="im:EmploymentTimeAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A time basis of an alien students employment.</xs:documentation>
     </xs:annotation>
@@ -9320,7 +9304,7 @@
       <xs:documentation>A field indicating if the alien student is Full-time or Part-time employed.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="EmploymentTimeText" type="nc:TextType" substitutionGroup="im:EmploymentTime" nillable="true">
+  <xs:element name="EmploymentTimeText" type="nc:TextType" substitutionGroup="im:EmploymentTimeAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A field indicating the description for the associated kind of alien student employment time code.</xs:documentation>
     </xs:annotation>
@@ -9600,7 +9584,7 @@
       <xs:documentation>A USCIS receipt/case number(s) identification of the immigrant petition that was filed.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="ImmigrationBenefitApplication" abstract="true">
+  <xs:element name="ImmigrationBenefitApplicationAbstract" abstract="true">
     <xs:annotation>
       <xs:documentation>A data concept for the type of immigration benefit being requested</xs:documentation>
     </xs:annotation>
@@ -9615,7 +9599,7 @@
       <xs:documentation>A beneficiary or recipient of the immigration benefit.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="ImmigrationBenefitChangeOfNonImmigrantStatus" type="im:ImmigrationBenefitChangeOfNonImmigrantStatusType" substitutionGroup="im:ImmigrationBenefitApplication" nillable="true">
+  <xs:element name="ImmigrationBenefitChangeOfNonImmigrantStatus" type="im:ImmigrationBenefitChangeOfNonImmigrantStatusType" substitutionGroup="im:ImmigrationBenefitApplicationAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>An applicant's change of status data.</xs:documentation>
     </xs:annotation>
@@ -9625,7 +9609,7 @@
       <xs:documentation>An augmentation point for ImmigrationBenefitChangeOfNonImmigrantStatusType.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="ImmigrationBenefitChangeOfStatusEligibility" type="im:ImmigrationBenefitChangeOfStatusEligibilityType" substitutionGroup="im:ImmigrationBenefitEligibility" nillable="true">
+  <xs:element name="ImmigrationBenefitChangeOfStatusEligibility" type="im:ImmigrationBenefitChangeOfStatusEligibilityType" substitutionGroup="im:ImmigrationBenefitEligibilityAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>An applicant's eligibility data for a requested Change of Status.</xs:documentation>
     </xs:annotation>
@@ -9655,7 +9639,7 @@
       <xs:documentation>An accommodation required at the immigration interview for a disabled applicant.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="ImmigrationBenefitEligibility" abstract="true">
+  <xs:element name="ImmigrationBenefitEligibilityAbstract" abstract="true">
     <xs:annotation>
       <xs:documentation>A data concept for the information used to determine the eligibility for an immigraiton Benefit.</xs:documentation>
     </xs:annotation>
@@ -9695,7 +9679,7 @@
       <xs:documentation>An augmentation point for ImmigrationBenefitEligibilityExtendChangeStatusType.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="ImmigrationBenefitExtensionOfStay" type="im:ImmigrationBenefitExtensionOfStayType" substitutionGroup="im:ImmigrationBenefitApplication" nillable="true">
+  <xs:element name="ImmigrationBenefitExtensionOfStay" type="im:ImmigrationBenefitExtensionOfStayType" substitutionGroup="im:ImmigrationBenefitApplicationAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A benefit application for an extension of stay.</xs:documentation>
     </xs:annotation>
@@ -9705,7 +9689,7 @@
       <xs:documentation>An augmentation point for ImmigrationBenefitExtensionOfStayType.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="ImmigrationBenefitExtensionOfStayEligibility" type="im:ImmigrationBenefitExtensionOfStayEligibilityType" substitutionGroup="im:ImmigrationBenefitEligibility" nillable="true">
+  <xs:element name="ImmigrationBenefitExtensionOfStayEligibility" type="im:ImmigrationBenefitExtensionOfStayEligibilityType" substitutionGroup="im:ImmigrationBenefitEligibilityAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>An applicant's eligibility data for a requested  extension of stay.</xs:documentation>
     </xs:annotation>
@@ -9720,7 +9704,7 @@
       <xs:documentation>An augmentation point for ImmigrationBenefitMisconductDeclarationType.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="ImmigrationBenefitReinstatementOfStudentStatus" type="im:ImmigrationBenefitReinstatementOfStudentStatusType" substitutionGroup="im:ImmigrationBenefitApplication" nillable="true">
+  <xs:element name="ImmigrationBenefitReinstatementOfStudentStatus" type="im:ImmigrationBenefitReinstatementOfStudentStatusType" substitutionGroup="im:ImmigrationBenefitApplicationAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>An applicant's reinstatement of student status data.</xs:documentation>
     </xs:annotation>
@@ -9730,7 +9714,7 @@
       <xs:documentation>An augmentation point for ImmigrationBenefitReinstatementOfStudentStatusType.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="ImmigrationBenefitReinstatementOfStudentStatusEligibility" type="im:ImmigrationBenefitReinstatementOfStudentStatusEligibilityType" substitutionGroup="im:ImmigrationBenefitEligibility" nillable="true">
+  <xs:element name="ImmigrationBenefitReinstatementOfStudentStatusEligibility" type="im:ImmigrationBenefitReinstatementOfStudentStatusEligibilityType" substitutionGroup="im:ImmigrationBenefitEligibilityAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>An applicant's eligibility data for a requested reinstatement of student status.</xs:documentation>
     </xs:annotation>
@@ -9810,7 +9794,7 @@
       <xs:documentation>An  Immigration Status of a Person  with respect to a Country.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="ImmigrationStatusCode" type="im:ImmigrationClassOfAdmissionCategoryCodeType" substitutionGroup="nc:StatusDesignator" nillable="true">
+  <xs:element name="ImmigrationStatusCode" type="im:ImmigrationClassOfAdmissionCategoryCodeType" substitutionGroup="nc:StatusAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>An immigration status of an immigrant.</xs:documentation>
     </xs:annotation>
@@ -9890,12 +9874,12 @@
       <xs:documentation>Additional information about a location.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="LocationMotherCountry" abstract="true">
+  <xs:element name="LocationMotherCountryAbstract" abstract="true">
     <xs:annotation>
       <xs:documentation>A data concept for the governing mother country of a dependent country.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="LocationMotherCountryCode" type="iso_3166:CountryAlpha2CodeType" substitutionGroup="im:LocationMotherCountry" nillable="true">
+  <xs:element name="LocationMotherCountryCode" type="iso_3166:CountryAlpha2CodeType" substitutionGroup="im:LocationMotherCountryAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A governing mother country of a dependent country.</xs:documentation>
     </xs:annotation>
@@ -10470,7 +10454,7 @@
       <xs:documentation>True if Yes has been specified; false otherwise.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="RoleOfAlien" abstract="true">
+  <xs:element name="RoleOfAlienAbstract" abstract="true">
     <xs:annotation>
       <xs:documentation>A data concept for the role of an Alien who is being processed as part of a Screening Encounter.</xs:documentation>
     </xs:annotation>
@@ -10590,7 +10574,7 @@
       <xs:documentation>A classification of the reason why an alien STUDENT is no longer enrolled.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="StudentTerminationCode" type="im:StudentTerminationCodeType" substitutionGroup="im:Termination" nillable="true">
+  <xs:element name="StudentTerminationCode" type="im:StudentTerminationCodeType" substitutionGroup="im:TerminationAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A termination of an aliens status as a student.</xs:documentation>
     </xs:annotation>
@@ -10600,7 +10584,7 @@
       <xs:documentation>A field indicating the description for the associated STUDENT TERMINATION CODE.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="StudentTerminationText" type="nc:TextType" substitutionGroup="im:Termination" nillable="true">
+  <xs:element name="StudentTerminationText" type="nc:TextType" substitutionGroup="im:TerminationAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A field describing the valid reason why an alien student is terminated.</xs:documentation>
     </xs:annotation>
@@ -10610,37 +10594,37 @@
       <xs:documentation>A description of the remarks about the Exchange Visitor's subject field of study.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="SubmittingAlien" substitutionGroup="im:SubmittingEntity" abstract="true">
+  <xs:element name="SubmittingAlienAbstract" substitutionGroup="im:SubmittingEntityAbstract" abstract="true">
     <xs:annotation>
       <xs:documentation>A data concept for an Alien Person submitting the Immigration Documentation</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="SubmittingCitizen" substitutionGroup="im:SubmittingEntity" abstract="true">
+  <xs:element name="SubmittingCitizenAbstract" substitutionGroup="im:SubmittingEntityAbstract" abstract="true">
     <xs:annotation>
       <xs:documentation>A data concept for the Citizen who submitted the Immigration Documentation</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="SubmittingEducationOrganization" type="nc:OrganizationType" substitutionGroup="im:SubmittingEntity" nillable="true">
+  <xs:element name="SubmittingEducationOrganization" type="nc:OrganizationType" substitutionGroup="im:SubmittingEntityAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>An Educational Organization submitting the Immigration Documentation</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="SubmittingEmploymentOrganization" type="nc:OrganizationType" substitutionGroup="im:SubmittingEntity" nillable="true">
+  <xs:element name="SubmittingEmploymentOrganization" type="nc:OrganizationType" substitutionGroup="im:SubmittingEntityAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>An Employment Organization who submitting the Immigration Documentation</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="SubmittingEntity" abstract="true">
+  <xs:element name="SubmittingEntityAbstract" abstract="true">
     <xs:annotation>
       <xs:documentation>A data concept for the entity submitting the documentation</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="SubmittingLawFirm" type="nc:OrganizationType" substitutionGroup="im:SubmittingEntity" nillable="true">
+  <xs:element name="SubmittingLawFirm" type="nc:OrganizationType" substitutionGroup="im:SubmittingEntityAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A Law Firm Organization submitting the Immigration Documentation</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="SubmittingPerson" type="nc:PersonType" substitutionGroup="im:SubmittingEntity" nillable="true">
+  <xs:element name="SubmittingPerson" type="nc:PersonType" substitutionGroup="im:SubmittingEntityAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A Person submitting the Immigration Documentation</xs:documentation>
     </xs:annotation>
@@ -10655,7 +10639,7 @@
       <xs:documentation>A number indicating the total amount of tuition and fees to be paid by the alien student for the school term.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="Termination" abstract="true">
+  <xs:element name="TerminationAbstract" abstract="true">
     <xs:annotation>
       <xs:documentation>A data concept for the reason an alien student is terminated.</xs:documentation>
     </xs:annotation>

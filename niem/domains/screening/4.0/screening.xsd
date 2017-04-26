@@ -1,22 +1,13 @@
 <?xml version="1.0" encoding="US-ASCII"?>
-<xs:schema targetNamespace="http://release.niem.gov/niem/domains/screening/4.0/" version="alpha1" xsi:schemaLocation="http://release.niem.gov/niem/appinfo/3.0/ ../../../appinfo/3.0/appinfo.xsd http://release.niem.gov/niem/conformanceTargets/3.0/ ../../../conformanceTargets/3.0/conformanceTargets.xsd http://release.niem.gov/niem/localTerminology/3.0/ ../../../localTerminology/3.0/localTerminology.xsd" ct:conformanceTargets="http://reference.niem.gov/niem/specification/naming-and-design-rules/3.0/#ReferenceSchemaDocument" xmlns:cbrn="http://release.niem.gov/niem/domains/cbrn/4.0/" xmlns:scr="http://release.niem.gov/niem/domains/screening/4.0/" xmlns:nc="http://release.niem.gov/niem/niem-core/4.0/" xmlns:ct="http://release.niem.gov/niem/conformanceTargets/3.0/" xmlns:term="http://release.niem.gov/niem/localTerminology/3.0/" xmlns:structures="http://release.niem.gov/niem/structures/3.0/" xmlns:appinfo="http://release.niem.gov/niem/appinfo/3.0/" xmlns:intel="http://release.niem.gov/niem/domains/intelligence/4.0/" xmlns:j="http://release.niem.gov/niem/domains/jxdm/6.0/" xmlns:em="http://release.niem.gov/niem/domains/emergencyManagement/4.0/" xmlns:im="http://release.niem.gov/niem/domains/immigration/4.0/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:it="http://release.niem.gov/niem/domains/internationalTrade/4.0/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:m="http://release.niem.gov/niem/domains/maritime/4.0/" xmlns:niem-xs="http://release.niem.gov/niem/proxy/xsd/4.0/">
+<xs:schema targetNamespace="http://release.niem.gov/niem/domains/screening/4.0/" version="beta1" xsi:schemaLocation="http://release.niem.gov/niem/appinfo/4.0/ ../../../appinfo/4.0/appinfo.xsd http://release.niem.gov/niem/conformanceTargets/3.0/ ../../../conformanceTargets/3.0/conformanceTargets.xsd" ct:conformanceTargets="http://reference.niem.gov/niem/specification/naming-and-design-rules/4.0/#ReferenceSchemaDocument" xmlns:cbrn="http://release.niem.gov/niem/domains/cbrn/4.0/" xmlns:structures="http://release.niem.gov/niem/structures/4.0/" xmlns:appinfo="http://release.niem.gov/niem/appinfo/4.0/" xmlns:scr="http://release.niem.gov/niem/domains/screening/4.0/" xmlns:ct="http://release.niem.gov/niem/conformanceTargets/3.0/" xmlns:nc="http://release.niem.gov/niem/niem-core/4.0/" xmlns:intel="http://release.niem.gov/niem/domains/intelligence/4.0/" xmlns:j="http://release.niem.gov/niem/domains/jxdm/6.0/" xmlns:em="http://release.niem.gov/niem/domains/emergencyManagement/4.0/" xmlns:im="http://release.niem.gov/niem/domains/immigration/4.0/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:it="http://release.niem.gov/niem/domains/internationalTrade/4.0/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:m="http://release.niem.gov/niem/domains/maritime/4.0/" xmlns:niem-xs="http://release.niem.gov/niem/proxy/xsd/4.0/">
   <xs:annotation>
     <xs:documentation>The People Screening domain provides harmonized information sharing content within the Screening Portfolio of DHS.  The Screening namespace is initially being populated with person screening information for immigrant and non-immigrant person types who have been encountered and identified by the Screening Portfolio Components.  Screening expands on encounter-related NIEM elements currently included in the Immigration and Intelligence domains.</xs:documentation>
-    <xs:appinfo>
-      <term:LocalTerm term="TECS" literal="Traveler Encounter Compliance System"/>
-      <term:LocalTerm term="INS" literal="Immigration and Naturalization Service"/>
-      <term:LocalTerm term="LPR" literal="License Plate Reader"/>
-      <term:LocalTerm term="NCIC" literal="National Crime Information Center"/>
-      <term:LocalTerm term="ASA" literal="Army Security Agency"/>
-      <term:LocalTerm term="IATA" literal="International Air Transport Association"/>
-      <term:LocalTerm term="EFTS" literal="Electronic Fingerprint Transmission Specification"/>
-    </xs:appinfo>
   </xs:annotation>
   <xs:import schemaLocation="../../jxdm/6.0/jxdm.xsd" namespace="http://release.niem.gov/niem/domains/jxdm/6.0/"/>
   <xs:import schemaLocation="../../emergencyManagement/4.0/emergencyManagement.xsd" namespace="http://release.niem.gov/niem/domains/emergencyManagement/4.0/"/>
   <xs:import schemaLocation="../../maritime/4.0/maritime.xsd" namespace="http://release.niem.gov/niem/domains/maritime/4.0/"/>
-  <xs:import schemaLocation="../../../structures/3.0/structures.xsd" namespace="http://release.niem.gov/niem/structures/3.0/"/>
   <xs:import schemaLocation="../../internationalTrade/4.0/internationalTrade.xsd" namespace="http://release.niem.gov/niem/domains/internationalTrade/4.0/"/>
+  <xs:import schemaLocation="../../../structures/4.0/structures.xsd" namespace="http://release.niem.gov/niem/structures/4.0/"/>
   <xs:import schemaLocation="../../cbrn/4.0/cbrn.xsd" namespace="http://release.niem.gov/niem/domains/cbrn/4.0/"/>
   <xs:import schemaLocation="../../../proxy/xsd/4.0/xs.xsd" namespace="http://release.niem.gov/niem/proxy/xsd/4.0/"/>
   <xs:import schemaLocation="../../../niem-core/4.0/niem-core.xsd" namespace="http://release.niem.gov/niem/niem-core/4.0/"/>
@@ -82,7 +73,7 @@
       <xs:extension base="structures:ObjectType">
         <xs:sequence>
           <xs:element ref="scr:ActivityProcessDescriptionText" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="scr:ActivityProcessCategory" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="scr:ActivityProcessCategoryAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="scr:ActivityProcessClassificationAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
       </xs:extension>
@@ -128,7 +119,7 @@
       <xs:extension base="structures:ObjectType">
         <xs:sequence>
           <xs:element ref="scr:ActivityRequestDescriptionText" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="scr:ActivityRequestCategory" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="scr:ActivityRequestCategoryAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="scr:ActivityRequestClassificationAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
       </xs:extension>
@@ -179,7 +170,7 @@
       <xs:extension base="structures:ObjectType">
         <xs:sequence>
           <xs:element ref="scr:ActivityResponseDescriptionText" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="scr:ActivityResponseCategory" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="scr:ActivityResponseCategoryAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="scr:ActivityResponseClassificationAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
       </xs:extension>
@@ -225,7 +216,7 @@
       <xs:extension base="structures:ObjectType">
         <xs:sequence>
           <xs:element ref="scr:ActivityResultsDescriptionText" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="scr:ActivityResultsCategory" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="scr:ActivityResultsCategoryAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="scr:ActivityResultsClassificationAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
       </xs:extension>
@@ -255,7 +246,7 @@
           <xs:element ref="scr:LocationTractText" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="scr:LocationBuildingUnitName" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="scr:LocationBuildingUnitNumberText" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="scr:CountrySubdivisionCategory" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="scr:CountrySubdivisionCategoryAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="scr:LocationElement" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
       </xs:extension>
@@ -311,7 +302,7 @@
       <xs:extension base="structures:ObjectType">
         <xs:sequence>
           <xs:element ref="scr:AddressClassificationCategoryDescriptionText" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="scr:AddressClassificationCategory" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="scr:AddressClassificationCategoryAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="scr:AddressClassificationAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
       </xs:extension>
@@ -354,7 +345,7 @@
       <xs:extension base="structures:AugmentationType">
         <xs:sequence>
           <xs:element ref="scr:AlertReceivedDate" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="scr:AlertCategoryClassification" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="scr:AlertCategoryClassificationAbstract" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -469,7 +460,7 @@
       <xs:extension base="structures:ObjectType">
         <xs:sequence>
           <xs:element ref="scr:EscortDescriptionText" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="scr:Escort" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="scr:EscortAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="scr:AlienDeportationEscortReasonAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
       </xs:extension>
@@ -514,7 +505,7 @@
           <xs:element ref="scr:ProjectedReleaseDate" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="scr:ReleaseReasonCategoryDescriptionText" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="j:SentenceDate" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="scr:ReleaseReasonCategory" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="scr:ReleaseReasonCategoryAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="scr:AlienDetentionAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
       </xs:extension>
@@ -527,7 +518,7 @@
     <xs:complexContent>
       <xs:extension base="nc:StatusType">
         <xs:sequence>
-          <xs:element ref="scr:EntryStatusCategory" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="scr:EntryStatusCategoryAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="scr:AlienEntryStatusAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
       </xs:extension>
@@ -553,7 +544,7 @@
       <xs:extension base="structures:ObjectType">
         <xs:sequence>
           <xs:element ref="scr:AlienStatusWhenFoundDescriptionText" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="scr:AlienStatusWhenFoundCategory" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="scr:AlienStatusWhenFoundCategoryAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="scr:AlienStatusWhenFoundAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
       </xs:extension>
@@ -779,7 +770,7 @@
           <xs:element ref="scr:BenefitApplicationStatus" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="scr:BenefitApplicationReceiptNumberID" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="im:ImmigrationBenefitRequest" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="scr:BenefitApplicationClassification" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="scr:BenefitApplicationClassificationAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="scr:BenefitApplicationEncounterAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
       </xs:extension>
@@ -839,7 +830,7 @@
     <xs:complexContent>
       <xs:extension base="nc:StatusType">
         <xs:sequence>
-          <xs:element ref="scr:BenefitApplicationStatusCategory" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="scr:BenefitApplicationStatusCategoryAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="scr:BenefitApplicationStatusAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
       </xs:extension>
@@ -853,7 +844,7 @@
       <xs:extension base="nc:DocumentType">
         <xs:sequence>
           <xs:element ref="scr:BenefitApplicationCategoryDescriptionText" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="scr:BenefitApplicationCategory" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="scr:BenefitApplicationCategoryAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="scr:BenefitApplicationAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
       </xs:extension>
@@ -3441,7 +3432,7 @@
         <xs:sequence>
           <xs:element ref="scr:BenefitDocumentStatus" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="scr:BenefitDocumentCategoryDescriptionText" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="scr:BenefitDocumentCategory" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="scr:BenefitDocumentCategoryAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="scr:BenefitDocumentAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
       </xs:extension>
@@ -3459,8 +3450,8 @@
           <xs:element ref="scr:BirthID" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="scr:BirthplaceNearLargeCityDistanceMilesLengthMeasure" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="scr:BirthplaceNearLargeCityName" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="scr:ComplexionCategory" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="nc:PersonReligion" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="scr:ComplexionCategoryAbstract" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:PersonReligionAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="scr:BiographicAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
       </xs:extension>
@@ -3588,7 +3579,7 @@
         <xs:sequence>
           <xs:element ref="scr:ApprehensionChargeIdentification" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="scr:ForeignAuthorityNotifiedIndicator" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="scr:ChargeCategoryClassification" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="scr:ChargeCategoryClassificationAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="scr:ChargeSectionText" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
       </xs:extension>
@@ -15698,7 +15689,7 @@
       <xs:extension base="structures:ObjectType">
         <xs:sequence>
           <xs:element ref="scr:ConfidenceLevelCategoryDescriptionText" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="scr:ConfidenceLevelCategory" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="scr:ConfidenceLevelCategoryAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="scr:ConfidenceLevelAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
       </xs:extension>
@@ -16012,7 +16003,7 @@
       <xs:extension base="structures:ObjectType">
         <xs:sequence>
           <xs:element ref="scr:DepartureCategoryDescriptionText" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="scr:DepartureCategory" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="scr:DepartureCategoryAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="scr:DepartureClassificationAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
       </xs:extension>
@@ -16786,7 +16777,7 @@
       <xs:extension base="structures:ObjectType">
         <xs:sequence>
           <xs:element ref="scr:EncounterMethodDescriptionText" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="scr:EncounterMethodCategory" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="scr:EncounterMethodCategoryAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="scr:EncounterMethodAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
       </xs:extension>
@@ -16928,7 +16919,7 @@
           <xs:element ref="im:EnforcementEncounterCategoryText" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="im:AlienDetentionEncounter" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="scr:Enforcement" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="scr:EntryStatusCategory" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="scr:EntryStatusCategoryAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="scr:EnforcementEncounterAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
       </xs:extension>
@@ -16942,7 +16933,7 @@
       <xs:extension base="structures:ObjectType">
         <xs:sequence>
           <xs:element ref="scr:EnforcementCategoryDescriptionText" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="scr:EnforcementCategory" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="scr:EnforcementCategoryAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="scr:EnforcementAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
       </xs:extension>
@@ -17023,7 +17014,7 @@
       <xs:extension base="structures:ObjectType">
         <xs:sequence>
           <xs:element ref="scr:EnrollmentCategoryDescriptionText" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="scr:EnrollmentCategory" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="scr:EnrollmentCategoryAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="scr:EnrollmentClassificationAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
       </xs:extension>
@@ -17037,7 +17028,7 @@
       <xs:extension base="structures:ObjectType">
         <xs:sequence>
           <xs:element ref="scr:EnrollmentCategoryDescriptionText" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="scr:EnrollmentCategory" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="scr:EnrollmentCategoryAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="scr:EnrollmentStatusClassificationAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
       </xs:extension>
@@ -18741,7 +18732,7 @@
       <xs:extension base="structures:ObjectType">
         <xs:sequence>
           <xs:element ref="scr:LeadSourceCategoryDescriptionText" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="scr:LeadSourceCategory" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="scr:LeadSourceCategoryAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="scr:LeadSourceAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
       </xs:extension>
@@ -18831,7 +18822,7 @@
     <xs:complexContent>
       <xs:extension base="nc:StatusType">
         <xs:sequence>
-          <xs:element ref="scr:LeadStatusCategory" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="scr:LeadStatusCategoryAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="scr:LeadStatusAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
       </xs:extension>
@@ -18878,7 +18869,7 @@
       <xs:extension base="structures:AugmentationType">
         <xs:sequence>
           <xs:element ref="scr:BorderCodeText" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="scr:LocationCategoryClassification" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="scr:LocationCategoryClassificationAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="scr:PortOfEntryCodeText" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
       </xs:extension>
@@ -19076,7 +19067,7 @@
       <xs:extension base="structures:ObjectType">
         <xs:sequence>
           <xs:element ref="scr:LocationElementCategoryDescriptionText" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="scr:LocationElementCategory" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="scr:LocationElementCategoryAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="scr:LocationElementClassificationAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
       </xs:extension>
@@ -19150,7 +19141,7 @@
       <xs:extension base="structures:AugmentationType">
         <xs:sequence>
           <xs:element ref="scr:NCICDataIndicator" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="scr:PersonMedicalConditionCategory" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="scr:PersonMedicalConditionCategoryAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="scr:PersonMedicalConditionStatus" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
       </xs:extension>
@@ -19622,8 +19613,8 @@
           <xs:element ref="scr:OrganizationNameEffectiveDate" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="scr:OrganizationNameIdentification" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="scr:OrganizationNameTerminationDate" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="scr:OrganizationClassificationCategory" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="scr:OrganizationStatusClassificationCategory" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="scr:OrganizationClassificationCategoryAbstract" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="scr:OrganizationStatusClassificationCategoryAbstract" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -19842,7 +19833,7 @@
     <xs:complexContent>
       <xs:extension base="nc:StatusType">
         <xs:sequence>
-          <xs:element ref="scr:PersonAlertStatusCategory" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="scr:PersonAlertStatusCategoryAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="scr:PersonAlertStatusAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
       </xs:extension>
@@ -19857,7 +19848,7 @@
         <xs:sequence>
           <xs:element ref="nc:Person" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:PersonEncounter" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="scr:IdentityStatus" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="scr:IdentityStatusAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="scr:PersonBiometricAssociationAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
       </xs:extension>
@@ -19994,7 +19985,7 @@
           <xs:element ref="scr:CrossingReferralAgencyCodeText" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="scr:ReasonExcludedAdmissionCodeText" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="scr:AdvancedPassengerInformationIndicator" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="scr:ClassOfAdmissionClassification" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="scr:ClassOfAdmissionClassificationAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="scr:PersonCrossingEncounterAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
       </xs:extension>
@@ -20008,7 +19999,7 @@
       <xs:extension base="structures:ObjectType">
         <xs:sequence>
           <xs:element ref="scr:PersonCrossingDescriptionText" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="scr:PersonCrossingCategory" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="scr:PersonCrossingCategoryAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="scr:PersonCrossingAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
       </xs:extension>
@@ -20026,8 +20017,8 @@
           <xs:element ref="scr:DerogatoryInformationIdentification" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="scr:DerogatoryCategoryDescriptionText" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="scr:DerogatoryInformationExpirationDate" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="scr:DerogatoryStatus" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="scr:EncounterStatus" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="scr:DerogatoryStatusAbstract" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="scr:EncounterStatusAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="scr:PersonDerogatoryInformationAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
       </xs:extension>
@@ -20626,7 +20617,7 @@
           <xs:element ref="scr:SoundexIndexValueText" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="scr:PersonNameOriginText" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:EffectiveDate" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="scr:DesignationCategory" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="scr:DesignationCategoryAbstract" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -20754,7 +20745,7 @@
           <xs:element ref="scr:PersonRoleEffectiveDate" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="scr:PersonRoleEndDate" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="scr:PersonRoleCategoryText" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="scr:PersonRoleCategory" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="scr:PersonRoleCategoryAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="scr:PersonRoleAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
       </xs:extension>
@@ -20807,7 +20798,7 @@
           <xs:element ref="im:FormSubmittedDate" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="scr:PersonEnumeratorIdentification" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="scr:ScreeningImmigrationStatus" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="nc:PersonRace" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:PersonRaceAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="scr:PersonStatusSummaryAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
       </xs:extension>
@@ -21020,7 +21011,7 @@
     <xs:complexContent>
       <xs:extension base="structures:ObjectType">
         <xs:sequence>
-          <xs:element ref="im:RoleOfAlien" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="im:RoleOfAlienAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="scr:PrincipalIndicator" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="scr:VisaWaiverIndicator" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="scr:AlienCategoryText" minOccurs="0" maxOccurs="unbounded"/>
@@ -21153,11 +21144,11 @@
           <xs:element ref="nc:DocumentIssueDate" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="scr:ScreeningTECSRecordInformation" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:Image" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="nc:PersonSex" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="nc:PersonNationality" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:PersonSexAbstract" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:PersonNationalityAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:LocationCountry" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="scr:CountrySubdivisionID" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="nc:PersonCitizenship" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:PersonCitizenshipAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="scr:ScreeningTravelDocumentAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
       </xs:extension>
@@ -21185,7 +21176,7 @@
       <xs:extension base="structures:ObjectType">
         <xs:sequence>
           <xs:element ref="scr:SupportLevelCategoryDescriptionText" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="scr:SupportLevelCategory" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="scr:SupportLevelCategoryAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="scr:SupportLevelAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
       </xs:extension>
@@ -21261,7 +21252,7 @@
       <xs:extension base="structures:ObjectType">
         <xs:sequence>
           <xs:element ref="scr:TimeInUSCategoryDescriptionText" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="scr:TimeInUSCategory" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="scr:TimeInUSCategoryAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="scr:TimeInUSAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
       </xs:extension>
@@ -21393,7 +21384,7 @@
       <xs:extension base="structures:ObjectType">
         <xs:sequence>
           <xs:element ref="scr:TravelModeCategoryDescriptionText" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="scr:TravelModeCategory" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="scr:TravelModeCategoryAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="scr:TravelModeAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
       </xs:extension>
@@ -21408,9 +21399,9 @@
         <xs:sequence>
           <xs:element ref="scr:ConveyanceIdentificationCategoryCode" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="scr:VehicleCategoryCodeText" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="scr:ConveyanceCategory" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="scr:ConveyanceCategoryAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="scr:VehicleSubjectCategoryCodeText" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="scr:ConveyanceIDIssuingJurisdiction" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="scr:ConveyanceIDIssuingJurisdictionAbstract" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -21480,7 +21471,7 @@
       <xs:extension base="structures:ObjectType">
         <xs:sequence>
           <xs:element ref="scr:VisaCancelCategoryDescriptionText" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="scr:VisaCancelCategory" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="scr:VisaCancelCategoryAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="scr:VisaCancelAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
       </xs:extension>
@@ -21495,16 +21486,16 @@
         <xs:sequence>
           <xs:element ref="nc:PersonBirthDate" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:PersonBirthLocation" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="nc:PersonCitizenship" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:PersonCitizenshipAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:PersonName" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="nc:PersonSex" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:PersonSexAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="scr:VisaApplicationDate" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="scr:VisaApplicationDispositionStatus" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="scr:VisaApplicationLocation" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="scr:VisaNumberID" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="scr:VisaControlNumberID" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="scr:VisaFoilNumberID" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="scr:ClassOfAdmissionClassification" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="scr:ClassOfAdmissionClassificationAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="scr:VisaAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
       </xs:extension>
@@ -21597,7 +21588,7 @@
       <xs:extension base="structures:ObjectType">
         <xs:sequence>
           <xs:element ref="scr:WarrantCategoryDescriptionText" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="scr:WarrantCategory" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="scr:WarrantCategoryAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="scr:WarrantClassificationAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
       </xs:extension>
@@ -21668,7 +21659,7 @@
       <xs:extension base="structures:ObjectType">
         <xs:sequence>
           <xs:element ref="scr:WatchlistCategoryDescriptionText" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="scr:WatchlistCategory" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="scr:WatchlistCategoryAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="scr:WatchlistClassificationAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
       </xs:extension>
@@ -21750,12 +21741,12 @@
       <xs:documentation>A number of the Priority value of the activity, with 0-4 as gradient normal, 4 as the default, and 5-9 as gradient expedited priority.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="ActivityProcessCategory" abstract="true">
+  <xs:element name="ActivityProcessCategoryAbstract" abstract="true">
     <xs:annotation>
       <xs:documentation>A data concept for a kind of activity process.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="ActivityProcessCategoryCode" type="scr:ActivityProcessCategoryCodeType" substitutionGroup="scr:ActivityProcessCategory" nillable="true">
+  <xs:element name="ActivityProcessCategoryCode" type="scr:ActivityProcessCategoryCodeType" substitutionGroup="scr:ActivityProcessCategoryAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A kind of activity process.</xs:documentation>
     </xs:annotation>
@@ -21775,12 +21766,12 @@
       <xs:documentation>A description of a kind of activity process.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="ActivityRequestCategory" abstract="true">
+  <xs:element name="ActivityRequestCategoryAbstract" abstract="true">
     <xs:annotation>
       <xs:documentation>A data concept for a kind of activity request.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="ActivityRequestCategoryCode" type="scr:ActivityRequestCategoryCodeType" substitutionGroup="scr:ActivityRequestCategory" nillable="true">
+  <xs:element name="ActivityRequestCategoryCode" type="scr:ActivityRequestCategoryCodeType" substitutionGroup="scr:ActivityRequestCategoryAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A kind of activity request.</xs:documentation>
     </xs:annotation>
@@ -21800,12 +21791,12 @@
       <xs:documentation>A description of a kind of activity request.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="ActivityResponseCategory" abstract="true">
+  <xs:element name="ActivityResponseCategoryAbstract" abstract="true">
     <xs:annotation>
       <xs:documentation>A data concept for a kind of activity response.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="ActivityResponseCategoryCode" type="scr:ActivityResponseCategoryCodeType" substitutionGroup="scr:ActivityResponseCategory" nillable="true">
+  <xs:element name="ActivityResponseCategoryCode" type="scr:ActivityResponseCategoryCodeType" substitutionGroup="scr:ActivityResponseCategoryAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A kind of activity response.</xs:documentation>
     </xs:annotation>
@@ -21840,12 +21831,12 @@
       <xs:documentation>A text that contains the ACTIVITY RESPONSE value</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="ActivityResultsCategory" abstract="true">
+  <xs:element name="ActivityResultsCategoryAbstract" abstract="true">
     <xs:annotation>
       <xs:documentation>A data concept for a kind of activity results.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="ActivityResultsCategoryCode" type="scr:ActivityResultsCategoryCodeType" substitutionGroup="scr:ActivityResultsCategory" nillable="true">
+  <xs:element name="ActivityResultsCategoryCode" type="scr:ActivityResultsCategoryCodeType" substitutionGroup="scr:ActivityResultsCategoryAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A kind of activity results.</xs:documentation>
     </xs:annotation>
@@ -21895,12 +21886,12 @@
       <xs:documentation>An augmentation point for AddressClassificationType.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="AddressClassificationCategory" abstract="true">
+  <xs:element name="AddressClassificationCategoryAbstract" abstract="true">
     <xs:annotation>
       <xs:documentation>A data concept for a kind of address.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="AddressClassificationCategoryCode" type="scr:AddressCategoryCodeType" substitutionGroup="scr:AddressClassificationCategory" nillable="true">
+  <xs:element name="AddressClassificationCategoryCode" type="scr:AddressCategoryCodeType" substitutionGroup="scr:AddressClassificationCategoryAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A kind of address.</xs:documentation>
     </xs:annotation>
@@ -21980,12 +21971,12 @@
       <xs:documentation>Additional information about an alert.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="AlertCategoryClassification" abstract="true">
+  <xs:element name="AlertCategoryClassificationAbstract" abstract="true">
     <xs:annotation>
       <xs:documentation>A data concept for a kind of alert Category</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="AlertCategoryClassificationCode" type="scr:AlertCategoryCodeType" substitutionGroup="scr:AlertCategoryClassification" nillable="true">
+  <xs:element name="AlertCategoryClassificationCode" type="scr:AlertCategoryCodeType" substitutionGroup="scr:AlertCategoryClassificationAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A kind of alert Category</xs:documentation>
     </xs:annotation>
@@ -22090,12 +22081,12 @@
       <xs:documentation>An augmentation point for AlienStatusWhenFoundType.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="AlienStatusWhenFoundCategory" abstract="true">
+  <xs:element name="AlienStatusWhenFoundCategoryAbstract" abstract="true">
     <xs:annotation>
       <xs:documentation>A data concept for a subjects activity or status when apprehended.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="AlienStatusWhenFoundCategoryCode" type="scr:EntryStatusFoundCategoryCodeType" substitutionGroup="scr:AlienStatusWhenFoundCategory" nillable="true">
+  <xs:element name="AlienStatusWhenFoundCategoryCode" type="scr:EntryStatusFoundCategoryCodeType" substitutionGroup="scr:AlienStatusWhenFoundCategoryAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A subjects activity or status when apprehended.</xs:documentation>
     </xs:annotation>
@@ -22170,12 +22161,12 @@
       <xs:documentation>An augmentation point for BenefitApplicationType.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="BenefitApplicationCategory" abstract="true">
+  <xs:element name="BenefitApplicationCategoryAbstract" abstract="true">
     <xs:annotation>
       <xs:documentation>A data concept for a kind of benefit application.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="BenefitApplicationCategoryCode" type="scr:BenefitApplicationCategoryCodeType" substitutionGroup="scr:BenefitApplicationCategory" nillable="true">
+  <xs:element name="BenefitApplicationCategoryCode" type="scr:BenefitApplicationCategoryCodeType" substitutionGroup="scr:BenefitApplicationCategoryAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A kind of benefit application.</xs:documentation>
     </xs:annotation>
@@ -22185,12 +22176,12 @@
       <xs:documentation>A description of a kind of benefit application.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="BenefitApplicationClassification" abstract="true">
+  <xs:element name="BenefitApplicationClassificationAbstract" abstract="true">
     <xs:annotation>
       <xs:documentation>A data concept for a kind of benefit application.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="BenefitApplicationClassificationCode" type="scr:BenefitApplicationCategoryCodeType" substitutionGroup="scr:BenefitApplicationClassification" nillable="true">
+  <xs:element name="BenefitApplicationClassificationCode" type="scr:BenefitApplicationCategoryCodeType" substitutionGroup="scr:BenefitApplicationClassificationAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A kind of benefit application.</xs:documentation>
     </xs:annotation>
@@ -22220,12 +22211,12 @@
       <xs:documentation>An augmentation point for BenefitApplicationStatusType.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="BenefitApplicationStatusCategory" abstract="true">
+  <xs:element name="BenefitApplicationStatusCategoryAbstract" abstract="true">
     <xs:annotation>
       <xs:documentation>A data concept for a status of a benefit application.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="BenefitApplicationStatusCategoryCode" type="scr:BenefitApplicationStatusCategoryCodeType" substitutionGroup="scr:BenefitApplicationStatusCategory" nillable="true">
+  <xs:element name="BenefitApplicationStatusCategoryCode" type="scr:BenefitApplicationStatusCategoryCodeType" substitutionGroup="scr:BenefitApplicationStatusCategoryAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A status of a benefit application.</xs:documentation>
     </xs:annotation>
@@ -22245,12 +22236,12 @@
       <xs:documentation>An augmentation point for BenefitDocumentType.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="BenefitDocumentCategory" abstract="true">
+  <xs:element name="BenefitDocumentCategoryAbstract" abstract="true">
     <xs:annotation>
       <xs:documentation>A data concept for a kind of benefit document.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="BenefitDocumentCategoryCode" type="scr:BenefitDocumentCategoryCodeType" substitutionGroup="scr:BenefitDocumentCategory" nillable="true">
+  <xs:element name="BenefitDocumentCategoryCode" type="scr:BenefitDocumentCategoryCodeType" substitutionGroup="scr:BenefitDocumentCategoryAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A kind of benefit document.</xs:documentation>
     </xs:annotation>
@@ -22350,12 +22341,12 @@
       <xs:documentation>Additional information about a charge.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="ChargeCategoryClassification" abstract="true">
+  <xs:element name="ChargeCategoryClassificationAbstract" abstract="true">
     <xs:annotation>
       <xs:documentation>A data concept for a kind of charge.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="ChargeCategoryClassificationCode" type="scr:ChargeCategoryCodeType" substitutionGroup="scr:ChargeCategoryClassification" nillable="true">
+  <xs:element name="ChargeCategoryClassificationCode" type="scr:ChargeCategoryCodeType" substitutionGroup="scr:ChargeCategoryClassificationAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A kind of charge.</xs:documentation>
     </xs:annotation>
@@ -22370,12 +22361,12 @@
       <xs:documentation>A text that describes the section of law applicable to the CHARGE TYPE.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="ClassOfAdmissionClassification" abstract="true">
+  <xs:element name="ClassOfAdmissionClassificationAbstract" abstract="true">
     <xs:annotation>
       <xs:documentation>A data concept for a category of class of admission for a Person</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="ClassOfAdmissionClassificationCode" type="im:ImmigrationClassOfAdmissionCategoryCodeType" substitutionGroup="scr:ClassOfAdmissionClassification" nillable="true">
+  <xs:element name="ClassOfAdmissionClassificationCode" type="im:ImmigrationClassOfAdmissionCategoryCodeType" substitutionGroup="scr:ClassOfAdmissionClassificationAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A category of class of admission for a Person</xs:documentation>
     </xs:annotation>
@@ -22400,12 +22391,12 @@
       <xs:documentation>A data type that specifies client application software information</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="ComplexionCategory" abstract="true">
+  <xs:element name="ComplexionCategoryAbstract" abstract="true">
     <xs:annotation>
       <xs:documentation>A data concept for a kind of complexion.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="ComplexionCategoryCode" type="scr:ComplexionCategoryCodeType" substitutionGroup="scr:ComplexionCategory" nillable="true">
+  <xs:element name="ComplexionCategoryCode" type="scr:ComplexionCategoryCodeType" substitutionGroup="scr:ComplexionCategoryAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A kind of complexion.</xs:documentation>
     </xs:annotation>
@@ -22420,12 +22411,12 @@
       <xs:documentation>An augmentation point for ConfidenceLevelType.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="ConfidenceLevelCategory" abstract="true">
+  <xs:element name="ConfidenceLevelCategoryAbstract" abstract="true">
     <xs:annotation>
       <xs:documentation>A data concept for a kind of confidence level.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="ConfidenceLevelCategoryCode" type="scr:ConfidenceLevelCategoryCodeType" substitutionGroup="scr:ConfidenceLevelCategory" nillable="true">
+  <xs:element name="ConfidenceLevelCategoryCode" type="scr:ConfidenceLevelCategoryCodeType" substitutionGroup="scr:ConfidenceLevelCategoryAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A kind of confidence level.</xs:documentation>
     </xs:annotation>
@@ -22445,27 +22436,27 @@
       <xs:documentation>A Datetime on which the access control level was last modified</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="ConveyanceCategory" abstract="true">
+  <xs:element name="ConveyanceCategoryAbstract" abstract="true">
     <xs:annotation>
       <xs:documentation>A data concept for a kind of conveyance.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="ConveyanceCategoryCode" type="scr:ConveyanceCategoryCodeType" substitutionGroup="scr:ConveyanceCategory" nillable="true">
+  <xs:element name="ConveyanceCategoryCode" type="scr:ConveyanceCategoryCodeType" substitutionGroup="scr:ConveyanceCategoryAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A kind of conveyance.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="ConveyanceIDIssuingJurisdiction" abstract="true">
+  <xs:element name="ConveyanceIDIssuingJurisdictionAbstract" abstract="true">
     <xs:annotation>
       <xs:documentation>A data concept for a conveyance ID issuing jurisdiction type.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="ConveyanceIDIssuingJurisdictionCode" type="scr:ConveyanceIDIssuingJurisdictionCategoryCodeType" substitutionGroup="scr:ConveyanceIDIssuingJurisdiction" nillable="true">
+  <xs:element name="ConveyanceIDIssuingJurisdictionCode" type="scr:ConveyanceIDIssuingJurisdictionCategoryCodeType" substitutionGroup="scr:ConveyanceIDIssuingJurisdictionAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A conveyance ID issuing jurisdiction type.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="ConveyanceIdentificationCategoryCode" type="scr:ConveyanceIdentificationCategoryCodeType" substitutionGroup="nc:IdentificationCategory" nillable="true">
+  <xs:element name="ConveyanceIdentificationCategoryCode" type="scr:ConveyanceIdentificationCategoryCodeType" substitutionGroup="nc:IdentificationCategoryAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A kind of conveyance identification.</xs:documentation>
     </xs:annotation>
@@ -22485,12 +22476,12 @@
       <xs:documentation>An identifier for a COUNTRY NAME.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="CountrySubdivisionCategory" abstract="true">
+  <xs:element name="CountrySubdivisionCategoryAbstract" abstract="true">
     <xs:annotation>
       <xs:documentation>A data concept for a COUNTRY SUBDIVISION TYPE.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="CountrySubdivisionCategoryCode" type="scr:CountrySubdivisionCategoryCodeType" substitutionGroup="scr:CountrySubdivisionCategory" nillable="true">
+  <xs:element name="CountrySubdivisionCategoryCode" type="scr:CountrySubdivisionCategoryCodeType" substitutionGroup="scr:CountrySubdivisionCategoryAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A COUNTRY SUBDIVISION TYPE.</xs:documentation>
     </xs:annotation>
@@ -22550,12 +22541,12 @@
       <xs:documentation>True if the record has been logically deleted from the system; false otherwise.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="DepartureCategory" abstract="true">
+  <xs:element name="DepartureCategoryAbstract" abstract="true">
     <xs:annotation>
       <xs:documentation>A data concept for a kind of departure.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="DepartureCategoryCode" type="scr:DepartureCategoryCodeType" substitutionGroup="scr:DepartureCategory" nillable="true">
+  <xs:element name="DepartureCategoryCode" type="scr:DepartureCategoryCodeType" substitutionGroup="scr:DepartureCategoryAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A kind of departure.</xs:documentation>
     </xs:annotation>
@@ -22610,12 +22601,12 @@
       <xs:documentation>An identification that represents the PERSON DEROGATORY INFORMATION</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="DerogatoryStatus" abstract="true">
+  <xs:element name="DerogatoryStatusAbstract" abstract="true">
     <xs:annotation>
       <xs:documentation>A data concept for a status of biometrically linked encounters at which the owning organization perceives the derogatory information.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="DerogatoryStatusCode" type="scr:RiskCategoryCodeType" substitutionGroup="scr:DerogatoryStatus" nillable="true">
+  <xs:element name="DerogatoryStatusCode" type="scr:RiskCategoryCodeType" substitutionGroup="scr:DerogatoryStatusAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A status of biometrically linked encounters at which the owning organization perceives the derogatory information.</xs:documentation>
     </xs:annotation>
@@ -22625,12 +22616,12 @@
       <xs:documentation>An identifier that represents a COUNTRY.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="DesignationCategory" abstract="true">
+  <xs:element name="DesignationCategoryAbstract" abstract="true">
     <xs:annotation>
       <xs:documentation>A data concept for a kind of designation.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="DesignationCategoryCode" type="scr:PersonNameDesignationCategoryCodeType" substitutionGroup="scr:DesignationCategory" nillable="true">
+  <xs:element name="DesignationCategoryCode" type="scr:PersonNameDesignationCategoryCodeType" substitutionGroup="scr:DesignationCategoryAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A kind of designation.</xs:documentation>
     </xs:annotation>
@@ -22650,7 +22641,7 @@
       <xs:documentation>An augmentation point for DeviceBasedEncounterAssociationType.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="DocumentCategoryCode" type="scr:DocumentCategoryCodeType" substitutionGroup="nc:DocumentCategory" nillable="true">
+  <xs:element name="DocumentCategoryCode" type="scr:DocumentCategoryCodeType" substitutionGroup="nc:DocumentCategoryAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A kind of document.</xs:documentation>
     </xs:annotation>
@@ -22670,7 +22661,7 @@
       <xs:documentation>An augmentation point for DocumentStatusType.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="DocumentStatusCategoryCode" type="scr:DocumentStatusCategoryCodeType" substitutionGroup="nc:DocumentStatusCategory" nillable="true">
+  <xs:element name="DocumentStatusCategoryCode" type="scr:DocumentStatusCategoryCodeType" substitutionGroup="nc:DocumentStatusCategoryAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A kind of status of a document.</xs:documentation>
     </xs:annotation>
@@ -22715,7 +22706,7 @@
       <xs:documentation>An identifier for a number representing the call number of an EMPLOYEE.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="EncounterCategoryCode" type="scr:EncounterCategoryCodeType" substitutionGroup="nc:EncounterCategory" nillable="true">
+  <xs:element name="EncounterCategoryCode" type="scr:EncounterCategoryCodeType" substitutionGroup="nc:EncounterCategoryAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A kind of encounter.</xs:documentation>
     </xs:annotation>
@@ -22725,12 +22716,12 @@
       <xs:documentation>An augmentation point for EncounterDeviceType.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="EncounterDeviceCategory" abstract="true">
+  <xs:element name="EncounterDeviceCategoryAbstract" abstract="true">
     <xs:annotation>
       <xs:documentation>A data concept for a category of encounter device.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="EncounterDeviceCategoryText" type="nc:TextType" substitutionGroup="scr:EncounterDeviceCategory" nillable="true">
+  <xs:element name="EncounterDeviceCategoryText" type="nc:TextType" substitutionGroup="scr:EncounterDeviceCategoryAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A kind of device category to capture data in the process of an encounter.</xs:documentation>
     </xs:annotation>
@@ -22755,12 +22746,12 @@
       <xs:documentation>An augmentation point for EncounterMethodType.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="EncounterMethodCategory" abstract="true">
+  <xs:element name="EncounterMethodCategoryAbstract" abstract="true">
     <xs:annotation>
       <xs:documentation>A data concept for a kind of encounter method.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="EncounterMethodCategoryCode" type="scr:EncounterMethodCategoryCodeType" substitutionGroup="scr:EncounterMethodCategory" nillable="true">
+  <xs:element name="EncounterMethodCategoryCode" type="scr:EncounterMethodCategoryCodeType" substitutionGroup="scr:EncounterMethodCategoryAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A kind of encounter method.</xs:documentation>
     </xs:annotation>
@@ -22775,12 +22766,12 @@
       <xs:documentation>A kind of encounter method.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="EncounterStatus" abstract="true">
+  <xs:element name="EncounterStatusAbstract" abstract="true">
     <xs:annotation>
       <xs:documentation>A data concept for a status of an individual encounter as an aggregation of any associated derogatory information.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="EncounterStatusCode" type="scr:RiskCategoryCodeType" substitutionGroup="scr:EncounterStatus" nillable="true">
+  <xs:element name="EncounterStatusCode" type="scr:RiskCategoryCodeType" substitutionGroup="scr:EncounterStatusAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A status of an individual encounter as an aggregation of any associated derogatory information.</xs:documentation>
     </xs:annotation>
@@ -22805,12 +22796,12 @@
       <xs:documentation>An augmentation point for EnforcementType.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="EnforcementCategory" abstract="true">
+  <xs:element name="EnforcementCategoryAbstract" abstract="true">
     <xs:annotation>
       <xs:documentation>A data concept for a classification of ENFORCEMENT</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="EnforcementCategoryCode" type="scr:EnforcementCategoryCodeType" substitutionGroup="scr:EnforcementCategory" nillable="true">
+  <xs:element name="EnforcementCategoryCode" type="scr:EnforcementCategoryCodeType" substitutionGroup="scr:EnforcementCategoryAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A classification of ENFORCEMENT</xs:documentation>
     </xs:annotation>
@@ -22865,12 +22856,12 @@
       <xs:documentation>An augmentation point for EnrollmentType.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="EnrollmentCategory" abstract="true">
+  <xs:element name="EnrollmentCategoryAbstract" abstract="true">
     <xs:annotation>
       <xs:documentation>A data concept for a kind of enrollment.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="EnrollmentCategoryCode" type="scr:EnrollmentCategoryCodeType" substitutionGroup="scr:EnrollmentCategory" nillable="true">
+  <xs:element name="EnrollmentCategoryCode" type="scr:EnrollmentCategoryCodeType" substitutionGroup="scr:EnrollmentCategoryAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A kind of enrollment.</xs:documentation>
     </xs:annotation>
@@ -22915,12 +22906,12 @@
       <xs:documentation>A name of the location where the alien entered the United States most recently.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="EntryStatusCategory" abstract="true">
+  <xs:element name="EntryStatusCategoryAbstract" abstract="true">
     <xs:annotation>
       <xs:documentation>A data concept for a kind of entry status at time of his most recent entry.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="EntryStatusCategoryCode" type="scr:EntryStatusCategoryCodeType" substitutionGroup="scr:EntryStatusCategory" nillable="true">
+  <xs:element name="EntryStatusCategoryCode" type="scr:EntryStatusCategoryCodeType" substitutionGroup="scr:EntryStatusCategoryAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A kind of entry status at time of his most recent entry.</xs:documentation>
     </xs:annotation>
@@ -22940,12 +22931,12 @@
       <xs:documentation>An identifier for the terminal device from which the original record was created</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="Escort" abstract="true">
+  <xs:element name="EscortAbstract" abstract="true">
     <xs:annotation>
       <xs:documentation>A data concept for a reason why an escort is required to deport the subject.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="EscortCode" type="scr:EscortReasonCategoryCodeType" substitutionGroup="scr:Escort" nillable="true">
+  <xs:element name="EscortCode" type="scr:EscortReasonCategoryCodeType" substitutionGroup="scr:EscortAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A reason why an escort is required to deport the subject.</xs:documentation>
     </xs:annotation>
@@ -22960,7 +22951,7 @@
       <xs:documentation>A kind of reason why an escort is required to deport the subject.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="EthnicityCategoryCode" type="scr:EthnicityCategoryCodeType" substitutionGroup="nc:PersonEthnicity" nillable="true">
+  <xs:element name="EthnicityCategoryCode" type="scr:EthnicityCategoryCodeType" substitutionGroup="nc:PersonEthnicityAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A kind of ethnicity.</xs:documentation>
     </xs:annotation>
@@ -23115,12 +23106,12 @@
       <xs:documentation>A text that describes special or advisory information about a particular Identification ID</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="IdentityStatus" abstract="true">
+  <xs:element name="IdentityStatusAbstract" abstract="true">
     <xs:annotation>
       <xs:documentation>A data concept for an aggregated status of biometrically linked encounters for an identified individual.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="IdentityStatusCode" type="scr:RiskCategoryCodeType" substitutionGroup="scr:IdentityStatus" nillable="true">
+  <xs:element name="IdentityStatusCode" type="scr:RiskCategoryCodeType" substitutionGroup="scr:IdentityStatusAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>An aggregated status of biometrically linked encounters for an identified individual.</xs:documentation>
     </xs:annotation>
@@ -23310,12 +23301,12 @@
       <xs:documentation>An augmentation point for LeadSourceType.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="LeadSourceCategory" abstract="true">
+  <xs:element name="LeadSourceCategoryAbstract" abstract="true">
     <xs:annotation>
       <xs:documentation>A data concept for a LEAD SOURCE TYPE</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="LeadSourceCategoryCode" type="scr:LeadSourceCategoryCodeType" substitutionGroup="scr:LeadSourceCategory" nillable="true">
+  <xs:element name="LeadSourceCategoryCode" type="scr:LeadSourceCategoryCodeType" substitutionGroup="scr:LeadSourceCategoryAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A LEAD SOURCE TYPE</xs:documentation>
     </xs:annotation>
@@ -23335,12 +23326,12 @@
       <xs:documentation>An augmentation point for LeadStatusType.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="LeadStatusCategory" abstract="true">
+  <xs:element name="LeadStatusCategoryAbstract" abstract="true">
     <xs:annotation>
       <xs:documentation>A data concept for a kind of lead status.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="LeadStatusCategoryCode" type="scr:LeadStatusCategoryCodeType" substitutionGroup="scr:LeadStatusCategory" nillable="true">
+  <xs:element name="LeadStatusCategoryCode" type="scr:LeadStatusCategoryCodeType" substitutionGroup="scr:LeadStatusCategoryAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A kind of lead status.</xs:documentation>
     </xs:annotation>
@@ -23385,22 +23376,22 @@
       <xs:documentation>A postal carrier route serving the GEOPHYSICAL ADDRESS.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="LocationCategoryClassification" abstract="true">
+  <xs:element name="LocationCategoryClassificationAbstract" abstract="true">
     <xs:annotation>
       <xs:documentation>A data concept for a classification of locations based on general similarities</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="LocationCategoryClassificationCode" type="scr:LocationCategoryCodeType" substitutionGroup="scr:LocationCategoryClassification" nillable="true">
+  <xs:element name="LocationCategoryClassificationCode" type="scr:LocationCategoryCodeType" substitutionGroup="scr:LocationCategoryClassificationAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A classification of locations based on general similarities</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="LocationCategoryCode" type="scr:LocationCategoryCodeType" substitutionGroup="nc:LocationCategory" nillable="true">
+  <xs:element name="LocationCategoryCode" type="scr:LocationCategoryCodeType" substitutionGroup="nc:LocationCategoryAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A kind of or functional description of a location.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="LocationCountryIdentification" type="nc:IdentificationType" substitutionGroup="nc:LocationCountry" nillable="true">
+  <xs:element name="LocationCountryIdentification" type="nc:IdentificationType" substitutionGroup="nc:CountryRepresentationAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>An identification value that represents a country.</xs:documentation>
     </xs:annotation>
@@ -23415,12 +23406,12 @@
       <xs:documentation>An augmentation point for LocationElementType.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="LocationElementCategory" abstract="true">
+  <xs:element name="LocationElementCategoryAbstract" abstract="true">
     <xs:annotation>
       <xs:documentation>A data concept for a kind of location element.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="LocationElementCategoryCode" type="scr:LocationElementCategoryCodeType" substitutionGroup="scr:LocationElementCategory" nillable="true">
+  <xs:element name="LocationElementCategoryCode" type="scr:LocationElementCategoryCodeType" substitutionGroup="scr:LocationElementCategoryAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A kind of location element.</xs:documentation>
     </xs:annotation>
@@ -23450,7 +23441,7 @@
       <xs:documentation>A real estate tract of the GEOPHYSICAL ADDRESS.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="ManifestCategoryCode" type="scr:ManifestCategoryCodeType" substitutionGroup="nc:ManifestCategory" nillable="true">
+  <xs:element name="ManifestCategoryCode" type="scr:ManifestCategoryCodeType" substitutionGroup="nc:ManifestCategoryAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A kind of manifest.</xs:documentation>
     </xs:annotation>
@@ -23535,12 +23526,12 @@
       <xs:documentation>Additional information about an organization.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="OrganizationClassificationCategory" abstract="true">
+  <xs:element name="OrganizationClassificationCategoryAbstract" abstract="true">
     <xs:annotation>
       <xs:documentation>A data concept for a kind of organization.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="OrganizationClassificationCategoryCode" type="scr:OrganizationCategoryCodeType" substitutionGroup="scr:OrganizationClassificationCategory" nillable="true">
+  <xs:element name="OrganizationClassificationCategoryCode" type="scr:OrganizationCategoryCodeType" substitutionGroup="scr:OrganizationClassificationCategoryAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A kind of organization.</xs:documentation>
     </xs:annotation>
@@ -23595,12 +23586,12 @@
       <xs:documentation>A number of people belonging to the ORGANIZATION.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="OrganizationStatusClassificationCategory" abstract="true">
+  <xs:element name="OrganizationStatusClassificationCategoryAbstract" abstract="true">
     <xs:annotation>
       <xs:documentation>A data concept for a kind of organization status.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="OrganizationStatusClassificationCategoryCode" type="scr:OrganizationStatusCategoryCodeType" substitutionGroup="scr:OrganizationStatusClassificationCategory" nillable="true">
+  <xs:element name="OrganizationStatusClassificationCategoryCode" type="scr:OrganizationStatusCategoryCodeType" substitutionGroup="scr:OrganizationStatusClassificationCategoryAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A kind of organization status.</xs:documentation>
     </xs:annotation>
@@ -23655,12 +23646,12 @@
       <xs:documentation>An augmentation point for PersonAlertStatusType.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="PersonAlertStatusCategory" abstract="true">
+  <xs:element name="PersonAlertStatusCategoryAbstract" abstract="true">
     <xs:annotation>
       <xs:documentation>A data concept for a person alert status.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="PersonAlertStatusCategoryCode" type="scr:PersonAlertStatusCategoryCodeType" substitutionGroup="scr:PersonAlertStatusCategory" nillable="true">
+  <xs:element name="PersonAlertStatusCategoryCode" type="scr:PersonAlertStatusCategoryCodeType" substitutionGroup="scr:PersonAlertStatusCategoryAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A person alert status.</xs:documentation>
     </xs:annotation>
@@ -23715,12 +23706,12 @@
       <xs:documentation>An augmentation point for PersonCrossingType.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="PersonCrossingCategory" abstract="true">
+  <xs:element name="PersonCrossingCategoryAbstract" abstract="true">
     <xs:annotation>
       <xs:documentation>A data concept for a direction of a person crossing the U.S. border.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="PersonCrossingCategoryCode" type="scr:PersonCrossingCategoryCodeType" substitutionGroup="scr:PersonCrossingCategory" nillable="true">
+  <xs:element name="PersonCrossingCategoryCode" type="scr:PersonCrossingCategoryCodeType" substitutionGroup="scr:PersonCrossingCategoryAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A direction of a person crossing the U.S. border.</xs:documentation>
     </xs:annotation>
@@ -23775,7 +23766,7 @@
       <xs:documentation>An augmentation point for PersonDesignatorType.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="PersonDesignatorCategoryCode" type="scr:PersonDesignatorCategoryCodeType" substitutionGroup="nc:IdentificationCategory" nillable="true">
+  <xs:element name="PersonDesignatorCategoryCode" type="scr:PersonDesignatorCategoryCodeType" substitutionGroup="nc:IdentificationCategoryAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A kind of person identification used in a document or credential</xs:documentation>
     </xs:annotation>
@@ -23835,7 +23826,7 @@
       <xs:documentation>A description of a kind of person encounter.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="PersonEncounterDeviceCategoryCode" type="scr:EncounterDeviceCategoryCodeType" substitutionGroup="scr:EncounterDeviceCategory" nillable="true">
+  <xs:element name="PersonEncounterDeviceCategoryCode" type="scr:EncounterDeviceCategoryCodeType" substitutionGroup="scr:EncounterDeviceCategoryAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A category of device to capture person data in the process of an  encounter.</xs:documentation>
     </xs:annotation>
@@ -23880,12 +23871,12 @@
       <xs:documentation>An augmentation point for PersonLeadAssociationType.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="PersonMedicalConditionCategory" abstract="true">
+  <xs:element name="PersonMedicalConditionCategoryAbstract" abstract="true">
     <xs:annotation>
       <xs:documentation>A data concept for a kind of medical condition of a person.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="PersonMedicalConditionCategoryCode" type="scr:PersonMedicalConditionCodeType" substitutionGroup="scr:PersonMedicalConditionCategory" nillable="true">
+  <xs:element name="PersonMedicalConditionCategoryCode" type="scr:PersonMedicalConditionCodeType" substitutionGroup="scr:PersonMedicalConditionCategoryAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A kind of medical condition of a person.</xs:documentation>
     </xs:annotation>
@@ -23950,12 +23941,12 @@
       <xs:documentation>An augmentation point for PersonRoleType.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="PersonRoleCategory" abstract="true">
+  <xs:element name="PersonRoleCategoryAbstract" abstract="true">
     <xs:annotation>
       <xs:documentation>A data concept for a kind of person role.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="PersonRoleCategoryCode" type="scr:PersonRoleCategoryCodeType" substitutionGroup="scr:PersonRoleCategory" nillable="true">
+  <xs:element name="PersonRoleCategoryCode" type="scr:PersonRoleCategoryCodeType" substitutionGroup="scr:PersonRoleCategoryAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A kind of person role.</xs:documentation>
     </xs:annotation>
@@ -24070,12 +24061,12 @@
       <xs:documentation>A manner in which the interview was recorded.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="ReleaseReasonCategory" abstract="true">
+  <xs:element name="ReleaseReasonCategoryAbstract" abstract="true">
     <xs:annotation>
       <xs:documentation>A data concept for a kind of detention release reason.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="ReleaseReasonCategoryCode" type="scr:DetentionReleaseReasonCategoryCodeType" substitutionGroup="scr:ReleaseReasonCategory" nillable="true">
+  <xs:element name="ReleaseReasonCategoryCode" type="scr:DetentionReleaseReasonCategoryCodeType" substitutionGroup="scr:ReleaseReasonCategoryAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A kind of detention release reason.</xs:documentation>
     </xs:annotation>
@@ -24295,12 +24286,12 @@
       <xs:documentation>An augmentation point for SupportLevelType.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="SupportLevelCategory" abstract="true">
+  <xs:element name="SupportLevelCategoryAbstract" abstract="true">
     <xs:annotation>
       <xs:documentation>A data concept for a kind of support level.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="SupportLevelCategoryCodeText" type="nc:TextType" substitutionGroup="scr:SupportLevelCategory" nillable="true">
+  <xs:element name="SupportLevelCategoryCodeText" type="nc:TextType" substitutionGroup="scr:SupportLevelCategoryAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A kind of support level.</xs:documentation>
     </xs:annotation>
@@ -24350,12 +24341,12 @@
       <xs:documentation>An augmentation point for TimeInUSType.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="TimeInUSCategory" abstract="true">
+  <xs:element name="TimeInUSCategoryAbstract" abstract="true">
     <xs:annotation>
       <xs:documentation>A data concept for a quantity of time a subject has been in the United States illegally.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="TimeInUSCategoryCode" type="scr:TimeInUSCategoryCodeType" substitutionGroup="scr:TimeInUSCategory" nillable="true">
+  <xs:element name="TimeInUSCategoryCode" type="scr:TimeInUSCategoryCodeType" substitutionGroup="scr:TimeInUSCategoryAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A quantity of time a subject has been in the United States illegally.</xs:documentation>
     </xs:annotation>
@@ -24430,12 +24421,12 @@
       <xs:documentation>An augmentation point for TravelModeType.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="TravelModeCategory" abstract="true">
+  <xs:element name="TravelModeCategoryAbstract" abstract="true">
     <xs:annotation>
       <xs:documentation>A data concept for a means of transport used by the alien.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="TravelModeCategoryCode" type="scr:TravelModeCategoryCodeType" substitutionGroup="scr:TravelModeCategory" nillable="true">
+  <xs:element name="TravelModeCategoryCode" type="scr:TravelModeCategoryCodeType" substitutionGroup="scr:TravelModeCategoryAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A means of transport used by the alien.</xs:documentation>
     </xs:annotation>
@@ -24520,12 +24511,12 @@
       <xs:documentation>An augmentation point for VisaCancelType.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="VisaCancelCategory" abstract="true">
+  <xs:element name="VisaCancelCategoryAbstract" abstract="true">
     <xs:annotation>
       <xs:documentation>A data concept for a category of reason for invalidating a previously issued permission to enter the United States.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="VisaCancelCategoryCode" type="scr:VisaCancelCategoryCodeType" substitutionGroup="scr:VisaCancelCategory" nillable="true">
+  <xs:element name="VisaCancelCategoryCode" type="scr:VisaCancelCategoryCodeType" substitutionGroup="scr:VisaCancelCategoryAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A category of reason for invalidating a previously issued permission to enter the United States.</xs:documentation>
     </xs:annotation>
@@ -24600,12 +24591,12 @@
       <xs:documentation>Additional information about a warrant.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="WarrantCategory" abstract="true">
+  <xs:element name="WarrantCategoryAbstract" abstract="true">
     <xs:annotation>
       <xs:documentation>A data concept for a kind of warrant.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="WarrantCategoryCode" type="scr:WarrantCategoryCodeType" substitutionGroup="scr:WarrantCategory" nillable="true">
+  <xs:element name="WarrantCategoryCode" type="scr:WarrantCategoryCodeType" substitutionGroup="scr:WarrantCategoryAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A kind of warrant.</xs:documentation>
     </xs:annotation>
@@ -24660,12 +24651,12 @@
       <xs:documentation>An augmentation point for WatchlistType.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="WatchlistCategory" abstract="true">
+  <xs:element name="WatchlistCategoryAbstract" abstract="true">
     <xs:annotation>
       <xs:documentation>A data concept for a kind of watchlist.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="WatchlistCategoryCode" type="scr:WatchlistCategoryCodeType" substitutionGroup="scr:WatchlistCategory" nillable="true">
+  <xs:element name="WatchlistCategoryCode" type="scr:WatchlistCategoryCodeType" substitutionGroup="scr:WatchlistCategoryAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A kind of watchlist.</xs:documentation>
     </xs:annotation>

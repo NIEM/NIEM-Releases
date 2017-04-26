@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="US-ASCII"?>
-<xs:schema targetNamespace="http://release.niem.gov/niem/domains/surfaceTransportation/4.0/" version="alpha1" xsi:schemaLocation="http://release.niem.gov/niem/appinfo/3.0/ ../../../appinfo/3.0/appinfo.xsd http://release.niem.gov/niem/conformanceTargets/3.0/ ../../../conformanceTargets/3.0/conformanceTargets.xsd" ct:conformanceTargets="http://reference.niem.gov/niem/specification/naming-and-design-rules/3.0/#ReferenceSchemaDocument" xmlns:st="http://release.niem.gov/niem/domains/surfaceTransportation/4.0/" xmlns:ct="http://release.niem.gov/niem/conformanceTargets/3.0/" xmlns:nc="http://release.niem.gov/niem/niem-core/4.0/" xmlns:structures="http://release.niem.gov/niem/structures/3.0/" xmlns:appinfo="http://release.niem.gov/niem/appinfo/3.0/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mmucc="http://release.niem.gov/niem/codes/mmucc/4.0/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:niem-xs="http://release.niem.gov/niem/proxy/xsd/4.0/">
+<xs:schema targetNamespace="http://release.niem.gov/niem/domains/surfaceTransportation/4.0/" version="beta1" xsi:schemaLocation="http://release.niem.gov/niem/appinfo/4.0/ ../../../appinfo/4.0/appinfo.xsd http://release.niem.gov/niem/conformanceTargets/3.0/ ../../../conformanceTargets/3.0/conformanceTargets.xsd" ct:conformanceTargets="http://reference.niem.gov/niem/specification/naming-and-design-rules/4.0/#ReferenceSchemaDocument" xmlns:structures="http://release.niem.gov/niem/structures/4.0/" xmlns:st="http://release.niem.gov/niem/domains/surfaceTransportation/4.0/" xmlns:appinfo="http://release.niem.gov/niem/appinfo/4.0/" xmlns:ct="http://release.niem.gov/niem/conformanceTargets/3.0/" xmlns:nc="http://release.niem.gov/niem/niem-core/4.0/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mmucc="http://release.niem.gov/niem/codes/mmucc/4.0/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:niem-xs="http://release.niem.gov/niem/proxy/xsd/4.0/">
   <xs:annotation>
     <xs:documentation>Surface Transportation</xs:documentation>
   </xs:annotation>
-  <xs:import schemaLocation="../../../structures/3.0/structures.xsd" namespace="http://release.niem.gov/niem/structures/3.0/"/>
+  <xs:import schemaLocation="../../../structures/4.0/structures.xsd" namespace="http://release.niem.gov/niem/structures/4.0/"/>
   <xs:import schemaLocation="../../../proxy/xsd/4.0/xs.xsd" namespace="http://release.niem.gov/niem/proxy/xsd/4.0/"/>
   <xs:import schemaLocation="../../../niem-core/4.0/niem-core.xsd" namespace="http://release.niem.gov/niem/niem-core/4.0/"/>
   <xs:import schemaLocation="../../../codes/mmucc/4.0/mmucc.xsd" namespace="http://release.niem.gov/niem/codes/mmucc/4.0/"/>
@@ -529,13 +529,13 @@
           <xs:element ref="st:RoadwayMedianWidthMeasure" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="st:RoadwayRailwayCrossingIdentification" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="st:RoadwayIntersectionAverageAnnualDailyEnteringTrafficQuantity" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="st:IntersectionCategory" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="st:FunctionalClass" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="st:RoadwayGrade" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="st:RoadwayHorizontalAlignment" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="st:IntersectionJunctionTrafficControl" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="st:RoadwayLighting" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="st:RoadwayNationalHighwayPart" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="st:IntersectionCategoryAbstract" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="st:FunctionalClassAbstract" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="st:RoadwayGradeAbstract" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="st:RoadwayHorizontalAlignmentAbstract" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="st:IntersectionJunctionTrafficControlAbstract" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="st:RoadwayLightingAbstract" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="st:RoadwayNationalHighwayPartAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="st:LocationRoadwayAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
       </xs:extension>
@@ -1414,12 +1414,12 @@
       <xs:documentation>A federal-aid/National Highway System (NHS) route code value</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="FunctionalClass" abstract="true">
+  <xs:element name="FunctionalClassAbstract" abstract="true">
     <xs:annotation>
       <xs:documentation>A data concept for a functional class of the segment.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="FunctionalClassCode" type="st:FunctionalClassCodeType" substitutionGroup="st:FunctionalClass" nillable="true">
+  <xs:element name="FunctionalClassCode" type="st:FunctionalClassCodeType" substitutionGroup="st:FunctionalClassAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A functional class of the segment.</xs:documentation>
     </xs:annotation>
@@ -1434,12 +1434,12 @@
       <xs:documentation>A identifier for each interchange.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="IntersectionCategory" abstract="true">
+  <xs:element name="IntersectionCategoryAbstract" abstract="true">
     <xs:annotation>
       <xs:documentation>A data concept for an intersection consists of two or more roadways.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="IntersectionCategoryCode" type="mmucc:IntersectionCategoryCodeType" substitutionGroup="st:IntersectionCategory" nillable="true">
+  <xs:element name="IntersectionCategoryCode" type="mmucc:IntersectionCategoryCodeType" substitutionGroup="st:IntersectionCategoryAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>An intersection consists of two or more roadways.</xs:documentation>
     </xs:annotation>
@@ -1449,12 +1449,12 @@
       <xs:documentation>A category of geometric configuration that best describes the intersection/junction</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="IntersectionJunctionTrafficControl" abstract="true">
+  <xs:element name="IntersectionJunctionTrafficControlAbstract" abstract="true">
     <xs:annotation>
       <xs:documentation>A data concept for an indicator of traffic control present at intersection/junction.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="IntersectionJunctionTrafficControlCategoryCode" type="st:IntersectionJunctionTrafficControlCodeType" substitutionGroup="st:IntersectionJunctionTrafficControl" nillable="true">
+  <xs:element name="IntersectionJunctionTrafficControlCategoryCode" type="st:IntersectionJunctionTrafficControlCodeType" substitutionGroup="st:IntersectionJunctionTrafficControlAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>An indicator of traffic control present at intersection/junction.</xs:documentation>
     </xs:annotation>
@@ -1544,12 +1544,12 @@
       <xs:documentation>A measurement of the curvature in the roadway expressed in terms of its superelevation (use feet or meters).</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="RoadwayGrade" abstract="true">
+  <xs:element name="RoadwayGradeAbstract" abstract="true">
     <xs:annotation>
       <xs:documentation>A data concept for a geometric or layout and inclination characteristics of the roadway in the direction of travel for this vehicle.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="RoadwayGradeCode" type="mmucc:RoadwayGradeCodeType" substitutionGroup="st:RoadwayGrade" nillable="true">
+  <xs:element name="RoadwayGradeCode" type="mmucc:RoadwayGradeCodeType" substitutionGroup="st:RoadwayGradeAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A geometric or layout and inclination characteristics of the roadway in the direction of travel for this vehicle.</xs:documentation>
     </xs:annotation>
@@ -1559,12 +1559,12 @@
       <xs:documentation>An inclination of the roadway, expressed in the rate of rise or fall in feet (meters) per 100 feet (meters) of horizontal distance.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="RoadwayHorizontalAlignment" abstract="true">
+  <xs:element name="RoadwayHorizontalAlignmentAbstract" abstract="true">
     <xs:annotation>
       <xs:documentation>A data concept for a Horizontal Alignment. The geometric or layout and inclination characteristics of the roadway in the direction of travel for this vehicle.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="RoadwayHorizontalAlignmentCode" type="mmucc:RoadwayHorizontalAlignmentCodeType" substitutionGroup="st:RoadwayHorizontalAlignment" nillable="true">
+  <xs:element name="RoadwayHorizontalAlignmentCode" type="mmucc:RoadwayHorizontalAlignmentCodeType" substitutionGroup="st:RoadwayHorizontalAlignmentAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A Horizontal Alignment. The geometric or layout and inclination characteristics of the roadway in the direction of travel for this vehicle.</xs:documentation>
     </xs:annotation>
@@ -1584,12 +1584,12 @@
       <xs:documentation>A width of the lane(s) where crash occurred (use feet or meters).</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="RoadwayLighting" abstract="true">
+  <xs:element name="RoadwayLightingAbstract" abstract="true">
     <xs:annotation>
       <xs:documentation>A data concept for a type of roadway illumination.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="RoadwayLightingCode" type="st:RoadwayLightingCodeType" substitutionGroup="st:RoadwayLighting" nillable="true">
+  <xs:element name="RoadwayLightingCode" type="st:RoadwayLightingCodeType" substitutionGroup="st:RoadwayLightingAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A type of roadway illumination.</xs:documentation>
     </xs:annotation>
@@ -1599,12 +1599,12 @@
       <xs:documentation>A width of portion of divided highway separating the road for traffic in opposing directions where the crash occurred. If a crash occurs at a mid-block section, the median width is based on the mid-block section. If the crash occurs at an intersection, the</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="RoadwayNationalHighwayPart" abstract="true">
+  <xs:element name="RoadwayNationalHighwayPartAbstract" abstract="true">
     <xs:annotation>
       <xs:documentation>A data concept for a designation of the roadway as part of the National Highway System.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="RoadwayNationalHighwayPartCode" type="mmucc:StandardSelectionCodeType" substitutionGroup="st:RoadwayNationalHighwayPart" nillable="true">
+  <xs:element name="RoadwayNationalHighwayPartCode" type="mmucc:StandardSelectionCodeType" substitutionGroup="st:RoadwayNationalHighwayPartAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A designation of the roadway as part of the National Highway System.</xs:documentation>
     </xs:annotation>

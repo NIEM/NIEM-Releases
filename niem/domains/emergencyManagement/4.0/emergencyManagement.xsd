@@ -1,17 +1,9 @@
 <?xml version="1.0" encoding="US-ASCII"?>
-<xs:schema targetNamespace="http://release.niem.gov/niem/domains/emergencyManagement/4.0/" version="alpha1" xsi:schemaLocation="http://release.niem.gov/niem/appinfo/3.0/ ../../../appinfo/3.0/appinfo.xsd http://release.niem.gov/niem/conformanceTargets/3.0/ ../../../conformanceTargets/3.0/conformanceTargets.xsd http://release.niem.gov/niem/localTerminology/3.0/ ../../../localTerminology/3.0/localTerminology.xsd" ct:conformanceTargets="http://reference.niem.gov/niem/specification/naming-and-design-rules/3.0/#ReferenceSchemaDocument" xmlns:structures="http://release.niem.gov/niem/structures/3.0/" xmlns:niem-xs="http://release.niem.gov/niem/proxy/xsd/4.0/" xmlns:biom="http://release.niem.gov/niem/domains/biometrics/4.0/" xmlns:apco="http://release.niem.gov/niem/codes/apco_event/4.0/" xmlns:j="http://release.niem.gov/niem/domains/jxdm/6.0/" xmlns:em="http://release.niem.gov/niem/domains/emergencyManagement/4.0/" xmlns:iso_639-3="http://release.niem.gov/niem/codes/iso_639-3/4.0/" xmlns:scr="http://release.niem.gov/niem/domains/screening/4.0/" xmlns:edxl_rm="http://release.niem.gov/niem/codes/edxl_rm/4.0/" xmlns:nc="http://release.niem.gov/niem/niem-core/4.0/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:term="http://release.niem.gov/niem/localTerminology/3.0/" xmlns:it="http://release.niem.gov/niem/domains/internationalTrade/4.0/" xmlns:ct="http://release.niem.gov/niem/conformanceTargets/3.0/" xmlns:appinfo="http://release.niem.gov/niem/appinfo/3.0/" xmlns:have-codes="http://release.niem.gov/niem/codes/edxl_have/4.0/" xmlns:edxl-cap="http://release.niem.gov/niem/adapters/edxl-cap/4.0/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<xs:schema targetNamespace="http://release.niem.gov/niem/domains/emergencyManagement/4.0/" version="beta1" xsi:schemaLocation="http://release.niem.gov/niem/appinfo/4.0/ ../../../appinfo/4.0/appinfo.xsd http://release.niem.gov/niem/conformanceTargets/3.0/ ../../../conformanceTargets/3.0/conformanceTargets.xsd" ct:conformanceTargets="http://reference.niem.gov/niem/specification/naming-and-design-rules/4.0/#ReferenceSchemaDocument" xmlns:edxl_rm="http://release.niem.gov/niem/codes/edxl_rm/4.0/" xmlns:structures="http://release.niem.gov/niem/structures/4.0/" xmlns:appinfo="http://release.niem.gov/niem/appinfo/4.0/" xmlns:scr="http://release.niem.gov/niem/domains/screening/4.0/" xmlns:ct="http://release.niem.gov/niem/conformanceTargets/3.0/" xmlns:nc="http://release.niem.gov/niem/niem-core/4.0/" xmlns:edxl-cap="http://release.niem.gov/niem/adapters/edxl-cap/4.0/" xmlns:iso_639-3="http://release.niem.gov/niem/codes/iso_639-3/4.0/" xmlns:biom="http://release.niem.gov/niem/domains/biometrics/4.0/" xmlns:apco="http://release.niem.gov/niem/codes/apco_event/4.0/" xmlns:j="http://release.niem.gov/niem/domains/jxdm/6.0/" xmlns:em="http://release.niem.gov/niem/domains/emergencyManagement/4.0/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:it="http://release.niem.gov/niem/domains/internationalTrade/4.0/" xmlns:have-codes="http://release.niem.gov/niem/codes/edxl_have/4.0/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:niem-xs="http://release.niem.gov/niem/proxy/xsd/4.0/">
   <xs:annotation>
     <xs:documentation>Emergency Management</xs:documentation>
-    <xs:appinfo>
-      <term:LocalTerm term="URN" literal="Uniform Resource Name"/>
-      <term:LocalTerm term="Geo" literal="geo-coded"/>
-      <term:LocalTerm term="Passcode" definition="A numeric password."/>
-      <term:LocalTerm term="OBGYN" literal="Obstetrics &amp; Gynecology"/>
-      <term:LocalTerm term="EOC" literal="Emergency Operations Center"/>
-      <term:LocalTerm term="EMS" literal="Emergency Medical Service"/>
-      <term:LocalTerm term="Decon" literal="Decontamination"/>
-    </xs:appinfo>
   </xs:annotation>
+  <xs:import schemaLocation="../../../structures/4.0/structures.xsd" namespace="http://release.niem.gov/niem/structures/4.0/"/>
   <xs:import schemaLocation="../../internationalTrade/4.0/internationalTrade.xsd" namespace="http://release.niem.gov/niem/domains/internationalTrade/4.0/"/>
   <xs:import schemaLocation="../../../codes/iso_639-3/4.0/iso_639-3.xsd" namespace="http://release.niem.gov/niem/codes/iso_639-3/4.0/"/>
   <xs:import schemaLocation="../../../proxy/xsd/4.0/xs.xsd" namespace="http://release.niem.gov/niem/proxy/xsd/4.0/"/>
@@ -20,7 +12,6 @@
   <xs:import schemaLocation="../../../codes/edxl_rm/4.0/edxl_rm.xsd" namespace="http://release.niem.gov/niem/codes/edxl_rm/4.0/"/>
   <xs:import schemaLocation="../../screening/4.0/screening.xsd" namespace="http://release.niem.gov/niem/domains/screening/4.0/"/>
   <xs:import schemaLocation="../../jxdm/6.0/jxdm.xsd" namespace="http://release.niem.gov/niem/domains/jxdm/6.0/"/>
-  <xs:import schemaLocation="../../../structures/3.0/structures.xsd" namespace="http://release.niem.gov/niem/structures/3.0/"/>
   <xs:import schemaLocation="../../../codes/apco_event/4.0/apco_event.xsd" namespace="http://release.niem.gov/niem/codes/apco_event/4.0/"/>
   <xs:import schemaLocation="../../biometrics/4.0/biom.xsd" namespace="http://release.niem.gov/niem/domains/biometrics/4.0/"/>
   <xs:import schemaLocation="../../../codes/edxl_have/4.0/have-codes.xsd" namespace="http://release.niem.gov/niem/codes/edxl_have/4.0/"/>
@@ -138,17 +129,17 @@
     <xs:complexContent>
       <xs:extension base="nc:ActivityType">
         <xs:sequence>
-          <xs:element ref="em:AlarmEventCategory" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="em:AlarmEventCategoryAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="em:AlarmEventCallBackTelephoneNumber" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="em:AlarmEventLocation" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="em:AlarmEventLocationCategory" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="em:AlarmEventLocationCategoryAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="em:AlarmAudibleIndicator" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="em:AlarmEventDetailsText" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="em:AlarmEventRequestorReceiveDate" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="em:AlarmEventCallPrivacyBypassCodeText" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="em:AlarmEventCallToPremisesIndicator" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="em:AlarmEventPermit" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="em:AlarmEventResponseAction" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="em:AlarmEventResponseActionAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="em:AlarmEventDispatchAgency" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="em:AlarmEventAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
@@ -165,11 +156,11 @@
           <xs:element ref="em:AlarmAudibleIndicator" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="em:AlarmAudibleDescriptionCode" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="em:AlarmCallBackTelephoneNumber" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="em:AlarmCategory" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="em:AlarmCategoryAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="em:AlarmDetailsText" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="em:AlarmDispatchActivity" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="em:AlarmDispatchAgency" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="em:AlarmMonitoringServiceProvider" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="em:AlarmDispatchAgencyAbstract" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="em:AlarmMonitoringServiceProviderAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="em:AlarmMonitoringServiceProviderReceiveDateTime" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="em:AlarmRequestedResponseActionDescriptionText" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="em:AlarmConfirmation" minOccurs="0" maxOccurs="unbounded"/>
@@ -512,11 +503,11 @@
           <xs:element ref="em:AlertEventDetailsHeadlineText" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="em:AlertEventDetailsInstructionsDescriptionText" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="em:AlertEventDetailsOnsetDateTime" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="em:AlertEventDetailsUrgency" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="em:AlertEventDetailsSeverity" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="em:AlertEventDetailsCategory" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="em:AlertEventDetailsCertainty" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="em:AlertEventDetailsResponseRecommendation" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="em:AlertEventDetailsUrgencyAbstract" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="em:AlertEventDetailsSeverityAbstract" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="em:AlertEventDetailsCategoryAbstract" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="em:AlertEventDetailsCertaintyAbstract" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="em:AlertEventDetailsResponseRecommendationAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="em:AlertEventDetailsAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
       </xs:extension>
@@ -575,7 +566,7 @@
           <xs:element ref="em:AlertExpirationDateTime" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="em:AlertHeadlineText" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="em:AlertInstructionsDescriptionText" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="em:AlertHandling" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="em:AlertHandlingAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="em:AlertReasonText" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="em:AlertCategoryCode" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="em:AlertEventDetails" minOccurs="0" maxOccurs="unbounded"/>
@@ -1976,7 +1967,7 @@
           <xs:element ref="em:CredentialClassID" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="em:CredentialClassName" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="em:CredentialClassCategoryCode" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="em:EmergencySupportFunction" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="em:EmergencySupportFunctionAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="em:CredentialClassMetric" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="em:CredentialQualificationCriteria" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:EffectiveDate" minOccurs="0" maxOccurs="unbounded"/>
@@ -2060,6 +2051,63 @@
     </xs:annotation>
     <xs:simpleContent>
       <xs:extension base="em:CredentialStatusCodeSimpleType">
+        <xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:simpleType name="CrisisImpactCodeSimpleType">
+    <xs:annotation>
+      <xs:documentation>A data type for the impact of a crisis on a group or other entity.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="Displaced">
+        <xs:annotation>
+          <xs:documentation>Displaced from their homes by the crisis</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="IDPS">
+        <xs:annotation>
+          <xs:documentation>Displaced internally</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="InCamp">
+        <xs:annotation>
+          <xs:documentation>Displaced into official camps</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Infected">
+        <xs:annotation>
+          <xs:documentation>Infected with disease as a result of the crisis</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Injured">
+        <xs:annotation>
+          <xs:documentation>Physically injured (but not killed) as a result of the crisis</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Killed">
+        <xs:annotation>
+          <xs:documentation>Killed as a result of the crisis</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="NonCamp">
+        <xs:annotation>
+          <xs:documentation>Displaced people hosted outside of official camps</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Refugees">
+        <xs:annotation>
+          <xs:documentation>Displaced to other regions or countries</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="CrisisImpactCodeType">
+    <xs:annotation>
+      <xs:documentation>A data type for the impact of a crisis on a group or other entity.</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="em:CrisisImpactCodeSimpleType">
         <xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
       </xs:extension>
     </xs:simpleContent>
@@ -3033,7 +3081,7 @@
           <xs:element ref="em:MessageHeader" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="em:EMMessageCategoryCode" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="em:EMMessageSubCategoryCode" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="em:EMMessageDetail" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="em:EMMessageDetailAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="em:EMMessageAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
       </xs:extension>
@@ -3568,8 +3616,6 @@ National Institutes of Health, National Heart, Lung, and Blood Institute</xs:doc
           <xs:element ref="em:Liability" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="em:LicenseCertificationRegistration" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="em:PhysicalFitness" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="biom:PhysicalFeatureDescriptionDetail" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="biom:PhysicalFeatureImage" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="em:Skill" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="em:Training" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="em:PeerReview" minOccurs="0" maxOccurs="unbounded"/>
@@ -3584,6 +3630,8 @@ National Institutes of Health, National Heart, Lung, and Blood Institute</xs:doc
           <xs:element ref="nc:RoleOfPerson" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="em:EmergencySupportFunctionCode" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="em:FirstResponderAvailabilityStatusCode" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="biom:PhysicalFeatureDescriptionDetail" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="biom:PhysicalFeatureImage" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="em:FirstResponderAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
       </xs:extension>
@@ -3897,7 +3945,7 @@ National Institutes of Health, National Heart, Lung, and Blood Institute</xs:doc
           <xs:element ref="em:ApprovalStatusCode" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="j:TitleIssuingAuthorityName" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:DateRange" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="em:EmergencySupportFunction" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="em:EmergencySupportFunctionAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="j:TitleCategoryText" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="em:JobTitleOrRoleAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
@@ -4284,7 +4332,7 @@ National Institutes of Health, National Heart, Lung, and Blood Institute</xs:doc
       <xs:extension base="structures:ObjectType">
         <xs:sequence>
           <xs:element ref="em:MessageCategoryCode" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="em:MessageFilter" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="em:MessageFilterAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="em:MessageResponseCode" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="em:MessageSentDateTime" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="em:MessageDescriptionText" minOccurs="0" maxOccurs="unbounded"/>
@@ -4649,10 +4697,10 @@ National Institutes of Health, National Heart, Lung, and Blood Institute</xs:doc
       <xs:extension base="nc:ActivityType">
         <xs:sequence>
           <xs:element ref="em:NotificationID" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="em:NotificationSource" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="em:NotificationSourceAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="em:NotificationRecipient" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="em:NotificationOriginator" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="em:NotificationRepresentation" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="em:NotificationRepresentationAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="em:NotificationFunctionCategoryCode" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="em:NotificationKeywordText" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="em:NotificationLanguageCode" minOccurs="0" maxOccurs="unbounded"/>
@@ -4985,7 +5033,7 @@ National Institutes of Health, National Heart, Lung, and Blood Institute</xs:doc
           <xs:element ref="em:PersonIDCard" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:Address" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="em:AvailabilityText" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="nc:ContactMeans" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:ContactMeansAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="em:UpdateRecord" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:Attachment" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="em:PersonHumanResourceAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
@@ -5001,7 +5049,7 @@ National Institutes of Health, National Heart, Lung, and Blood Institute</xs:doc
       <xs:extension base="nc:IdentificationType">
         <xs:sequence>
           <xs:element ref="em:NameOnCard" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="em:IDCategoryCode" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="em:IDCategoryCodeAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="em:SignatureAuthorityName" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="em:AgencySymbol" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="em:ResourcePicture" minOccurs="0" maxOccurs="unbounded"/>
@@ -5383,7 +5431,7 @@ National Institutes of Health, National Heart, Lung, and Blood Institute</xs:doc
           <xs:element ref="em:ResourceStatusKeywordValue" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="em:ResourceAnticipatedIncidentAssignmentText" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="em:RequestAcceptDeclineCode" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="em:DeclineReasonCode" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="em:DeclineReasonCodeAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="em:NavigationInstructionsText" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="em:ReportingInstructionsText" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="em:ResourceDispositionKeywordValue" minOccurs="0" maxOccurs="unbounded"/>
@@ -6305,7 +6353,7 @@ National Institutes of Health, National Heart, Lung, and Blood Institute</xs:doc
       <xs:documentation>A phone number of the monitoring station</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="AlarmCategory" abstract="true">
+  <xs:element name="AlarmCategoryAbstract" abstract="true">
     <xs:annotation>
       <xs:documentation>A data concept for the type of the event which resulted in an alarm</xs:documentation>
     </xs:annotation>
@@ -6350,17 +6398,17 @@ National Institutes of Health, National Heart, Lung, and Blood Institute</xs:doc
       <xs:documentation>A response or activity needed when a dispatch agency is activated in response to an alarm</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="AlarmDispatchAgency" abstract="true">
+  <xs:element name="AlarmDispatchAgencyAbstract" abstract="true">
     <xs:annotation>
       <xs:documentation>A data concept for the name of the agency (PSAP:Public Safety Answering Point) being requested to respond to an alarm or responder</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="AlarmDispatchAgencyID" type="nc:IdentificationType" substitutionGroup="em:AlarmDispatchAgency" nillable="true">
+  <xs:element name="AlarmDispatchAgencyID" type="nc:IdentificationType" substitutionGroup="em:AlarmDispatchAgencyAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>An identifier for the agency (PSAP) being requested to respond to an alarm  (typically a police or fire department or central dispatch point) or responder</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="AlarmDispatchAgencyNameText" type="nc:TextType" substitutionGroup="em:AlarmDispatchAgency" nillable="true">
+  <xs:element name="AlarmDispatchAgencyNameText" type="nc:TextType" substitutionGroup="em:AlarmDispatchAgencyAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A name of the agency (PSAP) being requested to respond to an alarm  (typically a police or fire department or central dispatch point) or responder</xs:documentation>
     </xs:annotation>
@@ -6390,17 +6438,17 @@ National Institutes of Health, National Heart, Lung, and Blood Institute</xs:doc
       <xs:documentation>True if an agency is to call the premise before arrival; false otherwise</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="AlarmEventCategory" abstract="true">
+  <xs:element name="AlarmEventCategoryAbstract" abstract="true">
     <xs:annotation>
       <xs:documentation>A data concept for a kind of alarm event</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="AlarmEventCategoryCode" type="apco:AlarmEventCategoryCodeType" substitutionGroup="em:AlarmEventCategory" nillable="true">
+  <xs:element name="AlarmEventCategoryCode" type="apco:AlarmEventCategoryCodeType" substitutionGroup="em:AlarmEventCategoryAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A kind of alarm event</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="AlarmEventCategoryText" type="nc:TextType" substitutionGroup="em:AlarmEventCategory" nillable="true">
+  <xs:element name="AlarmEventCategoryText" type="nc:TextType" substitutionGroup="em:AlarmEventCategoryAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A kind of event which resulted in an alarm</xs:documentation>
     </xs:annotation>
@@ -6420,17 +6468,17 @@ National Institutes of Health, National Heart, Lung, and Blood Institute</xs:doc
       <xs:documentation>A location of an alarm event</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="AlarmEventLocationCategory" abstract="true">
+  <xs:element name="AlarmEventLocationCategoryAbstract" abstract="true">
     <xs:annotation>
       <xs:documentation>A data concept for a kind of location at which an alarm event occurs</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="AlarmEventLocationCategoryCode" type="apco:AlarmEventLocationCategoryCodeType" substitutionGroup="em:AlarmEventLocationCategory" nillable="true">
+  <xs:element name="AlarmEventLocationCategoryCode" type="apco:AlarmEventLocationCategoryCodeType" substitutionGroup="em:AlarmEventLocationCategoryAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A kind of location at which an alarm event occurs</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="AlarmEventLocationCategoryText" type="nc:TextType" substitutionGroup="em:AlarmEventLocationCategory" nillable="true">
+  <xs:element name="AlarmEventLocationCategoryText" type="nc:TextType" substitutionGroup="em:AlarmEventLocationCategoryAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A kind of location at which an alarm event occurs</xs:documentation>
     </xs:annotation>
@@ -6445,17 +6493,17 @@ National Institutes of Health, National Heart, Lung, and Blood Institute</xs:doc
       <xs:documentation>A date the requester received the alarm event</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="AlarmEventResponseAction" abstract="true">
+  <xs:element name="AlarmEventResponseActionAbstract" abstract="true">
     <xs:annotation>
       <xs:documentation>A data concept for an action requested of an alarm event responder</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="AlarmEventResponseActionCode" type="apco:AlarmEventResponseActionCodeType" substitutionGroup="em:AlarmEventResponseAction" nillable="true">
+  <xs:element name="AlarmEventResponseActionCode" type="apco:AlarmEventResponseActionCodeType" substitutionGroup="em:AlarmEventResponseActionAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>An action requested of an alarm event responder</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="AlarmEventResponseActionText" type="nc:TextType" substitutionGroup="em:AlarmEventResponseAction" nillable="true">
+  <xs:element name="AlarmEventResponseActionText" type="nc:TextType" substitutionGroup="em:AlarmEventResponseActionAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>An action requested of an alarm event responder</xs:documentation>
     </xs:annotation>
@@ -6465,17 +6513,17 @@ National Institutes of Health, National Heart, Lung, and Blood Institute</xs:doc
       <xs:documentation>A location for an alarm</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="AlarmMonitoringServiceProvider" abstract="true">
+  <xs:element name="AlarmMonitoringServiceProviderAbstract" abstract="true">
     <xs:annotation>
       <xs:documentation>A data concept for Organization contacted when an alarm</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="AlarmMonitoringServiceProviderID" type="nc:IdentificationType" substitutionGroup="em:AlarmMonitoringServiceProvider" nillable="true">
+  <xs:element name="AlarmMonitoringServiceProviderID" type="nc:IdentificationType" substitutionGroup="em:AlarmMonitoringServiceProviderAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>An identifier assigned to Central Station Monitoring Companies</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="AlarmMonitoringServiceProviderNameText" type="nc:TextType" substitutionGroup="em:AlarmMonitoringServiceProvider" nillable="true">
+  <xs:element name="AlarmMonitoringServiceProviderNameText" type="nc:TextType" substitutionGroup="em:AlarmMonitoringServiceProviderAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A name of the dispatch requesting agency (typically an alarm central station)</xs:documentation>
     </xs:annotation>
@@ -6485,7 +6533,7 @@ National Institutes of Health, National Heart, Lung, and Blood Institute</xs:doc
       <xs:documentation>A date and time the monitoring station received the event based on the time zone of the site</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="AlarmNotification" type="em:AlarmNotificationType" substitutionGroup="em:NotificationRepresentation" nillable="true">
+  <xs:element name="AlarmNotification" type="em:AlarmNotificationType" substitutionGroup="em:NotificationRepresentationAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>An event that begins when an assembly of equipment or a device installed in or for commercial or residential premises, or other property, is triggered to transmit a signal, visibly, audibly, electronically, mechanically, or otherwise, to indicate</xs:documentation>
     </xs:annotation>
@@ -6545,22 +6593,22 @@ National Institutes of Health, National Heart, Lung, and Blood Institute</xs:doc
       <xs:documentation>An augmentation point for AlertEventDetailsType</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="AlertEventDetailsCategory" abstract="true">
+  <xs:element name="AlertEventDetailsCategoryAbstract" abstract="true">
     <xs:annotation>
       <xs:documentation>A data concept for the category of the subject event of the alert message</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="AlertEventDetailsCategoryCode" type="em:AlertEventDetailsCategoryCodeType" substitutionGroup="em:AlertEventDetailsCategory" nillable="true">
+  <xs:element name="AlertEventDetailsCategoryCode" type="em:AlertEventDetailsCategoryCodeType" substitutionGroup="em:AlertEventDetailsCategoryAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A code denoting the category of the subject event of the alert message</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="AlertEventDetailsCertainty" abstract="true">
+  <xs:element name="AlertEventDetailsCertaintyAbstract" abstract="true">
     <xs:annotation>
       <xs:documentation>A data concept for the certainty of the subject event of the alert message</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="AlertEventDetailsCertaintyCode" type="em:AlertEventDetailsCertaintyCodeType" substitutionGroup="em:AlertEventDetailsCertainty" nillable="true">
+  <xs:element name="AlertEventDetailsCertaintyCode" type="em:AlertEventDetailsCertaintyCodeType" substitutionGroup="em:AlertEventDetailsCertaintyAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A code denoting the certainty of the subject event of the alert message</xs:documentation>
     </xs:annotation>
@@ -6585,22 +6633,22 @@ National Institutes of Health, National Heart, Lung, and Blood Institute</xs:doc
       <xs:documentation>An expected time of the beginning of the subject event of the alert message</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="AlertEventDetailsResponseRecommendation" abstract="true">
+  <xs:element name="AlertEventDetailsResponseRecommendationAbstract" abstract="true">
     <xs:annotation>
       <xs:documentation>A data concept for the type of action recommended for the target audience</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="AlertEventDetailsResponseRecommendationCode" type="em:AlertEventDetailsResponseRecommendationCodeType" substitutionGroup="em:AlertEventDetailsResponseRecommendation" nillable="true">
+  <xs:element name="AlertEventDetailsResponseRecommendationCode" type="em:AlertEventDetailsResponseRecommendationCodeType" substitutionGroup="em:AlertEventDetailsResponseRecommendationAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A code denoting the type of action recommended for the target audience</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="AlertEventDetailsSeverity" abstract="true">
+  <xs:element name="AlertEventDetailsSeverityAbstract" abstract="true">
     <xs:annotation>
       <xs:documentation>A data concept for the severity code designated to an alert event</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="AlertEventDetailsSeverityCode" type="em:AlertEventDetailsSeverityCodeType" substitutionGroup="em:AlertEventDetailsSeverity" nillable="true">
+  <xs:element name="AlertEventDetailsSeverityCode" type="em:AlertEventDetailsSeverityCodeType" substitutionGroup="em:AlertEventDetailsSeverityAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A code denoting the severity of the subject event of the alert message</xs:documentation>
     </xs:annotation>
@@ -6610,12 +6658,12 @@ National Institutes of Health, National Heart, Lung, and Blood Institute</xs:doc
       <xs:documentation>An identifier for the event type of the alert message</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="AlertEventDetailsUrgency" abstract="true">
+  <xs:element name="AlertEventDetailsUrgencyAbstract" abstract="true">
     <xs:annotation>
       <xs:documentation>A data concept for the urgency of the subject event of the alert message</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="AlertEventDetailsUrgencyCode" type="em:AlertEventDetailsUrgencyCodeType" substitutionGroup="em:AlertEventDetailsUrgency" nillable="true">
+  <xs:element name="AlertEventDetailsUrgencyCode" type="em:AlertEventDetailsUrgencyCodeType" substitutionGroup="em:AlertEventDetailsUrgencyAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A code denoting the urgency of the subject event of the alert message</xs:documentation>
     </xs:annotation>
@@ -6625,17 +6673,17 @@ National Institutes of Health, National Heart, Lung, and Blood Institute</xs:doc
       <xs:documentation>A time of the information of the alert message expiring. If this item is not provided, each recipient is free to set its own policy as to when the message is no longer in effect</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="AlertHandling" abstract="true">
+  <xs:element name="AlertHandlingAbstract" abstract="true">
     <xs:annotation>
       <xs:documentation>A data concept for the code denoting the special handling of the alert message</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="AlertHandlingID" type="nc:IdentificationType" substitutionGroup="em:AlertHandling" nillable="true">
+  <xs:element name="AlertHandlingID" type="nc:IdentificationType" substitutionGroup="em:AlertHandlingAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>An identifier denoting the special handling of the alert message</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="AlertHandlingText" type="nc:TextType" substitutionGroup="em:AlertHandling" nillable="true">
+  <xs:element name="AlertHandlingText" type="nc:TextType" substitutionGroup="em:AlertHandlingAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A code denoting the special handling of the alert message</xs:documentation>
     </xs:annotation>
@@ -6650,7 +6698,7 @@ National Institutes of Health, National Heart, Lung, and Blood Institute</xs:doc
       <xs:documentation>A description of the recommended action to be taken by recipients of the alert message. An extended human readable instruction to targeted recipients. If different instructions are intended for different recipients, they should be represented by use of multiple info blocks</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="AlertNotification" type="em:AlertNotificationType" substitutionGroup="em:NotificationRepresentation" nillable="true">
+  <xs:element name="AlertNotification" type="em:AlertNotificationType" substitutionGroup="em:NotificationRepresentationAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A notification of an incident or threat that may require a coordinated response or action. A type of NOTIFICATION</xs:documentation>
     </xs:annotation>
@@ -6703,6 +6751,16 @@ National Institutes of Health, National Heart, Lung, and Blood Institute</xs:doc
   <xs:element name="ArrivalLocation" type="nc:LocationType" nillable="true">
     <xs:annotation>
       <xs:documentation>A textual description of the location where the specified resource has arrived at dateTime of the resource message when transported to or from an Incident</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="AssistanceInNeedQuantity" type="nc:QuantityType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A number of people or households in need of assistance.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="AssistanceTargetedQuantity" type="nc:QuantityType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A number of people or households targeted for assistance.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="Author" type="em:IncidentAuthorType" nillable="true">
@@ -7380,7 +7438,7 @@ National Institutes of Health, National Heart, Lung, and Blood Institute</xs:doc
       <xs:documentation>True if the debris be hauled to a staging location to disposal; false if not</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="DeclineReasonCode" abstract="true">
+  <xs:element name="DeclineReasonCodeAbstract" abstract="true">
     <xs:annotation>
       <xs:documentation>A data concept for a declined Request, Response, Unsolicited Offer, or a Request Return</xs:documentation>
     </xs:annotation>
@@ -7545,7 +7603,7 @@ National Institutes of Health, National Heart, Lung, and Blood Institute</xs:doc
       <xs:documentation>A data element for Emergency Management information main category element</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="EMMessageDetail" abstract="true">
+  <xs:element name="EMMessageDetailAbstract" abstract="true">
     <xs:annotation>
       <xs:documentation>A data concept for the type of the  information or request detail</xs:documentation>
     </xs:annotation>
@@ -7730,7 +7788,7 @@ National Institutes of Health, National Heart, Lung, and Blood Institute</xs:doc
       <xs:documentation>An augmentation point for EmergencyDepartmentStatusType</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="EmergencyIncident" type="em:EmergencyIncidentType" substitutionGroup="em:EMMessageDetail" nillable="true">
+  <xs:element name="EmergencyIncident" type="em:EmergencyIncidentType" substitutionGroup="em:EMMessageDetailAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>An element for an emergency incident</xs:documentation>
     </xs:annotation>
@@ -7740,12 +7798,12 @@ National Institutes of Health, National Heart, Lung, and Blood Institute</xs:doc
       <xs:documentation>An augmentation point for an EmergencyIncidentType</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="EmergencySupportFunction" abstract="true">
+  <xs:element name="EmergencySupportFunctionAbstract" abstract="true">
     <xs:annotation>
       <xs:documentation>A data concept for an Emergency Support Function (ESF)</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="EmergencySupportFunctionCode" type="em:EmergencySupportFunctionCodeType" substitutionGroup="em:EmergencySupportFunction" nillable="true">
+  <xs:element name="EmergencySupportFunctionCode" type="em:EmergencySupportFunctionCodeType" substitutionGroup="em:EmergencySupportFunctionAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A data element for the code that identifies an Emergency Support Function (ESF), defined by FEMA</xs:documentation>
     </xs:annotation>
@@ -7835,7 +7893,7 @@ National Institutes of Health, National Heart, Lung, and Blood Institute</xs:doc
       <xs:documentation>A data element for the name of ID of a firebox</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="FirstResponder" type="em:FirstResponderType" substitutionGroup="em:EMMessageDetail" nillable="true">
+  <xs:element name="FirstResponder" type="em:FirstResponderType" substitutionGroup="em:EMMessageDetailAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A data element for a person who is designated as a first responder</xs:documentation>
     </xs:annotation>
@@ -7850,7 +7908,7 @@ National Institutes of Health, National Heart, Lung, and Blood Institute</xs:doc
       <xs:documentation>A data element that describes if a first responder is available</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="FirstResponderFilter" type="em:FirstResponderFilterType" substitutionGroup="em:MessageFilter" nillable="true">
+  <xs:element name="FirstResponderFilter" type="em:FirstResponderFilterType" substitutionGroup="em:MessageFilterAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A data element for filtering result of a search for first responders</xs:documentation>
     </xs:annotation>
@@ -7875,7 +7933,7 @@ National Institutes of Health, National Heart, Lung, and Blood Institute</xs:doc
       <xs:documentation>An element for the common components of natural gas facilities</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="GeneralNotification" type="em:GeneralNotificationType" substitutionGroup="em:NotificationRepresentation" nillable="true">
+  <xs:element name="GeneralNotification" type="em:GeneralNotificationType" substitutionGroup="em:NotificationRepresentationAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>An element for representing a generalized notification to broadcast</xs:documentation>
     </xs:annotation>
@@ -7900,7 +7958,7 @@ National Institutes of Health, National Heart, Lung, and Blood Institute</xs:doc
       <xs:documentation>A organization (Home Unit) the resource is assigned to</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="IDCategoryCode" abstract="true">
+  <xs:element name="IDCategoryCodeAbstract" abstract="true">
     <xs:annotation>
       <xs:documentation>A data concept for a code list for identification information types for a resource e.g.  ID card number etc.</xs:documentation>
     </xs:annotation>
@@ -7940,7 +7998,7 @@ National Institutes of Health, National Heart, Lung, and Blood Institute</xs:doc
       <xs:documentation>An augmentation point for IncidentAuthorType</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="IncidentNotification" type="em:IncidentNotificationType" substitutionGroup="em:NotificationRepresentation" nillable="true">
+  <xs:element name="IncidentNotification" type="em:IncidentNotificationType" substitutionGroup="em:NotificationRepresentationAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>An element for representing an incident</xs:documentation>
     </xs:annotation>
@@ -8260,7 +8318,7 @@ National Institutes of Health, National Heart, Lung, and Blood Institute</xs:doc
       <xs:documentation>A description of a message</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="MessageFilter" abstract="true">
+  <xs:element name="MessageFilterAbstract" abstract="true">
     <xs:annotation>
       <xs:documentation>A data concept that contains filters for the request</xs:documentation>
     </xs:annotation>
@@ -8345,7 +8403,7 @@ National Institutes of Health, National Heart, Lung, and Blood Institute</xs:doc
       <xs:documentation>A set of instructions that define how to get to the report to location</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="Notification" type="em:NotificationType" substitutionGroup="em:EMMessageDetail" nillable="true">
+  <xs:element name="Notification" type="em:NotificationType" substitutionGroup="em:EMMessageDetailAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A written or printed notice or announcement intended to inform a specific audience of a message. A notification may only contain one message.</xs:documentation>
     </xs:annotation>
@@ -8435,22 +8493,22 @@ National Institutes of Health, National Heart, Lung, and Blood Institute</xs:doc
       <xs:documentation>An element for recipient of the notification</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="NotificationRepresentation" abstract="true">
+  <xs:element name="NotificationRepresentationAbstract" abstract="true">
     <xs:annotation>
       <xs:documentation>A data concept for notification types and details</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="NotificationSource" abstract="true">
+  <xs:element name="NotificationSourceAbstract" abstract="true">
     <xs:annotation>
       <xs:documentation>A data concept for the specific source of this alert; e.g., an operator or a specific device</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="NotificationSourceID" type="nc:IdentificationType" substitutionGroup="em:NotificationSource" nillable="true">
+  <xs:element name="NotificationSourceID" type="nc:IdentificationType" substitutionGroup="em:NotificationSourceAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>An identifier for the particular source of this alert; e.g., an operator or a specific device</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="NotificationSourceNameText" type="nc:TextType" substitutionGroup="em:NotificationSource" nillable="true">
+  <xs:element name="NotificationSourceNameText" type="nc:TextType" substitutionGroup="em:NotificationSourceAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A name, in text, of particular source of this alert; e.g., an operator or a specific device</xs:documentation>
     </xs:annotation>
@@ -8485,7 +8543,7 @@ National Institutes of Health, National Heart, Lung, and Blood Institute</xs:doc
       <xs:documentation>An element for an emergency operation</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="OperationalStatusNotification" type="em:OperationalStatusNotificationType" substitutionGroup="em:NotificationRepresentation" nillable="true">
+  <xs:element name="OperationalStatusNotification" type="em:OperationalStatusNotificationType" substitutionGroup="em:NotificationRepresentationAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>An element for an emergency operation notification</xs:documentation>
     </xs:annotation>
@@ -8805,7 +8863,7 @@ National Institutes of Health, National Heart, Lung, and Blood Institute</xs:doc
       <xs:documentation>An augmentation point for person's Identification information</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="PersonIDCategoryText" type="nc:TextType" substitutionGroup="em:IDCategoryCode" nillable="true">
+  <xs:element name="PersonIDCategoryText" type="nc:TextType" substitutionGroup="em:IDCategoryCodeAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A kind of identification type of a person</xs:documentation>
     </xs:annotation>
@@ -9385,7 +9443,7 @@ National Institutes of Health, National Heart, Lung, and Blood Institute</xs:doc
       <xs:documentation>A data element for the minimum size (i.e., number of members) of a  team</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="TemporaryIDIndicator" type="niem-xs:boolean" substitutionGroup="nc:IdentificationCategory" nillable="true">
+  <xs:element name="TemporaryIDIndicator" type="niem-xs:boolean" substitutionGroup="nc:IdentificationCategoryAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>True if a badge is temporary; false otherwise</xs:documentation>
     </xs:annotation>
@@ -9460,7 +9518,7 @@ National Institutes of Health, National Heart, Lung, and Blood Institute</xs:doc
       <xs:documentation>A structure that contains date information about when a unit was assigned to an incident</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="UnitLogoffNotification" type="em:UnitLogoffNotificationType" substitutionGroup="em:NotificationRepresentation" nillable="true">
+  <xs:element name="UnitLogoffNotification" type="em:UnitLogoffNotificationType" substitutionGroup="em:NotificationRepresentationAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>An element to represent that the specified units are being logged off</xs:documentation>
     </xs:annotation>
@@ -9470,7 +9528,7 @@ National Institutes of Health, National Heart, Lung, and Blood Institute</xs:doc
       <xs:documentation>An augmentation point for UnitLogoffNotificationType</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="UnitLogonNotification" type="em:UnitLogonNotificationType" substitutionGroup="em:NotificationRepresentation" nillable="true">
+  <xs:element name="UnitLogonNotification" type="em:UnitLogonNotificationType" substitutionGroup="em:NotificationRepresentationAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>An element to represent that the specified units are being logged on</xs:documentation>
     </xs:annotation>
