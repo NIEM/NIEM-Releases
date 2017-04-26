@@ -1,0 +1,1840 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema targetNamespace="http://niem.gov/niem/mn_offense/2.0" version="1" xmlns:s="http://niem.gov/niem/structures/2.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:mn_off="http://niem.gov/niem/mn_offense/2.0" xmlns:i="http://niem.gov/niem/appinfo/2.0">
+  <xsd:annotation>
+    <xsd:documentation>Statute and offense codes from the state of Minnesota.</xsd:documentation>
+    <xsd:appinfo>
+      <i:ConformantIndicator>true</i:ConformantIndicator>
+    </xsd:appinfo>
+  </xsd:annotation>
+  <xsd:import schemaLocation="../../structures/2.0/structures.xsd" namespace="http://niem.gov/niem/structures/2.0"/>
+  <xsd:import schemaLocation="../../appinfo/2.0/appinfo.xsd" namespace="http://niem.gov/niem/appinfo/2.0"/>
+  <xsd:simpleType name="OffenseCodeSimpleType">
+    <xsd:annotation>
+      <xsd:documentation>A data type for Uniform Crime Reporting (UCR) offense codes.</xsd:documentation>
+      <xsd:appinfo>
+        <i:Base i:namespace="http://niem.gov/niem/structures/2.0" i:name="Object"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:restriction base="xsd:token">
+      <xsd:enumeration value="100">
+        <xsd:annotation>
+          <xsd:documentation>Assault 1-5</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="100.1">
+        <xsd:annotation>
+          <xsd:documentation>Assault 1</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="100.2">
+        <xsd:annotation>
+          <xsd:documentation>Assault 2</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="100.3">
+        <xsd:annotation>
+          <xsd:documentation>Assault 3</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="100.4">
+        <xsd:annotation>
+          <xsd:documentation>Assault 4</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="100.41">
+        <xsd:annotation>
+          <xsd:documentation>Assault 4 - Motivated by Bias</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="100.5">
+        <xsd:annotation>
+          <xsd:documentation>Assault 5</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="101">
+        <xsd:annotation>
+          <xsd:documentation>Domestic Assault</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="102">
+        <xsd:annotation>
+          <xsd:documentation>Malicious Punishment</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="103">
+        <xsd:annotation>
+          <xsd:documentation>Terroristic Threats</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="103.01">
+        <xsd:annotation>
+          <xsd:documentation>Crime of Violence</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="103.02">
+        <xsd:annotation>
+          <xsd:documentation>Explosives</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="103.03">
+        <xsd:annotation>
+          <xsd:documentation>Replica Firearm/BB Gun</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="109">
+        <xsd:annotation>
+          <xsd:documentation>Assault</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="110">
+        <xsd:annotation>
+          <xsd:documentation>Criminal Sexual Conduct</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="110.1">
+        <xsd:annotation>
+          <xsd:documentation>CSC 1</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="110.2">
+        <xsd:annotation>
+          <xsd:documentation>CSC 2</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="110.3">
+        <xsd:annotation>
+          <xsd:documentation>CSC 3</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="110.4">
+        <xsd:annotation>
+          <xsd:documentation>CSC 4</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="110.5">
+        <xsd:annotation>
+          <xsd:documentation>CSC 5</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="111">
+        <xsd:annotation>
+          <xsd:documentation>Solicit Children to Engage in Sexual Conduct</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="112">
+        <xsd:annotation>
+          <xsd:documentation>Incest</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="119">
+        <xsd:annotation>
+          <xsd:documentation>Sex Offense</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="120">
+        <xsd:annotation>
+          <xsd:documentation>Murder</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="120.1">
+        <xsd:annotation>
+          <xsd:documentation>Murder 1</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="120.2">
+        <xsd:annotation>
+          <xsd:documentation>Murder 2  </xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="120.3">
+        <xsd:annotation>
+          <xsd:documentation>Murder 3  </xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="121">
+        <xsd:annotation>
+          <xsd:documentation>Manslaughter</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="121.1">
+        <xsd:annotation>
+          <xsd:documentation>Manslaughter 1</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="121.2">
+        <xsd:annotation>
+          <xsd:documentation>Manslaughter 2  </xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="129">
+        <xsd:annotation>
+          <xsd:documentation>Homicide</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="130">
+        <xsd:annotation>
+          <xsd:documentation>Kidnapping</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="131">
+        <xsd:annotation>
+          <xsd:documentation>False Imprisonment</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="132">
+        <xsd:annotation>
+          <xsd:documentation>Deprive Custodial Rights</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="139">
+        <xsd:annotation>
+          <xsd:documentation>Kidnapping</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="140">
+        <xsd:annotation>
+          <xsd:documentation>Simple Robbery</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="141">
+        <xsd:annotation>
+          <xsd:documentation>Aggravated Robbery</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="141.1">
+        <xsd:annotation>
+          <xsd:documentation>Agg. Robbery 1</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="141.2">
+        <xsd:annotation>
+          <xsd:documentation>Agg. Robbery 2</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="149">
+        <xsd:annotation>
+          <xsd:documentation>Robbery</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="150">
+        <xsd:annotation>
+          <xsd:documentation>CV Homicide</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="151">
+        <xsd:annotation>
+          <xsd:documentation>CV Injury - Great Bodily Harm</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="152">
+        <xsd:annotation>
+          <xsd:documentation>CV Injury - Substantial Bodily Harm</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="153">
+        <xsd:annotation>
+          <xsd:documentation>CV Injury - Bodily Harm</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="159">
+        <xsd:annotation>
+          <xsd:documentation>CVH &amp; Injury</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="160">
+        <xsd:annotation>
+          <xsd:documentation>Murder - Unborn</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="160.1">
+        <xsd:annotation>
+          <xsd:documentation>Murder 1 - Unborn</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="160.2">
+        <xsd:annotation>
+          <xsd:documentation>Murder 2 - Unborn</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="160.3">
+        <xsd:annotation>
+          <xsd:documentation>Murder 3 - Unborn</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="161">
+        <xsd:annotation>
+          <xsd:documentation>Manslaughter - Unborn</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="161.1">
+        <xsd:annotation>
+          <xsd:documentation>Manslaughter 1 - unborn</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="161.2">
+        <xsd:annotation>
+          <xsd:documentation>Manslaughter 2 - unborn</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="162">
+        <xsd:annotation>
+          <xsd:documentation>Assault - Unborn</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="162.1">
+        <xsd:annotation>
+          <xsd:documentation>Assault 1 - Unborn</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="162.2">
+        <xsd:annotation>
+          <xsd:documentation>Assault 2 - Unborn</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="162.3">
+        <xsd:annotation>
+          <xsd:documentation>Assault 3 - Unborn</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="163">
+        <xsd:annotation>
+          <xsd:documentation>Crim. Veh. Homicide/Inj. - Unborn</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="163.01">
+        <xsd:annotation>
+          <xsd:documentation>CV Homicide - Death/Unborn</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="163.02">
+        <xsd:annotation>
+          <xsd:documentation>CV Injury - Great Bodily Harm/Unborn</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="169">
+        <xsd:annotation>
+          <xsd:documentation>Crime Against Unborn</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="170">
+        <xsd:annotation>
+          <xsd:documentation>Restraining Orders</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="170.01">
+        <xsd:annotation>
+          <xsd:documentation>Order for Protection</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="170.02">
+        <xsd:annotation>
+          <xsd:documentation>Harassment Restr. Order</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="170.03">
+        <xsd:annotation>
+          <xsd:documentation>Juv. Court Restr. Order</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="170.04">
+        <xsd:annotation>
+          <xsd:documentation>Domestic Abuse No Contact Order</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="171">
+        <xsd:annotation>
+          <xsd:documentation>Harassment/Stalking  </xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="171.01">
+        <xsd:annotation>
+          <xsd:documentation>Harassment/Stalking - motivated by bias</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="172">
+        <xsd:annotation>
+          <xsd:documentation>Obscene/Harassing Phone Call</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="173">
+        <xsd:annotation>
+          <xsd:documentation>Harassment - Letter/Tel. Pkg.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="179">
+        <xsd:annotation>
+          <xsd:documentation>Harassment/Stalking</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="190">
+        <xsd:annotation>
+          <xsd:documentation>Drive-by Shooting</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="199">
+        <xsd:annotation>
+          <xsd:documentation>Person Offense</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="200">
+        <xsd:annotation>
+          <xsd:documentation>Arson 1-3</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="200.1">
+        <xsd:annotation>
+          <xsd:documentation>Arson 1</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="200.2">
+        <xsd:annotation>
+          <xsd:documentation>Arson 2</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="200.3">
+        <xsd:annotation>
+          <xsd:documentation>Arson 3</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="200.4">
+        <xsd:annotation>
+          <xsd:documentation>Arson 4</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="201">
+        <xsd:annotation>
+          <xsd:documentation>Wildfire Arson</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="202">
+        <xsd:annotation>
+          <xsd:documentation>Negligent Fires</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="209">
+        <xsd:annotation>
+          <xsd:documentation>Arson Fires</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="210">
+        <xsd:annotation>
+          <xsd:documentation>Burglary 1-4</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="210.1">
+        <xsd:annotation>
+          <xsd:documentation>Burglary 1</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="210.2">
+        <xsd:annotation>
+          <xsd:documentation>Burglary 2</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="210.3">
+        <xsd:annotation>
+          <xsd:documentation>Burglary 3</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="210.4">
+        <xsd:annotation>
+          <xsd:documentation>Burglary 4</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="219">
+        <xsd:annotation>
+          <xsd:documentation>Burglary</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="220">
+        <xsd:annotation>
+          <xsd:documentation>Check Forgery</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="221">
+        <xsd:annotation>
+          <xsd:documentation>Cellular Phone Counterfeiting</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="221.1">
+        <xsd:annotation>
+          <xsd:documentation>Cellular Counterfeiting 1</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="221.2">
+        <xsd:annotation>
+          <xsd:documentation>Cellular Counterfeiting 2</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="221.3">
+        <xsd:annotation>
+          <xsd:documentation>Cellular Counterfeiting 3</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="229">
+        <xsd:annotation>
+          <xsd:documentation>Forgery</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="230">
+        <xsd:annotation>
+          <xsd:documentation>Criminal Damage to Property</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="230.1">
+        <xsd:annotation>
+          <xsd:documentation>Criminal Damage to Property 1</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="230.2">
+        <xsd:annotation>
+          <xsd:documentation>Criminal Damage to Property 2 - Bias</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="230.3">
+        <xsd:annotation>
+          <xsd:documentation>Criminal Damage to Property 3</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="230.31">
+        <xsd:annotation>
+          <xsd:documentation>Criminal Damage to Property 3 - Bias</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="230.4">
+        <xsd:annotation>
+          <xsd:documentation>Criminal Damage to Property 4</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="231">
+        <xsd:annotation>
+          <xsd:documentation>Trespass</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="232">
+        <xsd:annotation>
+          <xsd:documentation>Computer Related Property Crime</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="233">
+        <xsd:annotation>
+          <xsd:documentation>Game/Fishing/Hunting Property Crime</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="234">
+        <xsd:annotation>
+          <xsd:documentation>Damage to Property of Critical Public Service Facilities, Pipeline, Utility</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="235">
+        <xsd:annotation>
+          <xsd:documentation>Trespass on Critical Public Service Facilities, Pipeline, Utility</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="239">
+        <xsd:annotation>
+          <xsd:documentation>Other Damage/Trespass Property Crime</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="240">
+        <xsd:annotation>
+          <xsd:documentation>Receiving Stolen Property</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="241">
+        <xsd:annotation>
+          <xsd:documentation>Bringing Stolen Goods into State</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="242">
+        <xsd:annotation>
+          <xsd:documentation>Precious Metal Dealers - Stolen Property</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="243">
+        <xsd:annotation>
+          <xsd:documentation>Pawnbrokers/Junk Dealers - Stolen Property</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="249">
+        <xsd:annotation>
+          <xsd:documentation>Stolen Property</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="250">
+        <xsd:annotation>
+          <xsd:documentation>Wrongfully Obtain Public Assistance </xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="251">
+        <xsd:annotation>
+          <xsd:documentation>Worker&apos;s Compensation Fraud</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="252">
+        <xsd:annotation>
+          <xsd:documentation>General Assistance Fraud</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="253">
+        <xsd:annotation>
+          <xsd:documentation>Unemployment Fraud</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="254">
+        <xsd:annotation>
+          <xsd:documentation>Fraud - Federal Food Stamps</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="255">
+        <xsd:annotation>
+          <xsd:documentation>Medical Assisstance Fraud</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="259">
+        <xsd:annotation>
+          <xsd:documentation>Govt. Assistance Fraud/Theft</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="260">
+        <xsd:annotation>
+          <xsd:documentation>Theft Statute</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="260.001">
+        <xsd:annotation>
+          <xsd:documentation>Theft of Movable Property</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="260.002">
+        <xsd:annotation>
+          <xsd:documentation>Theft of Movable Property - Legal Interest</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="260.003">
+        <xsd:annotation>
+          <xsd:documentation>Theft by False Representation</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="260.004">
+        <xsd:annotation>
+          <xsd:documentation>Theft by Swindle</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="260.005">
+        <xsd:annotation>
+          <xsd:documentation>Theft - Temporary</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="260.006">
+        <xsd:annotation>
+          <xsd:documentation>Theft - Finds Lost Property</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="260.007">
+        <xsd:annotation>
+          <xsd:documentation>Theft - Coin Operated Machine</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="260.008">
+        <xsd:annotation>
+          <xsd:documentation>Theft of Trade Secret</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="260.009">
+        <xsd:annotation>
+          <xsd:documentation>Theft of Leased/Rented Property</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="260.01">
+        <xsd:annotation>
+          <xsd:documentation>Theft - Alters/Removes I.D. No.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="260.011">
+        <xsd:annotation>
+          <xsd:documentation>Theft - Alters/Removes Serial No.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="260.012">
+        <xsd:annotation>
+          <xsd:documentation>Theft - Cable TV Services</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="260.013">
+        <xsd:annotation>
+          <xsd:documentation>Theft - Not Pay for Services</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="260.014">
+        <xsd:annotation>
+          <xsd:documentation>Theft - Telecommunications</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="260.015">
+        <xsd:annotation>
+          <xsd:documentation>Theft - Diversion of Corp. Property</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="260.016">
+        <xsd:annotation>
+          <xsd:documentation>Theft - Diversion of Corp. Property</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="260.017">
+        <xsd:annotation>
+          <xsd:documentation>Theft - MV Use without consent</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="261">
+        <xsd:annotation>
+          <xsd:documentation>Financial Transaction Card Fraud</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="262">
+        <xsd:annotation>
+          <xsd:documentation>Identity Theft</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="263">
+        <xsd:annotation>
+          <xsd:documentation>Dishonored Checks</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="264">
+        <xsd:annotation>
+          <xsd:documentation>Counterfeited Intellectual Property</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="265">
+        <xsd:annotation>
+          <xsd:documentation>Possesion/Sale Stolen or Counterfeit Checks</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="269">
+        <xsd:annotation>
+          <xsd:documentation>Theft</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="290">
+        <xsd:annotation>
+          <xsd:documentation>Fraudulent Trade/Commerce</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="291">
+        <xsd:annotation>
+          <xsd:documentation>Tampering</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="292">
+        <xsd:annotation>
+          <xsd:documentation>State Lottery Fraud</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="293">
+        <xsd:annotation>
+          <xsd:documentation>Financial Exploit. - Vulnerable Adult</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="294">
+        <xsd:annotation>
+          <xsd:documentation>Poss Shoplifting Gear/Burg. Tools/Code Grabbing Device</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="299">
+        <xsd:annotation>
+          <xsd:documentation>Property Offense</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="300">
+        <xsd:annotation>
+          <xsd:documentation>Cont. Substance Crime</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="300.1">
+        <xsd:annotation>
+          <xsd:documentation>Cont. Substance - First Degree</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="300.11">
+        <xsd:annotation>
+          <xsd:documentation>Cont. Sub. Sale - First Degree</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="300.12">
+        <xsd:annotation>
+          <xsd:documentation>Cont. Sub. Possession - First Degree</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="300.2">
+        <xsd:annotation>
+          <xsd:documentation>Cont. Substance - Second Degree</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="300.21">
+        <xsd:annotation>
+          <xsd:documentation>Cont. Sub. Sale - Second Degree</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="300.22">
+        <xsd:annotation>
+          <xsd:documentation>Cont. Sub. Possession - Second Degree</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="300.3">
+        <xsd:annotation>
+          <xsd:documentation>Cont. Substance - Third Degree</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="300.31">
+        <xsd:annotation>
+          <xsd:documentation>Cont. Sub. Sale - Third Degree</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="300.32">
+        <xsd:annotation>
+          <xsd:documentation>Cont. Sub. Possession - Third Degree</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="300.4">
+        <xsd:annotation>
+          <xsd:documentation>Cont. Substance - Fourth Degree</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="300.41">
+        <xsd:annotation>
+          <xsd:documentation>Cont. Sub. Sale - Fourth Degree</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="300.42">
+        <xsd:annotation>
+          <xsd:documentation>Cont. Sub. Possession - Fourth Degree</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="300.5">
+        <xsd:annotation>
+          <xsd:documentation>Cont. Substance - Fifth Degree</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="300.51">
+        <xsd:annotation>
+          <xsd:documentation>Cont. Sub. Sale - Fifth Degree</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="300.52">
+        <xsd:annotation>
+          <xsd:documentation>Cont. Sub. Possession - Fifth Degree</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="300.53">
+        <xsd:annotation>
+          <xsd:documentation>Cont. Sub. Fraud - Fifth Degree</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="300.54">
+        <xsd:annotation>
+          <xsd:documentation>Cont. Sub. Unknown - Fifth Degree</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="390">
+        <xsd:annotation>
+          <xsd:documentation>Import Controlled Substance</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="391">
+        <xsd:annotation>
+          <xsd:documentation>Sale Simulated Cont. Substance</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="392">
+        <xsd:annotation>
+          <xsd:documentation>Anhydrous Ammonia</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="399">
+        <xsd:annotation>
+          <xsd:documentation>Drug Offense</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="400">
+        <xsd:annotation>
+          <xsd:documentation>Driving While Impaired (DWI)</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="400.01">
+        <xsd:annotation>
+          <xsd:documentation>DWI - Alcohol</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="400.02">
+        <xsd:annotation>
+          <xsd:documentation>DWI - Controlled Substance</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="400.03">
+        <xsd:annotation>
+          <xsd:documentation>DWI - Combined Alcohol/Cont. Sub./Hazardous Sub.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="400.04">
+        <xsd:annotation>
+          <xsd:documentation>DWI - .10 or more</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="400.05">
+        <xsd:annotation>
+          <xsd:documentation>DWI - .10 or more within 2 hrs.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="400.06">
+        <xsd:annotation>
+          <xsd:documentation>DWI - .20 or more wihtin 2 hrs.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="400.07">
+        <xsd:annotation>
+          <xsd:documentation>DWI - Hazardous Substance</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="400.08">
+        <xsd:annotation>
+          <xsd:documentation>DWI - Schedule I &amp; II Cont. Sub. Other than Marijuana</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="401">
+        <xsd:annotation>
+          <xsd:documentation>Commercial Vehicle DWI</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="401.02">
+        <xsd:annotation>
+          <xsd:documentation>DWI - .04 within 2 hrs</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="401.04">
+        <xsd:annotation>
+          <xsd:documentation>DWI - School bus/Head Start - Any Amount</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="401.05">
+        <xsd:annotation>
+          <xsd:documentation>DWI - School Bus/Head Start - GM - Child Under 16</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="401.06">
+        <xsd:annotation>
+          <xsd:documentation>DWI - School Bus/Head Start - GM - within 10 yrs of prior</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="401.07">
+        <xsd:annotation>
+          <xsd:documentation>DWI - School Bus/Head Start - Misd.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="402">
+        <xsd:annotation>
+          <xsd:documentation>Aircraft DWI</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="402.01">
+        <xsd:annotation>
+          <xsd:documentation>DWI - Aircraft - Alcohol</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="402.02">
+        <xsd:annotation>
+          <xsd:documentation>DWI - Aircraft - Cont. Sub.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="402.03">
+        <xsd:annotation>
+          <xsd:documentation>DWI - Aircraft - Combined Alcohol/Cont. Sub./Hazardous Substance</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="402.04">
+        <xsd:annotation>
+          <xsd:documentation>DWI - Aircraft - .04 or more</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="402.05">
+        <xsd:annotation>
+          <xsd:documentation>DWI - Aircraft - .04 within 2 hrs.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="402.06">
+        <xsd:annotation>
+          <xsd:documentation>DWI - Aircraft - Hazardous Substance</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="402.07">
+        <xsd:annotation>
+          <xsd:documentation>DWI - Aircraft - Schedule I or II</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="402.08">
+        <xsd:annotation>
+          <xsd:documentation>DWI - Aircraft - Within 8 hrs. of consuming Alcohol/Cont. Sub.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="403">
+        <xsd:annotation>
+          <xsd:documentation>Driving While Impaired (Degree)</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="403.01">
+        <xsd:annotation>
+          <xsd:documentation>DWI - First Degree</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="403.02">
+        <xsd:annotation>
+          <xsd:documentation>DWI - Second Degree</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="403.03">
+        <xsd:annotation>
+          <xsd:documentation>DWI - Third Degree</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="403.04">
+        <xsd:annotation>
+          <xsd:documentation>DWI - Fourth Degree</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="404">
+        <xsd:annotation>
+          <xsd:documentation>Permit Other DWI/Mentally Impaired to Operate</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="404.01">
+        <xsd:annotation>
+          <xsd:documentation>DWI - Snowmobile &amp; ATV</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="404.02">
+        <xsd:annotation>
+          <xsd:documentation>DWI - Motor Boat</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="404.03">
+        <xsd:annotation>
+          <xsd:documentation>DWI - Off Road/Motorized Bicycle</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="404.04">
+        <xsd:annotation>
+          <xsd:documentation>DWI - Aircraft</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="405">
+        <xsd:annotation>
+          <xsd:documentation>DWI Mandatory Penalties/Consecutive Sentences</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="405.01">
+        <xsd:annotation>
+          <xsd:documentation>DWI Mandatory Penalties - Second Offense</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="405.02">
+        <xsd:annotation>
+          <xsd:documentation>DWI Mandatory Penalties- Third Offense</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="405.03">
+        <xsd:annotation>
+          <xsd:documentation>DWI Mandatory Penalties- Fourth Offense</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="405.04">
+        <xsd:annotation>
+          <xsd:documentation>DWI Mandatory Penalties- Fifth Offense</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="405.05">
+        <xsd:annotation>
+          <xsd:documentation>DWI - Mandatory Consecutive Sentences</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="405.06">
+        <xsd:annotation>
+          <xsd:documentation>DWI - Permissive Consecutive Sentences; multiple offense</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="405.07">
+        <xsd:annotation>
+          <xsd:documentation>DWI Mandatory Penalties-Felony</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="406">
+        <xsd:annotation>
+          <xsd:documentation>Refusal to Test - MV and Aircraft</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="406.01">
+        <xsd:annotation>
+          <xsd:documentation>Refusal to Test - Motor Vehicle</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="406.02">
+        <xsd:annotation>
+          <xsd:documentation>Refusal to Test - Aircraft</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="409">
+        <xsd:annotation>
+          <xsd:documentation>DWI/Alcohol</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="410">
+        <xsd:annotation>
+          <xsd:documentation>Obstruction of Traffic</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="411">
+        <xsd:annotation>
+          <xsd:documentation>Driving Rule</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="412">
+        <xsd:annotation>
+          <xsd:documentation>Stopping and Parking Provision</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="413">
+        <xsd:annotation>
+          <xsd:documentation>School Bus Safety</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="414">
+        <xsd:annotation>
+          <xsd:documentation>Vehicle Equipment/Safety/Inspection</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="415">
+        <xsd:annotation>
+          <xsd:documentation>MV Insurance Violation</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="416">
+        <xsd:annotation>
+          <xsd:documentation>Motorcycle Provision</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="419">
+        <xsd:annotation>
+          <xsd:documentation>Traffic</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="420">
+        <xsd:annotation>
+          <xsd:documentation>MV Registration</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="421">
+        <xsd:annotation>
+          <xsd:documentation>MV Licensing</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="422">
+        <xsd:annotation>
+          <xsd:documentation>MV Title</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="429">
+        <xsd:annotation>
+          <xsd:documentation>MV Reg./Title/Licensing/Sale</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="490">
+        <xsd:annotation>
+          <xsd:documentation> Airplane/Aeronautics</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="491">
+        <xsd:annotation>
+          <xsd:documentation>Off-Road Vehicle</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="492">
+        <xsd:annotation>
+          <xsd:documentation>Water Craft</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="493">
+        <xsd:annotation>
+          <xsd:documentation>Highway/Road</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="494">
+        <xsd:annotation>
+          <xsd:documentation>Accident</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="499">
+        <xsd:annotation>
+          <xsd:documentation>Traffic/Transportation</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="500">
+        <xsd:annotation>
+          <xsd:documentation>Juvenile Status Offense/CHIPS</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="501">
+        <xsd:annotation>
+          <xsd:documentation>Juvenile Truancy</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="501.1">
+        <xsd:annotation>
+          <xsd:documentation>Juvenile Truancy - Habitual</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="510">
+        <xsd:annotation>
+          <xsd:documentation>Juvenile Runaway</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="520">
+        <xsd:annotation>
+          <xsd:documentation>Juvenile Curfew Offense</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="530">
+        <xsd:annotation>
+          <xsd:documentation>Juvenile Tobacco Offense</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="540">
+        <xsd:annotation>
+          <xsd:documentation>Juvenile Alcohol Offense</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="541">
+        <xsd:annotation>
+          <xsd:documentation>Underage Drinking and Driving</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="550">
+        <xsd:annotation>
+          <xsd:documentation>Juvenile Controlled Substance Offender</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="560">
+        <xsd:annotation>
+          <xsd:documentation>Juvenile Traffic Offender</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="580">
+        <xsd:annotation>
+          <xsd:documentation>Juvenile Petty Offender</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="590">
+        <xsd:annotation>
+          <xsd:documentation>CHIPS</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="599">
+        <xsd:annotation>
+          <xsd:documentation>Juvenile Unknown</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="601">
+        <xsd:annotation>
+          <xsd:documentation>Explosive/Incendiary Device</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="610">
+        <xsd:annotation>
+          <xsd:documentation>Not to Possess Firearm</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="611">
+        <xsd:annotation>
+          <xsd:documentation>Not to Possess Firearm-Juvenile</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="612">
+        <xsd:annotation>
+          <xsd:documentation>Not to Possess Firearm-Convicted Crime of Violence</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="625">
+        <xsd:annotation>
+          <xsd:documentation>Ineligible to receive, ship, or transport pistol or semiautomatic military-style assault weapon</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="630">
+        <xsd:annotation>
+          <xsd:documentation>Illegal Firearm/Ammunition</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="640">
+        <xsd:annotation>
+          <xsd:documentation>Firearm Transfer</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="645">
+        <xsd:annotation>
+          <xsd:documentation>Weapon without Permit</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="650">
+        <xsd:annotation>
+          <xsd:documentation>Tear Gas/Electronic Incapacitation Device</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="660">
+        <xsd:annotation>
+          <xsd:documentation>Firearm Transfer/Silencers Prohibited-Felony</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="661">
+        <xsd:annotation>
+          <xsd:documentation>Furnishing Dangerous Weapon to Minors-Felony</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="662">
+        <xsd:annotation>
+          <xsd:documentation>Furnishing Dangerous Weapon-Felony</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="663">
+        <xsd:annotation>
+          <xsd:documentation>Possession Dangerous Weapon on School Property</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="664">
+        <xsd:annotation>
+          <xsd:documentation>Possession Dangerous Weapon in Court House or State Building-Felony</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="665">
+        <xsd:annotation>
+          <xsd:documentation>Dangerous Weapons-Misdemeanors and Gross Misdemeanors</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="666">
+        <xsd:annotation>
+          <xsd:documentation>Firearm Removal or Alteration of Serial Number</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="667">
+        <xsd:annotation>
+          <xsd:documentation>Weapon of Mass Destruction</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="668">
+        <xsd:annotation>
+          <xsd:documentation>Prohibited Substances</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="699">
+        <xsd:annotation>
+          <xsd:documentation>Weapon Offense</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="900">
+        <xsd:annotation>
+          <xsd:documentation>Child Neglect/Child Endangerment</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="901">
+        <xsd:annotation>
+          <xsd:documentation>Non-Support of Spouse or Child</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="902">
+        <xsd:annotation>
+          <xsd:documentation>Contribute Delinquency Minor</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="903">
+        <xsd:annotation>
+          <xsd:documentation>Contribute to Need for Child Protection</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="909">
+        <xsd:annotation>
+          <xsd:documentation>Crime Against Family</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="910">
+        <xsd:annotation>
+          <xsd:documentation>Health Care Regulation</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="911">
+        <xsd:annotation>
+          <xsd:documentation>Environmental Regulation</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="912">
+        <xsd:annotation>
+          <xsd:documentation>Occupational Health and Safety</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="913">
+        <xsd:annotation>
+          <xsd:documentation>Health and Safety</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="914">
+        <xsd:annotation>
+          <xsd:documentation>Liquor</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="915">
+        <xsd:annotation>
+          <xsd:documentation>Violation of Reporting Requirement</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="916">
+        <xsd:annotation>
+          <xsd:documentation>Tobacco</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="918">
+        <xsd:annotation>
+          <xsd:documentation>Railroads/Transit Facilities/Providers</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="919">
+        <xsd:annotation>
+          <xsd:documentation>Public Health/Safety/Environment</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="920">
+        <xsd:annotation>
+          <xsd:documentation>Misconduct Affecting Public Official</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="920.01">
+        <xsd:annotation>
+          <xsd:documentation>Misconduct by Public Official</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="921">
+        <xsd:annotation>
+          <xsd:documentation>Taxes</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="922">
+        <xsd:annotation>
+          <xsd:documentation>Violation of Regulation/Licensing Rule</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="923">
+        <xsd:annotation>
+          <xsd:documentation>Election &amp; Campaign Regulation</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="924">
+        <xsd:annotation>
+          <xsd:documentation>Public Information Data Practices</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="929">
+        <xsd:annotation>
+          <xsd:documentation>Crime Against Government</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="930">
+        <xsd:annotation>
+          <xsd:documentation>Disorderly House</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="931">
+        <xsd:annotation>
+          <xsd:documentation>Riot</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="931.1">
+        <xsd:annotation>
+          <xsd:documentation>Riot 1</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="931.2">
+        <xsd:annotation>
+          <xsd:documentation>Riot 2</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="931.3">
+        <xsd:annotation>
+          <xsd:documentation>Riot 3</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="932">
+        <xsd:annotation>
+          <xsd:documentation>Disorderly Conduct </xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="933">
+        <xsd:annotation>
+          <xsd:documentation>Interference with Privacy</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="934">
+        <xsd:annotation>
+          <xsd:documentation>Interference with Communication</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="937">
+        <xsd:annotation>
+          <xsd:documentation>Disturbing Peace</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="938">
+        <xsd:annotation>
+          <xsd:documentation>Disturbing Privacy</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="939">
+        <xsd:annotation>
+          <xsd:documentation>Disturbing Peace/Privacy</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="940">
+        <xsd:annotation>
+          <xsd:documentation>Pari Mutual Gambling</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="941">
+        <xsd:annotation>
+          <xsd:documentation>State Lottery</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="949">
+        <xsd:annotation>
+          <xsd:documentation>Gambling</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="950">
+        <xsd:annotation>
+          <xsd:documentation>Prostitution</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="951">
+        <xsd:annotation>
+          <xsd:documentation>Indecent Exposure</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="952">
+        <xsd:annotation>
+          <xsd:documentation>Obscene Materials</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="953">
+        <xsd:annotation>
+          <xsd:documentation>Minors in Sexual Materials</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="953.01">
+        <xsd:annotation>
+          <xsd:documentation>Minors in Sexual Materials - Use</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="953.02">
+        <xsd:annotation>
+          <xsd:documentation>Minors in Sexual Materials - Possess/Disseminate</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="954">
+        <xsd:annotation>
+          <xsd:documentation>Harmful Materials to Minors</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="959">
+        <xsd:annotation>
+          <xsd:documentation>Sex Related</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="960">
+        <xsd:annotation>
+          <xsd:documentation>Explosive/Incendiary Device</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="961">
+        <xsd:annotation>
+          <xsd:documentation>Not to Possess Firearm</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="961.01">
+        <xsd:annotation>
+          <xsd:documentation>Not to Possess Firearm - Juvenile</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="961.02">
+        <xsd:annotation>
+          <xsd:documentation>Not to Possess Firearm - Convicted Crime of Violence</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="962">
+        <xsd:annotation>
+          <xsd:documentation>Illegal Firearm/Ammunition</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="963">
+        <xsd:annotation>
+          <xsd:documentation>Firearm Transfer</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="964">
+        <xsd:annotation>
+          <xsd:documentation>Weapon without Permit</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="965">
+        <xsd:annotation>
+          <xsd:documentation>Tear Gas/Electronic Incapacitation Device</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="966">
+        <xsd:annotation>
+          <xsd:documentation>Firearm Discharge</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="969">
+        <xsd:annotation>
+          <xsd:documentation>Weapon</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="970">
+        <xsd:annotation>
+          <xsd:documentation>Judicial Process</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="970.01">
+        <xsd:annotation>
+          <xsd:documentation>Perjury</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="970.02">
+        <xsd:annotation>
+          <xsd:documentation>Tampering</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="970.03">
+        <xsd:annotation>
+          <xsd:documentation>Contempt</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="970.04">
+        <xsd:annotation>
+          <xsd:documentation>Failure to Appear</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="971">
+        <xsd:annotation>
+          <xsd:documentation>Escape/Fleeing</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="971.01">
+        <xsd:annotation>
+          <xsd:documentation>Escape </xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="971.02">
+        <xsd:annotation>
+          <xsd:documentation>Fleeing</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="972">
+        <xsd:annotation>
+          <xsd:documentation>Prison/Jails</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="972.01">
+        <xsd:annotation>
+          <xsd:documentation>Contraband</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="973">
+        <xsd:annotation>
+          <xsd:documentation>Misconduct by Justice Official</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="974">
+        <xsd:annotation>
+          <xsd:documentation>Obstruction of Justice</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="974.01">
+        <xsd:annotation>
+          <xsd:documentation>Aiding an Offender</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="974.02">
+        <xsd:annotation>
+          <xsd:documentation>Obstruction of Legal Process</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="975">
+        <xsd:annotation>
+          <xsd:documentation>Attempt</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="976">
+        <xsd:annotation>
+          <xsd:documentation>Conspiracy</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="977">
+        <xsd:annotation>
+          <xsd:documentation>Failure of Predatory Offenders to Register</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="979">
+        <xsd:annotation>
+          <xsd:documentation>Adminstration of Justice</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="990">
+        <xsd:annotation>
+          <xsd:documentation>Animal Welfare</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="991">
+        <xsd:annotation>
+          <xsd:documentation>Fish and Game (Other)</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="991.01">
+        <xsd:annotation>
+          <xsd:documentation>Alcohol Related Fish and Game</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="992">
+        <xsd:annotation>
+          <xsd:documentation>Employer Misconduct</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="997">
+        <xsd:annotation>
+          <xsd:documentation>Crimes in Furtherance of Terrorism</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="998">
+        <xsd:annotation>
+          <xsd:documentation>Crime for Benefit of Gang</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="999">
+        <xsd:annotation>
+          <xsd:documentation>Miscellaneous</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:complexType name="OffenseCodeType">
+    <xsd:annotation>
+      <xsd:documentation>A data type for Uniform Crime Reporting (UCR) offense codes.</xsd:documentation>
+      <xsd:appinfo>
+        <i:Base i:namespace="http://niem.gov/niem/structures/2.0" i:name="Object"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:simpleContent>
+      <xsd:extension base="mn_off:OffenseCodeSimpleType">
+        <xsd:attributeGroup ref="s:SimpleObjectAttributeGroup"/>
+      </xsd:extension>
+    </xsd:simpleContent>
+  </xsd:complexType>
+  <xsd:simpleType name="OffenseLevelCodeSimpleType">
+    <xsd:annotation>
+      <xsd:documentation>A data type for levels of an incident.</xsd:documentation>
+      <xsd:appinfo>
+        <i:Base i:namespace="http://niem.gov/niem/structures/2.0" i:name="Object"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:restriction base="xsd:token">
+      <xsd:enumeration value="F">
+        <xsd:annotation>
+          <xsd:documentation>Felony</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="G">
+        <xsd:annotation>
+          <xsd:documentation>Gross Misdemeanor</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="M">
+        <xsd:annotation>
+          <xsd:documentation>Misdemeanor</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="P">
+        <xsd:annotation>
+          <xsd:documentation>Petty Misdemeanor</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:complexType name="OffenseLevelCodeType">
+    <xsd:annotation>
+      <xsd:documentation>A data type for levels of an incident.</xsd:documentation>
+      <xsd:appinfo>
+        <i:Base i:namespace="http://niem.gov/niem/structures/2.0" i:name="Object"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:simpleContent>
+      <xsd:extension base="mn_off:OffenseLevelCodeSimpleType">
+        <xsd:attributeGroup ref="s:SimpleObjectAttributeGroup"/>
+      </xsd:extension>
+    </xsd:simpleContent>
+  </xsd:complexType>
+  <xsd:simpleType name="StatuteCategoryCodeSimpleType">
+    <xsd:annotation>
+      <xsd:documentation>A data type for kinds of statutes.</xsd:documentation>
+      <xsd:appinfo>
+        <i:Base i:namespace="http://niem.gov/niem/structures/2.0" i:name="Object"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:restriction base="xsd:token">
+      <xsd:enumeration value="B">
+        <xsd:annotation>
+          <xsd:documentation>Both C and P</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="C">
+        <xsd:annotation>
+          <xsd:documentation>Charging</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="D">
+        <xsd:annotation>
+          <xsd:documentation>Definition</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="J">
+        <xsd:annotation>
+          <xsd:documentation>Juvenile Status/CHIP</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="N">
+        <xsd:annotation>
+          <xsd:documentation>Not Chargeable</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="P">
+        <xsd:annotation>
+          <xsd:documentation>Penalty</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:complexType name="StatuteCategoryCodeType">
+    <xsd:annotation>
+      <xsd:documentation>A data type for kinds of statutes.</xsd:documentation>
+      <xsd:appinfo>
+        <i:Base i:namespace="http://niem.gov/niem/structures/2.0" i:name="Object"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:simpleContent>
+      <xsd:extension base="mn_off:StatuteCategoryCodeSimpleType">
+        <xsd:attributeGroup ref="s:SimpleObjectAttributeGroup"/>
+      </xsd:extension>
+    </xsd:simpleContent>
+  </xsd:complexType>
+</xsd:schema>

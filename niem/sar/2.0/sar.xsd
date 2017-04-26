@@ -1,0 +1,340 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema targetNamespace="http://niem.gov/niem/sar/2.0" version="1" xmlns:s="http://niem.gov/niem/structures/2.0" xmlns:sar="http://niem.gov/niem/sar/2.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:i="http://niem.gov/niem/appinfo/2.0">
+  <xsd:annotation>
+    <xsd:documentation>Suspicious Activity Reporting</xsd:documentation>
+    <xsd:appinfo>
+      <i:ConformantIndicator>true</i:ConformantIndicator>
+    </xsd:appinfo>
+  </xsd:annotation>
+  <xsd:import schemaLocation="../../structures/2.0/structures.xsd" namespace="http://niem.gov/niem/structures/2.0"/>
+  <xsd:import schemaLocation="../../appinfo/2.0/appinfo.xsd" namespace="http://niem.gov/niem/appinfo/2.0"/>
+  <xsd:simpleType name="TargetSectorCodeSimpleType">
+    <xsd:annotation>
+      <xsd:documentation>A data type for the broad categorization of infrastructure type.</xsd:documentation>
+      <xsd:appinfo>
+        <i:Base i:namespace="http://niem.gov/niem/structures/2.0" i:name="Object"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:restriction base="xsd:token">
+      <xsd:enumeration value="AGRI">
+        <xsd:annotation>
+          <xsd:documentation>Food, Agriculture, Livestock</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="COMM">
+        <xsd:annotation>
+          <xsd:documentation>Commercial Assets</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="CSTL">
+        <xsd:annotation>
+          <xsd:documentation>Coastal Facilities</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="DAMS">
+        <xsd:annotation>
+          <xsd:documentation>Dams</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="DFNSE">
+        <xsd:annotation>
+          <xsd:documentation>Defense Industrial Base</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="EDU">
+        <xsd:annotation>
+          <xsd:documentation>Education</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="EMRG">
+        <xsd:annotation>
+          <xsd:documentation>Emergency Services</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="ENRG">
+        <xsd:annotation>
+          <xsd:documentation>Energy, Utilities</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="FIN">
+        <xsd:annotation>
+          <xsd:documentation>Banking, Finance</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="GVTBLDG">
+        <xsd:annotation>
+          <xsd:documentation>Government Facilities</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="HAZMAT">
+        <xsd:annotation>
+          <xsd:documentation>Chemical, Hazardous Material</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="HLTH">
+        <xsd:annotation>
+          <xsd:documentation>Healthcare, Public Health</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="IT">
+        <xsd:annotation>
+          <xsd:documentation>Information Technology</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="MAIL">
+        <xsd:annotation>
+          <xsd:documentation>Postal, Shipping</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="MFG">
+        <xsd:annotation>
+          <xsd:documentation>Manufacturing</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="MNMT">
+        <xsd:annotation>
+          <xsd:documentation>National Monument, Icon</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="NATRL">
+        <xsd:annotation>
+          <xsd:documentation>Natural Threats</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="NCLR">
+        <xsd:annotation>
+          <xsd:documentation>Nuclear Facilities</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="OTHR">
+        <xsd:annotation>
+          <xsd:documentation>Other</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="POP">
+        <xsd:annotation>
+          <xsd:documentation>Population</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="PRSN">
+        <xsd:annotation>
+          <xsd:documentation>Person</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="RETL">
+        <xsd:annotation>
+          <xsd:documentation>Retail</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="SPCFXN">
+        <xsd:annotation>
+          <xsd:documentation>Special Function</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="TELCM">
+        <xsd:annotation>
+          <xsd:documentation>Telecommunications</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="TRANS">
+        <xsd:annotation>
+          <xsd:documentation>Transportation</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="WATR">
+        <xsd:annotation>
+          <xsd:documentation>Water</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:complexType name="TargetSectorCodeType">
+    <xsd:annotation>
+      <xsd:documentation>A data type for the broad categorization of infrastructure type.</xsd:documentation>
+      <xsd:appinfo>
+        <i:Base i:namespace="http://niem.gov/niem/structures/2.0" i:name="Object"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:simpleContent>
+      <xsd:extension base="sar:TargetSectorCodeSimpleType">
+        <xsd:attributeGroup ref="s:SimpleObjectAttributeGroup"/>
+      </xsd:extension>
+    </xsd:simpleContent>
+  </xsd:complexType>
+  <xsd:simpleType name="TipClassCodeSimpleType">
+    <xsd:annotation>
+      <xsd:documentation>A data type for a kind of threat to which the tip or lead pertains.</xsd:documentation>
+      <xsd:appinfo>
+        <i:Base i:namespace="http://niem.gov/niem/structures/2.0" i:name="Object"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:restriction base="xsd:token">
+      <xsd:enumeration value="BIO">
+        <xsd:annotation>
+          <xsd:documentation>Biological</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="CHEM">
+        <xsd:annotation>
+          <xsd:documentation>Chemical</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="CNTFTG">
+        <xsd:annotation>
+          <xsd:documentation>Counterfitting</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="CTMN">
+        <xsd:annotation>
+          <xsd:documentation>Contaimination</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="CYBER">
+        <xsd:annotation>
+          <xsd:documentation>Cyberstalking</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="EXPL">
+        <xsd:annotation>
+          <xsd:documentation>Explosives</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="FRAUD">
+        <xsd:annotation>
+          <xsd:documentation>Fraud</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="FUND">
+        <xsd:annotation>
+          <xsd:documentation>Terrorism Funding</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="HATE">
+        <xsd:annotation>
+          <xsd:documentation>Hate Crime</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="INCEND">
+        <xsd:annotation>
+          <xsd:documentation>Incendiary</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="INFRA">
+        <xsd:annotation>
+          <xsd:documentation>Critical Infrastructure</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="LAUND">
+        <xsd:annotation>
+          <xsd:documentation>Money Laundering</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="NCLR">
+        <xsd:annotation>
+          <xsd:documentation>Nuclear/Radiological</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="SPCSA">
+        <xsd:annotation>
+          <xsd:documentation>Suspicious Activity</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="SPCSP">
+        <xsd:annotation>
+          <xsd:documentation>Suspicious Person</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="SPCSSBST">
+        <xsd:annotation>
+          <xsd:documentation>Suspicious Substance</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="THRTPUB">
+        <xsd:annotation>
+          <xsd:documentation>Threat Against Public Figure</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="VRUS">
+        <xsd:annotation>
+          <xsd:documentation>Virus/Worm</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:complexType name="TipClassCodeType">
+    <xsd:annotation>
+      <xsd:documentation>A data type for a kind of threat to which the tip or lead pertains.</xsd:documentation>
+      <xsd:appinfo>
+        <i:Base i:namespace="http://niem.gov/niem/structures/2.0" i:name="Object"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:simpleContent>
+      <xsd:extension base="sar:TipClassCodeSimpleType">
+        <xsd:attributeGroup ref="s:SimpleObjectAttributeGroup"/>
+      </xsd:extension>
+    </xsd:simpleContent>
+  </xsd:complexType>
+  <xsd:simpleType name="TipDomainCodeSimpleType">
+    <xsd:annotation>
+      <xsd:documentation>A data type for a broad category of threat to which the tip or lead pertains.</xsd:documentation>
+      <xsd:appinfo>
+        <i:Base i:namespace="http://niem.gov/niem/structures/2.0" i:name="Object"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:restriction base="xsd:token">
+      <xsd:enumeration value="A">
+        <xsd:annotation>
+          <xsd:documentation>Criminal Incident</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="B">
+        <xsd:annotation>
+          <xsd:documentation>Critical Infrastructure</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="C">
+        <xsd:annotation>
+          <xsd:documentation>Cyber Crime</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="D">
+        <xsd:annotation>
+          <xsd:documentation>Financial Incident</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="E">
+        <xsd:annotation>
+          <xsd:documentation>Intelligence</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="F">
+        <xsd:annotation>
+          <xsd:documentation>Security Issue</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="G">
+        <xsd:annotation>
+          <xsd:documentation>Suspicious Incident</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="H">
+        <xsd:annotation>
+          <xsd:documentation>Threats/Crimes Against Persons</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:complexType name="TipDomainCodeType">
+    <xsd:annotation>
+      <xsd:documentation>A data type for a broad category of threat to which the tip or lead pertains.</xsd:documentation>
+      <xsd:appinfo>
+        <i:Base i:namespace="http://niem.gov/niem/structures/2.0" i:name="Object"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:simpleContent>
+      <xsd:extension base="sar:TipDomainCodeSimpleType">
+        <xsd:attributeGroup ref="s:SimpleObjectAttributeGroup"/>
+      </xsd:extension>
+    </xsd:simpleContent>
+  </xsd:complexType>
+</xsd:schema>

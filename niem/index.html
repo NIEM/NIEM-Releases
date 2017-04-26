@@ -2,164 +2,148 @@
 <!DOCTYPE html PUBLIC "-//XML-DEV//DTD XHTML RDDL 2.0//EN" "http://www.rddl.org/rddl-xhtml-2.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:rddl="http://www.rddl.org/">
 <head>
-<title>NIEM 1.0</title>
+<title>NIEM 2.0</title>
 </head>
 <body>
-<h1>NIEM 1.0</h1>
-<h2>Description of NIEM 1.0</h2>
-<p>NIEM stands for the National Information Exchange Model.  
-NIEM is an interagency initiative to provide the foundation and building
-blocks for national-level interoperable information sharing and data
-exchange.  The NIEM project was announced and initiated on 28 February 2005.  
-It is a joint venture between the U.S. Department of Homeland Security (DHS) 
-and the U.S. Department of Justice (DOJ) with outreach to other departments 
-and agencies.  
-The NIEM leverages both the extensive Global Justice XML Data Model (GJXDM) 
-reference model and the comprehensive GJXDM XML-based framework and support 
-infrastructure.</p>
-<p>This package is the NIEM 1.0.  It contains the NIEM schemas 
-(Core, code lists, domains, wrappers for external standards, as well 
-as the schemas for those standards, or profiles of, or adaptations of.)  
-It also contains a cumulative change log and the spreadsheet.  
-This version of NIEM is intended to provide users, practitioners, and 
-developers with a baseline set of XML Schema components for building 
-Information Exchange Package Documentation (IEPDs).</p>
+<h1>NIEM 2.0</h1>
+<h2>Description</h2>
+<p>NIEM is the National Information Exchange Model.  
+This is an interagency initiative to provide the foundation and building
+blocks for national-level interoperable information sharing and data exchange.  
+The NIEM project was initiated on 28 February 2005 as a joint venture between 
+the U.S. Department of Homeland Security (DHS) and the U.S. Department of 
+Justice (DOJ) with outreach to other Government departments and agencies.  
+The NIEM leverages both the Global Justice XML Data Model (GJXDM) reference 
+model and the GJXDM XML-based framework and support infrastructure.</p>
+<p>This package contains the NIEM reference schemas (Core, code lists, 
+domains, wrappers for external standards, as well as the schemas 
+for those standards, or profiles of, or adaptations of.) 
+It also contains a cumulative change log and the spreadsheet. 
+NIEM provides practitioners and developers with a baseline set of XML Schema
+components for building Information Exchange Package Documentation (IEPDs).</p>
 <h2>Documentation</h2>
 <ul>
 <li>
-<a href="index.html" rddl:purpose="http://www.rddl.org/purposes#directory" rddl:nature="http://www.w3.org/1999/xhtml" title="catalog" id="catalog">Catalog</a> -
-
-NIEM 1.0 catalog of files; the file you are viewing now.
-
+<a href="index.html" rddl:purpose="http://www.rddl.org/purposes#directory" rddl:nature="http://www.w3.org/1999/xhtml" title="catalog" id="catalog">Catalog</a> - 
+Catalog of files; the file you are viewing now.
    </li>
 <li>
-<a rddl:purpose="http://www.rddl.org/purposes#non-normative-reference" rddl:nature="http://www.w3.org/1999/xhtml" href="schemas.html" title="schemas" id="schemas">Schemas</a> - A complete list of schemas included in this distribution.</li>
+<a href="schemas.html" rddl:purpose="http://www.rddl.org/purposes#non-normative-reference" rddl:nature="http://www.w3.org/1999/xhtml" title="schemas" id="schemas">Schemas</a> - 
+A complete list of schemas included in this distribution.
+  </li>
 <li>
-<a href="niem-1.0.xls" rddl:purpose="http://www.rddl.org/purposes#non-normative-reference" rddl:nature="http://www.iana.org/assignments/media-types/application/vnd.ms-excel" title="spreadsheet" id="spreadsheet">NIEM 1.0 spreadsheet</a> -
-
-a hyperlinked, textually oriented model and dictionary of the NIEM
-content
-
+<a href="niem-2.0.xls" rddl:purpose="http://www.rddl.org/purposes#non-normative-reference" rddl:nature="http://www.iana.org/assignments/media-types/application/vnd.ms-excel" title="spreadsheet" id="spreadsheet">Spreadsheet</a> -
+a hyperlinked, textually oriented model and dictionary of the NIEM content.
    </li>
 <li>
 <a href="changelog.html" rddl:purpose="http://niem.gov/niem/resources/purposes#change-log" rddl:nature="http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict" title="changelog" id="changelog">Change Log</a> -
-
-list of changes since last release
-
+list of changes since last release.
    </li>
 </ul>
 <h2>NIEM Core Schemas</h2>
 <ul>
 <li>
-<a rddl:purpose="http://niem.gov/niem/resources/purposes#reference-schema" rddl:nature="http://www.w3.org/2001/XMLSchema" title="NamespaceFile/text()" id="c" href="common/1.0/common.xsd">common</a>:  NIEM common core</li>
-<li>
-<a rddl:purpose="http://niem.gov/niem/resources/purposes#reference-schema" rddl:nature="http://www.w3.org/2001/XMLSchema" title="NamespaceFile/text()" id="u" href="universal/1.0/universal.xsd">universal</a>:  NIEM universal core</li>
+<a rddl:purpose="http://niem.gov/niem/resources/purposes#reference-schema" rddl:nature="http://www.w3.org/2001/XMLSchema" title="NamespaceFile/text()" id="nc" href="niem-core/2.0/niem-core.xsd">niem-core</a>:  NIEM Core includes both Universal (U) and Common (C) components.  The identities for U and C components in Core are maintained with metadata.</li>
 </ul>
 <h2>NIEM Domain Schemas</h2>
 <ul>
 <li>
-<a rddl:purpose="http://niem.gov/niem/resources/purposes#reference-schema" rddl:nature="http://www.w3.org/2001/XMLSchema" title="NamespaceFile/text()" id="em" href="domains/emergencyManagement/1.0/emergencyManagement.xsd">emergencyManagement</a>:  NIEM emergency management domain schema framework</li>
+<a rddl:purpose="http://niem.gov/niem/resources/purposes#reference-schema" rddl:nature="http://www.w3.org/2001/XMLSchema" title="NamespaceFile/text()" id="em" href="domains/emergencyManagement/2.0/emergencyManagement.xsd">emergencyManagement</a>:  Emergency Management</li>
 <li>
-<a rddl:purpose="http://niem.gov/niem/resources/purposes#reference-schema" rddl:nature="http://www.w3.org/2001/XMLSchema" title="NamespaceFile/text()" id="im" href="domains/immigration/1.0/immigration.xsd">immigration</a>:  Immigration</li>
+<a rddl:purpose="http://niem.gov/niem/resources/purposes#reference-schema" rddl:nature="http://www.w3.org/2001/XMLSchema" title="NamespaceFile/text()" id="im" href="domains/immigration/2.0/immigration.xsd">immigration</a>:  Immigration</li>
 <li>
-<a rddl:purpose="http://niem.gov/niem/resources/purposes#reference-schema" rddl:nature="http://www.w3.org/2001/XMLSchema" title="NamespaceFile/text()" id="intel" href="domains/intelligence/1.0/intelligence.xsd">intelligence</a>:  NIEM intelligence domain schema framework</li>
+<a rddl:purpose="http://niem.gov/niem/resources/purposes#reference-schema" rddl:nature="http://www.w3.org/2001/XMLSchema" title="NamespaceFile/text()" id="intel" href="domains/intelligence/2.0/intelligence.xsd">intelligence</a>:  Intelligence</li>
 <li>
-<a rddl:purpose="http://niem.gov/niem/resources/purposes#reference-schema" rddl:nature="http://www.w3.org/2001/XMLSchema" title="NamespaceFile/text()" id="ip" href="domains/infrastructureProtection/1.0/infrastructureProtection.xsd">infrastructureProtection</a>:  Infrastructure Protection</li>
+<a rddl:purpose="http://niem.gov/niem/resources/purposes#reference-schema" rddl:nature="http://www.w3.org/2001/XMLSchema" title="NamespaceFile/text()" id="ip" href="domains/infrastructureProtection/2.0/infrastructureProtection.xsd">infrastructureProtection</a>:  Infrastructure Protection</li>
 <li>
-<a rddl:purpose="http://niem.gov/niem/resources/purposes#reference-schema" rddl:nature="http://www.w3.org/2001/XMLSchema" title="NamespaceFile/text()" id="it" href="domains/internationalTrade/1.0/internationalTrade.xsd">internationalTrade</a>:  International Trade</li>
+<a rddl:purpose="http://niem.gov/niem/resources/purposes#reference-schema" rddl:nature="http://www.w3.org/2001/XMLSchema" title="NamespaceFile/text()" id="it" href="domains/internationalTrade/2.0/internationalTrade.xsd">internationalTrade</a>:  International Trade</li>
 <li>
-<a rddl:purpose="http://niem.gov/niem/resources/purposes#reference-schema" rddl:nature="http://www.w3.org/2001/XMLSchema" title="NamespaceFile/text()" id="j" href="domains/justice/1.0/justice.xsd">justice</a>:  NIEM justice domain</li>
+<a rddl:purpose="http://niem.gov/niem/resources/purposes#reference-schema" rddl:nature="http://www.w3.org/2001/XMLSchema" title="NamespaceFile/text()" id="j" href="domains/jxdm/4.0/jxdm.xsd">jxdm</a>:  Justice</li>
 <li>
-<a rddl:purpose="http://niem.gov/niem/resources/purposes#reference-schema" rddl:nature="http://www.w3.org/2001/XMLSchema" title="NamespaceFile/text()" id="scr" href="domains/screening/1.0/screening.xsd">screening</a>:  The Screening namespace provides harmonized information sharing content within the Screening Portfolio of DHS. The Screening namespace is initially being populated with person screening information for immigrant and non-immigrant person types who have been encountered and identified by the Screening Portfolio Components.  The Screening namespace expands on encounter-related NIEM elements currently included in the Immigration and Intelligence domains.</li>
+<a rddl:purpose="http://niem.gov/niem/resources/purposes#reference-schema" rddl:nature="http://www.w3.org/2001/XMLSchema" title="NamespaceFile/text()" id="scr" href="domains/screening/2.0/screening.xsd">screening</a>:  The People Screening domain provides harmonized information sharing content within the Screening Portfolio of DHS.  The Screening namespace is initially being populated with person screening information for immigrant and non-immigrant person types who have been encountered and identified by the Screening Portfolio Components.  Screening expands on encounter-related NIEM elements currently included in the Immigration and Intelligence domains.</li>
 </ul>
-<h2>NIEM External Conformant Schemas</h2>
+<h2>NIEM Conformant Schemas (code lists and adaptations of external standards)</h2>
 <ul>
 <li>
-<a rddl:purpose="http://niem.gov/niem/resources/purposes#reference-schema" rddl:nature="http://www.w3.org/2001/XMLSchema" title="NamespaceFile/text()" id="ansi_d20" href="ansi_d20/1.0/ansi_d20.xsd">ansi_d20</a>:  Motor vehicle administration codes from ANSI D20, the Data Dictionary for Traffic Record Systems, maintained by AAMVA, the American Association of Motor Vehicle Administrators.</li>
+<a rddl:purpose="http://niem.gov/niem/resources/purposes#reference-schema" rddl:nature="http://www.w3.org/2001/XMLSchema" title="NamespaceFile/text()" id="ansi_d20" href="ansi_d20/2.0/ansi_d20.xsd">ansi_d20</a>:  Motor vehicle administration codes from ANSI D20, the Data Dictionary for Traffic Record Systems, maintained by AAMVA, the American Association of Motor Vehicle Administrators.</li>
 <li>
-<a rddl:purpose="http://niem.gov/niem/resources/purposes#reference-schema" rddl:nature="http://www.w3.org/2001/XMLSchema" title="NamespaceFile/text()" id="apco" href="apco/1.0/apco.xsd">apco</a>:  The Association of Public-Safety Communications Officials (APCO) - International, Inc</li>
+<a rddl:purpose="http://niem.gov/niem/resources/purposes#reference-schema" rddl:nature="http://www.w3.org/2001/XMLSchema" title="NamespaceFile/text()" id="ansi-nist" href="ansi-nist/2.0/ansi-nist.xsd">ansi-nist</a>:  ANSI/NIST Fingerprint and Biometric standard.</li>
 <li>
-<a rddl:purpose="http://niem.gov/niem/resources/purposes#reference-schema" rddl:nature="http://www.w3.org/2001/XMLSchema" title="NamespaceFile/text()" id="can" href="post-canada/1.0/post-canada.xsd">post-canada</a>:  Province codes for Canada.</li>
+<a rddl:purpose="http://niem.gov/niem/resources/purposes#reference-schema" rddl:nature="http://www.w3.org/2001/XMLSchema" title="NamespaceFile/text()" id="apco" href="apco/2.0/apco.xsd">apco</a>:  Association of Public-Safety Communications Officials (APCO) - International, Inc.</li>
 <li>
-<a rddl:purpose="http://niem.gov/niem/resources/purposes#reference-schema" rddl:nature="http://www.w3.org/2001/XMLSchema" title="NamespaceFile/text()" id="census" href="census/1.0/census.xsd">census</a>:  Employment codes from the U.S. Census Bureau.</li>
+<a rddl:purpose="http://niem.gov/niem/resources/purposes#reference-schema" rddl:nature="http://www.w3.org/2001/XMLSchema" title="NamespaceFile/text()" id="atf" href="atf/2.0/atf.xsd">atf</a>:  Bureau of Alcohol, Tobacco, and Firearms</li>
 <li>
-<a rddl:purpose="http://niem.gov/niem/resources/purposes#reference-schema" rddl:nature="http://www.w3.org/2001/XMLSchema" title="NamespaceFile/text()" id="dod" href="dod_misc/1.0/dod_misc.xsd">dod_misc</a>:  Security level codes from the Department of Defense (DoD).</li>
+<a rddl:purpose="http://niem.gov/niem/resources/purposes#reference-schema" rddl:nature="http://www.w3.org/2001/XMLSchema" title="NamespaceFile/text()" id="can" href="post-canada/2.0/post-canada.xsd">post-canada</a>:  Province codes for Canada.</li>
 <li>
-<a rddl:purpose="http://niem.gov/niem/resources/purposes#reference-schema" rddl:nature="http://www.w3.org/2001/XMLSchema" title="NamespaceFile/text()" id="dod_jcs-pub2.0" href="dod_jcs-pub2.0-misc/1.0/dod_jcs-pub2.0-misc.xsd">dod_jcs-pub2.0-misc</a>:  Intelligence discipline codes from the Department of Defense (DoD) Joint Chiefs of Staff (JCS) Publication 2.0, Appendix A.</li>
+<a rddl:purpose="http://niem.gov/niem/resources/purposes#reference-schema" rddl:nature="http://www.w3.org/2001/XMLSchema" title="NamespaceFile/text()" id="census" href="census/2.0/census.xsd">census</a>:  Employment codes from the U.S. Census Bureau.</li>
 <li>
-<a rddl:purpose="http://niem.gov/niem/resources/purposes#reference-schema" rddl:nature="http://www.w3.org/2001/XMLSchema" title="NamespaceFile/text()" id="edxl" href="edxl/1.0/edxl.xsd">edxl</a>:  EDXL</li>
+<a rddl:purpose="http://niem.gov/niem/resources/purposes#reference-schema" rddl:nature="http://www.w3.org/2001/XMLSchema" title="NamespaceFile/text()" id="dea" href="dea/2.0/dea.xsd">dea</a>:  Drug Enforcement Administration</li>
 <li>
-<a rddl:purpose="http://niem.gov/niem/resources/purposes#reference-schema" rddl:nature="http://www.w3.org/2001/XMLSchema" title="NamespaceFile/text()" id="edxl-cap" href="edxl-cap/1.0/edxl-cap.xsd">edxl-cap</a>:  The Common Alerting Protocol (CAP).</li>
+<a rddl:purpose="http://niem.gov/niem/resources/purposes#reference-schema" rddl:nature="http://www.w3.org/2001/XMLSchema" title="NamespaceFile/text()" id="dod_jcs-pub2.0" href="dod_jcs-pub2.0-misc/2.0/dod_jcs-pub2.0-misc.xsd">dod_jcs-pub2.0-misc</a>:  Intelligence discipline codes from the U.S. Department of Defense (DoD) Joint Publication 2.01.</li>
 <li>
-<a rddl:purpose="http://niem.gov/niem/resources/purposes#reference-schema" rddl:nature="http://www.w3.org/2001/XMLSchema" title="NamespaceFile/text()" id="edxl-de" href="edxl-de/1.0/edxl-de.xsd">edxl-de</a>:  Distribution Element</li>
+<a rddl:purpose="http://niem.gov/niem/resources/purposes#reference-schema" rddl:nature="http://www.w3.org/2001/XMLSchema" title="NamespaceFile/text()" id="edxl" href="edxl/2.0/edxl.xsd">edxl</a>:  Emergency Data Exchange Language</li>
 <li>
-<a rddl:purpose="http://niem.gov/niem/resources/purposes#reference-schema" rddl:nature="http://www.w3.org/2001/XMLSchema" title="NamespaceFile/text()" id="eo-12958" href="eo-12958/1.0/eo-12958.xsd">eo-12958</a>:  Security classification codes from Presidential Executive Order 12958.</li>
+<a rddl:purpose="http://niem.gov/niem/resources/purposes#reference-schema" rddl:nature="http://www.w3.org/2001/XMLSchema" title="NamespaceFile/text()" id="edxl-cap" href="edxl-cap/2.0/edxl-cap.xsd">edxl-cap</a>:  Common Alerting Protocol</li>
 <li>
-<a rddl:purpose="http://niem.gov/niem/resources/purposes#reference-schema" rddl:nature="http://www.w3.org/2001/XMLSchema" title="NamespaceFile/text()" id="fips_10-4" href="fips_10-4/1.0/fips_10-4.xsd">fips_10-4</a>:  Countries, dependencies, areas of special sovereignty, and their principal administrative divisions from the Federal Information Processing Standards (FIPS) 10-4.</li>
+<a rddl:purpose="http://niem.gov/niem/resources/purposes#reference-schema" rddl:nature="http://www.w3.org/2001/XMLSchema" title="NamespaceFile/text()" id="edxl-de" href="edxl-de/2.0/edxl-de.xsd">edxl-de</a>:  Distribution Element</li>
 <li>
-<a rddl:purpose="http://niem.gov/niem/resources/purposes#reference-schema" rddl:nature="http://www.w3.org/2001/XMLSchema" title="NamespaceFile/text()" id="fips_5-2" href="fips_5-2/1.0/fips_5-2.xsd">fips_5-2</a>:  Codes for the identification of the states, the District of Columbia and the outlying areas of the United States, and associated areas from the Federal Information Processing Standards (FIPS) 5-2.</li>
+<a rddl:purpose="http://niem.gov/niem/resources/purposes#reference-schema" rddl:nature="http://www.w3.org/2001/XMLSchema" title="NamespaceFile/text()" id="fbi" href="fbi/2.0/fbi.xsd">fbi</a>:  FBI code lists for National Crime and Information Center (NCIC-2000), National Incident-Based Reporting System (NIBRS), and National Law Enforcement Data Exchange (N-DEx).</li>
 <li>
-<a rddl:purpose="http://niem.gov/niem/resources/purposes#reference-schema" rddl:nature="http://www.w3.org/2001/XMLSchema" title="NamespaceFile/text()" id="fips_6-4" href="fips_6-4/1.0/fips_6-4.xsd">fips_6-4</a>:  Counties and equivalent entities of the United States, its possessions, and associated areas from the Federal Information Processing Standards (FIPS) 6-4.</li>
+<a rddl:purpose="http://niem.gov/niem/resources/purposes#reference-schema" rddl:nature="http://www.w3.org/2001/XMLSchema" title="NamespaceFile/text()" id="fips_10-4" href="fips_10-4/2.0/fips_10-4.xsd">fips_10-4</a>:  Countries, dependencies, areas of special sovereignty, and their principal administrative divisions from the Federal Information Processing Standards (FIPS) 10-4.</li>
 <li>
-<a rddl:purpose="http://niem.gov/niem/resources/purposes#reference-schema" rddl:nature="http://www.w3.org/2001/XMLSchema" title="NamespaceFile/text()" id="gs" href="geospatial/1.0/geospatial.xsd">geospatial</a>:  Defines NIEM adapter types for external geospatial components defined by OGC, LIF, LandXML, IAI, and ANSI.  This schema defines NIEM adapter types for external geospatial components defined by OGC, LIF, LandXML, IAI, and ANSI.
-
-
-
-It also defines property types and elements according to the conventions required by the Geography Markup Language (GML) specification.  These property types and elements allow niem geospatial adapter elements to be referenced from GML conformant application schemas.  This situation is described in external-standards.pdf as Case 2: External schemas reference, import, and use NIEM components., but not addressed by that document.  However, it applies to the development of the GML application schemas that must in most cases be developed to effectively use GML in niem IEPs.
-
-
-
-Note for schema readers:  The XML/Schema specification does not require processing implementations to transitively import definitions from imported schemas.   To assure that all required definitions are available, a schema must re-import the schemas that are imported by the schemas it imports. Such re-imports are noted in the documentation.</li>
+<a rddl:purpose="http://niem.gov/niem/resources/purposes#reference-schema" rddl:nature="http://www.w3.org/2001/XMLSchema" title="NamespaceFile/text()" id="fips_5-2" href="fips_5-2/2.0/fips_5-2.xsd">fips_5-2</a>:  Codes for the identification of the states, the District of Columbia and the outlying areas of the U.S., and associated areas from the Federal Information Processing Standards (FIPS) 5-2.</li>
 <li>
-<a rddl:purpose="http://niem.gov/niem/resources/purposes#reference-schema" rddl:nature="http://www.w3.org/2001/XMLSchema" title="NamespaceFile/text()" id="have" href="have/1.0/have.xsd">have</a>:  EDXL Hospital AVailability Exchange (HAVE)</li>
+<a rddl:purpose="http://niem.gov/niem/resources/purposes#reference-schema" rddl:nature="http://www.w3.org/2001/XMLSchema" title="NamespaceFile/text()" id="fips_6-4" href="fips_6-4/2.0/fips_6-4.xsd">fips_6-4</a>:  Counties and equivalent entities of the U.S., its possessions, and associated areas from the Federal Information Processing Standards (FIPS) 6-4.</li>
 <li>
-<a rddl:purpose="http://niem.gov/niem/resources/purposes#reference-schema" rddl:nature="http://www.w3.org/2001/XMLSchema" title="NamespaceFile/text()" id="ism" href="ic-ism/1.0/ic-ism.xsd">ic-ism</a>:  Intelligence Community Information Security Marking</li>
+<a rddl:purpose="http://niem.gov/niem/resources/purposes#reference-schema" rddl:nature="http://www.w3.org/2001/XMLSchema" title="NamespaceFile/text()" id="geo" href="geospatial/2.0/geospatial.xsd">geospatial</a>:  Defines NIEM adapter types for external geospatial components defined by OGC, LIF, LandXML, IAI, and ANSI.  Note for schema readers:  The XML/Schema specification does not require processing implementations to transitively import definitions from imported schemas.   To assure that all required definitions are available, a schema must re-import the schemas that are imported by the schemas it imports. Such re-imports are noted in the documentation.</li>
 <li>
-<a rddl:purpose="http://niem.gov/niem/resources/purposes#reference-schema" rddl:nature="http://www.w3.org/2001/XMLSchema" title="NamespaceFile/text()" id="iso_3166" href="iso_3166/1.0/iso_3166.xsd">iso_3166</a>:  Codes for the representation of names of countries and their subdivisions from the International Organization for Standardization (ISO) 3166-1:1997.</li>
+<a rddl:purpose="http://niem.gov/niem/resources/purposes#reference-schema" rddl:nature="http://www.w3.org/2001/XMLSchema" title="NamespaceFile/text()" id="have" href="have/2.0/have.xsd">have</a>:  EDXL Hospital AVailability Exchange (HAVE)</li>
 <li>
-<a rddl:purpose="http://niem.gov/niem/resources/purposes#reference-schema" rddl:nature="http://www.w3.org/2001/XMLSchema" title="NamespaceFile/text()" id="iso_4217" href="iso_4217/1.0/iso_4217.xsd">iso_4217</a>:  Codes for the representation of currencies and funds from the International Organization for Standardization (ISO) 4217:2001.</li>
+<a rddl:purpose="http://niem.gov/niem/resources/purposes#reference-schema" rddl:nature="http://www.w3.org/2001/XMLSchema" title="NamespaceFile/text()" id="hazmat" href="hazmat/2.0/hazmat.xsd">hazmat</a>:  Pipeline and Hazardous Materials Safety Administration - Office of Hazardous Materials Safety.</li>
 <li>
-<a rddl:purpose="http://niem.gov/niem/resources/purposes#reference-schema" rddl:nature="http://www.w3.org/2001/XMLSchema" title="NamespaceFile/text()" id="iso_639-2b" href="iso_639-2b/1.0/iso_639-2b.xsd">iso_639-2b</a>:  Codes for the representation of names of languages from the International Organization for Standardization (ISO) 639-2/B (bibliographic codes).</li>
+<a rddl:purpose="http://niem.gov/niem/resources/purposes#reference-schema" rddl:nature="http://www.w3.org/2001/XMLSchema" title="NamespaceFile/text()" id="iso_3166" href="iso_3166/2.0/iso_3166.xsd">iso_3166</a>:  Codes for the representation of names of countries and their subdivisions from the International Organization for Standardization (ISO) 3166-1:1997.</li>
 <li>
-<a rddl:purpose="http://niem.gov/niem/resources/purposes#reference-schema" rddl:nature="http://www.w3.org/2001/XMLSchema" title="NamespaceFile/text()" id="iso_639-2t" href="iso_639-2t/1.0/iso_639-2t.xsd">iso_639-2t</a>:  Codes for the representation of names of languages from the International Organization for Standardization (ISO) 639-2/T (terminology codes).</li>
+<a rddl:purpose="http://niem.gov/niem/resources/purposes#reference-schema" rddl:nature="http://www.w3.org/2001/XMLSchema" title="NamespaceFile/text()" id="iso_4217" href="iso_4217/2.0/iso_4217.xsd">iso_4217</a>:  Codes for the representation of currencies and funds from the International Organization for Standardization (ISO) 4217:2001.</li>
 <li>
-<a rddl:purpose="http://niem.gov/niem/resources/purposes#reference-schema" rddl:nature="http://www.w3.org/2001/XMLSchema" title="NamespaceFile/text()" id="itis" href="itis/1.0/itis.xsd">itis</a>:  Integrated Transportation Information System (ITIS)</li>
+<a rddl:purpose="http://niem.gov/niem/resources/purposes#reference-schema" rddl:nature="http://www.w3.org/2001/XMLSchema" title="NamespaceFile/text()" id="iso_639-3" href="iso_639-3/2.0/iso_639-3.xsd">iso_639-3</a>:  Codes for the representation of names of languages - Part 3: Alpha-3 code for comprehensive coverage of languages.</li>
 <li>
-<a rddl:purpose="http://niem.gov/niem/resources/purposes#reference-schema" rddl:nature="http://www.w3.org/2001/XMLSchema" title="NamespaceFile/text()" id="lasd" href="lasd/1.0/lasd.xsd">lasd</a>:  Los Angeles Sheriffs Department</li>
+<a rddl:purpose="http://niem.gov/niem/resources/purposes#reference-schema" rddl:nature="http://www.w3.org/2001/XMLSchema" title="NamespaceFile/text()" id="itis" href="itis/2.0/itis.xsd">itis</a>:  Integrated Transportation Information System</li>
 <li>
-<a rddl:purpose="http://niem.gov/niem/resources/purposes#reference-schema" rddl:nature="http://www.w3.org/2001/XMLSchema" title="NamespaceFile/text()" id="mmucc_2" href="mmucc_2/1.0/mmucc_2.xsd">mmucc_2</a>:  Model Minimum Uniform Crash Criteria</li>
+<a rddl:purpose="http://niem.gov/niem/resources/purposes#reference-schema" rddl:nature="http://www.w3.org/2001/XMLSchema" title="NamespaceFile/text()" id="lasd" href="lasd/2.0/lasd.xsd">lasd</a>:  Los Angeles County Sheriff's Department</li>
 <li>
-<a rddl:purpose="http://niem.gov/niem/resources/purposes#reference-schema" rddl:nature="http://www.w3.org/2001/XMLSchema" title="NamespaceFile/text()" id="mn_off" href="mn_offense/1.0/mn_offense.xsd">mn_offense</a>:  Statute and offense codes from the state of Minnesota.</li>
+<a rddl:purpose="http://niem.gov/niem/resources/purposes#reference-schema" rddl:nature="http://www.w3.org/2001/XMLSchema" title="NamespaceFile/text()" id="mmucc_2" href="mmucc_2/2.0/mmucc_2.xsd">mmucc_2</a>:  Model Minimum Uniform Crash Criteria</li>
 <li>
-<a rddl:purpose="http://niem.gov/niem/resources/purposes#reference-schema" rddl:nature="http://www.w3.org/2001/XMLSchema" title="NamespaceFile/text()" id="ncic" href="ncic_2000/1.0/ncic_2000.xsd">ncic_2000</a>:  Codes from the National Crime and Information Center (NCIC) 2000 standard.</li>
+<a rddl:purpose="http://niem.gov/niem/resources/purposes#reference-schema" rddl:nature="http://www.w3.org/2001/XMLSchema" title="NamespaceFile/text()" id="mn_off" href="mn_offense/2.0/mn_offense.xsd">mn_offense</a>:  Statute and offense codes from the state of Minnesota.</li>
 <li>
-<a rddl:purpose="http://niem.gov/niem/resources/purposes#reference-schema" rddl:nature="http://www.w3.org/2001/XMLSchema" title="NamespaceFile/text()" id="nibrs" href="nibrs_misc/1.0/nibrs_misc.xsd">nibrs_misc</a>:  Miscellaneous crime-reporting codes from the National Incident-Based Reporting System (NIBRS).</li>
+<a rddl:purpose="http://niem.gov/niem/resources/purposes#reference-schema" rddl:nature="http://www.w3.org/2001/XMLSchema" title="NamespaceFile/text()" id="nga" href="nga/2.0/nga.xsd">nga</a>:  National Geospatial Agency</li>
 <li>
-<a rddl:purpose="http://niem.gov/niem/resources/purposes#reference-schema" rddl:nature="http://www.w3.org/2001/XMLSchema" title="NamespaceFile/text()" id="nlets" href="nlets/1.0/nlets.xsd">nlets</a>:  NLETS - The International Justice and Public Safety Information Sharing Network</li>
+<a rddl:purpose="http://niem.gov/niem/resources/purposes#reference-schema" rddl:nature="http://www.w3.org/2001/XMLSchema" title="NamespaceFile/text()" id="nlets" href="nlets/2.0/nlets.xsd">nlets</a>:  NLETS - The International Justice and Public Safety Information Sharing Network</li>
 <li>
-<a rddl:purpose="http://niem.gov/niem/resources/purposes#reference-schema" rddl:nature="http://www.w3.org/2001/XMLSchema" title="NamespaceFile/text()" id="nonauth" href="nonauthoritative-code/1.0/nonauthoritative-code.xsd">nonauthoritative-code</a>:  Non-authoritative codes for the direction of a person's pose in an image.</li>
+<a rddl:purpose="http://niem.gov/niem/resources/purposes#reference-schema" rddl:nature="http://www.w3.org/2001/XMLSchema" title="NamespaceFile/text()" id="nonauth" href="nonauthoritative-code/2.0/nonauthoritative-code.xsd">nonauthoritative-code</a>:  Non-authoritative codes for the direction of a person's pose in an image.</li>
 <li>
-<a rddl:purpose="http://niem.gov/niem/resources/purposes#reference-schema" rddl:nature="http://www.w3.org/2001/XMLSchema" title="NamespaceFile/text()" id="twpdes" href="twpdes/1.0/twpdes.xsd">twpdes</a>:  Terrorist Watchlist Person Data Exchange Standard (TWPDES)</li>
+<a rddl:purpose="http://niem.gov/niem/resources/purposes#reference-schema" rddl:nature="http://www.w3.org/2001/XMLSchema" title="NamespaceFile/text()" id="sar" href="sar/2.0/sar.xsd">sar</a>:  Suspicious Activity Reporting</li>
 <li>
-<a rddl:purpose="http://niem.gov/niem/resources/purposes#reference-schema" rddl:nature="http://www.w3.org/2001/XMLSchema" title="NamespaceFile/text()" id="ucr" href="ucr/1.0/ucr.xsd">ucr</a>:  Crime reporting codes from Uniform Crime Reporting</li>
+<a rddl:purpose="http://niem.gov/niem/resources/purposes#reference-schema" rddl:nature="http://www.w3.org/2001/XMLSchema" title="NamespaceFile/text()" id="twpdes" href="twpdes/2.0/twpdes.xsd">twpdes</a>:  Terrorist Watchlist Person Data Exchange Standard</li>
 <li>
-<a rddl:purpose="http://niem.gov/niem/resources/purposes#reference-schema" rddl:nature="http://www.w3.org/2001/XMLSchema" title="NamespaceFile/text()" id="unece" href="unece_rec20-misc/1.0/unece_rec20-misc.xsd">unece_rec20-misc</a>:  Miscellaneous unit of measurement code from the United Nations Economic Commission for Europe Recommendation No. 20, "Codes for Units of Measure used in International Trade".</li>
+<a rddl:purpose="http://niem.gov/niem/resources/purposes#reference-schema" rddl:nature="http://www.w3.org/2001/XMLSchema" title="NamespaceFile/text()" id="ucr" href="ucr/2.0/ucr.xsd">ucr</a>:  Crime reporting codes from Uniform Crime Reporting.</li>
 <li>
-<a rddl:purpose="http://niem.gov/niem/resources/purposes#reference-schema" rddl:nature="http://www.w3.org/2001/XMLSchema" title="NamespaceFile/text()" id="usps" href="usps_states/1.0/usps_states.xsd">usps_states</a>:  United States state and possession abbreviations from the United States Postal Service (USPS).</li>
+<a rddl:purpose="http://niem.gov/niem/resources/purposes#reference-schema" rddl:nature="http://www.w3.org/2001/XMLSchema" title="NamespaceFile/text()" id="unece" href="unece_rec20-misc/2.0/unece_rec20-misc.xsd">unece_rec20-misc</a>:  Miscellaneous unit of measure codes from the United Nations Economic Commission for Europe Recommendation No. 20, Codes for Units of Measure used in International Trade.</li>
 <li>
-<a rddl:purpose="http://niem.gov/niem/resources/purposes#reference-schema" rddl:nature="http://www.w3.org/2001/XMLSchema" title="NamespaceFile/text()" id="ut_offender" href="ut_offender-tracking-misc/1.0/ut_offender-tracking-misc.xsd">ut_offender-tracking-misc</a>:  Plea codes and military discharge codes from the Utah Offender Tracking Database, version 2.03.</li>
+<a rddl:purpose="http://niem.gov/niem/resources/purposes#reference-schema" rddl:nature="http://www.w3.org/2001/XMLSchema" title="NamespaceFile/text()" id="usps" href="usps_states/2.0/usps_states.xsd">usps_states</a>:  U.S. state and possession abbreviations from the U.S. Postal Service (USPS).</li>
+<li>
+<a rddl:purpose="http://niem.gov/niem/resources/purposes#reference-schema" rddl:nature="http://www.w3.org/2001/XMLSchema" title="NamespaceFile/text()" id="ut_offender" href="ut_offender-tracking-misc/2.0/ut_offender-tracking-misc.xsd">ut_offender-tracking-misc</a>:  Plea and military discharge codes from the Utah Offender Tracking Database, version 2.03.</li>
 </ul>
 <h2>NIEM Proxy Schemas</h2>
 <ul>
 <li>
-<a rddl:purpose="http://niem.gov/niem/resources/purposes#reference-schema" rddl:nature="http://www.w3.org/2001/XMLSchema" title="NamespaceFile/text()" id="niem-xsd" href="proxy/xsd/1.0/xsd.xsd">xsd</a>:  Proxy types that carry dictionary metadata and have XML data type simple contents.</li>
+<a rddl:purpose="http://niem.gov/niem/resources/purposes#reference-schema" rddl:nature="http://www.w3.org/2001/XMLSchema" title="NamespaceFile/text()" id="niem-xsd" href="proxy/xsd/2.0/xsd.xsd">xsd</a>:  Proxy types that carry dictionary metadata and have XML data type simple contents.</li>
 </ul>
-<h2>Special Schemas</h2>
+<h2>Special NIEM Schemas</h2>
 <ul>
 <li>
-<a rddl:purpose="http://niem.gov/niem/resources/purposes#reference-schema" rddl:nature="http://www.w3.org/2001/XMLSchema" title="NamespaceFile/text()" id="i" href="appinfo/1.0/appinfo.xsd">appinfo</a>:  Elements for use within xsd:appinfo to indicate information supporting the data model underlying NIEM.</li>
+<a rddl:purpose="http://niem.gov/niem/resources/purposes#reference-schema" rddl:nature="http://www.w3.org/2001/XMLSchema" title="NamespaceFile/text()" id="i" href="appinfo/2.0/appinfo.xsd">appinfo</a>:  Elements for use within xsd:appinfo to indicate information supporting the data model underlying NIEM.</li>
 <li>
-<a rddl:purpose="http://niem.gov/niem/resources/purposes#reference-schema" rddl:nature="http://www.w3.org/2001/XMLSchema" title="NamespaceFile/text()" id="s" href="structures/1.0/structures.xsd">structures</a>:  Schema constructs for use by NIEM-conformant schemas to provide consistent definitions and functionality.</li>
+<a rddl:purpose="http://niem.gov/niem/resources/purposes#reference-schema" rddl:nature="http://www.w3.org/2001/XMLSchema" title="NamespaceFile/text()" id="s" href="structures/2.0/structures.xsd">structures</a>:  Schema constructs for use by NIEM-conformant schemas to provide consistent definitions and functionality.</li>
 </ul>
 </body>
 </html>

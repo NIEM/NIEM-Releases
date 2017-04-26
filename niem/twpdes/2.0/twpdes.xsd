@@ -1,0 +1,441 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema targetNamespace="http://niem.gov/niem/twpdes/2.0" version="1" xmlns:s="http://niem.gov/niem/structures/2.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:twpdes="http://niem.gov/niem/twpdes/2.0" xmlns:i="http://niem.gov/niem/appinfo/2.0">
+  <xsd:annotation>
+    <xsd:documentation>Terrorist Watchlist Person Data Exchange Standard</xsd:documentation>
+    <xsd:appinfo>
+      <i:ConformantIndicator>true</i:ConformantIndicator>
+    </xsd:appinfo>
+  </xsd:annotation>
+  <xsd:import schemaLocation="../../structures/2.0/structures.xsd" namespace="http://niem.gov/niem/structures/2.0"/>
+  <xsd:import schemaLocation="../../appinfo/2.0/appinfo.xsd" namespace="http://niem.gov/niem/appinfo/2.0"/>
+  <xsd:simpleType name="DateAccuracyIndicatorCodeSimpleType">
+    <xsd:annotation>
+      <xsd:documentation>A data type for a subjective assessment that indicates belief that date content is exact or accurate. </xsd:documentation>
+      <xsd:appinfo>
+        <i:Base i:namespace="http://niem.gov/niem/structures/2.0" i:name="Object"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:restriction base="xsd:token">
+      <xsd:enumeration value="Circa">
+        <xsd:annotation>
+          <xsd:documentation>Accuracy of the actual date is at, in, or of approximately about the specified date</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="Exact">
+        <xsd:annotation>
+          <xsd:documentation>The specified date exhibits or is marked by strict, particular, and complete accordance with fact or a standard.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="Unknown">
+        <xsd:annotation>
+          <xsd:documentation>The accuracy of the specified date is not known.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:complexType name="DateAccuracyIndicatorCodeType">
+    <xsd:annotation>
+      <xsd:documentation>A data type for a subjective assessment that indicates belief that date content is exact or accurate. </xsd:documentation>
+      <xsd:appinfo>
+        <i:Base i:namespace="http://niem.gov/niem/structures/2.0" i:name="Object"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:simpleContent>
+      <xsd:extension base="twpdes:DateAccuracyIndicatorCodeSimpleType">
+        <xsd:attributeGroup ref="s:SimpleObjectAttributeGroup"/>
+      </xsd:extension>
+    </xsd:simpleContent>
+  </xsd:complexType>
+  <xsd:simpleType name="ProperNameFormCategoryCodeSimpleType">
+    <xsd:annotation>
+      <xsd:documentation>A data type for kinds of shapes and structures of a proper name.</xsd:documentation>
+      <xsd:appinfo>
+        <i:Base i:namespace="http://niem.gov/niem/structures/2.0" i:name="Object"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:restriction base="xsd:token">
+      <xsd:enumeration value="Normalized">
+        <xsd:annotation>
+          <xsd:documentation>The imposition of a standard.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="Original">
+        <xsd:annotation>
+          <xsd:documentation>Preceding all others in time or being as first made.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="Transliterated">
+        <xsd:annotation>
+          <xsd:documentation>To transcribe from one alphabet to another.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="Variant">
+        <xsd:annotation>
+          <xsd:documentation>Differing from a norm or standard.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:complexType name="ProperNameFormCategoryCodeType">
+    <xsd:annotation>
+      <xsd:documentation>A data type for kinds of shapes and structures of a proper name.</xsd:documentation>
+      <xsd:appinfo>
+        <i:Base i:namespace="http://niem.gov/niem/structures/2.0" i:name="Object"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:simpleContent>
+      <xsd:extension base="twpdes:ProperNameFormCategoryCodeSimpleType">
+        <xsd:attributeGroup ref="s:SimpleObjectAttributeGroup"/>
+      </xsd:extension>
+    </xsd:simpleContent>
+  </xsd:complexType>
+  <xsd:simpleType name="ProperNameScriptCodeSimpleType">
+    <xsd:annotation>
+      <xsd:documentation>A data type for a set of symbols used by a written language.</xsd:documentation>
+      <xsd:appinfo>
+        <i:Base i:namespace="http://niem.gov/niem/structures/2.0" i:name="Object"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:restriction base="xsd:token">
+      <xsd:enumeration value="Arabic">
+        <xsd:annotation>
+          <xsd:documentation>Arabic</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="Armenian">
+        <xsd:annotation>
+          <xsd:documentation>Armenian</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="Bengali">
+        <xsd:annotation>
+          <xsd:documentation>Bengali</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="Bopomofo">
+        <xsd:annotation>
+          <xsd:documentation>Bopomofo</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="Buhid">
+        <xsd:annotation>
+          <xsd:documentation>Buhid</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="CanadianSyllabics">
+        <xsd:annotation>
+          <xsd:documentation>Canadian Syllabics</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="Cherokee">
+        <xsd:annotation>
+          <xsd:documentation>Cherokee</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="Cypriot">
+        <xsd:annotation>
+          <xsd:documentation>Cypriot</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="Cyrillic">
+        <xsd:annotation>
+          <xsd:documentation>Cyrillic</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="Deseret">
+        <xsd:annotation>
+          <xsd:documentation>Deseret</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="Devanagari">
+        <xsd:annotation>
+          <xsd:documentation>Devanagari</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="Ethiopic">
+        <xsd:annotation>
+          <xsd:documentation>Ethiopic</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="Georgian">
+        <xsd:annotation>
+          <xsd:documentation>Georgian</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="Gothic">
+        <xsd:annotation>
+          <xsd:documentation>Gothic</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="Greek">
+        <xsd:annotation>
+          <xsd:documentation>Greek</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="Gujarati">
+        <xsd:annotation>
+          <xsd:documentation>Gujarati</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="Gurmukhi">
+        <xsd:annotation>
+          <xsd:documentation>Gurmukhi</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="Han">
+        <xsd:annotation>
+          <xsd:documentation>Han</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="Hangul">
+        <xsd:annotation>
+          <xsd:documentation>Hangul</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="Hanunoo">
+        <xsd:annotation>
+          <xsd:documentation>Hanunoo</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="Hebrew">
+        <xsd:annotation>
+          <xsd:documentation>Hebrew</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="Hiragana">
+        <xsd:annotation>
+          <xsd:documentation>Hiragana</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="Kannada">
+        <xsd:annotation>
+          <xsd:documentation>Kannada</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="Katakana">
+        <xsd:annotation>
+          <xsd:documentation>Katakana</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="Khmer">
+        <xsd:annotation>
+          <xsd:documentation>Khmer</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="Lao">
+        <xsd:annotation>
+          <xsd:documentation>Lao</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="Latin">
+        <xsd:annotation>
+          <xsd:documentation>Latin</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="Limbu">
+        <xsd:annotation>
+          <xsd:documentation>Limbu</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="LinearB">
+        <xsd:annotation>
+          <xsd:documentation>Linear B</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="Malayalam">
+        <xsd:annotation>
+          <xsd:documentation>Malayalam</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="Mongolian">
+        <xsd:annotation>
+          <xsd:documentation>Mongolian</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="Myanmar">
+        <xsd:annotation>
+          <xsd:documentation>Myanmar</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="Ogham">
+        <xsd:annotation>
+          <xsd:documentation>Ogham</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="OldItalic">
+        <xsd:annotation>
+          <xsd:documentation>Old Italic</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="Oriya">
+        <xsd:annotation>
+          <xsd:documentation>Oriya</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="Osmanya">
+        <xsd:annotation>
+          <xsd:documentation>Osmanya</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="Runic">
+        <xsd:annotation>
+          <xsd:documentation>Runic</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="Shavian">
+        <xsd:annotation>
+          <xsd:documentation>Shavian</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="Sinhala">
+        <xsd:annotation>
+          <xsd:documentation>Sinhala</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="Syriac">
+        <xsd:annotation>
+          <xsd:documentation>Syriac</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="Tagalog">
+        <xsd:annotation>
+          <xsd:documentation>Tagalog</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="Tagbanwa">
+        <xsd:annotation>
+          <xsd:documentation>Tagbanwa</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="TaiLe">
+        <xsd:annotation>
+          <xsd:documentation>Tai Le</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="Tamil">
+        <xsd:annotation>
+          <xsd:documentation>Tamil</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="Telugu">
+        <xsd:annotation>
+          <xsd:documentation>Telugu</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="Thaana">
+        <xsd:annotation>
+          <xsd:documentation>Thaana</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="Thai">
+        <xsd:annotation>
+          <xsd:documentation>Thai</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="Tibetan">
+        <xsd:annotation>
+          <xsd:documentation>Tibetan</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="Ugaritic">
+        <xsd:annotation>
+          <xsd:documentation>Ugaritic</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="Yi">
+        <xsd:annotation>
+          <xsd:documentation>Yi</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:complexType name="ProperNameScriptCodeType">
+    <xsd:annotation>
+      <xsd:documentation>A data type for a set of symbols used by a written language.</xsd:documentation>
+      <xsd:appinfo>
+        <i:Base i:namespace="http://niem.gov/niem/structures/2.0" i:name="Object"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:simpleContent>
+      <xsd:extension base="twpdes:ProperNameScriptCodeSimpleType">
+        <xsd:attributeGroup ref="s:SimpleObjectAttributeGroup"/>
+      </xsd:extension>
+    </xsd:simpleContent>
+  </xsd:complexType>
+  <xsd:simpleType name="ProperNameTransliterationCodeSimpleType">
+    <xsd:annotation>
+      <xsd:documentation>A data type for an encoding to transcribe from one alphabet to another.</xsd:documentation>
+      <xsd:appinfo>
+        <i:Base i:namespace="http://niem.gov/niem/structures/2.0" i:name="Object"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:restriction base="xsd:token">
+      <xsd:enumeration value="Arabic">
+        <xsd:annotation>
+          <xsd:documentation>Arabic</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="Hindi">
+        <xsd:annotation>
+          <xsd:documentation>Hindi</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="Urdu">
+        <xsd:annotation>
+          <xsd:documentation>Urdu</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:complexType name="ProperNameTransliterationCodeType">
+    <xsd:annotation>
+      <xsd:documentation>A data type for an encoding to transcribe from one alphabet to another.</xsd:documentation>
+      <xsd:appinfo>
+        <i:Base i:namespace="http://niem.gov/niem/structures/2.0" i:name="Object"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:simpleContent>
+      <xsd:extension base="twpdes:ProperNameTransliterationCodeSimpleType">
+        <xsd:attributeGroup ref="s:SimpleObjectAttributeGroup"/>
+      </xsd:extension>
+    </xsd:simpleContent>
+  </xsd:complexType>
+  <xsd:simpleType name="QualityValidityCategoryCodeSimpleType">
+    <xsd:annotation>
+      <xsd:documentation>A data type for categories that describe the level of probability that the data is trustworthy.</xsd:documentation>
+      <xsd:appinfo>
+        <i:Base i:namespace="http://niem.gov/niem/structures/2.0" i:name="Object"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:restriction base="xsd:token">
+      <xsd:enumeration value="High">
+        <xsd:annotation>
+          <xsd:documentation>High probability that the data is trustworthy</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="Low">
+        <xsd:annotation>
+          <xsd:documentation>Low probability that the data is trustworthy</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="Medium">
+        <xsd:annotation>
+          <xsd:documentation>Medium probability that the data is trustworthy</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:complexType name="QualityValidityCategoryCodeType">
+    <xsd:annotation>
+      <xsd:documentation>A data type for categories that describe the level of probability that the data is trustworthy.</xsd:documentation>
+      <xsd:appinfo>
+        <i:Base i:namespace="http://niem.gov/niem/structures/2.0" i:name="Object"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:simpleContent>
+      <xsd:extension base="twpdes:QualityValidityCategoryCodeSimpleType">
+        <xsd:attributeGroup ref="s:SimpleObjectAttributeGroup"/>
+      </xsd:extension>
+    </xsd:simpleContent>
+  </xsd:complexType>
+</xsd:schema>

@@ -1,0 +1,287 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema targetNamespace="http://niem.gov/niem/dea/2.0" version="1" xmlns:s="http://niem.gov/niem/structures/2.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:dea="http://niem.gov/niem/dea/2.0" xmlns:i="http://niem.gov/niem/appinfo/2.0">
+  <xsd:annotation>
+    <xsd:documentation>Drug Enforcement Administration</xsd:documentation>
+    <xsd:appinfo>
+      <i:ConformantIndicator>true</i:ConformantIndicator>
+    </xsd:appinfo>
+  </xsd:annotation>
+  <xsd:import schemaLocation="../../structures/2.0/structures.xsd" namespace="http://niem.gov/niem/structures/2.0"/>
+  <xsd:import schemaLocation="../../appinfo/2.0/appinfo.xsd" namespace="http://niem.gov/niem/appinfo/2.0"/>
+  <xsd:simpleType name="DrugCategoryCodeSimpleType">
+    <xsd:annotation>
+      <xsd:appinfo>
+        <i:Base i:namespace="http://niem.gov/niem/structures/2.0" i:name="Object"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:restriction base="xsd:token">
+      <xsd:enumeration value="A1">
+        <xsd:annotation>
+          <xsd:documentation>Amphetamine (clandestine)</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="A2">
+        <xsd:annotation>
+          <xsd:documentation>Methamphetamine (clandestine) </xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="A3">
+        <xsd:annotation>
+          <xsd:documentation>Crystal Methamphetamine ("ice")</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="A4">
+        <xsd:annotation>
+          <xsd:documentation>P2P</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="A5">
+        <xsd:annotation>
+          <xsd:documentation>Methcathinone </xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="A6">
+        <xsd:annotation>
+          <xsd:documentation>Other Stimulant (clandestine) </xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="A7">
+        <xsd:annotation>
+          <xsd:documentation>Amphetamine or Stimulant Related Chemical </xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="A8">
+        <xsd:annotation>
+          <xsd:documentation>Methylphenidate</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="B1">
+        <xsd:annotation>
+          <xsd:documentation>Pseudoephedrine</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="B2">
+        <xsd:annotation>
+          <xsd:documentation>Ephedrine</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="B3">
+        <xsd:annotation>
+          <xsd:documentation>Iodine or Red Phosphorus</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="C1">
+        <xsd:annotation>
+          <xsd:documentation>Cocaine HCL</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="C2">
+        <xsd:annotation>
+          <xsd:documentation>Cocaine Base (excluding crack)</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="C3">
+        <xsd:annotation>
+          <xsd:documentation>Crack Cocaine </xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="C4">
+        <xsd:annotation>
+          <xsd:documentation>Cocaine (pharmaceutical)</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="C5">
+        <xsd:annotation>
+          <xsd:documentation>Cocaine Related Chemical</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="D1">
+        <xsd:annotation>
+          <xsd:documentation>Depressant (clandestine)</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="D2">
+        <xsd:annotation>
+          <xsd:documentation>Methaqualone</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="D3">
+        <xsd:annotation>
+          <xsd:documentation>Fentanyl (clandestine) </xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="D4">
+        <xsd:annotation>
+          <xsd:documentation>Depressant Related Chemical</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="E1">
+        <xsd:annotation>
+          <xsd:documentation>Chemical Equipment (non drug specific)</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="G1">
+        <xsd:annotation>
+          <xsd:documentation>GHB or GBL or BD (And GHB Analogues)</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="G2">
+        <xsd:annotation>
+          <xsd:documentation>Ketamine (And Its Analogues)</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="G3">
+        <xsd:annotation>
+          <xsd:documentation>Unspecified Analogues</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="H1">
+        <xsd:annotation>
+          <xsd:documentation>Heroin</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="H2">
+        <xsd:annotation>
+          <xsd:documentation>Opium</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="H3">
+        <xsd:annotation>
+          <xsd:documentation>Morphine Base</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="H4">
+        <xsd:annotation>
+          <xsd:documentation>Opium or Heroin or Morphine Related Chemical</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="L1">
+        <xsd:annotation>
+          <xsd:documentation>LSD</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="L2">
+        <xsd:annotation>
+          <xsd:documentation>PCP</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="L3">
+        <xsd:annotation>
+          <xsd:documentation>MDA or MDMA or MDE</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="L4">
+        <xsd:annotation>
+          <xsd:documentation>Other Hallucinogen</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="L5">
+        <xsd:annotation>
+          <xsd:documentation>Hallucinogen Related Chemical</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="M1">
+        <xsd:annotation>
+          <xsd:documentation>Marijuana (foreign origin)</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="M2">
+        <xsd:annotation>
+          <xsd:documentation>Marijuana (domestic origin)</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="M3">
+        <xsd:annotation>
+          <xsd:documentation>Indoor cultivation</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="M4">
+        <xsd:annotation>
+          <xsd:documentation>Hashish</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="M5">
+        <xsd:annotation>
+          <xsd:documentation>Hashish Oil</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="N1">
+        <xsd:annotation>
+          <xsd:documentation>Opioid Treatment Pharmaceuticals</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="N2">
+        <xsd:annotation>
+          <xsd:documentation>Hydromorphone (Dilaudid)</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="N3">
+        <xsd:annotation>
+          <xsd:documentation>Schedule II Pharmaceutical Narcotic</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="N4">
+        <xsd:annotation>
+          <xsd:documentation>Schedule II Pharmaceutical Non Narcotic</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="N5">
+        <xsd:annotation>
+          <xsd:documentation>Schedule III Narcotic</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="N6">
+        <xsd:annotation>
+          <xsd:documentation>Benzodiazepine</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="N7">
+        <xsd:annotation>
+          <xsd:documentation>All Other Pharmaceutical Controlled Substances</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="N8">
+        <xsd:annotation>
+          <xsd:documentation>Oxycodone</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="N9">
+        <xsd:annotation>
+          <xsd:documentation>Hydrocodone</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="R1">
+        <xsd:annotation>
+          <xsd:documentation>Palladone</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="S1">
+        <xsd:annotation>
+          <xsd:documentation>Steroid (pharmaceutical)</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="S2">
+        <xsd:annotation>
+          <xsd:documentation>Steroid (clandestine)</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="Z1">
+        <xsd:annotation>
+          <xsd:documentation>No Specific Drug</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:complexType name="DrugCategoryCodeType">
+    <xsd:annotation>
+      <xsd:appinfo>
+        <i:Base i:namespace="http://niem.gov/niem/structures/2.0" i:name="Object"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:simpleContent>
+      <xsd:extension base="dea:DrugCategoryCodeSimpleType">
+        <xsd:attributeGroup ref="s:SimpleObjectAttributeGroup"/>
+      </xsd:extension>
+    </xsd:simpleContent>
+  </xsd:complexType>
+</xsd:schema>

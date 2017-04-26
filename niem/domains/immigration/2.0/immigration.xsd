@@ -1,0 +1,3722 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema targetNamespace="http://niem.gov/niem/domains/immigration/2.0" version="1" xmlns:s="http://niem.gov/niem/structures/2.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:nc="http://niem.gov/niem/niem-core/2.0" xmlns:im="http://niem.gov/niem/domains/immigration/2.0" xmlns:niem-xsd="http://niem.gov/niem/proxy/xsd/2.0" xmlns:j="http://niem.gov/niem/domains/jxdm/4.0" xmlns:i="http://niem.gov/niem/appinfo/2.0" xmlns:scr="http://niem.gov/niem/domains/screening/2.0">
+  <xsd:annotation>
+    <xsd:documentation>Immigration</xsd:documentation>
+    <xsd:appinfo>
+      <i:ConformantIndicator>true</i:ConformantIndicator>
+    </xsd:appinfo>
+  </xsd:annotation>
+  <xsd:import schemaLocation="../../../structures/2.0/structures.xsd" namespace="http://niem.gov/niem/structures/2.0"/>
+  <xsd:import schemaLocation="../../../appinfo/2.0/appinfo.xsd" namespace="http://niem.gov/niem/appinfo/2.0"/>
+  <xsd:import schemaLocation="../../jxdm/4.0/jxdm.xsd" namespace="http://niem.gov/niem/domains/jxdm/4.0"/>
+  <xsd:import schemaLocation="../../screening/2.0/screening.xsd" namespace="http://niem.gov/niem/domains/screening/2.0"/>
+  <xsd:import schemaLocation="../../../niem-core/2.0/niem-core.xsd" namespace="http://niem.gov/niem/niem-core/2.0"/>
+  <xsd:import schemaLocation="../../../proxy/xsd/2.0/xsd.xsd" namespace="http://niem.gov/niem/proxy/xsd/2.0"/>
+  <xsd:complexType name="AlienAlertType">
+    <xsd:annotation>
+      <xsd:appinfo>
+        <i:Base i:namespace="http://niem.gov/niem/structures/2.0" i:name="Object"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="s:ComplexObjectType">
+        <xsd:sequence>
+          <xsd:element ref="im:AlertWarningIndicator" minOccurs="0" maxOccurs="unbounded"/>
+          <xsd:element ref="im:AlertEntryText" minOccurs="0" maxOccurs="unbounded"/>
+          <xsd:element ref="im:AlertIdentification" minOccurs="0" maxOccurs="unbounded"/>
+          <xsd:element ref="im:AlertGeneratingOfficerBadgeIdentification" minOccurs="0" maxOccurs="unbounded"/>
+          <xsd:element ref="im:AlertClassCode" minOccurs="0" maxOccurs="unbounded"/>
+          <xsd:element ref="im:AlertEntryDate" minOccurs="0" maxOccurs="unbounded"/>
+          <xsd:element ref="im:AlertExpirationDate" minOccurs="0" maxOccurs="unbounded"/>
+          <xsd:element ref="im:AlertCode" minOccurs="0" maxOccurs="unbounded"/>
+          <xsd:element ref="im:AlertDescriptionText" minOccurs="0" maxOccurs="unbounded"/>
+          <xsd:element ref="im:AlertMedicalIndicator" minOccurs="0" maxOccurs="unbounded"/>
+          <xsd:element ref="im:Alien" minOccurs="0" maxOccurs="unbounded"/>
+          <xsd:element ref="im:AlienReference" minOccurs="0" maxOccurs="unbounded"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="AlienCitizenshipType">
+    <xsd:annotation>
+      <xsd:appinfo>
+        <i:Base i:namespace="http://niem.gov/niem/structures/2.0" i:name="Object"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="s:ComplexObjectType">
+        <xsd:sequence>
+          <xsd:element ref="im:CitizenshipCertificateIdentification" minOccurs="0" maxOccurs="unbounded"/>
+          <xsd:element ref="im:CitizenshipLawfullyAdmittedPermanentResidenceBeginDate" minOccurs="0" maxOccurs="unbounded"/>
+          <xsd:element ref="im:CitizenshipLawfullyAdmittedPermanentResidentIndicator" minOccurs="0" maxOccurs="unbounded"/>
+          <xsd:element ref="im:CitizenshipLawfullyAdmittedPermanentResidenceEndDate" minOccurs="0" maxOccurs="unbounded"/>
+          <xsd:element ref="im:CitizenshipNaturalizationCityName" minOccurs="0" maxOccurs="unbounded"/>
+          <xsd:element ref="im:CitizenshipNaturalizationDate" minOccurs="0" maxOccurs="unbounded"/>
+          <xsd:element ref="im:CitizenshipNaturalizationText" minOccurs="0" maxOccurs="unbounded"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="AlienDependentType">
+    <xsd:annotation>
+      <xsd:appinfo>
+        <i:Base i:namespace="http://niem.gov/niem/structures/2.0" i:name="Object"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="s:ComplexObjectType">
+        <xsd:sequence>
+          <xsd:element ref="nc:RoleOfPersonReference" minOccurs="0" maxOccurs="unbounded"/>
+          <xsd:element ref="im:DependentIdentification" minOccurs="0" maxOccurs="unbounded"/>
+          <xsd:element ref="im:DependentRemarkText" minOccurs="0" maxOccurs="unbounded"/>
+          <xsd:element ref="im:DependentEffectiveTerminationDate" minOccurs="0" maxOccurs="unbounded"/>
+          <xsd:element ref="im:DependentProgramEndDate" minOccurs="0" maxOccurs="unbounded"/>
+          <xsd:element ref="im:DependentStartDate" minOccurs="0" maxOccurs="unbounded"/>
+          <xsd:element ref="im:DependentTerminationCommentText" minOccurs="0" maxOccurs="unbounded"/>
+          <xsd:element ref="im:DependentTerminationCode" minOccurs="0" maxOccurs="unbounded"/>
+          <xsd:element ref="im:DependentTerminationDescriptionText" minOccurs="0" maxOccurs="unbounded"/>
+          <xsd:element ref="im:DependentDistrictOfficerTerminatedF2Indicator" minOccurs="0" maxOccurs="unbounded"/>
+          <xsd:element ref="im:DependentDistrictOfficerTerminatedM2Indicator" minOccurs="0" maxOccurs="unbounded"/>
+          <xsd:element ref="im:DependentPrincipalDesignatedSchoolOfficialTerminatedF2Indicator" minOccurs="0" maxOccurs="unbounded"/>
+          <xsd:element ref="im:DependentJ2CompletionIndicator" minOccurs="0" maxOccurs="unbounded"/>
+          <xsd:element ref="im:DependentJ2TerminationIndicator" minOccurs="0" maxOccurs="unbounded"/>
+          <xsd:element ref="im:DependentPrincipalDesignatedSchoolOfficialTerminatedM2Indicator" minOccurs="0" maxOccurs="unbounded"/>
+          <xsd:element ref="im:DependentCode" minOccurs="0" maxOccurs="unbounded"/>
+          <xsd:element ref="im:DependentCodeDescriptionText" minOccurs="0" maxOccurs="unbounded"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="AlienDeportationType">
+    <xsd:annotation>
+      <xsd:appinfo>
+        <i:Base i:namespace="http://niem.gov/niem/structures/2.0" i:name="Object"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="s:ComplexObjectType">
+        <xsd:sequence>
+          <xsd:element ref="im:RemovalOrderDate" minOccurs="0" maxOccurs="unbounded"/>
+          <xsd:element ref="im:StayRequestDate" minOccurs="0" maxOccurs="unbounded"/>
+          <xsd:element ref="im:StayExpirationDate" minOccurs="0" maxOccurs="unbounded"/>
+          <xsd:element ref="im:StayDecisionDate" minOccurs="0" maxOccurs="unbounded"/>
+          <xsd:element ref="im:StayActionCode" minOccurs="0" maxOccurs="unbounded"/>
+          <xsd:element ref="im:LegalReferenceText" minOccurs="0" maxOccurs="unbounded"/>
+          <xsd:element ref="im:DeportationReliefDate" minOccurs="0" maxOccurs="unbounded"/>
+          <xsd:element ref="im:DeportationOrderLocationText" minOccurs="0" maxOccurs="unbounded"/>
+          <xsd:element ref="im:ActualDeportationDate" minOccurs="0" maxOccurs="unbounded"/>
+          <xsd:element ref="im:DepartMethodText" minOccurs="0" maxOccurs="unbounded"/>
+          <xsd:element ref="im:ConsulateIndicator" minOccurs="0" maxOccurs="unbounded"/>
+          <xsd:element ref="im:RequestedDeportationDate" minOccurs="0" maxOccurs="unbounded"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="AlienEncounterType">
+    <xsd:annotation>
+      <xsd:appinfo>
+        <i:Base i:namespace="http://niem.gov/niem/niem-core/2.0" i:name="PersonEncounterType"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="nc:PersonEncounterType">
+        <xsd:sequence>
+          <xsd:element ref="im:AlienIncidentRoleCode" minOccurs="0" maxOccurs="unbounded"/>
+          <xsd:element ref="im:AlienIncidentSequenceID" minOccurs="0" maxOccurs="unbounded"/>
+          <xsd:element ref="im:AlienMandatoryDetentionIndicator" minOccurs="0" maxOccurs="unbounded"/>
+          <xsd:element ref="im:AlienPhotoIndicator" minOccurs="0" maxOccurs="unbounded"/>
+          <xsd:element ref="im:AlienSmuggledIndicator" minOccurs="0" maxOccurs="unbounded"/>
+          <xsd:element ref="im:AlienSmuggledCostAmount" minOccurs="0" maxOccurs="unbounded"/>
+          <xsd:element ref="im:AlienPossessSSNIndicator" minOccurs="0" maxOccurs="unbounded"/>
+          <xsd:element ref="im:AlienVoluntaryReturnIndicator" minOccurs="0" maxOccurs="unbounded"/>
+          <xsd:element ref="im:AlienEncounterCode" minOccurs="0" maxOccurs="unbounded"/>
+          <xsd:element ref="im:AlienEncounterFingerprintCode" minOccurs="0" maxOccurs="unbounded"/>
+          <xsd:element ref="im:AlienLookoutIndicator" minOccurs="0" maxOccurs="unbounded"/>
+          <xsd:element ref="im:AlienRecidivistIndicator" minOccurs="0" maxOccurs="unbounded"/>
+          <xsd:element ref="im:AlienBorderCrossingIndicator" minOccurs="0" maxOccurs="unbounded"/>
+          <xsd:element ref="im:AlienAsylumRequestIndicator" minOccurs="0" maxOccurs="unbounded"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="AlienEnforcementEncounterType">
+    <xsd:annotation>
+      <xsd:appinfo>
+        <i:Base i:name="AlienEncounterType"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="im:AlienEncounterType">
+        <xsd:sequence>
+          <xsd:element ref="im:EnforcedDeparture" minOccurs="0" maxOccurs="unbounded"/>
+          <xsd:element ref="im:EnforcementEncounterCategoryText" minOccurs="0" maxOccurs="unbounded"/>
+          <xsd:element ref="im:AlienArrestEncounter" minOccurs="0" maxOccurs="unbounded"/>
+          <xsd:element ref="im:AlienDetentionEncounter" minOccurs="0" maxOccurs="unbounded"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="AlienExchangeVisitorAdmissionType">
+    <xsd:annotation>
+      <xsd:appinfo>
+        <i:Base i:namespace="http://niem.gov/niem/structures/2.0" i:name="Object"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="s:ComplexObjectType">
+        <xsd:sequence>
+          <xsd:element ref="im:BinationalCommissionTotalFundingSupportAmount" minOccurs="0" maxOccurs="unbounded"/>
+          <xsd:element ref="im:AlienExchangeVisitorProgram" minOccurs="0" maxOccurs="unbounded"/>
+          <xsd:element ref="im:FinancialInformationText" minOccurs="0" maxOccurs="unbounded"/>
+          <xsd:element ref="im:InactiveStatus" minOccurs="0" maxOccurs="unbounded"/>
+          <xsd:element ref="im:TotalPersonalFundAmount" minOccurs="0" maxOccurs="unbounded"/>
+          <xsd:element ref="im:PL9484AmendedIndicator" minOccurs="0" maxOccurs="unbounded"/>
+          <xsd:element ref="im:SEVISStatusChangedDate" minOccurs="0" maxOccurs="unbounded"/>
+          <xsd:element ref="im:SponsorReceivedUSGovernmentFundIndicator" minOccurs="0" maxOccurs="unbounded"/>
+          <xsd:element ref="im:SubjectDescriptionText" minOccurs="0" maxOccurs="unbounded"/>
+          <xsd:element ref="im:EnrollmentApplicationSubmissionDate" minOccurs="0" maxOccurs="unbounded"/>
+          <xsd:element ref="im:EnrollmentApplicationSubmissionOfficerIdentification" minOccurs="0" maxOccurs="unbounded"/>
+          <xsd:element ref="im:TotalAgencyFundingSupportAmount" minOccurs="0" maxOccurs="unbounded"/>
+          <xsd:element ref="im:TotalHomeGovernmentFundingSupportAmount" minOccurs="0" maxOccurs="unbounded"/>
+          <xsd:element ref="im:TotalInternationalOrganizationFundingSupportAmount" minOccurs="0" maxOccurs="unbounded"/>
+          <xsd:element ref="im:TotalOtherOrganizationFundingSupportAmount" minOccurs="0" maxOccurs="unbounded"/>
+          <xsd:element ref="im:TotalSponsorFundingSupportAmount" minOccurs="0" maxOccurs="unbounded"/>
+          <xsd:element ref="im:TwoYearRequirementIndicator" minOccurs="0" maxOccurs="unbounded"/>
+          <xsd:element ref="im:TwoYearGovernmentFinancialSupportIndicator" minOccurs="0" maxOccurs="unbounded"/>
+          <xsd:element ref="im:TwoYearSkillsIndicator" minOccurs="0" maxOccurs="unbounded"/>
+          <xsd:element ref="im:Dependent" minOccurs="0" maxOccurs="unbounded"/>
+          <xsd:element ref="im:ExchangeVisitorCategory" minOccurs="0" maxOccurs="unbounded"/>
+          <xsd:element ref="im:ExchangeVisitorTerminationReason" minOccurs="0" maxOccurs="unbounded"/>
+          <xsd:element ref="im:ProgramBeginDate" minOccurs="0" maxOccurs="unbounded"/>
+          <xsd:element ref="im:ProgramEndDate" minOccurs="0" maxOccurs="unbounded"/>
+          <xsd:element ref="im:AdmissionIdentification" minOccurs="0" maxOccurs="unbounded"/>
+          <xsd:element ref="im:ProgramEnrolled" minOccurs="0" maxOccurs="unbounded"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="AlienExchangeVisitorType">
+    <xsd:annotation>
+      <xsd:appinfo>
+        <i:Base i:name="AlienType"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="im:AlienType">
+        <xsd:sequence>
+          <xsd:element ref="im:ExchangeVisitorAdmission" minOccurs="0" maxOccurs="unbounded"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="AlienFamilyType">
+    <xsd:annotation>
+      <xsd:appinfo>
+        <i:Base i:namespace="http://niem.gov/niem/structures/2.0" i:name="Object"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="s:ComplexObjectType">
+        <xsd:sequence>
+          <xsd:element ref="im:AlienChild" minOccurs="0" maxOccurs="unbounded"/>
+          <xsd:element ref="im:AlienKin" minOccurs="0" maxOccurs="unbounded"/>
+          <xsd:element ref="im:AlienSpouse" minOccurs="0" maxOccurs="unbounded"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="AlienIDDetailsType">
+    <xsd:annotation>
+      <xsd:appinfo>
+        <i:Base i:namespace="http://niem.gov/niem/structures/2.0" i:name="Object"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="s:ComplexObjectType">
+        <xsd:sequence>
+          <xsd:element ref="im:AlienNumber" minOccurs="0" maxOccurs="unbounded"/>
+          <xsd:element ref="im:AlienMiscellaneousNumber" minOccurs="0" maxOccurs="unbounded"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="AlienMatchCandidateType">
+    <xsd:annotation>
+      <xsd:appinfo>
+        <i:Base i:namespace="http://niem.gov/niem/structures/2.0" i:name="Object"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="s:ComplexObjectType">
+        <xsd:sequence>
+          <xsd:element ref="im:MatchCandidateRankNumeric" minOccurs="0" maxOccurs="unbounded"/>
+          <xsd:element ref="im:MatchCandidateDetainedDate" minOccurs="0" maxOccurs="unbounded"/>
+          <xsd:element ref="im:MatchCandidateLeftFingerScoreNumeric" minOccurs="0" maxOccurs="unbounded"/>
+          <xsd:element ref="im:MatchCandidateStatus" minOccurs="0" maxOccurs="unbounded"/>
+          <xsd:element ref="im:MatchCandidateOverallFingerScoreNumeric" minOccurs="0" maxOccurs="unbounded"/>
+          <xsd:element ref="im:MatchCandidateOverallMatchDecisionStatusCode" minOccurs="0" maxOccurs="unbounded"/>
+          <xsd:element ref="im:MatchCandidateRightFingerScoreNumeric" minOccurs="0" maxOccurs="unbounded"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:simpleType name="AlienMiscellaneousIDCategoryCodeSimpleType">
+    <xsd:annotation>
+      <xsd:documentation>A data type for miscellaneous numbers for an alien.</xsd:documentation>
+      <xsd:appinfo>
+        <i:Base i:namespace="http://niem.gov/niem/structures/2.0" i:name="Object"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:restriction base="xsd:token">
+      <xsd:enumeration value="ALIEN">
+        <xsd:annotation>
+          <xsd:documentation>Alien Registration Number</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="AS">
+        <xsd:annotation>
+          <xsd:documentation>Air National Guard Serial Number</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="BANK">
+        <xsd:annotation>
+          <xsd:documentation>Bank Account</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="BIRTH">
+        <xsd:annotation>
+          <xsd:documentation>Birth Registration</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="BOP">
+        <xsd:annotation>
+          <xsd:documentation>BOP</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="CAN">
+        <xsd:annotation>
+          <xsd:documentation>Canadian Social Insurance Number</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="CEDUL">
+        <xsd:annotation>
+          <xsd:documentation>Cedula (Foreign ID)</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="CG">
+        <xsd:annotation>
+          <xsd:documentation>U.S. Coast Guard Serial Number</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="CREDC">
+        <xsd:annotation>
+          <xsd:documentation>Credit Card</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="CTECS">
+        <xsd:annotation>
+          <xsd:documentation>Customs TECS</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="DCDC">
+        <xsd:annotation>
+          <xsd:documentation>D.C. Department of Corrections</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="DCPD">
+        <xsd:annotation>
+          <xsd:documentation>D.C. Police Department ID</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="DEANA">
+        <xsd:annotation>
+          <xsd:documentation>DEA NADDIS</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="DRIVE">
+        <xsd:annotation>
+          <xsd:documentation>Drivers License (State and Country)</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="EIN">
+        <xsd:annotation>
+          <xsd:documentation>Employer Identification Number</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="FBI">
+        <xsd:annotation>
+          <xsd:documentation>FBI</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="FID">
+        <xsd:annotation>
+          <xsd:documentation>Foreign Identification Number</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="FMID">
+        <xsd:annotation>
+          <xsd:documentation>Foreign Military Identification Number</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="FPS">
+        <xsd:annotation>
+          <xsd:documentation>Royal Canadian Mounted Police Id</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="FSS">
+        <xsd:annotation>
+          <xsd:documentation>Foreign Social Security Number</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="FTD">
+        <xsd:annotation>
+          <xsd:documentation>Foreign Travel Document</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="I94">
+        <xsd:annotation>
+          <xsd:documentation>Arrival-Departure Record</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="INMCI">
+        <xsd:annotation>
+          <xsd:documentation>Inmate Number - City Jail</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="INMCN">
+        <xsd:annotation>
+          <xsd:documentation>Inmate Number - County Jail</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="INMFJ">
+        <xsd:annotation>
+          <xsd:documentation>Inmate Number - Foreign Jail/Prison</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="INMST">
+        <xsd:annotation>
+          <xsd:documentation>Inmate Number - State Prison</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="LEN">
+        <xsd:annotation>
+          <xsd:documentation>Law Enforcement Number</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="MD">
+        <xsd:annotation>
+          <xsd:documentation>Mariners Document or Identification Number</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="MHN">
+        <xsd:annotation>
+          <xsd:documentation>Modified Henry Number</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="NCIC">
+        <xsd:annotation>
+          <xsd:documentation>NCIC Number</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="NEC">
+        <xsd:annotation>
+          <xsd:documentation>NEC Fingerprint Number</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="NIV">
+        <xsd:annotation>
+          <xsd:documentation>Issuing Post/Location</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="NS">
+        <xsd:annotation>
+          <xsd:documentation>Navy Serial Number</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="O">
+        <xsd:annotation>
+          <xsd:documentation>Other</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="OA">
+        <xsd:annotation>
+          <xsd:documentation>Originating Agency Police or Identification Number</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="OAFN">
+        <xsd:annotation>
+          <xsd:documentation>Other Alien File Number</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="OBIOM">
+        <xsd:annotation>
+          <xsd:documentation>Other Biometric</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="PAFDP">
+        <xsd:annotation>
+          <xsd:documentation>Passport - Foreign Diplomat</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="PAFOF">
+        <xsd:annotation>
+          <xsd:documentation>Passport - Foreign Official</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="PAFRG">
+        <xsd:annotation>
+          <xsd:documentation>Passport - Foreign Regular</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="PAUDP">
+        <xsd:annotation>
+          <xsd:documentation>Passport - U.S. Diplomat</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="PAUOF">
+        <xsd:annotation>
+          <xsd:documentation>Passport - U.S. Official</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="PAURG">
+        <xsd:annotation>
+          <xsd:documentation>Passport - U.S.Regular</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="PI">
+        <xsd:annotation>
+          <xsd:documentation>Personal Identification Number(applies only to state-issued numbers)</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="PS">
+        <xsd:annotation>
+          <xsd:documentation>Port Security Card Number</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="RN">
+        <xsd:annotation>
+          <xsd:documentation>Register Number</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="SELSV">
+        <xsd:annotation>
+          <xsd:documentation>Selective Service Number</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="SEVIS">
+        <xsd:annotation>
+          <xsd:documentation>SEVIS Identification Number</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="SEVP">
+        <xsd:annotation>
+          <xsd:documentation>I-515 Status</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="SID">
+        <xsd:annotation>
+          <xsd:documentation>State Criminal Number/State Bureau Number</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="STAID">
+        <xsd:annotation>
+          <xsd:documentation>State Identification Number</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="STAPL">
+        <xsd:annotation>
+          <xsd:documentation>State Professional License</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="STATL">
+        <xsd:annotation>
+          <xsd:documentation>State Tradesman License</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="STNDV">
+        <xsd:annotation>
+          <xsd:documentation>State Non-Driver ID Number</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="USAFR">
+        <xsd:annotation>
+          <xsd:documentation>U.S. Air Force Registration</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="USARR">
+        <xsd:annotation>
+          <xsd:documentation>U.S. Army Registration</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="USMCR">
+        <xsd:annotation>
+          <xsd:documentation>Marine Corps Serial Number</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="USMDC">
+        <xsd:annotation>
+          <xsd:documentation>U.S. Military Dependent Card</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="USMIL">
+        <xsd:annotation>
+          <xsd:documentation>U.S. Military Identification</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="USSSN">
+        <xsd:annotation>
+          <xsd:documentation>U.S. Social Security Number</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="USVIS">
+        <xsd:annotation>
+          <xsd:documentation>U.S. Visa</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="VA">
+        <xsd:annotation>
+          <xsd:documentation>Veterans Administration Claim Number</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="WN">
+        <xsd:annotation>
+          <xsd:documentation>Warrant Number</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:complexType name="AlienMiscellaneousIDCategoryCodeType">
+    <xsd:annotation>
+      <xsd:documentation>A data type for miscellaneous numbers for an alien.</xsd:documentation>
+      <xsd:appinfo>
+        <i:Base i:namespace="http://niem.gov/niem/structures/2.0" i:name="Object"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:simpleContent>
+      <xsd:extension base="im:AlienMiscellaneousIDCategoryCodeSimpleType">
+        <xsd:attributeGroup ref="s:SimpleObjectAttributeGroup"/>
+      </xsd:extension>
+    </xsd:simpleContent>
+  </xsd:complexType>
+  <xsd:complexType name="AlienMiscellaneousNumberIDType">
+    <xsd:annotation>
+      <xsd:appinfo>
+        <i:Base i:namespace="http://niem.gov/niem/niem-core/2.0" i:name="IdentificationType"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="nc:IdentificationType">
+        <xsd:sequence>
+          <xsd:element ref="im:AlienMiscellaneousIdentification" minOccurs="0" maxOccurs="unbounded"/>
+          <xsd:element ref="im:AlienMiscellaneousIDCategoryCode" minOccurs="0" maxOccurs="unbounded"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="AlienStudentAdmissionType">
+    <xsd:annotation>
+      <xsd:appinfo>
+        <i:Base i:namespace="http://niem.gov/niem/structures/2.0" i:name="Object"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="s:ComplexObjectType">
+        <xsd:sequence>
+          <xsd:element ref="im:AcademicProgramText" minOccurs="0" maxOccurs="unbounded"/>
+          <xsd:element ref="im:AcademicTermLengthQuantity" minOccurs="0" maxOccurs="unbounded"/>
+          <xsd:element ref="im:CampusEmploymentFundsAmount" minOccurs="0" maxOccurs="unbounded"/>
+          <xsd:element ref="im:EducationLevelCommentText" minOccurs="0" maxOccurs="unbounded"/>
+          <xsd:element ref="im:EnglishRequirementMetIndicator" minOccurs="0" maxOccurs="unbounded"/>
+          <xsd:element ref="im:IsNewIndicator" minOccurs="0" maxOccurs="unbounded"/>
+          <xsd:element ref="im:NextSessionStartDate" minOccurs="0" maxOccurs="unbounded"/>
+          <xsd:element ref="im:PresenceUnlawfulIndicator" minOccurs="0" maxOccurs="unbounded"/>
+          <xsd:element ref="im:ReimbursementPaidIndicator" minOccurs="0" maxOccurs="unbounded"/>
+          <xsd:element ref="im:AdmissionIdentification" minOccurs="0" maxOccurs="unbounded"/>
+          <xsd:element ref="nc:CommentText" minOccurs="0" maxOccurs="unbounded"/>
+          <xsd:element ref="im:CurrentSessionEndDate" minOccurs="0" maxOccurs="unbounded"/>
+          <xsd:element ref="im:PrintedI20sQuantity" minOccurs="0" maxOccurs="unbounded"/>
+          <xsd:element ref="im:LeftCountryIndicator" minOccurs="0" maxOccurs="unbounded"/>
+          <xsd:element ref="im:ProgramBeginDate" minOccurs="0" maxOccurs="unbounded"/>
+          <xsd:element ref="im:DependentExpensesEstimatedAmount" minOccurs="0" maxOccurs="unbounded"/>
+          <xsd:element ref="im:SchoolTermLivingExpenseTotalAmount" minOccurs="0" maxOccurs="unbounded"/>
+          <xsd:element ref="im:OtherSchoolTermExpensesText" minOccurs="0" maxOccurs="unbounded"/>
+          <xsd:element ref="im:EstimatedTotalMiscellaneousSchoolTermExpenseAmount" minOccurs="0" maxOccurs="unbounded"/>
+          <xsd:element ref="im:OtherFundsCommentText" minOccurs="0" maxOccurs="unbounded"/>
+          <xsd:element ref="im:OtherFundsAmount" minOccurs="0" maxOccurs="unbounded"/>
+          <xsd:element ref="im:PersonalFundsAmount" minOccurs="0" maxOccurs="unbounded"/>
+          <xsd:element ref="im:SchoolProvidedTermFundsCommentText" minOccurs="0" maxOccurs="unbounded"/>
+          <xsd:element ref="im:SchoolProvidedTermFundsAmount" minOccurs="0" maxOccurs="unbounded"/>
+          <xsd:element ref="im:TermTuitionFeeTotalAmount" minOccurs="0" maxOccurs="unbounded"/>
+          <xsd:element ref="im:TerminationReasonText" minOccurs="0" maxOccurs="unbounded"/>
+          <xsd:element ref="im:Termination" minOccurs="0" maxOccurs="unbounded"/>
+          <xsd:element ref="im:EducationLevelText" minOccurs="0" maxOccurs="unbounded"/>
+          <xsd:element ref="im:AuthorizationToDropBelowFullTime" minOccurs="0" maxOccurs="unbounded"/>
+          <xsd:element ref="im:Dependent" minOccurs="0" maxOccurs="unbounded"/>
+          <xsd:element ref="im:DisciplinaryAction" minOccurs="0" maxOccurs="unbounded"/>
+          <xsd:element ref="im:StudentEmployment" minOccurs="0" maxOccurs="unbounded"/>
+          <xsd:element ref="im:ProgramExtensionRequest" minOccurs="0" maxOccurs="unbounded"/>
+          <xsd:element ref="im:Request" minOccurs="0" maxOccurs="unbounded"/>
+          <xsd:element ref="im:Transfer" minOccurs="0" maxOccurs="unbounded"/>
+          <xsd:element ref="im:EducationLevelClassification" minOccurs="0" maxOccurs="unbounded"/>
+          <xsd:element ref="im:StudentTerminationClassification" minOccurs="0" maxOccurs="unbounded"/>
+          <xsd:element ref="im:EducationLevelCode" minOccurs="0" maxOccurs="unbounded"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="AlienStudentAuthorizationToDropBelowFullTimeType">
+    <xsd:annotation>
+      <xsd:appinfo>
+        <i:Base i:name="AuthorizationType"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="im:AuthorizationType">
+        <xsd:sequence>
+          <xsd:element ref="im:AuthorizationFullResumptionDate" minOccurs="0" maxOccurs="unbounded"/>
+          <xsd:element ref="im:AuthorizationDropBelowFullTimeCode" minOccurs="0" maxOccurs="unbounded"/>
+          <xsd:element ref="im:AuthorizationF1Indicator" minOccurs="0" maxOccurs="unbounded"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="AlienStudentAuthorizationType">
+    <xsd:annotation>
+      <xsd:appinfo>
+        <i:Base i:namespace="http://niem.gov/niem/structures/2.0" i:name="Object"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="s:ComplexObjectType">
+        <xsd:sequence>
+          <xsd:element ref="im:AuthorizationM1Indicator" minOccurs="0" maxOccurs="unbounded"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="AlienStudentDisciplinaryActionType">
+    <xsd:annotation>
+      <xsd:appinfo>
+        <i:Base i:namespace="http://niem.gov/niem/niem-core/2.0" i:name="ActivityType"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="nc:ActivityType">
+        <xsd:sequence>
+          <xsd:element ref="im:DisciplinaryActionIdentification" minOccurs="0" maxOccurs="unbounded"/>
+          <xsd:element ref="im:DisciplinaryActionIndicator" minOccurs="0" maxOccurs="unbounded"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="AlienStudentEmploymentType">
+    <xsd:annotation>
+      <xsd:appinfo>
+        <i:Base i:namespace="http://niem.gov/niem/structures/2.0" i:name="Object"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="s:ComplexObjectType">
+        <xsd:sequence>
+          <xsd:element ref="im:EmploymentOffCampusAuthorizationIndicator" minOccurs="0" maxOccurs="unbounded"/>
+          <xsd:element ref="im:EmploymentRemarkText" minOccurs="0" maxOccurs="unbounded"/>
+          <xsd:element ref="im:EmploymentTimeBasisText" minOccurs="0" maxOccurs="unbounded"/>
+          <xsd:element ref="im:EmploymentCategoryCode" minOccurs="0" maxOccurs="unbounded"/>
+          <xsd:element ref="im:EmploymentDescriptionText" minOccurs="0" maxOccurs="unbounded"/>
+          <xsd:element ref="im:EmploymentTime" minOccurs="0" maxOccurs="unbounded"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="AlienStudentProgramExtensionRequestType">
+    <xsd:annotation>
+      <xsd:appinfo>
+        <i:Base i:namespace="http://niem.gov/niem/niem-core/2.0" i:name="ActivityType"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="nc:ActivityType">
+        <xsd:sequence>
+          <xsd:element ref="im:ExtensionRequestIdentification" minOccurs="0" maxOccurs="unbounded"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="AlienStudentType">
+    <xsd:annotation>
+      <xsd:appinfo>
+        <i:Base i:name="AlienType"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="im:AlienType">
+        <xsd:sequence>
+          <xsd:element ref="im:AlienStudentAdmission" minOccurs="0" maxOccurs="unbounded"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="AlienType">
+    <xsd:annotation>
+      <xsd:appinfo>
+        <i:Base i:namespace="http://niem.gov/niem/structures/2.0" i:name="Object"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="s:ComplexObjectType">
+        <xsd:sequence>
+          <xsd:element ref="nc:RoleOfPersonReference" minOccurs="0" maxOccurs="unbounded"/>
+          <xsd:element ref="im:AlienIDDetails" minOccurs="0" maxOccurs="unbounded"/>
+          <xsd:element ref="im:AlienEncounter" minOccurs="0" maxOccurs="unbounded"/>
+          <xsd:element ref="im:AlienPriorDeportationIndicator" minOccurs="0" maxOccurs="unbounded"/>
+          <xsd:element ref="im:AlienVoluntaryReturnIndicator" minOccurs="0" maxOccurs="unbounded"/>
+          <xsd:element ref="im:AlienMatchCandidate" minOccurs="0" maxOccurs="unbounded"/>
+          <xsd:element ref="im:AlienLocation" minOccurs="0" maxOccurs="unbounded"/>
+          <xsd:element ref="im:AlienAlert" minOccurs="0" maxOccurs="unbounded"/>
+          <xsd:element ref="im:AlienFile" minOccurs="0" maxOccurs="unbounded"/>
+          <xsd:element ref="im:AlienCitizenship" minOccurs="0" maxOccurs="unbounded"/>
+          <xsd:element ref="im:AlienFamilyMembers" minOccurs="0" maxOccurs="unbounded"/>
+          <xsd:element ref="im:AlienChildrenQuantity" minOccurs="0" maxOccurs="unbounded"/>
+          <xsd:element ref="im:AlienCustodyCode" minOccurs="0" maxOccurs="unbounded"/>
+          <xsd:element ref="im:AlienCustodyCategoryDescriptionText" minOccurs="0" maxOccurs="unbounded"/>
+          <xsd:element ref="im:AlienCautionMedicalConditionCode" minOccurs="0" maxOccurs="unbounded"/>
+          <xsd:element ref="im:AlienBirthCountryName" minOccurs="0" maxOccurs="unbounded"/>
+          <xsd:element ref="im:AlienResidencyCountryName" minOccurs="0" maxOccurs="unbounded"/>
+          <xsd:element ref="im:AlienCitizenshipCountryName" minOccurs="0" maxOccurs="unbounded"/>
+          <xsd:element ref="im:AlienFelonCode" minOccurs="0" maxOccurs="unbounded"/>
+          <xsd:element ref="im:AlienFelonDescriptionText" minOccurs="0" maxOccurs="unbounded"/>
+          <xsd:element ref="im:AlienImmigrationStatus" minOccurs="0" maxOccurs="unbounded"/>
+          <xsd:element ref="im:MaritalStatusCode" minOccurs="0" maxOccurs="unbounded"/>
+          <xsd:element ref="im:AlienNonImmigrantStatus" minOccurs="0" maxOccurs="unbounded"/>
+          <xsd:element ref="im:AlienReligionCode" minOccurs="0" maxOccurs="unbounded"/>
+          <xsd:element ref="im:AlienSpecialClassCode" minOccurs="0" maxOccurs="unbounded"/>
+          <xsd:element ref="im:AlienSpecialClassCodeDescriptionText" minOccurs="0" maxOccurs="unbounded"/>
+          <xsd:element ref="im:AlienEnforcementEncounter" minOccurs="0" maxOccurs="unbounded"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="ArrestMethodAugmentationType">
+    <xsd:annotation>
+      <xsd:documentation>A data type for additional information about an arrest method.</xsd:documentation>
+      <xsd:appinfo>
+        <i:Base i:namespace="http://niem.gov/niem/structures/2.0" i:name="AugmentationType"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="s:AugmentationType">
+        <xsd:sequence>
+          <xsd:element ref="im:ArrestMethodCode" minOccurs="0" maxOccurs="unbounded"/>
+          <xsd:element ref="im:ArrestMethodDescriptionText" minOccurs="0" maxOccurs="unbounded"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:simpleType name="ArrestMethodCodeSimpleType">
+    <xsd:annotation>
+      <xsd:appinfo>
+        <i:Base i:namespace="http://niem.gov/niem/structures/2.0" i:name="Object"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:restriction base="xsd:token">
+      <xsd:enumeration value="AS">
+        <xsd:annotation>
+          <xsd:documentation>Anti-Smuggling</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="BPT">
+        <xsd:annotation>
+          <xsd:documentation>Boat Patrol</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="CAP">
+        <xsd:annotation>
+          <xsd:documentation>Criminal Alien Program</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="CRW">
+        <xsd:annotation>
+          <xsd:documentation>Crewman/Stowaway</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="ES">
+        <xsd:annotation>
+          <xsd:documentation>Employer Sanctions</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="ESU">
+        <xsd:annotation>
+          <xsd:documentation>Worksite Enforcement</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="ISP">
+        <xsd:annotation>
+          <xsd:documentation>Inspections</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="L">
+        <xsd:annotation>
+          <xsd:documentation>Located</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="O">
+        <xsd:annotation>
+          <xsd:documentation>Other efforts</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="OA">
+        <xsd:annotation>
+          <xsd:documentation>Other Agency (turned over to INS)</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="OCD">
+        <xsd:annotation>
+          <xsd:documentation>Organized Crime Drug Enforcement Task Force</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="OTF">
+        <xsd:annotation>
+          <xsd:documentation>Other Task Force</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="PB">
+        <xsd:annotation>
+          <xsd:documentation>Patrol Border</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="PI">
+        <xsd:annotation>
+          <xsd:documentation>Patrol Interior</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="TCA">
+        <xsd:annotation>
+          <xsd:documentation>Traffic Check Aircraft</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="TCB">
+        <xsd:annotation>
+          <xsd:documentation>Traffic Check Bus</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="TCF">
+        <xsd:annotation>
+          <xsd:documentation>Traffic Check Freight Train</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="TCP">
+        <xsd:annotation>
+          <xsd:documentation>Traffic Check Passenger Train</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="TRC">
+        <xsd:annotation>
+          <xsd:documentation>Traffic Check</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="XXX">
+        <xsd:annotation>
+          <xsd:documentation>Arrest method not recorded</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:complexType name="ArrestMethodCodeType">
+    <xsd:annotation>
+      <xsd:appinfo>
+        <i:Base i:namespace="http://niem.gov/niem/structures/2.0" i:name="Object"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:simpleContent>
+      <xsd:extension base="im:ArrestMethodCodeSimpleType">
+        <xsd:attributeGroup ref="s:SimpleObjectAttributeGroup"/>
+      </xsd:extension>
+    </xsd:simpleContent>
+  </xsd:complexType>
+  <xsd:complexType name="AuthorizationType">
+    <xsd:annotation>
+      <xsd:appinfo>
+        <i:Base i:namespace="http://niem.gov/niem/structures/2.0" i:name="Object"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="s:ComplexObjectType">
+        <xsd:sequence>
+          <xsd:element ref="im:AuthorizationRemarkText" minOccurs="0" maxOccurs="unbounded"/>
+          <xsd:element ref="im:AuthorizationIdentification" minOccurs="0" maxOccurs="unbounded"/>
+          <xsd:element ref="im:AuthorizationEndDate" minOccurs="0" maxOccurs="unbounded"/>
+          <xsd:element ref="im:AuthorizationStartDate" minOccurs="0" maxOccurs="unbounded"/>
+          <xsd:element ref="im:AuthorizationDescriptionText" minOccurs="0" maxOccurs="unbounded"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="ChainOfCustodyType">
+    <xsd:annotation>
+      <xsd:appinfo>
+        <i:Base i:namespace="http://niem.gov/niem/structures/2.0" i:name="Object"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="s:ComplexObjectType">
+        <xsd:sequence>
+          <xsd:element ref="im:ChainOfCustodyDescriptionText" minOccurs="0" maxOccurs="unbounded"/>
+          <xsd:element ref="im:ChainOfCustodyItemReceivedDate" minOccurs="0" maxOccurs="unbounded"/>
+          <xsd:element ref="im:ChainOfCustodySequenceID" minOccurs="0" maxOccurs="unbounded"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:simpleType name="DetentionDetainerLiftCodeSimpleType">
+    <xsd:annotation>
+      <xsd:appinfo>
+        <i:Base i:namespace="http://niem.gov/niem/structures/2.0" i:name="Object"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:restriction base="xsd:token">
+      <xsd:enumeration value="B">
+        <xsd:annotation>
+          <xsd:documentation>Booked into Detention</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="C">
+        <xsd:annotation>
+          <xsd:documentation>Case Closed</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="D">
+        <xsd:annotation>
+          <xsd:documentation>Died</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="F">
+        <xsd:annotation>
+          <xsd:documentation>Lifted - Lack of Funds</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="L">
+        <xsd:annotation>
+          <xsd:documentation>Lifted</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="N">
+        <xsd:annotation>
+          <xsd:documentation>Not Deportable</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="S">
+        <xsd:annotation>
+          <xsd:documentation>Lifted - Lack of Space</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="T">
+        <xsd:annotation>
+          <xsd:documentation>Transferred</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="U">
+        <xsd:annotation>
+          <xsd:documentation>United States Citizen Interviewed</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:complexType name="DetentionDetainerLiftCodeType">
+    <xsd:annotation>
+      <xsd:appinfo>
+        <i:Base i:namespace="http://niem.gov/niem/structures/2.0" i:name="Object"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:simpleContent>
+      <xsd:extension base="im:DetentionDetainerLiftCodeSimpleType">
+        <xsd:attributeGroup ref="s:SimpleObjectAttributeGroup"/>
+      </xsd:extension>
+    </xsd:simpleContent>
+  </xsd:complexType>
+  <xsd:complexType name="DetentionDetainerLiftType">
+    <xsd:annotation>
+      <xsd:appinfo>
+        <i:Base i:namespace="http://niem.gov/niem/structures/2.0" i:name="Object"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="s:ComplexObjectType">
+        <xsd:sequence>
+          <xsd:element ref="im:DetentionDetainerLiftCode" minOccurs="0" maxOccurs="unbounded"/>
+          <xsd:element ref="im:DetentionDetainerLiftDescriptionText" minOccurs="0" maxOccurs="unbounded"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:simpleType name="DetentionReleaseReasonCodeSimpleType">
+    <xsd:annotation>
+      <xsd:appinfo>
+        <i:Base i:namespace="http://niem.gov/niem/structures/2.0" i:name="Object"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:restriction base="xsd:token">
+      <xsd:enumeration value="BDLF">
+        <xsd:annotation>
+          <xsd:documentation>Bonded out - lack of funds</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="BDLS">
+        <xsd:annotation>
+          <xsd:documentation>Bonded out - lack of space</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="BOND">
+        <xsd:annotation>
+          <xsd:documentation>Bonded Out</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="DEP">
+        <xsd:annotation>
+          <xsd:documentation>Deported/Removed</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="DIED">
+        <xsd:annotation>
+          <xsd:documentation>Died</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="ESC">
+        <xsd:annotation>
+          <xsd:documentation>Escaped</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="LFND">
+        <xsd:annotation>
+          <xsd:documentation>LFND</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="LSPC">
+        <xsd:annotation>
+          <xsd:documentation>LSPC</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="OREC">
+        <xsd:annotation>
+          <xsd:documentation>Order of recognizance</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="ORLF">
+        <xsd:annotation>
+          <xsd:documentation>Order of recognizance - lack of funds</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="ORLS">
+        <xsd:annotation>
+          <xsd:documentation>Order of recognizance - lack of space</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="OSLF">
+        <xsd:annotation>
+          <xsd:documentation>Order of supervision - lack of funds</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="OSLS">
+        <xsd:annotation>
+          <xsd:documentation>Order of supervision - lack of space</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="OSUP">
+        <xsd:annotation>
+          <xsd:documentation>Order of supervision</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="PALF">
+        <xsd:annotation>
+          <xsd:documentation>Paroled - lack of funds</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="PALS">
+        <xsd:annotation>
+          <xsd:documentation>Paroled - lack of space</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="PARO">
+        <xsd:annotation>
+          <xsd:documentation>Paroled</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="T">
+        <xsd:annotation>
+          <xsd:documentation>Transferred</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="TERM">
+        <xsd:annotation>
+          <xsd:documentation>Proceedings Terminated</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="USM">
+        <xsd:annotation>
+          <xsd:documentation>U.S. Marshal or other agency (explain on CCOM)</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="VD">
+        <xsd:annotation>
+          <xsd:documentation>Voluntary departure</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="VDLF">
+        <xsd:annotation>
+          <xsd:documentation>Voluntary departure - lack of funds</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="VDLS">
+        <xsd:annotation>
+          <xsd:documentation>Voluntary departure - lack of space</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="WILF">
+        <xsd:annotation>
+          <xsd:documentation>Withdrawal - lack of funds</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="WILS">
+        <xsd:annotation>
+          <xsd:documentation>Withdrawal - lack of space</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="WITH">
+        <xsd:annotation>
+          <xsd:documentation>Withdrawal</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:complexType name="DetentionReleaseReasonCodeType">
+    <xsd:annotation>
+      <xsd:appinfo>
+        <i:Base i:namespace="http://niem.gov/niem/structures/2.0" i:name="Object"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:simpleContent>
+      <xsd:extension base="im:DetentionReleaseReasonCodeSimpleType">
+        <xsd:attributeGroup ref="s:SimpleObjectAttributeGroup"/>
+      </xsd:extension>
+    </xsd:simpleContent>
+  </xsd:complexType>
+  <xsd:complexType name="DetentionReleaseReasonType">
+    <xsd:annotation>
+      <xsd:appinfo>
+        <i:Base i:namespace="http://niem.gov/niem/structures/2.0" i:name="Object"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="s:ComplexObjectType">
+        <xsd:sequence>
+          <xsd:element ref="im:ReleaseReasonCode" minOccurs="0" maxOccurs="unbounded"/>
+          <xsd:element ref="im:ReleaseReasonDescriptionText" minOccurs="0" maxOccurs="unbounded"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="EmploymentAugmentationType">
+    <xsd:annotation>
+      <xsd:documentation>A data type for additional information about an employment.</xsd:documentation>
+      <xsd:appinfo>
+        <i:Base i:namespace="http://niem.gov/niem/structures/2.0" i:name="AugmentationType"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="s:AugmentationType">
+        <xsd:sequence>
+          <xsd:element ref="j:EmploymentAssignedUnit" minOccurs="0" maxOccurs="unbounded"/>
+          <xsd:element ref="im:EmploymentAuthorizationIndicator" minOccurs="0" maxOccurs="unbounded"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:simpleType name="ExchangeVisitorCategoryCodeSimpleType">
+    <xsd:annotation>
+      <xsd:appinfo>
+        <i:Base i:namespace="http://niem.gov/niem/structures/2.0" i:name="Object"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:restriction base="xsd:token">
+      <xsd:enumeration value="03">
+        <xsd:annotation>
+          <xsd:documentation>TEACHER</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="04">
+        <xsd:annotation>
+          <xsd:documentation>PROFESSOR</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="05">
+        <xsd:annotation>
+          <xsd:documentation>INTERNATIONAL VISITOR</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="06">
+        <xsd:annotation>
+          <xsd:documentation>ALIEN PHYSICIAN</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="07">
+        <xsd:annotation>
+          <xsd:documentation>GOVERNMENT VISITOR</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="08">
+        <xsd:annotation>
+          <xsd:documentation>RESEARCH SCHOLAR</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="09">
+        <xsd:annotation>
+          <xsd:documentation>SHORT-TERM SCHOLAR</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="10">
+        <xsd:annotation>
+          <xsd:documentation>SPECIALIST</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="11">
+        <xsd:annotation>
+          <xsd:documentation>CAMP COUNSELOR</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="12">
+        <xsd:annotation>
+          <xsd:documentation>SUMMER TRAVEL / WORK</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="13">
+        <xsd:annotation>
+          <xsd:documentation>AU PAIR</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="14">
+        <xsd:annotation>
+          <xsd:documentation>NOT AVAILABLE</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="15">
+        <xsd:annotation>
+          <xsd:documentation>NOT AVAILABLE (INTERN)</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="1A">
+        <xsd:annotation>
+          <xsd:documentation>STUDENT SECONDARY</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="1B">
+        <xsd:annotation>
+          <xsd:documentation>STUDENT ASSOCIATE</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="1C">
+        <xsd:annotation>
+          <xsd:documentation>STUDENT BACHELORS</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="1D">
+        <xsd:annotation>
+          <xsd:documentation>STUDENT MASTERS</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="1E">
+        <xsd:annotation>
+          <xsd:documentation>STUDENT DOCTORATE</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="1F">
+        <xsd:annotation>
+          <xsd:documentation>STUDENT NON-DEGREE</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="2A">
+        <xsd:annotation>
+          <xsd:documentation>TRAINEE (SPECIALTY)</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="2B">
+        <xsd:annotation>
+          <xsd:documentation>TRAINEE (NON-SPECIALTY)</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:complexType name="ExchangeVisitorCategoryCodeType">
+    <xsd:annotation>
+      <xsd:appinfo>
+        <i:Base i:namespace="http://niem.gov/niem/structures/2.0" i:name="Object"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:simpleContent>
+      <xsd:extension base="im:ExchangeVisitorCategoryCodeSimpleType">
+        <xsd:attributeGroup ref="s:SimpleObjectAttributeGroup"/>
+      </xsd:extension>
+    </xsd:simpleContent>
+  </xsd:complexType>
+  <xsd:complexType name="ExchangeVisitorCategoryType">
+    <xsd:annotation>
+      <xsd:documentation>A data type for a classification for exchange visitor&apos;s program.</xsd:documentation>
+      <xsd:appinfo>
+        <i:Base i:namespace="http://niem.gov/niem/structures/2.0" i:name="Object"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="s:ComplexObjectType">
+        <xsd:sequence>
+          <xsd:element ref="im:ExchangeVisitorCategoryCode" minOccurs="0" maxOccurs="unbounded"/>
+          <xsd:element ref="im:ExchangeVisitorCategoryDescriptionText" minOccurs="0" maxOccurs="unbounded"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="ExchangeVisitorProgramClassificationType">
+    <xsd:annotation>
+      <xsd:appinfo>
+        <i:Base i:namespace="http://niem.gov/niem/structures/2.0" i:name="Object"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="s:ComplexObjectType">
+        <xsd:sequence>
+          <xsd:element ref="im:ProgramDescriptionText" minOccurs="0" maxOccurs="unbounded"/>
+          <xsd:element ref="im:ProgramAbbreviationCode" minOccurs="0" maxOccurs="unbounded"/>
+          <xsd:element ref="im:ProgramCode" minOccurs="0" maxOccurs="unbounded"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="ExchangeVisitorProgramType">
+    <xsd:annotation>
+      <xsd:appinfo>
+        <i:Base i:namespace="http://niem.gov/niem/structures/2.0" i:name="Object"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="s:ComplexObjectType">
+        <xsd:sequence>
+          <xsd:element ref="im:ProgramSupervisionArrangementText" minOccurs="0" maxOccurs="unbounded"/>
+          <xsd:element ref="im:ProgramClassification" minOccurs="0" maxOccurs="unbounded"/>
+          <xsd:element ref="im:FederalGovernmentSponsorIndicator" minOccurs="0" maxOccurs="unbounded"/>
+          <xsd:element ref="im:FinancialSupportMethodSelectionCommentText" minOccurs="0" maxOccurs="unbounded"/>
+          <xsd:element ref="im:TitleOfCertifyingOfficerText" minOccurs="0" maxOccurs="unbounded"/>
+          <xsd:element ref="im:StateGovernmentSponsorIndicator" minOccurs="0" maxOccurs="unbounded"/>
+          <xsd:element ref="im:ForProfitIndicator" minOccurs="0" maxOccurs="unbounded"/>
+          <xsd:element ref="im:ProgramActivityCommentText" minOccurs="0" maxOccurs="unbounded"/>
+          <xsd:element ref="im:ProgramStatusChangeDate" minOccurs="0" maxOccurs="unbounded"/>
+          <xsd:element ref="im:LocalGovernmentSponsorIndicator" minOccurs="0" maxOccurs="unbounded"/>
+          <xsd:element ref="im:FormUsageTotalQuantity" minOccurs="0" maxOccurs="unbounded"/>
+          <xsd:element ref="im:OtherOrganizationRoleCommentText" minOccurs="0" maxOccurs="unbounded"/>
+          <xsd:element ref="im:ProgramDesignatedDurationNumeric" minOccurs="0" maxOccurs="unbounded"/>
+          <xsd:element ref="im:ProgramExpireDate" minOccurs="0" maxOccurs="unbounded"/>
+          <xsd:element ref="im:ProgramName" minOccurs="0" maxOccurs="unbounded"/>
+          <xsd:element ref="im:ProgramIdentification" minOccurs="0" maxOccurs="unbounded"/>
+          <xsd:element ref="im:ProgramOriginalStartDate" minOccurs="0" maxOccurs="unbounded"/>
+          <xsd:element ref="im:ProgramPurposeText" minOccurs="0" maxOccurs="unbounded"/>
+          <xsd:element ref="im:ProgramStartDate" minOccurs="0" maxOccurs="unbounded"/>
+          <xsd:element ref="im:FormAllotmentQuantity" minOccurs="0" maxOccurs="unbounded"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:simpleType name="ExchangeVisitorTerminationCodeSimpleType">
+    <xsd:annotation>
+      <xsd:appinfo>
+        <i:Base i:namespace="http://niem.gov/niem/structures/2.0" i:name="Object"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:restriction base="xsd:token">
+      <xsd:enumeration value="CONVIC">
+        <xsd:annotation>
+          <xsd:documentation>CONVICTION OF A CRIME</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="DISCIP">
+        <xsd:annotation>
+          <xsd:documentation>DISCIPLINARY ACTION</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="ENGEMP">
+        <xsd:annotation>
+          <xsd:documentation>ENGAGING IN UNAUTHORIZED EMPLOYMENT</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="FALACT">
+        <xsd:annotation>
+          <xsd:documentation>FAILURE TO PURSUE EXCHANGE VISITOR PROGRAM ACTIVITIES</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="FALADD">
+        <xsd:annotation>
+          <xsd:documentation>FAILURE TO SUBMIT CHANGE OF CURRENT ADDRESS in 10 DAYS</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="FALINS">
+        <xsd:annotation>
+          <xsd:documentation>FAILURE TO MAINTAIN HEALTH INSURANCE</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="FALSTD">
+        <xsd:annotation>
+          <xsd:documentation>FAILURE TO MAINTAIN A FULL COURSE OF STUDY</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="INVSUS">
+        <xsd:annotation>
+          <xsd:documentation>INVOLUNTARY SUSPENSION</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="OTHER">
+        <xsd:annotation>
+          <xsd:documentation>OTHER</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="VIOEXV">
+        <xsd:annotation>
+          <xsd:documentation>VIOLATING EXCHANGE VISITOR PROGRAM REGULATIONS</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="VIOSPN">
+        <xsd:annotation>
+          <xsd:documentation>VIOLATING SPONSOR RULES GOVERNING THE PROGRAM</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:complexType name="ExchangeVisitorTerminationCodeType">
+    <xsd:annotation>
+      <xsd:appinfo>
+        <i:Base i:namespace="http://niem.gov/niem/structures/2.0" i:name="Object"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:simpleContent>
+      <xsd:extension base="im:ExchangeVisitorTerminationCodeSimpleType">
+        <xsd:attributeGroup ref="s:SimpleObjectAttributeGroup"/>
+      </xsd:extension>
+    </xsd:simpleContent>
+  </xsd:complexType>
+  <xsd:complexType name="ExchangeVisitorTerminationType">
+    <xsd:annotation>
+      <xsd:documentation>A data type for a classification for the reason associated with exchange visitor&apos;s program termination.</xsd:documentation>
+      <xsd:appinfo>
+        <i:Base i:namespace="http://niem.gov/niem/structures/2.0" i:name="Object"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="s:ComplexObjectType">
+        <xsd:sequence>
+          <xsd:element ref="im:ExchangeVisitorTerminationReasonCode" minOccurs="0" maxOccurs="unbounded"/>
+          <xsd:element ref="im:ExchangeVisitorTerminationReasonDescriptionText" minOccurs="0" maxOccurs="unbounded"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="FileType">
+    <xsd:annotation>
+      <xsd:appinfo>
+        <i:Base i:namespace="http://niem.gov/niem/niem-core/2.0" i:name="DocumentType"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="nc:DocumentType">
+        <xsd:sequence>
+          <xsd:element ref="im:FileIdentification" minOccurs="0" maxOccurs="unbounded"/>
+          <xsd:element ref="im:FileNewIndicator" minOccurs="0" maxOccurs="unbounded"/>
+          <xsd:element ref="im:FileReceivedDate" minOccurs="0" maxOccurs="unbounded"/>
+          <xsd:element ref="im:FileRequestDate" minOccurs="0" maxOccurs="unbounded"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="ICEEmployeeType">
+    <xsd:annotation>
+      <xsd:appinfo>
+        <i:Base i:namespace="http://niem.gov/niem/structures/2.0" i:name="Object"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="s:ComplexObjectType">
+        <xsd:sequence>
+          <xsd:element ref="nc:RoleOfPersonReference" minOccurs="0" maxOccurs="unbounded"/>
+          <xsd:element ref="im:ICEEmployeeAssistantUSAttorneyIndicator" minOccurs="0" maxOccurs="unbounded"/>
+          <xsd:element ref="im:ICEEmployeeAttorneyIndicator" minOccurs="0" maxOccurs="unbounded"/>
+          <xsd:element ref="im:ICEEmployeeBadgeIdentification" minOccurs="0" maxOccurs="unbounded"/>
+          <xsd:element ref="im:ICEEmployeeK9Indicator" minOccurs="0" maxOccurs="unbounded"/>
+          <xsd:element ref="im:ICEEmployeePINIdentification" minOccurs="0" maxOccurs="unbounded"/>
+          <xsd:element ref="im:ICEEmployeePayGradeNumeric" minOccurs="0" maxOccurs="unbounded"/>
+          <xsd:element ref="im:ICEEmployeeTitleText" minOccurs="0" maxOccurs="unbounded"/>
+          <xsd:element ref="im:ChainOfCustody" minOccurs="0" maxOccurs="unbounded"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="ICEOfficerType">
+    <xsd:annotation>
+      <xsd:appinfo>
+        <i:Base i:namespace="http://niem.gov/niem/structures/2.0" i:name="Object"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="s:ComplexObjectType">
+        <xsd:sequence>
+          <xsd:element ref="nc:RoleOfPersonReference" minOccurs="0" maxOccurs="unbounded"/>
+          <xsd:element ref="im:ICEOfficerCode" minOccurs="0" maxOccurs="unbounded"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="ImmigrationArrestType">
+    <xsd:annotation>
+      <xsd:appinfo>
+        <i:Base i:namespace="http://niem.gov/niem/domains/jxdm/4.0" i:name="ArrestType"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="j:ArrestType">
+        <xsd:sequence>
+          <xsd:element ref="im:AttorneyRightsIndicator" minOccurs="0" maxOccurs="unbounded"/>
+          <xsd:element ref="im:PedestrianIndicator" minOccurs="0" maxOccurs="unbounded"/>
+          <xsd:element ref="im:TreatAsAdultIndicator" minOccurs="0" maxOccurs="unbounded"/>
+          <xsd:element ref="im:PhoneUseRightsIndicator" minOccurs="0" maxOccurs="unbounded"/>
+          <xsd:element ref="im:PhoneAttemptsQuantity" minOccurs="0" maxOccurs="unbounded"/>
+          <xsd:element ref="im:PhoneAssistIndicator" minOccurs="0" maxOccurs="unbounded"/>
+          <xsd:element ref="im:HearingRequestIndicator" minOccurs="0" maxOccurs="unbounded"/>
+          <xsd:element ref="im:HearingRightsIndicator" minOccurs="0" maxOccurs="unbounded"/>
+          <xsd:element ref="im:FacingHarmIndicator" minOccurs="0" maxOccurs="unbounded"/>
+          <xsd:element ref="scr:ArrestMethod" minOccurs="0" maxOccurs="unbounded"/>
+          <xsd:element ref="im:ConsulateRightsIndicator" minOccurs="0" maxOccurs="unbounded"/>
+          <xsd:element ref="im:AttorneyRequestIndicator" minOccurs="0" maxOccurs="unbounded"/>
+          <xsd:element ref="im:DistanceFromLandmarkMeasure" minOccurs="0" maxOccurs="unbounded"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="ImmigrationDetentionType">
+    <xsd:annotation>
+      <xsd:appinfo>
+        <i:Base i:namespace="http://niem.gov/niem/domains/jxdm/4.0" i:name="BookingType"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="j:BookingType">
+        <xsd:sequence>
+          <xsd:element ref="im:SentenceTime" minOccurs="0" maxOccurs="unbounded"/>
+          <xsd:element ref="im:MedicationIndicator" minOccurs="0" maxOccurs="unbounded"/>
+          <xsd:element ref="im:BookOutOfficer" minOccurs="0" maxOccurs="unbounded"/>
+          <xsd:element ref="im:SearchOfficer" minOccurs="0" maxOccurs="unbounded"/>
+          <xsd:element ref="im:BookInOfficer" minOccurs="0" maxOccurs="unbounded"/>
+          <xsd:element ref="im:SentenceDate" minOccurs="0" maxOccurs="unbounded"/>
+          <xsd:element ref="im:ReleaseConditionText" minOccurs="0" maxOccurs="unbounded"/>
+          <xsd:element ref="im:ProjectedReleaseDate" minOccurs="0" maxOccurs="unbounded"/>
+          <xsd:element ref="im:MedicationText" minOccurs="0" maxOccurs="unbounded"/>
+          <xsd:element ref="im:ActualReleaseDate" minOccurs="0" maxOccurs="unbounded"/>
+          <xsd:element ref="im:InmateNumber" minOccurs="0" maxOccurs="unbounded"/>
+          <xsd:element ref="im:ReleaseReason" minOccurs="0" maxOccurs="unbounded"/>
+          <xsd:element ref="im:DetainerLiftReason" minOccurs="0" maxOccurs="unbounded"/>
+          <xsd:element ref="im:ConsulateNotifiedDate" minOccurs="0" maxOccurs="unbounded"/>
+          <xsd:element ref="im:BarracksCode" minOccurs="0" maxOccurs="unbounded"/>
+          <xsd:element ref="im:BaggageReceiptNumber" minOccurs="0" maxOccurs="unbounded"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="ImmigrationStatusType">
+    <xsd:annotation>
+      <xsd:appinfo>
+        <i:Base i:namespace="http://niem.gov/niem/structures/2.0" i:name="Object"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="s:ComplexObjectType">
+        <xsd:sequence>
+          <xsd:element ref="im:ImmigrationStatusCode" minOccurs="0" maxOccurs="unbounded"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="JudicialOfficialAugmentationType">
+    <xsd:annotation>
+      <xsd:documentation>A data type for additional information about a judicial official.</xsd:documentation>
+      <xsd:appinfo>
+        <i:Base i:namespace="http://niem.gov/niem/structures/2.0" i:name="AugmentationType"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="s:AugmentationType">
+        <xsd:sequence>
+          <xsd:element ref="im:JudicialOfficialDescriptionText" minOccurs="0" maxOccurs="unbounded"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="LocationAugmentationType">
+    <xsd:annotation>
+      <xsd:documentation>A data type for additional information about a location.</xsd:documentation>
+      <xsd:appinfo>
+        <i:Base i:namespace="http://niem.gov/niem/structures/2.0" i:name="AugmentationType"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="s:AugmentationType">
+        <xsd:sequence>
+          <xsd:element ref="im:LocationNearestLargeCityName" minOccurs="0" maxOccurs="unbounded"/>
+          <xsd:element ref="im:LocationIdentification" minOccurs="0" maxOccurs="unbounded"/>
+          <xsd:element ref="im:BeginDate" minOccurs="0" maxOccurs="unbounded"/>
+          <xsd:element ref="im:EndDate" minOccurs="0" maxOccurs="unbounded"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="MatchCandidateStatusType">
+    <xsd:annotation>
+      <xsd:appinfo>
+        <i:Base i:namespace="http://niem.gov/niem/structures/2.0" i:name="Object"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="s:ComplexObjectType">
+        <xsd:sequence>
+          <xsd:element ref="im:MatchCandidateStatusCode" minOccurs="0" maxOccurs="unbounded"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="NonImmigrantStatusType">
+    <xsd:annotation>
+      <xsd:appinfo>
+        <i:Base i:namespace="http://niem.gov/niem/structures/2.0" i:name="Object"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="s:ComplexObjectType">
+        <xsd:sequence>
+          <xsd:element ref="im:AlienNonImmigrantStatusCode" minOccurs="0" maxOccurs="unbounded"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="PersonAugmentationType">
+    <xsd:annotation>
+      <xsd:documentation>A data type for additional information about a person.</xsd:documentation>
+      <xsd:appinfo>
+        <i:Base i:namespace="http://niem.gov/niem/structures/2.0" i:name="AugmentationType"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="s:AugmentationType">
+        <xsd:sequence>
+          <xsd:element ref="im:PersonMarriage" minOccurs="0" maxOccurs="unbounded"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="PersonMarriageType">
+    <xsd:annotation>
+      <xsd:appinfo>
+        <i:Base i:namespace="http://niem.gov/niem/structures/2.0" i:name="Object"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="s:ComplexObjectType">
+        <xsd:sequence>
+          <xsd:element ref="im:MarriageIdentification" minOccurs="0" maxOccurs="unbounded"/>
+          <xsd:element ref="im:MarriagePlaceCityName" minOccurs="0" maxOccurs="unbounded"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="PersonNameAugmentationType">
+    <xsd:annotation>
+      <xsd:documentation>A data type for additional information about a person name.</xsd:documentation>
+      <xsd:appinfo>
+        <i:Base i:namespace="http://niem.gov/niem/structures/2.0" i:name="AugmentationType"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="s:AugmentationType">
+        <xsd:sequence>
+          <xsd:element ref="im:PersonNickName" minOccurs="0" maxOccurs="unbounded"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="ProgramAugmentationType">
+    <xsd:annotation>
+      <xsd:documentation>A data type for additional information about a program.</xsd:documentation>
+      <xsd:appinfo>
+        <i:Base i:namespace="http://niem.gov/niem/structures/2.0" i:name="AugmentationType"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="s:AugmentationType">
+        <xsd:sequence>
+          <xsd:element ref="im:ProgramCompletionCommentText" minOccurs="0" maxOccurs="unbounded"/>
+          <xsd:element ref="im:ProgramEffectiveCompletionDate" minOccurs="0" maxOccurs="unbounded"/>
+          <xsd:element ref="im:ProgramParticipationBegunIndicator" minOccurs="0" maxOccurs="unbounded"/>
+          <xsd:element ref="im:ProgramTerminationDate" minOccurs="0" maxOccurs="unbounded"/>
+          <xsd:element ref="im:ProgramTerminationText" minOccurs="0" maxOccurs="unbounded"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="RelativeLocationAugmentationType">
+    <xsd:annotation>
+      <xsd:documentation>A data type for additional information about a relative location.</xsd:documentation>
+      <xsd:appinfo>
+        <i:Base i:namespace="http://niem.gov/niem/structures/2.0" i:name="AugmentationType"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="s:AugmentationType">
+        <xsd:sequence>
+          <xsd:element ref="im:RelativeLocationDistanceMeasure" minOccurs="0" maxOccurs="unbounded"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="RequestStatusType">
+    <xsd:annotation>
+      <xsd:appinfo>
+        <i:Base i:namespace="http://niem.gov/niem/structures/2.0" i:name="Object"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="s:ComplexObjectType">
+        <xsd:sequence>
+          <xsd:element ref="im:RequestStatusCode" minOccurs="0" maxOccurs="unbounded"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="RequestType">
+    <xsd:annotation>
+      <xsd:appinfo>
+        <i:Base i:namespace="http://niem.gov/niem/niem-core/2.0" i:name="ActivityType"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="nc:ActivityType">
+        <xsd:sequence>
+          <xsd:element ref="im:RequestDecisionDate" minOccurs="0" maxOccurs="unbounded"/>
+          <xsd:element ref="im:RequestCode" minOccurs="0" maxOccurs="unbounded"/>
+          <xsd:element ref="im:RequestStatus" minOccurs="0" maxOccurs="unbounded"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="StatusAugmentationType">
+    <xsd:annotation>
+      <xsd:documentation>A data type for additional information about a status.</xsd:documentation>
+      <xsd:appinfo>
+        <i:Base i:namespace="http://niem.gov/niem/structures/2.0" i:name="AugmentationType"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="s:AugmentationType">
+        <xsd:sequence>
+          <xsd:element ref="im:StatusReasonText" minOccurs="0" maxOccurs="unbounded"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:simpleType name="StudentEducationLevelCodeSimpleType">
+    <xsd:annotation>
+      <xsd:appinfo>
+        <i:Base i:namespace="http://niem.gov/niem/structures/2.0" i:name="Object"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:restriction base="xsd:token">
+      <xsd:enumeration value="01">
+        <xsd:annotation>
+          <xsd:documentation>PRIMARY</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="02">
+        <xsd:annotation>
+          <xsd:documentation>SECONDARY</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="03">
+        <xsd:annotation>
+          <xsd:documentation>ASSOCIATE</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="04">
+        <xsd:annotation>
+          <xsd:documentation>BACHELORS</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="05">
+        <xsd:annotation>
+          <xsd:documentation>MASTERS</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="06">
+        <xsd:annotation>
+          <xsd:documentation>DOCTORATE</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="07">
+        <xsd:annotation>
+          <xsd:documentation>LANGUAGE TRAINING</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="08">
+        <xsd:annotation>
+          <xsd:documentation>HIGH SCHOOL</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="09">
+        <xsd:annotation>
+          <xsd:documentation>FLIGHT TRAINING</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="10">
+        <xsd:annotation>
+          <xsd:documentation>OTHER VOCATIONAL SCHOOL</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="11">
+        <xsd:annotation>
+          <xsd:documentation>OTHER</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:complexType name="StudentEducationLevelCodeType">
+    <xsd:annotation>
+      <xsd:appinfo>
+        <i:Base i:namespace="http://niem.gov/niem/structures/2.0" i:name="Object"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:simpleContent>
+      <xsd:extension base="im:StudentEducationLevelCodeSimpleType">
+        <xsd:attributeGroup ref="s:SimpleObjectAttributeGroup"/>
+      </xsd:extension>
+    </xsd:simpleContent>
+  </xsd:complexType>
+  <xsd:complexType name="StudentEducationLevelType">
+    <xsd:annotation>
+      <xsd:documentation>A data type for the highest level of education an alien student intends to achieve.</xsd:documentation>
+      <xsd:appinfo>
+        <i:Base i:namespace="http://niem.gov/niem/structures/2.0" i:name="Object"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="s:ComplexObjectType">
+        <xsd:sequence>
+          <xsd:element ref="im:StudentEducationLevelCode" minOccurs="0" maxOccurs="unbounded"/>
+          <xsd:element ref="im:StudentEducationLevelDescriptionText" minOccurs="0" maxOccurs="unbounded"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:simpleType name="StudentTerminationCodeSimpleType">
+    <xsd:annotation>
+      <xsd:appinfo>
+        <i:Base i:namespace="http://niem.gov/niem/structures/2.0" i:name="Object"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:restriction base="xsd:token">
+      <xsd:enumeration value="01">
+        <xsd:annotation>
+          <xsd:documentation>UNAUTHORIZED WITHDRAWAL</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="02">
+        <xsd:annotation>
+          <xsd:documentation>DEATH</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="03">
+        <xsd:annotation>
+          <xsd:documentation>UNAUTHORIZED EMPLOYMENT</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="04">
+        <xsd:annotation>
+          <xsd:documentation>UNAUTHORIZED DROP BELOW FULL COURSE</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="05">
+        <xsd:annotation>
+          <xsd:documentation>AUTHORIZED DROP BELOW FULL COURSE TIME EXCEEDED</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="06">
+        <xsd:annotation>
+          <xsd:documentation>CHANGE OF NONIMMIGRANT CLASSIFICATION</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="07">
+        <xsd:annotation>
+          <xsd:documentation>CHANGE OF NONIMMIGRANT CLASSIFICATION DENIED</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="08">
+        <xsd:annotation>
+          <xsd:documentation>EXPULSION</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="09">
+        <xsd:annotation>
+          <xsd:documentation>SUSPENSION</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="10">
+        <xsd:annotation>
+          <xsd:documentation>ABSENT FROM COUNTRY FOR FIVE MONTHS</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="11">
+        <xsd:annotation>
+          <xsd:documentation>FAILURE TO ENROLL</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="12">
+        <xsd:annotation>
+          <xsd:documentation>COSTS EXCEED RESOURCES</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="13">
+        <xsd:annotation>
+          <xsd:documentation>TRANSFER STUDENT NO SHOW</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="14">
+        <xsd:annotation>
+          <xsd:documentation>DENIED TRANSFER</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="15">
+        <xsd:annotation>
+          <xsd:documentation>EXTENSION DENIED</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="16">
+        <xsd:annotation>
+          <xsd:documentation>OTHERWISE FAILING TO MAINTAIN STATUS</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="17">
+        <xsd:annotation>
+          <xsd:documentation>VIOLATION OF CHANGE OF STATUS REQUIREMENTS</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="18">
+        <xsd:annotation>
+          <xsd:documentation>CHANGE OF STATUS DENIED</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="19">
+        <xsd:annotation>
+          <xsd:documentation>CHANGE OF STATUS WITHDRAWN</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="20">
+        <xsd:annotation>
+          <xsd:documentation>CHANGE OF STATUS APPROVED</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="21">
+        <xsd:annotation>
+          <xsd:documentation>TRANSFER WITHDRAWN</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="22">
+        <xsd:annotation>
+          <xsd:documentation>NO SHOW - MANUAL TERMINATION</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="23">
+        <xsd:annotation>
+          <xsd:documentation>AUTHORIZED EARLY WITHDRAWAL</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="24">
+        <xsd:annotation>
+          <xsd:documentation>NO SHOW - SYSTEM TERMINATION</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="25">
+        <xsd:annotation>
+          <xsd:documentation>SCHOOL WITHDRAWN</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:complexType name="StudentTerminationCodeType">
+    <xsd:annotation>
+      <xsd:appinfo>
+        <i:Base i:namespace="http://niem.gov/niem/structures/2.0" i:name="Object"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:simpleContent>
+      <xsd:extension base="im:StudentTerminationCodeSimpleType">
+        <xsd:attributeGroup ref="s:SimpleObjectAttributeGroup"/>
+      </xsd:extension>
+    </xsd:simpleContent>
+  </xsd:complexType>
+  <xsd:complexType name="StudentTerminationType">
+    <xsd:annotation>
+      <xsd:documentation>A data type for a reason why an alien student is no longer enrolled.</xsd:documentation>
+      <xsd:appinfo>
+        <i:Base i:namespace="http://niem.gov/niem/structures/2.0" i:name="Object"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="s:ComplexObjectType">
+        <xsd:sequence>
+          <xsd:element ref="im:StudentTerminationCode" minOccurs="0" maxOccurs="unbounded"/>
+          <xsd:element ref="im:StudentTerminationDescriptionText" minOccurs="0" maxOccurs="unbounded"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="TransferRequestStatusType">
+    <xsd:annotation>
+      <xsd:appinfo>
+        <i:Base i:namespace="http://niem.gov/niem/structures/2.0" i:name="Object"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="s:ComplexObjectType">
+        <xsd:sequence>
+          <xsd:element ref="im:TransferRequestStatusCode" minOccurs="0" maxOccurs="unbounded"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="TransferType">
+    <xsd:annotation>
+      <xsd:appinfo>
+        <i:Base i:namespace="http://niem.gov/niem/niem-core/2.0" i:name="ActivityType"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="nc:ActivityType">
+        <xsd:sequence>
+          <xsd:element ref="im:TransferCompletionDate" minOccurs="0" maxOccurs="unbounded"/>
+          <xsd:element ref="im:TransferEffectiveDate" minOccurs="0" maxOccurs="unbounded"/>
+          <xsd:element ref="im:TransferCompletedIndicator" minOccurs="0" maxOccurs="unbounded"/>
+          <xsd:element ref="im:TransferRequestStatus" minOccurs="0" maxOccurs="unbounded"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="AcademicProgramText" type="nc:TextType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>A field detailing the alien students academic program.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="AcademicTermLengthQuantity" type="nc:QuantityType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>A number indicating a time duration estimate of an alien students academic-term.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="ActualDeportationDate" type="nc:DateType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>The date on which the alien was deported from the United States.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="ActualReleaseDate" type="nc:DateType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>The date on which the alien was released from a detention facility.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="AdmissionIdentification" type="nc:IdentificationType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>A number indicating an alien students admission (I-94) number.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="AlertClassCode" type="nc:TextType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>A grouping of the alien alert.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="AlertCode" type="nc:TextType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>A kind of alien alert.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="AlertDescriptionText" type="nc:TextType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>A description of an alien alert.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="AlertEntryDate" type="nc:DateType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>The date on which the alien alert was entered into the system.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="AlertEntryText" type="nc:TextType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>A field indicating additional information concerning an alien alert warning.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="AlertExpirationDate" type="nc:DateType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>The date on which the alien alert will expire.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="AlertGeneratingOfficerBadgeIdentification" type="nc:IdentificationType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>A field indicating the badge identification of the DHS Immigrations Customs Enforcement (ICE) person generating the alien alert transaction.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="AlertIdentification" type="nc:IdentificationType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>An identification of the sequence number that uniquely identifies an alien alert.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="AlertMedicalIndicator" type="niem-xsd:boolean" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>True if the alert code is for a medical condition; false otherwise.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="AlertWarningIndicator" type="niem-xsd:boolean" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>True if there is an alert warning associated with an alien; false otherwise.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="AlienReference" type="s:ReferenceType">
+    <xsd:annotation>
+      <xsd:documentation>A foreign born person, and not a United States citizen, who is of interest to the Department of Homeland Security (DHS), Immigration and Customs Enforcement (ICE).</xsd:documentation>
+      <xsd:appinfo>
+        <i:ReferenceTarget i:name="AlienType"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="Alien" type="im:AlienType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>A foreign born person, and not a United States citizen, who is of interest to the Department of Homeland Security (DHS), Immigration and Customs Enforcement (ICE).</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="AlienAlert" type="im:AlienAlertType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>The significant information about an alien person to alert the Department of Homeland Security (DHS), Immigration and Customs Enforcement (ICE) if the alien has been formally removed from the U.S. or could pose a risk based on safety or oth</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="AlienArrestEncounter" type="im:ImmigrationArrestType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>The taking into custody of an alien by a legal authority.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="AlienAsylumRequestIndicator" type="niem-xsd:boolean" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>True if the encounter is with an alien seeking asylum.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="AlienBirthCountryName" type="nc:TextType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>A field denoting the aliens country of birth.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="AlienBorderCrossingIndicator" type="niem-xsd:boolean" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>True if the encounter is with an alien crossing the border.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="AlienCautionMedicalConditionCode" type="nc:TextType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>A number indicating the code for alien persons medical condition that the DHS Immigration Customs Enforcement (ICE) officer should be cautious of.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="AlienChild" type="im:AlienType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>A person who is a child of an alien.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="AlienChildrenQuantity" type="nc:QuantityType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>A field indicating the aliens number of children.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="AlienCitizenship" type="im:AlienCitizenshipType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>The legal immigration standing of a person assigned by a country which provides rights, duties, and privileges to a person due to the persons birth or naturalization in that country.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="AlienCitizenshipCountryName" type="nc:TextType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>A field denoting the aliens country of citizenship.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="AlienCustodyCategoryDescriptionText" type="nc:TextType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>A field describing the code assigned to each kind of alien person custody.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="AlienCustodyCode" type="nc:TextType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>A number indicating a kind of custody of an alien person.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="AlienDependent" type="im:AlienDependentType" nillable="true"/>
+  <xsd:element name="AlienDetentionEncounter" type="im:ImmigrationDetentionType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>A period of temporary custody of an alien that precedes disposition by a COURT.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="AlienEncounter" type="im:AlienEncounterType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>The interface between an alien person and the Department of Homeland Security (DHS), Immigration and Customs Enforcement (ICE) official.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="AlienEncounterCode" type="nc:TextType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>A kind of encounter between the DHS Immigrations Customs Enforcement (ICE) official and the alien.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="AlienEncounterFingerprintCode" type="nc:TextType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>A kind of fingerprint image retrieved during an encounter with an alien.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="AlienEnforcementEncounter" type="im:AlienEnforcementEncounterType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>The kind of ENCOUNTER with an alien which may result in legal action.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="AlienExchangeVisitor" type="im:AlienExchangeVisitorType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>An alien who visits the United States to participate in either an educational or cultural exchange program that is approved by the United States Department of State.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="AlienExchangeVisitorProgram" type="nc:ProgramType" nillable="true"/>
+  <xsd:element name="AlienFamily" type="im:AlienFamilyType" nillable="true"/>
+  <xsd:element name="AlienFamilyMembers" type="im:AlienFamilyType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>The persons related to an alien whether via a common ancestry or through legal event.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="AlienFelonCode" type="nc:TextType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>A kind of felony type.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="AlienFelonDescriptionText" type="nc:TextType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>A field indicating the description for the associated felony code.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="AlienFile" type="im:FileType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>A file containing detailed immigration information about an alien.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="AlienIDDetails" type="im:AlienIDDetailsType" nillable="true"/>
+  <xsd:element name="AlienImmigrationStatus" type="im:ImmigrationStatusType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>A field indicating a description of an associated Immigrant status code </xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="AlienIncidentRoleCode" type="nc:TextType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>A role of the alien in the event.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="AlienIncidentSequenceID" type="nc:IdentificationType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>A unique number indicating the sequence number associated with an encounter involving an alien.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="AlienKin" type="im:AlienType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>A person who is related to an alien.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="AlienLocation" type="nc:LocationType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>The location of a Department of Homeland Security (DHS), Immigration and Customs Enforcement (ICE) office or site, alien, incident, offense or piece of property.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="AlienLookoutIndicator" type="niem-xsd:boolean" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>True if the encounter is with an enrolled alien who may be an aggravated felon, may be a suspected narcotics smuggler, has an active arrest warrant, or may be a national security risk; false otherwise.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="AlienMandatoryDetentionIndicator" type="niem-xsd:boolean" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>True if detention is required for the alien; false otherwise.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="AlienMatchCandidate" type="im:AlienMatchCandidateType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>The confirmation of a candidates biometric match with an encountered alien.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="AlienMiscellaneousIDCategoryCode" type="im:AlienMiscellaneousIDCategoryCodeType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>A kind of miscellaneous number for an alien.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="AlienMiscellaneousIdentification" type="nc:IdentificationType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>A field indicating another method in which to identify an alien.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="AlienMiscellaneousNumber" type="im:AlienMiscellaneousNumberIDType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>An identification number that can be used to identify an alien.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="AlienMiscellaneousNumberIdentification" type="nc:IdentificationType" nillable="true"/>
+  <xsd:element name="AlienNonImmigrantStatus" type="im:NonImmigrantStatusType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>A field indicating a description of an associated alien status code </xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="AlienNonImmigrantStatusCode" type="nc:TextType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>An immigration status of an alien person.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="AlienNumber" type="nc:IdentificationType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>A number indicating a unique number assigned to an aliens file.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="AlienPhotoIndicator" type="niem-xsd:boolean" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>True if a photograph of the alien existed during encounter; false otherwise.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="AlienPossessSSNIndicator" type="niem-xsd:boolean" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>True if the alien had a Social Security Card in possession at the time of encounter; false otherwise.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="AlienPriorDeportationIndicator" type="niem-xsd:boolean" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>True if the alien has been deported before; false otherwise.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="AlienRecidivistIndicator" type="niem-xsd:boolean" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>True if the encounter is with a non-criminal alien who has a tendency to slip back into previously recorded criminal activities; false otherwise.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="AlienReligionCode" type="nc:TextType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>A religion of the alien person.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="AlienResidencyCountryName" type="nc:TextType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>A field denoting the aliens country of residency.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="AlienSmuggledCostAmount" type="nc:AmountType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>A cost associated with smuggling an alien to the United States.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="AlienSmuggledIndicator" type="niem-xsd:boolean" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>True if the alien has been smuggled to the United Stated; false otherwise.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="AlienSpecialClassCode" type="nc:TextType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>An alien&apos;s persons special class category for detention purposes.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="AlienSpecialClassCodeDescriptionText" type="nc:TextType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>A field indicating the description for the associated special class code for alien person detention.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="AlienSpouse" type="im:AlienType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>A person who is married to an alien.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="AlienStudent" type="im:AlienStudentType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>The enrollment in a U.S. school by an alien student.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="AlienStudentAdmission" type="im:AlienStudentAdmissionType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>An alien temporarily arriving in the United States to pursue a full course of study in an approved and or accredited program in either an academic, vocational, or other recognized nonacademic institution.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="AlienStudentAuthorization" type="im:AlienStudentAuthorizationType" nillable="true"/>
+  <xsd:element name="AlienStudentAuthorizationToDropBelowFullTime" type="im:AlienStudentAuthorizationToDropBelowFullTimeType" nillable="true"/>
+  <xsd:element name="AlienStudentDisciplinaryAction" type="im:AlienStudentDisciplinaryActionType" nillable="true"/>
+  <xsd:element name="AlienStudentEmployment" type="im:AlienStudentEmploymentType" nillable="true"/>
+  <xsd:element name="AlienStudentProgramExtensionRequest" type="im:AlienStudentProgramExtensionRequestType" nillable="true"/>
+  <xsd:element name="AlienVoluntaryReturnIndicator" type="niem-xsd:boolean" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>True if the alien has a history of voluntarily returning to their home country prior to being deported; false otherwise.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="ArrestMethodAugmentation" type="im:ArrestMethodAugmentationType" substitutionGroup="s:Augmentation">
+    <xsd:annotation>
+      <xsd:documentation>Additional information about an arrest method.</xsd:documentation>
+      <xsd:appinfo>
+        <i:AppliesTo i:namespace="http://niem.gov/niem/domains/screening/2.0" i:name="ArrestMethodType"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="ArrestMethodCode" type="im:ArrestMethodCodeType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>A ARREST METHOD TYPE</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="ArrestMethodDescriptionText" type="nc:TextType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>The text that describes the ARREST METHOD TYPE</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="AttorneyRequestIndicator" type="niem-xsd:boolean" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>A flag indicating whether the alien exercised his or her right to request for counsel.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="AttorneyRightsIndicator" type="niem-xsd:boolean" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>A flag indicating whether the alien was informed of his or her right to be represented by counsel.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="Authorization" type="im:AuthorizationType" nillable="true"/>
+  <xsd:element name="AuthorizationDescriptionText" type="nc:TextType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>A field describing an authorization.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="AuthorizationDropBelowFullTimeCode" type="nc:TextType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>A reason a student has dropped below full time status.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="AuthorizationEndDate" type="nc:DateType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>The date an authorization expires.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="AuthorizationF1Indicator" type="niem-xsd:boolean" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>True if the authorization to drop below full time status pertains an academic student (F-1); false otherwise.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="AuthorizationFullResumptionDate" type="nc:DateType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>The date on which an alien student resumes a full time academic schedule for enrolled program.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="AuthorizationIdentification" type="nc:IdentificationType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>A number indicating the unique code assigned to an authorization.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="AuthorizationM1Indicator" type="niem-xsd:boolean" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>True if the authorization to drop below full time status pertains a vocational student (M-1); false otherwise.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="AuthorizationRemarkText" type="nc:TextType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>A field indicating remarks regarding an authorization.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="AuthorizationStartDate" type="nc:DateType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>The date an authorization begins.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="AuthorizationToDropBelowFullTime" type="im:AlienStudentAuthorizationToDropBelowFullTimeType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>The authorization for an alien student to drop below full time status</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="BaggageReceiptNumber" type="nc:TextType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>A field indicating the claim slip given to the alien to account for his personal belongings.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="BarracksCode" type="nc:TextType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>A kind of living quarters of the alien who is being detained in a detention facility.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="BeginDate" type="nc:DateType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>The date on which the association with the address began.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="BinationalCommissionTotalFundingSupportAmount" type="nc:AmountType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>A number indicating the amount of funding provided to the Exchange Visitor (EV) by the Binational Commission of the Exchange Visitors home country, in order to support his/her participation in a designated EV Program.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="BookInOfficer" type="im:ICEEmployeeType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>The date on which the alien was booked in by Department of Homeland Security (DHS) Immigration and Customs Enforcement (ICE) Employee.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="BookOutOfficer" type="im:ICEEmployeeType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>The date on which the alien was booked out by Department of Homeland Security (DHS) Immigration and Customs Enforcement (ICE) Employee.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="CampusEmploymentFundsAmount" type="nc:AmountType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>A number indicating the total funds estimated to be earned by the alien student through on-campus employment.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="ChainOfCustody" type="im:ChainOfCustodyType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>The information about the chain of custody of an item or exhibit.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="ChainOfCustodyDescriptionText" type="nc:TextType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>A field indicating and describing the chain of custody of an item (exhibit) in relation to which employee took custody, when they took custody, and what they took custody of.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="ChainOfCustodyItemReceivedDate" type="nc:DateType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>The date on which the DHS Immigrations Customs Enforcement (ICE) officer assumed responsibility for an item (exhibit).</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="ChainOfCustodySequenceID" type="nc:IdentificationType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>A number indicating the sequence number for an item (exhibit) under custody.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="CitizenshipCertificateIdentification" type="nc:IdentificationType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>A field indicating the naturalization certificate number of the alien.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="CitizenshipLawfullyAdmittedPermanentResidenceBeginDate" type="nc:DateType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>The date on which an aliens Lawfully Admitted Permanent Residence (LAPR) began in the U.S.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="CitizenshipLawfullyAdmittedPermanentResidenceEndDate" type="nc:DateType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>The date on which an aliens Lawfully Admitted Permanent Residence (LAPR) ended in the U.S.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="CitizenshipLawfullyAdmittedPermanentResidentIndicator" type="niem-xsd:boolean" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>True if the alien is a lawfully admitted permanent resident (LAPR); false otherwise.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="CitizenshipNaturalizationCityName" type="nc:TextType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>A city name where the alien was naturalized for U.S. Citizenship.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="CitizenshipNaturalizationDate" type="nc:DateType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>The date on which the alien became a U.S. Citizen.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="CitizenshipNaturalizationText" type="nc:TextType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>A field detailing the aliens U.S. Naturalization.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="ConsulateIndicator" type="niem-xsd:boolean" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>Indicates whether or not the persons consulate was notified.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="ConsulateNotifiedDate" type="nc:DateType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>The date on which the consulate was notified of aliens detention.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="ConsulateRightsIndicator" type="niem-xsd:boolean" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>A flag indicating whether the alien was informed of his/her right to contact his or her consulate.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="CurrentSessionEndDate" type="nc:DateType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>The date on which an alien students current academic session ends.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="DepartMethodText" type="nc:TextType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>A field indicating the means by which the deportable alien will use to depart the United States.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="Dependent" type="im:AlienDependentType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>A person who is legally, socially, and financially reliant on the support of an alien person.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="DependentCode" type="nc:TextType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>A kind of dependent.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="DependentCodeDescriptionText" type="nc:TextType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>A field indicating the description for the associated dependent code.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="DependentDistrictOfficerTerminatedF2Indicator" type="niem-xsd:boolean" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>True if the District Officer terminated the aliens dependent status to an academic student (F-2); false otherwise.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="DependentDistrictOfficerTerminatedM2Indicator" type="niem-xsd:boolean" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>True if the District Officer terminated the aliens dependent status to a vocational student (M-2); false otherwise.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="DependentEffectiveTerminationDate" type="nc:DateType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>The date on which an aliens dependent status effectively terminated.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="DependentExpensesEstimatedAmount" type="nc:AmountType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>A number indicating the total expenses for all alien students dependents during the term.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="DependentIdentification" type="nc:IdentificationType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>A number that uniquely identifies a dependent of an alien.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="DependentJ2CompletionIndicator" type="niem-xsd:boolean" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>True if an aliens dependent status to an exchange visitor (J-2) completed with no adversity; false otherwise.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="DependentJ2TerminationIndicator" type="niem-xsd:boolean" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>True if an exchange visitors dependent status to an exchange visitor (J-2) was terminated; false otherwise.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="DependentPrincipalDesignatedSchoolOfficialTerminatedF2Indicator" type="niem-xsd:boolean" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>True if the Principal Designated School Official (PDSO) or Designated School Official (DSO) terminated the dependent status of an alien to an academic student (F-2); false otherwise.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="DependentPrincipalDesignatedSchoolOfficialTerminatedM2Indicator" type="niem-xsd:boolean" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>True if a Principal Designated School Official (PDSO) or Designated School Official (DSO) terminated the aliens dependent status (M-2) to a vocational student; false otherwise.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="DependentProgramEndDate" type="nc:DateType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>The date on which the alien dependents principal program ends.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="DependentRemarkText" type="nc:TextType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>A field describing the dependent of an alien student or exchange visitor.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="DependentStartDate" type="nc:DateType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>The date on which an aliens status as a dependent of an alien student or exchange visitor started.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="DependentTerminationCode" type="nc:TextType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>A reason why a dependent of an alien student or exchange visitor may be terminated.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="DependentTerminationCommentText" type="nc:TextType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>A field detailing why an aliens dependent status was terminated.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="DependentTerminationDescriptionText" type="nc:TextType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>A field indicating the description for the associated alien dependents termination code.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="DeportationOrderLocationText" type="nc:TextType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>A field indicating the location from which the inadmissible alien is removed from the United States.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="DeportationReliefDate" type="nc:DateType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>The date on which the alien receives relief from deportation.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="DetainerLiftReason" type="im:DetentionDetainerLiftType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>The classification of the condition under which a detention related to a Detainer (alien detention by another agency) can be lifted.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="DetentionDetainerLiftCode" type="im:DetentionDetainerLiftCodeType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>A reason under which a DETENTION or a DETAINER can be lifted.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="DetentionDetainerLiftDescriptionText" type="nc:TextType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>A field indicating the description for the associated DETAINER LIFT CODE.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="DisciplinaryAction" type="im:AlienStudentDisciplinaryActionType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>The record of disciplinary action against an alien student.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="DisciplinaryActionIdentification" type="nc:IdentificationType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>An identification of a disciplinary action against an alien student.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="DisciplinaryActionIndicator" type="niem-xsd:boolean" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>True if a disciplinary action against an alien student occurred; false otherwise.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="DistanceFromLandmarkMeasure" type="nc:LengthMeasureType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>A number indicating the distance in miles from a landmark to where the alien&apos;s ARREST occurred.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="EducationLevelClassification" type="im:StudentEducationLevelType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>The classification of the highest level of education an alien STUDENT intends to achieve.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="EducationLevelCode" type="im:StudentEducationLevelCodeType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>A student education level category a student is pursuing.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="EducationLevelCommentText" type="nc:TextType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>A field detailing the alien students level of education</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="EducationLevelText" type="nc:TextType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>An education level of the alien student.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="EmploymentAugmentation" type="im:EmploymentAugmentationType" substitutionGroup="s:Augmentation">
+    <xsd:annotation>
+      <xsd:documentation>Additional information about person employment.</xsd:documentation>
+      <xsd:appinfo>
+        <i:AppliesTo i:namespace="http://niem.gov/niem/niem-core/2.0" i:name="PersonEmploymentAssociationType"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="EmploymentAuthorizationIndicator" type="niem-xsd:boolean" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>True if the Department of Homeland Security (DHS), Immigration and Customs Enforcement (ICE) has authorized the alien to work for a United States business; false otherwise.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="EmploymentCategoryCode" type="nc:TextType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>A kind of alien student employment.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="EmploymentDescriptionText" type="nc:TextType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>A field indicating the employment kind of an alien student.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="EmploymentOffCampusAuthorizationIndicator" type="niem-xsd:boolean" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>An indication of whether or not the off-campus employment is authorized for the alien student.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="EmploymentRemarkText" type="nc:TextType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>A field describing the alien student employment.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="EmploymentTime" abstract="true">
+    <xsd:annotation>
+      <xsd:documentation>A field indicating the description for the associated kind of alien student employment time code.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="EmploymentTimeBasisText" type="nc:TextType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>A field indicating if the alien student is Full-time or Part-time employed.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element substitutionGroup="im:EmploymentTime" name="EmploymentTimeCode" type="nc:TextType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>A time basis of an alien students employment.</xsd:documentation>
+      <xsd:appinfo>
+        <i:Base i:name="EmploymentTime"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element substitutionGroup="im:EmploymentTime" name="EmploymentTimeText" type="nc:TextType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>A field indicating the description for the associated kind of alien student employment time code.</xsd:documentation>
+      <xsd:appinfo>
+        <i:Base i:name="EmploymentTime"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="EndDate" type="nc:DateType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>The date on which the association with the address ended.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="EnforcedDeparture" type="im:AlienDeportationType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>An involuntary removal of an alien from the United States.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="EnforcementEncounterCategoryText" type="nc:TextType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>The kind of Enforcement Encounter.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="EnglishRequirementMetIndicator" type="niem-xsd:boolean" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>True if the alien student has met the English language requirements; false otherwise.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="EnrollmentApplicationSubmissionDate" type="nc:DateType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>The date on which the Responsible Officer (RO) or Alternate Responsible Officer (ARO) submits a DS-2019 form for an Exchange Visitor to begin a new program.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="EnrollmentApplicationSubmissionOfficerIdentification" type="nc:IdentificationType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>A number indicating the user ID of the Responsible Officer (RO) or Alternate Responsible Officer (ARO) who submitted the DS-2019.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="EstimatedTotalMiscellaneousSchoolTermExpenseAmount" type="nc:AmountType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>A number indicating the total miscellaneous expenses estimated for alien student for the term.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="ExchangeVisitorAdmission" type="im:AlienExchangeVisitorAdmissionType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>An ALIEN arriving in the United States on a temporary basis as a participant in a program approved by the Department of State for the purposes of teaching, instructing, lecturing, studying, observing, conducting research, consulting, demonst</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="ExchangeVisitorCategory" type="im:ExchangeVisitorCategoryType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>The classification for EXCHANGE VISITOR&apos;s program.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="ExchangeVisitorCategoryCode" type="im:ExchangeVisitorCategoryCodeType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>An exchange visitor category.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="ExchangeVisitorCategoryDescriptionText" type="nc:TextType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>A field describing the associated EXCHANGE VISITOR CATEGORY CODE.
+</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="ExchangeVisitorTerminationReason" type="im:ExchangeVisitorTerminationType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>The classification for the reason associated with EXCHANGE VISITOR&apos;s program termination.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="ExchangeVisitorTerminationReasonCode" type="im:ExchangeVisitorTerminationCodeType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>A reason for exchange visitors program termination.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="ExchangeVisitorTerminationReasonDescriptionText" type="nc:TextType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>An field describing the associated EXCHANGE VISITOR TERMINATION CODE.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="ExtensionRequestIdentification" type="nc:IdentificationType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>A number that uniquely identifies an alien students request for extension to participating in the program.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="FacingHarmIndicator" type="niem-xsd:boolean" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>A flag indicating whether the alien faces harm by returning to his/her country</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="FederalGovernmentSponsorIndicator" type="niem-xsd:boolean" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>A flag indicating whether or not the Federal Government is the sponsor of the PROGRAM.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="File" type="im:FileType" nillable="true"/>
+  <xsd:element name="FileIdentification" type="nc:IdentificationType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>A field indicating the file number assigned to an alien immigration file.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="FileNewIndicator" type="niem-xsd:boolean" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>True if the alien immigration file is new; false otherwise.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="FileReceivedDate" type="nc:DateType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>The date on which the aliens immigration file was received.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="FileRequestDate" type="nc:DateType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>The date on which the aliens immigration file was requested.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="FinancialInformationText" type="nc:TextType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>A text string denoting the Exchange Visitors financial information.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="FinancialSupportMethodSelectionCommentText" type="nc:TextType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>A method used to select and arrange financial support for EXCHANGE VISITORs.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="ForProfitIndicator" type="niem-xsd:boolean" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>A flag indicating whether the PROGRAM Sponsor is a &quot;for profit&quot; organization.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="FormAllotmentQuantity" type="nc:QuantityType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>A number indicating the number of DS-2019 forms that have been allocated for a PROGRAM.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="FormUsageTotalQuantity" type="nc:QuantityType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>A number indicating the total number of DS-2019 forms used by a PROGRAM.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="HearingRequestIndicator" type="niem-xsd:boolean" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>A field indicating if the arrested alien has requested for a court hearing</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="HearingRightsIndicator" type="niem-xsd:boolean" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>A flag indicating whether the alien requested a hearing before a judge.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="ICEEmployee" type="im:ICEEmployeeType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>An employee of the Department of Homeland Security (DHS), Immigration and Customs Enforcement (ICE).</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="ICEEmployeeAssistantUSAttorneyIndicator" type="niem-xsd:boolean" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>True if the ICE employee is an Assistant United States Attorney; false otherwise.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="ICEEmployeeAttorneyIndicator" type="niem-xsd:boolean" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>True if the ICE employee is an attorney; false otherwise.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="ICEEmployeeBadgeIdentification" type="nc:IdentificationType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>A field indicating the ICE employees badge or call number.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="ICEEmployeeK9Indicator" type="niem-xsd:boolean" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>True if the ICE Employee is a K9; false otherwise.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="ICEEmployeePINIdentification" type="nc:IdentificationType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>A field indicating the Personal Identification Number of the ICE Employee.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="ICEEmployeePayGradeNumeric" type="nc:NumericType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>A field indicating the employees pay grade.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="ICEEmployeeTitleText" type="nc:TextType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>A field indicating the employees formal title or position.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="ICEOfficer" type="im:ICEOfficerType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>A Department of Homeland Security (DHS), Immigration and Customs Enforcement (ICE) officer.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="ICEOfficerCode" type="nc:TextType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>A Department of Homeland Security (DHS), Immigration and Customs Enforcement (ICE) officer.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="ImmigrationArrest" type="im:ImmigrationArrestType" nillable="true"/>
+  <xsd:element name="ImmigrationStatus" type="im:ImmigrationStatusType" nillable="true"/>
+  <xsd:element name="ImmigrationStatusCode" type="nc:TextType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>An immigration status of an immigrant.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="InactiveStatus" type="nc:StatusType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>The status of an Exchange Visitor.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="InmateNumber" type="nc:TextType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>The number assigned to the alien by the detention facility.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="IsNewIndicator" type="niem-xsd:boolean" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>True if the alien student is new; false otherwise.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="JudicialOfficialAugmentation" type="im:JudicialOfficialAugmentationType" substitutionGroup="s:Augmentation">
+    <xsd:annotation>
+      <xsd:documentation>Additional information about a judicial official.</xsd:documentation>
+      <xsd:appinfo>
+        <i:AppliesTo i:namespace="http://niem.gov/niem/domains/jxdm/4.0" i:name="JudicialOfficialType"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="JudicialOfficialDescriptionText" type="nc:TextType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>A free form field with detailed description about the attorney.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="LeftCountryIndicator" type="niem-xsd:boolean" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>True if the alien student has left the country after entering; false otherwise.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="LegalReferenceText" type="nc:TextType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>A field indicating the section of Immigration and Nationality Act on which this person was ordered removed.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="LocalGovernmentSponsorIndicator" type="niem-xsd:boolean" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>A flag indicating whether or not the Local Government is the sponsor of the PROGRAM.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="LocationAugmentation" type="im:LocationAugmentationType" substitutionGroup="s:Augmentation">
+    <xsd:annotation>
+      <xsd:documentation>Additional information about a location.</xsd:documentation>
+      <xsd:appinfo>
+        <i:AppliesTo i:namespace="http://niem.gov/niem/niem-core/2.0" i:name="LocationType"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="LocationIdentification" type="nc:IdentificationType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>An identification of a unique address or location.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="LocationNearestLargeCityName" type="nc:TextType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>A name of the nearest large city to a location.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="MaritalStatusCode" type="nc:TextType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>An indication of whether the alien is single, married, divorced, widowed, or unknown.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="MarriageIdentification" type="nc:IdentificationType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>An identification of a unique marriage.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="MarriagePlaceCityName" type="nc:TextType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>A name indicating the city name where the marriage occurred.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="MatchCandidateDetainedDate" type="nc:DateType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>The date on which the candidate for match with an encountered alien was detained.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="MatchCandidateLeftFingerScoreNumeric" type="nc:NumericType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>A number indicating the left fingerprint score value of an enrolled candidate for determining his/her biometric match against an encountered alien.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="MatchCandidateOverallFingerScoreNumeric" type="nc:NumericType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>A number indicating the sum of the right and left fingerprint score values of an enrolled candidate in order to determine his/her biometric match against an encountered alien.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="MatchCandidateOverallMatchDecisionStatusCode" type="nc:TextType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>A final decision as to whether or not the candidate is truly a hit against an encountered alien.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="MatchCandidateRankNumeric" type="nc:NumericType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>A number indicating the ranking score of an enrolled candidates biometric match against an encountered alien.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="MatchCandidateRightFingerScoreNumeric" type="nc:NumericType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>A number indicating the right fingerprint score value of an enrolled candidate for determining his/her biometric match against an encountered alien.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="MatchCandidateStatus" type="im:MatchCandidateStatusType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>An indication of whether or not a candidate has met the minimum threshold for identification as a match with an encountered alien.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="MatchCandidateStatusCode" type="nc:TextType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>An indication of whether or not a candidate has met the minimum threshold for identification as a match with an encountered alien.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="MedicationIndicator" type="niem-xsd:boolean" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>A flag indicating whether the alien is on medication.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="MedicationText" type="nc:TextType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>The text that describes the medication that needs to be provided during DETENTION.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="NextSessionStartDate" type="nc:DateType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>The date on which the next school session begins for the alien student.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="NonImmigrantStatus" type="im:NonImmigrantStatusType" nillable="true"/>
+  <xsd:element name="OtherFundsAmount" type="nc:AmountType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>A number indicating the other funds available to the alien student during the term.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="OtherFundsCommentText" type="nc:TextType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>A field indicating free text required for explanation of other funds, if any, supplied to the alien student.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="OtherOrganizationRoleCommentText" type="nc:TextType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>A field detailing the roles played in the PROGRAM by other ORGANIZATIONs.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="OtherSchoolTermExpensesText" type="nc:TextType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>A field indicating a free text describing an explanation required if Other Expenses are listed for the alien student.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="PL9484AmendedIndicator" type="niem-xsd:boolean" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>True if the Exchange Visitor (EV) is participating as an alien Physician (Category code of 6), which would result in the EV being flagged as subject to the two-year residence requirement; false otherwise.  </xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="PedestrianIndicator" type="niem-xsd:boolean" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>A flag indicating whether the alien was arrested as a pedestrian.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="PersonAugmentation" type="im:PersonAugmentationType" substitutionGroup="s:Augmentation">
+    <xsd:annotation>
+      <xsd:documentation>Additional information about a person.</xsd:documentation>
+      <xsd:appinfo>
+        <i:AppliesTo i:namespace="http://niem.gov/niem/niem-core/2.0" i:name="PersonType"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="PersonMarriage" type="im:PersonMarriageType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>The legal union of two persons as recognized by the Department of Homeland Security (DHS), Immigration and Customs Enforcement (ICE).</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="PersonNameAugmentation" type="im:PersonNameAugmentationType" substitutionGroup="s:Augmentation">
+    <xsd:annotation>
+      <xsd:documentation>Additional information about a person name.</xsd:documentation>
+      <xsd:appinfo>
+        <i:AppliesTo i:namespace="http://niem.gov/niem/niem-core/2.0" i:name="PersonNameType"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="PersonNickName" type="nc:PersonNameTextType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>A nickname or streetname of a person.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="PersonalFundsAmount" type="nc:AmountType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>A number indicating the amount of personal funds available to the alien student for the term.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="PhoneAssistIndicator" type="niem-xsd:boolean" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>A flag indicating whether the officer assisted the alien in using a phone.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="PhoneAttemptsQuantity" type="nc:QuantityType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>A number indicating the number of attempts made by telephone to contact the party responsible for the juvenile alien.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="PhoneUseRightsIndicator" type="niem-xsd:boolean" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>A flag indicating whether the alien was made aware of his/her right to use a telephone.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="PresenceUnlawfulIndicator" type="niem-xsd:boolean" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>True if the District Officer finds that the alien student is in status violation, or has been denied a reinstatement; false otherwise.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="PrintedI20sQuantity" type="nc:QuantityType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>A number indicating the number of I-20s printed for an alien student to date.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="ProgramAbbreviationCode" type="nc:TextType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>An exchange visitor program.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="ProgramActivityCommentText" type="nc:TextType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>A field detailing the activities associated with a PROGRAM.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="ProgramAugmentation" type="im:ProgramAugmentationType" substitutionGroup="s:Augmentation">
+    <xsd:annotation>
+      <xsd:documentation>Additional information about a program.</xsd:documentation>
+      <xsd:appinfo>
+        <i:AppliesTo i:namespace="http://niem.gov/niem/niem-core/2.0" i:name="ProgramType"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="ProgramBeginDate" type="nc:DateType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>The date on which the alien students program begins.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="ProgramClassification" type="im:ExchangeVisitorProgramClassificationType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>The classification of EXCHANGE VISITOR PROGRAMs offered by a sponsor.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="ProgramCode" type="nc:TextType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>A kind of EXCHANGE VISITORs program offered by a sponsor.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="ProgramCompletionCommentText" type="nc:TextType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>A comment on the completion of the program.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="ProgramDescriptionText" type="nc:TextType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>A field indicating the description of the associated PROGRAM CODE.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="ProgramDesignatedDurationNumeric" type="nc:NumericType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>A number indicating the duration of a PROGRAM.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="ProgramEffectiveCompletionDate" type="nc:DateType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>The date on which the Exchange Visitor is expected to complete the requirements of his/her program.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="ProgramEndDate" type="nc:DateType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>The date on which the Exchange Visitor is expected to complete his/her program.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="ProgramEnrolled" type="im:ExchangeVisitorProgramType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>An organized set of sponsored activities or events enrolled by EXCHANGE VISITORs.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="ProgramExpireDate" type="nc:DateType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>The date on which the EXCHANGE VISITOR PROGRAM would terminate.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="ProgramExtensionRequest" type="im:AlienStudentProgramExtensionRequestType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>A record of the alien student request for an extension to participating in the program.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="ProgramIdentification" type="nc:IdentificationType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>An identification of an EXCHANGE VISITOR  PROGRAM.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="ProgramName" type="nc:TextType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>A field denoting the name of an EXCHANGE VISITOR PROGRAM.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="ProgramOriginalStartDate" type="nc:DateType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>The date on which the PROGRAM originally started.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="ProgramParticipationBegunIndicator" type="niem-xsd:boolean" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>True if the person has begun participation in his/her program; false otherwise.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="ProgramPurposeText" type="nc:TextType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>A field detailing the purpose of the PROGRAM.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="ProgramStartDate" type="nc:DateType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>The date in which the program begins.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="ProgramStatusChangeDate" type="nc:DateType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>The most recent date on which the PROGRAM status changed.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="ProgramSupervisionArrangementText" type="nc:TextType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>A field detailing supervision arrangements conducted by the PROGRAM.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="ProgramTerminationDate" type="nc:DateType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>The date on which program participation will terminate.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="ProgramTerminationText" type="nc:TextType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>A field indicating free text about the program termination.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="ProjectedReleaseDate" type="nc:DateType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>The date on which the alien is predicted to be released.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="ReimbursementPaidIndicator" type="niem-xsd:boolean" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>True if the alien student has reimbursed the school for the costs of education; false otherwise.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="RelativeLocationAugmentation" type="im:RelativeLocationAugmentationType" substitutionGroup="s:Augmentation">
+    <xsd:annotation>
+      <xsd:documentation>Additional information about a relative location.</xsd:documentation>
+      <xsd:appinfo>
+        <i:AppliesTo i:namespace="http://niem.gov/niem/niem-core/2.0" i:name="RelativeLocationType"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="RelativeLocationDistanceMeasure" type="nc:LengthMeasureType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>A measure of the distance from the location relative to a starting point.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="ReleaseConditionText" type="nc:TextType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>A field indicating the condition of the detainees release from custody.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="ReleaseReason" type="im:DetentionReleaseReasonType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>The reason for the release of the alien from a detention facility.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="ReleaseReasonCode" type="im:DetentionReleaseReasonCodeType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>A DETENTION REASON TYPE for the release of a detainee.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="ReleaseReasonDescriptionText" type="nc:TextType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>A text that describes the DETENTION REASON TYPE for the release of a detainee.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="RemovalOrderDate" type="nc:DateType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>The date on which the order of deportation, exclusion or removal was entered.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="Request" type="im:RequestType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>A request made to the Department of Homeland Security (DHS) / Immigration and Customs Enforcement (ICE) by the alien student.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="RequestCode" type="nc:TextType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>A field indicating the kind of request made to the DHS by an alien student.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="RequestDecisionDate" type="nc:DateType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>The date on which an adjudication decision was recorded for the alien student request.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="RequestStatus" type="im:RequestStatusType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>A status of a request made by an alien student.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="RequestStatusCode" type="nc:TextType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>A field indicating the description of status related to an alien student request.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="RequestedDeportationDate" type="nc:DateType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>The date on which the alien needs to be removed from the United States based on the removal order.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="SEVISStatusChangedDate" type="nc:DateType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>The date on which the Exchange Visitors SEVIS status changed.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="SchoolOwner" type="nc:PersonType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>A person who has legal ownership title of a school.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="SchoolProvidedTermFundsAmount" type="nc:AmountType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>A number indicating the amount of funds supplied to the alien student by the school during the term.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="SchoolProvidedTermFundsCommentText" type="nc:TextType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>A field indicating free text explaining the funds supplied to the alien student by the school.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="SchoolTermLivingExpenseTotalAmount" type="nc:AmountType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>A number indicating the alien students living expenses for the school term.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="SearchOfficer" type="im:ICEEmployeeType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>The date on which the alien was searched by Department of Homeland Security (DHS) Immigration and Customs Enforcement (ICE) Employee during booking.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="SentenceDate" type="nc:DateType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>The date on which the convicting authority sentenced the alien.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="SentenceTime" type="nc:NumericType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>A number indicating the length of sentence issued by the convicting authority to the alien.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="SponsorReceivedUSGovernmentFundIndicator" type="niem-xsd:boolean" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>True if the Program Sponsor has received funding support from one or more United States (U.S.) agencies; false otherwise.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="StateGovernmentSponsorIndicator" type="niem-xsd:boolean" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>A flag indicating whether the STATE GOVERNMENT is the sponsor of the PROGRAM.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="StatusAugmentation" type="im:StatusAugmentationType" substitutionGroup="s:Augmentation">
+    <xsd:annotation>
+      <xsd:documentation>Additional information about a status.</xsd:documentation>
+      <xsd:appinfo>
+        <i:AppliesTo i:namespace="http://niem.gov/niem/niem-core/2.0" i:name="StatusType"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="StatusReasonText" type="nc:TextType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>The reason for the status.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="StayActionCode" type="nc:TextType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>A response to the aliens request for stay of deportation.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="StayDecisionDate" type="nc:DateType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>The date on which the decision for request for stay of deportation was made.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="StayExpirationDate" type="nc:DateType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>The date on which the aliens stay of DEPORTATION expires.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="StayRequestDate" type="nc:DateType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>The date on which the ALIEN filed for stay of deportation.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="StudentEducationLevelCode" type="im:StudentEducationLevelCodeType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>A kind of educational level the alien STUDENT wishes to achieve.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="StudentEducationLevelDescriptionText" type="nc:TextType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>A field indicating the description for the associated EDUCATION LEVEL CODE.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="StudentEmployment" type="im:AlienStudentEmploymentType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>The details about the current authorized employment of an alien student.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="StudentTerminationClassification" type="im:StudentTerminationType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>A classification of the reason why an alien STUDENT is no longer enrolled.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element substitutionGroup="im:Termination" name="StudentTerminationCode" type="im:StudentTerminationCodeType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>A termination of an aliens status as a student.</xsd:documentation>
+      <xsd:appinfo>
+        <i:Base i:name="Termination"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="StudentTerminationDescriptionText" type="nc:TextType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>A field indicating the description for the associated STUDENT TERMINATION CODE.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element substitutionGroup="im:Termination" name="StudentTerminationText" type="nc:TextType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>A field describing the valid reason why an alien student is terminated.</xsd:documentation>
+      <xsd:appinfo>
+        <i:Base i:name="Termination"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="SubjectDescriptionText" type="nc:TextType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>A field indicating the remarks about the Exchange Visitors subject field of study.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="TermTuitionFeeTotalAmount" type="nc:AmountType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>A number indicating the total amount of tuition and fees to be paid by the alien student for the school term.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="Termination" abstract="true">
+    <xsd:annotation>
+      <xsd:documentation>A valid reason why an alien student is terminated.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="TerminationReasonText" type="nc:TextType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>A field indicating free text describing the reason behind why an alien student terminated their curriculum.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="TitleOfCertifyingOfficerText" type="nc:TextType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>The title of the officer responsible for certification of the PROGRAM</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="TotalAgencyFundingSupportAmount" type="nc:AmountType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>A number indicating the total funding amount provided by a US Government agency to the Exchange Visitor (EV), in order to support his/her participation within a designated EV Program.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="TotalHomeGovernmentFundingSupportAmount" type="nc:AmountType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>A number indicating the funding amount provided by the Exchange Visitors (EV) home government to the Exchange Visitor, in order to support his/her participation within a designated EV Program.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="TotalInternationalOrganizationFundingSupportAmount" type="nc:AmountType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>A number indicating the funding amount provided by an International Organization to the Exchange Visitor (EV), in order to support his/her participation within a designated EV Program.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="TotalOtherOrganizationFundingSupportAmount" type="nc:AmountType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>A funding amount provided by other organizations to the Exchange Visitor (EV), in order to support his/her participation within a designated EV Program.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="TotalPersonalFundAmount" type="nc:AmountType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>A number indicating the Exchange Visitors (EV) personal funds, if any, being used for his/her support for attending a designated EV Program.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="TotalSponsorFundingSupportAmount" type="nc:AmountType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>A number indicating the funding amount provided by the Program Sponsor to the Exchange Visitor (EV), in order to support his/her participation within a designated EV Program.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="Transfer" type="im:TransferType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>The transfer of an alien student from one school to another.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="TransferCompletedIndicator" type="niem-xsd:boolean" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>True if the transfer of an alien student has been completed; false otherwise.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="TransferCompletionDate" type="nc:DateType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>The date on which the transfer of the alien student was completed.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="TransferEffectiveDate" type="nc:DateType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>The date on which the transfer of the alien student is intended to become effective.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="TransferRequestStatus" type="im:TransferRequestStatusType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>A field describing the status of the Transfer Request submitted by the alien student.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="TransferRequestStatusCode" type="nc:TextType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>A text string indicating the status of the Transfer Request submitted by the alien student.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="TravelDocumentReceivedDate" type="nc:DateType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>The date on which the aliens travel documents were received.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="TravelDocumentRequestDate" type="nc:DateType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>The date on which the foreign government was asked for travel documents.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="TreatAsAdultIndicator" type="niem-xsd:boolean" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>A flag indicating whether the alien should be treated as an adult.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="TwoYearGovernmentFinancialSupportIndicator" type="niem-xsd:boolean" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>True if the Exchange Visitor (EV) is subject to a two year residence requirement due to receiving financial support from either the U.S. or EVs Government; false otherwise.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="TwoYearRequirementIndicator" type="niem-xsd:boolean" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>True if the Exchange Visitor (EV) is subject to a two year residence requirement as a result of G-1, G-2, or G-3 program participation and funding receipt from current program sponsor; false otherwise.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="TwoYearSkillsIndicator" type="niem-xsd:boolean" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>True if the Exchange Visitor (EV) is subject to a two year home-country physical presence requirement due to EVs position being on the short supply skill-list within EVs home country; false otherwise.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+</xsd:schema>
