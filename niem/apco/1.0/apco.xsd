@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema targetNamespace="http://niem.gov/niem/apco/1.0" version="1" xmlns:i="http://niem.gov/niem/appinfo/1.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:s="http://niem.gov/niem/structures/1.0" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:apco="http://niem.gov/niem/apco/1.0">
+  <xsd:annotation>
+    <xsd:documentation>The Association of Public-Safety Communications Officials (APCO) - International, Inc</xsd:documentation>
+    <xsd:appinfo>
+      <i:ConformantIndicator>true</i:ConformantIndicator>
+    </xsd:appinfo>
+  </xsd:annotation>
+  <xsd:import schemaLocation="../../structures/1.0/structures.xsd" namespace="http://niem.gov/niem/structures/1.0"/>
+  <xsd:import namespace="http://niem.gov/niem/appinfo/1.0" schemaLocation="../../appinfo/1.0/appinfo.xsd"/>
+  <xsd:complexType name="AlarmEventCategoryCodeType">
+    <xsd:annotation>
+      <xsd:documentation>A code set enumerating types of alarm event.</xsd:documentation>
+      <xsd:appinfo>
+        <i:Base i:namespace="http://niem.gov/niem/structures/1.0" i:name="Object"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:simpleContent>
+      <xsd:extension base="apco:AlarmEventCategorySimpleCodeType">
+        <xsd:attributeGroup ref="s:SimpleObjectAttributeGroup"/>
+      </xsd:extension>
+    </xsd:simpleContent>
+  </xsd:complexType>
+  <xsd:simpleType name="AlarmEventCategorySimpleCodeType">
+    <xsd:annotation>
+      <xsd:documentation>A code set enumerating types of alarm event.</xsd:documentation>
+      <xsd:appinfo>
+        <i:Base i:namespace="http://niem.gov/niem/structures/1.0" i:name="Object"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:restriction base="xsd:token">
+      <xsd:enumeration value="BURG">
+        <xsd:annotation>
+          <xsd:documentation>Burglary</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="Comm">
+        <xsd:annotation>
+          <xsd:documentation>Communication Fail</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="FIRE">
+        <xsd:annotation>
+          <xsd:documentation>Fire</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="Holdup">
+        <xsd:annotation>
+          <xsd:documentation>Holdup / Duress</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="Medical">
+        <xsd:annotation>
+          <xsd:documentation>Medical Alarm</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:complexType name="AlarmEventLocationCategoryCodeType">
+    <xsd:annotation>
+      <xsd:documentation>A code set enumerating the kinds of location at which an alarm event occurs.</xsd:documentation>
+      <xsd:appinfo>
+        <i:Base i:namespace="http://niem.gov/niem/structures/1.0" i:name="Object"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:simpleContent>
+      <xsd:extension base="apco:AlarmEventLocationCategorySimpleCodeType">
+        <xsd:attributeGroup ref="s:SimpleObjectAttributeGroup"/>
+      </xsd:extension>
+    </xsd:simpleContent>
+  </xsd:complexType>
+  <xsd:simpleType name="AlarmEventLocationCategorySimpleCodeType">
+    <xsd:annotation>
+      <xsd:documentation>A code set enumerating the kinds of location at which an alarm event occurs.</xsd:documentation>
+      <xsd:appinfo>
+        <i:Base i:namespace="http://niem.gov/niem/structures/1.0" i:name="Object"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:restriction base="xsd:token">
+      <xsd:enumeration value="commercial"/>
+      <xsd:enumeration value="residential"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:complexType name="AlarmEventResponseActionCodeType">
+    <xsd:annotation>
+      <xsd:documentation>A code set enumerating actions requested of an alarm event responder.</xsd:documentation>
+      <xsd:appinfo>
+        <i:Base i:namespace="http://niem.gov/niem/structures/1.0" i:name="Object"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:simpleContent>
+      <xsd:extension base="apco:AlarmEventResponseActionSimpleCodeType">
+        <xsd:attributeGroup ref="s:SimpleObjectAttributeGroup"/>
+      </xsd:extension>
+    </xsd:simpleContent>
+  </xsd:complexType>
+  <xsd:simpleType name="AlarmEventResponseActionSimpleCodeType">
+    <xsd:annotation>
+      <xsd:documentation>A code set enumerating actions requested of an alarm event responder.</xsd:documentation>
+      <xsd:appinfo>
+        <i:Base i:namespace="http://niem.gov/niem/structures/1.0" i:name="Object"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:restriction base="xsd:token">
+      <xsd:enumeration value="notify"/>
+      <xsd:enumeration value="respond"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+</xsd:schema>

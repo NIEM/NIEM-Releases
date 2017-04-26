@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" 
+targetNamespace="http://niem.gov/niem/external/dhs-gmo/AS/mobileObject/1.0.0" 
+xmlns:mo="http://niem.gov/niem/external/dhs-gmo/AS/mobileObject/1.0.0" 
+xmlns:gml="http://niem.gov/niem/external/ogc-gml/3.1.1/dhs-gmo/1.0.0"
+xmlns:xlink="http://niem.gov/niem/external/w3c-xlink/1.0/dhs-gmo/1.0.0"
+ elementFormDefault="qualified" version="1.0">
+	<annotation>
+		<documentation>
+     		      Draft moving object  schema for niem based on Geography Markup Language (GML).
+     		      
+     		2006-09-28 Changed namespaces and schema locations
+     		
+				ns old	http://niem.gov/niem/external/gml/3.1.1/dhs-gmo/1.0.0
+				ns new	http://niem.gov/niem/external/ogc-gml/3.1.1/dhs-gmo/1.0.0	
+				from		../../../../gml/3.1.1/dhs-gmo/1.0.0/gml.xsd
+				to			../../../../ogc-gml/3.1.1/dhs-gmo/1.0.0/gml.xsd
+					
+				ns old	http://niem.gov/niem/external/xlink/1.0.0/dhs-gmo/1.0.0
+				ns new	http://niem.gov/niem/external/w3c-xlink/1.0/dhs-gmo/1.0.0		
+				from		../../../../xlink/1.0.0/dhs-gmo/1.0.0/xlinks.xsd
+				to			../../../../w3c-xlink/1.0/dhs-gmo/1.0.0/xlinks.xsd
+   
+     		2006-09-22 Changed namespaces following NIEM conventions
+     		   1) targetNamespace	http://niem.gov/niem/external/dhs-gmo/AS/mobileObject/1.0.0
+     		   2) mo namespace		http://niem.gov/niem/external/dhs-gmo/AS/mobileObject/1.0.0
+     		   3) gml namespace		http://niem.gov/niem/external/gml/3.1.1/dhs-gmo/1.0.0
+     		   4) xlink namespace		http://niem.gov/niem/external/xlink/1.0.0/dhs-gmo/1.0.0
+
+  			2006-09-04 Changes
+			
+				1.  Change namespaces following conventions proposed in OGC 05-065r3 to include version and profile information, 
+				      except that complete version is used instead of BNF "principle version".  
+				      a) targetNamespace was http://niem.gov/niemApp/0.3/mo; changed to http://www.opengis.net/gml/3.1.1/DHS-GMO/1.0.0/AS/MO/0.4.0
+					  b) gml namespace was http://www.opengis.net/gml; changed to http://www.opengis.net/gml/3.1.1/DHS-GMO/1.0.0					  
+					  c) xlink namespace was http://www.w3.org/1999/xlink; changed to http://www.w3.org/1999/xlink/1.0.0/OGC-DHS-GMO/1.0.0
+     		      
+	Note for schema readers:  The XML/Schema spec does not require processing implementations to transitively import definitions from imported schemas.   To assure that all required definitions are available, a schema must re-import the schemas that are imported by the schemas it imports.   Such re-imports are noted in the documentation.
+
+	      </documentation>
+	</annotation>
+	<!-- ============================================================== -->
+	<!-- ==================  includes and imports  ======================= -->
+	  <import namespace="http://niem.gov/niem/external/ogc-gml/3.1.1/dhs-gmo/1.0.0" 
+			   schemaLocation="../../../../ogc-gml/3.1.1/dhs-gmo/1.0.0/gml.xsd"/>
+	<!-- ============================================================== -->
+	<import namespace="http://niem.gov/niem/external/w3c-xlink/1.0/dhs-gmo/1.0.0" 	
+			schemaLocation="../../../../w3c-xlink/1.0/dhs-gmo/1.0.0/xlinks.xsd"/> 
+	<!-- ============================================================== -->
+	<element name="geometryProperty" type="gml:GeometryPropertyType"/>
+	<!-- ============================================================== -->
+	<complexType name="MovingObjectStatusType">
+		<annotation>
+			<appinfo source="urn:opengis:specification:gml:schema-xsd:dynamicFeature:3.1.1"/>
+			<documentation xml:lang="en">
+             This type encapsulates various dynamic properties of moving objects        
+             (points, lines, regions). It is useful for dealing with features whose        
+             geometry or topology changes over time.    It is different from the gml:MovingObjectStatusType
+             in that it  uses gml:pointProperty instead of gml:location,
+             which is deprecated in (ISO) GML v3.2 </documentation>
+		</annotation>
+		<complexContent>
+			<extension base="gml:AbstractTimeSliceType">
+				<sequence>
+					<element ref="gml:pointProperty"/>
+					<element name="speed" type="gml:MeasureType" minOccurs="0"/>
+					<element name="bearing" type="gml:DirectionPropertyType" minOccurs="0"/>
+					<element name="acceleration" type="gml:MeasureType" minOccurs="0"/>
+					<element name="elevation" type="gml:MeasureType" minOccurs="0"/>
+					<element ref="gml:status" minOccurs="0"/>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<!-- ================================================================== -->
+	<element name="MovingObjectStatus" type="mo:MovingObjectStatusType" substitutionGroup="gml:_TimeSlice">
+		<annotation>
+			<appinfo source="urn:opengis:specification:gml:schema-xsd:dynamicFeature:3.1.1"/>
+		</annotation>
+	</element>
+	<!-- ================================================================== -->
+	<complexType name="TrackType">
+		<annotation>
+			<documentation xml:lang="en">The track of a moving object is a sequence of specialized timeslices that indicate the status of the object.</documentation>
+		</annotation>
+		<complexContent>
+			<restriction base="gml:HistoryPropertyType">
+				<sequence>
+					<choice maxOccurs="unbounded">
+						<element ref="mo:MovingObjectStatus"/>
+					</choice>
+				</sequence>
+			</restriction>
+		</complexContent>
+	</complexType>
+	<!-- ============================================================== -->
+	<element name="track" type="mo:TrackType" substitutionGroup="gml:history">
+		<annotation/>
+	</element>
+	<!-- ================================================================== -->
+	<complexType name="MovingObjectType">
+		<annotation>
+			<documentation>This type mirrors the gml:MovingObjectType; it includes a mo:track with mo:MovingObjectStatus elements instead of a gml:track with gml:MovingObjectStatus elements.</documentation>
+		</annotation>
+		<complexContent>
+			<extension base="gml:AbstractFeatureType">
+				<sequence>
+					<element ref="mo:geometryProperty" minOccurs="0">
+						<annotation>
+							<documentation>This element could be replaced by a gml:geometryMember element, except that "members" property elements by convention are for members of a collection or union, whereas "property" property elements are for non-member properties.  See 7.4 GML Model and Syntax:  "Furthermore, the property semantics, which is indicated by the name of the element representing the property, and the property value, which is given by the content of the property element, are distinguished."</documentation>
+						</annotation>
+					</element>
+					<element ref="gml:validTime" minOccurs="0"/>
+					<element ref="mo:track" minOccurs="0"/>
+					<element ref="gml:dataSource" minOccurs="0"/>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<!-- ================================================================== -->
+	<element name="MovingObject" type="mo:MovingObjectType" substitutionGroup="gml:_Feature"/>
+	<!-- ================================================================== -->
+	<complexType name="MovingObjectCollectionType">
+		<annotation>
+			<documentation>A moving object collection may possess a track and/or a timestamp.</documentation>
+		</annotation>
+		<complexContent>
+			<extension base="gml:AbstractFeatureCollectionType">
+				<sequence>
+					<element ref="mo:geometryProperty" minOccurs="0">
+						<annotation>
+							<documentation>This element could be replaced by a gml:geometryMember element, except that "members" property elements by convention are for members of a collection or union, whereas "property" property elements are for non-member properties.  See 7.4 GML Model and Syntax:  "Furthermore, the property semantics, which is indicated by the name of the element representing the property, and the property value, which is given by the content of the property element, are distinguished."</documentation>
+						</annotation>
+					</element>
+					<element ref="gml:validTime" minOccurs="0"/>
+					<element ref="mo:track" minOccurs="0"/>
+					<element ref="gml:dataSource" minOccurs="0"/>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<!-- ================================================================== -->
+	<element name="MovingObjectCollection" type="mo:MovingObjectCollectionType" substitutionGroup="gml:_FeatureCollection"/>
+	<!-- ============================================================== -->
+</schema>

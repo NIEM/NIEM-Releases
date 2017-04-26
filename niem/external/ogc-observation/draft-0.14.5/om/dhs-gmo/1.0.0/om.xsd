@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema 
+xmlns="http://www.w3.org/2001/XMLSchema" 
+targetNamespace="http://niem.gov/niem/external/ogc-observation/draft-0.14.5/om/dhs-gmo/1.0.0" 
+xmlns:om="http://niem.gov/niem/external/ogc-observation/draft-0.14.5/om/dhs-gmo/1.0.0" 
+elementFormDefault="qualified" attributeFormDefault="unqualified" version="pre-release">
+	<annotation>
+		<documentation>om.xsd
+The complete Observations and Measurements schema
+Copyright © 2005 Open Geospatial Consortium - see http://www.opengeospatial.org/about/?page=ipr
+OGC 05-087r4 page 55 © OGC 2006 – All rights reserved 
+
+		DHS Changes 
+		    2006-09-22 Changed namespaces following NIEM conventions
+			 1) targetNamespace http://niem.gov/niem/external/ogc-observation/draft-0.14.5/om/dhs-gmo/1.0.0
+			 2) om namespace		http://niem.gov/niem/external/ogc-observation/draft-0.14.5/om/dhs-gmo/1.0.0
+			 
+			2006-09-18 versioned namespace to match OGC 05-087r4 source, which specifies Version: 0.14.5
+
+</documentation>
+	</annotation>
+	<!-- ====================================================================== -->
+	<include schemaLocation="./observationSpecializations.xsd"/>
+	<include schemaLocation="./commonObservation.xsd"/>
+	<include schemaLocation="./procedureSpecializations.xsd"/>
+	<!-- ====================================================================== -->
+</schema>

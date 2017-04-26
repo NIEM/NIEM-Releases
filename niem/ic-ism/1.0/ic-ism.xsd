@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema targetNamespace="http://niem.gov/niem/ic-ism/1.0" version="1" xmlns:i="http://niem.gov/niem/appinfo/1.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:s="http://niem.gov/niem/structures/1.0" xmlns:ism="http://niem.gov/niem/ic-ism/1.0" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <xsd:annotation>
+    <xsd:documentation>Intelligence Community Information Security Marking</xsd:documentation>
+    <xsd:appinfo>
+      <i:ConformantIndicator>true</i:ConformantIndicator>
+    </xsd:appinfo>
+  </xsd:annotation>
+  <xsd:import schemaLocation="../../structures/1.0/structures.xsd" namespace="http://niem.gov/niem/structures/1.0"/>
+  <xsd:import namespace="http://niem.gov/niem/appinfo/1.0" schemaLocation="../../appinfo/1.0/appinfo.xsd"/>
+  <xsd:simpleType name="ClassificationCodeSimpleType">
+    <xsd:annotation>
+      <xsd:documentation>A simple type in which a name token is restricted to the US,
+non-US, and joint classification portionmark abbreviations from 
+the CAPCO Register.</xsd:documentation>
+      <xsd:appinfo>
+        <i:Base i:namespace="http://niem.gov/niem/structures/1.0" i:name="Object"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:restriction base="xsd:token">
+      <xsd:enumeration value="C"/>
+      <xsd:enumeration value="CTS"/>
+      <xsd:enumeration value="CTS-B"/>
+      <xsd:enumeration value="CTS-BALK"/>
+      <xsd:enumeration value="CTSA"/>
+      <xsd:enumeration value="NC"/>
+      <xsd:enumeration value="NCA"/>
+      <xsd:enumeration value="NR"/>
+      <xsd:enumeration value="NS"/>
+      <xsd:enumeration value="NS-A"/>
+      <xsd:enumeration value="NS-S"/>
+      <xsd:enumeration value="NSAT"/>
+      <xsd:enumeration value="NU"/>
+      <xsd:enumeration value="R"/>
+      <xsd:enumeration value="S"/>
+      <xsd:enumeration value="TS"/>
+      <xsd:enumeration value="U">
+        <xsd:annotation>
+          <xsd:documentation>US, non-US or joint UNCLASSIFIED.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:complexType name="SecurityMetadataType">
+    <xsd:annotation>
+      <xsd:documentation>Security metadata from the IC Information Security Marking (IC ISM) Data Element Dictionary.</xsd:documentation>
+      <xsd:appinfo>
+        <i:Base i:namespace="http://niem.gov/niem/structures/1.0" i:name="MetadataType"/>
+        <i:AppliesTo i:namespace="http://niem.gov/niem/structures/1.0" i:name="Object"/>
+        <i:AppliesTo i:namespace="http://niem.gov/niem/structures/1.0" i:name="Association"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="s:ComplexObjectType">
+        <xsd:attributeGroup ref="ism:SecurityMetadataTypeAttributeGroup"/>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:attributeGroup name="SecurityMetadataTypeAttributeGroup">
+    <xsd:attribute ref="ism:CategoryOfExemptedSource" use="optional"/>
+    <xsd:attribute ref="ism:FGIsourceOpen" use="optional"/>
+    <xsd:attribute ref="ism:FGIsourceProtected" use="optional"/>
+    <xsd:attribute ref="ism:SARIdentifier" use="optional"/>
+    <xsd:attribute ref="ism:SCIcontrols" use="optional"/>
+    <xsd:attribute ref="ism:classification" use="optional"/>
+    <xsd:attribute ref="ism:classificationReason" use="optional"/>
+    <xsd:attribute ref="ism:classifiedBy" use="optional"/>
+    <xsd:attribute ref="ism:dateOfExemptedSource" use="optional"/>
+    <xsd:attribute ref="ism:declassDate" use="optional"/>
+    <xsd:attribute ref="ism:declassEvent" use="optional"/>
+    <xsd:attribute ref="ism:declassException" use="optional"/>
+    <xsd:attribute ref="ism:declassManualReview" use="optional"/>
+    <xsd:attribute ref="ism:derivedFrom" use="optional"/>
+    <xsd:attribute ref="ism:disseminationControls" use="optional"/>
+    <xsd:attribute ref="ism:nonICmarkings" use="optional"/>
+    <xsd:attribute ref="ism:ownerProducer" use="optional"/>
+    <xsd:attribute ref="ism:releasableTo" use="optional"/>
+  </xsd:attributeGroup>
+  <xsd:attribute name="CategoryOfExemptedSource" type="xsd:NMTOKENS">
+    <xsd:annotation>
+      <xsd:documentation>One or more tokens indicating that a source that is exempted from automatic declassification applies. Specify OADR, X1, X2, ..., X8. If more than one applies, use a space-delimited list.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:attribute>
+  <xsd:attribute name="FGIsourceOpen" type="xsd:NMTOKENS">
+    <xsd:annotation>
+      <xsd:documentation>Non-US classification portion marking for foreign government information in a document portion. Use this attribute to record a source country when the intent is to post the document to a shared space with the source identified.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:attribute>
+  <xsd:attribute name="FGIsourceProtected" type="xsd:NMTOKENS">
+    <xsd:annotation>
+      <xsd:documentation>Non-US classification portion marking for foreign government information in a document portion. Use this attribute to record a source country when the intent is to filter out the identity of the source prior to posting the document to a shared space.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:attribute>
+  <xsd:attribute name="SARIdentifier" type="xsd:NMTOKENS">
+    <xsd:annotation>
+      <xsd:documentation>Authorized Special Access Required program digraph(s) or trigraph(s) preceded by SAR-. Either (a) a single digraph or trigraph or (b) a space-delimited list of digraphs or trigraphs. Example: SAR-ABC SAR-DEF ...</xsd:documentation>
+    </xsd:annotation>
+  </xsd:attribute>
+  <xsd:attribute name="SCIcontrols" type="xsd:NMTOKENS">
+    <xsd:annotation>
+      <xsd:documentation>Authorized abbreviation(s) of SCI control system(s). Either (a) a single abbreviation or (b) a space-delimited list of abbreviations in the order prescribed in the CAPCO Register.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:attribute>
+  <xsd:attribute name="classification" type="ism:ClassificationCodeSimpleType">
+    <xsd:annotation>
+      <xsd:documentation>A name token is restricted to the US, non-US, and joint classification portionmark abbreviations from the CAPCO Register.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:attribute>
+  <xsd:attribute name="classificationReason" type="xsd:string">
+    <xsd:annotation>
+      <xsd:documentation>A text string containing one or more paragraph numbers, 1.4(a) through 1.4(h), taken from E.O. 12958, as amended. Enter the paragraph references as they should appear in a classification/declassification block.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:attribute>
+  <xsd:attribute name="classifiedBy" type="xsd:string">
+    <xsd:annotation>
+      <xsd:documentation>Use as specified by E.O. 12958.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:attribute>
+  <xsd:attribute name="dateOfExemptedSource" type="xsd:date">
+    <xsd:annotation>
+      <xsd:documentation>A specific date, in the format YYYY-MM-DD. Used in conjunction with attribute typeOfExemptedSource. If there are multiple exempted sources, specify the date of the exempted source that has the most recent date.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:attribute>
+  <xsd:attribute name="declassDate" type="xsd:date">
+    <xsd:annotation>
+      <xsd:documentation>A specific date, in the format YYYY-MM-DD, at which the applicable information is automatically declassified.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:attribute>
+  <xsd:attribute name="declassEvent" type="xsd:string">
+    <xsd:annotation>
+      <xsd:documentation>A textual description of an event that triggers declassification.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:attribute>
+  <xsd:attribute name="declassException" type="xsd:NMTOKENS">
+    <xsd:annotation>
+      <xsd:documentation>One or more of the exceptions to 25-year declassification: specify 25X1-human, 25X1, 25X2, ..., 25X9. If more than one exception applies, use a space-delimited list. If 25X1 human applies, it should be first in a list.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:attribute>
+  <xsd:attribute name="declassManualReview" type="xsd:boolean">
+    <xsd:annotation>
+      <xsd:documentation>A true/false indication that manual review is required for declassification. Use this attribute to force the appearance of //MR in the header and footer marking titles. Use this attribute ONLY when it is necessary to override the business logic applied to classification and control markings in the document to determine whether manual review is required.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:attribute>
+  <xsd:attribute name="derivedFrom" type="xsd:string">
+    <xsd:annotation>
+      <xsd:documentation>A text string containing (a) the title and date of a specific source document, or (b) the title and date of an organization classification guide, or (c) the literal string Multiple Sources.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:attribute>
+  <xsd:attribute name="disseminationControls" type="xsd:NMTOKENS">
+    <xsd:annotation>
+      <xsd:documentation>Authorized dissemination control portion mark abbreviation(s). Either (a) a single abbreviation or (b) a space-delimited list of abbreviations in the order shown in the CAPCO Register. Exception: For the REL abbreviation, omit the country code trigraph(s) and instead place the trigraph(s) in the releasableTo attribute value.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:attribute>
+  <xsd:attribute name="nonICmarkings" type="xsd:NMTOKENS">
+    <xsd:annotation>
+      <xsd:documentation>Authorized non-IC portion marking abbreviation(s) from the CAPCO Register. Either (a) a single non-IC abbreviated marking or (b) a space-delimited list of abbreviations in the order shown in the CAPCO Register.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:attribute>
+  <xsd:attribute name="ownerProducer" type="xsd:NMTOKENS">
+    <xsd:annotation>
+      <xsd:documentation>ISO 3166-1 trigraph(s) of the owner or producer country(ies) and/or CAPCO-specified tetragraphs of international organizations. Either (a) a single trigraph or tetragraph or (b) a space-delimited list of trigraphs followed by tetragraphs. Trigraphs must be in alphabetical order and tetragraphs must be in alphabetical order.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:attribute>
+  <xsd:attribute name="releasableTo" type="xsd:NMTOKENS">
+    <xsd:annotation>
+      <xsd:documentation>ISO 3166-1 trigraphic codes of countries to which the associated content can be released. Include USA in all instances. Use a space-delimited list with USA first, followed by the other trigraph(s) in alphabetical order.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:attribute>
+  <xsd:element name="SecurityMetadata" type="ism:SecurityMetadataType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>Security metadata</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+</xsd:schema>

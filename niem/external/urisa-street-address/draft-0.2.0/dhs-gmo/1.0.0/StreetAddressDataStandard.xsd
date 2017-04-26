@@ -1,0 +1,3719 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" 
+targetNamespace="http://niem.gov/niem/external/urisa-street-address/draft-0.2.0/dhs-gmo/1.0.0" 
+xmlns:addr="http://niem.gov/niem/external/urisa-street-address/draft-0.2.0/dhs-gmo/1.0.0" 
+elementFormDefault="qualified" version="0.2">
+	<!-- 
+			2006-09-28 Changes
+				Namespace revision: http://niem.gov/niem/external/urisa-street-address/draft-0.2.0/dhs-gmo/1.0.0
+             2006-09-22 Changes
+				Namespace per NIEM convention: http://niem.gov/niem/external/street-address/0.2.0/dhs-gmo/1.0.0
+
+  			2006-09-05 Changes
+				1.  Change namespaces following conventions proposed in OGC 05-065r3 to include version and profile information, except that complete version is used instead of BNF "principle version"; include schema locations.
+				      a) targetNamespace was http://wfs.co.fulton.ga.us/urisa/addr_std/addr; changed to http://wfs.co.fulton.ga.us/urisa/addr_std/addr/0.2.0/DHS-GMO/1.0.0
+
+	2006-01-15 elementFormDefault="qualified" 
+
+	2005-12-30 changed addr.xsd local name of target namespace to addr, added version attribute
+	it should probably also be elementFormDefault="qualified" 
+	
+	Draft Address Standard, version 0.2 being prepared and tested by a Working Group coordinated by URISA
+and NENA and the Census Bureau for submittal to the FGDC. -->
+	<!-- During the initial draft period the rddl can be found at http://wfs.co.fulton.ga .us/urisa/addr_std/addr.xsd -->
+	<xsd:simpleType name="MultiPolygon_WKT">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="en">
+MultiPolygon WKT as defined in "OpenGIS Simple Features
+Specification for SQL Revision 1.0" published 13 March,
+1998. A MultiPolygon is defined in section 2.1.12 and
+its Well Known Text Representation is documented in
+setion 3.2.5.2.
+</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value=".*"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="MultiLinestring_WKT">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="en">
+MultiLinestringWKT as defined in "OpenGIS Simple
+Features Specification for SQL Revision 1.0" published
+13 March, 1998. A MultiLinestring is defined in section
+2.1.8 and its Well Known Text Representation is
+documented in setion 3.2.5.2.
+</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value=".*"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="Point_WKT">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="en">
+Point WKT as defined in "OpenGIS Simple Features
+Specification for SQL Revision 1.0" published 13 March,
+1998. A Point is defined in section 2.1.3 and its Well
+Known Text Representation is documented in setion
+3.2.5.2.
+</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value=".*"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="AddressNumberPrefix_type">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="en">
+The non-integer portion of the identifier for the house,
+building or other feature which precedes the address
+number itself, as defined by the official address
+authority for the given jurisdiction. 1. This element
+will not be applicable for most addresses. When
+township-range or other non-numeric geographic index
+references precede an address number, they are placed in
+this field. The address number can then be maintained as
+an integer for sorting and quality control tests. 2. If
+necessary, the Separator can be used to separate the
+address number from the prefix or suffix elements in
+constructing the complete address number.
+</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value=".*"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="AddressNumber_type">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="en">
+The numeric identifier for a land parcel, house,
+building or other feature, as defined by the official
+address authority for the given jurisdiction. 1. The
+address number is defined as an integer to support
+address sorting, parity (even/odd) definition, and
+in/out of address range tests. 2. Special care should be
+taken with records where the address number is 0 (zero).
+Occasionally zero is issued as a valid address number
+(e.g. Zero Prince Street, Alexandria, VA 22314) or it
+can be imputed (1/2 Fifth Avenue, New York, NY 10003
+(for which the address number would be 0 and the suffix
+would be "1/2")). More often, though, the address number
+is either missing or non-existent, and null value has
+been converted to zero. 3. Some addresses may contain
+letters, fractions, hyphens, decimals and other
+non-integer content within the complete address number.
+Those non-integer elements should be placed in the
+Address Number Prefix if they appear before the site
+number, or in the Address Number Suffix if they follow
+the number. 4. The address number must be converted to
+text when it is combined with the prefix and suffix into
+a complete address number. 5. If necessary, the
+Separator can be used to separate the address number
+from the prefix or suffix elements in constructing the
+complete address number.
+</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="[0-9]+"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="AddressNumberSuffix_type">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="en">
+The non-integer portion of the identifier for the house,
+building or other feature which follows the address
+number itself, as defined by the official address
+authority for the given jurisdiction. 1. This element
+will not be applicable for most addresses. When
+township-range or other non-numeric geographic index
+references follow an address number, they are placed in
+this field. The address number can then be maintained as
+an integer for sorting and quality control tests. 2. If
+necessary, the Separator can be used to separate the
+address number from the prefix or suffix elements in
+constructing the complete address number.
+</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value=".*"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="Separator_type">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="en">
+A symbol or word required as a separator between
+components of a complex element or class. The separator
+is required for address number ranges and for
+intersection addresses, and it is occasionally needed in
+constructing complete street numbers.
+1. The default separator, an empty space, is implicit
+and is not shown in the syntaxes of complex elements and
+classes. 2. An explicit separator is required for
+address ranges and intersection addresses. 3. Within a
+given dataset, one value should be used consistently
+within a given complex element. 4. For complete street
+numbers, the separator is rarely needed and its use
+should be minimized. As an alternative, the separator
+symbol usually can be included with the address number
+prefix or suffix. 5. The separator is not needed in
+creating fractions (1/2, etc.) for address number
+suffixes. 6. Some address parsing softaware permits the
+use of ampersands to signify intersection addresses. Be
+wary, though--in many programming languages, ampersands
+are reserved for other uses, which could complicate data
+exchange.
+</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value=".*"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<!-- StreetName Content -->
+	<xsd:simpleType name="StreetNameModifier_type">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="en">
+A word or phrase that precedes or follows all other
+elements of the street name and modifies it, but is
+separated from the street name by a street name
+pre-directional and/or pre-type.
+The street name pre-modifier is rarely needed and its
+use should be minimized. The modif ier can be included in
+the Street Name element unless it is separated from the
+street name by a pre-type or a pre-directional.
+</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value=".*"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="StreetNameDirectional_type">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="en">
+A word preceding or following the street name that
+indicates the directional taken by the thoroughfare from
+an arbitrary starting point, or the sector where it is
+located.
+1. Standard USPS English abbreviations are E, W, S, N,
+NE, SE, SW, NW 2. Standard USPS Spanish abbreviations
+are E, O, S, N, NE, SE, SO, NO 3. USPS Publication 28
+recomends abbreviating post-directionals. The Address
+Standards Working Group differs, and recommends storing
+post -directionals fully spelled out, exactly as given by
+the local naming authority, to avoid confusion. For
+example: "NW Jones St": Is it Northwest Jones Street?
+Ned Walter Jones Street? North Walter Jones Street? The
+abbreviations create ambiguity. If stored unabbreviated,
+directionals can be exported as standard abbreviations
+as needed for mailing and other purposes.
+</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:token">
+			<xsd:enumeration value="NORTH">
+				<xsd:annotation>
+					<xsd:documentation>
+often abbreviatable as N
+</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="SOUTH">
+				<xsd:annotation>
+					<xsd:documentation>
+often abbreviatable as S
+</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="EAST">
+				<xsd:annotation>
+					<xsd:documentation>
+often abbreviatable as E
+</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="WEST">
+				<xsd:annotation>
+					<xsd:documentation>
+often abbreviatable as W
+</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="NORTHEAST">
+				<xsd:annotation>
+					<xsd:documentation>
+often abbreviatable as NE
+</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="NORTHWEST">
+				<xsd:annotation>
+					<xsd:documentation>
+often abbreviateable as NW
+</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="SOUTHEAST">
+				<xsd:annotation>
+					<xsd:documentation>
+often abbreviatable as SE
+</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="SOUTHWEST">
+				<xsd:annotation>
+					<xsd:documentation>
+often abbreviateable as SW
+</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="NORTE">
+				<xsd:annotation>
+					<xsd:documentation>
+Spanish word often abbreviateable as N
+</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="NORESTE">
+				<xsd:annotation>
+					<xsd:documentation>
+Spanish word often abbreviateable as NE
+</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="NOROESTE">
+				<xsd:annotation>
+					<xsd:documentation>
+Spanish word often abbreviateable as NW
+</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="SUR">
+				<xsd:annotation>
+					<xsd:documentation>
+Spanish word often abbreviateable as S
+</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="SURESTE">
+				<xsd:annotation>
+					<xsd:documentation>
+Spanish word often abbreviateable as SE
+</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="SUROESTE">
+				<xsd:annotation>
+					<xsd:documentation>
+Spanish word often abbreviateable as SW
+</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="ESTE">
+				<xsd:annotation>
+					<xsd:documentation>
+Spanish word often abbreviateable as E
+</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="OESTE">
+				<xsd:annotation>
+					<xsd:documentation>
+Spanish word often abbreviateable as W
+</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="StreetName_type">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="en">
+Official name of a street as assigned by a local
+governing authority, or an alternate (alias) name that
+is used and recognized, excluding street types,
+directionals, and modifiers.
+1. Each jurisdiction should establish its own list of
+street names and use it as a domain of values to
+validate addresses. Alternate and Official names are
+distinguished by the address attribute "Alias Status
+Attribute" 2. Local addressing authorities are urged to
+follow consistent internal street naming practices, and
+to resolve internal street name inconsistencies,
+especially for numbered streets ("Twentieth" or "20th"
+?), internal capitalization ("McIntyre" or "Mcintyre"
+?), hyphens, and apostrophes. 3. If alternate or
+abbreviated versions of street names are needed for a
+specialized purpose such as mailing or emergency
+dispatch, they can be created in views or export
+routines.
+</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value=".*"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="StreetNameType_type">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="en">
+The element of the complete street name preceding or
+following the street name element that indicates the
+type of street.
+1. A street may have either a pre-type or a post-type,
+or neither, but not both. 2. USPS Publication 28
+provides the best list of pre-types and post-types, but
+it is not exhaustive. 2. USPS Publication 28 provides a
+standard list of street type abbreviations, and
+recommends their use. The Address Standards Working
+Group differs, and recommends storing pre-types and
+post -types fully spelled out, exactly as given by the
+local naming authority, to avoid confusion. If stored
+unabbreviated, directionals can be exported as standard
+abbreviations as needed for mailing and other purposes.
+3. Pre-types are much less common than post -types in
+English. They are typically used for numbered highway
+routes and roads. They are much more common in Spanish
+and French language street names. 4. Occasionally a
+street name may have neither a prefix type or a suffix
+type (e.g., "Broadway.") 5. Names like "County Road 28",
+where the street type occurs in the middle of the name,
+should be treated as a street name with no pre-type or
+post -type.
+</xsd:documentation>
+		</xsd:annotation>
+		<!-- this is an enumeration of all of the valid USPS road types, plus the conditionally permissable
+spanish abbreviations -->
+		<xsd:restriction base="xsd:token">
+			<xsd:enumeration value="ALLEY">
+				<xsd:annotation>
+					<xsd:documentation>
+Abbreviated by USPS as ALY
+</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="ANNEX">
+				<xsd:annotation>
+					<xsd:documentation>
+Abbreviated by USPS as ANX
+</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="ARCADE">
+				<xsd:annotation>
+					<xsd:documentation>
+Abbreviated by USPS as ARC
+</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="AVENUE">
+				<xsd:annotation>
+					<xsd:documentation>
+Abbreviated by USPS as AVE
+</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="BAYOU">
+				<xsd:annotation>
+					<xsd:documentation>
+Abbreviated by USPS as BYU
+</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="BEACH">
+				<xsd:annotation>
+					<xsd:documentation>
+Abbreviated by USPS as BCH
+</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="BEND">
+				<xsd:annotation>
+					<xsd:documentation>
+Abbreviated by USPS as BND
+</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="BLUFF">
+				<xsd:annotation>
+					<xsd:documentation>
+Abbreviated by USPS as BLF
+</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="BLUFFS">
+				<xsd:annotation>
+					<xsd:documentation>
+Abbreviated by USPS as BLFS
+</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="BOTTOM">
+				<xsd:annotation>
+					<xsd:documentation>
+Abbreviated by USPS as BTM
+</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="BOULEVARD">
+				<xsd:annotation>
+					<xsd:documentation>
+Abbreviated by USPS as BLVD
+</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="BRANCH">
+				<xsd:annotation>
+					<xsd:documentation>
+Abbreviated by USPS as BR
+</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="BRIDGE">
+				<xsd:annotation>
+					<xsd:documentation>
+Abbreviated by USPS as BRG
+</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="BROOK">
+				<xsd:annotation>
+					<xsd:documentation>
+Abbreviated by USPS as BRK
+</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="BROOKS">
+				<xsd:annotation>
+					<xsd:documentation>
+Abbreviated by USPS as BRKS
+</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="BURG">
+				<xsd:annotation>
+					<xsd:documentation>
+Abbreviated by USPS as BG
+</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="BURGS">
+				<xsd:annotation>
+					<xsd:documentation>
+Abbreviated by USPS as BGS
+</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="BYPASS">
+				<xsd:annotation>
+					<xsd:documentation>
+Abbreviated by USPS as BYP
+</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="CAMP">
+				<xsd:annotation>
+					<xsd:documentation>
+Abbreviated by USPS as CP
+</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="CANYON">
+				<xsd:annotation>
+					<xsd:documentation>
+Abbreviated by USPS as CYN
+</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="CAPE">
+				<xsd:annotation>
+					<xsd:documentation>
+Abbreviated by USPS as CPE
+</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="CAUSEWAY">
+				<xsd:annotation>
+					<xsd:documentation>
+Abbreviated by USPS as CSWY
+</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="CENTER">
+				<xsd:annotation>
+					<xsd:documentation>
+Abbreviated by USPS as CTR
+</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="CENTERS">
+				<xsd:annotation>
+					<xsd:documentation>
+Abbreviated by USPS as CTRS
+</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="CIRCLE">
+				<xsd:annotation>
+					<xsd:documentation>
+Abbreviated by USPS as CIR
+</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="CIRCLES">
+				<xsd:annotation>
+					<xsd:documentation>
+Abbreviated by USPS as CIRS
+</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="CLIFF">
+				<xsd:annotation>
+					<xsd:documentation>
+Abbreviated by USPS as CLF
+</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="CLIFFS">
+				<xsd:annotation>
+					<xsd:documentation>
+Abbreviated by USPS as CLFS
+</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="CLUB">
+				<xsd:annotation>
+					<xsd:documentation>
+Abbreviated by USPS as CLB
+</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="COMMON">
+				<xsd:annotation>
+					<xsd:documentation>
+Abbreviated by USPS as CMN
+</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="COMMONS">
+				<xsd:annotation>
+					<xsd:documentation>
+Abbreviated by USPS as CMNS
+</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="CORNER">
+				<xsd:annotation>
+					<xsd:documentation>
+Abbreviated by USPS as COR
+</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="CORNERS">
+				<xsd:annotation>
+					<xsd:documentation>
+Abbreviated by USPS as CORS
+</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="COURSE">
+				<xsd:annotation>
+					<xsd:documentation>
+Abbreviated by USPS as CRSE
+</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="COURT">
+				<xsd:annotation>
+					<xsd:documentation>
+Abbreviated by USPS as CT
+</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="COURTS">
+				<xsd:annotation>
+					<xsd:documentation>
+Abbreviated by USPS as CTS
+</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="COVE">
+				<xsd:annotation>
+					<xsd:documentation>
+Abbreviated by USPS as CV
+</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="COVES">
+				<xsd:annotation>
+					<xsd:documentation>
+Abbreviated by USPS as CVS
+</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="CREEK">
+				<xsd:annotation>
+					<xsd:documentation>
+Abbreviated by USPS as CRK
+</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="CRESCENT">
+				<xsd:annotation>
+					<xsd:documentation>
+Abbreviated by USPS as CRES
+</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="CREST">
+				<xsd:annotation>
+					<xsd:documentation>
+Abbreviated by USPS as CRST
+</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="CROSSING">
+				<xsd:annotation>
+					<xsd:documentation>
+Abbreviated by USPS as XING
+</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="CROSSROAD">
+				<xsd:annotation>
+					<xsd:documentation>
+Abbreviated by USPS as XRD
+</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="CROSSROADS">
+				<xsd:annotation>
+					<xsd:documentation>
+Abbreviated by USPS as XRDS
+</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="CURVE">
+				<xsd:annotation>
+					<xsd:documentation>
+Abbreviated by USPS as CURV
+</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="DALE">
+				<xsd:annotation>
+					<xsd:documentation>
+Abbreviated by USPS as DL
+</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="DAM">
+				<xsd:annotation>
+					<xsd:documentation>
+Abbreviated by USPS as DM
+</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="DIVIDE">
+				<xsd:annotation>
+					<xsd:documentation>
+Abbreviated by USPS as DV
+</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="DRIVE">
+				<xsd:annotation>
+					<xsd:documentation>
+Abbreviated by USPS as DR
+</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="DRIVES">
+				<xsd:annotation>
+					<xsd:documentation>
+Abbreviated by USPS as DRS
+</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="ESTATE">
+				<xsd:annotation>
+					<xsd:documentation>
+Abbreviated by USPS as EST
+</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="ESTATES">
+				<xsd:annotation>
+					<xsd:documentation>
+Abbreviated by USPS as ESTS
+</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="EXPRESSWAY">
+				<xsd:annotation>
+					<xsd:documentation>
+Abbreviated by USPS as EXPY
+</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="EXTENSION">
+				<xsd:annotation>
+					<xsd:documentation>
+Abbreviated by USPS as EXT
+</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="EXTENSIONS">
+				<xsd:annotation>
+					<xsd:documentation>
+Abbreviated by USPS as EXTS
+</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="FALL">
+				<xsd:annotation>
+					<xsd:documentation>
+Abbreviated by USPS as FALL
+</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="FALLS">
+				<xsd:annotation>
+					<xsd:documentation>
+Abbreviated by USPS as FLS
+</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="FERRY">
+				<xsd:annotation>
+					<xsd:documentation>
+Abbreviated by USPS as FRY
+</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="FIELD">
+				<xsd:annotation>
+					<xsd:documentation>
+Abbreviated by USPS as FLD
+</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="FIELDS">
+				<xsd:annotation>
+					<xsd:documentation>
+Abbreviated by USPS as FLDS
+</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="FLAT">
+				<xsd:annotation>
+					<xsd:documentation>
+Abbreviated by USPS as FLT
+</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="FLATS">
+				<xsd:annotation>
+					<xsd:documentation>
+Abbreviated by USPS as FLTS
+</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="FORD">
+				<xsd:annotation>
+					<xsd:documentation>
+Abbreviated by USPS as FRD
+</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="FORDS">
+				<xsd:annotation>
+					<xsd:documentation>
+Abbreviated by USPS as FRDS
+</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="FOREST">
+				<xsd:annotation>
+					<xsd:documentation>
+Abbreviated by USPS as FRST
+</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="FORGE">
+				<xsd:annotation>
+					<xsd:documentation>
+Abbreviated by USPS as FRG
+</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="FORGES">
+				<xsd:annotation>
+					<xsd:documentation>
+Abbreviated by USPS as FRGS
+</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="FORK">
+				<xsd:annotation>
+					<xsd:documentation>
+Abbreviated by USPS as FRK
+</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="FORKS">
+				<xsd:annotation>
+					<xsd:documentation>
+Abbreviated by USPS as FRKS
+</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="FORT">
+				<xsd:annotation>
+					<xsd:documentation>
+Abbreviated by USPS as FT
+</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="FREEWAY">
+				<xsd:annotation>
+					<xsd:documentation>
+Abbreviated by USPS as FWY
+</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="GARDEN">
+				<xsd:annotation>
+					<xsd:documentation>
+Abbreviated by USPS as GDN
+</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="GARDENS">
+				<xsd:annotation>
+					<xsd:documentation>
+Abbreviated by USPS as GDNS
+</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="GATEWAY">
+				<xsd:annotation>
+					<xsd:documentation>
+Abbreviated by USPS as GTWY
+</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="GLEN">
+				<xsd:annotation>
+					<xsd:documentation>
+Abbreviated by USPS as GLN
+</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="GLENS">
+				<xsd:annotation>
+					<xsd:documentation>
+Abbreviated by USPS as GLNS
+</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="GREEN">
+				<xsd:annotation>
+					<xsd:documentation>
+Abbreviated by USPS as GRN
+</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="GREENS">
+				<xsd:annotation>
+					<xsd:documentation>
+Abbreviated by USPS as GRNS
+</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="GROVE">
+				<xsd:annotation>
+					<xsd:documentation>
+Abbreviated by USPS as GRV
+</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="GROVES">
+				<xsd:annotation>
+					<xsd:documentation>
+Abbreviated by USPS as GRVS
+</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="HARBOR">
+				<xsd:annotation>
+					<xsd:documentation>
+Abbreviated by USPS as HBR
+</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="HARBORS">
+				<xsd:annotation>
+					<xsd:documentation>
+Abbreviated by USPS as HBRS
+</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="HAVEN">
+				<xsd:annotation>
+					<xsd:documentation>
+Abbreviated by USPS as HVN
+</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="HEIGHTS">
+				<xsd:annotation>
+					<xsd:documentation>
+Abbreviated by USPS as HTS
+</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="HIGHWAY">
+				<xsd:annotation>
+					<xsd:documentation>
+Abbreviated by USPS as HWY
+</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="HILL">
+				<xsd:annotation>
+					<xsd:documentation>
+Abbreviated by USPS as HL
+</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="HILLS">
+				<xsd:annotation>
+					<xsd:documentation>
+Abbreviated by USPS as HLS
+</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="HOLLOW">
+				<xsd:annotation>
+					<xsd:documentation>
+Abbreviated by USPS as HOLW
+</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="INLET">
+				<xsd:annotation>
+					<xsd:documentation>
+Abbreviated by USPS as INLT
+</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="ISLAND">
+				<xsd:annotation>
+					<xsd:documentation>
+Abbreviated by USPS as IS
+</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="ISLANDS">
+				<xsd:annotation>
+					<xsd:documentation>
+Abbreviated by USPS as ISS
+</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="ISLE">
+				<xsd:annotation>
+					<xsd:documentation>
+Abbreviated by USPS as ISLE
+</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="JUNCTION">
+				<xsd:annotation>
+					<xsd:documentation>
+Abbreviated by USPS as JCT
+</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="JUNCTIONS">
+				<xsd:annotation>
+					<xsd:documentation>
+Abbreviated by USPS as JCTS
+</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="KEY">
+				<xsd:annotation>
+					<xsd:documentation>
+Abbreviated by USPS as KY
+</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="KEYS">
+				<xsd:annotation>
+					<xsd:documentation>
+Abbreviated by USPS as KYS
+</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="KNOLL">
+				<xsd:annotation>
+					<xsd:documentation>
+Abbreviated by USPS as KNL
+</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="KNOLLS">
+				<xsd:annotation>
+					<xsd:documentation>KNLS</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="LAKE">
+				<xsd:annotation>
+					<xsd:documentation>
+Abbreviated by USPS as LK
+</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="LAKES">
+				<xsd:annotation>
+					<xsd:documentation>
+Abbreviated by USPS as LKS
+</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="LAND">
+				<xsd:annotation>
+					<xsd:documentation>
+Abbreviated by USPS as LAND
+</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="LANDING">
+				<xsd:annotation>
+					<xsd:documentation>
+Abbreviated by USPS as LNDG
+</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="LANE">
+				<xsd:annotation>
+					<xsd:documentation>
+Abbreviated by USPS as LN
+</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="LIGHT">
+				<xsd:annotation>
+					<xsd:documentation>
+Abbreviated by USPS as LGT
+</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="LIGHTS">
+				<xsd:annotation>
+					<xsd:documentation>
+Abbreviated by USPS as LGTS
+</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="LOAF">
+				<xsd:annotation>
+					<xsd:documentation>
+Abbreviated by USPS as LF
+</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="LOCK">
+				<xsd:annotation>
+					<xsd:documentation>
+Abbreviated by USPS as LCK
+</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="LOCKS">
+				<xsd:annotation>
+					<xsd:documentation>
+Abbreviated by USPS as LCKS
+</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="LODGE">
+				<xsd:annotation>
+					<xsd:documentation>
+Abbreviated by USPS as LDG
+</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="LOOP">
+				<xsd:annotation>
+					<xsd:documentation>
+Abbreviated by USPS as LOOP
+</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="MALL">
+				<xsd:annotation>
+					<xsd:documentation>
+Abbreviated by USPS as MALL
+</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="MANOR">
+				<xsd:annotation>
+					<xsd:documentation>
+Abbreviated by USPS as MNR
+</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="MANORS">
+				<xsd:annotation>
+					<xsd:documentation>
+Abbreviated by USPS as MNRS
+</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="MEADOW">
+				<xsd:annotation>
+					<xsd:documentation>
+Abbreviated by USPS as MDW
+</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="MEADOWS">
+				<xsd:annotation>
+					<xsd:documentation>
+Abbreviated by USPS as MDWS
+</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="MEWS">
+				<xsd:annotation>
+					<xsd:documentation>
+Abbreviated by USPS as MEWS
+</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="MILL">
+				<xsd:annotation>
+					<xsd:documentation>
+Abbreviated by USPS as ML
+</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="MILLS">
+				<xsd:annotation>
+					<xsd:documentation>
+Abbreviated by USPS as MLS
+</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="MISSION">
+				<xsd:annotation>
+					<xsd:documentation>
+Abbreviated by USPS as MSN
+</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="MOTORWAY">
+				<xsd:annotation>
+					<xsd:documentation>
+Abbreviated by USPS as MTWY
+</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="MOUNT">
+				<xsd:annotation>
+					<xsd:documentation>
+Abbreviated by USPS as MT
+</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="MOUNTAIN">
+				<xsd:annotation>
+					<xsd:documentation>
+Abbreviated by USPS as MTN
+</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="MOUNTAINS">
+				<xsd:annotation>
+					<xsd:documentation>
+Abbreviated by USPS as MTNS
+</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="NECK">
+				<xsd:annotation>
+					<xsd:documentation>
+Abbreviated by USPS as NCK
+</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="ORCHARD">
+				<xsd:annotation>
+					<xsd:documentation>
+Abbreviated by USPS as ORCH
+</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="OVAL">
+				<xsd:annotation>
+					<xsd:documentation>
+Abbreviated by USPS as OVAL
+</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="OVERPASS">
+				<xsd:annotation>
+					<xsd:documentation>
+Abbreviated by USPS as OPAS
+</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="PARK">
+				<xsd:annotation>
+					<xsd:documentation>
+Abbreviated by USPS as PARK
+</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="PARKS">
+				<xsd:annotation>
+					<xsd:documentation>
+Abbreviated by USPS as PARK
+</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="PARKWAY">
+				<xsd:annotation>
+					<xsd:documentation>
+Abbreviated by USPS as PKWY
+</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="PARKWAYS">
+				<xsd:annotation>
+					<xsd:documentation>
+Abbreviated by USPS as PKWY
+</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="PASS">
+				<xsd:annotation>
+					<xsd:documentation>
+Abbreviated by USPS as PASS
+</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="PASSAGE">
+				<xsd:annotation>
+					<xsd:documentation>
+Abbreviated by USPS as PSGE
+</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="PATH">
+				<xsd:annotation>
+					<xsd:documentation>
+Abbreviated by USPS as PATH
+</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="PIKE">
+				<xsd:annotation>
+					<xsd:documentation>
+Abbreviated by USPS as PIKE
+</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="PINE">
+				<xsd:annotation>
+					<xsd:documentation>
+Abbreviated by USPS as PNE
+</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="PINES">
+				<xsd:annotation>
+					<xsd:documentation>
+Abbreviated by USPS as PNES
+</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="PLACE">
+				<xsd:annotation>
+					<xsd:documentation>
+Abbreviated by USPS as PL
+</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="PLAIN">
+				<xsd:annotation>
+					<xsd:documentation>
+Abbreviated by USPS as PLN
+</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="PLAINS">
+				<xsd:annotation>
+					<xsd:documentation>
+Abbreviated by USPS as PLNS
+</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="PLAZA">
+				<xsd:annotation>
+					<xsd:documentation>
+Abbreviated by USPS as PLZ
+</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="POINT">
+				<xsd:annotation>
+					<xsd:documentation>
+Abbreviated by USPS as PT
+</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="POINTS">
+				<xsd:annotation>
+					<xsd:documentation>
+Abbreviated by USPS as PTS
+</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="PORT">
+				<xsd:annotation>
+					<xsd:documentation>
+Abbreviated by USPS as PRT
+</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="PORTS">
+				<xsd:annotation>
+					<xsd:documentation>
+Abbreviated by USPS as PRTS
+</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="PRAIRIE">
+				<xsd:annotation>
+					<xsd:documentation>
+Abbreviated by USPS as PR
+</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="RADIAL">
+				<xsd:annotation>
+					<xsd:documentation>
+Abbreviated by USPS as RADL
+</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="RAMP">
+				<xsd:annotation>
+					<xsd:documentation>
+Abbreviated by USPS as RAMP
+</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="RANCH">
+				<xsd:annotation>
+					<xsd:documentation>
+Abbreviated by USPS as RNCH
+</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="RAPID">
+				<xsd:annotation>
+					<xsd:documentation>
+Abbreviated by USPS as RPD
+</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="RAPIDS">
+				<xsd:annotation>
+					<xsd:documentation>
+Abbreviated by USPS as RPDS
+</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="REST">
+				<xsd:annotation>
+					<xsd:documentation>
+Abbreviated by USPS as RST
+</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="RIDGE">
+				<xsd:annotation>
+					<xsd:documentation>
+Abbreviated by USPS as RDG
+</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="RIDGES">
+				<xsd:annotation>
+					<xsd:documentation>
+Abbreviated by USPS as RDGS
+</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="RIVER">
+				<xsd:annotation>
+					<xsd:documentation>
+Abbreviated by USPS as RIV
+</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="ROAD">
+				<xsd:annotation>
+					<xsd:documentation>
+Abbreviated by USPS as RD
+</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="ROADS">
+				<xsd:annotation>
+					<xsd:documentation>
+Abbreviated by USPS as RDS
+</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="ROUTE">
+				<xsd:annotation>
+					<xsd:documentation>
+Abbreviated by USPS as RTE
+</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="ROW">
+				<xsd:annotation>
+					<xsd:documentation>
+Abbreviated by USPS as ROW
+</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="RUE">
+				<xsd:annotation>
+					<xsd:documentation>
+Abbreviated by USPS as RUE
+</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="RUN">
+				<xsd:annotation>
+					<xsd:documentation>
+Abbreviated by USPS as RUN
+</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="SHOAL">
+				<xsd:annotation>
+					<xsd:documentation>
+Abbreviated by USPS as SHL
+</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="SHOALS">
+				<xsd:annotation>
+					<xsd:documentation>
+Abbreviated by USPS as SHLS
+</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="SHORE">
+				<xsd:annotation>
+					<xsd:documentation>
+Abbreviated by USPS as SHR
+</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="SHORES">
+				<xsd:annotation>
+					<xsd:documentation>
+Abbreviated by USPS as SHRS
+</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="SKYWAY">
+				<xsd:annotation>
+					<xsd:documentation>
+Abbreviated by USPS as SKWY
+</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="SPRING">
+				<xsd:annotation>
+					<xsd:documentation>
+Abbreviated by USPS as SPG
+</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="SPRINGS">
+				<xsd:annotation>
+					<xsd:documentation>
+Abbreviated by USPS as SPGS
+</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="SPUR">
+				<xsd:annotation>
+					<xsd:documentation>
+Abbreviated by USPS as SPUR
+</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="SPURS">
+				<xsd:annotation>
+					<xsd:documentation>
+Abbreviated by USPS as SPUR
+</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="SQUARE">
+				<xsd:annotation>
+					<xsd:documentation>
+Abbreviated by USPS as SQ
+</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="SQUARES">
+				<xsd:annotation>
+					<xsd:documentation>
+Abbreviated by USPS as SQS
+</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="STATION">
+				<xsd:annotation>
+					<xsd:documentation>
+Abbreviated by USPS as STA
+</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="STRAVENUE">
+				<xsd:annotation>
+					<xsd:documentation>
+Abbreviated by USPS as STRA
+</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="STREAM">
+				<xsd:annotation>
+					<xsd:documentation>
+Abbreviated by USPS as STRM
+</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="STREET">
+				<xsd:annotation>
+					<xsd:documentation>
+Abbreviated by USPS as ST
+</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="STREETS">
+				<xsd:annotation>
+					<xsd:documentation>
+Abbreviated by USPS as STS
+</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="SUMMIT">
+				<xsd:annotation>
+					<xsd:documentation>
+Abbreviated by USPS as SMT
+</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="TERRACE">
+				<xsd:annotation>
+					<xsd:documentation>
+Abbreviated by USPS as TER
+</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="THROUGHWAY">
+				<xsd:annotation>
+					<xsd:documentation>
+Abbreviated by USPS as TRWY
+</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="TRACE">
+				<xsd:annotation>
+					<xsd:documentation>
+Abbreviated by USPS as TRCE
+</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="TRACK">
+				<xsd:annotation>
+					<xsd:documentation>
+Abbreviated by USPS as TRAK
+</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="TRAFFICWAY">
+				<xsd:annotation>
+					<xsd:documentation>
+Abbreviated by USPS as TRFY
+</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="TRAIL">
+				<xsd:annotation>
+					<xsd:documentation>
+Abbreviated by USPS as TRL
+</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="TRAILER">
+				<xsd:annotation>
+					<xsd:documentation>
+Abbreviated by USPS as TRLR
+</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="TUNNEL">
+				<xsd:annotation>
+					<xsd:documentation>
+Abbreviated by USPS as TUNL
+</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="TURNPIKE">
+				<xsd:annotation>
+					<xsd:documentation>
+Abbreviated by USPS as TPKE
+</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="UNDERPASS">
+				<xsd:annotation>
+					<xsd:documentation>
+Abbreviated by USPS as UPAS
+</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="UNION">
+				<xsd:annotation>
+					<xsd:documentation>
+Abbreviated by USPS as UN
+</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="UNIONS">
+				<xsd:annotation>
+					<xsd:documentation>
+Abbreviated by USPS as UNS
+</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="VALLEY">
+				<xsd:annotation>
+					<xsd:documentation>
+Abbreviated by USPS as VLY
+</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="VALLEYS">
+				<xsd:annotation>
+					<xsd:documentation>
+Abbreviated by USPS as VLYS
+</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="VIADUCT">
+				<xsd:annotation>
+					<xsd:documentation>
+Abbreviated by USPS as VIA
+</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="VIEW">
+				<xsd:annotation>
+					<xsd:documentation>
+Abbreviated by USPS as VW
+</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="VIEWS">
+				<xsd:annotation>
+					<xsd:documentation>
+Abbreviated by USPS as VWS
+</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="VILLAGE">
+				<xsd:annotation>
+					<xsd:documentation>
+Abbreviated by USPS as VLG
+</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="VILLAGES">
+				<xsd:annotation>
+					<xsd:documentation>
+Abbreviated by USPS as VLGS
+</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="VILLE">
+				<xsd:annotation>
+					<xsd:documentation>
+Abbreviated by USPS as VL
+</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="VISTA">
+				<xsd:annotation>
+					<xsd:documentation>
+Abbreviated by USPS as VIS
+</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="WALK">
+				<xsd:annotation>
+					<xsd:documentation>
+Abbreviated by USPS as WALK
+</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="WALKS">
+				<xsd:annotation>
+					<xsd:documentation>
+Abbreviated by USPS as WALK
+</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="WALL">
+				<xsd:annotation>
+					<xsd:documentation>
+Abbreviated by USPS as WALL
+</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="WAY">
+				<xsd:annotation>
+					<xsd:documentation>
+Abbreviated by USPS as WAY
+</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="WAYS">
+				<xsd:annotation>
+					<xsd:documentation>
+Abbreviated by USPS as WAYS
+</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="WELL">
+				<xsd:annotation>
+					<xsd:documentation>
+Abbreviated by USPS as WL
+</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="WELLS">
+				<xsd:annotation>
+					<xsd:documentation>
+Abbreviated by USPS as WLS
+</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<!-- Spanish Abbreviations whose use is allowed by USPS Pub 28 but only when such an
+abbreviation is necessary due to space restrictions -->
+			<!--
+These spanish word abbreviations occur in the standard street type abbreviation
+list, bound to other words.
+AVENIDA AVE
+CIRCULO CIR
+VISTA VIS
+-->
+			<xsd:enumeration value="AVENIDA">
+				<xsd:annotation>
+					<xsd:documentation>
+Abbreviated by USPS as AVE
+</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="CALLE">
+				<xsd:annotation>
+					<xsd:documentation>
+Abbreviated by USPS as CLL
+</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="CAMINITO">
+				<xsd:annotation>
+					<xsd:documentation>
+Abbreviated by USPS as CMT
+</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="CAMINO">
+				<xsd:annotation>
+					<xsd:documentation>
+Abbreviated by USPS as CAM
+</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="CERRADA">
+				<xsd:annotation>
+					<xsd:documentation>
+Abbreviated by USPS as CER
+</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="CIRCULO">
+				<xsd:annotation>
+					<xsd:documentation>
+Abbreviated by USPS as CIR
+</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="ENTRADA">
+				<xsd:annotation>
+					<xsd:documentation>
+Abbreviated by USPS as ENT
+</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="PASEO">
+				<xsd:annotation>
+					<xsd:documentation>
+Abbreviated by USPS as PSO
+
+
+</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="PLACITA">
+				<xsd:annotation>
+					<xsd:documentation>
+Abbreviated by USPS as PLA
+</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="RANCHO">
+				<xsd:annotation>
+					<xsd:documentation>
+Abbreviated by USPS as RCH
+</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="VEREDA">
+				<xsd:annotation>
+					<xsd:documentation>
+Abbreviated by USPS as VER
+</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="VISTA">
+				<xsd:annotation>
+					<xsd:documentation>
+Abbreviated by USPS as VIS
+</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<!-- Occupancy Types -->
+	<xsd:simpleType name="BuildingType_type">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="en">
+This is a modifier to the BuildingId element and this
+cannot exist without it. The type of structure (when
+several structures are found at the same address), e.g.,
+Apartment, Tower, Block. Used with Building Identifier
+to designate one of several structures at a given site.
+Fits within the general USPS definition of a "secondary
+address designator" and EPA definitions of "secondary
+address identifier"
+</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value=".*"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="BuildingId_type">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="en">
+The letters, numbers, words or combination thereof used
+to distinguish one structure from another when several
+occur at the same address.
+Used with Building Type to designate one of several
+structures at a given site. Fits within the USPS
+defnition of a "secondary address designator" and the
+general EPA definition of "secondary address identifier"
+</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value=".*"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="FloorType_type">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="en">
+The word describing the horizontal division of a
+building where an address is located.
+Used with Floor Identifier to designate which floor of a
+given structure contains the address. May preceed or
+follow the floor identifier. Fits within the USPS
+definition of a "secondary address designator" and the
+general EPA definition of "secondary address identifier"
+</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value=".*"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="FloorId_type">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="en">
+The number, letter, or word or combination of numbers
+and letters distinguishing one floor from another within
+a structure.
+Used with Floor Type to designate which floor of a given
+structure contains the address. If only a Floor name
+appears (such as Mezzanine) it should be parsed as a
+Floor Identifier rather than as a Floor Type. Fits
+within the general USPS definition of a "sescondary
+address designator" and the EPA definitions of
+"secondary address identifier."
+</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value=".*"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="UnitType_type">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="en">
+The word describing the type of occupancy within a
+building or structure.
+Used with the Unit Identifier element to designate one
+of several occupancy units within a building.
+</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value=".*"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="UnitId_type">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="en">
+The numbers, letters, words, or combination thereof
+distinguishing one occupancy from another within a given
+address.
+Used with the Unit Type to designate different
+occupancies at the same address. Fits within the USPS
+definition of "secondary address designator" and the
+general EPA definition of "secondary address
+identifier."
+</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value=".*"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:complexType name="Unit_type">
+		<xsd:simpleContent>
+			<xsd:extension base="addr:UnitId_type">
+				<xsd:attribute name="UnitType" type="addr:UnitType_type"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="Floor_type">
+		<xsd:simpleContent>
+			<xsd:extension base="addr:FloorId_type">
+				<xsd:attribute name="FloorType" type="addr:FloorType_type"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="Building_type">
+		<xsd:simpleContent>
+			<xsd:extension base="addr:BuildingId_type">
+				<xsd:attribute name="BuildingType" type="addr:BuildingType_type"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:simpleType name="PrivateMailBox_type">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="en">
+A mailbox rented from a private Commercial Mail
+Receiving Agency (CMRA).
+USPS Pub 28 Section 284: Normally Private Mail Box
+identifiers, like mailstop codes and other internal mail
+distribution codes, pertain to the recipient and are not
+part of the address. "Exception: When the CMRA mailing
+address contains a secondary address element (e.g. rural
+route box number, suite, # or other term), the CMRA
+customer must use Private Mail Box (PMB) when utilizing
+a three line address format" (see examples above).
+</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value=".*"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<!-- Landmark Name Type -->
+	<xsd:simpleType name="LandmarkName_type">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="en">
+The name by which a prominent feature is publicly known.
+Landmarks usually have a street address. A landmark name
+does not imply official historic landmark status, but
+simply a commonly used name that substitutes for an
+address number and street name in identifying the
+location of a specific building or feature. Generally
+the use of a landmark's street address is preferable
+
+
+because it is unambiguous. All landmark names should be
+cross-referenced to a street address or other coordinate
+location.
+</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value=".*"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<!-- Area and Zone Elements -->
+	<xsd:simpleType name="CommunityPlaceName_type">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="en">
+A named area, sector, or development that is not an
+incorporated municipality or other governmental unit,
+such as a neighborhood in a city, or a rural settlement
+in unincorporated area. Often called "urbanization" in
+Puerto Rican addressing usage.
+1. "Urbanizacion", commonly used in urban areas of
+Puerto Rico, is an important part of the address. Street
+names and address ranges are often repeated in a city,
+especially where a city has annexed older towns; they
+are distinguished by their urbanizacion or community
+name. 2. Certain other words can be used in place of
+"urbanizacion": extenciones, mansiones, reparto, villa,
+parque, jardine, altura, alturas, colinas, estancias,
+extension, quintas, sector, terraza, villa, villas. 3.
+For more information on Puerto Rican addressing
+conventions, see USPS Publication 28 Section 29, and
+USPS "Addressing Standards for Puerto Rico and the
+Virgin Islands".
+</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value=".*"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="MunicipalJurisdiction_type">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="en">
+The name of the municipality (city, township, or othe
+non-county local government) in which the address is
+physically located. In many places this will be
+different than the city name used by the U.S. Postal
+Service.
+Required by most local governments for tax and services
+determinations. This will be null for addresses in
+unincorporated portions of counties.
+</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value=".*"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="USPSPlaceName_type">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="en">
+The name given by the U.S. Postal Service to the post
+office from which mail is delivered to the address. In
+many places this will be different from the name of the
+municipality in which the address is physically located.
+The name given by the U.S. Postal Service to the post
+office from which mail is delivered to the address. In
+
+
+many places this will be different from the name of the
+incorporated municipality in which the address is
+physically located.
+</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value=".*"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="CountyName_type">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="en">
+The primary administrative subdivision of a state in the
+United States.
+</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value=".*"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="StateName_type">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="en">
+The primary legal subdivision of the United States,
+represented by its two letter USPS abbreviation.
+This is the only element stored in abbreviated form.
+</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:token">
+			<!-- "US State and The District of Columbia" Abbreviations -->
+			<xsd:enumeration value="AL">
+				<xsd:annotation>
+					<xsd:documentation>Alabama</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="AK">
+				<xsd:annotation>
+					<xsd:documentation>Alaska</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="AZ">
+				<xsd:annotation>
+					<xsd:documentation>Arizona</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="AR">
+				<xsd:annotation>
+					<xsd:documentation>Arkansas</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="CA">
+				<xsd:annotation>
+					<xsd:documentation>California</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="CO">
+				<xsd:annotation>
+					<xsd:documentation>Colorado</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="CT">
+				<xsd:annotation>
+					<xsd:documentation>Connecticut</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="DE">
+				<xsd:annotation>
+					<xsd:documentation>Delaware</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="DC">
+				<xsd:annotation>
+					<xsd:documentation>
+District of Columbia
+</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="FL">
+				<xsd:annotation>
+					<xsd:documentation>Florida</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="GA">
+				<xsd:annotation>
+					<xsd:documentation>Georgia</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="HI">
+				<xsd:annotation>
+					<xsd:documentation>Hawaii</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="ID">
+				<xsd:annotation>
+					<xsd:documentation>Idaho</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="IL">
+				<xsd:annotation>
+					<xsd:documentation>Illinois</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="IN">
+				<xsd:annotation>
+					<xsd:documentation>Indiana</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="IA">
+				<xsd:annotation>
+					<xsd:documentation>Iowa</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="KS">
+				<xsd:annotation>
+					<xsd:documentation>Kansas</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="KY">
+				<xsd:annotation>
+					<xsd:documentation>Kentucky</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="LA">
+				<xsd:annotation>
+					<xsd:documentation>Louisiana</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="ME">
+				<xsd:annotation>
+					<xsd:documentation>Maine</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="MD">
+				<xsd:annotation>
+					<xsd:documentation>Maryland</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="MA">
+				<xsd:annotation>
+					<xsd:documentation>Massachusetts</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="MI">
+				<xsd:annotation>
+					<xsd:documentation>Michigan</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="MN">
+				<xsd:annotation>
+					<xsd:documentation>Minnesota</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="MS">
+				<xsd:annotation>
+					<xsd:documentation>Mississippi</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="MO">
+				<xsd:annotation>
+					<xsd:documentation>Missouri</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="MT">
+				<xsd:annotation>
+					<xsd:documentation>Montana</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="NE">
+				<xsd:annotation>
+					<xsd:documentation>Nebraska</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="NV">
+				<xsd:annotation>
+					<xsd:documentation>Nevada</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="NH">
+				<xsd:annotation>
+					<xsd:documentation>New Hampshire</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="NJ">
+				<xsd:annotation>
+					<xsd:documentation>New Jersey</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="NM">
+				<xsd:annotation>
+					<xsd:documentation>New Mexico</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="NY">
+				<xsd:annotation>
+					<xsd:documentation>New York</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="NC">
+				<xsd:annotation>
+					<xsd:documentation>
+North Carolina
+</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="ND">
+				<xsd:annotation>
+					<xsd:documentation>North Dakota</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="OH">
+				<xsd:annotation>
+					<xsd:documentation>Ohio</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="OK">
+				<xsd:annotation>
+					<xsd:documentation>Oklahoma</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="OR">
+				<xsd:annotation>
+					<xsd:documentation>Oregon</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="PA">
+				<xsd:annotation>
+					<xsd:documentation>Pennsylvania</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="RI">
+				<xsd:annotation>
+					<xsd:documentation>Rhode Island</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="SC">
+				<xsd:annotation>
+					<xsd:documentation>
+South Carolina
+</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="SD">
+				<xsd:annotation>
+					<xsd:documentation>South Dakota</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="TN">
+				<xsd:annotation>
+					<xsd:documentation>Tennessee</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="TX">
+				<xsd:annotation>
+					<xsd:documentation>Texas</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="UT">
+				<xsd:annotation>
+					<xsd:documentation>Utah</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="VT">
+				<xsd:annotation>
+					<xsd:documentation>Vermont</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="VA">
+				<xsd:annotation>
+					<xsd:documentation>Virginia</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="WA">
+				<xsd:annotation>
+					<xsd:documentation>Washington</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="WV">
+				<xsd:annotation>
+					<xsd:documentation>West Virginia</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="WI">
+				<xsd:annotation>
+					<xsd:documentation>Wisconsin</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="WY">
+				<xsd:annotation>
+					<xsd:documentation>Wyoming</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<!-- "Possession, Territories, and Outlying Areas" Abbreviations -->
+			<xsd:enumeration value="AS">
+				<xsd:annotation>
+					<xsd:documentation>
+American Samoa
+</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="FM">
+				<xsd:annotation>
+					<xsd:documentation>
+Federated States of Micronesia
+</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="GU">
+				<xsd:annotation>
+					<xsd:documentation>Guam</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="MH">
+				<xsd:annotation>
+					<xsd:documentation>
+Marshall Islands
+</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="MP">
+				<xsd:annotation>
+					<xsd:documentation>
+Northern Mariana Islands
+</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="PR">
+				<xsd:annotation>
+					<xsd:documentation>Puerto Rico</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="PW">
+				<xsd:annotation>
+					<xsd:documentation>Palau</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<!-- "U.S. Minor Outlying Islands" has the code "UM" in FIPS publication 5-2 and has the
+following note there
+An aggregation of nine U.S. territories: Baker Island, Howland Island, Jarvis
+Island, Johnston Atoll, Kingman Reef, Midway Islands, Navassa Island. Palmyra Atoll. and Wake Island. Each territory is
+assigned a FIPS County Code in FIPS publication 6-3, and may be individually identified through a combination of the
+FIPS State Code (74 or UM) and the appropriate FIPS County Code.
+USPS Pub 28 does not contain "UM" as a valid State Alpha Code.
+-->
+			<xsd:enumeration value="VI">
+				<xsd:annotation>
+					<xsd:documentation>
+
+
+Virgin Islands
+</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<!-- "Military "State" Abbreviations -->
+			<xsd:enumeration value="AE">
+				<xsd:annotation>
+					<xsd:documentation>
+Armed Forces Europe, the Middle East, and Canada
+</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="AP">
+				<xsd:annotation>
+					<xsd:documentation>
+Armed Forces Pacific
+</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="AA">
+				<xsd:annotation>
+					<xsd:documentation>
+Armed Forces Americas (except Canada)
+</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="ZipCode_type">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="en">
+A five-digit code that identifies a specific pseudo
+geographic delivery area. ZIP Codes can represent an
+area within a state, an area that crosses state
+boundaries (unusual condition) or a single building or
+company that has a very high mail volume. "ZIP" is an
+acronym for Zone Improvement Plan. Zero pad from the
+left to fill the range as in 01776.
+</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="[0-9]{5}"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="ZipPlus4_type">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="en">
+A four-digit extension of the five-digit Zip Code that
+identifies a portion of a carrier route for USPS mail
+delivery. Zero pad from the left to fill the range as in
+0030.
+</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="[0-9]{4}"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="NationName_type">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="en">
+The name of the nation in which the address is located.
+Although the scope of this standard is restricted US
+addresses, this item is included for two reasons: to
+facilitate reconciliation with address standards of
+other nations, and to accommodate files which mix
+addresses from the US and other nations.
+
+
+USPS Publication28 lists country names and their
+international postal codes.
+</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value=".*"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="USPSBoxType_type">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="en">
+A box used for receipt of USPS mail. The box may be
+located in the post office lobby (e.g PO Box), on the
+customer's premises or other USPS authorized place (e.g.
+rural route box).
+</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value=".*"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="USPSBoxId_type">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="en">
+The numbers or letters distinguishing one box from
+another within a post office. May include slash, hyphen
+or period.
+</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value=".*"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:complexType name="USPSBox_type">
+		<xsd:simpleContent>
+			<xsd:extension base="addr:USPSBoxId_type">
+				<xsd:attribute name="BoxType" type="addr:USPSBoxType_type"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:simpleType name="USPSBoxGroupType_type">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="en">
+A collection of postal boxes served from a single
+distribution point.
+This group includes rural routes, highway contract
+routes, postal service centers, overseas military common
+mail rooms and military unit numbers.
+</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value=".*"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="USPSBoxGroupId_type">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="en">
+The numbers or letters distinguishing one group of boxes
+from another within a distribution point. May include
+hyphen, slash or period.
+</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value=".*"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:complexType name="USPSBoxGroup_type">
+		<xsd:simpleContent>
+			<xsd:extension base="addr:USPSBoxGroupId_type">
+				<xsd:attribute name="GroupType" type="addr:USPSBoxGroupType_type"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:simpleType name="USPSGeneralDeliveryPoint_type">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="en">
+A central point where mail may be picked up by the
+addressee. Two values are permitted: "General Delivery"
+(for post offices), and ship's names (for overseas
+military addresses).
+</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value=".*"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="AddressAuthorityIdentifiertype">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="en">
+A Concatenation of codes found in FIPS 5-2, 6-4, and
+55-3 data guides, with a locally defined code that MUST
+be defined in the metadata. The general format is
+(expressed as regular expressions)
+[0-9]{2}[0-9]{3}[0-9]{5}[0-9]{4}.
+</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value=".*"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<!-- Locational type -->
+	<xsd:simpleType name="AddressXCoordinate_type">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="en">
+The X coordinate of address location. This might contain
+information formatted as decimal or as Lat/Long in
+degrees minutes seconds. In other words do not assume
+this is numeric. Look to the metadata for the coordinate
+style and projective parameters used.
+</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value=".*"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="AddressYCoordinate_type">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="en">
+The Y coordinate of address location. This might contain
+information formatted as decimal or as Lat/Long in
+degrees minutes seconds. In other words do not assume
+
+
+this is numeric. Look to the metadata for the coordinate
+style and projective parameters used.
+</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value=".*"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="AddressLongitude_type">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="en">
+The longitude coordinate of the address location, noted
+in decimal degrees. For point and polygon features,
+coordinate pairs typically locate the point of
+assignment: a centroid point, a point locating the entry
+to a property, etc.
+</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value=".*"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="AddressLatitude_type">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="en">
+The latitude coordinate of the address location, noted
+in decimal degrees. For point and polygon features,
+coordinate pairs typically locate the point of
+assignment: a centroid point, a point locating the entry
+to a property, etc.
+</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value=".*"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="LocationUSNG_type">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="en">
+The USNG or US National Grid is an alphanumeric
+reference system that overlays the Universal Transverse
+Mercator (UTM) numerical coordinate system. A USNG
+coordinate consists of three parts, the: 1. Grid Zone
+Designation (GZD) for worldwide unique geoaddresses (two
+digits plus one letter, developed from the UTM system).
+2. 100,000-meter Square Identification for regional
+areas (two letters). 3. Grid Coordinates for local areas
+(always an even number of digits between 2 and 10
+depending upon precision necesary to uniquely identify
+the location). Look to
+www.fgdc.gov/standards/status/usng.html for a normative
+definition.
+</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value=".*"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="AddressZValue_type">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="en">
+Ordinal or ratio ("true") measurement of the height of
+each level of a building. Ordinal measurements give
+relative vertical positions: the lowest level of a
+building is 1, the one above that 2, etc. Ratio
+
+
+measurements are elevations given in terms of a a
+spatial referencing system. Either method should be
+described in file-level metadata per FGDC's Content
+Standard for Geospatial Metadata.
+</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value=".*"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<!-- Non Locational Elements -->
+	<xsd:simpleType name="AddressId_type">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="en">
+The unique identification number assigned to an address
+by the addressing authority. The ID number must be
+unique for each address assigned by an addressing
+authority. This, combined with the FIPS number of the
+addressing authority, can provide a unique ID for every
+address in the US.
+</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value=".*"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="AddressStartDate_type">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="en">
+The earliest date on which the address is known to
+exist.
+</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value=".*"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="AddressEndDate_type">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="en">
+The earliest date on which the address is known to no
+longer be valid.
+</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value=".*"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="AddressClassification_type">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="en">
+The type or classification of the address according to
+the classification standard.
+</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value=".*"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="FeatureType_type">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="en">
+The type of feature identified by the address
+
+
+Initial list of feature types: Block, block face,
+intersection, parcel, building, entrance, unit. The list
+might be expanded indefinitely to include infrastructure
+and other features.
+</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value=".*"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="AddressLifecycle_type">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="en">
+The Lifecycle status of the address.
+</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:token">
+			<xsd:enumeration value="PROPOSED"/>
+			<xsd:enumeration value="ACTIVE"/>
+			<xsd:enumeration value="RETIRED"/>
+			<xsd:enumeration value="TEMPORARY"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="AddressLifecycleStatus_type">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="en">
+The life cycle status of the address.
+</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:token">
+			<xsd:enumeration value="Potential">
+				<xsd:annotation>
+					<xsd:documentation>
+Address falls within a theoretical range, but
+has never been used.
+</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="Proposed">
+				<xsd:annotation>
+					<xsd:documentation>
+Application pending for use of this address
+(e.g., address tentatively issued for
+subdivision plat that is not yet fully
+approved).
+</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="Active">
+				<xsd:annotation>
+					<xsd:documentation>
+Address has been issued and is in use.
+</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="Retired">
+				<xsd:annotation>
+					<xsd:documentation>
+Address was issued, but is now obsolete (e.g.
+street name has been changed), building was
+demolished, etc.
+</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="AddressOfficialStatus_type">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="en">
+Whether the address is as given by the official
+addressing authority (official), or an unofficial
+variant or equivalent of it (alias).
+</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:token">
+			<xsd:enumeration value="Alternate Name">
+				<xsd:annotation>
+					<xsd:documentation>
+In any of the address classes described in 2.2,
+the collective name element may have another
+acceptable form. Some alternate names may be
+conditional, on attempt, ie if the alias
+resolves the address no further alternate names
+should be considered. Other alternate names are
+always applied, such as official renamings. All
+alternate names carry a limit of applicability
+and a timeframe of applicability. The limit of
+appicability may be a limit to a single zipcode,
+a naming authorities boundary, such as city or
+county limits, or a range of address numbers
+with such a boundary.
+</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="Alternate Renamed">
+				<xsd:annotation>
+					<xsd:documentation>
+Upon official renaming of an address, or
+renumbering of an address, or a series of
+addresses, the prior, older address will occur
+in address lists for a period of time and a
+conversion to current names or current addresses
+will need to be provided. Such an entity may
+match a single address or a range of addresses.
+</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="Alternate Authority Name">
+				<xsd:annotation>
+					<xsd:documentation>
+The alternate name is established by a separate,
+or the same, naming authority. Such names may
+apply to any address class, including landmarks.
+Such names would be established by naming
+authorities with a geographically larger area of
+responsibility, containing all or part of a
+naming authority with a smaller region, such as
+a state name overlaying a county name or a
+county name overlaying a city or town name.
+Examples would be a state highway designation
+(State Highway 7) overlaid upon locally named
+roads or a memorial highway overlaid on local
+road names or state highway names.
+</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="Alternate Colloquial Name">
+				<xsd:annotation>
+					<xsd:documentation>
+Local communities hold on to address names much
+longer than do regional agencies. A community
+may use a colloquial address name as much as 30
+years after that name has either expired or is
+no longer salient. This entry provides a
+conversion to a current name.
+
+
+</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="Unoffical Alternate Name">
+				<xsd:annotation>
+					<xsd:documentation>
+In data processing, entry errors occur. Such
+errors if frequently encountered may be
+corrected by a direct match of the error and a
+substitution to a current name.
+</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="Unofficial Agencys Name">
+				<xsd:annotation>
+					<xsd:documentation>
+For data processing efficiency, entities often
+create alternate names for internal use. When
+such alternate names are exposed to other
+entities they need to be resolved to a current
+name.
+</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="Posted Address">
+				<xsd:annotation>
+					<xsd:documentation>
+Address is posted, but not recognized by
+addressing authority (e.g. vanity address on a
+building).
+</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="Verified Invalid">
+				<xsd:annotation>
+					<xsd:documentation>
+Address is verified as being invalid, but keeps
+appearing in address lists. Different from
+Unoffical Altername Names in that these are
+known not to exist;Address has been issued and
+is in use.
+</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="AddressAnomalyStatus_type">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="en">
+A status flag, or an explanatory note, for an address
+that is not correct according to the address schema in
+which it is located, but is nonetheless a valid address.
+This field may be used to identify the type of anomaly
+(e.g. wrong parity, out of sequence, out of range, etc.)
+rather than simply whether or not it is anomalous. Local
+jurisdictions may create specific categories for
+anomalies.
+</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value=".*"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="AddressRangeType_type">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="en">
+The type of address range represented by the data.
+Address ranges are ambiguous, in that a set of 2 site
+numbers and a street name can represent either a
+building, a block face range, a block range, or an
+entire street range.
+1. The terms "actual" or "theoretical" indicate whether
+the range is based on existing (in-use) addresses or the
+potential address range (based on a grid or other
+numbering system) for the given range. 2. Further
+discussion of ranges is found under Address Range
+</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value=".*"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="LocationDescription_type">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="en">
+A text description providing more detail on how to
+identify or find the addressed feature.
+</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value=".*"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="AddressNumberParity_type">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="en">
+"A relation between a pair of integers: if both integers
+are odd or both are even they have the same parity; if
+one is odd and the other is even they have different
+parity."1
+Odd and even addresses are usually associated with
+opposite sides of a street. For example, a jurisdiction
+may assign odd numbers to the right side of the street
+when moving away from an address axis.
+</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:token">
+			<xsd:enumeration value="EVEN"/>
+			<xsd:enumeration value="ODD"/>
+			<xsd:enumeration value="BOTH"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="StreetNameGroup_type">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="en">
+A geographic area where the street names conform to a
+theme. For example, some neighborhoods feature streets
+named for birds, US presidents or trees. A subset of the
+complete street name domain applies to this area.
+</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="addr:MultiPolygon_WKT"/>
+	</xsd:simpleType>
+	<xsd:simpleType name="AddressSchemeName_type">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="en">
+Name of the address scheme that operates over a
+specified area, i.e.: mountain addresses, plains
+addresses.
+</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value=".*"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="AddressSchemeDescription_type">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="en">
+A description of an Address Scheme that includes
+business rules about parity, naming conventions, and
+other matters concerning the assignment and maintenance
+of an addressing scheme.
+This element may refer to an address ordinance, Standard
+Operating Procedures manual or other external document
+wherein the rules for addresses in a given scheme are
+written.
+</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value=".*"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="AddressSchemeOrigin_type">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="en">
+Location where the address axes meet.
+</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="addr:Point_WKT"/>
+	</xsd:simpleType>
+	<xsd:simpleType name="AddressSchemeAxes_type">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="en">
+Address axes define the boundaries between adjoining
+zones in address schema. Those zones may be quadrants
+(northwest, northeast, southeast, southwest) or other
+geographic divisions. Lowest address numbers occur
+nearest an axis.
+</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="addr:MultiLinestring_WKT"/>
+	</xsd:simpleType>
+	<xsd:simpleType name="AddressSchemeExtent_type">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="en">
+Boundary of the area over which an address schema
+operates.
+</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="addr:MultiPolygon_WKT"/>
+	</xsd:simpleType>
+	<xsd:simpleType name="AddressDirectSource_type">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="en">
+Source from whom the data provider obtained the address,
+or with whom the data provider validated the address.
+Important if the data provider did not obtain the
+address directly from the local authority.
+</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value=".*"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="AddressAuthority_type">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="en">
+The authority (e.g., municipality, county) that created
+or has jurisdiction over the creation of an address.
+The addressing authority may or may not be the same as
+the physical or postal jurisdiction noted for the
+address.
+</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value=".*"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="AddressAuthorityIdentifier_type">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="en">
+The FIPS or GNIs code for the authority (e.g.,
+municipality, county) that created or has jurisdiction
+over the creation of an address.
+The addressing authority may or may not be the same as
+the physical or postal jurisdiction noted for the
+address.
+</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value=".*"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<!-- Complex Types -->
+	<xsd:simpleType name="Action_type">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="en">
+An action command for incremental datasets. Add
+indicates that the information is new. DELETE indicates
+that the information is to be removed.
+</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:token">
+			<xsd:enumeration value="ADD"/>
+			<xsd:enumeration value="DELETE"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<!-- Complex Elements -->
+	<xsd:complexType name="CompleteFeatureName_type">
+		<xsd:sequence>
+			<xsd:element name="CompleteAddressNumber" type="addr:CompleteAddressNumber_type" minOccurs="1" maxOccurs="1"/>
+			<xsd:element name="CompleteStreetName" type="addr:CompleteStreetName_type" minOccurs="1" maxOccurs="1"/>
+			<xsd:element name="CompleteOccupancyIdentifier" type="addr:CompleteOccupancyIdentifier_type" minOccurs="0" maxOccurs="1"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<!-- reduce to a simple element
+<xsd:complexType name="PlaceStateZip_type">
+<xsd:annotation>
+<xsd:documentation xml:lang="en">
+The accumulation of Postal City, State, and ZIPCode elements.
+
+
+</xsd:documentation>
+</xsd:annotation>
+<xsd:sequence>
+<xsd:element name="USPSPlaceName" type="addr:USPSPlaceName_type" minOccurs="1"
+maxOccurs="1" />
+<xsd:element name="StateName" type="addr:StateName_type" minOccurs="1" maxOccurs="1" />
+<xsd:element name="ZipCode" type="addr:ZipCode_type" minOccurs="1" maxOccurs="1" />
+<xsd:element name="ZipPlus4" type="addr:ZipPlus4_type" />
+</xsd:sequence>
+</xsd:complexType>
+-->
+	<xsd:simpleType name="PlaceStateZip_type">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="en">
+The unparsed accumulation of Postal City, State, and
+ZIPCode elements.
+</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value=".*"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<!-- reduce to a single unparsed string
+<xsd:complexType name="CompleteFeatureAddress_type">
+<xsd:annotation>
+<xsd:documentation xml:lang="en">
+This element is defined solely for use with the General Address class, which is constructed to
+accommodate and mix addresses of all types (e.g., a general postal mailing list or contact list). Place Name, State Name,
+Zip Code, and Zip Plus 4, which appear in all address classes, are kept separate from the rest of the address. No longer
+a parsed datatype. Content still represents it as such.
+</xsd:documentation>
+</xsd:annotation>
+<xsd:choice>
+<xsd:element name="CompleteFeatureName" type="addr:CompleteFeatureName_type"
+minOccurs="1" maxOccurs="1" />
+<xsd:element name="USPSBox" type="addr:USPSBox_type" minOccurs="1" maxOccurs="1" />
+<xsd:element name="USPSBoxGroup" type="addr:USPSBoxGroup_type" minOccurs="1"
+maxOccurs="1" />
+<xsd:element name="USPSGeneralDeliveryAddress"
+type="addr:USPSGeneralDeliveryAddress_type" />
+</xsd:choice>
+<xsd:sequence>
+<xsd:element name="CompleteFeatureName" type="xsd:string" minOccurs="1" maxOccurs="1" />
+</xsd:sequence>
+</xsd:complexType>
+-->
+	<xsd:simpleType name="CompleteFeatureAddress_type">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="en">
+This element is defined solely for use with the General
+Address class, which is constructed to accommodate and
+mix addresses of all types (e.g., a general postal
+mailing list or contact list). Place Name, State Name,
+Zip Code, and Zip Plus 4, which appear in all address
+classes, are kept separate from the rest of the address.
+No longer a parsed datatype. Content still represents it
+as such.
+</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value=".*"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:complexType name="LocationXY_type">
+		<xsd:sequence>
+			<xsd:element name="X" type="addr:AddressXCoordinate_type" minOccurs="1" maxOccurs="1"/>
+			<xsd:element name="Y" type="addr:AddressYCoordinate_type" minOccurs="1" maxOccurs="1"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="LocationLongLat_type">
+		<xsd:sequence>
+			<xsd:element name="Longitude" type="addr:AddressLongitude_type" minOccurs="1" maxOccurs="1"/>
+			<xsd:element name="Latitude" type="addr:AddressLatitude_type" minOccurs="1" maxOccurs="1"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="Location_type">
+		<xsd:sequence>
+			<xsd:element name="USNGCoordinate" type="addr:LocationUSNG_type" minOccurs="0" maxOccurs="1"/>
+			<xsd:element name="LongLat" type="addr:LocationLongLat_type" minOccurs="0" maxOccurs="1"/>
+			<xsd:element name="XYCoordinate" type="addr:LocationXY_type" minOccurs="0" maxOccurs="1"/>
+			<xsd:element name="ZValue" type="addr:AddressZValue_type" minOccurs="0" maxOccurs="1"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="CompleteStreetName_type">
+		<xsd:sequence>
+			<xsd:element name="StreetNamePreModifier" type="addr:StreetNameModifier_type" minOccurs="0" maxOccurs="1"/>
+			<xsd:element name="StreetNamePreDirectional" type="addr:StreetNameDirectional_type" minOccurs="0" maxOccurs="1"/>
+			<xsd:element name="StreetNamePreType" type="addr:StreetNameType_type" minOccurs="0" maxOccurs="1"/>
+			<xsd:element name="StreetName" type="addr:StreetName_type" minOccurs="1" maxOccurs="1"/>
+			<xsd:element name="StreetNamePostType" type="addr:StreetNameType_type" minOccurs="0" maxOccurs="1"/>
+			<xsd:element name="StreetNamePostDirectional" type="addr:StreetNameDirectional_type" minOccurs="0" maxOccurs="1"/>
+			<xsd:element name="StreetNamePostModifier" type="addr:StreetNameModifier_type" minOccurs="0" maxOccurs="1"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="CompleteAddressNumber_type">
+		<xsd:sequence>
+			<xsd:element name="Prefix" type="addr:AddressNumberPrefix_type" minOccurs="0" maxOccurs="1"/>
+			<xsd:element name="Number" type="addr:AddressNumber_type" minOccurs="1" maxOccurs="1"/>
+			<xsd:element name="Suffix" type="addr:AddressNumberSuffix_type" minOccurs="0" maxOccurs="1"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="AddressNumberRange_type">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="en">
+{ Complete Address Number (low)*} + { Separator Element
+*} + { Complete Address Number (high)*} A set of two
+address numbers, separated by a "Separator",
+representing the low and high numbers of an address
+range. An address number range element should be
+accompanied by an Address Range Type Attribute that
+describes the type of range presented in this element.
+
+
+</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="CompleteAddressNumberLow" minOccurs="1" maxOccurs="1">
+				<xsd:complexType>
+					<xsd:complexContent>
+						<xsd:extension base="addr:CompleteAddressNumber_type">
+							<xsd:attribute name="Bounds" type="xsd:string" fixed="Low"/>
+						</xsd:extension>
+					</xsd:complexContent>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="CompleteAddressNumberHigh" minOccurs="1" maxOccurs="1">
+				<xsd:complexType>
+					<xsd:complexContent>
+						<xsd:extension base="addr:CompleteAddressNumber_type">
+							<xsd:attribute name="Bounds" type="xsd:string" fixed="High"/>
+						</xsd:extension>
+					</xsd:complexContent>
+				</xsd:complexType>
+			</xsd:element>
+		</xsd:sequence>
+		<xsd:attribute name="Separator" type="addr:Separator_type"/>
+		<xsd:attribute name="Parity" type="addr:AddressNumberParity_type"/>
+	</xsd:complexType>
+	<xsd:complexType name="PlaceName_type">
+		<xsd:choice>
+			<xsd:element name="MunicipalJurisdiction" type="addr:MunicipalJurisdiction_type"/>
+			<xsd:element name="CommunityPlaceName" type="addr:CommunityPlaceName_type"/>
+			<xsd:element name="USPSPlaceName" type="addr:USPSPlaceName_type"/>
+			<xsd:element name="CountyName" type="addr:CountyName_type"/>
+		</xsd:choice>
+	</xsd:complexType>
+	<xsd:complexType name="CompleteOccupancyIdentifier_type">
+		<xsd:sequence>
+			<xsd:element name="Unit" type="addr:Unit_type" minOccurs="0" maxOccurs="1"/>
+			<xsd:element name="Floor" type="addr:Floor_type" minOccurs="0" maxOccurs="1"/>
+			<xsd:element name="Building" type="addr:Building_type" minOccurs="0" maxOccurs="1"/>
+			<xsd:element name="PrivateMailbox" type="addr:PrivateMailBox_type" minOccurs="0" maxOccurs="1"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<!-- Supporting Information -->
+	<xsd:complexType name="AddressScheme_type">
+		<xsd:sequence>
+			<xsd:element name="AddressSchemeName" type="addr:AddressSchemeName_type" minOccurs="1" maxOccurs="1"/>
+			<xsd:element name="AddressSchemeDescription" type="addr:AddressSchemeDescription_type" minOccurs="0" maxOccurs="1"/>
+			<xsd:element name="AddressSchemeOrigin" type="addr:AddressSchemeOrigin_type" minOccurs="0" maxOccurs="1"/>
+			<xsd:element name="AddressSchemeAxes" type="addr:AddressSchemeAxes_type" minOccurs="0" maxOccurs="1"/>
+			<xsd:element name="AddressSchemeExtent" type="addr:AddressSchemeExtent_type" minOccurs="0" maxOccurs="1"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="AddressAttributes_type">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="en">
+Supporting information for the Address
+</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="AddressId" type="addr:AddressId_type"/>
+			<xsd:element name="Location" type="addr:Location_type"/>
+			<!-- AddressClassification is not needed as the XML struture defines it
+<xsd:element name="Type" type="addr:AddressClassification_type" />
+-->
+			<xsd:element name="FeatureType" type="addr:FeatureType_type"/>
+			<xsd:element name="AddressLifecycleStatus" type="addr:AddressLifecycleStatus_type"/>
+			<xsd:element name="AddressOfficialStatus" type="addr:AddressOfficialStatus_type"/>
+			<xsd:element name="AddressAnomalyStatus" type="addr:AddressAnomalyStatus_type"/>
+			<xsd:element name="LocationDescription" type="addr:LocationDescription_type"/>
+			<xsd:element name="AddressStartDate" type="addr:AddressStartDate_type"/>
+			<xsd:element name="AddressEndDate" type="addr:AddressEndDate_type"/>
+			<xsd:element name="AddressDirectSource" type="addr:AddressDirectSource_type"/>
+			<xsd:element name="AddressAuthority" type="addr:AddressAuthority_type"/>
+			<xsd:element name="AddressAuthorityIdentifier" type="addr:AddressAuthorityIdentifier_type"/>
+			<xsd:element name="AddressSchemeName" type="addr:AddressSchemeName_type"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<!-- End Content Types -->
+	<!-- Begin Base Class Types -->
+	<xsd:complexType name="SiteAddress_type">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="en">
+The Address Class associated with singlar locations
+referenced off of a linear feature, having numeric
+identifiers.
+</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="CompleteAddressNumber" type="addr:CompleteAddressNumber_type" minOccurs="1" maxOccurs="1"/>
+			<xsd:element name="CompleteStreetName" type="addr:CompleteStreetName_type" minOccurs="1" maxOccurs="1"/>
+			<xsd:element name="CompleteOccupancyIdentifier" type="addr:CompleteOccupancyIdentifier_type" minOccurs="0" maxOccurs="1"/>
+			<xsd:element name="PlaceName" type="addr:PlaceName_type" minOccurs="1" maxOccurs="1"/>
+			<xsd:element name="StateName" type="addr:StateName_type" minOccurs="1" maxOccurs="1"/>
+			<xsd:element name="ZipCode" type="addr:ZipCode_type" minOccurs="1" maxOccurs="1"/>
+			<xsd:element name="ZipPlus4" type="addr:ZipPlus4_type" minOccurs="0" maxOccurs="1"/>
+			<xsd:element name="NationName" type="addr:NationName_type" minOccurs="0" maxOccurs="1"/>
+			<xsd:element name="AddressAttributes" type="addr:AddressAttributes_type" minOccurs="0" maxOccurs="1"/>
+		</xsd:sequence>
+		<xsd:attribute name="action" type="addr:Action_type" use="optional"/>
+	</xsd:complexType>
+	<xsd:group name="LandmarkCommunity_group">
+		<xsd:choice>
+			<xsd:element name="LandmarkName" type="addr:LandmarkName_type"/>
+			<xsd:element name="CommunityPlaceName"/>
+		</xsd:choice>
+	</xsd:group>
+	<xsd:complexType name="LandmarkSiteAddress_type">
+		<xsd:sequence>
+			<xsd:group ref="addr:LandmarkCommunity_group" minOccurs="1" maxOccurs="1"/>
+			<xsd:element name="CompleteAddressNumber" type="addr:CompleteAddressNumber_type" minOccurs="1" maxOccurs="1"/>
+			<xsd:element name="CompleteStreetName" type="addr:CompleteStreetName_type" minOccurs="1" maxOccurs="1"/>
+			<xsd:element name="CompleteOccupancyIdentifier" type="addr:CompleteOccupancyIdentifier_type" minOccurs="0" maxOccurs="1"/>
+			<xsd:element name="PlaceName" type="addr:PlaceName_type" minOccurs="1" maxOccurs="1"/>
+			<xsd:element name="StateName" type="addr:StateName_type" minOccurs="1" maxOccurs="1"/>
+			<xsd:element name="ZipCode" type="addr:ZipCode_type" minOccurs="1" maxOccurs="1"/>
+			<xsd:element name="ZipPlus4" type="addr:ZipPlus4_type" minOccurs="0" maxOccurs="1"/>
+			<xsd:element name="NationName" type="addr:NationName_type" minOccurs="0" maxOccurs="1"/>
+			<xsd:element name="AddressAttributes" type="addr:AddressAttributes_type" minOccurs="0" maxOccurs="1"/>
+		</xsd:sequence>
+		<xsd:attribute name="action" type="addr:Action_type" use="optional"/>
+	</xsd:complexType>
+	<xsd:complexType name="IntersectionAddress_type">
+		<xsd:sequence>
+			<xsd:element name="CompleteStreetName" type="addr:CompleteStreetName_type" minOccurs="2" maxOccurs="2"/>
+			<xsd:element name="PlaceName" type="addr:PlaceName_type" minOccurs="1" maxOccurs="1"/>
+			<xsd:element name="StateName" type="addr:StateName_type" minOccurs="1" maxOccurs="1"/>
+			<xsd:element name="ZipCode" type="addr:ZipCode_type" minOccurs="1" maxOccurs="1"/>
+			<xsd:element name="ZipPlus4" type="addr:ZipPlus4_type" minOccurs="0" maxOccurs="1"/>
+			<xsd:element name="NationName" type="addr:NationName_type" minOccurs="0" maxOccurs="1"/>
+			<xsd:element name="AddressAttributes" type="addr:AddressAttributes_type" minOccurs="0" maxOccurs="1"/>
+		</xsd:sequence>
+		<xsd:attribute name="Separator" type="addr:Separator_type"/>
+		<xsd:attribute name="action" type="addr:Action_type" use="optional"/>
+	</xsd:complexType>
+	<xsd:complexType name="TwoNumberAddressRange_type">
+		<xsd:sequence>
+			<xsd:element name="AddressNumberRange" type="addr:AddressNumberRange_type" minOccurs="1" maxOccurs="1"/>
+			<xsd:element name="CompleteStreetName" type="addr:CompleteStreetName_type" minOccurs="1" maxOccurs="1"/>
+			<xsd:element name="PlaceName" type="addr:PlaceName_type" minOccurs="1" maxOccurs="1"/>
+			<xsd:element name="StateName" type="addr:StateName_type" minOccurs="1" maxOccurs="1"/>
+			<xsd:element name="ZipCode" type="addr:ZipCode_type" minOccurs="1" maxOccurs="1"/>
+			<xsd:element name="ZipPlus4" type="addr:ZipPlus4_type" minOccurs="0" maxOccurs="1"/>
+			<xsd:element name="NationName" type="addr:NationName_type" minOccurs="0" maxOccurs="1"/>
+			<xsd:element name="AddressAttributes" type="addr:AddressAttributes_type" minOccurs="0" maxOccurs="1"/>
+		</xsd:sequence>
+		<xsd:attribute name="action" type="addr:Action_type" use="optional"/>
+	</xsd:complexType>
+	<xsd:complexType name="FourNumberAddressRange_type">
+		<xsd:sequence>
+			<xsd:element name="CompleteAddressNumberLeftLow" minOccurs="1" maxOccurs="1">
+				<xsd:complexType>
+					<xsd:complexContent>
+						<xsd:extension base="addr:CompleteAddressNumber_type">
+							<xsd:attribute name="Side" type="xsd:string" fixed="Left"/>
+							<xsd:attribute name="Bounds" type="xsd:string" fixed="Low"/>
+						</xsd:extension>
+					</xsd:complexContent>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="CompleteAddressNumberLeftHigh" minOccurs="1" maxOccurs="1">
+				<xsd:complexType>
+					<xsd:complexContent>
+						<xsd:extension base="addr:CompleteAddressNumber_type">
+							<xsd:attribute name="Side" type="xsd:string" fixed="Left"/>
+							<xsd:attribute name="Bounds" type="xsd:string" fixed="High"/>
+						</xsd:extension>
+					</xsd:complexContent>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="CompleteAddressNumberRightLow" minOccurs="1" maxOccurs="1">
+				<xsd:complexType>
+					<xsd:complexContent>
+						<xsd:extension base="addr:CompleteAddressNumber_type">
+							<xsd:attribute name="Side" type="xsd:string" fixed="Right"/>
+							<xsd:attribute name="Bounds" type="xsd:string" fixed="Low"/>
+						</xsd:extension>
+					</xsd:complexContent>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="CompleteAddressNumberRightHigh" minOccurs="1" maxOccurs="1">
+				<xsd:complexType>
+					<xsd:complexContent>
+						<xsd:extension base="addr:CompleteAddressNumber_type">
+							<xsd:attribute name="Side" type="xsd:string" fixed="Right"/>
+							<xsd:attribute name="Bounds" type="xsd:string" fixed="High"/>
+						</xsd:extension>
+					</xsd:complexContent>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="CompleteStreetName" type="addr:CompleteStreetName_type" minOccurs="1" maxOccurs="1"/>
+			<xsd:element name="PlaceName" type="addr:PlaceName_type" minOccurs="1" maxOccurs="1"/>
+			<xsd:element name="StateName" type="addr:StateName_type" minOccurs="1" maxOccurs="1"/>
+			<xsd:element name="ZipCode" type="addr:ZipCode_type" minOccurs="1" maxOccurs="1"/>
+			<xsd:element name="ZipPlus4" type="addr:ZipPlus4_type" minOccurs="0" maxOccurs="1"/>
+			<xsd:element name="NationName" type="addr:NationName_type" minOccurs="0" maxOccurs="1"/>
+			<xsd:element name="AddressAttributes" type="addr:AddressAttributes_type" minOccurs="0" maxOccurs="1"/>
+		</xsd:sequence>
+		<xsd:attribute name="action" type="addr:Action_type" use="optional"/>
+	</xsd:complexType>
+	<xsd:complexType name="UnnumberedThoroughfareAddress_type">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="en">
+The Address Class associated with singlar locations
+referenced off of a linear feature, lacking numeric
+identifiers.
+</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="LandmarkName" type="addr:LandmarkName_type" minOccurs="1" maxOccurs="1"/>
+			<xsd:element name="CompleteStreetName" type="addr:CompleteStreetName_type" minOccurs="1" maxOccurs="1"/>
+			<xsd:element name="CompleteOccupancyIdentifier" type="addr:CompleteOccupancyIdentifier_type" minOccurs="0" maxOccurs="1"/>
+			<xsd:element name="PlaceName" type="addr:PlaceName_type" minOccurs="1" maxOccurs="1"/>
+			<xsd:element name="StateName" type="addr:StateName_type" minOccurs="1" maxOccurs="1"/>
+			<xsd:element name="ZipCode" type="addr:ZipCode_type" minOccurs="1" maxOccurs="1"/>
+			<xsd:element name="ZipPlus4" type="addr:ZipPlus4_type" minOccurs="0" maxOccurs="1"/>
+			<xsd:element name="NationName" type="addr:NationName_type" minOccurs="0" maxOccurs="1"/>
+			<xsd:element name="AddressAttributes" type="addr:AddressAttributes_type" minOccurs="0" maxOccurs="1"/>
+		</xsd:sequence>
+		<xsd:attribute name="action" type="addr:Action_type" use="optional"/>
+	</xsd:complexType>
+	<!-- Landmark Address Classes -->
+	<xsd:complexType name="SingleSiteLandmarkAddress_type">
+		<xsd:sequence>
+			<!-- add type attribute to Landmark Name
+22 Sep 2005 -->
+			<xsd:element name="LandmarkName" type="addr:LandmarkName_type" minOccurs="1" maxOccurs="1"/>
+			<xsd:element name="CompleteOccupancyIdentifier" type="addr:CompleteOccupancyIdentifier_type" minOccurs="0" maxOccurs="1"/>
+			<xsd:element name="PlaceName" type="addr:PlaceName_type" minOccurs="1" maxOccurs="1"/>
+			<xsd:element name="StateName" type="addr:StateName_type" minOccurs="1" maxOccurs="1"/>
+			<xsd:element name="ZipCode" type="addr:ZipCode_type" minOccurs="1" maxOccurs="1"/>
+			<xsd:element name="ZipPlus4" type="addr:ZipPlus4_type" minOccurs="0" maxOccurs="1"/>
+			<xsd:element name="NationName" type="addr:NationName_type" minOccurs="0" maxOccurs="1"/>
+			<xsd:element name="AddressAttributes" type="addr:AddressAttributes_type" minOccurs="0" maxOccurs="1"/>
+		</xsd:sequence>
+		<xsd:attribute name="action" type="addr:Action_type" use="optional"/>
+	</xsd:complexType>
+	<xsd:complexType name="MultiSiteLandmarkAddress_type">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="en">
+The outer and the inner landmark classes must be
+expressed explicitly as landmark names. The inner name
+is more specific and the Outer name is more general. In
+the case of Truth Hall Room 306 Howard University".
+Howard University would be an outer LandmarkName, and
+Truth hall would be the inner LandmarkName. The inner
+LandmarkName may conflict with more global landmark
+names if not distinguished by a more general
+LandmarkName.
+</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="LandmarkNameInner" minOccurs="1" maxOccurs="1">
+				<xsd:complexType>
+					<xsd:simpleContent>
+						<xsd:extension base="addr:LandmarkName_type">
+							<xsd:attribute name="type" type="xsd:string" fixed="Inner"/>
+						</xsd:extension>
+					</xsd:simpleContent>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="CompleteOccupancyIdentifier" type="addr:CompleteOccupancyIdentifier_type" minOccurs="0" maxOccurs="1"/>
+			<xsd:element name="LandmarkName" minOccurs="1" maxOccurs="1">
+				<xsd:complexType>
+					<xsd:simpleContent>
+						<xsd:extension base="addr:LandmarkName_type">
+							<xsd:attribute name="type" type="xsd:string" fixed="Outer"/>
+						</xsd:extension>
+					</xsd:simpleContent>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="PlaceName" type="addr:PlaceName_type" minOccurs="1" maxOccurs="1"/>
+			<xsd:element name="StateName" type="addr:StateName_type" minOccurs="1" maxOccurs="1"/>
+			<xsd:element name="ZipCode" type="addr:ZipCode_type" minOccurs="1" maxOccurs="1"/>
+			<xsd:element name="ZipPlus4" type="addr:ZipPlus4_type" minOccurs="0" maxOccurs="1"/>
+			<xsd:element name="NationName" type="addr:NationName_type" minOccurs="0" maxOccurs="1"/>
+			<xsd:element name="AddressAttributes" type="addr:AddressAttributes_type" minOccurs="0" maxOccurs="1"/>
+		</xsd:sequence>
+		<xsd:attribute name="action" type="addr:Action_type" use="optional"/>
+	</xsd:complexType>
+	<xsd:complexType name="CommunityAddress_type">
+		<xsd:sequence>
+			<xsd:element name="CompleteAddressNumber" type="addr:CompleteAddressNumber_type" minOccurs="1" maxOccurs="1"/>
+			<xsd:element name="CommunityPlaceName" type="addr:CommunityPlaceName_type" minOccurs="1" maxOccurs="1"/>
+			<xsd:element name="CompleteOccupancyIdentifier" type="addr:CompleteOccupancyIdentifier_type" minOccurs="0" maxOccurs="1"/>
+			<xsd:element name="PlaceName" type="addr:PlaceName_type" minOccurs="1" maxOccurs="1"/>
+			<xsd:element name="StateName" type="addr:StateName_type" minOccurs="1" maxOccurs="1"/>
+			<xsd:element name="ZipCode" type="addr:ZipCode_type" minOccurs="1" maxOccurs="1"/>
+			<xsd:element name="ZipPlus4" type="addr:ZipPlus4_type" minOccurs="0" maxOccurs="1"/>
+			<xsd:element name="NationName" type="addr:NationName_type" minOccurs="0" maxOccurs="1"/>
+			<xsd:element name="AddressAttributes" type="addr:AddressAttributes_type" minOccurs="0" maxOccurs="1"/>
+		</xsd:sequence>
+		<xsd:attribute name="action" type="addr:Action_type" use="optional"/>
+	</xsd:complexType>
+	<!-- Postal Delivery Address Classes -->
+	<xsd:complexType name="USPSPostalDeliveryBox_type">
+		<xsd:sequence>
+			<xsd:element name="USPSBox" type="addr:USPSBox_type" minOccurs="1" maxOccurs="1"/>
+			<xsd:element name="PrivateMailBox" type="addr:PrivateMailBox_type" minOccurs="0" maxOccurs="1"/>
+			<xsd:element name="PlaceName" type="addr:PlaceName_type" minOccurs="1" maxOccurs="1"/>
+			<xsd:element name="StateName" type="addr:StateName_type" minOccurs="1" maxOccurs="1"/>
+			<xsd:element name="ZipCode" type="addr:ZipCode_type" minOccurs="1" maxOccurs="1"/>
+			<xsd:element name="ZipPlus4" type="addr:ZipPlus4_type" minOccurs="0" maxOccurs="1"/>
+			<xsd:element name="NationName" type="addr:NationName_type" minOccurs="0" maxOccurs="1"/>
+			<xsd:element name="AddressAttributes" type="addr:AddressAttributes_type" minOccurs="0" maxOccurs="1"/>
+		</xsd:sequence>
+		<xsd:attribute name="action" type="addr:Action_type" use="optional"/>
+	</xsd:complexType>
+	<xsd:complexType name="USPSPostalDeliveryRoute_type">
+		<xsd:sequence>
+			<xsd:element name="USPSBoxGroup" type="addr:USPSBoxGroup_type" minOccurs="1" maxOccurs="1"/>
+			<xsd:element name="USPSBox" type="addr:USPSBox_type" minOccurs="1" maxOccurs="1"/>
+			<xsd:element name="PrivateMailBox" type="addr:PrivateMailBox_type" minOccurs="0" maxOccurs="1"/>
+			<xsd:element name="PlaceName" type="addr:PlaceName_type" minOccurs="1" maxOccurs="1"/>
+			<xsd:element name="StateName" type="addr:StateName_type" minOccurs="1" maxOccurs="1"/>
+			<xsd:element name="ZipCode" type="addr:ZipCode_type" minOccurs="1" maxOccurs="1"/>
+			<xsd:element name="ZipPlus4" type="addr:ZipPlus4_type" minOccurs="0" maxOccurs="1"/>
+			<xsd:element name="NationName" type="addr:NationName_type" minOccurs="0" maxOccurs="1"/>
+			<xsd:element name="AddressAttributes" type="addr:AddressAttributes_type" minOccurs="0" maxOccurs="1"/>
+		</xsd:sequence>
+		<xsd:attribute name="action" type="addr:Action_type" use="optional"/>
+	</xsd:complexType>
+	<xsd:complexType name="USPSGeneralDeliveryAddress_type">
+		<xsd:sequence>
+			<xsd:element name="USPSGeneralDeliveryPoint" type="addr:USPSGeneralDeliveryPoint_type"/>
+			<xsd:element name="PlaceName" type="addr:PlaceName_type" minOccurs="1" maxOccurs="1"/>
+			<xsd:element name="StateName" type="addr:StateName_type" minOccurs="1" maxOccurs="1"/>
+			<xsd:element name="ZipCode" type="addr:ZipCode_type" minOccurs="1" maxOccurs="1"/>
+			<xsd:element name="ZipPlus4" type="addr:ZipPlus4_type" minOccurs="0" maxOccurs="1"/>
+			<xsd:element name="NationName" type="addr:NationName_type" minOccurs="0" maxOccurs="1"/>
+			<xsd:element name="AddressAttributes" type="addr:AddressAttributes_type" minOccurs="0" maxOccurs="1"/>
+		</xsd:sequence>
+		<xsd:attribute name="action" type="addr:Action_type" use="optional"/>
+	</xsd:complexType>
+	<!-- General Delivery Classes -->
+	<xsd:complexType name="GeneralAddress_type">
+		<xsd:sequence>
+			<xsd:element name="CompleteFeatureAddress" type="addr:CompleteFeatureAddress_type" minOccurs="1" maxOccurs="1"/>
+			<xsd:element name="PlaceStateZip" type="addr:PlaceStateZip_type" minOccurs="1" maxOccurs="1"/>
+			<xsd:element name="NationName" type="addr:NationName_type" minOccurs="0" maxOccurs="1"/>
+			<xsd:element name="AddressAttributes" type="addr:AddressAttributes_type" minOccurs="0" maxOccurs="1"/>
+		</xsd:sequence>
+		<xsd:attribute name="action" type="addr:Action_type" use="optional"/>
+	</xsd:complexType>
+	<xsd:complexType name="AddressCollection_type">
+		<xsd:annotation>
+			<xsd:documentation>
+The Single Choice Union of all Address Types
+</xsd:documentation>
+		</xsd:annotation>
+		<xsd:choice>
+			<xsd:element name="AddressScheme" type="addr:AddressScheme_type"/>
+			<xsd:element name="SiteAddress" type="addr:SiteAddress_type"/>
+			<xsd:element name="LandmarkSiteAddress" type="addr:LandmarkSiteAddress_type"/>
+			<xsd:element name="IntersectionAddress" type="addr:IntersectionAddress_type"/>
+			<xsd:element name="TwoNumberAddressRange" type="addr:TwoNumberAddressRange_type"/>
+			<xsd:element name="FourNumberAddressRange" type="addr:FourNumberAddressRange_type"/>
+			<xsd:element name="UnnumberedThoroughfareAddress" type="addr:UnnumberedThoroughfareAddress_type"/>
+			<xsd:element name="SingleSiteLandmarkAddress" type="addr:SingleSiteLandmarkAddress_type"/>
+			<xsd:element name="MultiSiteLandmarkAddress" type="addr:MultiSiteLandmarkAddress_type"/>
+			<xsd:element name="CommunityAddress" type="addr:CommunityAddress_type"/>
+			<xsd:element name="USPSPostalDeliveryBox" type="addr:USPSPostalDeliveryBox_type"/>
+			<xsd:element name="USPSPostalDeliveryRoute" type="addr:USPSPostalDeliveryRoute_type"/>
+			<xsd:element name="USPSGeneralDeliveryAddress" type="addr:USPSGeneralDeliveryAddress_type"/>
+			<xsd:element name="GeneralAddress" type="addr:GeneralAddress_type"/>
+		</xsd:choice>
+	</xsd:complexType>
+	<!-- End Complex Types -->
+	<!-- Address Classes -->
+	<!-- Numbering Scheme Description Class -->
+	<xsd:element name="AddressScheme" type="addr:AddressScheme_type"/>
+	<!-- Thoroughfare Address Classes -->
+	<xsd:element name="SiteAddress" type="addr:SiteAddress_type"/>
+	<xsd:element name="LandmarkSiteAddress" type="addr:LandmarkSiteAddress_type"/>
+	<xsd:element name="IntersectionAddress" type="addr:IntersectionAddress_type"/>
+	<xsd:element name="TwoNumberAddressRange" type="addr:TwoNumberAddressRange_type"/>
+	<xsd:element name="FourNumberAddressRange" type="addr:FourNumberAddressRange_type"/>
+	<xsd:element name="UnnumberedThoroughfareAddress" type="addr:UnnumberedThoroughfareAddress_type"/>
+	<!-- Landmark Address Classes -->
+	<xsd:element name="SingleSiteLandmarkAddress" type="addr:SingleSiteLandmarkAddress_type"/>
+	<xsd:element name="MultiSiteLandmarkAddress" type="addr:MultiSiteLandmarkAddress_type"/>
+	<xsd:element name="CommunityAddress" type="addr:CommunityAddress_type"/>
+	<!-- Postal Delivery Address Classes -->
+	<xsd:element name="USPSPostalDeliveryBox" type="addr:USPSPostalDeliveryBox_type"/>
+	<xsd:element name="USPSPostalDeliveryRoute" type="addr:USPSPostalDeliveryRoute_type"/>
+	<xsd:element name="USPSGeneralDeliveryAddress" type="addr:USPSGeneralDeliveryAddress_type"/>
+	<!-- General Delivery Classes -->
+	<xsd:element name="GeneralAddress" type="addr:GeneralAddress_type"/>
+	<!--Wrapper collecting a set of addresses -->
+	<xsd:element name="AddressCollection">
+		<xsd:complexType>
+			<!-- Items must be presented in this order -->
+			<xsd:sequence>
+				<xsd:element ref="addr:AddressScheme" minOccurs="0" maxOccurs="unbounded"/>
+				<xsd:element ref="addr:SiteAddress" minOccurs="0" maxOccurs="unbounded"/>
+				<xsd:element ref="addr:LandmarkSiteAddress" minOccurs="0" maxOccurs="unbounded"/>
+				<xsd:element ref="addr:IntersectionAddress" minOccurs="0" maxOccurs="unbounded"/>
+				<xsd:element ref="addr:TwoNumberAddressRange" minOccurs="0" maxOccurs="unbounded"/>
+				<xsd:element ref="addr:FourNumberAddressRange" minOccurs="0" maxOccurs="unbounded"/>
+				<xsd:element name="UnnumberedThoroughfareAddress" minOccurs="0" maxOccurs="unbounded"/>
+				<xsd:element ref="addr:SingleSiteLandmarkAddress" minOccurs="0" maxOccurs="unbounded"/>
+				<xsd:element ref="addr:MultiSiteLandmarkAddress" minOccurs="0" maxOccurs="unbounded"/>
+				<xsd:element ref="addr:CommunityAddress" minOccurs="0" maxOccurs="unbounded"/>
+				<xsd:element ref="addr:USPSPostalDeliveryBox" minOccurs="0" maxOccurs="unbounded"/>
+				<xsd:element ref="addr:USPSPostalDeliveryRoute" minOccurs="0" maxOccurs="unbounded"/>
+				<xsd:element ref="addr:USPSGeneralDeliveryAddress" minOccurs="0" maxOccurs="unbounded"/>
+				<xsd:element ref="addr:GeneralAddress" minOccurs="0" maxOccurs="unbounded"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+</xsd:schema>

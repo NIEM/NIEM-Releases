@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema 
+xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+targetNamespace="http://niem.gov/niem/external/ogc-swe-common/1.0.0/dhs-gmo/1.0.0" 
+xmlns:swec="http://niem.gov/niem/external/ogc-swe-common/1.0.0/dhs-gmo/1.0.0" 
+elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:annotation>
+		<xs:documentation>SWE Common schemas from Sensor Model Language OGC 05-086 added as DHS profile.  
+
+  DHS Changes:  
+    2006-09-22 Changed namespaces following NIEM conventions
+    1)  targetNamespace http://niem.gov//niem/external/ogc-swe-common/1.0.0/dhs-gmo/1.0.0  changed tnsp to swec from swe to distinguish it from swe namespace defined by 05-087r4_Observations_and_measurements.pdf
+
+</xs:documentation>
+	</xs:annotation>
+	<!--========================-->
+	<!-- Includes and Imports -->
+	<!--========================-->
+	<xs:include schemaLocation="./positionData.xsd"/>
+	<!-- transitively includes parameters -->
+	<xs:include schemaLocation="./data.xsd"/>
+</xs:schema>

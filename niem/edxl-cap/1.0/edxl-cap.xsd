@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema targetNamespace="http://niem.gov/niem/edxl-cap/1.0" version="1" xmlns:i="http://niem.gov/niem/appinfo/1.0" xmlns:edxl-cap="http://niem.gov/niem/edxl-cap/1.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:cap="urn:oasis:names:tc:emergency:cap:1.1" xmlns:s="http://niem.gov/niem/structures/1.0" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <xsd:annotation>
+    <xsd:documentation>The Common Alerting Protocol (CAP).</xsd:documentation>
+    <xsd:appinfo>
+      <i:ConformantIndicator>true</i:ConformantIndicator>
+    </xsd:appinfo>
+  </xsd:annotation>
+  <xsd:import schemaLocation="../../structures/1.0/structures.xsd" namespace="http://niem.gov/niem/structures/1.0"/>
+  <xsd:import namespace="http://niem.gov/niem/appinfo/1.0" schemaLocation="../../appinfo/1.0/appinfo.xsd"/>
+  <xsd:import schemaLocation="../../external/cap/1.1/cap.xsd" namespace="urn:oasis:names:tc:emergency:cap:1.1">
+    <xsd:annotation>
+      <xsd:documentation>The Common Alerting Protocol (CAP) is a simple but general format for exchanging all-hazard
+
+emergency alerts and public warnings over all kinds of networks. CAP allows a consistent
+
+warning message to be disseminated simultaneously over many different warning systems, thus
+
+increasing warning effectiveness while simplifying the warning task. CAP also facilitates the
+
+detection of emerging patterns in local warnings of various kinds, such as might indicate an
+
+undetected hazard or hostile act. And CAP provides a template for effective warning messages
+
+based on best practices identified in academic research and real-world experience.</xsd:documentation>
+      <xsd:appinfo>
+        <i:ConformantIndicator>false</i:ConformantIndicator>
+      </xsd:appinfo>
+    </xsd:annotation>
+  </xsd:import>
+  <xsd:complexType name="AlertAdapterType">
+    <xsd:annotation>
+      <xsd:appinfo>
+        <i:Base i:namespace="http://niem.gov/niem/structures/1.0" i:name="Object"/>
+        <i:ExternalAdapterTypeIndicator>true</i:ExternalAdapterTypeIndicator>
+      </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="s:ComplexObjectType">
+        <xsd:sequence>
+          <xsd:element ref="cap:alert" minOccurs="0" maxOccurs="unbounded"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="AlertAdapter" type="edxl-cap:AlertAdapterType" nillable="true"/>
+</xsd:schema>

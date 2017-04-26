@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema 
+xmlns="http://www.w3.org/2001/XMLSchema" 
+targetNamespace="http://niem.gov/niem/external/ogc-observation/draft-0.14.5/om/dhs-gmo/1.0.0" 
+xmlns:om="http://niem.gov/niem/external/ogc-observation/draft-0.14.5/om/dhs-gmo/1.0.0" 
+xmlns:swe="http://niem.gov/niem/external/ogc-observation/draft-0.14.5/swe/dhs-gmo/1.0.0" 
+xmlns:gml="http://niem.gov/niem/external/ogc-gml/3.1.1/dhs-gmo/1.0.0"
+xmlns:xlink="http://niem.gov/niem/external/w3c-xlink/1.0/dhs-gmo/1.0.0"
+elementFormDefault="qualified" attributeFormDefault="unqualified" version="pre-release">
+	<annotation>
+		<documentation>procedures.xsd
+Components to describe procedures used in observations and measurements, and other events.
+Copyright (c) 2006 Open Geospatial Consortium - see http://www.opengeospatial.org/about/?page=ipr
+OGC 05-087r4 page 44 © OGC 2006 – All rights reserved
+
+		DHS Changes 
+     		2006-09-28 Changed namespaces and schema location
+				ns old	http://niem.gov/niem/external/gml/3.1.1/dhs-gmo/1.0.0
+				ns new	http://niem.gov/niem/external/ogc-gml/3.1.1/dhs-gmo/1.0.0	
+				from		../../../../../gml/3.1.1/dhs-gmo/1.0.0/gml.xsd
+				to			../../../../../ogc-gml/3.1.1/dhs-gmo/1.0.0/gml.xsd
+
+				ns old	http://niem.gov/niem/external/xlink/1.0.0/dhs-gmo/1.0.0
+				ns new	http://niem.gov/niem/external/w3c-xlink/1.0/dhs-gmo/1.0.0		
+
+		    2006-09-22 Changed namespaces following NIEM conventions
+			 1) targetNamespace http://niem.gov/niem/external/ogc-observation/draft-0.14.5/om/dhs-gmo/1.0.0
+			 2) om namespace		http://niem.gov/niem/external/ogc-observation/draft-0.14.5/om/dhs-gmo/1.0.0
+			 3) swe namespace	http://niem.gov/niem/external/ogc-observation/draft-0.14.5/swe/dhs-gmo/1.0.0
+			 4) gml namespace	http://niem.gov/niem/external/gml/3.1.1/dhs-gmo/1.0.0
+			 5) xlink namespace	http://niem.gov/niem/external/xlink/1.0.0/dhs-gmo/1.0.0
+
+			2006-09-18 versioned namespace to match OGC 05-087r4 source, which specifies Version: 0.14.5
+			  versioned swe, xlink, gml namespaces, changed schemaLocations
+
+
+</documentation>
+	</annotation>
+	<!-- ====================================================================== -->
+	<!-- bring in other schemas -->
+	<!-- <import namespace="http://www.opengis.net/gml" schemaLocation="http://schemas.opengis.net/gml/3.1.1/base/gml.xsd"/> -->
+	 <import namespace="http://niem.gov/niem/external/ogc-gml/3.1.1/dhs-gmo/1.0.0" 
+			   schemaLocation="../../../../../ogc-gml/3.1.1/dhs-gmo/1.0.0/gml.xsd"/>
+	
+	<!-- <import namespace="http://www.opengis.net/swe" schemaLocation="../../sweCommon/current/swe.xsd"/> -->
+		<import namespace="http://niem.gov/niem/external/ogc-observation/draft-0.14.5/swe/dhs-gmo/1.0.0" 
+	schemaLocation="../../../swe/dhs-gmo/1.0.0/swe.xsd"/>
+	
+	<include schemaLocation="./event.xsd"/>
+	<!-- ====================================================================== -->
+	<!-- ====================================================================== -->
+	<!-- === Generic Procedure type === -->
+	<complexType name="ProcedureSystemType">
+		<annotation>
+			<documentation>Use gml:description element to describe the procedure or link to a definitive
+description.</documentation>
+		</annotation>
+		<complexContent>
+			<extension base="gml:DefinitionType"/>
+		</complexContent>
+	</complexType>
+	<!-- ...................... -->
+	<element name="ProcedureSystem" type="om:ProcedureSystemType" abstract="true" substitutionGroup="gml:Definition">
+		<annotation>
+			<documentation>Abstract Head of substitution group.
+Procedures may be listed in a Dictionary (i.e. lightweight registry)</documentation>
+		</annotation>
+	</element>
+	<!-- ...................... -->
+	<complexType name="ProcedureSystemPropertyType">
+		<sequence minOccurs="0">
+			<element ref="om:ProcedureSystem"/>
+		</sequence>
+		<attributeGroup ref="gml:AssociationAttributeGroup"/>
+	</complexType>
+	<!-- ====================================================================== -->
+	<complexType name="ProcedureSequenceType">
+		<annotation>
+			<documentation>
+</documentation>
+		</annotation>
+		<complexContent>
+			<extension base="om:ProcedureSystemType">
+				<sequence>
+					<element name="step" type="om:ProcedurePropertyType" maxOccurs="unbounded"/>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<!-- ...................... -->
+<element name="ProcedureSequence" type="om:ProcedureSequenceType" substitutionGroup="om:ProcedureSystem">
+		<annotation>
+			<documentation>
+</documentation>
+		</annotation>
+	</element>
+	<!-- ...................... -->
+	<complexType name="ProcedureSequencePropertyType">
+		<sequence minOccurs="0">
+			<element ref="om:ProcedureSequence"/>
+		</sequence>
+		<attributeGroup ref="gml:AssociationAttributeGroup"/>
+	</complexType>
+	<!-- ====================================================================== -->
+	<complexType name="ProcedurePackageType">
+		<annotation>
+			<documentation>
+</documentation>
+		</annotation>
+		<complexContent>
+			<extension base="om:ProcedureSystemType">
+				<sequence>
+					<element name="element" type="gml:ReferenceType" maxOccurs="unbounded"/>
+				</sequence>
+				<attribute name="elementCount" type="positiveInteger"/>
+			</extension>
+		</complexContent>
+	</complexType>
+	<!-- ...................... -->
+	<element name="ProcedurePackage" type="om:ProcedurePackageType" substitutionGroup="om:ProcedureSystem">
+		<annotation>
+			<documentation>
+</documentation>
+		</annotation>
+	</element>
+	<!-- ...................... -->
+	<complexType name="ProcedurePackagePropertyType">
+		<sequence minOccurs="0">
+			<element ref="om:ProcedurePackage"/>
+		</sequence>
+		<attributeGroup ref="gml:AssociationAttributeGroup"/>
+	</complexType>
+	<!-- ====================================================================== -->
+	<!-- ====================================================================== -->
+	<!-- ====================================================================== -->
+	<complexType name="ProcedureEventType">
+		<annotation>
+			<documentation>Description of an event involving a procedure.</documentation>
+		</annotation>
+		<complexContent>
+			<extension base="om:EventType">
+				<sequence>
+					<element name="procedure" type="om:ProcedureSystemPropertyType"/>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<!-- ...................... -->
+	<element name="ProcedureEvent" type="om:ProcedureEventType" substitutionGroup="om:Event">
+		<annotation>
+			<documentation>Description of an event involving a procedure.</documentation>
+		</annotation>
+	</element>
+	<!-- ...................... -->
+	<complexType name="ProcedureEventPropertyType">
+		<sequence minOccurs="0">
+			<element ref="om:ProcedureEvent"/>
+		</sequence>
+		<attributeGroup ref="gml:AssociationAttributeGroup"/>
+</complexType>
+	<!-- ====================================================================== -->
+	<complexType name="ProcedureHistoryType">
+		<annotation>
+			<documentation>An ordered sequence of ProcedureEvents.</documentation>
+		</annotation>
+		<complexContent>
+			<extension base="om:ProcedureEventType">
+				<sequence>
+					<element name="step" type="om:ProcedureEventPropertyType" maxOccurs="unbounded"/>
+				</sequence>
+			</extension>
+		</complexContent>
+	</complexType>
+	<!-- ...................... -->
+	<element name="ProcedureHistory" type="om:ProcedureHistoryType" substitutionGroup="om:ProcedureEvent">
+		<annotation>
+			<documentation>
+</documentation>
+		</annotation>
+	</element>
+	<!-- ...................... -->
+	<complexType name="ProcedureHistoryPropertyType">
+		<sequence minOccurs="0">
+			<element ref="om:ProcedureHistory"/>
+		</sequence>
+		<attributeGroup ref="gml:AssociationAttributeGroup"/>
+	</complexType>
+	<!-- ====================================================================== -->
+	<complexType name="ProcedurePropertyType">
+		<sequence minOccurs="0">
+			<choice>
+				<element ref="om:ProcedureSystem"/>
+				<element ref="om:ProcedureEvent"/>
+			</choice>
+		</sequence>
+		<attributeGroup ref="gml:AssociationAttributeGroup"/>
+		<attribute name="unionSemantics">
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="procedureType"/>
+					<enumeration value="procedureUse"/>
+				</restriction>
+			</simpleType>
+		</attribute>
+	</complexType>
+	<!-- ====================================================================== -->
+</schema>

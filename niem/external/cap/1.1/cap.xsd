@@ -1,0 +1,189 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+<schema xmlns = "http://www.w3.org/2001/XMLSchema"
+   targetNamespace = "urn:oasis:names:tc:emergency:cap:1.1"
+   xmlns:cap = "urn:oasis:names:tc:emergency:cap:1.1"
+   xmlns:xs = "http://www.w3.org/2001/XMLSchema"
+   elementFormDefault = "qualified"
+   attributeFormDefault = "unqualified">
+  <element name = "alert">
+    <annotation>
+      <documentation>CAP Alert Message (version 1.1)</documentation>
+    </annotation>
+    <complexType>
+      <sequence>
+        <element name = "identifier" type = "string"/>
+        <element name = "sender" type = "string"/>
+        <element name = "sent" type = "dateTime"/>
+        <element name = "status">
+          <simpleType>
+            <restriction base = "string">
+              <enumeration value = "Actual"/>
+              <enumeration value = "Exercise"/>
+              <enumeration value = "System"/>
+              <enumeration value = "Test"/>
+              <enumeration value = "Draft"/>
+            </restriction>
+          </simpleType>
+        </element>
+        <element name = "msgType">
+          <simpleType>
+            <restriction base = "string">
+              <enumeration value = "Alert"/>
+              <enumeration value = "Update"/>
+              <enumeration value = "Cancel"/>
+              <enumeration value = "Ack"/>
+              <enumeration value = "Error"/>
+            </restriction>
+          </simpleType>
+        </element>
+        <element name = "source" type = "string" minOccurs = "0"/>
+        <element name = "scope">
+          <simpleType>
+            <restriction base = "string">
+              <enumeration value = "Public"/>
+              <enumeration value = "Restricted"/>
+              <enumeration value = "Private"/>
+            </restriction>
+          </simpleType>
+        </element>
+        <element name = "restriction" type = "string" minOccurs = "0"/>
+        <element name = "addresses" type = "string" minOccurs = "0"/>
+        <element name = "code" type = "string" minOccurs = "0" maxOccurs = "unbounded"/>
+        <element name = "note" type = "string" minOccurs = "0"/>
+        <element name = "references" type = "string" minOccurs = "0"/>
+        <element name = "incidents" type = "string" minOccurs = "0"/>
+        <element name = "info" minOccurs = "0" maxOccurs = "unbounded">
+          <complexType>
+            <sequence>
+              <element name = "language" type = "language" default = "en-US" minOccurs = "0"/>
+              <element name = "category" maxOccurs = "unbounded">
+                <simpleType>
+                  <restriction base = "string">
+                    <enumeration value = "Geo"/>
+                    <enumeration value = "Met"/>
+                    <enumeration value = "Safety"/>
+                    <enumeration value = "Security"/>
+                    <enumeration value = "Rescue"/>
+                    <enumeration value = "Fire"/>
+                    <enumeration value = "Health"/>
+                    <enumeration value = "Env"/>
+                    <enumeration value = "Transport"/>
+                    <enumeration value = "Infra"/>
+                    <enumeration value = "CBRNE"/>
+                    <enumeration value = "Other"/>
+                  </restriction>
+                </simpleType>
+              </element>
+              <element name = "event" type = "string"/>
+              <element name = "responseType" minOccurs = "0" maxOccurs = "unbounded">
+                <simpleType>
+                  <restriction base = "string">
+                    <enumeration value = "Shelter"/>
+                    <enumeration value = "Evacuate"/>
+                    <enumeration value = "Prepare"/>
+                    <enumeration value = "Execute"/>
+                    <enumeration value = "Monitor"/>
+                    <enumeration value = "Assess"/>
+                    <enumeration value = "None"/>
+                  </restriction>
+                </simpleType>
+              </element>
+              <element name = "urgency">
+                <simpleType>
+                  <restriction base = "string">
+                    <enumeration value = "Immediate"/>
+                    <enumeration value = "Expected"/>
+                    <enumeration value = "Future"/>
+                    <enumeration value = "Past"/>
+                    <enumeration value = "Unknown"/>
+                  </restriction>
+                </simpleType>
+              </element>
+              <element name = "severity">
+                <simpleType>
+                  <restriction base = "string">
+                    <enumeration value = "Extreme"/>
+                    <enumeration value = "Severe"/>
+                    <enumeration value = "Moderate"/>
+                    <enumeration value = "Minor"/>
+                    <enumeration value = "Unknown"/>
+                  </restriction>
+                </simpleType>
+              </element>
+              <element name = "certainty">
+                <simpleType>
+                  <restriction base = "string">
+                    <enumeration value = "Observed"/>
+                    <enumeration value = "Likely"/>
+                    <enumeration value = "Possible"/>
+                    <enumeration value = "Unlikely"/>
+                    <enumeration value = "Unknown"/>
+                  </restriction>
+                </simpleType>
+              </element>
+              <element name = "audience" type = "string" minOccurs = "0"/>
+              <element name = "eventCode" minOccurs = "0" maxOccurs = "unbounded">
+                <complexType>
+                  <sequence>
+                    <element ref = "cap:valueName"/>
+                    <element ref = "cap:value"/>
+                  </sequence>
+                </complexType>
+              </element>
+              <element name = "effective" type = "dateTime" form = "qualified" minOccurs = "0"/>
+              <element name = "onset" type = "dateTime" minOccurs = "0"/>
+              <element name = "expires" type = "dateTime" minOccurs = "0"/>
+              <element name = "senderName" type = "string" minOccurs = "0"/>
+              <element name = "headline" type = "string" minOccurs = "0"/>
+              <element name = "description" type = "string" minOccurs = "0"/>
+              <element name = "instruction" type = "string" minOccurs = "0"/>
+              <element name = "web" type = "anyURI" minOccurs = "0"/>
+              <element name = "contact" type = "string" minOccurs = "0"/>
+              <element name = "parameter" minOccurs = "0" maxOccurs = "unbounded">
+                <complexType>
+                  <sequence>
+                    <element ref = "cap:valueName"/>
+                    <element ref = "cap:value"/>
+                  </sequence>
+                </complexType>
+              </element>
+              <element name = "resource" minOccurs = "0" maxOccurs = "unbounded">
+                <complexType>
+                  <sequence>
+                    <element name = "resourceDesc" type = "string"/>
+                    <element name = "mimeType" type = "string" minOccurs = "0"/>
+                    <element name = "size" type = "integer" minOccurs = "0"/>
+                    <element name = "uri" type = "anyURI" minOccurs = "0"/>
+                    <element name = "derefUri" type = "string" minOccurs = "0"/>
+                    <element name = "digest" type = "string" minOccurs = "0"/>
+                  </sequence>
+                </complexType>
+              </element>
+              <element name = "area" minOccurs = "0" maxOccurs = "unbounded">
+                <complexType>
+                  <sequence>
+                    <element name = "areaDesc" type = "string"/>
+                    <element name = "polygon" type = "string" minOccurs = "0" maxOccurs = "unbounded"/>
+                    <element name = "circle" type = "string" minOccurs = "0" maxOccurs = "unbounded"/>
+                    <element name = "geocode" minOccurs = "0" maxOccurs = "unbounded">
+                      <complexType>
+                        <sequence>
+                          <element ref = "cap:valueName"/>
+                          <element ref = "cap:value"/>
+                        </sequence>
+                      </complexType>
+                    </element>
+                    <element name = "altitude" type = "string" minOccurs = "0"/>
+                    <element name = "ceiling" type = "string" minOccurs = "0"/>
+                  </sequence>
+                </complexType>
+              </element>
+            </sequence>
+          </complexType>
+        </element>
+      </sequence>
+    </complexType>
+  </element>
+  <element name = "valueName" type = "string"/>
+  <element name = "value" type = "string"/>
+</schema>

@@ -1,0 +1,2782 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema targetNamespace="http://niem.gov/niem/census/1.0" version="1" xmlns:i="http://niem.gov/niem/appinfo/1.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:s="http://niem.gov/niem/structures/1.0" xmlns:census="http://niem.gov/niem/census/1.0" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <xsd:annotation>
+    <xsd:documentation>Employment codes from the U.S. Census Bureau.</xsd:documentation>
+    <xsd:appinfo>
+      <i:ConformantIndicator>true</i:ConformantIndicator>
+    </xsd:appinfo>
+  </xsd:annotation>
+  <xsd:import schemaLocation="../../structures/1.0/structures.xsd" namespace="http://niem.gov/niem/structures/1.0"/>
+  <xsd:import namespace="http://niem.gov/niem/appinfo/1.0" schemaLocation="../../appinfo/1.0/appinfo.xsd"/>
+  <xsd:simpleType name="OccupationCategoryCodeSimpleType">
+    <xsd:annotation>
+      <xsd:documentation>A code list that enumerates general categories of employments or occupations.</xsd:documentation>
+      <xsd:appinfo>
+        <i:Base i:namespace="http://niem.gov/niem/structures/1.0" i:name="Object"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:restriction base="xsd:token">
+      <xsd:enumeration value="01">
+        <xsd:annotation>
+          <xsd:documentation>Administrators and Officials, Public Administration</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="02">
+        <xsd:annotation>
+          <xsd:documentation>Other Executive, Administrators, and Managers</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="03">
+        <xsd:annotation>
+          <xsd:documentation>Management Related Occupations</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="04">
+        <xsd:annotation>
+          <xsd:documentation>Engineers</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="05">
+        <xsd:annotation>
+          <xsd:documentation>Mathematical and Computer Scientists</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="06">
+        <xsd:annotation>
+          <xsd:documentation>Natural Scientists</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="07">
+        <xsd:annotation>
+          <xsd:documentation>Health Diagnosing Occupations</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="08">
+        <xsd:annotation>
+          <xsd:documentation>Health Assessment and Treating Occupations</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="09">
+        <xsd:annotation>
+          <xsd:documentation>Teachers, College and University</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="10">
+        <xsd:annotation>
+          <xsd:documentation>Teachers, Except College and University</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="11">
+        <xsd:annotation>
+          <xsd:documentation>Lawyers and Judges</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="12">
+        <xsd:annotation>
+          <xsd:documentation>Other Professional Specialty Occupations</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="13">
+        <xsd:annotation>
+          <xsd:documentation>Health Technologists and Technicians</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="14">
+        <xsd:annotation>
+          <xsd:documentation>Engineering and Science Technicians</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="15">
+        <xsd:annotation>
+          <xsd:documentation>Technicians, Except Health Engineering, and Science</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="16">
+        <xsd:annotation>
+          <xsd:documentation>Supervisors and Proprietors, Sales Occupations</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="17">
+        <xsd:annotation>
+          <xsd:documentation>Sales Representatives, Finance, and Business Service</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="18">
+        <xsd:annotation>
+          <xsd:documentation>Sales Representatives, Commodities, Except Retail</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="19">
+        <xsd:annotation>
+          <xsd:documentation>Sales Workers, Retail and Personal Services</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="20">
+        <xsd:annotation>
+          <xsd:documentation>Sales Related Occupations</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="21">
+        <xsd:annotation>
+          <xsd:documentation>Supervisors - Administrative Support</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="22">
+        <xsd:annotation>
+          <xsd:documentation>Computer Equipment Operators</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="23">
+        <xsd:annotation>
+          <xsd:documentation>Secretaries, Stenographers, and Typists</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="24">
+        <xsd:annotation>
+          <xsd:documentation>Financial Records, Processing Occupations</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="25">
+        <xsd:annotation>
+          <xsd:documentation>Mail and Message Distributing</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="26">
+        <xsd:annotation>
+          <xsd:documentation>Other Administrative Support Occupations, Including Clerical</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="27">
+        <xsd:annotation>
+          <xsd:documentation>Private Household Service Occupations</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="28">
+        <xsd:annotation>
+          <xsd:documentation>Protective Service Occupations</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="29">
+        <xsd:annotation>
+          <xsd:documentation>Food Service Occupations</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="30">
+        <xsd:annotation>
+          <xsd:documentation>Health Service Occupations</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="31">
+        <xsd:annotation>
+          <xsd:documentation>Cleaning and Building Service Occupations</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="32">
+        <xsd:annotation>
+          <xsd:documentation>Personal Service Occupations</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="33">
+        <xsd:annotation>
+          <xsd:documentation>Mechanics and Repairers</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="34">
+        <xsd:annotation>
+          <xsd:documentation>Construction Trades</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="35">
+        <xsd:annotation>
+          <xsd:documentation>Other Precision Production Occupations</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="36">
+        <xsd:annotation>
+          <xsd:documentation>Machine Operators and Tenders, Except Precision</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="37">
+        <xsd:annotation>
+          <xsd:documentation>Fabricators, Assemblers, Inspectors, and Samplers</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="38">
+        <xsd:annotation>
+          <xsd:documentation>Motor Vehicle Operators</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="39">
+        <xsd:annotation>
+          <xsd:documentation>Other Transportation Occupations and Meterial Moving</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="40">
+        <xsd:annotation>
+          <xsd:documentation>Construction Laborer</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="41">
+        <xsd:annotation>
+          <xsd:documentation>Freight, Stock and Material Handlers</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="42">
+        <xsd:annotation>
+          <xsd:documentation>Other Handlers, Equipment Cleaners, and Laborers</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="43">
+        <xsd:annotation>
+          <xsd:documentation>Farm Operators and Managers</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="44">
+        <xsd:annotation>
+          <xsd:documentation>Farm Workers and Related Occupations</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="45">
+        <xsd:annotation>
+          <xsd:documentation>Forestry and Fishing Occupations</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="46">
+        <xsd:annotation>
+          <xsd:documentation>Armed Forces last job, currently unemployed</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:complexType name="OccupationCategoryCodeType">
+    <xsd:annotation>
+      <xsd:documentation>A code list that enumerates general categories of employments or occupations.</xsd:documentation>
+      <xsd:appinfo>
+        <i:Base i:namespace="http://niem.gov/niem/structures/1.0" i:name="Object"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:simpleContent>
+      <xsd:extension base="census:OccupationCategoryCodeSimpleType">
+        <xsd:attributeGroup ref="s:SimpleObjectAttributeGroup"/>
+      </xsd:extension>
+    </xsd:simpleContent>
+  </xsd:complexType>
+  <xsd:simpleType name="OccupationCodeSimpleType">
+    <xsd:annotation>
+      <xsd:documentation>A code list that enumerates employments or occupations.</xsd:documentation>
+      <xsd:appinfo>
+        <i:Base i:namespace="http://niem.gov/niem/structures/1.0" i:name="Object"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:restriction base="xsd:token">
+      <xsd:enumeration value="004">
+        <xsd:annotation>
+          <xsd:documentation>Chief executives and general administrators, public administration</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="005">
+        <xsd:annotation>
+          <xsd:documentation>Administrators and officials, public administration</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="006">
+        <xsd:annotation>
+          <xsd:documentation>Administrators, protective services</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="007">
+        <xsd:annotation>
+          <xsd:documentation>Financial managers</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="008">
+        <xsd:annotation>
+          <xsd:documentation>Personnel and labor relations managers</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="009">
+        <xsd:annotation>
+          <xsd:documentation>Purchasing managers</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="013">
+        <xsd:annotation>
+          <xsd:documentation>Managers, marketing, advertising, and public relations</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="014">
+        <xsd:annotation>
+          <xsd:documentation>Administrators, education and related fields</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="015">
+        <xsd:annotation>
+          <xsd:documentation>Managers, medicine and health</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="017">
+        <xsd:annotation>
+          <xsd:documentation>Managers, food serving and lodging establishments</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="018">
+        <xsd:annotation>
+          <xsd:documentation>Managers, properties and real estate</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="019">
+        <xsd:annotation>
+          <xsd:documentation>Funeral directors</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="021">
+        <xsd:annotation>
+          <xsd:documentation>Managers, service organizations, not elsewhere classified</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="022">
+        <xsd:annotation>
+          <xsd:documentation>Managers and administrators, not elsewhere classified</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="023">
+        <xsd:annotation>
+          <xsd:documentation>Accountants and auditors</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="024">
+        <xsd:annotation>
+          <xsd:documentation>Underwriters</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="025">
+        <xsd:annotation>
+          <xsd:documentation>Other financial officers</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="026">
+        <xsd:annotation>
+          <xsd:documentation>Management analysts</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="027">
+        <xsd:annotation>
+          <xsd:documentation>Personnel, training, and labor relations specialists</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="028">
+        <xsd:annotation>
+          <xsd:documentation>Purchasing agents and buyers, farm products</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="029">
+        <xsd:annotation>
+          <xsd:documentation>Buyers, wholesale and retail trade except farm products</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="033">
+        <xsd:annotation>
+          <xsd:documentation>Purchasing agents and buyers, not elsewhere classified</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="034">
+        <xsd:annotation>
+          <xsd:documentation>Business and promotion agents</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="035">
+        <xsd:annotation>
+          <xsd:documentation>Construction inspectors</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="036">
+        <xsd:annotation>
+          <xsd:documentation>Inspectors and compliance officers, except construction</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="037">
+        <xsd:annotation>
+          <xsd:documentation>Management related occupations, not elsewhere classified</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="043">
+        <xsd:annotation>
+          <xsd:documentation>Architects</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="044">
+        <xsd:annotation>
+          <xsd:documentation>Aerospace</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="045">
+        <xsd:annotation>
+          <xsd:documentation>Metallurgical and materials</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="046">
+        <xsd:annotation>
+          <xsd:documentation>Mining</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="047">
+        <xsd:annotation>
+          <xsd:documentation>Petroleum</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="048">
+        <xsd:annotation>
+          <xsd:documentation>Chemical</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="049">
+        <xsd:annotation>
+          <xsd:documentation>Nuclear</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="053">
+        <xsd:annotation>
+          <xsd:documentation>Civil</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="054">
+        <xsd:annotation>
+          <xsd:documentation>Agricultural</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="055">
+        <xsd:annotation>
+          <xsd:documentation>Electrical and electronic</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="056">
+        <xsd:annotation>
+          <xsd:documentation>Industrial</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="057">
+        <xsd:annotation>
+          <xsd:documentation>Mechanical</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="058">
+        <xsd:annotation>
+          <xsd:documentation>Marine and naval architects</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="059">
+        <xsd:annotation>
+          <xsd:documentation>Engineers, not elsewhere classified</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="063">
+        <xsd:annotation>
+          <xsd:documentation>Surveyors and mapping scientists</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="064">
+        <xsd:annotation>
+          <xsd:documentation>Computer systems analysts and scientists</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="065">
+        <xsd:annotation>
+          <xsd:documentation>Operations and systems researchers and analysts</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="066">
+        <xsd:annotation>
+          <xsd:documentation>Actuaries</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="067">
+        <xsd:annotation>
+          <xsd:documentation>Statisticians</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="068">
+        <xsd:annotation>
+          <xsd:documentation>Mathematical scientists, not elsewhere classified</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="069">
+        <xsd:annotation>
+          <xsd:documentation>Physicists and astronomers</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="073">
+        <xsd:annotation>
+          <xsd:documentation>Chemists, except biochemists</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="074">
+        <xsd:annotation>
+          <xsd:documentation>Atmospheric and space scientists</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="075">
+        <xsd:annotation>
+          <xsd:documentation>Geologists and geodesists</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="076">
+        <xsd:annotation>
+          <xsd:documentation>Physical scientists, not elsewhere classified</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="077">
+        <xsd:annotation>
+          <xsd:documentation>Agricultural and food scientists</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="078">
+        <xsd:annotation>
+          <xsd:documentation>Biological and life scientists</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="079">
+        <xsd:annotation>
+          <xsd:documentation>Forestry and conservation scientists</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="083">
+        <xsd:annotation>
+          <xsd:documentation>Medical scientists</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="084">
+        <xsd:annotation>
+          <xsd:documentation>Physicians</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="085">
+        <xsd:annotation>
+          <xsd:documentation>Dentists</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="086">
+        <xsd:annotation>
+          <xsd:documentation>Veterinarians</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="087">
+        <xsd:annotation>
+          <xsd:documentation>Optometrists</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="088">
+        <xsd:annotation>
+          <xsd:documentation>Podiatrists</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="089">
+        <xsd:annotation>
+          <xsd:documentation>Health diagnosing practitioners, not elsewhere classified</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="095">
+        <xsd:annotation>
+          <xsd:documentation>Registered nurses</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="096">
+        <xsd:annotation>
+          <xsd:documentation>Pharmacists</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="097">
+        <xsd:annotation>
+          <xsd:documentation>Dietitians</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="098">
+        <xsd:annotation>
+          <xsd:documentation>Respiratory therapists</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="099">
+        <xsd:annotation>
+          <xsd:documentation>Occupational therapists</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="103">
+        <xsd:annotation>
+          <xsd:documentation>Physical therapists</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="104">
+        <xsd:annotation>
+          <xsd:documentation>Speech therapists</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="105">
+        <xsd:annotation>
+          <xsd:documentation>Therapists, not elsewhere classified</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="106">
+        <xsd:annotation>
+          <xsd:documentation>Physicians assistants</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="113">
+        <xsd:annotation>
+          <xsd:documentation>Earth, environmental, and marine science teachers</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="114">
+        <xsd:annotation>
+          <xsd:documentation>Biological science teachers</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="115">
+        <xsd:annotation>
+          <xsd:documentation>Chemistry teachers</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="116">
+        <xsd:annotation>
+          <xsd:documentation>Physics teachers</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="117">
+        <xsd:annotation>
+          <xsd:documentation>Natural science teachers, not elsewhere classified</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="118">
+        <xsd:annotation>
+          <xsd:documentation>Psychology teachers</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="119">
+        <xsd:annotation>
+          <xsd:documentation>Economics teachers</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="123">
+        <xsd:annotation>
+          <xsd:documentation>History teachers</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="124">
+        <xsd:annotation>
+          <xsd:documentation>Political science teachers</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="125">
+        <xsd:annotation>
+          <xsd:documentation>Sociology teachers</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="126">
+        <xsd:annotation>
+          <xsd:documentation>Social science teachers, not elsewhere classified</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="127">
+        <xsd:annotation>
+          <xsd:documentation>Engineering teachers</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="128">
+        <xsd:annotation>
+          <xsd:documentation>Mathematical science teachers</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="129">
+        <xsd:annotation>
+          <xsd:documentation>Computer science teachers</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="133">
+        <xsd:annotation>
+          <xsd:documentation>Medical science teachers</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="134">
+        <xsd:annotation>
+          <xsd:documentation>Health specialties teachers</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="135">
+        <xsd:annotation>
+          <xsd:documentation>Business, commerce, and marketing teachers</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="136">
+        <xsd:annotation>
+          <xsd:documentation>Agriculture and forestry teachers</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="137">
+        <xsd:annotation>
+          <xsd:documentation>Art, drama, and music teachers</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="138">
+        <xsd:annotation>
+          <xsd:documentation>Physical education teachers</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="139">
+        <xsd:annotation>
+          <xsd:documentation>Education teachers</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="143">
+        <xsd:annotation>
+          <xsd:documentation>English teachers</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="144">
+        <xsd:annotation>
+          <xsd:documentation>Foreign language teachers</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="145">
+        <xsd:annotation>
+          <xsd:documentation>Law teachers</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="146">
+        <xsd:annotation>
+          <xsd:documentation>Social work teachers</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="147">
+        <xsd:annotation>
+          <xsd:documentation>Theology teachers</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="148">
+        <xsd:annotation>
+          <xsd:documentation>Trade and industrial teachers</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="149">
+        <xsd:annotation>
+          <xsd:documentation>Home economics teachers</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="153">
+        <xsd:annotation>
+          <xsd:documentation>Teachers, postsecondary, not elsewhere classified</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="154">
+        <xsd:annotation>
+          <xsd:documentation>Postsecondary teachers, subject not specified</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="155">
+        <xsd:annotation>
+          <xsd:documentation>Teachers, prekindergarten and kindergarten</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="156">
+        <xsd:annotation>
+          <xsd:documentation>Teachers, elementary school</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="157">
+        <xsd:annotation>
+          <xsd:documentation>Teachers, secondary school</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="158">
+        <xsd:annotation>
+          <xsd:documentation>Teachers, special education</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="159">
+        <xsd:annotation>
+          <xsd:documentation>Teachers, not elsewhere classified</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="163">
+        <xsd:annotation>
+          <xsd:documentation>Counselors, Educational and Vocational</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="164">
+        <xsd:annotation>
+          <xsd:documentation>Librarians</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="165">
+        <xsd:annotation>
+          <xsd:documentation>Archivists and curators</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="166">
+        <xsd:annotation>
+          <xsd:documentation>Economists</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="167">
+        <xsd:annotation>
+          <xsd:documentation>Psychologists</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="168">
+        <xsd:annotation>
+          <xsd:documentation>Sociologists</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="169">
+        <xsd:annotation>
+          <xsd:documentation>Social scientists, not elsewhere classified</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="173">
+        <xsd:annotation>
+          <xsd:documentation>Urban planners</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="174">
+        <xsd:annotation>
+          <xsd:documentation>Social workers</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="175">
+        <xsd:annotation>
+          <xsd:documentation>Recreation workers</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="176">
+        <xsd:annotation>
+          <xsd:documentation>Clergy</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="177">
+        <xsd:annotation>
+          <xsd:documentation>Religious workers, not elsewhere classified</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="178">
+        <xsd:annotation>
+          <xsd:documentation>Lawyers and Judges</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="183">
+        <xsd:annotation>
+          <xsd:documentation>Authors</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="184">
+        <xsd:annotation>
+          <xsd:documentation>Technical writers</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="185">
+        <xsd:annotation>
+          <xsd:documentation>Designers</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="186">
+        <xsd:annotation>
+          <xsd:documentation>Musicians and composers</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="187">
+        <xsd:annotation>
+          <xsd:documentation>Actors and directors</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="188">
+        <xsd:annotation>
+          <xsd:documentation>Painters, sculptors, craft-artists, and artist printmakers</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="189">
+        <xsd:annotation>
+          <xsd:documentation>Photographers</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="193">
+        <xsd:annotation>
+          <xsd:documentation>Dancers</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="194">
+        <xsd:annotation>
+          <xsd:documentation>Artists, performers, and related workers, not elsewhere classified</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="195">
+        <xsd:annotation>
+          <xsd:documentation>Editors and reporters</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="197">
+        <xsd:annotation>
+          <xsd:documentation>Public relations specialists</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="198">
+        <xsd:annotation>
+          <xsd:documentation>Announcers</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="199">
+        <xsd:annotation>
+          <xsd:documentation>Athletes</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="203">
+        <xsd:annotation>
+          <xsd:documentation>Clinical laboratory technologists and technicians</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="204">
+        <xsd:annotation>
+          <xsd:documentation>Dental hygienists</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="205">
+        <xsd:annotation>
+          <xsd:documentation>Health record technologists and technicians</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="206">
+        <xsd:annotation>
+          <xsd:documentation>Radiologic technicians</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="207">
+        <xsd:annotation>
+          <xsd:documentation>Licensed practical nurses</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="208">
+        <xsd:annotation>
+          <xsd:documentation>Health technologists and technicians, not elsewhere classified</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="213">
+        <xsd:annotation>
+          <xsd:documentation>Electrical and electronic technicians</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="214">
+        <xsd:annotation>
+          <xsd:documentation>Industrial engineering technicians</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="215">
+        <xsd:annotation>
+          <xsd:documentation>Mechanical engineering technicians</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="216">
+        <xsd:annotation>
+          <xsd:documentation>Engineering technicians, not elsewhere classified</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="217">
+        <xsd:annotation>
+          <xsd:documentation>Drafting occupations</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="218">
+        <xsd:annotation>
+          <xsd:documentation>Surveying and mapping technicians</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="223">
+        <xsd:annotation>
+          <xsd:documentation>Biological technicians</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="224">
+        <xsd:annotation>
+          <xsd:documentation>Chemical technicians</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="225">
+        <xsd:annotation>
+          <xsd:documentation>Science technicians, not elsewhere classified</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="226">
+        <xsd:annotation>
+          <xsd:documentation>Airplane pilots and navigators</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="227">
+        <xsd:annotation>
+          <xsd:documentation>Air traffic controllers</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="228">
+        <xsd:annotation>
+          <xsd:documentation>Broadcast equipment operators</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="229">
+        <xsd:annotation>
+          <xsd:documentation>Computer programmers</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="233">
+        <xsd:annotation>
+          <xsd:documentation>Tool programmers, numerical control</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="234">
+        <xsd:annotation>
+          <xsd:documentation>Legal assistants</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="235">
+        <xsd:annotation>
+          <xsd:documentation>Technicians, not elsewhere classified</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="243">
+        <xsd:annotation>
+          <xsd:documentation>Supervisors and Proprietors, Sales Occupations</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="253">
+        <xsd:annotation>
+          <xsd:documentation>Insurance sales occupations</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="254">
+        <xsd:annotation>
+          <xsd:documentation>Real estate sales occupations</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="255">
+        <xsd:annotation>
+          <xsd:documentation>Securities and financial services sales occupations</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="256">
+        <xsd:annotation>
+          <xsd:documentation>Advertising and related sales occupations</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="257">
+        <xsd:annotation>
+          <xsd:documentation>Sales occupations, other business services</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="258">
+        <xsd:annotation>
+          <xsd:documentation>Sales engineers</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="259">
+        <xsd:annotation>
+          <xsd:documentation>Sales representatives, mining, manufacturing, and wholesale</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="263">
+        <xsd:annotation>
+          <xsd:documentation>Sales workers, motor vehicles and boats</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="264">
+        <xsd:annotation>
+          <xsd:documentation>Sales workers, apparel</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="265">
+        <xsd:annotation>
+          <xsd:documentation>Sales workers, shoes</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="266">
+        <xsd:annotation>
+          <xsd:documentation>Sales workers, furniture and home furnishings</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="267">
+        <xsd:annotation>
+          <xsd:documentation>Sales workers, radio, TV, hi-fi, and appliances</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="268">
+        <xsd:annotation>
+          <xsd:documentation>Sales workers, hardware and building supplies</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="269">
+        <xsd:annotation>
+          <xsd:documentation>Sales workers, parts</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="274">
+        <xsd:annotation>
+          <xsd:documentation>Sales workers, other commodities</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="275">
+        <xsd:annotation>
+          <xsd:documentation>Sales counter clerks</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="276">
+        <xsd:annotation>
+          <xsd:documentation>Cashiers</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="277">
+        <xsd:annotation>
+          <xsd:documentation>Street and door-to-door sales workers</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="278">
+        <xsd:annotation>
+          <xsd:documentation>News vendors</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="283">
+        <xsd:annotation>
+          <xsd:documentation>Demonstrators, promoters and models, sales</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="284">
+        <xsd:annotation>
+          <xsd:documentation>Auctioneers</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="285">
+        <xsd:annotation>
+          <xsd:documentation>Sales support occupations, not elsewhere classified</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="303">
+        <xsd:annotation>
+          <xsd:documentation>Supervisors, general office</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="304">
+        <xsd:annotation>
+          <xsd:documentation>Supervisors, computer equipment operators</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="305">
+        <xsd:annotation>
+          <xsd:documentation>Supervisors, financial records processing</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="306">
+        <xsd:annotation>
+          <xsd:documentation>Chief communications operators</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="307">
+        <xsd:annotation>
+          <xsd:documentation>Supervisors, distribution, scheduling, and adjusting clerks</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="308">
+        <xsd:annotation>
+          <xsd:documentation>Computer operators</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="309">
+        <xsd:annotation>
+          <xsd:documentation>Peripheral equipment operators</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="313">
+        <xsd:annotation>
+          <xsd:documentation>Secretaries</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="314">
+        <xsd:annotation>
+          <xsd:documentation>Stenographers</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="315">
+        <xsd:annotation>
+          <xsd:documentation>Typists</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="316">
+        <xsd:annotation>
+          <xsd:documentation>Interviewers</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="317">
+        <xsd:annotation>
+          <xsd:documentation>Hotel clerks</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="318">
+        <xsd:annotation>
+          <xsd:documentation>Transportation ticket and reservation agents</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="319">
+        <xsd:annotation>
+          <xsd:documentation>Receptionists</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="323">
+        <xsd:annotation>
+          <xsd:documentation>Information clerks, not elsewhere classified</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="325">
+        <xsd:annotation>
+          <xsd:documentation>Classified-ad clerks</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="326">
+        <xsd:annotation>
+          <xsd:documentation>Correspondence clerks</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="327">
+        <xsd:annotation>
+          <xsd:documentation>Order clerks</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="328">
+        <xsd:annotation>
+          <xsd:documentation>Personnel clerks, except payroll and timekeeping</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="329">
+        <xsd:annotation>
+          <xsd:documentation>Library clerks</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="335">
+        <xsd:annotation>
+          <xsd:documentation>File clerks</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="336">
+        <xsd:annotation>
+          <xsd:documentation>Records clerks</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="337">
+        <xsd:annotation>
+          <xsd:documentation>Bookkeepers, accounting, and auditing clerks</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="338">
+        <xsd:annotation>
+          <xsd:documentation>Payroll and timekeeping clerks</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="339">
+        <xsd:annotation>
+          <xsd:documentation>Billing clerks</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="343">
+        <xsd:annotation>
+          <xsd:documentation>Cost and rate clerks</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="344">
+        <xsd:annotation>
+          <xsd:documentation>Billing, posting, and calculating machine operators</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="345">
+        <xsd:annotation>
+          <xsd:documentation>Duplicating machine operators</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="346">
+        <xsd:annotation>
+          <xsd:documentation>Mail preparing and paper handling machine operators</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="347">
+        <xsd:annotation>
+          <xsd:documentation>Office machine operators, not elsewhere classified</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="348">
+        <xsd:annotation>
+          <xsd:documentation>Telephone operators</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="353">
+        <xsd:annotation>
+          <xsd:documentation>Communications equipment operators, not elsewhere classified</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="354">
+        <xsd:annotation>
+          <xsd:documentation>Postal clerks, except mail carriers</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="355">
+        <xsd:annotation>
+          <xsd:documentation>Mail carriers, postal service</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="356">
+        <xsd:annotation>
+          <xsd:documentation>Mail clerks, except postal service</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="357">
+        <xsd:annotation>
+          <xsd:documentation>Messengers</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="359">
+        <xsd:annotation>
+          <xsd:documentation>Dispatchers</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="363">
+        <xsd:annotation>
+          <xsd:documentation>Production coordinators</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="364">
+        <xsd:annotation>
+          <xsd:documentation>Traffic, shipping, and receiving clerks</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="365">
+        <xsd:annotation>
+          <xsd:documentation>Stock and inventory clerks</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="366">
+        <xsd:annotation>
+          <xsd:documentation>Meter readers</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="368">
+        <xsd:annotation>
+          <xsd:documentation>Weighers, measurers, checkers, and samplers</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="373">
+        <xsd:annotation>
+          <xsd:documentation>Expediters</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="374">
+        <xsd:annotation>
+          <xsd:documentation>Material recording, scheduling, and distributing clerks, not elsewhere classified</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="375">
+        <xsd:annotation>
+          <xsd:documentation>Insurance adjusters, examiners, and investigators</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="376">
+        <xsd:annotation>
+          <xsd:documentation>Investigators and adjusters, except insurance</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="377">
+        <xsd:annotation>
+          <xsd:documentation>Eligibility clerks, social welfare</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="378">
+        <xsd:annotation>
+          <xsd:documentation>Bill and account collectors</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="379">
+        <xsd:annotation>
+          <xsd:documentation>General office clerks</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="383">
+        <xsd:annotation>
+          <xsd:documentation>Bank tellers</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="384">
+        <xsd:annotation>
+          <xsd:documentation>Proofreaders</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="385">
+        <xsd:annotation>
+          <xsd:documentation>Data-entry keyers</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="386">
+        <xsd:annotation>
+          <xsd:documentation>Statistical clerks</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="387">
+        <xsd:annotation>
+          <xsd:documentation>Teachers aides</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="389">
+        <xsd:annotation>
+          <xsd:documentation>Administrative support occupations, not elsewhere classified</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="403">
+        <xsd:annotation>
+          <xsd:documentation>Launderers and ironers</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="404">
+        <xsd:annotation>
+          <xsd:documentation>Cooks, private household</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="405">
+        <xsd:annotation>
+          <xsd:documentation>Housekeepers and butlers</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="406">
+        <xsd:annotation>
+          <xsd:documentation>Child care workers, private household</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="407">
+        <xsd:annotation>
+          <xsd:documentation>Private household cleaners and servants</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="413">
+        <xsd:annotation>
+          <xsd:documentation>Supervisors, firefighting and fire prevention occupations</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="414">
+        <xsd:annotation>
+          <xsd:documentation>Supervisors, police and detectives</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="415">
+        <xsd:annotation>
+          <xsd:documentation>Supervisors, guards</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="416">
+        <xsd:annotation>
+          <xsd:documentation>Fire inspection and fire prevention occupations</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="417">
+        <xsd:annotation>
+          <xsd:documentation>Firefighting occupations</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="418">
+        <xsd:annotation>
+          <xsd:documentation>Police and detectives, public service</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="423">
+        <xsd:annotation>
+          <xsd:documentation>Sheriffs, bailiffs, and other law enforcement officers</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="424">
+        <xsd:annotation>
+          <xsd:documentation>Correctional institution officers</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="425">
+        <xsd:annotation>
+          <xsd:documentation>Crossing guards</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="426">
+        <xsd:annotation>
+          <xsd:documentation>Guards and police, except public service</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="427">
+        <xsd:annotation>
+          <xsd:documentation>Protective service occupations, not elsewhere classified</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="433">
+        <xsd:annotation>
+          <xsd:documentation>Supervisors, food preparation and service occupations</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="434">
+        <xsd:annotation>
+          <xsd:documentation>Bartenders</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="435">
+        <xsd:annotation>
+          <xsd:documentation>Waiters and waitresses</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="436">
+        <xsd:annotation>
+          <xsd:documentation>Cooks</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="438">
+        <xsd:annotation>
+          <xsd:documentation>Food counter, fountain and related occupations</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="439">
+        <xsd:annotation>
+          <xsd:documentation>Kitchen workers, food preparation</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="443">
+        <xsd:annotation>
+          <xsd:documentation>Waiters/waitresses assistants</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="444">
+        <xsd:annotation>
+          <xsd:documentation>Miscellaneous food preparation occupations</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="445">
+        <xsd:annotation>
+          <xsd:documentation>Dental assistants</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="446">
+        <xsd:annotation>
+          <xsd:documentation>Health aides, except nursing</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="447">
+        <xsd:annotation>
+          <xsd:documentation>Nursing aides, orderlies, and attendants</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="448">
+        <xsd:annotation>
+          <xsd:documentation>Supervisors, cleaning and building service workers</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="449">
+        <xsd:annotation>
+          <xsd:documentation>Maids and housemen</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="453">
+        <xsd:annotation>
+          <xsd:documentation>Janitors and cleaners</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="454">
+        <xsd:annotation>
+          <xsd:documentation>Elevator operators</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="455">
+        <xsd:annotation>
+          <xsd:documentation>Pest control occupations</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="456">
+        <xsd:annotation>
+          <xsd:documentation>Supervisors, personal service occupations</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="457">
+        <xsd:annotation>
+          <xsd:documentation>Barbers</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="458">
+        <xsd:annotation>
+          <xsd:documentation>Hairdressers and cosmetologists</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="459">
+        <xsd:annotation>
+          <xsd:documentation>Attendants, amusement and recreation facilities</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="461">
+        <xsd:annotation>
+          <xsd:documentation>Guides</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="462">
+        <xsd:annotation>
+          <xsd:documentation>Ushers</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="463">
+        <xsd:annotation>
+          <xsd:documentation>Public transportation attendants</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="464">
+        <xsd:annotation>
+          <xsd:documentation>Baggage porters and bellhops</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="465">
+        <xsd:annotation>
+          <xsd:documentation>Welfare service aides</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="466">
+        <xsd:annotation>
+          <xsd:documentation>Family child care providers</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="467">
+        <xsd:annotation>
+          <xsd:documentation>Early childhood teachers assistants</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="468">
+        <xsd:annotation>
+          <xsd:documentation>Child care workers, not elsewhere classified</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="469">
+        <xsd:annotation>
+          <xsd:documentation>Personal service occupations, not elsewhere classified</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="473">
+        <xsd:annotation>
+          <xsd:documentation>Farmers, except horticultural</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="474">
+        <xsd:annotation>
+          <xsd:documentation>Horticultural specialty farmers</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="475">
+        <xsd:annotation>
+          <xsd:documentation>Managers, farms, except horticultural</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="476">
+        <xsd:annotation>
+          <xsd:documentation>Managers, horticultural specialty farms</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="477">
+        <xsd:annotation>
+          <xsd:documentation>Supervisors, farm workers</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="479">
+        <xsd:annotation>
+          <xsd:documentation>Farm workers</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="483">
+        <xsd:annotation>
+          <xsd:documentation>Marine life cultivation workers</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="484">
+        <xsd:annotation>
+          <xsd:documentation>Nursery workers</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="485">
+        <xsd:annotation>
+          <xsd:documentation>Supervisors, related agricultural occupations</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="486">
+        <xsd:annotation>
+          <xsd:documentation>Groundskeepers and gardeners, except farm</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="487">
+        <xsd:annotation>
+          <xsd:documentation>Animal caretakers, except farm</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="488">
+        <xsd:annotation>
+          <xsd:documentation>Graders and sorters, agricultural products</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="489">
+        <xsd:annotation>
+          <xsd:documentation>Inspectors, agricultural products</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="494">
+        <xsd:annotation>
+          <xsd:documentation>Supervisors, forestry and logging workers</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="495">
+        <xsd:annotation>
+          <xsd:documentation>Forestry workers, except logging</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="496">
+        <xsd:annotation>
+          <xsd:documentation>Timber cutting and logging occupations</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="497">
+        <xsd:annotation>
+          <xsd:documentation>Captains and other officers, fishing vessels</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="498">
+        <xsd:annotation>
+          <xsd:documentation>Fishers</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="499">
+        <xsd:annotation>
+          <xsd:documentation>Hunters and trappers</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="503">
+        <xsd:annotation>
+          <xsd:documentation>Supervisors, mechanics and repairers</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="505">
+        <xsd:annotation>
+          <xsd:documentation>Automobile mechanics</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="506">
+        <xsd:annotation>
+          <xsd:documentation>Automobile mechanic apprentices</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="507">
+        <xsd:annotation>
+          <xsd:documentation>Bus, truck, and stationary engine mechanics</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="508">
+        <xsd:annotation>
+          <xsd:documentation>Aircraft engine mechanics</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="509">
+        <xsd:annotation>
+          <xsd:documentation>Small engine repairers</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="514">
+        <xsd:annotation>
+          <xsd:documentation>Automobile body and related repairers</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="515">
+        <xsd:annotation>
+          <xsd:documentation>Aircraft mechanics, except engine</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="516">
+        <xsd:annotation>
+          <xsd:documentation>Heavy equipment mechanics</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="517">
+        <xsd:annotation>
+          <xsd:documentation>Farm equipment mechanics</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="518">
+        <xsd:annotation>
+          <xsd:documentation>Industrial machinery repairers</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="519">
+        <xsd:annotation>
+          <xsd:documentation>Machinery maintenance occupations</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="523">
+        <xsd:annotation>
+          <xsd:documentation>Electronic repairers, communications and industrial equipment</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="525">
+        <xsd:annotation>
+          <xsd:documentation>Data processing equipment repairers</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="526">
+        <xsd:annotation>
+          <xsd:documentation>Household appliance and power tool repairers</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="527">
+        <xsd:annotation>
+          <xsd:documentation>Telephone line installers and repairers</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="529">
+        <xsd:annotation>
+          <xsd:documentation>Telephone installers and repairers</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="533">
+        <xsd:annotation>
+          <xsd:documentation>Miscellaneous electrical and electronic equipment repairers</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="534">
+        <xsd:annotation>
+          <xsd:documentation>Heating, air conditioning, and refrigeration mechanics</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="535">
+        <xsd:annotation>
+          <xsd:documentation>Camera, watch, and musical instrument repairers</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="536">
+        <xsd:annotation>
+          <xsd:documentation>Locksmiths and safe repairers</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="538">
+        <xsd:annotation>
+          <xsd:documentation>Office machine repairers</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="539">
+        <xsd:annotation>
+          <xsd:documentation>Mechanical controls and valve repairers</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="543">
+        <xsd:annotation>
+          <xsd:documentation>Elevator installers and repairers</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="544">
+        <xsd:annotation>
+          <xsd:documentation>Millwrights</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="547">
+        <xsd:annotation>
+          <xsd:documentation>Specified mechanics and repairers, not elsewhere classified</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="549">
+        <xsd:annotation>
+          <xsd:documentation>Not specified mechanics and repairers</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="553">
+        <xsd:annotation>
+          <xsd:documentation>Supervisors, brickmasons, stonemasons, and tile setters</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="554">
+        <xsd:annotation>
+          <xsd:documentation>Supervisors, carpenters and related workers</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="555">
+        <xsd:annotation>
+          <xsd:documentation>Supervisors, electricians and power transmission installers</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="556">
+        <xsd:annotation>
+          <xsd:documentation>Supervisors, painters, paperhangers, and plasterers</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="557">
+        <xsd:annotation>
+          <xsd:documentation>Supervisors, plumbers, pipefitters, and steamfitters</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="558">
+        <xsd:annotation>
+          <xsd:documentation>Supervisors, construction, not elsewhere classified</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="563">
+        <xsd:annotation>
+          <xsd:documentation>Brickmasons and stonemasons</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="564">
+        <xsd:annotation>
+          <xsd:documentation>Brickmason and stonemason apprentices</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="565">
+        <xsd:annotation>
+          <xsd:documentation>Tile setters, hard and soft</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="566">
+        <xsd:annotation>
+          <xsd:documentation>Carpet installers</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="567">
+        <xsd:annotation>
+          <xsd:documentation>Carpenters</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="569">
+        <xsd:annotation>
+          <xsd:documentation>Carpenter apprentices</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="573">
+        <xsd:annotation>
+          <xsd:documentation>Drywall installers</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="575">
+        <xsd:annotation>
+          <xsd:documentation>Electricians</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="576">
+        <xsd:annotation>
+          <xsd:documentation>Electrician apprentices</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="577">
+        <xsd:annotation>
+          <xsd:documentation>Electrical power installers and repairers</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="579">
+        <xsd:annotation>
+          <xsd:documentation>Painters, construction and maintenance</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="583">
+        <xsd:annotation>
+          <xsd:documentation>Paperhangers</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="584">
+        <xsd:annotation>
+          <xsd:documentation>Plasterers</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="585">
+        <xsd:annotation>
+          <xsd:documentation>Plumbers, pipefitters, and steamfitters</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="587">
+        <xsd:annotation>
+          <xsd:documentation>Plumber, pipefitter, and steamfitter apprentices</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="588">
+        <xsd:annotation>
+          <xsd:documentation>Concrete and terrazzo finishers</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="589">
+        <xsd:annotation>
+          <xsd:documentation>Glaziers</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="593">
+        <xsd:annotation>
+          <xsd:documentation>Insulation workers</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="594">
+        <xsd:annotation>
+          <xsd:documentation>Paving, surfacing, and tamping equipment operators</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="595">
+        <xsd:annotation>
+          <xsd:documentation>Roofers</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="596">
+        <xsd:annotation>
+          <xsd:documentation>Sheetmetal duct installers</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="597">
+        <xsd:annotation>
+          <xsd:documentation>Structural metal workers</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="598">
+        <xsd:annotation>
+          <xsd:documentation>Drillers, earth</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="599">
+        <xsd:annotation>
+          <xsd:documentation>Construction trades, not elsewhere classified</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="613">
+        <xsd:annotation>
+          <xsd:documentation>Supervisors, extractive occupations</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="614">
+        <xsd:annotation>
+          <xsd:documentation>Drillers, oil well</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="615">
+        <xsd:annotation>
+          <xsd:documentation>Explosives workers</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="616">
+        <xsd:annotation>
+          <xsd:documentation>Mining machine operators</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="617">
+        <xsd:annotation>
+          <xsd:documentation>Mining occupations, not elsewhere classified</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="628">
+        <xsd:annotation>
+          <xsd:documentation>Supervisors, production occupations</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="634">
+        <xsd:annotation>
+          <xsd:documentation>Tool and die makers</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="635">
+        <xsd:annotation>
+          <xsd:documentation>Tool and die maker apprentices</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="636">
+        <xsd:annotation>
+          <xsd:documentation>Precision assemblers, metal</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="637">
+        <xsd:annotation>
+          <xsd:documentation>Machinists</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="639">
+        <xsd:annotation>
+          <xsd:documentation>Machinist apprentices</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="643">
+        <xsd:annotation>
+          <xsd:documentation>Boilermakers</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="644">
+        <xsd:annotation>
+          <xsd:documentation>Precision grinders, filers, and tool sharpeners</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="645">
+        <xsd:annotation>
+          <xsd:documentation>Patternmakers and model makers, metal</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="646">
+        <xsd:annotation>
+          <xsd:documentation>Lay-out workers</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="647">
+        <xsd:annotation>
+          <xsd:documentation>Precious stones and metals workers</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="649">
+        <xsd:annotation>
+          <xsd:documentation>Engravers, metal</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="653">
+        <xsd:annotation>
+          <xsd:documentation>Sheet metal workers</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="654">
+        <xsd:annotation>
+          <xsd:documentation>Sheet metal worker apprentices</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="655">
+        <xsd:annotation>
+          <xsd:documentation>Miscellaneous precision metal workers</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="656">
+        <xsd:annotation>
+          <xsd:documentation>Patternmakers and model makers, wood</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="657">
+        <xsd:annotation>
+          <xsd:documentation>Cabinet makers and bench carpenters</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="658">
+        <xsd:annotation>
+          <xsd:documentation>Furniture and wood finishers</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="659">
+        <xsd:annotation>
+          <xsd:documentation>Miscellaneous precision woodworkers</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="666">
+        <xsd:annotation>
+          <xsd:documentation>Dressmakers</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="667">
+        <xsd:annotation>
+          <xsd:documentation>Tailors</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="668">
+        <xsd:annotation>
+          <xsd:documentation>Upholsterers</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="669">
+        <xsd:annotation>
+          <xsd:documentation>Shoe repairers</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="674">
+        <xsd:annotation>
+          <xsd:documentation>Miscellaneous precision apparel and fabric workers</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="675">
+        <xsd:annotation>
+          <xsd:documentation>Hand molders and shapers, except jewelers</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="676">
+        <xsd:annotation>
+          <xsd:documentation>Patternmakers, lay-out workers, and cutters</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="677">
+        <xsd:annotation>
+          <xsd:documentation>Optical goods workers</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="678">
+        <xsd:annotation>
+          <xsd:documentation>Dental laboratory and medical appliance technicians</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="679">
+        <xsd:annotation>
+          <xsd:documentation>Bookbinders</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="683">
+        <xsd:annotation>
+          <xsd:documentation>Electrical and electronic equipment assemblers</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="684">
+        <xsd:annotation>
+          <xsd:documentation>Miscellaneous precision workers, not elsewhere classified</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="686">
+        <xsd:annotation>
+          <xsd:documentation>Butchers and meat cutters</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="687">
+        <xsd:annotation>
+          <xsd:documentation>Bakers</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="688">
+        <xsd:annotation>
+          <xsd:documentation>Food batchmakers</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="689">
+        <xsd:annotation>
+          <xsd:documentation>Inspectors, testers, and graders</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="693">
+        <xsd:annotation>
+          <xsd:documentation>Adjusters and calibrators</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="694">
+        <xsd:annotation>
+          <xsd:documentation>Water and sewage treatment plant operators</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="695">
+        <xsd:annotation>
+          <xsd:documentation>Power plant operators</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="696">
+        <xsd:annotation>
+          <xsd:documentation>Stationary engineers</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="699">
+        <xsd:annotation>
+          <xsd:documentation>Miscellaneous plant and system operators</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="703">
+        <xsd:annotation>
+          <xsd:documentation>Lathe and turning machine set-up operators</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="704">
+        <xsd:annotation>
+          <xsd:documentation>Lathe and turning machine operators</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="705">
+        <xsd:annotation>
+          <xsd:documentation>Milling and planing machine operators</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="706">
+        <xsd:annotation>
+          <xsd:documentation>Punching and stamping press machine operators</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="707">
+        <xsd:annotation>
+          <xsd:documentation>Rolling machine operators</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="708">
+        <xsd:annotation>
+          <xsd:documentation>Drilling and boring machine operators</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="709">
+        <xsd:annotation>
+          <xsd:documentation>Grinding, abrading, buffing, and polishing machine operators</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="713">
+        <xsd:annotation>
+          <xsd:documentation>Forging machine operators</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="714">
+        <xsd:annotation>
+          <xsd:documentation>Numerical control machine operators</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="715">
+        <xsd:annotation>
+          <xsd:documentation>Miscellaneous metal, plastic, stone, and glass working machine operators</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="717">
+        <xsd:annotation>
+          <xsd:documentation>Fabricating machine operators, not elsewhere classified</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="719">
+        <xsd:annotation>
+          <xsd:documentation>Molding and casting machine operators</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="723">
+        <xsd:annotation>
+          <xsd:documentation>Metal plating machine operators</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="724">
+        <xsd:annotation>
+          <xsd:documentation>Heat treating equipment operators</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="725">
+        <xsd:annotation>
+          <xsd:documentation>Miscellaneous metal and plastic processing machine operators</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="726">
+        <xsd:annotation>
+          <xsd:documentation>Wood lathe, routing, and planing machine operators</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="727">
+        <xsd:annotation>
+          <xsd:documentation>Sawing machine operators</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="728">
+        <xsd:annotation>
+          <xsd:documentation>Shaping and joining machine operators</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="729">
+        <xsd:annotation>
+          <xsd:documentation>Nailing and tacking machine operators</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="733">
+        <xsd:annotation>
+          <xsd:documentation>Miscellaneous woodworking machine operators</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="734">
+        <xsd:annotation>
+          <xsd:documentation>Printing press operators</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="735">
+        <xsd:annotation>
+          <xsd:documentation>Photoengravers and lithographers</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="736">
+        <xsd:annotation>
+          <xsd:documentation>Typesetters and compositors</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="737">
+        <xsd:annotation>
+          <xsd:documentation>Miscellaneous printing machine operators</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="738">
+        <xsd:annotation>
+          <xsd:documentation>Winding and twisting machine operators</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="739">
+        <xsd:annotation>
+          <xsd:documentation>Knitting, looping, taping, and weaving machine operators</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="743">
+        <xsd:annotation>
+          <xsd:documentation>Textile cutting machine operators</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="744">
+        <xsd:annotation>
+          <xsd:documentation>Textile sewing machine operators</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="745">
+        <xsd:annotation>
+          <xsd:documentation>Shoe machine operators</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="747">
+        <xsd:annotation>
+          <xsd:documentation>Pressing machine operators</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="748">
+        <xsd:annotation>
+          <xsd:documentation>Laundering and dry cleaning machine operators</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="749">
+        <xsd:annotation>
+          <xsd:documentation>Miscellaneous textile machine operators</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="753">
+        <xsd:annotation>
+          <xsd:documentation>Cementing and gluing machine operators</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="754">
+        <xsd:annotation>
+          <xsd:documentation>Packaging and filling machine operators</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="755">
+        <xsd:annotation>
+          <xsd:documentation>Extruding and forming machine operators</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="756">
+        <xsd:annotation>
+          <xsd:documentation>Mixing and blending machine operators</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="757">
+        <xsd:annotation>
+          <xsd:documentation>Separating, filtering, and clarifying machine operators</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="758">
+        <xsd:annotation>
+          <xsd:documentation>Compressing and compacting machine operators</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="759">
+        <xsd:annotation>
+          <xsd:documentation>Painting and paint spraying machine operators</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="763">
+        <xsd:annotation>
+          <xsd:documentation>Roasting and baking machine operators, food</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="764">
+        <xsd:annotation>
+          <xsd:documentation>Washing, cleaning, and pickling machine operators</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="765">
+        <xsd:annotation>
+          <xsd:documentation>Folding machine operators</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="766">
+        <xsd:annotation>
+          <xsd:documentation>Furnace, kiln, and oven operators, except food</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="768">
+        <xsd:annotation>
+          <xsd:documentation>Crushing and grinding machine operators</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="769">
+        <xsd:annotation>
+          <xsd:documentation>Slicing and cutting machine operators</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="773">
+        <xsd:annotation>
+          <xsd:documentation>Motion picture projectionists</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="774">
+        <xsd:annotation>
+          <xsd:documentation>Photographic process machine operators</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="777">
+        <xsd:annotation>
+          <xsd:documentation>Miscellaneous machine operators, not elsewhere classified</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="779">
+        <xsd:annotation>
+          <xsd:documentation>Machine operators, not specified</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="783">
+        <xsd:annotation>
+          <xsd:documentation>Welders and cutters</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="784">
+        <xsd:annotation>
+          <xsd:documentation>Solderers and brazers</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="785">
+        <xsd:annotation>
+          <xsd:documentation>Assemblers</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="786">
+        <xsd:annotation>
+          <xsd:documentation>Hand cutting and trimming occupations</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="787">
+        <xsd:annotation>
+          <xsd:documentation>Hand molding, casting, and forming occupations</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="789">
+        <xsd:annotation>
+          <xsd:documentation>Hand painting, coating, and decorating occupations</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="793">
+        <xsd:annotation>
+          <xsd:documentation>Hand engraving and printing occupations</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="795">
+        <xsd:annotation>
+          <xsd:documentation>Miscellaneous hand working occupations</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="796">
+        <xsd:annotation>
+          <xsd:documentation>Production inspectors, checkers, and examiners</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="797">
+        <xsd:annotation>
+          <xsd:documentation>Production testers</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="798">
+        <xsd:annotation>
+          <xsd:documentation>Production samplers and weighers</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="799">
+        <xsd:annotation>
+          <xsd:documentation>Graders and sorters, except agricultural</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="803">
+        <xsd:annotation>
+          <xsd:documentation>Supervisors, motor vehicle operators</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="804">
+        <xsd:annotation>
+          <xsd:documentation>Truck drivers</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="806">
+        <xsd:annotation>
+          <xsd:documentation>Driver-sales workers</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="808">
+        <xsd:annotation>
+          <xsd:documentation>Bus drivers</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="809">
+        <xsd:annotation>
+          <xsd:documentation>Taxicab drivers and chauffeurs</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="813">
+        <xsd:annotation>
+          <xsd:documentation>Parking lot attendants</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="814">
+        <xsd:annotation>
+          <xsd:documentation>Motor transportation occupations, not elsewhere classified</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="823">
+        <xsd:annotation>
+          <xsd:documentation>Railroad conductors and yardmasters</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="824">
+        <xsd:annotation>
+          <xsd:documentation>Locomotive operating occupations</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="825">
+        <xsd:annotation>
+          <xsd:documentation>Railroad brake, signal, and switch operators</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="826">
+        <xsd:annotation>
+          <xsd:documentation>Rail vehicle operators, not elsewhere classified</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="828">
+        <xsd:annotation>
+          <xsd:documentation>Ship captains and mates, except fishing boats</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="829">
+        <xsd:annotation>
+          <xsd:documentation>Sailors and deckhands</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="833">
+        <xsd:annotation>
+          <xsd:documentation>Marine engineers</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="834">
+        <xsd:annotation>
+          <xsd:documentation>Bridge, lock, and lighthouse tenders</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="843">
+        <xsd:annotation>
+          <xsd:documentation>Supervisors, material moving equipment operators</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="844">
+        <xsd:annotation>
+          <xsd:documentation>Operating engineers</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="845">
+        <xsd:annotation>
+          <xsd:documentation>Longshore equipment operators</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="848">
+        <xsd:annotation>
+          <xsd:documentation>Hoist and winch operators</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="849">
+        <xsd:annotation>
+          <xsd:documentation>Crane and tower operators</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="853">
+        <xsd:annotation>
+          <xsd:documentation>Excavating and loading machine operators</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="855">
+        <xsd:annotation>
+          <xsd:documentation>Grader, dozer, and scraper operators</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="856">
+        <xsd:annotation>
+          <xsd:documentation>Industrial truck and tractor equipment operators</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="859">
+        <xsd:annotation>
+          <xsd:documentation>Miscellaneous material moving equipment operators</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="864">
+        <xsd:annotation>
+          <xsd:documentation>Supervisors, handlers, equipment cleaners, and laborers, not elsewhere classified</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="865">
+        <xsd:annotation>
+          <xsd:documentation>Helpers, mechanics, and repairers</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="866">
+        <xsd:annotation>
+          <xsd:documentation>Helpers, construction trades</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="867">
+        <xsd:annotation>
+          <xsd:documentation>Helpers, surveyor</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="868">
+        <xsd:annotation>
+          <xsd:documentation>Helpers, extractive occupations</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="869">
+        <xsd:annotation>
+          <xsd:documentation>Construction laborers</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="874">
+        <xsd:annotation>
+          <xsd:documentation>Production helpers</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="875">
+        <xsd:annotation>
+          <xsd:documentation>Garbage collectors</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="876">
+        <xsd:annotation>
+          <xsd:documentation>Stevedores</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="877">
+        <xsd:annotation>
+          <xsd:documentation>Stock handlers and baggers</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="878">
+        <xsd:annotation>
+          <xsd:documentation>Machine feeders and offbearers</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="883">
+        <xsd:annotation>
+          <xsd:documentation>Freight, stock, and material handlers, not elsewhere classified</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="885">
+        <xsd:annotation>
+          <xsd:documentation>Garage and service station related occupations</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="887">
+        <xsd:annotation>
+          <xsd:documentation>Vehicle washers and equipment cleaners</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="888">
+        <xsd:annotation>
+          <xsd:documentation>Hand packers and packagers</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="889">
+        <xsd:annotation>
+          <xsd:documentation>Laborers, except construction</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="905">
+        <xsd:annotation>
+          <xsd:documentation>Assigned to persons whose current labor force status is unemployed and whose last job was Armed Forces.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:complexType name="OccupationCodeType">
+    <xsd:annotation>
+      <xsd:documentation>A code list that enumerates employments or occupations.</xsd:documentation>
+      <xsd:appinfo>
+        <i:Base i:namespace="http://niem.gov/niem/structures/1.0" i:name="Object"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:simpleContent>
+      <xsd:extension base="census:OccupationCodeSimpleType">
+        <xsd:attributeGroup ref="s:SimpleObjectAttributeGroup"/>
+      </xsd:extension>
+    </xsd:simpleContent>
+  </xsd:complexType>
+</xsd:schema>

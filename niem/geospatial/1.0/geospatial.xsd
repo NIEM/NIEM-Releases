@@ -1,0 +1,1706 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema targetNamespace="http://niem.gov/niem/geospatial/1.0" version="1" xmlns:s="http://niem.gov/niem/structures/1.0" xmlns:land="http://www.landxml.org/schema/LandXML-1.1" xmlns:mo="http://niem.gov/niem/external/dhs-gmo/AS/mobileObject/1.0.0" xmlns:xls="http://niem.gov/niem/external/ogc-openls/1.1.0/dhs-gmo/1.0.0" xmlns:gs="http://niem.gov/niem/geospatial/1.0" xmlns:addr="http://niem.gov/niem/external/urisa-street-address/draft-0.2.0/dhs-gmo/1.0.0" xmlns:gml="http://niem.gov/niem/external/ogc-gml/3.1.1/dhs-gmo/1.0.0" xmlns:mmr="http://niem.gov/niem/external/dhs-gmo/AS/multiModalRoute/1.0.0" xmlns:u="http://niem.gov/niem/universal/1.0" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:om="http://niem.gov/niem/external/ogc-observation/draft-0.14.5/om/dhs-gmo/1.0.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:i="http://niem.gov/niem/appinfo/1.0" xmlns:context="http://niem.gov/niem/external/ogc-context/1.1.0/dhs-gmo/1.0.0" xmlns:ex="http://niem.gov/niem/external/iso-10303-step/2/ex/dhs-gmo/1.0.0">
+  <xsd:annotation>
+    <xsd:documentation>Defines NIEM adapter types for external geospatial components defined by OGC, LIF, LandXML, IAI, and ANSI.  This schema defines NIEM adapter types for external geospatial components defined by OGC, LIF, LandXML, IAI, and ANSI.
+
+
+
+It also defines property types and elements according to the conventions required by the Geography Markup Language (GML) specification.  These property types and elements allow niem geospatial adapter elements to be referenced from GML conformant application schemas.  This situation is described in external-standards.pdf as Case 2: External schemas reference, import, and use NIEM components., but not addressed by that document.  However, it applies to the development of the GML application schemas that must in most cases be developed to effectively use GML in niem IEPs.
+
+
+
+Note for schema readers:  The XML/Schema specification does not require processing implementations to transitively import definitions from imported schemas.   To assure that all required definitions are available, a schema must re-import the schemas that are imported by the schemas it imports. Such re-imports are noted in the documentation.</xsd:documentation>
+    <xsd:appinfo>
+      <i:ConformantIndicator>true</i:ConformantIndicator>
+    </xsd:appinfo>
+  </xsd:annotation>
+  <xsd:import schemaLocation="../../structures/1.0/structures.xsd" namespace="http://niem.gov/niem/structures/1.0"/>
+  <xsd:import namespace="http://niem.gov/niem/appinfo/1.0" schemaLocation="../../appinfo/1.0/appinfo.xsd"/>
+  <xsd:import schemaLocation="../../external/dhs-gmo/AS/mobileObject/1.0.0/mobileObject.xsd" namespace="http://niem.gov/niem/external/dhs-gmo/AS/mobileObject/1.0.0">
+    <xsd:annotation>
+      <xsd:documentation>Mobile Object schema for niem based on GML Mobile Object; uses gml:pointProperty instead of gml:location, which is deprecated in (ISO) GML v3.2. See http://www.opengeospatial.org for documentation, http://schemas.opengis.net/gml/ for schemas.</xsd:documentation>
+      <xsd:appinfo>
+        <i:ConformantIndicator>false</i:ConformantIndicator>
+      </xsd:appinfo>
+    </xsd:annotation>
+  </xsd:import>
+  <xsd:import schemaLocation="../../external/dhs-gmo/AS/multiModalRoute/1.0.0/multiModalRoute.xsd" namespace="http://niem.gov/niem/external/dhs-gmo/AS/multiModalRoute/1.0.0">
+    <xsd:annotation>
+      <xsd:documentation>Multi-modal route schema for niem based on OpenLS route. See http://www.isotc211.org/ for 19133, 19134 standards, http://www.opengeospatial.org for documentation,  http://schemas.opengis.net/ols/ for schemas.</xsd:documentation>
+      <xsd:appinfo>
+        <i:ConformantIndicator>false</i:ConformantIndicator>
+      </xsd:appinfo>
+    </xsd:annotation>
+  </xsd:import>
+  <xsd:import schemaLocation="../../external/iso-10303-step/2/dhs-gmo/1.0.0/ex.xsd" namespace="http://niem.gov/niem/external/iso-10303-step/2/ex/dhs-gmo/1.0.0">
+    <xsd:annotation>
+      <xsd:documentation>ISO 10303:part(28):version(2) schema used by IFC See http://www.iai-international.org and http://www.iai-na.com/ for documentation and schemas.</xsd:documentation>
+      <xsd:appinfo>
+        <i:ConformantIndicator>false</i:ConformantIndicator>
+      </xsd:appinfo>
+    </xsd:annotation>
+  </xsd:import>
+  <xsd:import schemaLocation="../../external/ogc-context/1.1.0/dhs-gmo/1.0.0/context.xsd" namespace="http://niem.gov/niem/external/ogc-context/1.1.0/dhs-gmo/1.0.0">
+    <xsd:annotation>
+      <xsd:documentation>Adaptation of OGC Web Map Context schema to work with current versions of other schemas. Adaptation of OGC Web Map Context schema, that imports version 1.0.20 definitions from the StyledLayerDescriptor schema instead of the version 1.0.0 ones, and thereby imports version 1.1 instead of version 1.0 of the filter schema.  The sld:FeatureTypeStyle element was replaced by sld:FeatureStyle element with the same content.
+   See http://www.opengeospatial.org for documentation, http://schemas.opengis.net/context/ for schemas.</xsd:documentation>
+      <xsd:appinfo>
+        <i:ConformantIndicator>false</i:ConformantIndicator>
+      </xsd:appinfo>
+    </xsd:annotation>
+  </xsd:import>
+  <xsd:import schemaLocation="../../external/ogc-gml/3.1.1/dhs-gmo/1.0.0/gml.xsd" namespace="http://niem.gov/niem/external/ogc-gml/3.1.1/dhs-gmo/1.0.0">
+    <xsd:annotation>
+      <xsd:documentation>A profile of Geography Markup Language (GML) version 3.1.1 schemas for niem.  See http://www.opengeospatial.org for documentation, http://schemas.opengis.net/gml/ for schemas.</xsd:documentation>
+      <xsd:appinfo>
+        <i:ConformantIndicator>false</i:ConformantIndicator>
+      </xsd:appinfo>
+    </xsd:annotation>
+  </xsd:import>
+  <xsd:import schemaLocation="../../external/ogc-observation/draft-0.14.5/om/dhs-gmo/1.0.0/om.xsd" namespace="http://niem.gov/niem/external/ogc-observation/draft-0.14.5/om/dhs-gmo/1.0.0">
+    <xsd:annotation>
+      <xsd:documentation>This schema is a profile for NIEM of the complete schema from &quot;Observations and Measurements. This schema is a profile for NIEM of the complete schema from &quot;Observations and Measurements OpenGIS Draft Implementation Specification IPR, OGC Document 05-087r1_OM_OWS-3_SWE_IPR, Copyright 2005 Open Geospatial Consortium, Inc.   Schema definitions are also Copyright 2005 CSIRO - see https://www.seegrid.csiro.au/twiki/bin/view/Xmml/LegalNotices#Software_Notice
+
+See http://www.opengeospatial.org for documentation and schemas</xsd:documentation>
+      <xsd:appinfo>
+        <i:ConformantIndicator>false</i:ConformantIndicator>
+      </xsd:appinfo>
+    </xsd:annotation>
+  </xsd:import>
+  <xsd:import schemaLocation="../../external/ogc-openls/1.1.0/dhs-gmo/1.0.0/ols.xsd" namespace="http://niem.gov/niem/external/ogc-openls/1.1.0/dhs-gmo/1.0.0">
+    <xsd:annotation>
+      <xsd:documentation>A profile of OpenGeospatialConsortium (OpenGIS, OGC) OpenLS (Location Services) version 1.1 schemas. A profile of OpenGeospatialConsortium (OpenGIS, OGC) OpenLS (Location Services) version 1.1 schemas that have been edited to use GML version 3.1.1 schemas instead of the GML version 3.0 schemas that were current when OpenLS version 1.1 was promulgated.
+See http://www.opengeospatial.org for documentation, http://schemas.opengis.net/ols/ for schemas.</xsd:documentation>
+      <xsd:appinfo>
+        <i:ConformantIndicator>false</i:ConformantIndicator>
+      </xsd:appinfo>
+    </xsd:annotation>
+  </xsd:import>
+  <xsd:import schemaLocation="../../external/urisa-street-address/draft-0.2.0/dhs-gmo/1.0.0/StreetAddressDataStandard.xsd" namespace="http://niem.gov/niem/external/urisa-street-address/draft-0.2.0/dhs-gmo/1.0.0">
+    <xsd:annotation>
+      <xsd:documentation>Draft ANSI Address Data Content Standard schema. The current draft of the U.S. Federal Geographic Data Committee (FGDC) Address Data Content Standard schemas 
+    produced by the Urban and Regional Information Systems Association (URISA).  The comment period for this draft closes
+    January 15, 2006. Upon approval by FGDC, this schema will be submitted to ANSI Incites L1 for promulgation.
+    See http://www.urisa.org/  
+    See http://www.fgdc.gov/
+    See http://www.incits-l1.org/
+    See http://www.ansi.org/</xsd:documentation>
+      <xsd:appinfo>
+        <i:ConformantIndicator>false</i:ConformantIndicator>
+      </xsd:appinfo>
+    </xsd:annotation>
+  </xsd:import>
+  <xsd:import schemaLocation="../../universal/1.0/universal.xsd" namespace="http://niem.gov/niem/universal/1.0"/>
+  <xsd:import schemaLocation="../../external/landxml/1.1/LandXML-1.1.xsd" namespace="http://www.landxml.org/schema/LandXML-1.1">
+    <xsd:annotation>
+      <xsd:documentation>LandXML Version 1.1 WORKING DRAFT Schema file See http://www.landxml.org for documentation and schemas.</xsd:documentation>
+      <xsd:appinfo>
+        <i:ConformantIndicator>false</i:ConformantIndicator>
+      </xsd:appinfo>
+    </xsd:annotation>
+  </xsd:import>
+  <xsd:complexType name="AbstractContinuousCoverageType">
+    <xsd:annotation>
+      <xsd:documentation>A coverage that can return different values for the same feature attribute at different direct positions within a single spatiotemporal object.</xsd:documentation>
+      <xsd:appinfo>
+        <i:Base i:namespace="http://niem.gov/niem/structures/1.0" i:name="Object"/>
+        <i:ExternalAdapterTypeIndicator>true</i:ExternalAdapterTypeIndicator>
+      </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="s:ComplexObjectType">
+        <xsd:sequence>
+          <xsd:element ref="gml:_ContinuousCoverage" minOccurs="1" maxOccurs="unbounded"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="AbstractDiscreteCoverageType">
+    <xsd:annotation>
+      <xsd:documentation>A coverage with finite domain set ((temporal) geometry objects), range set (attribute values mapped to domain), and optional coverage function.</xsd:documentation>
+      <xsd:appinfo>
+        <i:Base i:namespace="http://niem.gov/niem/structures/1.0" i:name="Object"/>
+        <i:ExternalAdapterTypeIndicator>true</i:ExternalAdapterTypeIndicator>
+      </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="s:ComplexObjectType">
+        <xsd:sequence>
+          <xsd:element ref="gml:_DiscreteCoverage" minOccurs="1" maxOccurs="unbounded"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="AbstractObservationType">
+    <xsd:annotation>
+      <xsd:documentation>Place Holder for any observation of an event.  See: EventType. In the context of an Observation, the interpretation of some of the properties shall be refined as follows: time - the date/Time at which the procedure was executed, location - the location of the procedure (sensor, instrument, computational engine) at the time of the observation event, procedure - the procedure used to record the event.</xsd:documentation>
+      <xsd:appinfo>
+        <i:Base i:namespace="http://niem.gov/niem/structures/1.0" i:name="Object"/>
+        <i:ExternalAdapterTypeIndicator>true</i:ExternalAdapterTypeIndicator>
+      </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="s:ComplexObjectType">
+        <xsd:sequence>
+          <xsd:element ref="om:AbstractObservation" minOccurs="1" maxOccurs="unbounded"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="AddressPropertyType">
+    <xsd:annotation>
+      <xsd:documentation>A GML property type to encapsulate or reference a NIEM Address. The Geography Markup Language (GML) specification uses property types and elements to encapsulate or reference GML class elements with identity.  This type allows NIEM Address elements to be referenced from GML conformant application schemas developed for use with NIEM.</xsd:documentation>
+      <xsd:appinfo>
+        <i:Base i:namespace="http://niem.gov/niem/universal/1.0" i:name="SuperType"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="u:SuperType">
+        <xsd:sequence>
+          <xsd:element ref="gs:Address" minOccurs="0" maxOccurs="unbounded"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="ArcByCenterPointType">
+    <xsd:annotation>
+      <xsd:documentation>A 2D arc defined by its center point, radius, and bearings at start and end.</xsd:documentation>
+      <xsd:appinfo>
+        <i:Base i:namespace="http://niem.gov/niem/structures/1.0" i:name="Object"/>
+        <i:ExternalAdapterTypeIndicator>true</i:ExternalAdapterTypeIndicator>
+      </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="s:ComplexObjectType">
+        <xsd:sequence>
+          <xsd:element ref="gml:ArcByCenterPoint" minOccurs="1" maxOccurs="unbounded"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="AreaOfInterestType">
+    <xsd:annotation>
+      <xsd:documentation>An Area of Interest as defined by a named circle, bounding box, or polygon, used in OGC Open Location Services.</xsd:documentation>
+      <xsd:appinfo>
+        <i:Base i:namespace="http://niem.gov/niem/structures/1.0" i:name="Object"/>
+        <i:ExternalAdapterTypeIndicator>true</i:ExternalAdapterTypeIndicator>
+      </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="s:ComplexObjectType">
+        <xsd:sequence>
+          <xsd:element ref="xls:AOI" minOccurs="1" maxOccurs="unbounded"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="CategoryObservationType">
+    <xsd:annotation>
+      <xsd:documentation>An Observation, in which the result is a textual value from a controlled vocabulary.  See: ObservationType.</xsd:documentation>
+      <xsd:appinfo>
+        <i:Base i:namespace="http://niem.gov/niem/structures/1.0" i:name="Object"/>
+        <i:ExternalAdapterTypeIndicator>true</i:ExternalAdapterTypeIndicator>
+      </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="s:ComplexObjectType">
+        <xsd:sequence>
+          <xsd:element ref="om:CategoryObservation" minOccurs="1" maxOccurs="unbounded"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="CircleByCenterPointType">
+    <xsd:annotation>
+      <xsd:documentation>A 2D ArcByCenterPoint with identical start and end angles that forms a full circle.</xsd:documentation>
+      <xsd:appinfo>
+        <i:Base i:namespace="http://niem.gov/niem/structures/1.0" i:name="Object"/>
+        <i:ExternalAdapterTypeIndicator>true</i:ExternalAdapterTypeIndicator>
+      </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="s:ComplexObjectType">
+        <xsd:sequence>
+          <xsd:element ref="gml:CircleByCenterPoint" minOccurs="1" maxOccurs="unbounded"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="CircularArcType">
+    <xsd:annotation>
+      <xsd:documentation>A 2D arc defined by its center point, two radii (r[1] &gt; r[2]), and start and end angles.</xsd:documentation>
+      <xsd:appinfo>
+        <i:Base i:namespace="http://niem.gov/niem/structures/1.0" i:name="Object"/>
+        <i:ExternalAdapterTypeIndicator>true</i:ExternalAdapterTypeIndicator>
+      </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="s:ComplexObjectType">
+        <xsd:sequence>
+          <xsd:element ref="xls:CircularArc" minOccurs="1" maxOccurs="unbounded"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="CommonObservationType">
+    <xsd:annotation>
+      <xsd:documentation>An Observation, in which a value record schema specifies the encoding of the values of the observed properties.  See:  ObservationType.</xsd:documentation>
+      <xsd:appinfo>
+        <i:Base i:namespace="http://niem.gov/niem/structures/1.0" i:name="Object"/>
+        <i:ExternalAdapterTypeIndicator>true</i:ExternalAdapterTypeIndicator>
+      </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="s:ComplexObjectType">
+        <xsd:sequence>
+          <xsd:element ref="om:CommonObservation" minOccurs="1" maxOccurs="unbounded"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="CommunityAddressType">
+    <xsd:annotation>
+      <xsd:documentation>A Puerto Rican urbanization address where the urbanization name is preceded by a number, and no street name is included.</xsd:documentation>
+      <xsd:appinfo>
+        <i:Base i:namespace="http://niem.gov/niem/structures/1.0" i:name="Object"/>
+        <i:ExternalAdapterTypeIndicator>true</i:ExternalAdapterTypeIndicator>
+      </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="s:ComplexObjectType">
+        <xsd:sequence>
+          <xsd:element ref="addr:CommunityAddress" minOccurs="1" maxOccurs="unbounded"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="CountObservationType">
+    <xsd:annotation>
+      <xsd:documentation>An Observation, in which the result is an integer representing the count of the observed property.  See: ObservationType.</xsd:documentation>
+      <xsd:appinfo>
+        <i:Base i:namespace="http://niem.gov/niem/structures/1.0" i:name="Object"/>
+        <i:ExternalAdapterTypeIndicator>true</i:ExternalAdapterTypeIndicator>
+      </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="s:ComplexObjectType">
+        <xsd:sequence>
+          <xsd:element ref="om:CountObservation" minOccurs="1" maxOccurs="unbounded"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="DetermineRouteRequestType">
+    <xsd:annotation>
+      <xsd:documentation>Determine Route request parameters for an OGC OpenLS  Navigation Service.</xsd:documentation>
+      <xsd:appinfo>
+        <i:Base i:namespace="http://niem.gov/niem/structures/1.0" i:name="Object"/>
+        <i:ExternalAdapterTypeIndicator>true</i:ExternalAdapterTypeIndicator>
+      </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="s:ComplexObjectType">
+        <xsd:sequence>
+          <xsd:element ref="xls:DetermineRouteRequest" minOccurs="1" maxOccurs="unbounded"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="DetermineRouteResponseType">
+    <xsd:annotation>
+      <xsd:documentation>Determine Route response from an OGC OpenLS  Navigation Service.</xsd:documentation>
+      <xsd:appinfo>
+        <i:Base i:namespace="http://niem.gov/niem/structures/1.0" i:name="Object"/>
+        <i:ExternalAdapterTypeIndicator>true</i:ExternalAdapterTypeIndicator>
+      </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="s:ComplexObjectType">
+        <xsd:sequence>
+          <xsd:element ref="xls:DetermineRouteResponse" minOccurs="1" maxOccurs="unbounded"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="DirectionType">
+    <xsd:annotation>
+      <xsd:appinfo>
+        <i:Base i:namespace="http://niem.gov/niem/structures/1.0" i:name="Object"/>
+        <i:ExternalAdapterTypeIndicator>true</i:ExternalAdapterTypeIndicator>
+      </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="s:ComplexObjectType">
+        <xsd:sequence>
+          <xsd:element ref="gml:direction" minOccurs="0" maxOccurs="unbounded"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="EllipseType">
+    <xsd:annotation>
+      <xsd:documentation>An ellipse specified by a point, major axis, minor axis, and rotation.</xsd:documentation>
+      <xsd:appinfo>
+        <i:Base i:namespace="http://niem.gov/niem/structures/1.0" i:name="Object"/>
+        <i:ExternalAdapterTypeIndicator>true</i:ExternalAdapterTypeIndicator>
+      </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="s:ComplexObjectType">
+        <xsd:sequence>
+          <xsd:element ref="xls:Ellipse" minOccurs="1" maxOccurs="unbounded"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="EndModeWayPointType">
+    <xsd:annotation>
+      <xsd:documentation>Ending point of a multi-modal route that ends at a transportation mode (e.g. foot, bicycle, taxi, bus, rail, boat, airplane) transfer point.</xsd:documentation>
+      <xsd:appinfo>
+        <i:Base i:namespace="http://niem.gov/niem/structures/1.0" i:name="Object"/>
+        <i:ExternalAdapterTypeIndicator>true</i:ExternalAdapterTypeIndicator>
+      </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="s:ComplexObjectType">
+        <xsd:sequence>
+          <xsd:element ref="mmr:StartModeWayPoint" minOccurs="1" maxOccurs="unbounded"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="EventType">
+    <xsd:annotation>
+      <xsd:documentation>Description of an event, particularly one that causes transformation, creation or destruction of a geospatial feature.  See: FeatureType.</xsd:documentation>
+      <xsd:appinfo>
+        <i:Base i:namespace="http://niem.gov/niem/structures/1.0" i:name="Object"/>
+        <i:ExternalAdapterTypeIndicator>true</i:ExternalAdapterTypeIndicator>
+      </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="s:ComplexObjectType">
+        <xsd:sequence>
+          <xsd:element ref="om:Event" minOccurs="1" maxOccurs="unbounded"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="FeatureCollectionType">
+    <xsd:annotation>
+      <xsd:documentation>A collection of geospatial features; any real world objects with location.  See: FeatureType</xsd:documentation>
+      <xsd:appinfo>
+        <i:Base i:namespace="http://niem.gov/niem/structures/1.0" i:name="Object"/>
+        <i:ExternalAdapterTypeIndicator>true</i:ExternalAdapterTypeIndicator>
+      </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="s:ComplexObjectType">
+        <xsd:sequence>
+          <xsd:element ref="gml:FeatureCollection" minOccurs="1" maxOccurs="unbounded"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="FeatureType">
+    <xsd:annotation>
+      <xsd:documentation>A geospatial feature; any real world object with location; e.g. building, road, river, county, town, parcel, traffic sign.</xsd:documentation>
+      <xsd:appinfo>
+        <i:Base i:namespace="http://niem.gov/niem/structures/1.0" i:name="Object"/>
+        <i:ExternalAdapterTypeIndicator>true</i:ExternalAdapterTypeIndicator>
+      </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="s:ComplexObjectType">
+        <xsd:sequence>
+          <xsd:element ref="gml:_Feature" minOccurs="1" maxOccurs="unbounded"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="FourNumberAddressRangeType">
+    <xsd:annotation>
+      <xsd:documentation>Left and right side  thoroughfare (road, walkway, railroad, river) address ranges specified by low and high address numbers.</xsd:documentation>
+      <xsd:appinfo>
+        <i:Base i:namespace="http://niem.gov/niem/structures/1.0" i:name="Object"/>
+        <i:ExternalAdapterTypeIndicator>true</i:ExternalAdapterTypeIndicator>
+      </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="s:ComplexObjectType">
+        <xsd:sequence>
+          <xsd:element ref="addr:FourNumberAddressRange" minOccurs="1" maxOccurs="unbounded"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="GeneralAddressType">
+    <xsd:annotation>
+      <xsd:documentation>Any address classes,  for files in which the various classes are mixed together.</xsd:documentation>
+      <xsd:appinfo>
+        <i:Base i:namespace="http://niem.gov/niem/structures/1.0" i:name="Object"/>
+        <i:ExternalAdapterTypeIndicator>true</i:ExternalAdapterTypeIndicator>
+      </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="s:ComplexObjectType">
+        <xsd:sequence>
+          <xsd:element ref="addr:GeneralAddress" minOccurs="1" maxOccurs="unbounded"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="GeometryPropertyType">
+    <xsd:annotation>
+      <xsd:documentation>A GML property type to encapsulate or references a NIEM Geometry. The Geography Markup Language (GML) specification uses property types and elements to encapsulate or reference GML class elements with identity.  This type allows NIEM Geometry elements to be referenced from GML conformant application schemas developed for use with NIEM.</xsd:documentation>
+      <xsd:appinfo>
+        <i:Base i:namespace="http://niem.gov/niem/universal/1.0" i:name="SuperType"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="u:SuperType">
+        <xsd:sequence>
+          <xsd:element ref="gs:Geometry" minOccurs="0" maxOccurs="unbounded"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="GeometryType">
+    <xsd:annotation>
+      <xsd:documentation>Any geometry.   Specifies a Coordinate Reference System or must inherit one from a containing element.</xsd:documentation>
+      <xsd:appinfo>
+        <i:Base i:namespace="http://niem.gov/niem/structures/1.0" i:name="Object"/>
+        <i:ExternalAdapterTypeIndicator>true</i:ExternalAdapterTypeIndicator>
+      </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="s:ComplexObjectType">
+        <xsd:sequence>
+          <xsd:element ref="gml:_Geometry" minOccurs="1" maxOccurs="unbounded"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="GeospatialPropertyType">
+    <xsd:annotation>
+      <xsd:documentation>A GML property type to encapsulate or reference a NIEM Geospatial. The Geography Markup Language (GML) specification uses property types and elements to encapsulate or reference GML class elements with identity.  This type allows NIEM Geospatial elements to be referenced from GML conformant application schemas developed for use with NIEM.</xsd:documentation>
+      <xsd:appinfo>
+        <i:Base i:namespace="http://niem.gov/niem/universal/1.0" i:name="SuperType"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="u:SuperType">
+        <xsd:sequence>
+          <xsd:element ref="gs:Geospatial" minOccurs="0" maxOccurs="unbounded"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="IFCXMLType">
+    <xsd:annotation>
+      <xsd:documentation>Container for an ifcXML data exchange representing the architecture and engineering structure of a building.</xsd:documentation>
+      <xsd:appinfo>
+        <i:Base i:namespace="http://niem.gov/niem/structures/1.0" i:name="Object"/>
+        <i:ExternalAdapterTypeIndicator>true</i:ExternalAdapterTypeIndicator>
+      </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="s:ComplexObjectType">
+        <xsd:sequence>
+          <xsd:element ref="ex:iso_10303_28" minOccurs="1" maxOccurs="unbounded"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="IntersectionAddressType">
+    <xsd:annotation>
+      <xsd:documentation>An address specified by the names of two thoroughfare addresses.</xsd:documentation>
+      <xsd:appinfo>
+        <i:Base i:namespace="http://niem.gov/niem/structures/1.0" i:name="Object"/>
+        <i:ExternalAdapterTypeIndicator>true</i:ExternalAdapterTypeIndicator>
+      </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="s:ComplexObjectType">
+        <xsd:sequence>
+          <xsd:element ref="addr:IntersectionAddress" minOccurs="1" maxOccurs="unbounded"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="LandXMLType">
+    <xsd:annotation>
+      <xsd:documentation>A LandXML data structure containing civil engineering or land development geospatial features.  See:  FeatureType.</xsd:documentation>
+      <xsd:appinfo>
+        <i:Base i:namespace="http://niem.gov/niem/structures/1.0" i:name="Object"/>
+        <i:ExternalAdapterTypeIndicator>true</i:ExternalAdapterTypeIndicator>
+      </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="s:ComplexObjectType">
+        <xsd:sequence>
+          <xsd:element ref="land:LandXML" minOccurs="1" maxOccurs="unbounded"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="LandmarkAddressPropertyType">
+    <xsd:annotation>
+      <xsd:documentation>A GML property type to encapsulate or references a NIEM LandmarkAddress. The Geography Markup Language (GML) specification uses property types and elements to encapsulate or reference GML class elements with identity.  This type allows NIEM LandmarkAddress elements to be referenced from GML conformant application schemas developed for use with NIEM.</xsd:documentation>
+      <xsd:appinfo>
+        <i:Base i:namespace="http://niem.gov/niem/universal/1.0" i:name="SuperType"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="u:SuperType">
+        <xsd:sequence>
+          <xsd:element ref="gs:AnyLandmarkAddress" minOccurs="0" maxOccurs="unbounded"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="LandmarkSiteAddressType">
+    <xsd:annotation>
+      <xsd:documentation>An address that is both a thoroughfare (road, walkway, railroad, river) address and a landmark address.</xsd:documentation>
+      <xsd:appinfo>
+        <i:Base i:namespace="http://niem.gov/niem/structures/1.0" i:name="Object"/>
+        <i:ExternalAdapterTypeIndicator>true</i:ExternalAdapterTypeIndicator>
+      </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="s:ComplexObjectType">
+        <xsd:sequence>
+          <xsd:element ref="addr:LandmarkSiteAddress" minOccurs="1" maxOccurs="unbounded"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="LineStringType">
+    <xsd:annotation>
+      <xsd:documentation>A geometric curve that consists of a single segment with linear interpolation.</xsd:documentation>
+      <xsd:appinfo>
+        <i:Base i:namespace="http://niem.gov/niem/structures/1.0" i:name="Object"/>
+        <i:ExternalAdapterTypeIndicator>true</i:ExternalAdapterTypeIndicator>
+      </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="s:ComplexObjectType">
+        <xsd:sequence>
+          <xsd:element ref="gml:LineString" minOccurs="1" maxOccurs="unbounded"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="LocationPropertyType">
+    <xsd:annotation>
+      <xsd:documentation>A GML property type to encapsulate or reference a NIEM Location. The Geography Markup Language (GML) specification uses property types and elements to encapsulate or reference GML class elements with identity.  This type allows NIEM Location elements to be referenced from GML conformant application schemas developed for use with NIEM.</xsd:documentation>
+      <xsd:appinfo>
+        <i:Base i:namespace="http://niem.gov/niem/universal/1.0" i:name="SuperType"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="u:SuperType">
+        <xsd:sequence>
+          <xsd:element ref="gs:Location" minOccurs="0" maxOccurs="unbounded"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="MapType">
+    <xsd:annotation>
+      <xsd:documentation>A map image (gif, jpeg, png, tiff, svg, etc.), base64 encoded in-line, or referenced via a URL.</xsd:documentation>
+      <xsd:appinfo>
+        <i:Base i:namespace="http://niem.gov/niem/structures/1.0" i:name="Object"/>
+        <i:ExternalAdapterTypeIndicator>true</i:ExternalAdapterTypeIndicator>
+      </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="s:ComplexObjectType">
+        <xsd:sequence>
+          <xsd:element ref="xls:Map" minOccurs="1" maxOccurs="unbounded"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="MapViewContextType">
+    <xsd:annotation>
+      <xsd:documentation>Map view context information to retrieve a particular map image from an OGC Web Map Service (WMS).</xsd:documentation>
+      <xsd:appinfo>
+        <i:Base i:namespace="http://niem.gov/niem/structures/1.0" i:name="Object"/>
+        <i:ExternalAdapterTypeIndicator>true</i:ExternalAdapterTypeIndicator>
+      </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="s:ComplexObjectType">
+        <xsd:sequence>
+          <xsd:element ref="context:ViewContext" minOccurs="1" maxOccurs="unbounded"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="MapWithViewContextType">
+    <xsd:annotation>
+      <xsd:documentation>A map and its view context.  See:  MapType, MapViewContextType.</xsd:documentation>
+      <xsd:appinfo>
+        <i:Base i:namespace="http://niem.gov/niem/structures/1.0" i:name="Object"/>
+        <i:ExternalAdapterTypeIndicator>true</i:ExternalAdapterTypeIndicator>
+      </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="s:ComplexObjectType">
+        <xsd:sequence>
+          <xsd:element ref="xls:Map" minOccurs="1" maxOccurs="unbounded"/>
+          <xsd:element ref="context:ViewContext" minOccurs="1" maxOccurs="unbounded"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="MeasurementType">
+    <xsd:annotation>
+      <xsd:documentation>An Observation,  the result of which is a relative measure, with a unit of measure, relative code, and quantity.  See:  ObservationType.</xsd:documentation>
+      <xsd:appinfo>
+        <i:Base i:namespace="http://niem.gov/niem/structures/1.0" i:name="Object"/>
+        <i:ExternalAdapterTypeIndicator>true</i:ExternalAdapterTypeIndicator>
+      </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="s:ComplexObjectType">
+        <xsd:sequence>
+          <xsd:element ref="om:Measurement" minOccurs="1" maxOccurs="unbounded"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="MovingObjectCollectionType">
+    <xsd:annotation>
+      <xsd:documentation>A moving (feature collection) object with a track of its past and/or projected positions at certain times.  See: FeatureCollection.</xsd:documentation>
+      <xsd:appinfo>
+        <i:Base i:namespace="http://niem.gov/niem/structures/1.0" i:name="Object"/>
+        <i:ExternalAdapterTypeIndicator>true</i:ExternalAdapterTypeIndicator>
+      </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="s:ComplexObjectType">
+        <xsd:sequence>
+          <xsd:element ref="mo:MovingObjectCollection" minOccurs="1" maxOccurs="unbounded"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="MovingObjectType">
+    <xsd:annotation>
+      <xsd:documentation>A moving (feature) object with a track of its past and/or projected positions at certain times.  See: Feature.</xsd:documentation>
+      <xsd:appinfo>
+        <i:Base i:namespace="http://niem.gov/niem/structures/1.0" i:name="Object"/>
+        <i:ExternalAdapterTypeIndicator>true</i:ExternalAdapterTypeIndicator>
+      </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="s:ComplexObjectType">
+        <xsd:sequence>
+          <xsd:element ref="mo:MovingObject" minOccurs="1" maxOccurs="unbounded"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="MultiCurveType">
+    <xsd:annotation>
+      <xsd:documentation>A geometry collection that includes one or more curves or line strings.</xsd:documentation>
+      <xsd:appinfo>
+        <i:Base i:namespace="http://niem.gov/niem/structures/1.0" i:name="Object"/>
+        <i:ExternalAdapterTypeIndicator>true</i:ExternalAdapterTypeIndicator>
+      </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="s:ComplexObjectType">
+        <xsd:sequence>
+          <xsd:element ref="gml:MultiCurve" minOccurs="1" maxOccurs="unbounded"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="MultiGeometryType">
+    <xsd:annotation>
+      <xsd:documentation>A geometry collection that includes one or more geometries, potentially of different types.</xsd:documentation>
+      <xsd:appinfo>
+        <i:Base i:namespace="http://niem.gov/niem/structures/1.0" i:name="Object"/>
+        <i:ExternalAdapterTypeIndicator>true</i:ExternalAdapterTypeIndicator>
+      </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="s:ComplexObjectType">
+        <xsd:sequence>
+          <xsd:element ref="gml:MultiGeometry" minOccurs="1" maxOccurs="unbounded"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="MultiPointType">
+    <xsd:annotation>
+      <xsd:documentation>A geometry collection that includes one or more points.</xsd:documentation>
+      <xsd:appinfo>
+        <i:Base i:namespace="http://niem.gov/niem/structures/1.0" i:name="Object"/>
+        <i:ExternalAdapterTypeIndicator>true</i:ExternalAdapterTypeIndicator>
+      </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="s:ComplexObjectType">
+        <xsd:sequence>
+          <xsd:element ref="gml:MultiPoint" minOccurs="1" maxOccurs="unbounded"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="MultiPolygonType">
+    <xsd:annotation>
+      <xsd:documentation>A geometry collection that includes one or more Polygons.</xsd:documentation>
+      <xsd:appinfo>
+        <i:Base i:namespace="http://niem.gov/niem/structures/1.0" i:name="Object"/>
+        <i:ExternalAdapterTypeIndicator>true</i:ExternalAdapterTypeIndicator>
+      </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="s:ComplexObjectType">
+        <xsd:sequence>
+          <xsd:element ref="xls:MultiPolygon" minOccurs="1" maxOccurs="unbounded"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="MultiSiteLandmarkAddressType">
+    <xsd:annotation>
+      <xsd:documentation>A landmark address specified by two landmark names, where one landmark is inside the other.</xsd:documentation>
+      <xsd:appinfo>
+        <i:Base i:namespace="http://niem.gov/niem/structures/1.0" i:name="Object"/>
+        <i:ExternalAdapterTypeIndicator>true</i:ExternalAdapterTypeIndicator>
+      </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="s:ComplexObjectType">
+        <xsd:sequence>
+          <xsd:element ref="addr:MultiSiteLandmarkAddress" minOccurs="1" maxOccurs="unbounded"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="MultiSurfaceType">
+    <xsd:annotation>
+      <xsd:documentation>A geometry collection that includes one or more surfaces or polygons.</xsd:documentation>
+      <xsd:appinfo>
+        <i:Base i:namespace="http://niem.gov/niem/structures/1.0" i:name="Object"/>
+        <i:ExternalAdapterTypeIndicator>true</i:ExternalAdapterTypeIndicator>
+      </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="s:ComplexObjectType">
+        <xsd:sequence>
+          <xsd:element ref="gml:MultiSurface" minOccurs="1" maxOccurs="unbounded"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="ObservationCollectionType">
+    <xsd:annotation>
+      <xsd:documentation>A composite collection of observations of an event.  See: EventType.</xsd:documentation>
+      <xsd:appinfo>
+        <i:Base i:namespace="http://niem.gov/niem/structures/1.0" i:name="Object"/>
+        <i:ExternalAdapterTypeIndicator>true</i:ExternalAdapterTypeIndicator>
+      </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="s:ComplexObjectType">
+        <xsd:sequence>
+          <xsd:element ref="om:ObservationCollection" minOccurs="1" maxOccurs="unbounded"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="ObservationType">
+    <xsd:annotation>
+      <xsd:documentation>A generic observation of an event.  See:AbstractObservationType.</xsd:documentation>
+      <xsd:appinfo>
+        <i:Base i:namespace="http://niem.gov/niem/structures/1.0" i:name="Object"/>
+        <i:ExternalAdapterTypeIndicator>true</i:ExternalAdapterTypeIndicator>
+      </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="s:ComplexObjectType">
+        <xsd:sequence>
+          <xsd:element ref="om:Observation" minOccurs="1" maxOccurs="unbounded"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="PointOfInterestType">
+    <xsd:annotation>
+      <xsd:documentation>Something with a fixed position that may be used as a reference point or a target in an OpenLS service. Something with a fixed position that may be used as a reference point or a target in an OpenLS service. A POI is the primary output from an OpenLS Directory Service.</xsd:documentation>
+      <xsd:appinfo>
+        <i:Base i:namespace="http://niem.gov/niem/structures/1.0" i:name="Object"/>
+        <i:ExternalAdapterTypeIndicator>true</i:ExternalAdapterTypeIndicator>
+      </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="s:ComplexObjectType">
+        <xsd:sequence>
+          <xsd:element ref="xls:POI" minOccurs="1" maxOccurs="unbounded"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="PointType">
+    <xsd:annotation>
+      <xsd:documentation>A 2D or 3D geometric point.</xsd:documentation>
+      <xsd:appinfo>
+        <i:Base i:namespace="http://niem.gov/niem/structures/1.0" i:name="Object"/>
+        <i:ExternalAdapterTypeIndicator>true</i:ExternalAdapterTypeIndicator>
+      </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="s:ComplexObjectType">
+        <xsd:sequence>
+          <xsd:element ref="gml:Point" minOccurs="1" maxOccurs="unbounded"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="PolygonType">
+    <xsd:annotation>
+      <xsd:documentation>A polygon; a geometric surface defined by a single surface patch whose boundary is coplanar.</xsd:documentation>
+      <xsd:appinfo>
+        <i:Base i:namespace="http://niem.gov/niem/structures/1.0" i:name="Object"/>
+        <i:ExternalAdapterTypeIndicator>true</i:ExternalAdapterTypeIndicator>
+      </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="s:ComplexObjectType">
+        <xsd:sequence>
+          <xsd:element ref="gml:Polygon" minOccurs="1" maxOccurs="unbounded"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="PositionType">
+    <xsd:annotation>
+      <xsd:documentation>An observed or calculated geographic position and quality of position; the primary output from an OpenLS Gateway Service.</xsd:documentation>
+      <xsd:appinfo>
+        <i:Base i:namespace="http://niem.gov/niem/structures/1.0" i:name="Object"/>
+        <i:ExternalAdapterTypeIndicator>true</i:ExternalAdapterTypeIndicator>
+      </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="s:ComplexObjectType">
+        <xsd:sequence>
+          <xsd:element ref="xls:Position" minOccurs="1" maxOccurs="unbounded"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="PostalAddressPropertyType">
+    <xsd:annotation>
+      <xsd:documentation>A GML property type to encapsulate or references a NIEM PostalAddress. The Geography Markup Language (GML) specification uses property types and elements to encapsulate or reference GML class elements with identity.  This type allows NIEM PostalAddress elements to be referenced from GML conformant application schemas developed for use with NIEM.</xsd:documentation>
+      <xsd:appinfo>
+        <i:Base i:namespace="http://niem.gov/niem/universal/1.0" i:name="SuperType"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="u:SuperType">
+        <xsd:sequence>
+          <xsd:element ref="gs:AnyPostalAddress" minOccurs="0" maxOccurs="unbounded"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="RelativeLocationPropertyType">
+    <xsd:annotation>
+      <xsd:documentation>A GML property type to encapsulate or reference a NIEM RelativeLocation. The Geography Markup Language (GML) specification uses property types and elements to encapsulate or reference GML class elements with identity.  This type allows NIEM RelativeLocation elements to be referenced from GML conformant application schemas developed for use with NIEM.</xsd:documentation>
+      <xsd:appinfo>
+        <i:Base i:namespace="http://niem.gov/niem/universal/1.0" i:name="SuperType"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="u:SuperType">
+        <xsd:sequence>
+          <xsd:element ref="gs:RelativeLocation" minOccurs="0" maxOccurs="unbounded"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="RelativeLocationType">
+    <xsd:annotation>
+      <xsd:documentation>Defines a relative location as a specified distance from a location in a specified direction.</xsd:documentation>
+      <xsd:appinfo>
+        <i:Base i:namespace="http://niem.gov/niem/universal/1.0" i:name="SuperType"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="u:SuperType">
+        <xsd:sequence>
+          <xsd:element ref="gs:Location" minOccurs="1" maxOccurs="unbounded"/>
+          <xsd:element ref="gs:Direction" minOccurs="1" maxOccurs="unbounded"/>
+          <xsd:element ref="gs:Distance" minOccurs="1" maxOccurs="unbounded"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="RouteModeInstructionType">
+    <xsd:annotation>
+      <xsd:documentation>An Open Location Services route mode instruction extended with transportation mode (e.g. foot, bicycle, taxi, bus, rail, boat, airplane) information.</xsd:documentation>
+      <xsd:appinfo>
+        <i:Base i:namespace="http://niem.gov/niem/structures/1.0" i:name="Object"/>
+        <i:ExternalAdapterTypeIndicator>true</i:ExternalAdapterTypeIndicator>
+      </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="s:ComplexObjectType">
+        <xsd:sequence>
+          <xsd:element ref="mmr:RouteModeInstruction" minOccurs="1" maxOccurs="unbounded"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="SingleSiteLandmarkAddressType">
+    <xsd:annotation>
+      <xsd:documentation>A  landmark address specified by reference to a single landmark.</xsd:documentation>
+      <xsd:appinfo>
+        <i:Base i:namespace="http://niem.gov/niem/structures/1.0" i:name="Object"/>
+        <i:ExternalAdapterTypeIndicator>true</i:ExternalAdapterTypeIndicator>
+      </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="s:ComplexObjectType">
+        <xsd:sequence>
+          <xsd:element ref="addr:SingleSiteLandmarkAddress" minOccurs="1" maxOccurs="unbounded"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="SiteAddressType">
+    <xsd:annotation>
+      <xsd:documentation>Singular location referenced off of a linear feature, having a numeric identifier.</xsd:documentation>
+      <xsd:appinfo>
+        <i:Base i:namespace="http://niem.gov/niem/structures/1.0" i:name="Object"/>
+        <i:ExternalAdapterTypeIndicator>true</i:ExternalAdapterTypeIndicator>
+      </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="s:ComplexObjectType">
+        <xsd:sequence>
+          <xsd:element ref="addr:SiteAddress" minOccurs="1" maxOccurs="unbounded"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="StartModeWayPointType">
+    <xsd:annotation>
+      <xsd:documentation>Starting point of a multi-modal route that starts at a transportation mode (e.g. foot, bicycle, taxi, bus, rail, boat, airplane)  transfer point.</xsd:documentation>
+      <xsd:appinfo>
+        <i:Base i:namespace="http://niem.gov/niem/structures/1.0" i:name="Object"/>
+        <i:ExternalAdapterTypeIndicator>true</i:ExternalAdapterTypeIndicator>
+      </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="s:ComplexObjectType">
+        <xsd:sequence>
+          <xsd:element ref="mmr:StartModeWayPoint" minOccurs="1" maxOccurs="unbounded"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="ThoroughfareAddressPropertyType">
+    <xsd:annotation>
+      <xsd:documentation>A GML property type to encapsulate or references a NIEM ThoroughfareAddress. The Geography Markup Language (GML) specification uses property types and elements to encapsulate or reference GML class elements with identity.  This type allows NIEM ThoroughfareAddress elements to be referenced from GML conformant application schemas developed for use with NIEM.</xsd:documentation>
+      <xsd:appinfo>
+        <i:Base i:namespace="http://niem.gov/niem/universal/1.0" i:name="SuperType"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="u:SuperType">
+        <xsd:sequence>
+          <xsd:element ref="gs:AnyThoroughfareAddress" minOccurs="0" maxOccurs="unbounded"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="TruthObservationType">
+    <xsd:annotation>
+      <xsd:documentation>An Observation, in which the result is a boolean value representing the truth value (usually existence) of the observed property.  See: ObservationType.</xsd:documentation>
+      <xsd:appinfo>
+        <i:Base i:namespace="http://niem.gov/niem/structures/1.0" i:name="Object"/>
+        <i:ExternalAdapterTypeIndicator>true</i:ExternalAdapterTypeIndicator>
+      </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="s:ComplexObjectType">
+        <xsd:sequence>
+          <xsd:element ref="om:TruthObservation" minOccurs="1" maxOccurs="unbounded"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="TwoNumberAddressRangeType">
+    <xsd:annotation>
+      <xsd:documentation>A thoroughfare (road, walkway, railroad, river) address range specified by low and high address numbers.</xsd:documentation>
+      <xsd:appinfo>
+        <i:Base i:namespace="http://niem.gov/niem/structures/1.0" i:name="Object"/>
+        <i:ExternalAdapterTypeIndicator>true</i:ExternalAdapterTypeIndicator>
+      </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="s:ComplexObjectType">
+        <xsd:sequence>
+          <xsd:element ref="addr:TwoNumberAddressRange" minOccurs="1" maxOccurs="unbounded"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="USPSGeneralDeliveryAddressType">
+    <xsd:annotation>
+      <xsd:documentation>A USPS General Delivery Address that has no definite relation to the location of the recipient.</xsd:documentation>
+      <xsd:appinfo>
+        <i:Base i:namespace="http://niem.gov/niem/structures/1.0" i:name="Object"/>
+        <i:ExternalAdapterTypeIndicator>true</i:ExternalAdapterTypeIndicator>
+      </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="s:ComplexObjectType">
+        <xsd:sequence>
+          <xsd:element ref="addr:USPSGeneralDeliveryAddress" minOccurs="1" maxOccurs="unbounded"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="USPSPostalDeliveryBoxType">
+    <xsd:annotation>
+      <xsd:documentation>A USPS Postal Delivery Box that has no definite relation to the location of the recipient</xsd:documentation>
+      <xsd:appinfo>
+        <i:Base i:namespace="http://niem.gov/niem/structures/1.0" i:name="Object"/>
+        <i:ExternalAdapterTypeIndicator>true</i:ExternalAdapterTypeIndicator>
+      </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="s:ComplexObjectType">
+        <xsd:sequence>
+          <xsd:element ref="addr:USPSPostalDeliveryBox" minOccurs="1" maxOccurs="unbounded"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="USPSPostalDeliveryRouteType">
+    <xsd:annotation>
+      <xsd:documentation>A USPS Postal Delivery Route address that has no definite relation to the location of the recipient.</xsd:documentation>
+      <xsd:appinfo>
+        <i:Base i:namespace="http://niem.gov/niem/structures/1.0" i:name="Object"/>
+        <i:ExternalAdapterTypeIndicator>true</i:ExternalAdapterTypeIndicator>
+      </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="s:ComplexObjectType">
+        <xsd:sequence>
+          <xsd:element ref="addr:USPSPostalDeliveryRoute" minOccurs="1" maxOccurs="unbounded"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="UnnumberedThoroughfareAddressType">
+    <xsd:annotation>
+      <xsd:documentation>An unnumbered thoroughfare (road, walkway, railroad, river) address.</xsd:documentation>
+      <xsd:appinfo>
+        <i:Base i:namespace="http://niem.gov/niem/structures/1.0" i:name="Object"/>
+        <i:ExternalAdapterTypeIndicator>true</i:ExternalAdapterTypeIndicator>
+      </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="s:ComplexObjectType">
+        <xsd:sequence>
+          <xsd:element ref="addr:UnnumberedThoroughfareAddress" minOccurs="1" maxOccurs="unbounded"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="ViaModeWayPointType">
+    <xsd:annotation>
+      <xsd:documentation>Intermediate transportation mode (e.g. foot, bicycle, taxi, bus, rail, boat, airplane)  transfer point of a multi-modal route.</xsd:documentation>
+      <xsd:appinfo>
+        <i:Base i:namespace="http://niem.gov/niem/structures/1.0" i:name="Object"/>
+        <i:ExternalAdapterTypeIndicator>true</i:ExternalAdapterTypeIndicator>
+      </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="s:ComplexObjectType">
+        <xsd:sequence>
+          <xsd:element ref="mmr:ViaModeWayPoint" minOccurs="1" maxOccurs="unbounded"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="XLSAddressType">
+    <xsd:annotation>
+      <xsd:documentation>An Address as encoded for OGC Open Location Services, e.g. for display on PDA or Cell Phone.</xsd:documentation>
+      <xsd:appinfo>
+        <i:Base i:namespace="http://niem.gov/niem/structures/1.0" i:name="Object"/>
+        <i:ExternalAdapterTypeIndicator>true</i:ExternalAdapterTypeIndicator>
+      </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="s:ComplexObjectType">
+        <xsd:sequence>
+          <xsd:element ref="xls:Address" minOccurs="1" maxOccurs="unbounded"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element substitutionGroup="gs:Geospatial" name="AbstractContinuousCoverage" type="gs:AbstractContinuousCoverageType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>A coverage that can return different values for the same feature attribute at different direct positions within a single spatiotemporal object.</xsd:documentation>
+      <xsd:appinfo>
+        <i:Base i:name="Geospatial"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element substitutionGroup="gs:Geospatial" name="AbstractDiscreteCoverage" type="gs:AbstractDiscreteCoverageType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>A coverage with finite domain set ((temporal) geometry objects), range set (attribute values mapped to domain), and optional coverage function.</xsd:documentation>
+      <xsd:appinfo>
+        <i:Base i:name="Geospatial"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element substitutionGroup="gs:Geospatial" name="AbstractObservation" abstract="true">
+    <xsd:annotation>
+      <xsd:documentation>Place Holder for any observation of an event.  See: Event.</xsd:documentation>
+      <xsd:appinfo>
+        <i:Base i:name="Geospatial"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element substitutionGroup="gs:Geospatial" name="Address" abstract="true">
+    <xsd:annotation>
+      <xsd:documentation>Abstract place-holder in a schema to use a non-abstract address element defined by an external standard.</xsd:documentation>
+      <xsd:appinfo>
+        <i:Base i:name="Geospatial"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="AddressProperty" type="gs:AddressPropertyType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>Encapsulates or references an Address element. The Geography Markup Language (GML) specification uses property types and elements to encapsulate or reference GML class elements with identity.  This element allows NIEM Address elements to be referenced from GML conformant application schemas developed for use with NIEM.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element substitutionGroup="gs:Address" name="AnyLandmarkAddress" abstract="true">
+    <xsd:annotation>
+      <xsd:documentation>Place-holder in a schema to use a landmark address defined by the external ANSI address standard.</xsd:documentation>
+      <xsd:appinfo>
+        <i:Base i:name="Address"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element substitutionGroup="gs:Address" name="AnyPostalAddress" abstract="true">
+    <xsd:annotation>
+      <xsd:documentation>Place-holder in a schema to use a postal address defined by the external ANSI address standard.</xsd:documentation>
+      <xsd:appinfo>
+        <i:Base i:name="Address"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element substitutionGroup="gs:Address" name="AnyThoroughfareAddress" abstract="true">
+    <xsd:annotation>
+      <xsd:documentation>Place-holder in a schema to use a thoroughfare address defined by the external ANSI address standard.</xsd:documentation>
+      <xsd:appinfo>
+        <i:Base i:name="Address"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element substitutionGroup="gs:Location" name="ArcByCenterPoint" type="gs:ArcByCenterPointType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>A 2D arc defined by its center point, radius, and bearings at start and end.</xsd:documentation>
+      <xsd:appinfo>
+        <i:Base i:name="Location"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element substitutionGroup="gs:Location" name="AreaOfInterest" type="gs:AreaOfInterestType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>An Area of Interest as defined by a named circle, bounding box, or polygon, used in OGC Open Location Services.</xsd:documentation>
+      <xsd:appinfo>
+        <i:Base i:name="Location"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element substitutionGroup="gs:Geospatial" name="CategoryObservation" type="gs:CategoryObservationType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>An Observation, in which the result is a textual value from a controlled vocabulary.  See: Observation.</xsd:documentation>
+      <xsd:appinfo>
+        <i:Base i:name="Geospatial"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element substitutionGroup="gs:Location" name="CircleByCenterPoint" type="gs:CircleByCenterPointType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>A 2D ArcByCenterPoint with identical start and end angles that forms a full circle.</xsd:documentation>
+      <xsd:appinfo>
+        <i:Base i:name="Location"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element substitutionGroup="gs:Location" name="CircularArc" type="gs:CircularArcType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>A 2D arc defined by its center point, two radii (r[1] &gt; r[2]), and start and end angles.</xsd:documentation>
+      <xsd:appinfo>
+        <i:Base i:name="Location"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element substitutionGroup="gs:Geospatial" name="CommonObservation" type="gs:CommonObservationType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>An Observation, in which a value record schema specifies the encoding of the values of the observed properties.  See:  Observation.</xsd:documentation>
+      <xsd:appinfo>
+        <i:Base i:name="Geospatial"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element substitutionGroup="gs:AnyLandmarkAddress" name="CommunityAddress" type="gs:CommunityAddressType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>A Puerto Rican urbanization address where the urbanization name is preceded by a number, and no street name is included.</xsd:documentation>
+      <xsd:appinfo>
+        <i:Base i:name="AnyLandmarkAddress"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element substitutionGroup="gs:Geospatial" name="CountObservation" type="gs:CountObservationType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>An Observation, in which the result is an integer representing the count of the observed property.  See: Observation.</xsd:documentation>
+      <xsd:appinfo>
+        <i:Base i:name="Geospatial"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element substitutionGroup="gs:Geospatial" name="DetermineRouteRequest" type="gs:DetermineRouteRequestType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>Determine Route request parameters for an OGC OpenLS  Navigation Service.</xsd:documentation>
+      <xsd:appinfo>
+        <i:Base i:name="Geospatial"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element substitutionGroup="gs:Geospatial" name="DetermineRouteResponse" type="gs:DetermineRouteResponseType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>Determine Route response from an OGC OpenLS  Navigation Service.</xsd:documentation>
+      <xsd:appinfo>
+        <i:Base i:name="Geospatial"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="Direction" type="gs:DirectionType" nillable="true"/>
+  <xsd:element name="Distance" type="u:MeasureType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>Distance represented as a number with a scale indicated by the value of its uom (Units Of Measure) attribute.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element substitutionGroup="gs:Location" name="Ellipse" type="gs:EllipseType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>An ellipse specified by a point, major axis, minor axis, and rotation.</xsd:documentation>
+      <xsd:appinfo>
+        <i:Base i:name="Location"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element substitutionGroup="gs:Location" name="EndModeWayPoint" type="gs:EndModeWayPointType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>Ending point of a multi-modal route that ends at a transportation mode (e.g. foot, bicycle, taxi, bus, rail, boat, airplane) transfer point.</xsd:documentation>
+      <xsd:appinfo>
+        <i:Base i:name="Location"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element substitutionGroup="gs:Geospatial" name="Event" type="gs:EventType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>Description of an event, particularly one that causes transformation, creation or destruction of a geospatial feature.  See: Feature.</xsd:documentation>
+      <xsd:appinfo>
+        <i:Base i:name="Geospatial"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element substitutionGroup="gs:Location" name="Feature" type="gs:FeatureType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>A geospatial feature; any real world object with location; e.g. building, road, river, county, town, parcel, traffic sign.</xsd:documentation>
+      <xsd:appinfo>
+        <i:Base i:name="Location"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element substitutionGroup="gs:Location" name="FeatureCollection" type="gs:FeatureCollectionType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>A collection of geospatial features; any real world objects with location.  See: FeatureType.</xsd:documentation>
+      <xsd:appinfo>
+        <i:Base i:name="Location"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element substitutionGroup="gs:AnyThoroughfareAddress" name="FourNumberAddressRange" type="gs:FourNumberAddressRangeType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>Left and right side  thoroughfare (road, walkway, railroad, river) address ranges specified by low and high address numbers.</xsd:documentation>
+      <xsd:appinfo>
+        <i:Base i:name="AnyThoroughfareAddress"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element substitutionGroup="gs:Address" name="GeneralAddress" type="gs:GeneralAddressType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>Any address classes,  for files in which the various classes are mixed together.</xsd:documentation>
+      <xsd:appinfo>
+        <i:Base i:name="Address"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element substitutionGroup="gs:Location" name="Geometry" type="gs:GeometryType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>Any geometry.  Specifies a Coordinate Reference System or must inherit one from a containing element.</xsd:documentation>
+      <xsd:appinfo>
+        <i:Base i:name="Location"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="GeometryProperty" type="gs:GeometryPropertyType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>Encapsulates or references a Geometry element. The Geography Markup Language (GML) specification uses property types and elements to encapsulate or reference GML class elements with identity.  This element allows NIEM Geometry elements to be referenced from GML conformant application schemas developed for use with NIEM.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="Geospatial" abstract="true">
+    <xsd:annotation>
+      <xsd:documentation>Abstract place-holder in a schema to use any non-abstract geospatial element defined by an external standard. Non-abstract geospatial elements that declare substitutionGroup=&quot;gs:Geospatial&quot; may take the place of this element in an XML data instance document.  These include Locations, Coverages, Observations, Measurements, Routes, Maps, MapViewContexts, IFCXML (architectural structures), LandXML (civil engineering structures), and references thereto.  See:  Location.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="GeospatialProperty" type="gs:GeospatialPropertyType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>Encapsulates or references a Geospatial element. The Geography Markup Language (GML) specification uses property types and elements to encapsulate or reference GML class elements with identity.  This element allows NIEM Geospatial elements to be referenced from GML conformant application schemas developed for use with NIEM.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element substitutionGroup="gs:Geospatial" name="IFCXML" type="gs:IFCXMLType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>Container for an ifcXML data exchange representing the architecture and engineering structure of a building.</xsd:documentation>
+      <xsd:appinfo>
+        <i:Base i:name="Geospatial"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element substitutionGroup="gs:AnyThoroughfareAddress" name="IntersectionAddress" type="gs:IntersectionAddressType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>An address specified by the names of two thoroughfare addresses.</xsd:documentation>
+      <xsd:appinfo>
+        <i:Base i:name="AnyThoroughfareAddress"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element substitutionGroup="gs:Geospatial" name="LandXML" type="gs:LandXMLType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>A LandXML data structure containing civil engineering or land development geospatial features.  See:  Feature.</xsd:documentation>
+      <xsd:appinfo>
+        <i:Base i:name="Geospatial"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="LandmarkAddressProperty" type="gs:LandmarkAddressPropertyType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>Encapsulates or references a LandmarkAddress element. The Geography Markup Language (GML) specification uses property types and elements to encapsulate or reference GML class elements with identity.  This element allows NIEM LandmarkAddress elements to be referenced from GML conformant application schemas developed for use with NIEM.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element substitutionGroup="gs:AnyThoroughfareAddress" name="LandmarkSiteAddress" type="gs:LandmarkSiteAddressType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>An address that is both a thoroughfare (road, walkway, railroad, river) address and a landmark address.</xsd:documentation>
+      <xsd:appinfo>
+        <i:Base i:name="AnyThoroughfareAddress"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element substitutionGroup="gs:Location" name="LineString" type="gs:LineStringType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>A geometric curve that consists of a single segment with linear interpolation.</xsd:documentation>
+      <xsd:appinfo>
+        <i:Base i:name="Location"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element substitutionGroup="gs:Geospatial" name="Location" abstract="true">
+    <xsd:annotation>
+      <xsd:documentation>Abstract place-holder in a schema to use a non-abstract location element (geometry, feature, address) defined by an external standard. Non-abstract geospatial elements that declare substitutionGroup=&quot;gs:Location&quot; may take the place of this element in an XML data instance document to indicate a location in various ways.  These include Address, RelativeLocation, (Multi)Geometries, Positions, Points and Areas of Interest, Route WayPoints, geospatial Features and collections, and references thereto.</xsd:documentation>
+      <xsd:appinfo>
+        <i:Base i:name="Geospatial"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="LocationProperty" type="gs:GeospatialPropertyType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>Encapsulates or references a Location element. The Geography Markup Language (GML) specification uses property types and elements to encapsulate or reference GML class elements with identity.  This element allows NIEM Location elements to be referenced from GML conformant application schemas developed for use with NIEM.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element substitutionGroup="gs:Geospatial" name="Map" type="gs:MapType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>A map image (gif, jpeg, png, tiff, svg, etc.), base64 encoded in-line, or referenced via a URL. A local reference to a map image (gif, jpeg, png, tiff, svg, etc.), base64 encoded in-line, or referenced via a URL.</xsd:documentation>
+      <xsd:appinfo>
+        <i:Base i:name="Geospatial"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element substitutionGroup="gs:Geospatial" name="MapViewContext" type="gs:MapViewContextType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>Map view context information to retrieve a particular map image from an OGC Web Map Service (WMS).</xsd:documentation>
+      <xsd:appinfo>
+        <i:Base i:name="Geospatial"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element substitutionGroup="gs:Geospatial" name="MapWithViewContext" type="gs:MapWithViewContextType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>A map and its view context.  See:  Map, MapViewContext. A reference to a map and its view context.  See:  Map, MapViewContext.</xsd:documentation>
+      <xsd:appinfo>
+        <i:Base i:name="Geospatial"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element substitutionGroup="gs:Geospatial" name="Measurement" type="gs:MeasurementType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>An Observation,  the result of which is a relative measure, with a unit of measure, relative code, and quantity.  See:  Observation.</xsd:documentation>
+      <xsd:appinfo>
+        <i:Base i:name="Geospatial"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element substitutionGroup="gs:Geospatial" name="MovingObject" type="gs:MovingObjectType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>A moving (feature) object with a track of its past and/or projected positions at certain times.  See: Feature.</xsd:documentation>
+      <xsd:appinfo>
+        <i:Base i:name="Geospatial"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element substitutionGroup="gs:Geospatial" name="MovingObjectCollection" type="gs:MovingObjectCollectionType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>A moving (feature collection) object with a track of its past and/or projected positions at certain times.  See: FeatureCollection. A reference to a moving (feature collection) object with a track of its past and/or projected positions at certain times.  See: FeatureCollection.</xsd:documentation>
+      <xsd:appinfo>
+        <i:Base i:name="Geospatial"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element substitutionGroup="gs:Location" name="MultiCurve" type="gs:MultiCurveType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>A geometry collection that includes one or more curves or line strings.</xsd:documentation>
+      <xsd:appinfo>
+        <i:Base i:name="Location"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element substitutionGroup="gs:Location" name="MultiGeometry" type="gs:MultiGeometryType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>A geometry collection that includes one or more geometries, potentially of different types.</xsd:documentation>
+      <xsd:appinfo>
+        <i:Base i:name="Location"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element substitutionGroup="gs:Location" name="MultiPoint" type="gs:MultiPointType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>A geometry collection that includes one or more points.</xsd:documentation>
+      <xsd:appinfo>
+        <i:Base i:name="Location"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element substitutionGroup="gs:Location" name="MultiPolygon" type="gs:MultiPolygonType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>A geometry collection that includes one or more Polygons.</xsd:documentation>
+      <xsd:appinfo>
+        <i:Base i:name="Location"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element substitutionGroup="gs:AnyLandmarkAddress" name="MultiSiteLandmarkAddress" type="gs:MultiSiteLandmarkAddressType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>A landmark address specified by two landmark names, where one landmark is inside the other.</xsd:documentation>
+      <xsd:appinfo>
+        <i:Base i:name="AnyLandmarkAddress"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element substitutionGroup="gs:Location" name="MultiSurface" type="gs:MultiSurfaceType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>A geometry collection that includes one or more surfaces or polygons.</xsd:documentation>
+      <xsd:appinfo>
+        <i:Base i:name="Location"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element substitutionGroup="gs:Location" name="NiemGeographicCoordinate" type="u:GeographicCoordinateType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>Deprecated non-standard location using u:GeographicCoordinateType.  Use standard gs:Point instead if possible.</xsd:documentation>
+      <xsd:appinfo>
+        <i:Base i:name="Location"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element substitutionGroup="gs:Geospatial" name="Observation" type="gs:ObservationType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>A generic observation of an event.  See:AbstractObservation.</xsd:documentation>
+      <xsd:appinfo>
+        <i:Base i:name="Geospatial"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element substitutionGroup="gs:Geospatial" name="ObservationCollection" type="gs:ObservationCollectionType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>A composite collection of observations of an event.  See: Event</xsd:documentation>
+      <xsd:appinfo>
+        <i:Base i:name="Geospatial"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element substitutionGroup="gs:Location" name="Point" type="gs:PointType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>A 2D or 3D geometric point.</xsd:documentation>
+      <xsd:appinfo>
+        <i:Base i:name="Location"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element substitutionGroup="gs:Location" name="PointOfInterest" type="gs:PointOfInterestType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>Something with a fixed position that may be used as a reference point or a target in an OpenLS service. A POI is the primary output from an OpenLS Directory Service.</xsd:documentation>
+      <xsd:appinfo>
+        <i:Base i:name="Location"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element substitutionGroup="gs:Location" name="Polygon" type="gs:PolygonType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>A polygon; a geometric surface defined by a single surface patch whose boundary is coplanar.</xsd:documentation>
+      <xsd:appinfo>
+        <i:Base i:name="Location"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element substitutionGroup="gs:Location" name="Position" type="gs:PositionType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>An observed or calculated geographic position and quality of position; the primary output from an OpenLS Gateway Service.</xsd:documentation>
+      <xsd:appinfo>
+        <i:Base i:name="Location"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="PostalAddressProperty" type="gs:PostalAddressPropertyType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>Encapsulates or references a PostalAddress element. The Geography Markup Language (GML) specification uses property types and elements to encapsulate or reference GML class elements with identity.  This element allows NIEM PostalAddress elements to be referenced from GML conformant application schemas developed for use with NIEM.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element substitutionGroup="gs:Location" name="RelativeLocation" type="gs:RelativeLocationType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>A relative location is a specified distance from a location in a specified direction.</xsd:documentation>
+      <xsd:appinfo>
+        <i:Base i:name="Location"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="RelativeLocationProperty" type="gs:RelativeLocationPropertyType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>Encapsulates or references a RelativeLocation element. The Geography Markup Language (GML) specification uses property types and elements to encapsulate or reference GML class elements with identity.  This element allows NIEM  RelativeLocation elements to be referenced from GML conformant application schemas developed for use with NIEM.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element substitutionGroup="gs:Geospatial" name="RouteModeInstruction" type="gs:RouteModeInstructionType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>An Open Location Services route mode instruction extended with transportation mode (e.g. foot, bicycle, taxi, bus, rail, boat, airplane) information.</xsd:documentation>
+      <xsd:appinfo>
+        <i:Base i:name="Geospatial"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element substitutionGroup="gs:AnyLandmarkAddress" name="SingleSiteLandmarkAddress" type="gs:SingleSiteLandmarkAddressType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>A  landmark address specified by reference to a single landmark.</xsd:documentation>
+      <xsd:appinfo>
+        <i:Base i:name="AnyLandmarkAddress"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element substitutionGroup="gs:AnyThoroughfareAddress" name="SiteAddress" type="gs:SiteAddressType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>Singular location referenced off of a linear feature, having a numeric identifier.</xsd:documentation>
+      <xsd:appinfo>
+        <i:Base i:name="AnyThoroughfareAddress"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element substitutionGroup="gs:Location" name="StartModeWayPoint" type="gs:StartModeWayPointType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>Starting point of a multi-modal route that starts at a transportation mode (e.g. foot, bicycle, taxi, bus, rail, boat, airplane) transfer point.</xsd:documentation>
+      <xsd:appinfo>
+        <i:Base i:name="Location"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="ThoroughfareAddressProperty" type="gs:ThoroughfareAddressPropertyType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>Encapsulates or references a ThoroughfareAddress element. The Geography Markup Language (GML) specification uses property types and elements to encapsulate or reference GML class elements with identity.  This element allows NIEM ThoroughfareAddress elements to be referenced from GML conformant application schemas developed for use with NIEM.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element substitutionGroup="gs:Geospatial" name="TruthObservation" type="gs:TruthObservationType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>An Observation, in which the result is a boolean value representing the truth value (usually existence) of the observed property.  See: Observation.</xsd:documentation>
+      <xsd:appinfo>
+        <i:Base i:name="Geospatial"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element substitutionGroup="gs:AnyThoroughfareAddress" name="TwoNumberAddressRange" type="gs:TwoNumberAddressRangeType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>A thoroughfare (road, walkway, railroad, river) address range specified by low and high address numbers.</xsd:documentation>
+      <xsd:appinfo>
+        <i:Base i:name="AnyThoroughfareAddress"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element substitutionGroup="gs:AnyPostalAddress" name="USPSGeneralDeliveryAddress" type="gs:USPSGeneralDeliveryAddressType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>A USPS General Delivery Address that has no definite relation to the location of the recipient.</xsd:documentation>
+      <xsd:appinfo>
+        <i:Base i:name="AnyPostalAddress"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element substitutionGroup="gs:AnyPostalAddress" name="USPSPostalDeliveryBox" type="gs:USPSPostalDeliveryBoxType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>A USPS Postal Delivery Box that has no definite relation to the location of the recipient.</xsd:documentation>
+      <xsd:appinfo>
+        <i:Base i:name="AnyPostalAddress"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element substitutionGroup="gs:AnyPostalAddress" name="USPSPostalDeliveryRoute" type="gs:USPSPostalDeliveryRouteType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>A USPS Postal Delivery Route address that has no definite relation to the location of the recipient.</xsd:documentation>
+      <xsd:appinfo>
+        <i:Base i:name="AnyPostalAddress"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element substitutionGroup="gs:AnyThoroughfareAddress" name="UnnumberedThoroughfareAddress" type="gs:UnnumberedThoroughfareAddressType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>An unnumbered thoroughfare (road, walkway, railroad, river) address.</xsd:documentation>
+      <xsd:appinfo>
+        <i:Base i:name="AnyThoroughfareAddress"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element substitutionGroup="gs:Location" name="ViaModeWayPoint" type="gs:ViaModeWayPointType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>Intermediate transportation mode (e.g. foot, bicycle, taxi, bus, rail, boat, airplane)  transfer point of a multi-modal route.</xsd:documentation>
+      <xsd:appinfo>
+        <i:Base i:name="Location"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element substitutionGroup="gs:Address" name="XLSAddress" type="gs:XLSAddressType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>An Address as encoded for OGC Open Location Services, e.g. for display on PDA or Cell Phone.</xsd:documentation>
+      <xsd:appinfo>
+        <i:Base i:name="Address"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+  </xsd:element>
+</xsd:schema>

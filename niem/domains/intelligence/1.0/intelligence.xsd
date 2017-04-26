@@ -1,0 +1,912 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema targetNamespace="http://niem.gov/niem/domains/intelligence/1.0" version="1" xmlns:intel="http://niem.gov/niem/domains/intelligence/1.0" xmlns:fips_10-4="http://niem.gov/niem/fips_10-4/1.0" xmlns:s="http://niem.gov/niem/structures/1.0" xmlns:u="http://niem.gov/niem/universal/1.0" xmlns:ncic="http://niem.gov/niem/ncic_2000/1.0" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:iso_3166="http://niem.gov/niem/iso_3166/1.0" xmlns:niem-xsd="http://niem.gov/niem/proxy/xsd/1.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:i="http://niem.gov/niem/appinfo/1.0" xmlns:j="http://niem.gov/niem/domains/justice/1.0" xmlns:c="http://niem.gov/niem/common/1.0">
+  <xsd:annotation>
+    <xsd:documentation>NIEM intelligence domain schema framework</xsd:documentation>
+    <xsd:appinfo>
+      <i:ConformantIndicator>true</i:ConformantIndicator>
+    </xsd:appinfo>
+  </xsd:annotation>
+  <xsd:import schemaLocation="../../../structures/1.0/structures.xsd" namespace="http://niem.gov/niem/structures/1.0"/>
+  <xsd:import namespace="http://niem.gov/niem/appinfo/1.0" schemaLocation="../../../appinfo/1.0/appinfo.xsd"/>
+  <xsd:import schemaLocation="../../../common/1.0/common.xsd" namespace="http://niem.gov/niem/common/1.0"/>
+  <xsd:import schemaLocation="../../justice/1.0/justice.xsd" namespace="http://niem.gov/niem/domains/justice/1.0"/>
+  <xsd:import schemaLocation="../../../fips_10-4/1.0/fips_10-4.xsd" namespace="http://niem.gov/niem/fips_10-4/1.0"/>
+  <xsd:import schemaLocation="../../../iso_3166/1.0/iso_3166.xsd" namespace="http://niem.gov/niem/iso_3166/1.0"/>
+  <xsd:import schemaLocation="../../../ncic_2000/1.0/ncic_2000.xsd" namespace="http://niem.gov/niem/ncic_2000/1.0"/>
+  <xsd:import schemaLocation="../../../proxy/xsd/1.0/xsd.xsd" namespace="http://niem.gov/niem/proxy/xsd/1.0"/>
+  <xsd:import schemaLocation="../../../universal/1.0/universal.xsd" namespace="http://niem.gov/niem/universal/1.0"/>
+  <xsd:complexType name="AgencyInterestCategoryType">
+    <xsd:annotation>
+      <xsd:appinfo>
+        <i:Base i:namespace="http://niem.gov/niem/universal/1.0" i:name="SuperType"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="u:SuperType">
+        <xsd:sequence>
+          <xsd:element ref="intel:SubjectCategoryCodeText" minOccurs="0" maxOccurs="unbounded"/>
+          <xsd:element ref="intel:FBIECRCode" minOccurs="0" maxOccurs="unbounded"/>
+          <xsd:element ref="intel:StateINACodeText" minOccurs="0" maxOccurs="unbounded"/>
+          <xsd:element ref="intel:AgencyInterestOtherCategory" minOccurs="0" maxOccurs="unbounded"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="AgencyInterestOtherCategoryType">
+    <xsd:annotation>
+      <xsd:appinfo>
+        <i:Base i:namespace="http://niem.gov/niem/universal/1.0" i:name="SuperType"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="u:SuperType">
+        <xsd:sequence>
+          <xsd:element ref="intel:AgencyInterestCategoryText" minOccurs="0" maxOccurs="unbounded"/>
+          <xsd:element ref="intel:AgencyInterestCategoryCodeText" minOccurs="0" maxOccurs="unbounded"/>
+          <xsd:element ref="intel:AgencyInterestCategoryDescriptionText" minOccurs="0" maxOccurs="unbounded"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="AgencySubjectHandlingType">
+    <xsd:annotation>
+      <xsd:appinfo>
+        <i:Base i:namespace="http://niem.gov/niem/universal/1.0" i:name="SuperType"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="u:SuperType">
+        <xsd:sequence>
+          <xsd:element ref="intel:AgencySubjectHandlingFBICodeText" minOccurs="0" maxOccurs="unbounded"/>
+          <xsd:element ref="intel:SubjectHandling" minOccurs="0" maxOccurs="unbounded"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="AgencySubjectInterestType">
+    <xsd:annotation>
+      <xsd:appinfo>
+        <i:Base i:namespace="http://niem.gov/niem/universal/1.0" i:name="SuperType"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="u:SuperType">
+        <xsd:sequence>
+          <xsd:element ref="intel:AgencyName" minOccurs="0" maxOccurs="unbounded"/>
+          <xsd:element ref="intel:AgencyInterestCategory" minOccurs="0" maxOccurs="unbounded"/>
+          <xsd:element ref="intel:AgencySubjectHandling" minOccurs="0" maxOccurs="unbounded"/>
+          <xsd:element ref="intel:SubjectReasonOnListText" minOccurs="0" maxOccurs="unbounded"/>
+          <xsd:element ref="intel:SubjectCautionInformation" minOccurs="0" maxOccurs="unbounded"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="BiometricAugmentationType">
+    <xsd:annotation>
+      <xsd:documentation>Additional intelligence content for type c:BiometricType</xsd:documentation>
+      <xsd:appinfo>
+        <i:Base i:namespace="http://niem.gov/niem/structures/1.0" i:name="Object"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="s:AugmentationType">
+        <xsd:sequence>
+          <xsd:element ref="intel:CBEFF" minOccurs="0" maxOccurs="unbounded"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="BiometricType">
+    <xsd:annotation>
+      <xsd:appinfo>
+        <i:Base i:namespace="http://niem.gov/niem/common/1.0" i:name="BiometricType"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="c:BiometricType">
+        <xsd:sequence>
+          <xsd:element ref="intel:BiometricAugmentation" minOccurs="0" maxOccurs="unbounded"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="CapabilityAugmentationType">
+    <xsd:annotation>
+      <xsd:documentation>Additional intelligence content for type c:CapabilityType</xsd:documentation>
+      <xsd:appinfo>
+        <i:Base i:namespace="http://niem.gov/niem/structures/1.0" i:name="Object"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="s:AugmentationType">
+        <xsd:sequence>
+          <xsd:element ref="intel:CapabilityProficiencyCodeText" minOccurs="0" maxOccurs="unbounded"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="CapabilityType">
+    <xsd:annotation>
+      <xsd:appinfo>
+        <i:Base i:namespace="http://niem.gov/niem/common/1.0" i:name="CapabilityType"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="c:CapabilityType">
+        <xsd:sequence>
+          <xsd:element ref="intel:CapabilityAugmentation" minOccurs="0" maxOccurs="unbounded"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="ContactInformationAugmentationType">
+    <xsd:annotation>
+      <xsd:documentation>Additional intelligence content for type c:ContactInformationType</xsd:documentation>
+      <xsd:appinfo>
+        <i:Base i:namespace="http://niem.gov/niem/structures/1.0" i:name="Object"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="s:AugmentationType">
+        <xsd:sequence>
+          <xsd:element ref="intel:ContactSatelliteTelephoneNumber" minOccurs="0" maxOccurs="unbounded"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="ContactInformationType">
+    <xsd:annotation>
+      <xsd:appinfo>
+        <i:Base i:namespace="http://niem.gov/niem/common/1.0" i:name="ContactInformationType"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="c:ContactInformationType">
+        <xsd:sequence>
+          <xsd:element ref="intel:ContactInformationAugmentation" minOccurs="0" maxOccurs="unbounded"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="IDAugmentationType">
+    <xsd:annotation>
+      <xsd:documentation>Additional intelligence content for type u:IDType</xsd:documentation>
+      <xsd:appinfo>
+        <i:Base i:namespace="http://niem.gov/niem/structures/1.0" i:name="Object"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="s:AugmentationType">
+        <xsd:sequence>
+          <xsd:element ref="intel:AuthenticCodeText" minOccurs="0" maxOccurs="unbounded"/>
+          <xsd:element ref="intel:IDIssuingCountryCodeText" minOccurs="0" maxOccurs="unbounded"/>
+          <xsd:element ref="intel:IDIssuingStateName" minOccurs="0" maxOccurs="unbounded"/>
+          <xsd:element ref="intel:IDIssuingLocalityText" minOccurs="0" maxOccurs="unbounded"/>
+          <xsd:element ref="intel:PersonInID" minOccurs="0" maxOccurs="unbounded"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="IDType">
+    <xsd:annotation>
+      <xsd:appinfo>
+        <i:Base i:namespace="http://niem.gov/niem/universal/1.0" i:name="IDType"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="u:IDType">
+        <xsd:sequence>
+          <xsd:element ref="intel:IDAugmentation" minOccurs="0" maxOccurs="unbounded"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="IdentityAssociationType">
+    <xsd:annotation>
+      <xsd:documentation>A structure describing an association relating a set of identities belonging to the same actual person to each other.</xsd:documentation>
+      <xsd:appinfo>
+        <i:Base i:namespace="http://niem.gov/niem/universal/1.0" i:name="AssociationType"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="u:AssociationType">
+        <xsd:sequence>
+          <xsd:element ref="intel:AuthenticatedIdentityReference" minOccurs="0" maxOccurs="unbounded"/>
+          <xsd:element ref="intel:PrimaryIdentityReference" minOccurs="0" maxOccurs="unbounded"/>
+          <xsd:element ref="intel:IdentityReference" minOccurs="0" maxOccurs="unbounded"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="PartialDateType">
+    <xsd:annotation>
+      <xsd:appinfo>
+        <i:Base i:namespace="http://niem.gov/niem/universal/1.0" i:name="DateType"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:simpleContent>
+      <xsd:extension base="u:DateType">
+        <xsd:attribute ref="intel:dayOfMonth" use="optional"/>
+        <xsd:attribute ref="intel:month" use="optional"/>
+        <xsd:attribute ref="intel:year" use="optional"/>
+      </xsd:extension>
+    </xsd:simpleContent>
+  </xsd:complexType>
+  <xsd:complexType name="PersonAugmentationType">
+    <xsd:annotation>
+      <xsd:documentation>Additional intelligence content for type c:PersonType</xsd:documentation>
+      <xsd:appinfo>
+        <i:Base i:namespace="http://niem.gov/niem/structures/1.0" i:name="Object"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="s:AugmentationType">
+        <xsd:sequence>
+          <xsd:element ref="intel:PersonAffiliationDetails" minOccurs="0" maxOccurs="unbounded"/>
+          <xsd:element ref="intel:AgencySubjectInterest" minOccurs="0" maxOccurs="unbounded"/>
+          <xsd:element ref="intel:PersonCitizenshipDetails" minOccurs="0" maxOccurs="unbounded"/>
+          <xsd:element ref="intel:PersonContactDetails" minOccurs="0" maxOccurs="unbounded"/>
+          <xsd:element ref="intel:PersonEducationDetails" minOccurs="0" maxOccurs="unbounded"/>
+          <xsd:element ref="intel:PersonLocationDetails" minOccurs="0" maxOccurs="unbounded"/>
+          <xsd:element ref="intel:PersonMultimediaIDBinary" minOccurs="0" maxOccurs="unbounded"/>
+          <xsd:element ref="intel:PersonCapability" minOccurs="0" maxOccurs="unbounded"/>
+          <xsd:element ref="intel:PersonSystemIdentifier" minOccurs="0" maxOccurs="unbounded"/>
+          <xsd:element ref="intel:PersonOtherID" minOccurs="0" maxOccurs="unbounded"/>
+          <xsd:element ref="intel:PersonCauseOfDeathText" minOccurs="0" maxOccurs="unbounded"/>
+          <xsd:element ref="intel:PersonDeathTime" minOccurs="0" maxOccurs="unbounded"/>
+          <xsd:element ref="intel:PersonEyeDescriptionText" minOccurs="0" maxOccurs="unbounded"/>
+          <xsd:element ref="intel:OccupationName" minOccurs="0" maxOccurs="unbounded"/>
+          <xsd:element ref="c:Aircraft" minOccurs="0" maxOccurs="unbounded"/>
+          <xsd:element ref="c:Boat" minOccurs="0" maxOccurs="unbounded"/>
+          <xsd:element ref="intel:Train" minOccurs="0" maxOccurs="unbounded"/>
+          <xsd:element ref="c:Vehicle" minOccurs="0" maxOccurs="unbounded"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="PersonCitizenshipDetailsType">
+    <xsd:annotation>
+      <xsd:appinfo>
+        <i:Base i:namespace="http://niem.gov/niem/universal/1.0" i:name="SuperType"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="u:SuperType">
+        <xsd:sequence>
+          <xsd:element ref="c:PersonCitizenship" minOccurs="0" maxOccurs="unbounded"/>
+          <xsd:element ref="intel:PersonCitizenshipStatusCodeText" minOccurs="0" maxOccurs="unbounded"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="PersonEducationDetailsType">
+    <xsd:annotation>
+      <xsd:appinfo>
+        <i:Base i:namespace="http://niem.gov/niem/universal/1.0" i:name="SuperType"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="u:SuperType">
+        <xsd:sequence>
+          <xsd:element ref="c:PersonEducationLevelText" minOccurs="0" maxOccurs="unbounded"/>
+          <xsd:element ref="intel:PersonEducationDegreeCodeText" minOccurs="0" maxOccurs="unbounded"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="PersonInIDType">
+    <xsd:annotation>
+      <xsd:appinfo>
+        <i:Base i:namespace="http://niem.gov/niem/universal/1.0" i:name="SuperType"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="u:SuperType">
+        <xsd:sequence>
+          <xsd:element ref="u:PersonName" minOccurs="0" maxOccurs="unbounded"/>
+          <xsd:element ref="u:Address" minOccurs="0" maxOccurs="unbounded"/>
+          <xsd:element ref="u:PersonBirthDate" minOccurs="0" maxOccurs="unbounded"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="PersonLocationDetailsAugmentationType">
+    <xsd:annotation>
+      <xsd:documentation>Additional intelligence content for type c:LocationType</xsd:documentation>
+      <xsd:appinfo>
+        <i:Base i:namespace="http://niem.gov/niem/structures/1.0" i:name="Object"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="s:AugmentationType">
+        <xsd:sequence>
+          <xsd:element ref="intel:GlobalRegionCodeText" minOccurs="0" maxOccurs="unbounded"/>
+          <xsd:element ref="intel:PersonLocationUsageCodeText" minOccurs="0" maxOccurs="unbounded"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="PersonLocationDetailsType">
+    <xsd:annotation>
+      <xsd:appinfo>
+        <i:Base i:namespace="http://niem.gov/niem/common/1.0" i:name="LocationType"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="c:LocationType">
+        <xsd:sequence>
+          <xsd:element ref="intel:PersonLocationDetailsAugmentation" minOccurs="0" maxOccurs="unbounded"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="PersonMedicalConditionAugmentationType">
+    <xsd:annotation>
+      <xsd:documentation>Additional intelligence content for type c:MedicalConditionType</xsd:documentation>
+      <xsd:appinfo>
+        <i:Base i:namespace="http://niem.gov/niem/structures/1.0" i:name="Object"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="s:AugmentationType">
+        <xsd:sequence>
+          <xsd:element ref="intel:PersonMedicationRequiredText" minOccurs="0" maxOccurs="unbounded"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="PersonMedicalConditionType">
+    <xsd:annotation>
+      <xsd:appinfo>
+        <i:Base i:namespace="http://niem.gov/niem/common/1.0" i:name="MedicalConditionType"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="c:MedicalConditionType">
+        <xsd:sequence>
+          <xsd:element ref="intel:PersonMedicalConditionAugmentation" minOccurs="0" maxOccurs="unbounded"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="PersonOtherIDType">
+    <xsd:annotation>
+      <xsd:appinfo>
+        <i:Base i:name="IDType"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="intel:IDType"/>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="PersonType">
+    <xsd:annotation>
+      <xsd:appinfo>
+        <i:Base i:namespace="http://niem.gov/niem/common/1.0" i:name="PersonType"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="c:PersonType">
+        <xsd:sequence>
+          <xsd:element ref="intel:PersonAugmentation" minOccurs="0" maxOccurs="unbounded"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="PotentialIdentityMatchAssociationType">
+    <xsd:annotation>
+      <xsd:documentation>A structure describing an association relating a set of identities that may potentially belong to the same person.</xsd:documentation>
+      <xsd:appinfo>
+        <i:Base i:namespace="http://niem.gov/niem/universal/1.0" i:name="AssociationType"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="u:AssociationType">
+        <xsd:sequence>
+          <xsd:element ref="intel:IdentityReference" minOccurs="0" maxOccurs="unbounded"/>
+          <xsd:element ref="intel:PotentialIdentityMatchDescriptionText" minOccurs="0" maxOccurs="unbounded"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="SubjectCautionInformationType">
+    <xsd:annotation>
+      <xsd:appinfo>
+        <i:Base i:namespace="http://niem.gov/niem/universal/1.0" i:name="SuperType"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="u:SuperType">
+        <xsd:sequence>
+          <xsd:element ref="intel:SubjectCautionInformation" minOccurs="0" maxOccurs="unbounded"/>
+          <xsd:element ref="intel:SubjectCautionInformationDescriptionText" minOccurs="0" maxOccurs="unbounded"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="SubjectHandlingType">
+    <xsd:annotation>
+      <xsd:appinfo>
+        <i:Base i:namespace="http://niem.gov/niem/universal/1.0" i:name="SuperType"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="u:SuperType">
+        <xsd:sequence>
+          <xsd:element ref="intel:SubjectHandlingAgencyName" minOccurs="0" maxOccurs="unbounded"/>
+          <xsd:element ref="intel:SubjectHandlingCodeText" minOccurs="0" maxOccurs="unbounded"/>
+          <xsd:element ref="intel:SubjectHandlingDescriptionText" minOccurs="0" maxOccurs="unbounded"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="SystemIdentifierType">
+    <xsd:annotation>
+      <xsd:appinfo>
+        <i:Base i:namespace="http://niem.gov/niem/universal/1.0" i:name="SuperType"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="u:SuperType">
+        <xsd:sequence>
+          <xsd:element ref="u:ID" minOccurs="0" maxOccurs="unbounded"/>
+          <xsd:element ref="intel:SystemName" minOccurs="0" maxOccurs="unbounded"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="TrainType">
+    <xsd:annotation>
+      <xsd:appinfo>
+        <i:Base i:namespace="http://niem.gov/niem/common/1.0" i:name="VehicleType"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="c:VehicleType"/>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:attribute name="dayOfMonth" type="xsd:gDay">
+    <xsd:annotation>
+      <xsd:documentation>One of the numbered 24-hour periods into which a month is divided.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:attribute>
+  <xsd:attribute name="month" type="xsd:gMonth">
+    <xsd:annotation>
+      <xsd:documentation>One of the 12 divisions of a year as determined by a calendar, especially the Gregorian calendar. Also called calendar month.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:attribute>
+  <xsd:attribute name="year" type="xsd:gYear">
+    <xsd:annotation>
+      <xsd:documentation>The period of time during which Earth completes a single revolution around the sun, consisting of 365 days, 5 hours, 49 minutes, and 12 seconds of mean solar time. In the Gregorian calendar the year begins on January 1 and ends on December 31 and is divided into 12 months, 52 weeks, and 365 or 366 days. Also called calendar year.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:attribute>
+  <xsd:element name="AgencyInterestCategory" type="intel:AgencyInterestCategoryType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>Groupings of persons by the reason they are of interest to intelligence.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="AgencyInterestCategoryCodeText" type="u:TextType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>A code that identifies the reason that a group of people are of interest to intelligence.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="AgencyInterestCategoryDescriptionText" type="u:TextType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>A description of the reason that a group of people are of interest to intelligence.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="AgencyInterestCategoryText" type="u:TextType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>A description that identifies the source of the code and/or description used to detail groups of people by the reason they are of interest to intelligence.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="AgencyInterestOtherCategory" type="intel:AgencyInterestOtherCategoryType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>Details that describe an additional person-categorization system that groups of people by the reason they are of interest to intelligence.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="AgencyName" type="u:TextType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>A government organization that has specified an interest in this person, or has issued a warning or handling instructions regarding this person.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="AgencySubjectHandling" type="intel:AgencySubjectHandlingType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>Details about actions to take on contact with the person.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="AgencySubjectHandlingFBICodeText" type="u:TextType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>An FBI code that identifies the action for the designated agency to take on contact with the person.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="AgencySubjectInterest" type="intel:AgencySubjectInterestType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>Detailed description of why an agency placed the person in its repository or why the data on the person is being exchanged.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="AuthenticCodeText" type="u:TextType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>Of undisputed origin or veracity; genuine.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="AuthenticatedIdentityReference" type="s:ReferenceType">
+    <xsd:annotation>
+      <xsd:documentation>An identity that has been verified by some authority.</xsd:documentation>
+      <xsd:appinfo>
+        <i:ReferenceTarget i:name="PersonType"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element substitutionGroup="c:Biometric" name="Biometric" type="intel:BiometricType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation> Information used to measurable a biological or behavioral characteristic, which can reliably recognize the identity, or verify the claimed identity, of a person.</xsd:documentation>
+      <xsd:appinfo>
+        <i:Base i:namespace="http://niem.gov/niem/common/1.0" i:name="Biometric"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="BiometricAugmentation" type="intel:BiometricAugmentationType" substitutionGroup="s:Augmentation">
+    <xsd:annotation>
+      <xsd:documentation>An augmentation that applies to type c:BiometricType</xsd:documentation>
+      <xsd:appinfo>
+        <i:AppliesTo i:namespace="http://niem.gov/niem/common/1.0" i:name="BiometricType"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="CBEFF" type="u:TextType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>A data format [not defined by the ICMWG] for biometric data.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="Capability" type="intel:CapabilityType" nillable="true"/>
+  <xsd:element name="CapabilityAugmentation" type="intel:CapabilityAugmentationType" substitutionGroup="s:Augmentation">
+    <xsd:annotation>
+      <xsd:documentation>An augmentation that applies to type c:CapabilityType</xsd:documentation>
+      <xsd:appinfo>
+        <i:AppliesTo i:namespace="http://niem.gov/niem/common/1.0" i:name="CapabilityType"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="CapabilityProficiencyCodeText" type="u:TextType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>Skillfulness in the command of fundamentals deriving from practice and familiarity.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="ContactInformation" type="intel:ContactInformationType" nillable="true"/>
+  <xsd:element name="ContactInformationAugmentation" type="intel:ContactInformationAugmentationType" substitutionGroup="s:Augmentation">
+    <xsd:annotation>
+      <xsd:documentation>An augmentation that applies to type c:ContactInformationType</xsd:documentation>
+      <xsd:appinfo>
+        <i:AppliesTo i:namespace="http://niem.gov/niem/common/1.0" i:name="ContactInformationType"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="ContactSatelliteTelephoneNumber" type="u:TelephoneNumberType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>A satellite phone number of a person.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="FBIECRCode" type="ncic:ECRCodeType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>VGTOF Group Member Capability Criteria for Entry</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="GlobalRegionCodeText" type="u:TextType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>National Intelligence Priorities Framework areas.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="ID" type="intel:IDType" nillable="true"/>
+  <xsd:element name="IDAugmentation" type="intel:IDAugmentationType" substitutionGroup="s:Augmentation">
+    <xsd:annotation>
+      <xsd:documentation>An augmentation that applies to type u:IDType</xsd:documentation>
+      <xsd:appinfo>
+        <i:AppliesTo i:namespace="http://niem.gov/niem/universal/1.0" i:name="IDType"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="IDIssuingCountryCodeText" type="u:TextType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>GeoPolitical Entity from which this identification was issued.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="IDIssuingLocalityText" type="u:TextType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>Geographic Location from which this identification was issued.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="IDIssuingStateName" type="u:TextType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>A major administrative district or division of a country from which this identification was issued.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element substitutionGroup="u:IDJurisdictionValue" name="IDJurisdictionFIPS10-4Code" type="fips_10-4:CountryCodeType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>A FIPS 10-4 country code identifying the state or country, in which an identifier is unique.</xsd:documentation>
+      <xsd:appinfo>
+        <i:Base i:namespace="http://niem.gov/niem/universal/1.0" i:name="IDJurisdictionValue"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element substitutionGroup="u:IDJurisdictionValue" name="IDJurisdictionISO3166Alpha3Code" type="iso_3166:CountryAlpha3CodeType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>An ISO 3166-1 country code identifying the state or country, in which an identifier is unique.</xsd:documentation>
+      <xsd:appinfo>
+        <i:Base i:namespace="http://niem.gov/niem/universal/1.0" i:name="IDJurisdictionValue"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="IdentityReference" type="s:ReferenceType">
+    <xsd:annotation>
+      <xsd:documentation>A description of a person.  This may or may not be authentic.</xsd:documentation>
+      <xsd:appinfo>
+        <i:ReferenceTarget i:name="PersonType"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="IdentityAssociation" type="intel:IdentityAssociationType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>An association relating a set of identities belonging to the same actual person to each other.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="IncidentArrest" type="j:ArrestType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>An arrest made because of an incident.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element substitutionGroup="u:LocationCountry" name="LocationCountryFIPS10-4PlusNCTCCodeText" type="u:TextType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>A union of additional country codes managed by NCTC and the FIPS 10-4 country codes.</xsd:documentation>
+      <xsd:appinfo>
+        <i:Base i:namespace="http://niem.gov/niem/universal/1.0" i:name="LocationCountry"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="OccupationName" type="u:TextType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>Name of occupation (e.g. &quot;tax driver&quot;, &quot;chef&quot;, &quot;scientist&quot;, etc.)</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="PartialDate" type="intel:PartialDateType" nillable="true"/>
+  <xsd:element name="Person" type="intel:PersonType" nillable="true"/>
+  <xsd:element name="PersonAffiliationDetails" type="c:EntityAssociationType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>Other organization a person is affiliated with.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="PersonAugmentation" type="intel:PersonAugmentationType" substitutionGroup="s:Augmentation">
+    <xsd:annotation>
+      <xsd:documentation>An augmentation that applies to type c:PersonType</xsd:documentation>
+      <xsd:appinfo>
+        <i:AppliesTo i:namespace="http://niem.gov/niem/common/1.0" i:name="PersonType"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element substitutionGroup="u:PersonBirthDate" name="PersonBirthDate" type="intel:PartialDateType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>Calendar date (Gregorian calendar) on which a person was born.</xsd:documentation>
+      <xsd:appinfo>
+        <i:Base i:namespace="http://niem.gov/niem/universal/1.0" i:name="PersonBirthDate"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="PersonCapability" type="intel:CapabilityType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>An ability, knowledge, or capability to perform some activity.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="PersonCauseOfDeathText" type="u:TextType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>That which produces or effects a persons death.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="PersonCitizenshipDetails" type="intel:PersonCitizenshipDetailsType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>Information about a persons allegiance to a sovereign state by right of birthplace or naturalization.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="PersonCitizenshipStatusCodeText" type="u:TextType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>A mutually exclusive category recognized by law that identifies the degree of protection given a person in return for that persons allegiance.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="PersonContactDetails" type="intel:ContactInformationType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>A structure that describes details about how to contact a person.  E.g. telephone, facsimile, pager, cell phone and satellite phone.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element substitutionGroup="c:PersonDeathDate" name="PersonDeathDate" type="intel:PartialDateType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>Calendar date (Gregorian calendar) on which a person died or was declared legally dead.</xsd:documentation>
+      <xsd:appinfo>
+        <i:Base i:namespace="http://niem.gov/niem/common/1.0" i:name="PersonDeathDate"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="PersonDeathTime" type="niem-xsd:time" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>Time at which a person died or was declared legally dead.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element substitutionGroup="u:PersonLicenseID" name="PersonDriverLicenseID" type="intel:IDType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>Information about an identifier used to refer to a specific person who has obtained a drivers license. Sometimes referred to as driver license number, dlNumber.</xsd:documentation>
+      <xsd:appinfo>
+        <i:Base i:namespace="http://niem.gov/niem/universal/1.0" i:name="PersonLicenseID"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="PersonEducationDegreeCodeText" type="u:TextType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>A document awarded by an educational institution conferring a degree on a person or certifying his satisfactory completion of a course of study. </xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="PersonEducationDetails" type="intel:PersonEducationDetailsType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>A relationship between a person and an organization in which the organization is providing a service as an educational institution.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="PersonEyeDescriptionText" type="u:TextType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>A text description of the characteristics of a persons eyes.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="PersonInID" type="intel:PersonInIDType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>The human being referenced in the context of an identification.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="PersonLocationDetails" type="intel:PersonLocationDetailsType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>A specific place.  A place associated with a person of interest.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="PersonLocationDetailsAugmentation" type="intel:PersonLocationDetailsAugmentationType" substitutionGroup="s:Augmentation">
+    <xsd:annotation>
+      <xsd:documentation>An augmentation that applies to type c:LocationType</xsd:documentation>
+      <xsd:appinfo>
+        <i:AppliesTo i:namespace="http://niem.gov/niem/common/1.0" i:name="LocationType"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="PersonLocationUsageCodeText" type="u:TextType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>The context within which a location is used.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="PersonMedicalCondition" type="intel:PersonMedicalConditionType" nillable="true"/>
+  <xsd:element name="PersonMedicalConditionAugmentation" type="intel:PersonMedicalConditionAugmentationType" substitutionGroup="s:Augmentation">
+    <xsd:annotation>
+      <xsd:documentation>An augmentation that applies to type c:MedicalConditionType</xsd:documentation>
+      <xsd:appinfo>
+        <i:AppliesTo i:namespace="http://niem.gov/niem/common/1.0" i:name="MedicalConditionType"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="PersonMedicationRequiredText" type="u:TextType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>A substance used to treat a condition.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="PersonMultimediaIDBinary" type="u:BinaryType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>A non-textual indicator of a persons identity (e.g. a photograph).</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element substitutionGroup="c:PersonNationalID" name="PersonNationalID" type="intel:IDType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>A general ID that identifies a person within a country but is not based on fingerprint.</xsd:documentation>
+      <xsd:appinfo>
+        <i:Base i:namespace="http://niem.gov/niem/common/1.0" i:name="PersonNationalID"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="PersonOtherID" type="intel:PersonOtherIDType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>Information about an identifier with a type that is not explicitly defined in the standard that refers to a person within a certain domain, e.g., state ID cards or other non-license and non-fingerprint based IDs.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element substitutionGroup="u:PersonSSNID" name="PersonSSNID" type="intel:IDType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>A 9-digit numeric identifier assigned to a living person by the U.S. Social Security Administration. A social security number of a person. Sometimes referred to as a SSN.</xsd:documentation>
+      <xsd:appinfo>
+        <i:Base i:namespace="http://niem.gov/niem/universal/1.0" i:name="PersonSSNID"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="PersonSystemIdentifier" type="intel:SystemIdentifierType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>Details about a system identifier that references a person.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element substitutionGroup="c:PhysicalFeatureCategoryAbstract" name="PhysicalFeatureCategoryCodeText" type="u:TextType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>A code that designates the type of visible, atypical distinguishing trait, property or quality of a person.  E.g. mark, scar, tattoo, or other.</xsd:documentation>
+      <xsd:appinfo>
+        <i:Base i:namespace="http://niem.gov/niem/common/1.0" i:name="PhysicalFeatureCategoryAbstract"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="PotentialIdentityMatchAssociation" type="intel:PotentialIdentityMatchAssociationType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>An association relating a set of identities that may potentially belong to the same person.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="PotentialIdentityMatchDescriptionText" type="u:TextType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>A description of why the different identities may belong to the same person.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="PrimaryIdentityReference" type="s:ReferenceType">
+    <xsd:annotation>
+      <xsd:documentation>An identity that a person is first known as (e.g., for law enforcement), primarily known as, or primarily goes by.  This may or may not be the -real- or authenticated identity.</xsd:documentation>
+      <xsd:appinfo>
+        <i:ReferenceTarget i:name="PersonType"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="StateINACodeText" type="u:TextType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>A Department of State code that identifies the reason that a group of people are of interest to intelligence.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="SubjectCategoryCodeText" type="u:TextType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>Details that describe a general category or classification of persons by the reason they are of interest to intelligence.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="SubjectCautionInformation" type="intel:SubjectCautionInformationType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>Details cautioning against the persons potential for dangerous behavior when contacted.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="SubjectCautionInformationDescriptionText" type="u:TextType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>A description of cautions about a persons potential for dangerous behavior when contacted.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="SubjectHandling" type="intel:SubjectHandlingType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>An action for the designated agency to take on contact with the person.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="SubjectHandlingAgencyName" type="u:TextType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>The agency for whom the person handling information is designated.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="SubjectHandlingCodeText" type="u:TextType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>A code that identifies the action for the designated agency to take on contact with the person.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="SubjectHandlingDescriptionText" type="u:TextType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>A description that identifies the action for the designated agency to take on contact with the person.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="SubjectReasonOnListText" type="u:TextType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>The reason why the person has been added to a terrorist watch list by a government organization.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="SystemIdentifier" type="intel:SystemIdentifierType" nillable="true"/>
+  <xsd:element name="SystemName" type="u:TextType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>The name of the type or the source of a system identifier.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="Train" type="intel:TrainType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>A series of connected railroad cars pulled or pushed by one or more locomotives.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element substitutionGroup="c:RegistrationID" name="VehicleRegistrationID" type="intel:IDType" nillable="true">
+    <xsd:annotation>
+      <xsd:appinfo>
+        <i:Base i:namespace="http://niem.gov/niem/common/1.0" i:name="RegistrationID"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+  </xsd:element>
+</xsd:schema>

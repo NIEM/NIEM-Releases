@@ -1,0 +1,280 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSPY v5 rel. 2 U (http://www.xmlspy.com) by Mike Botts (University of Alabama in Huntsville) -->
+<!-- edited with XML Spy v4.3 U (http://www.xmlspy.com) by Alexandre Robin (University of Alabama in Huntsville) -->
+<xs:schema 
+xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+targetNamespace="http://niem.gov/niem/external/ogc-swe-common/1.0.0/dhs-gmo/1.0.0" 
+xmlns:swec="http://niem.gov/niem/external/ogc-swe-common/1.0.0/dhs-gmo/1.0.0" 
+xmlns:xlink="http://niem.gov/niem/external/w3c-xlink/1.0/dhs-gmo/1.0.0"
+elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:annotation>
+		<xs:documentation>Defines basic ResponseType definition and commonly used sensor characteristics
+Sensor Model Language OGC 05-086 page 86
+
+  DHS Changes:  
+
+     		2006-09-28 Changed namespaces and schema locations
+				ns old	http://niem.gov/niem/external/xlink/1.0.0/dhs-gmo/1.0.0
+				ns new	http://niem.gov/niem/external/w3c-xlink/1.0/dhs-gmo/1.0.0		
+				from		../../../../xlink/1.0.0/dhs-gmo/1.0.0/xlinks.xsd
+				to			../../../../w3c-xlink/1.0/dhs-gmo/1.0.0/xlinks.xsd
+			   copyright notice
+			   
+    2006-09-22 Changed namespaces following NIEM conventions
+    1)  targetNamespace http://niem.gov//niem/external/ogc-swe-common/1.0.0/dhs-gmo/1.0.0  changed tnsp to swec from swe to distinguish it from swe namespace defined by 05-087r4_Observations_and_measurements.pdf
+    2) xlink namespace http://niem.gov/niem/external/xlink/1.0.0/dhs-gmo/1.0.0
+    
+		 	Copyright Notices:
+
+		Copyright © 2005 Open Geospatial Consortium, Inc. All Rights Reserved. 
+		 	
+		 	This OGC work (including software, documents, or other related items) is being provided by the copyright holders under the following license. By obtaining, using and/or copying this work, you (the licensee) agree that you have read, understood, and will comply with the following terms and conditions:
+
+Permission to use, copy, and modify this software and its documentation, with or without modification, for any purpose and without fee or royalty is hereby granted, provided that you include the following on ALL copies of the software and documentation or portions thereof, including modifications, that you make:
+
+   1. The full text of this NOTICE in a location viewable to users of the redistributed or derivative work.
+   2. Any pre-existing intellectual property disclaimers, notices, or terms and conditions. If none exist, a short notice of the following form (hypertext is preferred, text is permitted) should be used within the body of any redistributed or derivative code: "Copyright © [$date-of-document] Open Geospatial Consortium, Inc. All Rights Reserved. http://www.opengeospatial.org/ogc/legal (Hypertext is preferred, but a textual representation is permitted.)
+   3. Notice of any changes or modifications to the OGC files, including the date changes were made. (We recommend you provide URIs to the location from which the code is derived.) 
+
+THIS SOFTWARE AND DOCUMENTATION IS PROVIDED "AS IS," AND COPYRIGHT HOLDERS MAKE NO REPRESENTATIONS OR WARRANTIES, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO, WARRANTIES OF MERCHANTABILITY OR FITNESS FOR ANY PARTICULAR PURPOSE OR THAT THE USE OF THE SOFTWARE OR DOCUMENTATION WILL NOT INFRINGE ANY THIRD PARTY PATENTS, COPYRIGHTS, TRADEMARKS OR OTHER RIGHTS.
+
+COPYRIGHT HOLDERS WILL NOT BE LIABLE FOR ANY DIRECT, INDIRECT, SPECIAL OR CONSEQUENTIAL DAMAGES ARISING OUT OF ANY USE OF THE SOFTWARE OR DOCUMENTATION.
+
+The name and trademarks of copyright holders may NOT be used in advertising or publicity pertaining to the software without specific, written prior permission. Title to copyright in this software and any associated documentation will at all times remain with copyright holders.
+    
+</xs:documentation>
+	</xs:annotation>
+	<!--========================-->
+	<!-- Includes and Imports -->
+	<!--========================-->
+	<!-- <xs:import namespace="http://www.w3.org/1999/xlink"  schemaLocation="http://schemas.opengis.net/gml/3.1.0/xlink/xlinks.xsd"/> -->
+	<xs:import namespace="http://niem.gov/niem/external/w3c-xlink/1.0/dhs-gmo/1.0.0" 	
+			schemaLocation="../../../../w3c-xlink/1.0/dhs-gmo/1.0.0/xlinks.xsd"/> 
+
+	<xs:include schemaLocation="./parameters.xsd"/>
+	<!-- ==============================
+Substitution groups
+==========================-->
+	<xs:element name="_Encoding" type="swec:_EncodingType" abstract="true"/>
+	<xs:element name="_MultiplexEncoding" type="swec:_MultiplexEncodingType" abstract="true"/>
+	<xs:element name="_Binary" type="swec:_BinaryType" abstract="true"/>
+	<xs:element name="_Data" type="swec:_DataType" abstract="true"/>
+	<!-- ==============================
+Concrete elements
+==========================-->
+	<!-- BEGIN change schema patterns to match GML use of global types - SJDC 2005-08-07-->
+	<!-- Does not change model but enables re-use in other contexts -->
+	<xs:complexType name="DataDefinitionType">
+		<xs:sequence>
+			<xs:element name="dataComponents" type="swec:DataComponentsPropertyType"/>
+			<xs:element name="encoding" type="swec:EncodingPropertyType"/>
+		</xs:sequence>
+		<xs:attribute name="id" type="xs:ID" use="optional"/>
+	</xs:complexType>
+	<!-- .............. -->
+	<xs:element name="DataDefinition" type="swec:DataDefinitionType"/>
+	<!-- .............. -->
+	<xs:complexType name="DataDefinitionPropertyType">
+		<xs:sequence minOccurs="0">
+			<xs:element ref="swec:DataDefinition"/>
+		</xs:sequence>
+		<xs:attributeGroup ref="swec:AssociationAttributes"/>
+	</xs:complexType>
+	<xs:complexType name="EncodingPropertyType">
+		<xs:sequence minOccurs="0">
+			<xs:element ref="swec:_Encoding"/>
+		</xs:sequence>
+		<xs:attributeGroup ref="swec:AssociationAttributes"/>
+	</xs:complexType>
+	<xs:complexType name="MultiplexEncodingPropertyType">
+		<xs:sequence minOccurs="0">
+			<xs:element ref="swec:_MultiplexEncoding"/>
+		</xs:sequence>
+		<xs:attributeGroup ref="swec:AssociationAttributes"/>
+	</xs:complexType>
+	<xs:complexType name="DataComponentsPropertyType">
+		<xs:sequence minOccurs="0">
+			<xs:group ref="swec:AnyData"/>
+		</xs:sequence>
+		<xs:attributeGroup ref="swec:AssociationAttributes"/>
+	</xs:complexType>
+	<!-- ============ -->
+	<xs:complexType name="DataValueType">
+		<xs:annotation>
+			<xs:documentation>supports data values as a string, as with tuple and base64 blocks; can also allow
+an external link to out-of-band data; can also support multiplex data that takes XML elements, such
+as TML</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="xs:anyType">
+				<xs:attribute name="externalLink" type="xs:anyURI" use="optional"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="SimpleDataPropertyType">
+		<xs:annotation>
+			<xs:documentation>Supports a DataGroup/DataArray with inline data values</xs:documentation>
+		</xs:annotation>
+		<xs:group ref="swec:AnyData" minOccurs="0"/>
+		<xs:attributeGroup ref="swec:AssociationAttributes"/>
+	</xs:complexType>
+	<!-- END change schema patterns to match GML use of global types -->
+	<!-- ============ -->
+	<xs:element name="BinaryValue" substitutionGroup="swec:_Binary">
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="swec:_BinaryType">
+					<xs:attribute name="dataType" use="required">
+						<xs:simpleType>
+							<xs:restriction base="xs:token">
+								<xs:enumeration value="urn:ogc:data:float"/>
+								<xs:enumeration value="urn:ogc:data:double"/>
+								<xs:enumeration value="urn:ogc:data:boolean"/>
+								<xs:enumeration value="urn:ogc:data:signedByte"/>
+								<xs:enumeration value="urn:ogc:data:unsignedByte"/>
+								<xs:enumeration value="urn:ogc:data:signedShort"/>
+								<xs:enumeration value="urn:ogc:data:unsignedShort"/>
+								<xs:enumeration value="urn:ogc:data:signedInt"/>
+								<xs:enumeration value="urn:ogc:data:unsignedInt"/>
+								<xs:enumeration value="urn:ogc:data:signedLong"/>
+								<xs:enumeration value="urn:ogc:data:unsignedLong"/>
+								<xs:enumeration value="urn:ogc:data:UTF-string"/>
+								<xs:enumeration value="urn:ogc:data:padding"/>
+							</xs:restriction>
+						</xs:simpleType>
+					</xs:attribute>
+					<xs:attribute name="bitOffset" type="xs:integer" use="optional" default="0"/>
+					<xs:attribute name="bitLength" type="xs:positiveInteger" use="required"/>
+				</xs:extension>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="BinaryGroup" substitutionGroup="swec:_Binary">
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="swec:_BinaryType">
+					<xs:sequence>
+						<xs:element name="component" maxOccurs="unbounded">
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element ref="swec:_Binary"/>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+					</xs:sequence>
+				</xs:extension>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="BinaryArray" substitutionGroup="swec:_Binary">
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="swec:_BinaryType">
+					<xs:sequence>
+						<xs:element name="component">
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element ref="swec:_Binary"/>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+					</xs:sequence>
+					<xs:attribute name="arraySize" type="swec:arraySizeSimpleType" use="required"/>
+				</xs:extension>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="StandardFormat" substitutionGroup="swec:_Encoding">
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="swec:_EncodingType">
+					<xs:attribute name="mimeType" type="xs:token" use="required"/>
+				</xs:extension>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="XMLTuple" substitutionGroup="swec:_Encoding">
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="swec:_EncodingType">
+					<xs:attribute name="decimalSeparator" type="xs:string" use="required"/>
+					<xs:attribute name="tokenSeparator" type="xs:string" use="required"/>
+					<xs:attribute name="tupleSeparator" type="xs:string" use="required"/>
+				</xs:extension>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="BinaryBlock" substitutionGroup="swec:_Encoding">
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="swec:_EncodingType">
+					<xs:sequence>
+						<xs:element name="byteLength" type="xs:positiveInteger"/>
+						<xs:element name="byteEncoding">
+							<xs:simpleType>
+								<xs:restriction base="xs:anyURI">
+									<xs:enumeration value="urn:ogc:data:raw"/>
+									<xs:enumeration value="urn:ogc:data:hex"/>
+									<xs:enumeration value="urn:ogc:data:base64"/>
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:element>
+						<xs:element name="byteOrder">
+							<xs:simpleType>
+								<xs:restriction base="xs:anyURI">
+									<xs:enumeration value="urn:ogc:data:bigEndian"/>
+									<xs:enumeration value="urn:ogc:data:littleEndian"/>
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:element>
+						<xs:element name="encryption" minOccurs="0">
+							<xs:simpleType>
+								<xs:restriction base="xs:anyURI">
+									<xs:enumeration value="urn:ogc:data:XOR"/>
+									<xs:enumeration value="urn:ogc:data:MD5"/>
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:element>
+						<xs:element name="compression" minOccurs="0">
+							<xs:simpleType>
+								<xs:restriction base="xs:anyURI">
+									<xs:enumeration value="urn:ogc:data:gzip"/>
+									<xs:enumeration value="urn:ogc:data:bzip"/>
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:element>
+						<xs:element name="structure" minOccurs="0">
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element ref="swec:_Binary"/>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+					</xs:sequence>
+				</xs:extension>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="AsciiBlock" substitutionGroup="swec:_Encoding">
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="swec:_EncodingType">
+					<xs:attribute name="tokenSeparator" type="xs:string" use="required"/>
+				</xs:extension>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<!-- ==============================
+Complex Types
+===========================-->
+	<xs:complexType name="_EncodingType">
+		<xs:attribute name="id" type="xs:ID" use="optional"/>
+	</xs:complexType>
+	<xs:complexType name="_MultiplexEncodingType"/>
+	<xs:complexType name="_BinaryType">
+		<xs:attribute name="id" type="xs:ID" use="optional"/>
+	</xs:complexType>
+	<xs:complexType name="_DataType">
+		<xs:attribute name="id" type="xs:ID" use="optional"/>
+	</xs:complexType>
+</xs:schema>

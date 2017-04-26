@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema 
+xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+targetNamespace="http://niem.gov/niem/external/ogc-context/1.1.0/dhs-gmo/1.0.0" 
+xmlns:context="http://niem.gov/niem/external/ogc-context/1.1.0/dhs-gmo/1.0.0" 
+xmlns:sld="http://niem.gov/niem/external/ogc-sld/1.0.20/dhs-gmo/1.0.0" 
+xmlns:xlink="http://niem.gov/niem/external/w3c-xlink/1.0/dhs-gmo/1.0.0"
+elementFormDefault="qualified" version="1.1.0">
+	<xs:annotation>
+		<xs:appinfo>context.xsd 2005-01-19</xs:appinfo>
+		<xs:documentation>
+		
+			This schema document is an adaptation of the original Web Map Context context.xsd in that it imports version 1.0.20 definitions from the StyledLayerDescriptor schema instead of the version 1.0.0 ones, and thereby imports version 1.1 instead of version 1.0 of the filter schema.  The sld:FeatureTypeStyle element was replaced by sld:FeatureStyle element with the same content. See http://schemas.opengeospatial.net/context/1.1.0/.
+
+     		2006-09-28 Changed namespaces and schema locations
+				ns old	http://niem.gov/niem/external/xlink/1.0.0/dhs-gmo/1.0.0
+				ns new	http://niem.gov/niem/external/w3c-xlink/1.0/dhs-gmo/1.0.0		
+				from		../../../../xlink/1.0.0/dhs-gmo/1.0.0/xlinks.xsd
+				to			../../../../w3c-xlink/1.0/dhs-gmo/1.0.0/xlinks.xsd
+
+			2006-09-21 Changes
+			
+				1.  Change namespaces to follow NIEM conventions
+					a) targetNamespace	 http://niem.gov/niem/external/ogc-context/1.1.0/dhs-gmo/1.0.0
+					b) sld namespace		 http://niem.gov/niem/external/ogc-sld/1.0.20/dhs-gmo/1.0.0
+					c) xlink namespace	 http://niem.gov/niem/external/xlink/1.0.0/dhs-gmo/1.0.0
+					
+  			2006-09-04 Changes
+			
+				1.  Change namespaces following conventions proposed in OGC 05-065r3 to include version and profile information, 
+				      except that complete version is used instead of BNF "principle version".  
+				      a) targetNamespace was http://www.opengis.net/context; changed to http://www.opengis.net/context/1.1.0/DHS-GMO/1.0.0
+				      b) sld namespace was http://www.opengis.net/sld; changed to http://www.opengis.net/sld/1.0.20/DHS-GMO/1.0.0
+				      c) xlink namespace was http://www.w3.org/1999/xlink; changed to http://www.w3.org/1999/xlink/1.0.0/OGC-DHS-GMO/1.0.0				  
+
+				2.  Include complete OGC copyright notice from http://www.opengeospatial.org/ogc/software
+				
+
+		 	Copyright Notices:
+
+		Copyright © 2005 Open Geospatial Consortium, Inc. All Rights Reserved. 
+		 	
+		 	This OGC work (including software, documents, or other related items) is being provided by the copyright holders under the following license. By obtaining, using and/or copying this work, you (the licensee) agree that you have read, understood, and will comply with the following terms and conditions:
+
+Permission to use, copy, and modify this software and its documentation, with or without modification, for any purpose and without fee or royalty is hereby granted, provided that you include the following on ALL copies of the software and documentation or portions thereof, including modifications, that you make:
+
+   1. The full text of this NOTICE in a location viewable to users of the redistributed or derivative work.
+   2. Any pre-existing intellectual property disclaimers, notices, or terms and conditions. If none exist, a short notice of the following form (hypertext is preferred, text is permitted) should be used within the body of any redistributed or derivative code: "Copyright © [$date-of-document] Open Geospatial Consortium, Inc. All Rights Reserved. http://www.opengeospatial.org/ogc/legal (Hypertext is preferred, but a textual representation is permitted.)
+   3. Notice of any changes or modifications to the OGC files, including the date changes were made. (We recommend you provide URIs to the location from which the code is derived.) 
+
+THIS SOFTWARE AND DOCUMENTATION IS PROVIDED "AS IS," AND COPYRIGHT HOLDERS MAKE NO REPRESENTATIONS OR WARRANTIES, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO, WARRANTIES OF MERCHANTABILITY OR FITNESS FOR ANY PARTICULAR PURPOSE OR THAT THE USE OF THE SOFTWARE OR DOCUMENTATION WILL NOT INFRINGE ANY THIRD PARTY PATENTS, COPYRIGHTS, TRADEMARKS OR OTHER RIGHTS.
+
+COPYRIGHT HOLDERS WILL NOT BE LIABLE FOR ANY DIRECT, INDIRECT, SPECIAL OR CONSEQUENTIAL DAMAGES ARISING OUT OF ANY USE OF THE SOFTWARE OR DOCUMENTATION.
+
+The name and trademarks of copyright holders may NOT be used in advertising or publicity pertaining to the software without specific, written prior permission. Title to copyright in this software and any associated documentation will at all times remain with copyright holders.
+
+
+			<xs:description>This XML Schema defines the encoding of a Web Map Context Document.  Primary editor: Tom Kralidis </xs:description>
+			<xs:copyright>Copyright (c) Open Geospatial Consortium (2005)</xs:copyright>
+		</xs:documentation>
+	</xs:annotation>
+	<!-- ==============================================================
+		includes and imports
+	============================================================== -->
+	<xs:import namespace="http://niem.gov/niem/external/ogc-sld/1.0.20/dhs-gmo/1.0.0" 	schemaLocation="../../../../ogc-sld/1.0.20/dhs-gmo/1.0.0/sld.xsd"/>
+	<xs:import namespace="http://niem.gov/niem/external/w3c-xlink/1.0/dhs-gmo/1.0.0" 	
+			schemaLocation="../../../../w3c-xlink/1.0/dhs-gmo/1.0.0/xlinks.xsd"/> 
+	<!-- ==============================================================
+		elements and types
+	============================================================== -->
+	<xs:element name="ViewContext" type="context:ViewContextType"/>
+	<xs:complexType name="ViewContextType">
+		<xs:sequence>
+			<xs:element name="General" type="context:GeneralType"/>
+			<xs:element name="LayerList" type="context:LayerListType"/>
+		</xs:sequence>
+		<xs:attribute name="version" type="xs:string" use="required" fixed="1.1.0"/>
+		<xs:attribute name="id" type="xs:string" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="GeneralType">
+		<xs:sequence>
+			<xs:element name="Window" type="context:WindowType" minOccurs="0"/>
+			<xs:element name="BoundingBox" type="context:BoundingBoxType"/>
+			<xs:element name="Title" type="xs:string"/>
+			<xs:element name="KeywordList" type="context:KeywordListType" minOccurs="0"/>
+			<xs:element name="Abstract" type="xs:string" minOccurs="0"/>
+			<xs:element name="LogoURL" type="context:URLType" minOccurs="0"/>
+			<xs:element name="DescriptionURL" type="context:URLType" minOccurs="0"/>
+			<xs:element name="ContactInformation" type="context:ContactInformationType" minOccurs="0"/>
+			<xs:element name="Extension" type="context:ExtensionType" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="WindowType">
+		<xs:attribute name="width" type="xs:integer" use="required"/>
+		<xs:attribute name="height" type="xs:integer" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="BoundingBoxType">
+		<xs:attribute name="SRS" type="xs:string" use="required"/>
+		<xs:attribute name="minx" type="xs:decimal" use="required"/>
+		<xs:attribute name="miny" type="xs:decimal" use="required"/>
+		<xs:attribute name="maxx" type="xs:decimal" use="required"/>
+		<xs:attribute name="maxy" type="xs:decimal" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="KeywordListType">
+		<xs:sequence>
+			<xs:element name="Keyword" type="xs:string" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="URLType">
+		<xs:sequence>
+			<xs:element name="OnlineResource" type="context:OnlineResourceType"/>
+		</xs:sequence>
+		<xs:attribute name="width" type="xs:integer" use="optional"/>
+		<xs:attribute name="height" type="xs:integer" use="optional"/>
+		<xs:attribute name="format" type="xs:string" use="optional"/>
+	</xs:complexType>
+	<xs:complexType name="ContactInformationType">
+		<xs:sequence>
+			<xs:element name="ContactPersonPrimary" type="context:ContactPersonPrimaryType" minOccurs="0"/>
+			<xs:element name="ContactPosition" type="xs:string" minOccurs="0"/>
+			<xs:element name="ContactAddress" type="context:AddressType" minOccurs="0"/>
+			<xs:element name="ContactVoiceTelephone" type="xs:string" minOccurs="0"/>
+			<xs:element name="ContactFacsimileTelephone" type="xs:string" minOccurs="0"/>
+			<xs:element name="ContactElectronicMailAddress" type="xs:string" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ContactPersonPrimaryType">
+		<xs:sequence>
+			<xs:element name="ContactPerson" type="xs:string" minOccurs="0"/>
+			<xs:element name="ContactOrganization" type="xs:string" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="AddressType">
+		<xs:sequence>
+			<xs:element name="AddressType" type="xs:string" minOccurs="0"/>
+			<xs:element name="Address" type="xs:string" minOccurs="0"/>
+			<xs:element name="City" type="xs:string" minOccurs="0"/>
+			<xs:element name="StateOrProvince" type="xs:string" minOccurs="0"/>
+			<xs:element name="PostCode" type="xs:string" minOccurs="0"/>
+			<xs:element name="Country" type="xs:string" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="LayerListType">
+		<xs:sequence>
+			<xs:element name="Layer" type="context:LayerType" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="LayerType">
+		<xs:sequence>
+			<xs:element name="Server" type="context:ServerType"/>
+			<xs:element name="Name" type="xs:string"/>
+			<xs:element name="Title" type="xs:string"/>
+			<xs:element name="Abstract" type="xs:string" minOccurs="0"/>
+			<xs:element name="DataURL" type="context:URLType" minOccurs="0"/>
+			<xs:element name="MetadataURL" type="context:URLType" minOccurs="0"/>
+			<xs:element ref="sld:MinScaleDenominator" minOccurs="0"/>
+			<xs:element ref="sld:MaxScaleDenominator" minOccurs="0"/>
+			<xs:element name="SRS" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="FormatList" type="context:FormatListType" minOccurs="0"/>
+			<xs:element name="StyleList" type="context:StyleListType" minOccurs="0"/>
+			<xs:element name="DimensionList" type="context:DimensionListType" minOccurs="0"/>
+			<xs:element name="Extension" type="context:ExtensionType" minOccurs="0"/>
+		</xs:sequence>
+		<xs:attribute name="queryable" type="xs:boolean" use="required"/>
+		<xs:attribute name="hidden" type="xs:boolean" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="ServerType">
+		<xs:sequence>
+			<xs:element name="OnlineResource" type="context:OnlineResourceType"/>
+		</xs:sequence>
+		<xs:attribute name="service" type="context:serviceType" use="required"/>
+		<xs:attribute name="version" type="xs:string" use="required"/>
+		<xs:attribute name="title" type="xs:string" use="optional"/>
+	</xs:complexType>
+	<xs:simpleType name="serviceType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="OGC:WMS"/>
+			<xs:enumeration value="OGC:WFS"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="FormatListType">
+		<xs:sequence>
+			<xs:element name="Format" type="context:FormatType" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="FormatType">
+		<xs:simpleContent>
+			<xs:extension base="xs:string">
+				<xs:attribute name="current" type="xs:boolean"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:complexType name="StyleListType">
+		<xs:sequence>
+			<xs:element name="Style" type="context:StyleType" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="StyleType">
+		<xs:choice>
+			<xs:sequence>
+				<xs:element name="Name" type="xs:string"/>
+				<xs:element name="Title" type="xs:string"/>
+				<xs:element name="Abstract" type="xs:string" minOccurs="0"/>
+				<xs:element name="LegendURL" type="context:URLType" minOccurs="0"/>
+			</xs:sequence>
+			<xs:element name="SLD" type="context:SLDType" minOccurs="0"/>
+		</xs:choice>
+		<xs:attribute name="current" type="xs:boolean"/>
+	</xs:complexType>
+	<xs:complexType name="SLDType">
+		<xs:sequence>
+			<xs:element name="Name" type="xs:string" minOccurs="0"/>
+			<xs:element name="Title" type="xs:string" minOccurs="0"/>
+			<xs:element name="LegendURL" type="context:URLType" minOccurs="0"/>
+			<xs:choice>
+				<xs:element name="OnlineResource" type="context:OnlineResourceType"/>
+				<xs:element ref="sld:StyledLayerDescriptor"/>
+				<xs:element ref="sld:FeatureStyle"/> <!-- was sld:FeatureTypeStyle -->
+			</xs:choice>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="DimensionListType">
+		<xs:sequence>
+			<xs:element name="Dimension" type="context:DimensionType" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="DimensionType">
+		<xs:simpleContent>
+			<xs:extension base="xs:string">
+				<xs:attribute name="name" type="xs:string" use="required"/>
+				<xs:attribute name="units" type="xs:string" use="required"/>
+				<xs:attribute name="unitSymbol" type="xs:string" use="required"/>
+				<xs:attribute name="userValue" type="xs:string" use="required"/>
+				<xs:attribute name="default" type="xs:string"/>
+				<xs:attribute name="multipleValues" type="xs:boolean"/>
+				<xs:attribute name="nearestValue" type="xs:boolean"/>
+				<xs:attribute name="current" type="xs:boolean"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:complexType name="OnlineResourceType">
+		<xs:attributeGroup ref="xlink:simpleLink"/>
+	</xs:complexType>
+	<xs:complexType name="ExtensionType">
+		<xs:annotation>
+			<xs:documentation>This allows additional elements to be added to support non WMS Layer services.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:any namespace="##any"/>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>
+
