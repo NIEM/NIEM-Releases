@@ -1,0 +1,741 @@
+<?xml version="1.0" encoding="US-ASCII"?>
+<xs:schema targetNamespace="http://release.niem.gov/niem/domains/surfaceTransportation/3.2/" version="1" xsi:schemaLocation="http://release.niem.gov/niem/appinfo/3.0/ ../../../appinfo/3.0/appinfo.xsd http://release.niem.gov/niem/conformanceTargets/3.0/ ../../../conformanceTargets/3.0/conformanceTargets.xsd" ct:conformanceTargets="http://reference.niem.gov/niem/specification/naming-and-design-rules/3.0/#ReferenceSchemaDocument" xmlns:niem-xs="http://release.niem.gov/niem/proxy/xsd/3.0/" xmlns:ct="http://release.niem.gov/niem/conformanceTargets/3.0/" xmlns:structures="http://release.niem.gov/niem/structures/3.0/" xmlns:mmucc="http://release.niem.gov/niem/codes/mmucc/3.2/" xmlns:appinfo="http://release.niem.gov/niem/appinfo/3.0/" xmlns:nc="http://release.niem.gov/niem/niem-core/3.0/" xmlns:st="http://release.niem.gov/niem/domains/surfaceTransportation/3.2/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:annotation>
+    <xs:documentation>Surface Transportation</xs:documentation>
+  </xs:annotation>
+  <xs:import schemaLocation="../../../niem-core/3.0/niem-core.xsd" namespace="http://release.niem.gov/niem/niem-core/3.0/"/>
+  <xs:import schemaLocation="../../../structures/3.0/structures.xsd" namespace="http://release.niem.gov/niem/structures/3.0/"/>
+  <xs:import schemaLocation="../../../codes/mmucc/3.2/mmucc.xsd" namespace="http://release.niem.gov/niem/codes/mmucc/3.2/"/>
+  <xs:import schemaLocation="../../../proxy/xsd/3.0/xs.xsd" namespace="http://release.niem.gov/niem/proxy/xsd/3.0/"/>
+  <xs:complexType name="LocationRoadwayType">
+    <xs:annotation>
+      <xs:documentation>A data type for the part of the roadway where a traffic accident occurred.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="structures:ObjectType">
+        <xs:sequence>
+          <xs:element ref="st:RoadwayStructureIdentification" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="st:RoadwayInclinationValue" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="st:RoadwayIntersectionAnnualAverageDailyTraffic" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="st:RoadwayTotalLanesQuantity" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="st:BridgeStructure" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="st:RoadwayCurveApplicableIndicator" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="st:RoadwayCurveRadiusLengthMeasure" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="st:RoadwayCurveLengthMeasure" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="st:RoadwayCurveSuperelevationMeasure" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="st:RoadwayGradeSlopePercent" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="st:RoadwayAnnualAverageDailyTraffic" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="st:RoadwayLaneWidthMeasure" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="st:RoadwayShoulderWidthMeasure" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="st:RoadwayMedianWidthMeasure" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="st:RoadwayRailwayCrossingIdentification" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="st:RoadwayIntersectionAverageAnnualDailyEnteringTrafficQuantity" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="st:IntersectionCategory" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="st:RoadwayAccessControl" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="st:RoadwayFunctionalClass" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="st:RoadwayGrade" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="st:RoadwayHorizontalAlignment" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="st:RoadwayIntersectionTrafficControlCategory" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="st:RoadwayLighting" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="st:RoadwayNationalHighwayPart" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="st:TrafficwayDescription" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="st:LocationRoadwayAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:simpleType name="RoadWayPresenceBicycleFacilityCodeSimpleType">
+    <xs:annotation>
+      <xs:documentation>A data type for indication whether a facility is designated for the exclusive use of bicycles or are to be shared with other transportation modes.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="0">
+        <xs:annotation>
+          <xs:documentation>None</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="1">
+        <xs:annotation>
+          <xs:documentation>Wide Curb Lane</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="2">
+        <xs:annotation>
+          <xs:documentation>Marked Bicycle Lane</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="3">
+        <xs:annotation>
+          <xs:documentation>Unmarked Paved Shoulder</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="4">
+        <xs:annotation>
+          <xs:documentation>Separate Bicycle Path/Trail</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="9">
+        <xs:annotation>
+          <xs:documentation>Unknown</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="RoadWayPresenceBicycleFacilityCodeType">
+    <xs:annotation>
+      <xs:documentation>A data type for indication whether a facility is designated for the exclusive use of bicycles or are to be shared with other transportation modes.</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="st:RoadWayPresenceBicycleFacilityCodeSimpleType">
+        <xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:simpleType name="RoadWayPresenceBicycleSignedBicycleRouteCodeSimpleType">
+    <xs:annotation>
+      <xs:documentation>A data type for any road, path, or way which is specifically designated as being open to bicycle travel.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="0">
+        <xs:annotation>
+          <xs:documentation>No</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="1">
+        <xs:annotation>
+          <xs:documentation>Yes</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="7">
+        <xs:annotation>
+          <xs:documentation>Not Applicable</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="9">
+        <xs:annotation>
+          <xs:documentation>Unknown</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="RoadWayPresenceBicycleSignedBicycleRouteCodeType">
+    <xs:annotation>
+      <xs:documentation>A data type for any road, path, or way which is specifically designated as being open to bicycle travel.</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="st:RoadWayPresenceBicycleSignedBicycleRouteCodeSimpleType">
+        <xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:simpleType name="RoadwayAccessControlCodeSimpleType">
+    <xs:annotation>
+      <xs:documentation>A data type for the degree that access to abutting land is fully, partially or not controlled by a public authority.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="0">
+        <xs:annotation>
+          <xs:documentation>No Access Control</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="1">
+        <xs:annotation>
+          <xs:documentation>Full Access Control</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="2">
+        <xs:annotation>
+          <xs:documentation>Partial Access Control</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="RoadwayAccessControlCodeType">
+    <xs:annotation>
+      <xs:documentation>A data type for the degree that access to abutting land is fully, partially or not controlled by a public authority.</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="st:RoadwayAccessControlCodeSimpleType">
+        <xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="RoadwayAnnualAverageDailyTrafficType">
+    <xs:annotation>
+      <xs:documentation>A data type for the average number of motor vehicles passing a point on a trafficway in a day, for all days of the year, during a specified calendar year.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="structures:ObjectType">
+        <xs:sequence>
+          <xs:element ref="st:RoadwayAnnualAverageDailyTrafficYearDate" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="st:RoadwayAnnualAverageDailyTrafficQuantity" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="st:RoadwayAnnualAverageDailyTrafficAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:simpleType name="RoadwayFunctionalClassCodeSimpleType">
+    <xs:annotation>
+      <xs:documentation>A data type for the character of service or function of streets or highways.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="1">
+        <xs:annotation>
+          <xs:documentation>Rural-Principal Arterial-Interstate</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="11">
+        <xs:annotation>
+          <xs:documentation>Urban-Principal Arterial-Interstate</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="12">
+        <xs:annotation>
+          <xs:documentation>Urban-Principal Arterial-Other Freeways or Expressways</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="13">
+        <xs:annotation>
+          <xs:documentation>Urban-Other Principal Arterial</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="14">
+        <xs:annotation>
+          <xs:documentation>Urban-Minor Arterial</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="15">
+        <xs:annotation>
+          <xs:documentation>Urban-Collector</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="16">
+        <xs:annotation>
+          <xs:documentation>Urban-Local Road or Street</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="19">
+        <xs:annotation>
+          <xs:documentation>Urban-Unknown Urban</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="2">
+        <xs:annotation>
+          <xs:documentation>Rural-Principal Arterial-Other</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="3">
+        <xs:annotation>
+          <xs:documentation>Rural-Minor Arterial</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="4">
+        <xs:annotation>
+          <xs:documentation>Rural-Major Collector</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="5">
+        <xs:annotation>
+          <xs:documentation>Rural-Minor Collector</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="6">
+        <xs:annotation>
+          <xs:documentation>Rural-Local Road or Street</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="9">
+        <xs:annotation>
+          <xs:documentation>Rural-Unknown Rural</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="99">
+        <xs:annotation>
+          <xs:documentation>Unknown</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="RoadwayFunctionalClassCodeType">
+    <xs:annotation>
+      <xs:documentation>A data type for the character of service or function of streets or highways.</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="st:RoadwayFunctionalClassCodeSimpleType">
+        <xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:simpleType name="RoadwayIntersectionTrafficControlCategoryCodeSimpleType">
+    <xs:annotation>
+      <xs:documentation>A data type for a kind of traffic control device at intersection where crash occurred.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="0">
+        <xs:annotation>
+          <xs:documentation>No Control</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="20">
+        <xs:annotation>
+          <xs:documentation>All-Way Stop Signs</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="21">
+        <xs:annotation>
+          <xs:documentation>Yield Signs on Cross Street Only</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="31">
+        <xs:annotation>
+          <xs:documentation>Stop Signs on Cross Street Only</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="32">
+        <xs:annotation>
+          <xs:documentation>All-Way Flasher (red on cross street)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="33">
+        <xs:annotation>
+          <xs:documentation>Signals Pre-Timed(2 phase)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="34">
+        <xs:annotation>
+          <xs:documentation>Signals Pre-Timed(multi-phase)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="35">
+        <xs:annotation>
+          <xs:documentation>Signals Semi-Actuated(2 phase)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="36">
+        <xs:annotation>
+          <xs:documentation>Signals Semi-Actuated(multi-phase)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="37">
+        <xs:annotation>
+          <xs:documentation>Signals Fully Actuated(2 phase)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="38">
+        <xs:annotation>
+          <xs:documentation>Signals Fully Actuated(multi-phase)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="4">
+        <xs:annotation>
+          <xs:documentation>All-Way Flasher (yellow on main, red on all legs)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="98">
+        <xs:annotation>
+          <xs:documentation>Other</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="99">
+        <xs:annotation>
+          <xs:documentation>Unknown</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="RoadwayIntersectionTrafficControlCategoryCodeType">
+    <xs:annotation>
+      <xs:documentation>A data type for a kind of traffic control device at intersection where crash occurred.</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="st:RoadwayIntersectionTrafficControlCategoryCodeSimpleType">
+        <xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:simpleType name="RoadwayLightingCodeSimpleType">
+    <xs:annotation>
+      <xs:documentation>A data type for a kind of roadway illumination.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="0">
+        <xs:annotation>
+          <xs:documentation>No Lighting</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="1">
+        <xs:annotation>
+          <xs:documentation>Spot Illumination on One Side</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="2">
+        <xs:annotation>
+          <xs:documentation>Continuous Lighting on One Side</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="3">
+        <xs:annotation>
+          <xs:documentation>Spot Illumination on Both Sides</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="4">
+        <xs:annotation>
+          <xs:documentation>Continuous Lighting on Both Sides</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="RoadwayLightingCodeType">
+    <xs:annotation>
+      <xs:documentation>A data type for a kind of roadway illumination.</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="st:RoadwayLightingCodeSimpleType">
+        <xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:simpleType name="RoadwayNumberLanesCodeSimpleType">
+    <xs:annotation>
+      <xs:documentation>A data type for number of through lanes on the side-road approaches at intersection including all lanes with through movement (through and left-turn, or through and rightturn) but not exclusive turn lanes.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="1">
+        <xs:annotation>
+          <xs:documentation>One Lane</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="2">
+        <xs:annotation>
+          <xs:documentation>Two Lanes</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="3">
+        <xs:annotation>
+          <xs:documentation>Three Lanes</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="4">
+        <xs:annotation>
+          <xs:documentation>Four to Six Lanes</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="7">
+        <xs:annotation>
+          <xs:documentation>Seven or More Lanes</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="99">
+        <xs:annotation>
+          <xs:documentation>Unknown</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="RoadwayNumberLanesCodeType">
+    <xs:annotation>
+      <xs:documentation>A data type for number of through lanes on the side-road approaches at intersection including all lanes with through movement (through and left-turn, or through and rightturn) but not exclusive turn lanes.</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="st:RoadwayNumberLanesCodeSimpleType">
+        <xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:simpleType name="RoadwayPavementLongitudinalMarkingCenterlinePresenceCodeSimpleType">
+    <xs:annotation>
+      <xs:documentation>A data type for Centerline Presence/Type on the roadway surface to guide or control the path followed by drivers.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="0">
+        <xs:annotation>
+          <xs:documentation>No Marked Centerline</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="1">
+        <xs:annotation>
+          <xs:documentation>Standard Centerline Markings</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="2">
+        <xs:annotation>
+          <xs:documentation>Centerline With Centerline Rumble Strip</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="RoadwayPavementLongitudinalMarkingCenterlinePresenceCodeType">
+    <xs:annotation>
+      <xs:documentation>A data type for Centerline Presence/Type on the roadway surface to guide or control the path followed by drivers.</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="st:RoadwayPavementLongitudinalMarkingCenterlinePresenceCodeSimpleType">
+        <xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:simpleType name="RoadwayPavementLongitudinalMarkingEdgeLinePresenceCodeSimpleType">
+    <xs:annotation>
+      <xs:documentation>A data type for Edgeline Presence/Type on the roadway surface to guide or control the path followed by drivers.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="0">
+        <xs:annotation>
+          <xs:documentation>No Marked Edgeline</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="1">
+        <xs:annotation>
+          <xs:documentation>Standard Width Edgeline</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="2">
+        <xs:annotation>
+          <xs:documentation>Wide Edgeline</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="97">
+        <xs:annotation>
+          <xs:documentation>Other</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="RoadwayPavementLongitudinalMarkingEdgeLinePresenceCodeType">
+    <xs:annotation>
+      <xs:documentation>A data type for Edgeline Presence/Type on the roadway surface to guide or control the path followed by drivers.</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="st:RoadwayPavementLongitudinalMarkingEdgeLinePresenceCodeSimpleType">
+        <xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:simpleType name="RoadwayPavementLongitudinalMarkingLaneLineMarkingsCodeSimpleType">
+    <xs:annotation>
+      <xs:documentation>A data Type for Lane Line Markings used on the roadway surface to guide or control the path followed by drivers.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="0">
+        <xs:annotation>
+          <xs:documentation>No Lane Markings</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="1">
+        <xs:annotation>
+          <xs:documentation>Standard Lane Line</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="2">
+        <xs:annotation>
+          <xs:documentation>Wide Lane Line</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="RoadwayPavementLongitudinalMarkingLaneLineMarkingsCodeType">
+    <xs:annotation>
+      <xs:documentation>A data Type for Lane Line Markings used on the roadway surface to guide or control the path followed by drivers.</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="st:RoadwayPavementLongitudinalMarkingLaneLineMarkingsCodeSimpleType">
+        <xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:element name="BridgeStructure" type="nc:FacilityType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A bridge, underpass, overpass, or tunnel bridge/structure that is also linkable to the national bridge inventory.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="IntersectionCategory" abstract="true">
+    <xs:annotation>
+      <xs:documentation>A data concept for an intersection consists of two or more roadways.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="IntersectionCategoryCode" type="mmucc:IntersectionCategoryCodeType" substitutionGroup="st:IntersectionCategory" nillable="true">
+    <xs:annotation>
+      <xs:documentation>An intersection consists of two or more roadways.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="LocationRoadway" type="st:LocationRoadwayType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A part of the roadway where Traffic Accident occurred.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="LocationRoadwayAugmentationPoint" abstract="true">
+    <xs:annotation>
+      <xs:documentation>An augmentation point for LocationRoadwayType.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="RoadwayAccessControl" abstract="true">
+    <xs:annotation>
+      <xs:documentation>A data concept for a degree that access to abutting land is fully, partially or not controlled by a public authority.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="RoadwayAccessControlCode" type="st:RoadwayAccessControlCodeType" substitutionGroup="st:RoadwayAccessControl" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A degree that access to abutting land is fully, partially or not controlled by a public authority.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="RoadwayAnnualAverageDailyTraffic" type="st:RoadwayAnnualAverageDailyTrafficType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>An average number of motor vehicles passing a point on a trafficway in a day, for all days of the year, during a specified calendar year.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="RoadwayAnnualAverageDailyTrafficAugmentationPoint" abstract="true">
+    <xs:annotation>
+      <xs:documentation>An augmentation point for RoadwayAnnualAverageDailyTrafficType.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="RoadwayAnnualAverageDailyTrafficQuantity" type="nc:QuantityType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A AADT number for a specific calendar year, in Motor Vehicles Per Day.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="RoadwayAnnualAverageDailyTrafficYearDate" type="niem-xs:gYear" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A calendar year when AADT was calculated.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="RoadwayCurveApplicableIndicator" type="niem-xs:boolean" nillable="true">
+    <xs:annotation>
+      <xs:documentation>True if road curvature measurement parameters are applicable to this particular road part; false otherwise.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="RoadwayCurveLengthMeasure" type="nc:MeasureType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A measurement of the curvature in the roadway expressed in terms of its length (use feet or meters).</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="RoadwayCurveRadiusLengthMeasure" type="nc:MeasureType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A measurement of the curvature in the roadway expressed in terms of its radius (use feet or meters).</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="RoadwayCurveSuperelevationMeasure" type="nc:MeasureType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A measurement of the curvature in the roadway expressed in terms of its superelevation (use feet or meters).</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="RoadwayFunctionalClass" abstract="true">
+    <xs:annotation>
+      <xs:documentation>A data concept for a character of service or function of streets or highways. The classification of rural and urban is determined by state and local officials in cooperation with each other and approved by the Federal Highway Administration, U.S. Department of Transportation.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="RoadwayFunctionalClassCode" type="st:RoadwayFunctionalClassCodeType" substitutionGroup="st:RoadwayFunctionalClass" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A character of service or function of streets or highways. The classification of rural and urban is determined by state and local officials in cooperation with each other and approved by the Federal Highway Administration, U.S. Department of Transportat</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="RoadwayGrade" abstract="true">
+    <xs:annotation>
+      <xs:documentation>A data concept for a geometric or layout and inclination characteristics of the roadway in the direction of travel for this vehicle.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="RoadwayGradeCode" type="mmucc:RoadwayGradeCodeType" substitutionGroup="st:RoadwayGrade" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A geometric or layout and inclination characteristics of the roadway in the direction of travel for this vehicle.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="RoadwayGradeSlopePercent" type="nc:PercentType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>An inclination of the roadway, expressed in the rate of rise or fall in feet (meters) per 100 feet (meters) of horizontal distance.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="RoadwayHorizontalAlignment" abstract="true">
+    <xs:annotation>
+      <xs:documentation>A data concept for a Horizontal Alignment. The geometric or layout and inclination characteristics of the roadway in the direction of travel for this vehicle.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="RoadwayHorizontalAlignmentCode" type="mmucc:RoadwayHorizontalAlignmentCodeType" substitutionGroup="st:RoadwayHorizontalAlignment" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A Horizontal Alignment. The geometric or layout and inclination characteristics of the roadway in the direction of travel for this vehicle.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="RoadwayInclinationValue" type="niem-xs:decimal" nillable="true">
+    <xs:annotation>
+      <xs:documentation>An inclination of the roadway, expressed in the rate of rise or fall in feet (meters) per 100 feet (meters) of horizontal distance.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="RoadwayIntersectionAnnualAverageDailyTraffic" type="st:RoadwayAnnualAverageDailyTrafficType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A total entering vehicles for all approaches of an intersection. Actual or estimated traffic volume expressed as an average annual daily count.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="RoadwayIntersectionAverageAnnualDailyEnteringTrafficQuantity" type="nc:QuantityType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A total number of entering vehicles for all approaches of an intersection. Actual or estimated traffic volume expressed as an average annual daily count.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="RoadwayIntersectionTrafficControlCategory" abstract="true">
+    <xs:annotation>
+      <xs:documentation>A data concept for a type of traffic control device at intersection where crash occurred.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="RoadwayIntersectionTrafficControlCategoryCode" type="st:RoadwayIntersectionTrafficControlCategoryCodeType" substitutionGroup="st:RoadwayIntersectionTrafficControlCategory" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A type of traffic control device at intersection where crash occurred.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="RoadwayLaneWidthMeasure" type="nc:MeasureType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A width of the lane(s) where crash occurred (use feet or meters).</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="RoadwayLighting" abstract="true">
+    <xs:annotation>
+      <xs:documentation>A data concept for a type of roadway illumination.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="RoadwayLightingCode" type="st:RoadwayLightingCodeType" substitutionGroup="st:RoadwayLighting" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A type of roadway illumination.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="RoadwayMedianWidthMeasure" type="nc:MeasureType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A width of portion of divided highway separating the road for traffic in opposing directions where the crash occurred. If a crash occurs at a mid-block section, the median width is based on the mid-block section. If the crash occurs at an intersection, the</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="RoadwayNationalHighwayPart" abstract="true">
+    <xs:annotation>
+      <xs:documentation>A data concept for a designation of the roadway as part of the National Highway System.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="RoadwayNationalHighwayPartCode" type="mmucc:StandardSelectionCodeType" substitutionGroup="st:RoadwayNationalHighwayPart" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A designation of the roadway as part of the National Highway System.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="RoadwayRailwayCrossingIdentification" type="nc:IdentificationType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A unique US DOT/AAR number assigned for identification purposes to a railroad crossing by a state highway agency in cooperation with the Federal Railroad Administration.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="RoadwayShoulderWidthMeasure" type="nc:MeasureType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A widths of the shoulder(s) where crash occurred (use feet or meters).</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="RoadwayStructureIdentification" type="nc:IdentificationType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A unique federal inspection/inventory identification assigned to a bridge, underpass, overpass, or tunnel bridge/structure that is also linkable to the national bridge inventory.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="RoadwayTotalLanesQuantity" type="nc:QuantityType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A total number of lanes in the roadway on which this motor vehicle was traveling. For undivided highways: Total 'Thru' Lanes in Both Directions (excluding designated turn lanes). For divided highways: Total 'Thru' Lanes for the Roadway</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="TrafficwayDescription" abstract="true">
+    <xs:annotation>
+      <xs:documentation>A data concept for an indication of whether or not the trafficway for this vehicle is divided and whether it serves one-way or two-way traffic.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="TrafficwayDescriptionCode" type="mmucc:TrafficwayDescriptionCodeType" substitutionGroup="st:TrafficwayDescription" nillable="true">
+    <xs:annotation>
+      <xs:documentation>An indication of whether or not the trafficway for this vehicle is divided and whether it serves one-way or two-way traffic.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+</xs:schema>
