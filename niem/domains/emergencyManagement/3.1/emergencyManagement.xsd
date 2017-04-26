@@ -1,0 +1,2808 @@
+<?xml version="1.0" encoding="US-ASCII"?>
+<xs:schema targetNamespace="http://release.niem.gov/niem/domains/emergencyManagement/3.1/" version="1" xsi:schemaLocation="http://release.niem.gov/niem/appinfo/3.0/ ../../../appinfo/3.0/appinfo.xsd http://release.niem.gov/niem/conformanceTargets/3.0/ ../../../conformanceTargets/3.0/conformanceTargets.xsd http://release.niem.gov/niem/localTerminology/3.0/ ../../../localTerminology/3.0/localTerminology.xsd" ct:conformanceTargets="http://reference.niem.gov/niem/specification/naming-and-design-rules/3.0/#ReferenceSchemaDocument" xmlns:have-codes="http://release.niem.gov/niem/codes/edxl_have/3.0/" xmlns:niem-xs="http://release.niem.gov/niem/proxy/xsd/3.0/" xmlns:ct="http://release.niem.gov/niem/conformanceTargets/3.0/" xmlns:term="http://release.niem.gov/niem/localTerminology/3.0/" xmlns:edxl_rm="http://release.niem.gov/niem/codes/edxl_rm/3.0/" xmlns:structures="http://release.niem.gov/niem/structures/3.0/" xmlns:appinfo="http://release.niem.gov/niem/appinfo/3.0/" xmlns:nc="http://release.niem.gov/niem/niem-core/3.0/" xmlns:em="http://release.niem.gov/niem/domains/emergencyManagement/3.1/" xmlns:iso_639-3="http://release.niem.gov/niem/codes/iso_639-3/3.0/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:apco="http://release.niem.gov/niem/codes/apco_event/3.0/">
+  <xs:annotation>
+    <xs:documentation>Emergency Management</xs:documentation>
+    <xs:appinfo>
+      <term:LocalTerm term="URN" literal="Uniform Resource Name"/>
+      <term:LocalTerm term="Geo" literal="geo-coded"/>
+      <term:LocalTerm term="Passcode" definition="A numeric password."/>
+      <term:LocalTerm term="OBGYN" literal="Obstetrics &amp; Gynecology"/>
+      <term:LocalTerm term="EOC" literal="Emergency Operations Center"/>
+      <term:LocalTerm term="EMS" literal="Emergency Medical Service"/>
+      <term:LocalTerm term="Decon" literal="Decontamination"/>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:import schemaLocation="../../../niem-core/3.0/niem-core.xsd" namespace="http://release.niem.gov/niem/niem-core/3.0/"/>
+  <xs:import schemaLocation="../../../structures/3.0/structures.xsd" namespace="http://release.niem.gov/niem/structures/3.0/"/>
+  <xs:import schemaLocation="../../../codes/iso_639-3/3.0/iso_639-3.xsd" namespace="http://release.niem.gov/niem/codes/iso_639-3/3.0/"/>
+  <xs:import schemaLocation="../../../codes/edxl_rm/3.0/edxl_rm.xsd" namespace="http://release.niem.gov/niem/codes/edxl_rm/3.0/"/>
+  <xs:import schemaLocation="../../../codes/apco_event/3.0/apco_event.xsd" namespace="http://release.niem.gov/niem/codes/apco_event/3.0/"/>
+  <xs:import schemaLocation="../../../proxy/xsd/3.0/xs.xsd" namespace="http://release.niem.gov/niem/proxy/xsd/3.0/"/>
+  <xs:import schemaLocation="../../../codes/edxl_have/3.0/have-codes.xsd" namespace="http://release.niem.gov/niem/codes/edxl_have/3.0/"/>
+  <xs:simpleType name="AlarmAudibleDescriptionCodeSimpleType">
+    <xs:annotation>
+      <xs:documentation>A data type code indicating whether the alarm is audible or silent.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="Audible">
+        <xs:annotation>
+          <xs:documentation>The alarm is making an audible sound.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Silent">
+        <xs:annotation>
+          <xs:documentation>The alarm is silent and not making any sound.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="AlarmAudibleDescriptionCodeType">
+    <xs:annotation>
+      <xs:documentation>A data type code indicating whether the alarm is audible or silent.</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="em:AlarmAudibleDescriptionCodeSimpleType">
+        <xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="AlarmConfirmationType">
+    <xs:annotation>
+      <xs:documentation>A data type for the container for information related to the confirmation of an alarm.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="structures:ObjectType">
+        <xs:sequence>
+          <xs:element ref="em:AlarmConfirmationMethodDescriptionText" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="em:AlarmConfirmationCallPrivacyBypassPasscodeText" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="em:AlarmConfirmationCallToPremisesIndicator" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="em:AlarmConfirmationCallToPremisesResultsDescriptionText" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="em:AlarmConfirmationAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="AlarmEventType">
+    <xs:annotation>
+      <xs:documentation>A data type for an alarm event.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="nc:ActivityType">
+        <xs:sequence>
+          <xs:element ref="em:AlarmEventCategory" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="em:AlarmEventCallBackTelephoneNumber" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="em:AlarmEventLocationCategory" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="em:AlarmAudibleIndicator" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="em:AlarmEventDetailsText" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="em:AlarmEventRequestorReceiveDate" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="em:AlarmEventCallPrivacyBypassCodeText" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="em:AlarmEventCallToPremisesIndicator" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="em:AlarmEventPermit" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="em:AlarmEventResponseAction" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="em:AlarmEventDispatchAgency" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="em:AlarmEventAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="AlarmPermitType">
+    <xs:annotation>
+      <xs:documentation>A data type for a permit for the alarm event site.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="structures:ObjectType">
+        <xs:sequence>
+          <xs:element ref="em:PermitCategoryText" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="em:PermitIdentification" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="em:AlarmPermitAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="AlarmType">
+    <xs:annotation>
+      <xs:documentation>A data type for an alarm.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="structures:ObjectType">
+        <xs:sequence>
+          <xs:element ref="em:AlarmAudibleIndicator" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="em:AlarmAudibleDescriptionCode" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="em:AlarmCallBackTelephoneNumber" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="em:AlarmCategory" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="em:AlarmDetailsText" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="em:AlarmDispatchActivity" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="em:AlarmDispatchAgency" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="em:AlarmMonitoringServiceProvider" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="em:AlarmMonitoringServiceProviderReceiveDateTime" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="em:AlarmRequestedResponseActionDescriptionText" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="em:AlarmAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="AlertAffectedLocationType">
+    <xs:annotation>
+      <xs:documentation>A data type for a location affected by an alert.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="nc:LocationType">
+        <xs:sequence>
+          <xs:element ref="nc:PolygonCoordinate" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="em:CeilingMeasure" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="em:AlertAffectedLocationAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:simpleType name="AlertCategoryCodeSimpleType">
+    <xs:annotation>
+      <xs:documentation>A data type for a code set denoting the type of alert message.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="Ack">
+        <xs:annotation>
+          <xs:documentation>Acknowledgment of receipt of an earlier message</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Cancel">
+        <xs:annotation>
+          <xs:documentation>A cancellation or revocation of a previous message</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Dispatch">
+        <xs:annotation>
+          <xs:documentation>A commitment of resources or assistance</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Error">
+        <xs:annotation>
+          <xs:documentation>Rejection of an earlier message (for technical reasons)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Report">
+        <xs:annotation>
+          <xs:documentation>New information regarding an incident or activity</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Request">
+        <xs:annotation>
+          <xs:documentation>A request for resources, information or action</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Response">
+        <xs:annotation>
+          <xs:documentation>A response to a previous request</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="SensorConfiguration">
+        <xs:annotation>
+          <xs:documentation>These messages are for reporting configuration during power up or after Installation or Maintenance.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="SensorControl">
+        <xs:annotation>
+          <xs:documentation>These are messages used to control sensors/sensor concentrator components behavior.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="SensorDetection">
+        <xs:annotation>
+          <xs:documentation>These are high priority messages which report sensor detections.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="SensorStatus">
+        <xs:annotation>
+          <xs:documentation>These are concise messages which report sensors/sensor concentrator component status or state of health.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Update">
+        <xs:annotation>
+          <xs:documentation>Updated information superseding a previous message</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="AlertCategoryCodeType">
+    <xs:annotation>
+      <xs:documentation>A data type for a code set denoting the type of alert message.</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="em:AlertCategoryCodeSimpleType">
+        <xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:simpleType name="AlertEventDetailsCategoryCodeSimpleType">
+    <xs:annotation>
+      <xs:documentation>A data type for the category code designated to an alert event.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="CBRNE">
+        <xs:annotation>
+          <xs:documentation>Chemical, Biological, Radiological, Nuclear, or High Yield Explosive threat or attack</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Env">
+        <xs:annotation>
+          <xs:documentation>Pollution and other environmental</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Fire">
+        <xs:annotation>
+          <xs:documentation>Fire suppression and rescue</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Geo">
+        <xs:annotation>
+          <xs:documentation>Geophysical (inc. landslide)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Health">
+        <xs:annotation>
+          <xs:documentation>Medical and public health</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Infra">
+        <xs:annotation>
+          <xs:documentation>Utility, telecommunication, other non-transport infrastructure</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Met">
+        <xs:annotation>
+          <xs:documentation>Meteorological (inc. flood)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Other">
+        <xs:annotation>
+          <xs:documentation>Other events</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Rescue">
+        <xs:annotation>
+          <xs:documentation>Rescue and Recovery</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Safety">
+        <xs:annotation>
+          <xs:documentation>General emergency and public safety</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Security">
+        <xs:annotation>
+          <xs:documentation>Law enforcement, military, homeland and local/private security</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Transport">
+        <xs:annotation>
+          <xs:documentation>Public and private transportation</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="AlertEventDetailsCategoryCodeType">
+    <xs:annotation>
+      <xs:documentation>A data type for the category code designated to an alert event.</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="em:AlertEventDetailsCategoryCodeSimpleType">
+        <xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:simpleType name="AlertEventDetailsCertaintyCodeSimpleType">
+    <xs:annotation>
+      <xs:documentation>A data type for the certainty code designated to an alert event.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="Likely">
+        <xs:annotation>
+          <xs:documentation>Likely greater than ~50%</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Observed">
+        <xs:annotation>
+          <xs:documentation>Determined to have occurred or to be ongoing</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Possible">
+        <xs:annotation>
+          <xs:documentation>Possible but not likely (less than or equal to 50%)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Unknown">
+        <xs:annotation>
+          <xs:documentation>Certainty unknown</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Unlikely">
+        <xs:annotation>
+          <xs:documentation>Not expected to occur (~0)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="AlertEventDetailsCertaintyCodeType">
+    <xs:annotation>
+      <xs:documentation>A data type for the certainty code designated to an alert event.</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="em:AlertEventDetailsCertaintyCodeSimpleType">
+        <xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:simpleType name="AlertEventDetailsResponseRecommendationCodeSimpleType">
+    <xs:annotation>
+      <xs:documentation>A data type for the response recommendation code designated to an alert event.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="Assess">
+        <xs:annotation>
+          <xs:documentation>Evaluate the information in this message </xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Evacuate">
+        <xs:annotation>
+          <xs:documentation>Relocate as instructed in the instruction</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Execute">
+        <xs:annotation>
+          <xs:documentation>Execute a pre-planned activity identified in instruction</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Monitor">
+        <xs:annotation>
+          <xs:documentation>Attend to information sources as described in instruction</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="None">
+        <xs:annotation>
+          <xs:documentation>No action recommended</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Prepare">
+        <xs:annotation>
+          <xs:documentation>Make preparations per instruction</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Shelter">
+        <xs:annotation>
+          <xs:documentation>Take shelter in place or per instruction</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="AlertEventDetailsResponseRecommendationCodeType">
+    <xs:annotation>
+      <xs:documentation>A data type for the response recommendation code designated to an alert event.</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="em:AlertEventDetailsResponseRecommendationCodeSimpleType">
+        <xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:simpleType name="AlertEventDetailsSeverityCodeSimpleType">
+    <xs:annotation>
+      <xs:documentation>A data type for the severity code designated to an alert event.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="Extreme">
+        <xs:annotation>
+          <xs:documentation>Extraordinary threat to life or property</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Minor">
+        <xs:annotation>
+          <xs:documentation>Minimal threat to life or property</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Moderate">
+        <xs:annotation>
+          <xs:documentation>Possible threat to life or property</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Severe">
+        <xs:annotation>
+          <xs:documentation>Significant threat to life or property</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Unknown">
+        <xs:annotation>
+          <xs:documentation>Severity unknown</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="AlertEventDetailsSeverityCodeType">
+    <xs:annotation>
+      <xs:documentation>A data type for the severity code designated to an alert event.</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="em:AlertEventDetailsSeverityCodeSimpleType">
+        <xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="AlertEventDetailsType">
+    <xs:annotation>
+      <xs:documentation>A data type for an alert event details.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="structures:ObjectType">
+        <xs:sequence>
+          <xs:element ref="em:AlertEventDetailsAudienceDescriptionText" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="em:AlertEventDetailsCategory" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="em:AlertEventDetailsCertainty" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="em:AlertEventDetailsDescriptionText" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="em:AlertEventDetailsHeadlineText" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="em:AlertEventDetailsInstructionsDescriptionText" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="em:AlertEventDetailsOnsetDateTime" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="em:AlertEventDetailsResponseRecommendation" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="em:AlertEventDetailsSystemRecordID" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="em:AlertEventDetailsUrgency" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="em:AlertEventDetailsSeverityCode" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="em:AlertEventDetailsAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:simpleType name="AlertEventDetailsUrgencyCodeSimpleType">
+    <xs:annotation>
+      <xs:documentation>A data type for the urgency code designated to an alert event.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="Expected">
+        <xs:annotation>
+          <xs:documentation>Responsive action should be taken soon (within the hour)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Future">
+        <xs:annotation>
+          <xs:documentation>Responsive action should be taken in the near future</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Immediate">
+        <xs:annotation>
+          <xs:documentation>Responsive action should be taken immediately</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Past">
+        <xs:annotation>
+          <xs:documentation>Responsive action is no longer required</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Unknown">
+        <xs:annotation>
+          <xs:documentation>Urgency unknown</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="AlertEventDetailsUrgencyCodeType">
+    <xs:annotation>
+      <xs:documentation>A data type for the urgency code designated to an alert event.</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="em:AlertEventDetailsUrgencyCodeSimpleType">
+        <xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="AlertIncidentAssociationType">
+    <xs:annotation>
+      <xs:documentation>A data type for an association between an alert and an incident.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="nc:AssociationType">
+        <xs:sequence>
+          <xs:element ref="em:Alert" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:Incident" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="em:AlertIncidentAssociationAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="AlertSupplementaryDigitalResourceType">
+    <xs:annotation>
+      <xs:documentation>A data type for a digital representation of an object.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="structures:ObjectType">
+        <xs:sequence>
+          <xs:element ref="em:BinaryChecksumDigestID" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="em:AlertSupplementaryDigitalResourceAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="AlertType">
+    <xs:annotation>
+      <xs:documentation>A data type for an alert message.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="structures:ObjectType">
+        <xs:sequence>
+          <xs:element ref="em:AlertEffectiveDateTime" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="em:AlertExpirationDateTime" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="em:AlertHeadlineText" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="em:AlertInstructionsDescriptionText" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="em:AlertHandling" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="em:AlertReasonText" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="em:AlertAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="BedCapacityType">
+    <xs:annotation>
+      <xs:documentation>A data type for the number of available beds.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="em:CapacityType">
+        <xs:sequence>
+          <xs:element ref="em:BedCategoryCode" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="em:SubCategoryBedCapacity" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="em:BedCapacityAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="CapacityType">
+    <xs:annotation>
+      <xs:documentation>A data type to define the capacity information of each specified bed kind or sub category bed kind.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="structures:ObjectType">
+        <xs:sequence>
+          <xs:element ref="em:CapacityStatusCode" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="em:AvailableQuantity" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="em:BaselineQuantity" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="em:AdditionalCapacity24HourQuantity" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="em:AdditionalCapacity72HourQuantity" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="em:CapacityAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="ContactInformationAugmentationType">
+    <xs:annotation>
+      <xs:documentation>A data type for additional information about contact information.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="structures:AugmentationType">
+        <xs:sequence>
+          <xs:element ref="em:ContactRoleCode" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:simpleType name="ContactRoleCodeSimpleType">
+    <xs:annotation>
+      <xs:documentation>A data type for a code set of roles of the emergency management contact.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="Approver">
+        <xs:annotation>
+          <xs:documentation>Used to indicate an Approver role for an emergency management contact.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Requester">
+        <xs:annotation>
+          <xs:documentation>Used to indicate a Requester role for an emergency management contact.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Responding Org">
+        <xs:annotation>
+          <xs:documentation>Used to indicate a Responding Organization role for an emergency management contact</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Sender">
+        <xs:annotation>
+          <xs:documentation>Use to indicate a Sender role for an emergency management contact.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="SME">
+        <xs:annotation>
+          <xs:documentation>Used to indicate a Subject Matter Expert (SME) role for an emergency management contact.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="ContactRoleCodeType">
+    <xs:annotation>
+      <xs:documentation>A data type for a code set of roles of the emergency management contact.</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="em:ContactRoleCodeSimpleType">
+        <xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="EMSOffloadCapabilityType">
+    <xs:annotation>
+      <xs:documentation>A data type for elements related to status and offload times.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="structures:ObjectType">
+        <xs:sequence>
+          <xs:element ref="em:EMSOffloadStatusCode" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="em:EMSOffloadMinutesQuantity" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="em:EMSOffloadCapabilityAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="EMSTrafficType">
+    <xs:annotation>
+      <xs:documentation>A data type for elements related to the status of operations of EMS traffic.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="structures:ObjectType">
+        <xs:sequence>
+          <xs:element ref="em:EMSTrafficReasonText" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="em:EMSTrafficStatusCode" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="em:EMSTrafficAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="EmergencyDepartmentStatusType">
+    <xs:annotation>
+      <xs:documentation>A data type for elements related to the emergency department status.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="structures:ObjectType">
+        <xs:sequence>
+          <xs:element ref="em:EMSTraffic" minOccurs="0" maxOccurs="1"/>
+          <xs:element ref="em:EMSCapacity" minOccurs="0" maxOccurs="1"/>
+          <xs:element ref="em:EMSCensus" minOccurs="0" maxOccurs="1"/>
+          <xs:element ref="em:EMSOffloadAmbulanceCapability" minOccurs="0" maxOccurs="1"/>
+          <xs:element ref="em:EMSOffloadAirTransportCapability" minOccurs="0" maxOccurs="1"/>
+          <xs:element ref="em:EmergencyDepartmentStatusAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="ExplicitAddressType">
+    <xs:annotation>
+      <xs:documentation>A data type for an identifier of an explicit recipient.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="structures:ObjectType">
+        <xs:sequence>
+          <xs:element ref="em:ExplicitAddressSchemeText" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="em:ExplicitAddressValueText" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="em:ExplicitAddressAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="HospitalBedCapacityStatusType">
+    <xs:annotation>
+      <xs:documentation>A data type for the hospital bed capacity and status.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="structures:ObjectType">
+        <xs:sequence>
+          <xs:element ref="em:BedCapacity" minOccurs="1" maxOccurs="unbounded"/>
+          <xs:element ref="em:HospitalBedCapacityStatusAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="HospitalFacilityStatusType">
+    <xs:annotation>
+      <xs:documentation>A data type for the status of the facility</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="structures:ObjectType">
+        <xs:sequence>
+          <xs:element ref="em:EOCStatusCode" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="em:EOCStatusCommentText" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="em:EOCPlanCode" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="em:EOCPlanCommentText" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="em:ClinicalStatusCode" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="em:ClinicalStatusCommentText" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="em:DeconCapacityCode" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="em:DeconCapacityCommentText" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="em:MorgueCapacityCommentText" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="em:FacilityStatusCommentText" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="em:SecurityStatusCommentText" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="em:SecurityStatusCode" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="em:MorgueCapacityCode" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="em:HospitalFacilityStatusAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="HospitalResourcesStatusType">
+    <xs:annotation>
+      <xs:documentation>A data type for the operations of the facility</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="structures:ObjectType">
+        <xs:sequence>
+          <xs:element ref="em:ClinicalOperationsCode" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="em:StaffingCode" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="em:FacilityOperationsCode" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="em:HospitalResourcesStatusAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="HospitalStatusType">
+    <xs:annotation>
+      <xs:documentation>A data type for reporting status of any number of hospitals.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="structures:ObjectType">
+        <xs:sequence>
+          <xs:element ref="em:Hospital" minOccurs="1" maxOccurs="unbounded"/>
+          <xs:element ref="em:HospitalStatusAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="HospitalType">
+    <xs:annotation>
+      <xs:documentation>A data type for reporting status of a hospital.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="nc:OrganizationType">
+        <xs:sequence>
+          <xs:element ref="em:OrganizationIDProviderName" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="em:EmergencyDepartmentStatus" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="em:HospitalResourcesStatus" minOccurs="0" maxOccurs="1"/>
+          <xs:element ref="em:ServiceCoverageStatus" minOccurs="0" maxOccurs="1"/>
+          <xs:element ref="em:HospitalBedCapacityStatus" minOccurs="0" maxOccurs="1"/>
+          <xs:element ref="em:HospitalFacilityStatus" minOccurs="0" maxOccurs="1"/>
+          <xs:element ref="em:HospitalAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="LocationAugmentationType">
+    <xs:annotation>
+      <xs:documentation>A data type for additional information about the location of the alarm.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="structures:AugmentationType">
+        <xs:sequence>
+          <xs:element ref="em:LocationInformationText" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:LocationDirectionsText" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="NotificationDetailsType">
+    <xs:annotation>
+      <xs:documentation>A data type for a container for all human-readable text describing a notification. </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="structures:ObjectType">
+        <xs:sequence>
+          <xs:element ref="em:NotificationDetailsDocument" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="em:NotificationDetailsKeywordText" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="em:NotificationDetailsIncidentID" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="em:NotificationDetailsIncidentDescriptionText" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="em:NotificationDetailsAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:simpleType name="NotificationDistributionScopeCategoryCodeSimpleType">
+    <xs:annotation>
+      <xs:documentation>A data type for the category code denoting the intended level of distribution of the notification message.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="Private">
+        <xs:annotation>
+          <xs:documentation>For dissemination only to specified addresses (see address, below)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Public">
+        <xs:annotation>
+          <xs:documentation>For general dissemination to unrestricted audiences</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Restricted">
+        <xs:annotation>
+          <xs:documentation>For dissemination only to users with a known operational requirement (see restriction, below)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="NotificationDistributionScopeCategoryCodeType">
+    <xs:annotation>
+      <xs:documentation>A data type for the category code denoting the intended level of distribution of the notification message.</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="em:NotificationDistributionScopeCategoryCodeSimpleType">
+        <xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="NotificationDistributionScopeType">
+    <xs:annotation>
+      <xs:documentation>A data type for the intended level of distribution of the notification message.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="structures:ObjectType">
+        <xs:sequence>
+          <xs:element ref="em:NotificationDistributionScopeCategoryCode" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="em:AlertDistributionScopeAudienceDescriptionText" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="em:NotificationDistributionScopeAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:simpleType name="NotificationFunctionCategoryCodeSimpleType">
+    <xs:annotation>
+      <xs:documentation>A data type for a notification function type codes.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="Ack">
+        <xs:annotation>
+          <xs:documentation>Acknowledges receipt and acceptance of the message(s)) identified in references</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Alert">
+        <xs:annotation>
+          <xs:documentation>Initial information requiring attention by targeted recipients</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Cancel">
+        <xs:annotation>
+          <xs:documentation>Cancels the earlier message(s) identified in references</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Error">
+        <xs:annotation>
+          <xs:documentation>Indicates rejection of the message(s) identified in references; explanation SHOULD appear in note</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Update">
+        <xs:annotation>
+          <xs:documentation>Updates and supercedes the earlier message(s) identified in references</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="NotificationFunctionCategoryCodeType">
+    <xs:annotation>
+      <xs:documentation>A data type for a notification function type codes.</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="em:NotificationFunctionCategoryCodeSimpleType">
+        <xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="NotificationIncidentAssociationType">
+    <xs:annotation>
+      <xs:documentation>A data type for an association of the group listing naming the referent incident(s) of the alert message. Used to collate multiple messages referring to different aspects of the same incident.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="nc:AssociationType">
+        <xs:sequence>
+          <xs:element ref="em:Notification" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:Incident" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="em:NotificationIncidentAssociationAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:simpleType name="NotificationStatusCodeSimpleType">
+    <xs:annotation>
+      <xs:documentation>A data type for a notification status codes.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="Actual">
+        <xs:annotation>
+          <xs:documentation>"Real-world" information for action</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Exercise">
+        <xs:annotation>
+          <xs:documentation> Simulated information for exercise participants</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="System">
+        <xs:annotation>
+          <xs:documentation>Messages regarding or supporting network functions</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Test">
+        <xs:annotation>
+          <xs:documentation>Discardable messages for technical testing only.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="NotificationStatusCodeType">
+    <xs:annotation>
+      <xs:documentation>A data type for a notification status codes.</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="em:NotificationStatusCodeSimpleType">
+        <xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="NotificationStatusType">
+    <xs:annotation>
+      <xs:documentation>A data type for a notification status.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="structures:ObjectType">
+        <xs:sequence>
+          <xs:element ref="em:NotificationStatusCode" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="em:NotificationStatusAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="NotificationTargetLocationType">
+    <xs:annotation>
+      <xs:documentation>A data type for a notification target location.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="nc:LocationType">
+        <xs:sequence>
+          <xs:element ref="nc:PolygonCoordinate" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="em:NotificationTargetLocationAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="NotificationType">
+    <xs:annotation>
+      <xs:documentation>A data type for the  function of the message.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="nc:ActivityType">
+        <xs:sequence>
+          <xs:element ref="em:NotificationConfidentialityText" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="em:NotificationID" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="em:NotificationFunctionCategoryCode" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="em:NotificationKeywordText" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="em:NotificationLanguageCode" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="em:NotificationOriginationDateTime" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="em:NotificationOriginator" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="em:NotificationOriginatorRoleDescriptionText" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="em:NotificationOriginatorRoleIdentification" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="em:NotificationRecipient" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="em:NotificationRecipientRoleDescriptionText" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="em:NotificationRecipientRoleIdentification" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="em:NotificationSource" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="em:NotificationAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="OBGYNType">
+    <xs:annotation>
+      <xs:documentation>A data type for the availability of OBGYN services.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="structures:ObjectType">
+        <xs:sequence>
+          <xs:element ref="em:OBGYNGeneralServiceCoverageStatusCode" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="em:LaborDeliveryServiceCoverageStatusCode" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="em:OBGYNServiceCoverageStatusCode" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="em:OBGYNAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="OwnerInformationType">
+    <xs:annotation>
+      <xs:documentation>A data type for an indicator of ownership that can be a: role, person, organizational unit, Department, or Entity name to define ownership.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="structures:ObjectType">
+        <xs:sequence>
+          <xs:element ref="em:HomeDispatch" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="em:HomeUnit" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="em:Owner" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="em:OwnerInformationAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="PermitType">
+    <xs:annotation>
+      <xs:documentation>A data type for a permit.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="structures:ObjectType">
+        <xs:sequence>
+          <xs:element ref="em:PermitIdentification" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="em:PermitCategoryText" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="em:PermitAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="PsychiatricType">
+    <xs:annotation>
+      <xs:documentation>A data type for the availability of psychiatric services.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="structures:ObjectType">
+        <xs:sequence>
+          <xs:element ref="em:PsychiatricGeneralServiceCoverageStatusCode" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="em:AdultGeneralServiceCoverageStatusCode" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="em:PediatricServiceCoverageStatusCode" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="em:PsychiatricAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="RequestResponseType">
+    <xs:annotation>
+      <xs:documentation>A data type that further defines a response specific to: Resource, Resource Message, ResourceMessageType and this response can be an acceptance , declination or a return request pertaining to a specific message.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="structures:ObjectType">
+        <xs:sequence>
+          <xs:element ref="em:ResponseCode" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="em:ResponseReasonCode" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="em:RequestResponseAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:simpleType name="ResourceComponentCapabilityCategoryCodeSimpleType">
+    <xs:annotation>
+      <xs:documentation>A data type for capability information of a resource component.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="Other">
+        <xs:annotation>
+          <xs:documentation>Used to indicate a Other resource.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Type I">
+        <xs:annotation>
+          <xs:documentation>Used to indicate a Type I resource compnent capability.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Type II">
+        <xs:annotation>
+          <xs:documentation>Used to indicate a Type II resource component capability.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Type III">
+        <xs:annotation>
+          <xs:documentation>Used to indicate a Type III resource component capability.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Type IV">
+        <xs:annotation>
+          <xs:documentation>Used to indicate a Type IV resource component capability.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="ResourceComponentCapabilityCategoryCodeType">
+    <xs:annotation>
+      <xs:documentation>A data type for capability information of a resource component.</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="em:ResourceComponentCapabilityCategoryCodeSimpleType">
+        <xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="ResourceInformationType">
+    <xs:annotation>
+      <xs:documentation>A data type for information about a resource.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="structures:ObjectType">
+        <xs:sequence>
+          <xs:element ref="em:ResourceJurisdictionText" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="em:ResourceQuantity" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="em:ResourceLocationDetails" minOccurs="0" maxOccurs="1"/>
+          <xs:element ref="em:InventoryRefreshDateTime" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="em:ResourceStatusKeywordValue" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="em:ResourceAnticipatedIncidentAssignmentText" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="em:RequestAcceptDeclineCode" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="em:DeclineReasonCode" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="em:NavigationInstructionsText" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="em:ReportingInstructionsText" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="em:ResourceDispositionKeywordValue" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="em:ResourceOrderIdentification" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="em:ResourcePriceQuoteAmount" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="em:ResourceRestrictionsText" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="em:ResourceModeOfTransportationText" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="em:ResourceSchedule" minOccurs="0" maxOccurs="1"/>
+          <xs:element ref="em:AvailabilityText" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="em:RequestResponse" minOccurs="0" maxOccurs="1"/>
+          <xs:element ref="em:OwnerInformation" minOccurs="0" maxOccurs="1"/>
+          <xs:element ref="em:ResourceInformationAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="ResourceKindType">
+    <xs:annotation>
+      <xs:documentation>A data type for elements of Category Structure and / or Information of resource kind or Uniform Resource Name.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="structures:ObjectType">
+        <xs:sequence>
+          <xs:element ref="em:CategoryStructure" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="em:CategoryInformation" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="em:ResourceKindAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="ResourceLocationDetailsType">
+    <xs:annotation>
+      <xs:documentation>A data type that indicates resource location, destination, arrival and departure.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="structures:ObjectType">
+        <xs:sequence>
+          <xs:element ref="em:ResourceRequestedLocation" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="em:ResourceReportToLocation" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="em:ResourceCurrentLocation" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="em:ResourceDepartureLocation" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="em:ArrivalLocation" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="em:ResourceTracking" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="em:ResourceLocationDetailsAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="ResourceMessageType">
+    <xs:annotation>
+      <xs:documentation>A data type that contains information of a message.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="structures:ObjectType">
+        <xs:sequence>
+          <xs:element ref="em:MessageContentCategoryCode" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="em:MessageRequestIdentification" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="em:MessageSentDateTime" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="em:ResourceMessageStatusKeywordValue" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="em:ResourceFundCodeText" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:ContactInformation" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="em:Resource" minOccurs="1" maxOccurs="unbounded"/>
+          <xs:element ref="em:OriginatingMessageIdentification" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="em:FundingInformationText" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="em:ResourceMessageAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="ResourceScheduleType">
+    <xs:annotation>
+      <xs:documentation>A data type that has  elements related to the Resource schedule as a date or date/time.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="structures:ObjectType">
+        <xs:sequence>
+          <xs:element ref="em:ResourceActualArrivalDateTime" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="em:ResourceActualDepartureDateTime" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="em:ResourceAnticipatedReturnDateTime" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="em:ResourceAvailableDate" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="em:ResourceCommittedDate" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="em:ResourceEstimatedArrivalDateTime" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="em:ResourceEstimatedDepartureDateTime" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="em:ResourceRequestedArrivalDateTime" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="em:ResourceScheduleAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="ResourceTrackingType">
+    <xs:annotation>
+      <xs:documentation>A data type which contains all elements related to resource tracking.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="structures:ObjectType">
+        <xs:sequence>
+          <xs:element ref="em:DepartureDateTime" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="em:RouteLocation" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="em:ArrivalDateTime" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="em:ResourceTrackingAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="ResourceType">
+    <xs:annotation>
+      <xs:documentation>A data type which contains all elements related to resource.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="structures:ObjectType">
+        <xs:sequence>
+          <xs:element ref="nc:RoleOfPerson" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:RoleOfItem" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="em:ResourceKeywordValue" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="em:ResourceIdentification" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="em:ResourceName" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="em:ResourceDescriptionText" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="em:ResourceSpecialRequirementsText" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="em:ResourceLocationDetails" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="em:ResourceInformation" minOccurs="0" maxOccurs="1"/>
+          <xs:element ref="em:Credentials" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="em:Certifications" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="em:ResourceKind" minOccurs="0" maxOccurs="1"/>
+          <xs:element ref="em:ResourceAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="ServiceCoverageStatusType">
+    <xs:annotation>
+      <xs:documentation>A data type for elements of service coverage.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="structures:ObjectType">
+        <xs:sequence>
+          <xs:element ref="em:OBGYN" minOccurs="0" maxOccurs="1"/>
+          <xs:element ref="em:BurnServiceCoverageStatusCode" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="em:Psychiatric" minOccurs="0" maxOccurs="1"/>
+          <xs:element ref="em:InfectiousDiseasesServiceCoverageStatusCode" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="em:OrthopedicServiceCoverageStatusCode" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="em:NeurologyServiceCoverageStatusCode" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="em:NeonatologyServiceCoverageStatusCode" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="em:CardiologyServiceCoverageStatusCode" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="em:Surgery" minOccurs="0" maxOccurs="1"/>
+          <xs:element ref="em:ServiceCoverageStatusAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="SubCategoryBedCapacityType">
+    <xs:annotation>
+      <xs:documentation>A data type for the subcategories of each bed type.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="em:CapacityType">
+        <xs:sequence>
+          <xs:element ref="em:SubCategoryBedCategoryText" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="em:SubCategoryBedCapacityAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="SurgeryType">
+    <xs:annotation>
+      <xs:documentation>A data type for the availability of general surgery services.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="structures:ObjectType">
+        <xs:sequence>
+          <xs:element ref="em:HandServiceCoverageStatusCode" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="em:NeurosurgeryServiceCoverageStatusCode" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="em:AnesthesiaServiceCoverageStatusCode" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="em:VascularServiceCoverageStatusCode" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="em:ReimplantationServiceCoverageStatusCode" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="em:CardioThoracicServiceCoverageStatusCode" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="em:FacialServiceCoverageStatusCode" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="em:PediatricsGeneralServiceCoverageStatusCode" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="em:OrthopedicsServiceCoverageStatusCode" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="em:AdultGeneralServiceCoverageStatusCode" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="em:SurgeryGeneralServiceCoverageStatusCode" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="em:SpinalServiceCoverageStatusCode" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="em:SurgeryAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="TriagePatientCountType">
+    <xs:annotation>
+      <xs:documentation>A data type for counts of each kind of triage patient.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="structures:ObjectType">
+        <xs:sequence>
+          <xs:element ref="em:TriageGreenQuantity" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="em:TriageBlackQuantity" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="em:TriageYellowQuantity" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="em:TriageRedQuantity" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="em:TriagePatientCountAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="ValueType">
+    <xs:annotation>
+      <xs:documentation>A data type of values or names from certified lists referenced by the Community of Interest (COI).</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="structures:ObjectType">
+        <xs:sequence>
+          <xs:element ref="em:ValueText" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="em:ValueListURNText" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="em:ValueAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="AdditionalCapacity24HourQuantity" type="nc:QuantityType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A count of the estimate of the beds, above the current number, that could be made vacant/available within 24 hours.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="AdditionalCapacity72HourQuantity" type="nc:QuantityType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A count of the estimate of the beds, above the current number, that could be made vacant/available within 72 hours.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="AdultGeneralServiceCoverageStatusCode" type="have-codes:AvailabilityStatusCodeType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A code denoting the status of the availability of adult general services.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="Alarm" type="em:AlarmType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>An event that begins when an assembly of equipment or a device installed in or for commercial or residential premises, or other property, is triggered to transmit a signal, visibly, audibly, electronically, mechanically, or otherwise, to indicate</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="AlarmAudibleDescriptionCode" type="em:AlarmAudibleDescriptionCodeType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A code indicating whether the alarm is audible or silent.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="AlarmAudibleIndicator" type="niem-xs:boolean" nillable="true">
+    <xs:annotation>
+      <xs:documentation>True if an audible alarm is sounding; false if the alarm is inaudible.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="AlarmAugmentationPoint" abstract="true">
+    <xs:annotation>
+      <xs:documentation>An augmentation point for AlarmType.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="AlarmCallBackTelephoneNumber" type="nc:TelephoneNumberType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A phone number of the monitoring station.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="AlarmCategory" abstract="true">
+    <xs:annotation>
+      <xs:documentation>A data concept for the type of the event which resulted in an alarm.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="AlarmConfirmation" type="em:AlarmConfirmationType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A container for information related to the confirmation of an alarm.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="AlarmConfirmationAugmentationPoint" abstract="true">
+    <xs:annotation>
+      <xs:documentation>An augmentation point for AlarmConfirmationType.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="AlarmConfirmationCallPrivacyBypassPasscodeText" type="nc:TextType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A code that allows the Public Safety Answering Point or monitoring station to bypass any call screening and directly reach the alarm subscriber.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="AlarmConfirmationCallToPremisesIndicator" type="niem-xs:boolean" nillable="true">
+    <xs:annotation>
+      <xs:documentation>True if an agency is to call the premise before arrival; false otherwise.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="AlarmConfirmationCallToPremisesResultsDescriptionText" type="nc:TextType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A description of the results of the actions taken by the alarm company to attempt to reach someone at the premise before notifying the Public Safety Answering Point.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="AlarmConfirmationMethodDescriptionText" type="nc:TextType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A description of  mechanism used to confirm the validity of the alarm. e.g., observed video, live audio, guard verified, call to premises etc. If the alarm is confirmed through a call to the premise, then the details of this call are indicated in the Call to Premise text field</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="AlarmDetailsText" type="nc:TextType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A text describing an alarm event.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="AlarmDispatchActivity" type="nc:ActivityType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A response or activity needed when a dispatch agency is activated in response to an alarm.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="AlarmDispatchAgency" abstract="true">
+    <xs:annotation>
+      <xs:documentation>A data concept for the name of the agency (PSAP:Public Safety Answering Point) being requested to respond to an alarm or responder.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="AlarmDispatchAgencyID" type="niem-xs:string" substitutionGroup="em:AlarmDispatchAgency" nillable="true">
+    <xs:annotation>
+      <xs:documentation>An identifier for the agency (PSAP) being requested to respond to an alarm  (typically a police or fire department or central dispatch point) or responder.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="AlarmDispatchAgencyNameText" type="nc:TextType" substitutionGroup="em:AlarmDispatchAgency" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A name of the agency (PSAP) being requested to respond to an alarm  (typically a police or fire department or central dispatch point) or responder.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="AlarmEvent" type="em:AlarmEventType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>An alarm event.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="AlarmEventAugmentationPoint" abstract="true">
+    <xs:annotation>
+      <xs:documentation>An augmentation point for AlarmEventType.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="AlarmEventCallBackTelephoneNumber" type="nc:TelephoneNumberType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A telephone number of the alarm event requestor.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="AlarmEventCallPrivacyBypassCodeText" type="nc:TextType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A code necessary to access the sites phone system.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="AlarmEventCallToPremisesIndicator" type="niem-xs:boolean" nillable="true">
+    <xs:annotation>
+      <xs:documentation>True if an agency is to call the premise before arrival; false otherwise.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="AlarmEventCategory" abstract="true">
+    <xs:annotation>
+      <xs:documentation>A data concept for a kind of alarm event.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="AlarmEventCategoryCode" type="apco:AlarmEventCategoryCodeType" substitutionGroup="em:AlarmEventCategory" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A kind of alarm event.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="AlarmEventCategoryText" type="nc:TextType" substitutionGroup="em:AlarmEventCategory" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A kind of event which resulted in an alarm</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="AlarmEventDetailsText" type="nc:TextType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A text describing details about the alarm event.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="AlarmEventDispatchAgency" type="nc:OrganizationType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>An agency to which an alarm event is dispatched.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="AlarmEventLocation" type="nc:LocationType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A location of an alarm event.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="AlarmEventLocationCategory" abstract="true">
+    <xs:annotation>
+      <xs:documentation>A data concept for a kind of location at which an alarm event occurs.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="AlarmEventLocationCategoryCode" type="apco:AlarmEventLocationCategoryCodeType" substitutionGroup="em:AlarmEventLocationCategory" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A kind of location at which an alarm event occurs.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="AlarmEventLocationCategoryText" type="nc:TextType" substitutionGroup="em:AlarmEventLocationCategory" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A kind of location at which an alarm event occurs.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="AlarmEventPermit" type="em:PermitType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A permit for the alarm event site.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="AlarmEventRequestorReceiveDate" type="nc:DateType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A date the requestor received the alarm event.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="AlarmEventResponseAction" abstract="true">
+    <xs:annotation>
+      <xs:documentation>A data concept for an action requested of an alarm event responder.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="AlarmEventResponseActionCode" type="apco:AlarmEventResponseActionCodeType" substitutionGroup="em:AlarmEventResponseAction" nillable="true">
+    <xs:annotation>
+      <xs:documentation>An action requested of an alarm event responder.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="AlarmEventResponseActionText" type="nc:TextType" substitutionGroup="em:AlarmEventResponseAction" nillable="true">
+    <xs:annotation>
+      <xs:documentation>An action requested of an alarm event responder.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="AlarmLocation" type="nc:LocationType" substitutionGroup="nc:Location" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A location for an alarm.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="AlarmMonitoringServiceProvider" abstract="true">
+    <xs:annotation>
+      <xs:documentation>A data concept for Organization contacted when an alarm</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="AlarmMonitoringServiceProviderID" type="niem-xs:string" substitutionGroup="em:AlarmMonitoringServiceProvider" nillable="true">
+    <xs:annotation>
+      <xs:documentation>An identifier assigned to Central Station Monitoring Companies.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="AlarmMonitoringServiceProviderNameText" type="nc:TextType" substitutionGroup="em:AlarmMonitoringServiceProvider" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A name of the dispatch requesting agency (typically an alarm central station).</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="AlarmMonitoringServiceProviderReceiveDateTime" type="nc:DateType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A date and time the monitoring station received the event based on the time zone of the site.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="AlarmPermit" type="em:AlarmPermitType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A permit for the alarm site.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="AlarmPermitAugmentationPoint" abstract="true">
+    <xs:annotation>
+      <xs:documentation>An augmentation point for AlarmPermitType.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="AlarmRequestedResponseActionDescriptionText" type="nc:TextType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A description of an action requested of an alarm event responder.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="Alert" type="em:AlertType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A notification of an incident or threat that may require a coordinated response or action. A type of NOTIFICATION.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="AlertAffectedLocation" type="em:AlertAffectedLocationType" substitutionGroup="nc:Location" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A location affected by an alert.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="AlertAffectedLocationAugmentationPoint" abstract="true">
+    <xs:annotation>
+      <xs:documentation>An augmentation point for AlertAffectedLocationType.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="AlertAugmentationPoint" abstract="true">
+    <xs:annotation>
+      <xs:documentation>An augmentation point for AlertType.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="AlertCategoryCode" type="em:AlertCategoryCodeType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A code  value denoting the type of alert message.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="AlertDistributionScopeAudienceDescriptionText" type="nc:TextType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A description of the distribution scope of the audience of the alert message.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="AlertEffectiveDateTime" type="nc:DateType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A time of the information of the alert message.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="AlertEventDetails" type="em:AlertEventDetailsType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A container for all component parts of the info sub-element of the alert message. Multiple occurrences are permitted within a single alert.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="AlertEventDetailsAudienceDescriptionText" type="nc:TextType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A description of the intended audience of the alert message.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="AlertEventDetailsAugmentationPoint" abstract="true">
+    <xs:annotation>
+      <xs:documentation>An augmentation point for AlertEventDetailsType.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="AlertEventDetailsCategory" abstract="true">
+    <xs:annotation>
+      <xs:documentation>A data concept for the category of the subject event of the alert message.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="AlertEventDetailsCategoryCode" type="em:AlertEventDetailsCategoryCodeType" substitutionGroup="em:AlertEventDetailsCategory" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A code denoting the category of the subject event of the alert message.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="AlertEventDetailsCertainty" abstract="true">
+    <xs:annotation>
+      <xs:documentation>A data concept for the certainty of the subject event of the alert message.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="AlertEventDetailsCertaintyCode" type="em:AlertEventDetailsCertaintyCodeType" substitutionGroup="em:AlertEventDetailsCertainty" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A code denoting the certainty of the subject event of the alert message.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="AlertEventDetailsDescriptionText" type="nc:TextType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A description of the incident/event/situation associated with the Alert message.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="AlertEventDetailsHeadlineText" type="nc:TextType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A headline of the alert message. A brief human-readable headline. Note that some displays (for example, short messaging service devices) may only present this headline; it SHOULD be made as direct and actionable as possible while remaining short. 1</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="AlertEventDetailsInstructionsDescriptionText" type="nc:TextType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A description of  recommended action to be taken by recipients of the alert message. An extended human readable instruction to targeted recipients. (If different instructions are intended for different recipients, they should be represented by use of multiple info blocks. See CAP specification for details.)</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="AlertEventDetailsOnsetDateTime" type="nc:DateType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>An expected time of the beginning of the subject event of the alert message.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="AlertEventDetailsResponseRecommendation" abstract="true">
+    <xs:annotation>
+      <xs:documentation>A data concept for the type of action recommended for the target audience.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="AlertEventDetailsResponseRecommendationCode" type="em:AlertEventDetailsResponseRecommendationCodeType" substitutionGroup="em:AlertEventDetailsResponseRecommendation" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A code denoting the type of action recommended for the target audience.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="AlertEventDetailsSeverityCode" type="em:AlertEventDetailsSeverityCodeType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A code denoting the severity of the subject event of the alert message.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="AlertEventDetailsSystemRecordID" type="niem-xs:string" nillable="true">
+    <xs:annotation>
+      <xs:documentation>An identifier for the event type of the alert message.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="AlertEventDetailsUrgency" abstract="true">
+    <xs:annotation>
+      <xs:documentation>A data concept for the urgency of the subject event of the alert message.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="AlertEventDetailsUrgencyCode" type="em:AlertEventDetailsUrgencyCodeType" substitutionGroup="em:AlertEventDetailsUrgency" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A code denoting the urgency of the subject event of the alert message.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="AlertExpirationDateTime" type="nc:DateType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A time of the information of the alert message expiring. If this item is not provided, each recipient is free to set its own policy as to when the message is no longer in effect.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="AlertHandling" abstract="true">
+    <xs:annotation>
+      <xs:documentation>A data concept for the code denoting the special handling of the alert message</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="AlertHandlingID" type="niem-xs:string" substitutionGroup="em:AlertHandling" nillable="true">
+    <xs:annotation>
+      <xs:documentation>An identifier denoting the special handling of the alert message</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="AlertHandlingText" type="nc:TextType" substitutionGroup="em:AlertHandling" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A code denoting the special handling of the alert message.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="AlertHeadlineText" type="nc:TextType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A text headline of the alert message. A brief human-readable headline. Note that some displays (for example, short messaging service devices) may only present this headline; it SHOULD be made as direct and actionable as possible while remaining short. 1</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="AlertIncidentAssociation" type="em:AlertIncidentAssociationType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>An association between the group listing identifying related alert messages and incidents. Used to collate multiple messages referring to different aspects of the same incident.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="AlertIncidentAssociationAugmentationPoint" abstract="true">
+    <xs:annotation>
+      <xs:documentation>An augmentation point for AlertIncidentAssociationType.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="AlertInstructionsDescriptionText" type="nc:TextType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A description of the recommended action to be taken by recipients of the alert message. An extended human readable instruction to targeted recipients. If different instructions are intended for different recipients, they should be represented by use of multiple info blocks.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="AlertReasonText" type="nc:TextType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A text describing the reason the alert message was distributed.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="AlertSupplementaryDigitalResource" type="em:AlertSupplementaryDigitalResourceType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A digital representation of an object.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="AlertSupplementaryDigitalResourceAugmentationPoint" abstract="true">
+    <xs:annotation>
+      <xs:documentation>An augmentation point for AlertSupplementaryDigitalResourceType.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="AnesthesiaServiceCoverageStatusCode" type="have-codes:AvailabilityStatusCodeType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A status of the availability of anesthesia services.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="ArrivalDateTime" type="niem-xs:dateTime" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A date that a resource arrived at the route location.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="ArrivalLocation" type="nc:LocationType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A textual description of the location where the specified resource has arrived at dateTime of the resource message when transported to or from an Incident.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="AvailabilityText" type="nc:TextType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A text or code indicating availability of an item</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="AvailableQuantity" type="nc:QuantityType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A count of the vacant/available beds to which patients can be immediately transported.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="BaselineQuantity" type="nc:QuantityType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A count of the maximum (baseline) number of beds in this category</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="BedCapacity" type="em:BedCapacityType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A number of available beds.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="BedCapacityAugmentationPoint" abstract="true">
+    <xs:annotation>
+      <xs:documentation>An augmentation point for BedCapacityType.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="BedCategoryCode" type="have-codes:BedCategoryCodeType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A list of available Bed Types.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="BinaryChecksumDigestID" type="niem-xs:string" nillable="true">
+    <xs:annotation>
+      <xs:documentation>An identifier representing the digital digest ('hash') computed from the resource file.  Calculated using the Secure Hash Algorithm (SHA-1) per [FIPS 180-2].</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="BurnServiceCoverageStatusCode" type="have-codes:AvailabilityStatusCodeType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A status describing of the availability of burn center services.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="Capacity" type="em:CapacityType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A container element to define the capacity information of each specified bed kind or sub category bed kind.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="CapacityAugmentationPoint" abstract="true">
+    <xs:annotation>
+      <xs:documentation>An augmentation point for CapacityType.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="CapacityStatusCode" type="have-codes:CapacityStatusCodeType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A status describing bed kind or sub-category bed kind.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="CardioThoracicServiceCoverageStatusCode" type="have-codes:AvailabilityStatusCodeType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A status describing the availability of cardiothoracic surgical services.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="CardiologyServiceCoverageStatusCode" type="have-codes:AvailabilityStatusCodeType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A status describing the availability of cardiology services.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="CategoryInformation" type="em:ValueType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A resource kind as defined by either a Keyword structure or a validatable schema</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="CategoryStructure" type="em:ValueType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A Uniform Resource Name of a certified list maintained by the Community of Interest (COI) for the value referenced.  Facilitates link to ARMS structured managed list</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="CeilingMeasure" type="nc:MeasureType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A maximum altitude of the affected area of the alert message (conditional).</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="Certifications" type="em:ValueType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A value from a discrete managed list, used to specify resource certifications.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="ClinicalOperationsCode" type="have-codes:AvailabilityStatusCodeType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A status of supplies necessary for clinical operations.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="ClinicalStatusCode" type="have-codes:ClinicalStatusCodeType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A indicator describing the clinical status of the facility.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="ClinicalStatusCommentText" type="nc:TextType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A comment describing clinical status</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="ContactInformationAugmentation" type="em:ContactInformationAugmentationType" substitutionGroup="nc:ContactInformationAugmentationPoint" nillable="true">
+    <xs:annotation>
+      <xs:documentation>Additional information about contact information.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="ContactRoleCode" type="em:ContactRoleCodeType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A role of the emergency management contact.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="Credentials" type="em:ValueType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A value from a discrete managed list, used to specify resource credentials.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="DeclineReasonCode" type="edxl_rm:ResponseCodeType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A explanation for a declined Request, Response, Unsolicited Offer, or a Request Return.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="DeconCapacityCode" type="have-codes:DeconCapacityCodeType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A capacity for chemical/biological/radiological patient decontamination.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="DeconCapacityCommentText" type="nc:TextType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A comment describing decontamination capacity</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="DepartureDateTime" type="niem-xs:dateTime" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A date the resource departs the route location.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="EMSCapacity" type="em:TriagePatientCountType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A number detailing each triage patient kind the hospital can accept.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="EMSCensus" type="em:TriagePatientCountType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A number detailing each triage patient kind the overall hospital currently has.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="EMSOffloadAirTransportCapability" type="em:EMSOffloadCapabilityType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A container element to indicate the status and offload time for air transport capabilities.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="EMSOffloadAmbulanceCapability" type="em:EMSOffloadCapabilityType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A container element to indicate the status and offload time for ambulance capabilities.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="EMSOffloadCapabilityAugmentationPoint" abstract="true">
+    <xs:annotation>
+      <xs:documentation>An augmentation point for EMSOffloadCapabilityType.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="EMSOffloadMinutesQuantity" type="nc:QuantityType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A count of the average offload time in minutes.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="EMSOffloadStatusCode" type="have-codes:EMSOffloadStatusCodeType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A status describing offload times of ambulance capabilities.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="EMSTraffic" type="em:EMSTrafficType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A container of all of the elements related to the status of operations of EMS traffic.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="EMSTrafficAugmentationPoint" abstract="true">
+    <xs:annotation>
+      <xs:documentation>An augmentation point for EMSTrafficType.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="EMSTrafficReasonText" type="nc:TextType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A report the contributing factor to an EMSTraffic Status.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="EMSTrafficStatusCode" type="have-codes:EMSTrafficStatusCodeType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A status describing EMS traffic operations.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="EOCPlanCode" type="have-codes:EOCPlanCodeType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A code indicating whether the hospital has activated its Emergency Operations Plan (EOP)</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="EOCPlanCommentText" type="nc:TextType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A EOC Plan comment</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="EOCStatusCode" type="have-codes:EOCStatusCodeType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A status describing Whether the Emergency Operations Center (EOC) is currently operating.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="EOCStatusCommentText" type="nc:TextType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A textual comment about the EOC Status</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="EmergencyDepartmentStatus" type="em:EmergencyDepartmentStatusType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A status of an emergency department.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="EmergencyDepartmentStatusAugmentationPoint" abstract="true">
+    <xs:annotation>
+      <xs:documentation>An augmentation point for EmergencyDepartmentStatusType.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="ExplicitAddress" type="em:ExplicitAddressType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>An identifier of an explicit recipient.  Identifies human parties, systems, services, or devices that are all potential recipients of the distribution message.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="ExplicitAddressAugmentationPoint" abstract="true">
+    <xs:annotation>
+      <xs:documentation>An augmentation point for ExplicitAddressType.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="ExplicitAddressSchemeText" type="nc:TextType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A distribution addressing scheme used.   MUST be a properly formed -escaped if necessary- XML string.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="ExplicitAddressValueText" type="nc:TextType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A properly formed -escaped if necessary- XML string denoting the addressees value</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="FacialServiceCoverageStatusCode" type="have-codes:AvailabilityStatusCodeType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A status describing availability of facial surgical services.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="FacilityOperationsCode" type="have-codes:AvailabilityStatusCodeType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A status of supplies necessary for facility operations</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="FacilityStatusCode" type="have-codes:FacilityStatusCodeType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A code describing the facility status.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="FacilityStatusCommentText" type="nc:TextType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A textual comment(s) about the Facility status.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="FundingInformationText" type="nc:TextType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A descriptive text that provides additional information on the funds that will pay for the resource.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="HandServiceCoverageStatusCode" type="have-codes:AvailabilityStatusCodeType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A status code that describies the availability of hand surgery services.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="HomeDispatch" type="nc:OrganizationType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A organization (home dispatch) the resource is assigned to</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="HomeUnit" type="nc:OrganizationType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A organization (Home Unit) the resource is assigned to</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="Hospital" type="em:HospitalType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A name for the container element for reporting status of a hospital.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="HospitalAugmentationPoint" abstract="true">
+    <xs:annotation>
+      <xs:documentation>An augmentation point for HospitalType.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="HospitalBedCapacityStatus" type="em:HospitalBedCapacityStatusType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A status of capacity related to hospital beds.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="HospitalBedCapacityStatusAugmentationPoint" abstract="true">
+    <xs:annotation>
+      <xs:documentation>An augmentation point for HospitalBedCapacityStatusType.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="HospitalFacilityStatus" type="em:HospitalFacilityStatusType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A detailed status of the facility.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="HospitalFacilityStatusAugmentationPoint" abstract="true">
+    <xs:annotation>
+      <xs:documentation>An augmentation point for HospitalFacilityStatusType.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="HospitalResourcesStatus" type="em:HospitalResourcesStatusType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A detailed status of the operations of the facility.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="HospitalResourcesStatusAugmentationPoint" abstract="true">
+    <xs:annotation>
+      <xs:documentation>An augmentation point for HospitalResourcesStatusType.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="HospitalStatus" type="em:HospitalStatusType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A reporting status of any number of hospitals.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="HospitalStatusAugmentationPoint" abstract="true">
+    <xs:annotation>
+      <xs:documentation>An augmentation point for HospitalStatusType.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="InfectiousDiseasesServiceCoverageStatusCode" type="have-codes:AvailabilityStatusCodeType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A status code describing the availability of infectious diseases services.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="InventoryRefreshDateTime" type="niem-xs:dateTime" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A date that resource inventory counts were last updated</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="LaborDeliveryServiceCoverageStatusCode" type="have-codes:AvailabilityStatusCodeType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A status code decribing the Sub-type element of the OBGYN services.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="LocationAugmentation" type="em:LocationAugmentationType" substitutionGroup="nc:LocationAugmentationPoint" nillable="true">
+    <xs:annotation>
+      <xs:documentation>Additional information about the location of the alarm.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="LocationInformationText" type="nc:TextType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A textual details about a location.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="MessageContentCategoryCode" type="edxl_rm:ContentCategoryCodeType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A kind of resource content / payload being sent</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="MessageRequestIdentification" type="nc:IdentificationType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>An identification Request Number that uniquely identifies each resource message. The EDXL Distribution Element contains the Distribution ID, which identifies the container for the distribution message information.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="MessageSentDateTime" type="niem-xs:dateTime" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A date used by the system for the stamped date the resource message was sent.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="MorgueCapacityCode" type="have-codes:MorgueCapacityCodeType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A code indicating the status of the morgue capacity.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="MorgueCapacityCommentText" type="nc:TextType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A textual note about Morgue Capacity</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="NavigationInstructionsText" type="nc:TextType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A set of instructions that define how to get to the report to location</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="NeonatologyServiceCoverageStatusCode" type="have-codes:AvailabilityStatusCodeType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A status description of the availability of neonatology services.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="NeurologyServiceCoverageStatusCode" type="have-codes:AvailabilityStatusCodeType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A status description of the availability of neurology services.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="NeurosurgeryServiceCoverageStatusCode" type="have-codes:AvailabilityStatusCodeType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A status description of the availability of Neurosurgery services.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="Notification" type="em:NotificationType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A written or printed notice or announcement intended to inform a specific audience of a message. A notification may only contain one message.
+
+</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="NotificationAugmentationPoint" abstract="true">
+    <xs:annotation>
+      <xs:documentation>An augmentation point for NotificationType.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="NotificationConfidentialityText" type="nc:TextType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A textual details about the confidentiality of a notification.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="NotificationDetails" type="em:NotificationDetailsType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A name for the container for all human-readable text describing a notification.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="NotificationDetailsAugmentationPoint" abstract="true">
+    <xs:annotation>
+      <xs:documentation>An augmentation point for NotificationDetailsType.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="NotificationDetailsDocument" type="nc:DocumentType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A text describing the notification.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="NotificationDetailsIncidentDescriptionText" type="nc:TextType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A description of the incident which triggered the notification message to be distributed.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="NotificationDetailsIncidentID" type="niem-xs:string" nillable="true">
+    <xs:annotation>
+      <xs:documentation>An identifier for the group listing naming the referent incident(s) of the alert message. Used to collate multiple messages referring to different aspects of the same incident</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="NotificationDetailsKeywordText" type="nc:TextType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A significant word or phrase that describes the notification message. It may determine message routing decisions. Examples of things keyword might be used to describe include event type, event etiology, incident ID and response type.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="NotificationDistributionScope" type="em:NotificationDistributionScopeType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A set of details about the intended level of distribution of the notification message.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="NotificationDistributionScopeAugmentationPoint" abstract="true">
+    <xs:annotation>
+      <xs:documentation>An augmentation point for NotificationDistributionScopeType.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="NotificationDistributionScopeCategoryCode" type="em:NotificationDistributionScopeCategoryCodeType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A category code denoting the intended level of distribution of the notification message.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="NotificationFunctionCategoryCode" type="em:NotificationFunctionCategoryCodeType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A code  value denoting the nature of the notification message.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="NotificationID" type="niem-xs:string" nillable="true">
+    <xs:annotation>
+      <xs:documentation>An identifier of the alert message. A number or string uniquely identifying this message, assigned by the sender.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="NotificationIncidentAssociation" type="em:NotificationIncidentAssociationType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>An association between the group listing naming the referent incident(s) of the alert message. Used to collate multiple messages referring to different aspects of the same incident.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="NotificationIncidentAssociationAugmentationPoint" abstract="true">
+    <xs:annotation>
+      <xs:documentation>An augmentation point for NotificationIncidentAssociationType.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="NotificationKeywordText" type="nc:TextType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A significant word or phrase related to the notification message. It may determine message routing decisions. </xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="NotificationLanguageCode" type="iso_639-3:LanguageCodeType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A code denoting the primary language used in the payload or body of the notification message.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="NotificationOriginationDateTime" type="nc:DateType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A date and time for the origination of a notification.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="NotificationOriginator" abstract="true">
+    <xs:annotation>
+      <xs:documentation>A data concept for Unique organization, unit, or individual that is the originator of the notification.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="NotificationOriginatorContactEmailID" type="niem-xs:string" substitutionGroup="em:NotificationOriginator" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A unique email identifier of the sender. Uniquely identifies human parties, systems, services, or devices that are all potential senders of the distribution message in the form actor@domain-name. Uniqueness of the domain-name is guaranteed through use o</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="NotificationOriginatorIdentification" type="nc:IdentificationType" substitutionGroup="em:NotificationOriginator" nillable="true">
+    <xs:annotation>
+      <xs:documentation>An identification for the sender of the alert message. Guaranteed by assigner to be unique globally; e.g., may be based on an Internet domain name.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="NotificationOriginatorNameText" type="nc:TextType" substitutionGroup="em:NotificationOriginator" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A text naming the originator of the alert message. This may be the name of an individual or an organization. This is the human-readable name of the agency or authority issuing this notification.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="NotificationOriginatorRoleDescriptionText" type="nc:TextType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A description of the message originator's role, as it may determine message distribution and presentation decisions. The list and associated value(s) is derived from the Uniform Resource Name of a published list of values and definitions, and the content is a string (which may represent a number) denoting the value itself.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="NotificationOriginatorRoleIdentification" type="nc:IdentificationType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>An identification of the message originator's role, as it may determine message distribution and presentation decisions. The list and associated value(s) is derived from the Uniform Resource Name of a published list of values and definitions, and the content</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="NotificationRecipient" abstract="true">
+    <xs:annotation>
+      <xs:documentation>A data concept for Organization, unit, or individual that is the recipient of the notification.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="NotificationRecipientContactEmailID" type="niem-xs:string" substitutionGroup="em:NotificationRecipient" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A unique email identifier of the recipient. Uniquely identifies human parties, systems, services, or devices that are all potential recipients of the distribution message in the form actor@domain-name. Uniqueness of the domain-name is guaranteed through</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="NotificationRecipientIdentification" type="nc:IdentificationType" substitutionGroup="em:NotificationRecipient" nillable="true">
+    <xs:annotation>
+      <xs:documentation>An identification for the recipient of the notification message, as it may determine message distribution and presentation decisions.  The list and associated value(s) is derived from the Uniform Resource Name of a published list of values and definitions, a</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="NotificationRecipientNameText" type="nc:TextType" substitutionGroup="em:NotificationRecipient" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A name text for the recipient of the notification message. This may be the name of an individual or an organization. It may determine message distribution and presentation decisions.  The list and associated value(s) is derived from the Uniform Resource</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="NotificationRecipientRoleDescriptionText" type="nc:TextType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A description of the role of the recipient of the notification message. It may determine message distribution and presentation decisions. The list and associated value(s) is derived from the Uniform Resource Name of a published list of values and definitions, and the content is a string (which may represent a number) denoting the value itself.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="NotificationRecipientRoleIdentification" type="nc:IdentificationType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>An identification for the recipient of the notification message. It may determine message distribution and presentation decisions.  The list and associated value(s) is derived from the Uniform Resource Name of a published list of values and definitions,</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="NotificationSource" abstract="true">
+    <xs:annotation>
+      <xs:documentation>A data concept for the specific source of this alert; e.g., an operator or a specific device.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="NotificationSourceID" type="niem-xs:string" substitutionGroup="em:NotificationSource" nillable="true">
+    <xs:annotation>
+      <xs:documentation>An identifier for the particular source of this alert; e.g., an operator or a specific device.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="NotificationSourceNameText" type="nc:TextType" substitutionGroup="em:NotificationSource" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A name, in text, of particular source of this alert; e.g., an operator or a specific device.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="NotificationStatus" type="em:NotificationStatusType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A status of the appropriate handling of the notification message; identifies if the notification is an actual event, test, exercise or internal system function.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="NotificationStatusAugmentationPoint" abstract="true">
+    <xs:annotation>
+      <xs:documentation>An augmentation point for NotificationStatusType.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="NotificationStatusCode" type="em:NotificationStatusCodeType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A status code detailing the actionability of the message.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="NotificationTargetLocation" type="em:NotificationTargetLocationType" substitutionGroup="nc:Location" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A notification target location.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="NotificationTargetLocationAugmentationPoint" abstract="true">
+    <xs:annotation>
+      <xs:documentation>An augmentation point for NotificationTargetLocationType.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="OBGYN" type="em:OBGYNType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A name for the container that describes the availability of OBGYN services.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="OBGYNAugmentationPoint" abstract="true">
+    <xs:annotation>
+      <xs:documentation>An augmentation point for OBGYNType.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="OBGYNGeneralServiceCoverageStatusCode" type="have-codes:AvailabilityStatusCodeType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A status describing OBGYN general service coverage.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="OBGYNServiceCoverageStatusCode" type="have-codes:AvailabilityStatusCodeType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A status describing a Sub-type element of the OBGYN services.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="OrganizationIDProviderName" type="nc:TextType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A name of the provider that has provided the identification scheme. This could also be the name a particular identification list.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="OriginatingMessageIdentification" type="nc:IdentificationType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>An identification that uniquely identifies each resource message. This element identifies the ResourceMessageID of the original message to which this message refers. This Message ID is an EDXL-RM Message ID, not an EDXL-DE</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="OrthopedicServiceCoverageStatusCode" type="have-codes:AvailabilityStatusCodeType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A coverage status describing the availability of orthopedic services.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="OrthopedicsServiceCoverageStatusCode" type="have-codes:AvailabilityStatusCodeType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A coverage status for the availability of Orthopedic surgical services.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="Owner" type="nc:OrganizationType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>An organization with a specific range of authority for specified resource(s)</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="OwnerInformation" type="em:OwnerInformationType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>An indicator of ownership that can be a: role, person, organizational unit, Department, or Entity name to define ownership.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="OwnerInformationAugmentationPoint" abstract="true">
+    <xs:annotation>
+      <xs:documentation>An augmentation point for OwnerInformationType.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="PediatricServiceCoverageStatusCode" type="have-codes:AvailabilityStatusCodeType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A status describing the elements of psychiatric services.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="PediatricsGeneralServiceCoverageStatusCode" type="have-codes:AvailabilityStatusCodeType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A coverage status for the availability of Pediatrics general surgical services.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="Permit" type="em:PermitType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A permit.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="PermitAugmentationPoint" abstract="true">
+    <xs:annotation>
+      <xs:documentation>An augmentation point for PermitType.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="PermitCategoryText" type="nc:TextType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A kind of permit. In conjunction with the permit number, this indicates the type of alarm (e.g. fire, burglary).</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="PermitIdentification" type="nc:IdentificationType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A alarm permit number identification for the site.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="Psychiatric" type="em:PsychiatricType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A name for the availability of psychiatric services.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="PsychiatricAugmentationPoint" abstract="true">
+    <xs:annotation>
+      <xs:documentation>An augmentation point for PsychiatricType.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="PsychiatricGeneralServiceCoverageStatusCode" type="have-codes:AvailabilityStatusCodeType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A status describing Psychiatric general service coverage.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="ReimplantationServiceCoverageStatusCode" type="have-codes:AvailabilityStatusCodeType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A status describing the availability of reimplantation surgical services.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="ReportingInstructionsText" type="nc:TextType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A name of the party that the requested item is to report to when they arrive at the incident.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="RequestAcceptDeclineCode" type="edxl_rm:ResponseCodeType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A code used to accept or decline a Request, Response, Unsolicited Offer, or a Request Return.  Decline indicates the request, response or offer is not accepted.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="RequestResponse" type="em:RequestResponseType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A name for the response message container specific to: Resource, Resource Message, ResourceMessageType and this response can be an acceptance , declination or a return request pertaining to a specific message.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="RequestResponseAugmentationPoint" abstract="true">
+    <xs:annotation>
+      <xs:documentation>An augmentation point for RequestResponseType.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="Resource" type="em:ResourceType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A name for the container that contains one or more defining attributes and any value from a discrete managed list that references the resource.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="ResourceActualArrivalDateTime" type="niem-xs:dateTime" nillable="true">
+    <xs:annotation>
+      <xs:documentation>An actual date of arrival of the resource a Report To Location.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="ResourceActualDepartureDateTime" type="niem-xs:dateTime" nillable="true">
+    <xs:annotation>
+      <xs:documentation>An actual date when the resource departs from its current location for transit to a Report To Location.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="ResourceAnticipatedIncidentAssignmentText" type="nc:TextType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A text detailing anticipated function, task, job, or role to be provided by the requested resource.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="ResourceAnticipatedReturnDateTime" type="niem-xs:dateTime" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A date when the resource is expected to be returned or DEMOBed.  Completed for a Request Resource.  This element with the Requested Arrival Date / Time provides the estimated duration of resource deployment.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="ResourceAugmentationPoint" abstract="true">
+    <xs:annotation>
+      <xs:documentation>An augmentation point for ResourceType.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="ResourceAvailableDate" type="nc:DateType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A date when the resource is available for use.  Completed in response to a resource message.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="ResourceCommittedDate" type="nc:DateType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A date when specified resource is committed to a request or order.  Completed in response to a resource message.  Specified resource is no longer available to be applied to other resource requests</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="ResourceCurrentLocation" type="nc:LocationType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A location where the specified resource is physically located at the time of the request.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="ResourceDepartureLocation" type="nc:LocationType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A location where the specified resource is departing from when transported to or from an Incident.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="ResourceDescriptionText" type="nc:TextType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A description of  Resource Keyword (or may be used in addition). Any description of resource or resource characteristics, situation requiring resource assistance, statement of mission resource must satisfy, or RFI text.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="ResourceDispositionKeywordValue" type="em:ValueType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A value from a discrete managed list, used to specify the general state of a resource if known.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="ResourceEstimatedArrivalDateTime" type="niem-xs:dateTime" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A date when the resource is expected to arrive at its Report To Location.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="ResourceEstimatedDepartureDateTime" type="niem-xs:dateTime" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A date when the resource is expected to depart from its current location for transit to a Report-to Location</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="ResourceFundCodeText" type="nc:TextType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A code for the funds that will pay for the resource - Identified in support of NIMS Resource Management Guide NIC-GDL0004</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="ResourceIdentification" type="nc:IdentificationType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>An identification for the resource / resource description during the entire trail of messages about that resource.  May be selected via the ResourceKeyword if available.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="ResourceInformation" type="em:ResourceInformationType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A name for the container that provides further definition regarding the resource(s) identified in the message and as such may contain a discrete list , numerical value(s), ID or textual descriptions of resources.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="ResourceInformationAugmentationPoint" abstract="true">
+    <xs:annotation>
+      <xs:documentation>An augmentation point for ResourceInformationType.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="ResourceJurisdictionText" type="nc:TextType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A geopolitical area in which an organization, person, or object has a specific range of authority for specified resources</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="ResourceKeywordValue" type="em:ValueType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A value from a discrete managed list, used to specify a resource.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="ResourceKind" type="em:ResourceKindType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A definition or description of a Resource.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="ResourceKindAugmentationPoint" abstract="true">
+    <xs:annotation>
+      <xs:documentation>An augmentation point for ResourceKindType.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="ResourceLocationDetails" type="em:ResourceLocationDetailsType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A name for the container that can include textual descriptions, physical location of resource, departure location of Resource, location need for Resource and/or for tracking.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="ResourceLocationDetailsAugmentationPoint" abstract="true">
+    <xs:annotation>
+      <xs:documentation>An augmentation point for ResourceLocationDetailsType.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="ResourceMessageAugmentationPoint" abstract="true">
+    <xs:annotation>
+      <xs:documentation>An augmentation point for ResourceMessageType.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="ResourceMessageStatusKeywordValue" type="em:ValueType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A description or Code used to identify the message status of a resource message.   Any value from a discrete managed list, used to specify a Request Status.  The content of valueListUrn is the Uniform Resource Name of a published list of values and definiti</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="ResourceModeOfTransportationText" type="nc:TextType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A text describing the method or mode used to transport the resource to or from the incident.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="ResourceName" type="nc:TextType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A name or title of the resource.  May be selected via the ResourceKeyword if available.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="ResourceOrderIdentification" type="nc:IdentificationType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>An identification number or ID assigned by the ordering system or personnel meeting the request for resources that has been made.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="ResourcePriceQuoteAmount" type="nc:AmountType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A Quoted cost to acquire a desired resource.  Complete in response to a Request Resource Quote</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="ResourceQuantity" type="niem-xs:nonNegativeInteger" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A count of the Number of resources</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="ResourceReportToLocation" type="nc:LocationType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A location where the requested resource is to report-to, or checks in at the destination.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="ResourceRequestedArrivalDateTime" type="niem-xs:dateTime" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A date when the resource is needed.  Completed for Resource requests, returns, etc.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="ResourceRequestedLocation" type="nc:LocationType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A location where the requested resource is needed.  Completed for Resource requests, returns, etc.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="ResourceRestrictionsText" type="nc:TextType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A description of a condition governing the availability of resources.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="ResourceSchedule" type="em:ResourceScheduleType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A name for the container with schedule information specific to arrivals, departures, availability, committed date, etc.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="ResourceScheduleAugmentationPoint" abstract="true">
+    <xs:annotation>
+      <xs:documentation>An augmentation point for ResourceScheduleType.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="ResourceSpecialRequirementsText" type="nc:TextType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A description of any special needs related to the requested resource.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="ResourceStatusKeywordValue" type="em:ValueType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A value from a discrete managed list, used to specify the general state of a resource if known.  where the content of valueListUrn is the Uniform Resource Name of a published list of values and definitions, and the content of value is a string denoting</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="ResourceTracking" type="em:ResourceTrackingType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A name for the container that provides Information that can indicate arrival , departure and locations of a resource pertaining to a route.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="ResourceTrackingAugmentationPoint" abstract="true">
+    <xs:annotation>
+      <xs:documentation>An augmentation point for ResourceTrackingType.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="ResponseCode" type="edxl_rm:ResponseCodeType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A code used to accept or decline a Request, Response, Unsolicited Offer, or a Request Return.  Decline indicates the request, response or offer is not accepted.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="ResponseReasonCode" type="edxl_rm:ResponseCodeType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A code for an explanation for a declined Request, Response, Unsolicited Offer, or a Request Return.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="RouteLocation" type="nc:LocationType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A location along the delivery route for a resource.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="SecurityStatusCode" type="have-codes:SecurityStatusCodeType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A code for the status of security procedures in the hospital.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="SecurityStatusCommentText" type="nc:TextType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A textual note providing addition details about Security status</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="ServiceCoverageStatus" type="em:ServiceCoverageStatusType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A status of service coverage.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="ServiceCoverageStatusAugmentationPoint" abstract="true">
+    <xs:annotation>
+      <xs:documentation>An augmentation point for ServiceCoverageStatusType.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="SpinalServiceCoverageStatusCode" type="have-codes:AvailabilityStatusCodeType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A status indicating the availability of spinal surgical services.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="StaffingCode" type="have-codes:AvailabilityStatusCodeType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A status indicating the staffing levels at the hospital.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="SubCategoryBedCapacity" type="em:SubCategoryBedCapacityType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A name for the container element for the subcategories of each bed type.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="SubCategoryBedCapacityAugmentationPoint" abstract="true">
+    <xs:annotation>
+      <xs:documentation>An augmentation point for SubCategoryBedCapacityType.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="SubCategoryBedCategoryText" type="nc:TextType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A kind of  sub-category bed type</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="Surgery" type="em:SurgeryType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A name for the container providing availability of general surgery services.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="SurgeryAugmentationPoint" abstract="true">
+    <xs:annotation>
+      <xs:documentation>An augmentation point for SurgeryType.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="SurgeryGeneralServiceCoverageStatusCode" type="have-codes:AvailabilityStatusCodeType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A status indicating the availability of  general surgery  services coverage.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="TriageBlackQuantity" type="nc:QuantityType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A count of the Number of deceased victims</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="TriageGreenQuantity" type="nc:QuantityType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A count of the Number of victims with minor needs</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="TriagePatientCountAugmentationPoint" abstract="true">
+    <xs:annotation>
+      <xs:documentation>An augmentation point for TriagePatientCountType.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="TriageRedQuantity" type="nc:QuantityType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A count of the Number of victims with immediate needs.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="TriageYellowQuantity" type="nc:QuantityType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A count of the Number of victims with delayed needs</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="Value" type="em:ValueType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A name for the container with a value list URN and value pair.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="ValueAugmentationPoint" abstract="true">
+    <xs:annotation>
+      <xs:documentation>An augmentation point for ValueType.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="ValueListURNText" type="nc:TextType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A name of the certified list maintained by the Community of Interest (COI) for the value referenced.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="ValueText" type="nc:TextType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A Value from a certified list maintained by the Community of Interest (COI) for the referenced element.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="VascularServiceCoverageStatusCode" type="have-codes:AvailabilityStatusCodeType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A status indicating the availability of vascular surgical services.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+</xs:schema>

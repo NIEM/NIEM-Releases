@@ -1,0 +1,638 @@
+<?xml version="1.0" encoding="US-ASCII"?>
+<xs:schema targetNamespace="http://release.niem.gov/niem/domains/humanServices/3.1/" version="1" xsi:schemaLocation="http://release.niem.gov/niem/appinfo/3.0/ ../../../appinfo/3.0/appinfo.xsd http://release.niem.gov/niem/conformanceTargets/3.0/ ../../../conformanceTargets/3.0/conformanceTargets.xsd http://release.niem.gov/niem/localTerminology/3.0/ ../../../localTerminology/3.0/localTerminology.xsd" ct:conformanceTargets="http://reference.niem.gov/niem/specification/naming-and-design-rules/3.0/#ReferenceSchemaDocument" xmlns:hs="http://release.niem.gov/niem/domains/humanServices/3.1/" xmlns:niem-xs="http://release.niem.gov/niem/proxy/xsd/3.0/" xmlns:ct="http://release.niem.gov/niem/conformanceTargets/3.0/" xmlns:term="http://release.niem.gov/niem/localTerminology/3.0/" xmlns:structures="http://release.niem.gov/niem/structures/3.0/" xmlns:appinfo="http://release.niem.gov/niem/appinfo/3.0/" xmlns:nc="http://release.niem.gov/niem/niem-core/3.0/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:annotation>
+    <xs:documentation>Human Services</xs:documentation>
+    <xs:appinfo>
+      <term:LocalTerm term="Comp" literal="Compensation"/>
+      <term:LocalTerm term="EBT" literal="Electronic Benefit Transfer"/>
+      <term:LocalTerm term="FS" literal="Food Stamps"/>
+      <term:LocalTerm term="PARIS" literal="Public Assistance Reporting Information System"/>
+      <term:LocalTerm term="SSA" literal="Social Security Administration"/>
+      <term:LocalTerm term="SSI" literal="Supplemental Security Income"/>
+      <term:LocalTerm term="SSN" literal="Social Security Number"/>
+      <term:LocalTerm term="TANF" literal="Temporary Assistance to Needy Families"/>
+      <term:LocalTerm term="VA" literal="Veterans Affairs"/>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:import schemaLocation="../../../niem-core/3.0/niem-core.xsd" namespace="http://release.niem.gov/niem/niem-core/3.0/"/>
+  <xs:import schemaLocation="../../../structures/3.0/structures.xsd" namespace="http://release.niem.gov/niem/structures/3.0/"/>
+  <xs:import schemaLocation="../../../proxy/xsd/3.0/xs.xsd" namespace="http://release.niem.gov/niem/proxy/xsd/3.0/"/>
+  <xs:complexType name="CaseAugmentationType">
+    <xs:annotation>
+      <xs:documentation>A data type for additional information about a case.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="structures:AugmentationType">
+        <xs:sequence>
+          <xs:element ref="hs:AgencyCaseNumberID" minOccurs="1" maxOccurs="1"/>
+          <xs:element ref="hs:TANFMonthsEligibilityQuantity" minOccurs="1" maxOccurs="1"/>
+          <xs:element ref="hs:CashLastPaidAmount" minOccurs="1" maxOccurs="1"/>
+          <xs:element ref="hs:FoodStampsLastPaidAmount" minOccurs="1" maxOccurs="1"/>
+          <xs:element ref="hs:LastEBTAccessDate" minOccurs="1" maxOccurs="1"/>
+          <xs:element ref="hs:FillerDescriptionText" minOccurs="1" maxOccurs="1"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:simpleType name="ChildCareIndicatorCodeSimpleType">
+    <xs:annotation>
+      <xs:documentation>A data type for a role of the person of record involved in child care - the child receiving assistance, the parent receiving assistance, or the child care provider.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="C">
+        <xs:annotation>
+          <xs:documentation>Record is for Child Receiving Child Assistance</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="P">
+        <xs:annotation>
+          <xs:documentation>Record is for Parent Receiving Child Care Assistance</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="R">
+        <xs:annotation>
+          <xs:documentation>Record is for a Child Care Provider</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="ChildCareIndicatorCodeType">
+    <xs:annotation>
+      <xs:documentation>A data type for a role of the person of record involved in child care - the child receiving assistance, the parent receiving assistance, or the child care provider.</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="hs:ChildCareIndicatorCodeSimpleType">
+        <xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="ChildCareType">
+    <xs:annotation>
+      <xs:documentation>A data type for a set of information about child care program or assistance.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="structures:ObjectType">
+        <xs:sequence>
+          <xs:element ref="nc:StartDate" minOccurs="1" maxOccurs="1"/>
+          <xs:element ref="nc:EndDate" minOccurs="1" maxOccurs="1"/>
+          <xs:element ref="hs:ChildCareAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="ContactInformationAugmentationType">
+    <xs:annotation>
+      <xs:documentation>A data type for additional information about contact information.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="structures:AugmentationType">
+        <xs:sequence>
+          <xs:element ref="hs:PhoneContactSupportIndicator" minOccurs="1" maxOccurs="1"/>
+          <xs:element ref="hs:FaxContactSupportIndicator" minOccurs="1" maxOccurs="1"/>
+          <xs:element ref="hs:EmailContactSupportIndicator" minOccurs="1" maxOccurs="1"/>
+          <xs:element ref="hs:MedicalAssistanceContactPersonInformationDescriptionText" minOccurs="1" maxOccurs="1"/>
+          <xs:element ref="hs:FillerDescriptionText" minOccurs="1" maxOccurs="1"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="EligibilityType">
+    <xs:annotation>
+      <xs:documentation>A data type for a set of programs for which a person may be considered for eligibility.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="structures:ObjectType">
+        <xs:sequence>
+          <xs:element ref="hs:TANFIndicator" minOccurs="1" maxOccurs="1"/>
+          <xs:element ref="hs:GeneralAssistanceIndicator" minOccurs="1" maxOccurs="1"/>
+          <xs:element ref="hs:FoodStampIndicator" minOccurs="1" maxOccurs="1"/>
+          <xs:element ref="hs:SSIIndicator" minOccurs="1" maxOccurs="1"/>
+          <xs:element ref="hs:MedicaidIndicator" minOccurs="1" maxOccurs="1"/>
+          <xs:element ref="hs:ChildCareIndicatorCode" minOccurs="1" maxOccurs="1"/>
+          <xs:element ref="hs:WorkersCompIndicator" minOccurs="1" maxOccurs="1"/>
+          <xs:element ref="hs:FillerDescriptionText" minOccurs="1" maxOccurs="1"/>
+          <xs:element ref="hs:FoodStamps" minOccurs="1" maxOccurs="1"/>
+          <xs:element ref="hs:TANF" minOccurs="1" maxOccurs="1"/>
+          <xs:element ref="hs:Medicaid" minOccurs="1" maxOccurs="1"/>
+          <xs:element ref="hs:SSI" minOccurs="1" maxOccurs="1"/>
+          <xs:element ref="hs:GeneralAssistance" minOccurs="1" maxOccurs="1"/>
+          <xs:element ref="hs:ChildCare" minOccurs="1" maxOccurs="1"/>
+          <xs:element ref="hs:WorkersComp" minOccurs="1" maxOccurs="1"/>
+          <xs:element ref="hs:EligibilityAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="FoodStampsType">
+    <xs:annotation>
+      <xs:documentation>A data type for a program to provide food-purchasing assistance to eligible adults.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="structures:ObjectType">
+        <xs:sequence>
+          <xs:element ref="nc:StartDate" minOccurs="1" maxOccurs="1"/>
+          <xs:element ref="nc:EndDate" minOccurs="1" maxOccurs="1"/>
+          <xs:element ref="hs:FoodStampsAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="GeneralAssistanceType">
+    <xs:annotation>
+      <xs:documentation>A data type for a program to provide temporary assistance to eligible adults.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="structures:ObjectType">
+        <xs:sequence>
+          <xs:element ref="nc:StartDate" minOccurs="1" maxOccurs="1"/>
+          <xs:element ref="nc:EndDate" minOccurs="1" maxOccurs="1"/>
+          <xs:element ref="hs:GeneralAssistanceAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="InterStateOutputDataReportType">
+    <xs:annotation>
+      <xs:documentation>A data type for a State Output Data report of the Public Assistance Reporting Information System (PARIS).</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="structures:ObjectType">
+        <xs:sequence>
+          <xs:element ref="hs:InterStateOutputData" minOccurs="1" maxOccurs="unbounded"/>
+          <xs:element ref="hs:InterStateOutputDataReportAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="InterStateOutputDataType">
+    <xs:annotation>
+      <xs:documentation>A data type for a set of data for a State Output Data report of the Public Assistance Reporting Information System (PARIS).</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="structures:ObjectType">
+        <xs:sequence>
+          <xs:element ref="hs:PrimaryOfficialContact" minOccurs="1" maxOccurs="1"/>
+          <xs:element ref="hs:SecondaryOfficialContact" minOccurs="1" maxOccurs="1"/>
+          <xs:element ref="nc:Person" minOccurs="1" maxOccurs="1"/>
+          <xs:element ref="hs:InterStateOutputDataAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="MedicaidType">
+    <xs:annotation>
+      <xs:documentation>A data type for a program to provide medical care and long-term care services to low-income people and families.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="structures:ObjectType">
+        <xs:sequence>
+          <xs:element ref="nc:StartDate" minOccurs="1" maxOccurs="1"/>
+          <xs:element ref="nc:EndDate" minOccurs="1" maxOccurs="1"/>
+          <xs:element ref="hs:MedicaidAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="PersonAugmentationType">
+    <xs:annotation>
+      <xs:documentation>A data type for additional information about a person.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="structures:AugmentationType">
+        <xs:sequence>
+          <xs:element ref="hs:FileDate" minOccurs="1" maxOccurs="1"/>
+          <xs:element ref="nc:LocationStateName" minOccurs="1" maxOccurs="1"/>
+          <xs:element ref="hs:PhoneContactSupportIndicator" minOccurs="1" maxOccurs="1"/>
+          <xs:element ref="hs:FaxContactSupportIndicator" minOccurs="1" maxOccurs="1"/>
+          <xs:element ref="hs:EmailContactSupportIndicator" minOccurs="1" maxOccurs="1"/>
+          <xs:element ref="hs:SSNVerificationIndicatorCode" minOccurs="1" maxOccurs="1"/>
+          <xs:element ref="hs:FraudIndicator" minOccurs="1" maxOccurs="1"/>
+          <xs:element ref="hs:FugitiveFelonIndicator" minOccurs="1" maxOccurs="1"/>
+          <xs:element ref="hs:ProbationAndParoleViolationIndicator" minOccurs="1" maxOccurs="1"/>
+          <xs:element ref="hs:DrugRelatedFelonIndicator" minOccurs="1" maxOccurs="1"/>
+          <xs:element ref="hs:StateOptionalDataText" minOccurs="1" maxOccurs="1"/>
+          <xs:element ref="hs:VAMatchRequestIndicator" minOccurs="1" maxOccurs="1"/>
+          <xs:element ref="hs:StateMatchRequestIndicator" minOccurs="1" maxOccurs="1"/>
+          <xs:element ref="hs:FEDMatchRequestIndicator" minOccurs="1" maxOccurs="1"/>
+          <xs:element ref="hs:FillerDescriptionText" minOccurs="1" maxOccurs="1"/>
+          <xs:element ref="hs:Eligibility" minOccurs="1" maxOccurs="1"/>
+          <xs:element ref="nc:Case" minOccurs="1" maxOccurs="1"/>
+          <xs:element ref="nc:Location" minOccurs="1" maxOccurs="1"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="SSIType">
+    <xs:annotation>
+      <xs:documentation>A data type for a program (Supplemental Security Income) to provide stipends to people with limited income and resources who are disabled, blind, or age 65 or older.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="structures:ObjectType">
+        <xs:sequence>
+          <xs:element ref="nc:StartDate" minOccurs="1" maxOccurs="1"/>
+          <xs:element ref="nc:EndDate" minOccurs="1" maxOccurs="1"/>
+          <xs:element ref="hs:SSIAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:simpleType name="SSNVerificationIndicatorCodeSimpleType">
+    <xs:annotation>
+      <xs:documentation>A data type for a verification of a SSN by the Social Security Administration (SSA).</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:token">
+      <xs:enumeration value=".">
+        <xs:annotation>
+          <xs:documentation>. or blank = record failed initial edits and did not make it into verification process</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="*">
+        <xs:annotation>
+          <xs:documentation>SSN not verified</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="1">
+        <xs:annotation>
+          <xs:documentation>SSN not on file</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="3">
+        <xs:annotation>
+          <xs:documentation>surname matched but DOB did not match NUMIDENT</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="5">
+        <xs:annotation>
+          <xs:documentation>surname does not match; DOB was checked</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="F">
+        <xs:annotation>
+          <xs:documentation>verified but surname ignored</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="M">
+        <xs:annotation>
+          <xs:documentation>verified via MBR or SSR (overlay of 1)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="P">
+        <xs:annotation>
+          <xs:documentation>verified via MBR or SSR (overlay of 3)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="R">
+        <xs:annotation>
+          <xs:documentation>SSN verified via MBR or SSR rather than NUMIDENT (overlay of 5)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="V">
+        <xs:annotation>
+          <xs:documentation>verified (preferred)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="X">
+        <xs:annotation>
+          <xs:documentation>verified but NUMIDENT indicates individual deceased</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Z">
+        <xs:annotation>
+          <xs:documentation>verification code when state submitted CAN instead of SSN; CAN OK, SSN not verified</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="SSNVerificationIndicatorCodeType">
+    <xs:annotation>
+      <xs:documentation>A data type for a verification of a SSN by the Social Security Administration (SSA).</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="hs:SSNVerificationIndicatorCodeSimpleType">
+        <xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="StateInputDataReportType">
+    <xs:annotation>
+      <xs:documentation>A data type for a State Input Data report of the Public Assistance Reporting Information System (PARIS).</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="structures:ObjectType">
+        <xs:sequence>
+          <xs:element ref="hs:StateInputData" minOccurs="1" maxOccurs="unbounded"/>
+          <xs:element ref="hs:StateInputDataReportAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="StateInputDataType">
+    <xs:annotation>
+      <xs:documentation>A data type for a set of data for the State Input Data report of the Public Assistance Reporting Information System (PARIS).</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="structures:ObjectType">
+        <xs:sequence>
+          <xs:element ref="hs:PrimaryOfficialContact" minOccurs="1" maxOccurs="1"/>
+          <xs:element ref="hs:SecondaryOfficialContact" minOccurs="1" maxOccurs="1"/>
+          <xs:element ref="nc:Person" minOccurs="1" maxOccurs="1"/>
+          <xs:element ref="hs:StateInputDataAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="TANFType">
+    <xs:annotation>
+      <xs:documentation>A data type for a program designed to help needy families achieve self-sufficiency (Temporary Assistance to Needy Families).</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="structures:ObjectType">
+        <xs:sequence>
+          <xs:element ref="nc:StartDate" minOccurs="1" maxOccurs="1"/>
+          <xs:element ref="nc:EndDate" minOccurs="1" maxOccurs="1"/>
+          <xs:element ref="hs:TANFAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="WorkersCompType">
+    <xs:annotation>
+      <xs:documentation>A data type for a program to provide wage replacement and medical benefits to employees injured on the job.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="structures:ObjectType">
+        <xs:sequence>
+          <xs:element ref="nc:StartDate" minOccurs="1" maxOccurs="1"/>
+          <xs:element ref="nc:EndDate" minOccurs="1" maxOccurs="1"/>
+          <xs:element ref="hs:WorkersCompPayAmount" minOccurs="1" maxOccurs="1"/>
+          <xs:element ref="hs:WorkersCompAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="AgencyCaseNumberID" type="niem-xs:string" nillable="true">
+    <xs:annotation>
+      <xs:documentation>An identifier of a case.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="CashLastPaidAmount" type="nc:AmountType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A last monthly amount paid under a cash program (Drop Cents) such as TANF, General Assistance, State Admin SSI, etc.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="ChildCare" type="hs:ChildCareType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A set of information about child care program or assistance.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="ChildCareAugmentationPoint" abstract="true">
+    <xs:annotation>
+      <xs:documentation>An augmentation point for type hs:ChildCareType</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="ChildCareIndicatorCode" type="hs:ChildCareIndicatorCodeType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A role of the person of record involved in child care - the child receiving assistance, the parent receiving assistance, or the child care provider.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="DrugRelatedFelonIndicator" type="niem-xs:boolean" nillable="true">
+    <xs:annotation>
+      <xs:documentation>True if a person is a drug-related felon; false otherwise.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="Eligibility" type="hs:EligibilityType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A set of programs for which a person may be considered for eligibility.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="EligibilityAugmentationPoint" abstract="true">
+    <xs:annotation>
+      <xs:documentation>An augmentation point for type hs:EligibilityType</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="EmailContactSupportIndicator" type="niem-xs:boolean" nillable="true">
+    <xs:annotation>
+      <xs:documentation>True if contact by e-mail is supported for follow up purposes; false otherwise.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="FEDMatchRequestIndicator" type="niem-xs:boolean" nillable="true">
+    <xs:annotation>
+      <xs:documentation>True if perform federal data match; false if there is no fed match.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="FaxContactSupportIndicator" type="niem-xs:boolean" nillable="true">
+    <xs:annotation>
+      <xs:documentation>True if contact by fax machine is supported for follow up purposes; false otherwise.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="FileDate" type="niem-xs:date" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A date for the match run month.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="FillerDescriptionText" type="nc:TextType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A description of filler information.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="FoodStampIndicator" type="niem-xs:boolean" nillable="true">
+    <xs:annotation>
+      <xs:documentation>True if a client receives food stamps or their assets count; false otherwise.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="FoodStamps" type="hs:FoodStampsType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A program to provide food-purchasing assistance to eligible adults.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="FoodStampsAugmentationPoint" abstract="true">
+    <xs:annotation>
+      <xs:documentation>An augmentation point for type hs:FoodStampsType</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="FoodStampsLastPaidAmount" type="nc:AmountType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>An amount of money last paid under food stamps.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="FraudIndicator" type="niem-xs:boolean" nillable="true">
+    <xs:annotation>
+      <xs:documentation>True if there has been fraudulent receipt of TANF benefits within the last ten years due to a misrepresentation of residence; false otherwise.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="FugitiveFelonIndicator" type="niem-xs:boolean" nillable="true">
+    <xs:annotation>
+      <xs:documentation>True if a person is a current fugitive felon; false otherwise.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="GeneralAssistance" type="hs:GeneralAssistanceType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A program to provide temporary assistance to eligible adults.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="GeneralAssistanceAugmentationPoint" abstract="true">
+    <xs:annotation>
+      <xs:documentation>An augmentation point for type hs:GeneralAssistanceType</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="GeneralAssistanceIndicator" type="niem-xs:boolean" nillable="true">
+    <xs:annotation>
+      <xs:documentation>True if a client receives general assistance or their assets count; false otherwise.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="InterStateOutputData" type="hs:InterStateOutputDataType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A State Output Data report of the Public Assistance Reporting Information System (PARIS).</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="InterStateOutputDataAugmentationPoint" abstract="true">
+    <xs:annotation>
+      <xs:documentation>An augmentation point for type hs:InterStateOutputDataType</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="InterStateOutputDataReportAugmentationPoint" abstract="true">
+    <xs:annotation>
+      <xs:documentation>An augmentation point for type hs:InterStateOutputDataReportType</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="LastEBTAccessDate" type="niem-xs:date" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A date EBT benefits were last accessed.  This could be any assistance program.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="Medicaid" type="hs:MedicaidType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A program to provide medical care and long-term care services to low-income people and families.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="MedicaidAugmentationPoint" abstract="true">
+    <xs:annotation>
+      <xs:documentation>An augmentation point for type hs:MedicaidType</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="MedicaidIndicator" type="niem-xs:boolean" nillable="true">
+    <xs:annotation>
+      <xs:documentation>True if a client is on Medicaid or if their assets count; false otherwise.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="MedicalAssistanceContactPersonInformationDescriptionText" type="nc:TextType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A description of a person's contact information, used if Medical Assistance is processed by a different State Agency than the one that processes Food Stamps (FS) &amp; Temporary Assistance for Needy Families (TANF).</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="PhoneContactSupportIndicator" type="niem-xs:boolean" nillable="true">
+    <xs:annotation>
+      <xs:documentation>True if contact by voice phone is supported for follow up purposes; false otherwise.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="PrimaryOfficialContact" type="nc:ContactInformationType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A primary official contact.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="ProbationAndParoleViolationIndicator" type="niem-xs:boolean" nillable="true">
+    <xs:annotation>
+      <xs:documentation>True if Current Probation or Parole Violation; false otherwise.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="SSI" type="hs:SSIType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A program (Supplemental Security Income) to provide stipends to people with limited income and resources who are disabled, blind, or age 65 or older.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="SSIAugmentationPoint" abstract="true">
+    <xs:annotation>
+      <xs:documentation>An augmentation point for type hs:SSIType</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="SSIIndicator" type="niem-xs:boolean" nillable="true">
+    <xs:annotation>
+      <xs:documentation>True if a client receives SSI or their assets count; false otherwise.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="SSNVerificationIndicatorCode" type="hs:SSNVerificationIndicatorCodeType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A verification of a SSN by the Social Security Administration (SSA).</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="SecondaryOfficialContact" type="nc:ContactInformationType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A contact secondary to the primary state contact. It is to be used by states that have two departments who manage programs covered by PARIS.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="StateInputData" type="hs:StateInputDataType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A set of data for the State Input Data report of the Public Assistance Reporting Information System (PARIS).</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="StateInputDataAugmentationPoint" abstract="true">
+    <xs:annotation>
+      <xs:documentation>An augmentation point for type hs:StateInputDataType</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="StateInputDataReport" type="hs:StateInputDataReportType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A State Input Data report of the Public Assistance Reporting Information System (PARIS).</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="StateInputDataReportAugmentationPoint" abstract="true">
+    <xs:annotation>
+      <xs:documentation>An augmentation point for type hs:StateInputDataReportType</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="StateMatchRequestIndicator" type="niem-xs:boolean" nillable="true">
+    <xs:annotation>
+      <xs:documentation>True if to perform an interstate match; false if there is no state match.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="StateOptionalDataText" type="nc:TextType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A data field for the sending state&#x2019;s use, returned as sent.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="TANF" type="hs:TANFType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A program designed to help needy families achieve self-sufficiency (Temporary Assistance to Needy Families).</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="TANFAugmentationPoint" abstract="true">
+    <xs:annotation>
+      <xs:documentation>An augmentation point for type hs:TANFType</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="TANFIndicator" type="niem-xs:boolean" nillable="true">
+    <xs:annotation>
+      <xs:documentation>True if a client receives TANF Assistance or if their assets count; false otherwise.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="TANFMonthsEligibilityQuantity" type="nc:QuantityType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A number of countable months that a client has received TANF Benefits as an adult.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="VAMatchRequestIndicator" type="niem-xs:boolean" nillable="true">
+    <xs:annotation>
+      <xs:documentation>True if to perform a VA Match; false if there is no VA match.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="WorkersComp" type="hs:WorkersCompType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A program to provide wage replacement and medical benefits to employees injured on the job.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="WorkersCompAugmentationPoint" abstract="true">
+    <xs:annotation>
+      <xs:documentation>An augmentation point for type hs:WorkersCompType</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="WorkersCompIndicator" type="niem-xs:boolean" nillable="true">
+    <xs:annotation>
+      <xs:documentation>True if a client receives worker&#x2019;s compensation; false otherwise.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="WorkersCompPayAmount" type="nc:AmountType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A payment amount for Worker&#x2019;s Comp.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+</xs:schema>

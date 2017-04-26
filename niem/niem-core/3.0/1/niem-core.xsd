@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="US-ASCII"?>
+<xs:schema targetNamespace="http://publication.niem.gov/niem/niem-core/3.0/1/" version="1" xsi:schemaLocation="http://release.niem.gov/niem/appinfo/3.0/ ../../../appinfo/3.0/appinfo.xsd http://release.niem.gov/niem/conformanceTargets/3.0/ ../../../conformanceTargets/3.0/conformanceTargets.xsd" ct:conformanceTargets="http://reference.niem.gov/niem/specification/naming-and-design-rules/3.0/#ReferenceSchemaDocument" xmlns:structures="http://release.niem.gov/niem/structures/3.0/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:appinfo="http://release.niem.gov/niem/appinfo/3.0/" xmlns:usps-3.0.1="http://publication.niem.gov/niem/codes/usps_states/3.0/1/" xmlns:ct="http://release.niem.gov/niem/conformanceTargets/3.0/" xmlns:nc="http://release.niem.gov/niem/niem-core/3.0/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:nc-3.0.1="http://publication.niem.gov/niem/niem-core/3.0/1/">
+  <xs:annotation>
+    <xs:documentation>NIEM Core Supplement</xs:documentation>
+  </xs:annotation>
+  <xs:import schemaLocation="../niem-core.xsd" namespace="http://release.niem.gov/niem/niem-core/3.0/"/>
+  <xs:import schemaLocation="../../../structures/3.0/structures.xsd" namespace="http://release.niem.gov/niem/structures/3.0/"/>
+  <xs:import schemaLocation="../../../codes/usps_states/3.0/1/usps_states.xsd" namespace="http://publication.niem.gov/niem/codes/usps_states/3.0/1/"/>
+  <xs:element name="JurisdictionUSPostalServiceCode" type="usps-3.0.1:USStateCodeType" substitutionGroup="nc:JurisdictionAbstract" nillable="true">
+    <xs:annotation>
+      <xs:documentation>An area, state, region, or other geographic unit over which some kind of authority exists.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="LocationStateUSPostalServiceCode" type="usps-3.0.1:USStateCodeType" substitutionGroup="nc:LocationState" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A state, commonwealth, province, or other such geopolitical subdivision of a country.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+</xs:schema>
