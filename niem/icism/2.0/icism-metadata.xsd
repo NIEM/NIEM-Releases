@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+  xmlns:i="http://niem.gov/niem/appinfo/2.0"
+  xmlns:s="http://niem.gov/niem/structures/2.0"
+  xmlns:icism="urn:us:gov:ic:ism:v2"
+  xmlns:icism-metadata="http://niem.gov/niem/icism/2.0"
+  targetNamespace="http://niem.gov/niem/icism/2.0" version="1">
+
+  <xsd:annotation>
+    <xsd:documentation>This schema (icism-metadata.xsd) provides a method for using the Intelligence Community Information Security Marking (IC-ISM) standard, Version 2.0, dated 30 April 2004, in NIEM 2.0.  This schema defines a NIEM metadata element derived from s:MetadataType that contains the optional IC-ISM attributes.  Within an instance, an element links through its s:metadata attribute to the appropriate s:id attribute of the IC-ISM metadata container.  This schema cannot and does not use attributeGroups in IC-ISM.</xsd:documentation>
+  </xsd:annotation>
+
+  <xsd:import schemaLocation="../../structures/2.0/structures.xsd" namespace="http://niem.gov/niem/structures/2.0"/>
+  <xsd:import schemaLocation="../../appinfo/2.0/appinfo.xsd" namespace="http://niem.gov/niem/appinfo/2.0"/>
+  <xsd:import schemaLocation="../../icism/2.0/IC-ISM-v2.xsd" namespace="urn:us:gov:ic:ism:v2"/>
+
+  <xsd:complexType name="ICISMMetadataType">
+    <xsd:annotation>
+      <xsd:documentation>A data type for IC-ISM metadata about information security for the content of an element.</xsd:documentation>
+      <xsd:appinfo>
+        <i:Base i:namespace="http://niem.gov/niem/structures/2.0" i:name="MetadataType"/>
+        <i:AppliesTo i:name="ComplexObjectType"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="s:MetadataType">
+        <xsd:attribute ref="icism:classification" use="optional"/>
+        <xsd:attribute ref="icism:ownerProducer" use="optional"/>
+        <xsd:attribute ref="icism:SCIcontrols" use="optional"/>
+        <xsd:attribute ref="icism:SARIdentifier" use="optional"/>
+        <xsd:attribute ref="icism:disseminationControls" use="optional"/>
+        <xsd:attribute ref="icism:FGIsourceOpen" use="optional"/>
+        <xsd:attribute ref="icism:FGIsourceProtected" use="optional"/>
+        <xsd:attribute ref="icism:releasableTo" use="optional"/>
+        <xsd:attribute ref="icism:nonICmarkings" use="optional"/>
+        <xsd:attribute ref="icism:classifiedBy" use="optional"/>
+        <xsd:attribute ref="icism:classificationReason" use="optional"/>
+        <xsd:attribute ref="icism:derivedFrom" use="optional"/>
+        <xsd:attribute ref="icism:declassDate" use="optional"/>
+        <xsd:attribute ref="icism:declassEvent" use="optional"/>
+        <xsd:attribute ref="icism:declassException" use="optional"/>
+        <xsd:attribute ref="icism:typeOfExemptedSource" use="optional"/>
+        <xsd:attribute ref="icism:dateOfExemptedSource" use="optional"/>
+        <xsd:attribute ref="icism:declassManualReview" use="optional"/>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+
+  <xsd:element name="ICISMMetadata" type="icism-metadata:ICISMMetadataType"/>
+
+</xsd:schema>

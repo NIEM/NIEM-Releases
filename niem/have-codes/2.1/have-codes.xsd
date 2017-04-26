@@ -1,0 +1,497 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema targetNamespace="http://niem.gov/niem/have-codes/2.1" version="1" xmlns:have-codes="http://niem.gov/niem/have-codes/2.1" xmlns:s="http://niem.gov/niem/structures/2.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:i="http://niem.gov/niem/appinfo/2.0">
+  <xsd:annotation>
+    <xsd:documentation>EDXL Hospital AVailability Exchange (HAVE) code sets</xsd:documentation>
+    <xsd:appinfo>
+      <i:ConformantIndicator>true</i:ConformantIndicator>
+    </xsd:appinfo>
+  </xsd:annotation>
+  <xsd:import schemaLocation="../../structures/2.0/structures.xsd" namespace="http://niem.gov/niem/structures/2.0"/>
+  <xsd:import schemaLocation="../../appinfo/2.0/appinfo.xsd" namespace="http://niem.gov/niem/appinfo/2.0"/>
+  <xsd:simpleType name="AvailabilityStatusCodeSimpleType">
+    <xsd:annotation>
+      <xsd:documentation>A data type for a code set of service availability.</xsd:documentation>
+      <xsd:appinfo>
+        <i:Base i:namespace="http://niem.gov/niem/structures/2.0" i:name="Object"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:restriction base="xsd:token">
+      <xsd:enumeration value="Adequate">
+        <xsd:annotation>
+          <xsd:documentation>Meets the current needs</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="Insufficient">
+        <xsd:annotation>
+          <xsd:documentation>Current needs are not being met</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:complexType name="AvailabilityStatusCodeType">
+    <xsd:annotation>
+      <xsd:documentation>A data type for a code set of service availability.</xsd:documentation>
+      <xsd:appinfo>
+        <i:Base i:namespace="http://niem.gov/niem/structures/2.0" i:name="Object"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:simpleContent>
+      <xsd:extension base="have-codes:AvailabilityStatusCodeSimpleType">
+        <xsd:attributeGroup ref="s:SimpleObjectAttributeGroup"/>
+      </xsd:extension>
+    </xsd:simpleContent>
+  </xsd:complexType>
+  <xsd:simpleType name="BedCategoryCodeSimpleType">
+    <xsd:annotation>
+      <xsd:documentation>A data type for a code set of available Bed Types.</xsd:documentation>
+      <xsd:appinfo>
+        <i:Base i:namespace="http://niem.gov/niem/structures/2.0" i:name="Object"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:restriction base="xsd:token">
+      <xsd:enumeration value="MedicalSurgical">
+        <xsd:annotation>
+          <xsd:documentation>Capacity status for medical-surgical beds. 
+i. These are also thought of as ward beds.  
+ii. These beds may or may not include cardiac telemetry capability</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="AdultICU">
+        <xsd:annotation>
+          <xsd:documentation>Capacity status for adult ICU bed type. 
+i. These can support critically ill or injured patients, including ventilator support.  
+ii. This category includes all major subtypes of ICU beds, including neuro, cardiac, trauma, or medical, with the exception t</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="PediatricICU">
+        <xsd:annotation>
+          <xsd:documentation>i. Capacity status for pediatric ICU beds. This is similar to adult ICU beds, but for patients 17-years-old and younger.
+</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="Pediatrics">
+        <xsd:annotation>
+          <xsd:documentation>i. Capacity status for pediatrics beds. These are ward medical/surgical beds for patients 17-years-old and younger.
+</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="Psychiatric">
+        <xsd:annotation>
+          <xsd:documentation>i. Capacity status for psychiatric beds. These are ward beds on a closed/locked psychiatric unit or ward beds where a patient will be attended by a sitter.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="Burn">
+        <xsd:annotation>
+          <xsd:documentation>Capacity status for burn beds. 
+i. These are thought of as burn ICU beds, either approved by the American Burn Association or self-designated. 
+ii. These beds are NOT to be included in other ICU bed counts.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="OtherIsolation">
+        <xsd:annotation>
+          <xsd:documentation>i. Capacity status for other isolation beds. These provide isolation where airflow is not a concern.  NOTE: This value may represent available beds included in the counts of other types. 
+</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="OperatingRooms">
+        <xsd:annotation>
+          <xsd:documentation>i. Capacity status for operating rooms which are equipped staffed and could be made available for patient care in a short period of time.
+</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="NegativeFlowIsolation">
+        <xsd:annotation>
+          <xsd:documentation>i. Capacity status for negative airflow isolation beds. These provide respiratory isolation. NOTE: This value may represent available beds included in the counts of other types. 
+</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:complexType name="BedCategoryCodeType">
+    <xsd:annotation>
+      <xsd:documentation>A data type for a code set of available Bed Types.</xsd:documentation>
+      <xsd:appinfo>
+        <i:Base i:namespace="http://niem.gov/niem/structures/2.0" i:name="Object"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:simpleContent>
+      <xsd:extension base="have-codes:BedCategoryCodeSimpleType">
+        <xsd:attributeGroup ref="s:SimpleObjectAttributeGroup"/>
+      </xsd:extension>
+    </xsd:simpleContent>
+  </xsd:complexType>
+  <xsd:simpleType name="CapacityStatusCodeSimpleType">
+    <xsd:annotation>
+      <xsd:documentation>A data type for a code set of bed kind or sub-category bed kind.</xsd:documentation>
+      <xsd:appinfo>
+        <i:Base i:namespace="http://niem.gov/niem/structures/2.0" i:name="Object"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:restriction base="xsd:token">
+      <xsd:enumeration value="VacantAvailable">
+        <xsd:annotation>
+          <xsd:documentation>The type of bed is available.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="NotAvailable">
+        <xsd:annotation>
+          <xsd:documentation>The type of bed is not available.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:complexType name="CapacityStatusCodeType">
+    <xsd:annotation>
+      <xsd:documentation>A data type for a code set of bed kind or sub-category bed kind.</xsd:documentation>
+      <xsd:appinfo>
+        <i:Base i:namespace="http://niem.gov/niem/structures/2.0" i:name="Object"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:simpleContent>
+      <xsd:extension base="have-codes:CapacityStatusCodeSimpleType">
+        <xsd:attributeGroup ref="s:SimpleObjectAttributeGroup"/>
+      </xsd:extension>
+    </xsd:simpleContent>
+  </xsd:complexType>
+  <xsd:simpleType name="ClinicalStatusCodeSimpleType">
+    <xsd:annotation>
+      <xsd:documentation>A data type for a code set of the clinical status of the facility.</xsd:documentation>
+      <xsd:appinfo>
+        <i:Base i:namespace="http://niem.gov/niem/structures/2.0" i:name="Object"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:restriction base="xsd:token">
+      <xsd:enumeration value="Level1">
+        <xsd:annotation>
+          <xsd:documentation>Hospital clinical resources are operating at Level-1 surge conditions.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="Full">
+        <xsd:annotation>
+          <xsd:documentation>Hospital clinical resources are exceeded and acceptable care cannot be provided to additional patients. Diversion or community surge response is required.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="Normal">
+        <xsd:annotation>
+          <xsd:documentation>Hospital clinical resources are operating within normal conditions.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="Level2">
+        <xsd:annotation>
+          <xsd:documentation>Hospital clinical resources are operating at Level-2 surge conditions.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:complexType name="ClinicalStatusCodeType">
+    <xsd:annotation>
+      <xsd:documentation>A data type for a code set of the clinical status of the facility.</xsd:documentation>
+      <xsd:appinfo>
+        <i:Base i:namespace="http://niem.gov/niem/structures/2.0" i:name="Object"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:simpleContent>
+      <xsd:extension base="have-codes:ClinicalStatusCodeSimpleType">
+        <xsd:attributeGroup ref="s:SimpleObjectAttributeGroup"/>
+      </xsd:extension>
+    </xsd:simpleContent>
+  </xsd:complexType>
+  <xsd:simpleType name="DeconCapacityCodeSimpleType">
+    <xsd:annotation>
+      <xsd:documentation>A data type for a code set of the capacity for chemical/biological/radiological patient decontamination.</xsd:documentation>
+      <xsd:appinfo>
+        <i:Base i:namespace="http://niem.gov/niem/structures/2.0" i:name="Object"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:restriction base="xsd:token">
+      <xsd:enumeration value="Full">
+        <xsd:annotation>
+          <xsd:documentation>In use at maximum capacity</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="Open">
+        <xsd:annotation>
+          <xsd:documentation>In use and able to accept additional patients</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="Exceeded">
+        <xsd:annotation>
+          <xsd:documentation>Needs exceed available capacity</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="Inactive">
+        <xsd:annotation>
+          <xsd:documentation>Not being used, but available if needed</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:complexType name="DeconCapacityCodeType">
+    <xsd:annotation>
+      <xsd:documentation>A data type for a code set of the capacity for chemical/biological/radiological patient decontamination.</xsd:documentation>
+      <xsd:appinfo>
+        <i:Base i:namespace="http://niem.gov/niem/structures/2.0" i:name="Object"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:simpleContent>
+      <xsd:extension base="have-codes:DeconCapacityCodeSimpleType">
+        <xsd:attributeGroup ref="s:SimpleObjectAttributeGroup"/>
+      </xsd:extension>
+    </xsd:simpleContent>
+  </xsd:complexType>
+  <xsd:simpleType name="EMSOffloadStatusCodeSimpleType">
+    <xsd:annotation>
+      <xsd:documentation>A data type for a code set of offload times of ambulance capabilities.</xsd:documentation>
+      <xsd:appinfo>
+        <i:Base i:namespace="http://niem.gov/niem/structures/2.0" i:name="Object"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:restriction base="xsd:token">
+      <xsd:enumeration value="Delayed">
+        <xsd:annotation>
+          <xsd:documentation>The time required to offload the patient is longer than typical.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="Normal">
+        <xsd:annotation>
+          <xsd:documentation>The time required to offload the patient is typical.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:complexType name="EMSOffloadStatusCodeType">
+    <xsd:annotation>
+      <xsd:documentation>A data type for a code set of offload times of ambulance capabilities.</xsd:documentation>
+      <xsd:appinfo>
+        <i:Base i:namespace="http://niem.gov/niem/structures/2.0" i:name="Object"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:simpleContent>
+      <xsd:extension base="have-codes:EMSOffloadStatusCodeSimpleType">
+        <xsd:attributeGroup ref="s:SimpleObjectAttributeGroup"/>
+      </xsd:extension>
+    </xsd:simpleContent>
+  </xsd:complexType>
+  <xsd:simpleType name="EMSTrafficStatusCodeSimpleType">
+    <xsd:annotation>
+      <xsd:documentation>A data type for a code set of the status of EMS traffic operations.</xsd:documentation>
+      <xsd:appinfo>
+        <i:Base i:namespace="http://niem.gov/niem/structures/2.0" i:name="Object"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:restriction base="xsd:token">
+      <xsd:enumeration value="NotApplicable">
+        <xsd:annotation>
+          <xsd:documentation>Not Applicable. This hospital does not have an emergency department.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="Closed">
+        <xsd:annotation>
+          <xsd:documentation>Requesting re-route of EMS traffic to other facilities.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="Normal">
+        <xsd:annotation>
+          <xsd:documentation>Accepting all EMS traffic</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="Advisory">
+        <xsd:annotation>
+          <xsd:documentation>Experiencing specific resource limitations which may affect transport of some EMS traffic.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:complexType name="EMSTrafficStatusCodeType">
+    <xsd:annotation>
+      <xsd:documentation>A data type for a code set of the status of EMS traffic operations.</xsd:documentation>
+      <xsd:appinfo>
+        <i:Base i:namespace="http://niem.gov/niem/structures/2.0" i:name="Object"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:simpleContent>
+      <xsd:extension base="have-codes:EMSTrafficStatusCodeSimpleType">
+        <xsd:attributeGroup ref="s:SimpleObjectAttributeGroup"/>
+      </xsd:extension>
+    </xsd:simpleContent>
+  </xsd:complexType>
+  <xsd:simpleType name="EOCPlanCodeSimpleType">
+    <xsd:annotation>
+      <xsd:documentation>A data type for a code set of whether the hospital has activated its Emergency Operations Plan (EOP)</xsd:documentation>
+      <xsd:appinfo>
+        <i:Base i:namespace="http://niem.gov/niem/structures/2.0" i:name="Object"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:restriction base="xsd:token">
+      <xsd:enumeration value="Inactive"/>
+      <xsd:enumeration value="Active"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:complexType name="EOCPlanCodeType">
+    <xsd:annotation>
+      <xsd:documentation>A data type for a code set of whether the hospital has activated its Emergency Operations Plan (EOP)</xsd:documentation>
+      <xsd:appinfo>
+        <i:Base i:namespace="http://niem.gov/niem/structures/2.0" i:name="Object"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:simpleContent>
+      <xsd:extension base="have-codes:EOCPlanCodeSimpleType">
+        <xsd:attributeGroup ref="s:SimpleObjectAttributeGroup"/>
+      </xsd:extension>
+    </xsd:simpleContent>
+  </xsd:complexType>
+  <xsd:simpleType name="EOCStatusCodeSimpleType">
+    <xsd:annotation>
+      <xsd:documentation>A data type for a code set of whether the Emergency Operations Center (EOC) is currently operating.</xsd:documentation>
+      <xsd:appinfo>
+        <i:Base i:namespace="http://niem.gov/niem/structures/2.0" i:name="Object"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:restriction base="xsd:token">
+      <xsd:enumeration value="Inactive"/>
+      <xsd:enumeration value="Active"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:complexType name="EOCStatusCodeType">
+    <xsd:annotation>
+      <xsd:documentation>A data type for a code set of whether the Emergency Operations Center (EOC) is currently operating.</xsd:documentation>
+      <xsd:appinfo>
+        <i:Base i:namespace="http://niem.gov/niem/structures/2.0" i:name="Object"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:simpleContent>
+      <xsd:extension base="have-codes:EOCStatusCodeSimpleType">
+        <xsd:attributeGroup ref="s:SimpleObjectAttributeGroup"/>
+      </xsd:extension>
+    </xsd:simpleContent>
+  </xsd:complexType>
+  <xsd:simpleType name="FacilityStatusCodeSimpleType">
+    <xsd:annotation>
+      <xsd:documentation>A data type for a code set of facility status.</xsd:documentation>
+      <xsd:appinfo>
+        <i:Base i:namespace="http://niem.gov/niem/structures/2.0" i:name="Object"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:restriction base="xsd:token">
+      <xsd:enumeration value="Compromised">
+        <xsd:annotation>
+          <xsd:documentation>General operations of the facility have been affected due to damage, operating on emergency backup systems, or facility contamination.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="Closed">
+        <xsd:annotation>
+          <xsd:documentation>Indicates that a hospital is no longer capable of providing services and only emergency services/restoration personnel may remain in the facility.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="Normal">
+        <xsd:annotation>
+          <xsd:documentation>No conditions exist that adversely affect the general operations of the facility.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="Evacuating">
+        <xsd:annotation>
+          <xsd:documentation>Indicates that a hospital is in the process of a partial or full evacuation.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:complexType name="FacilityStatusCodeType">
+    <xsd:annotation>
+      <xsd:documentation>A data type for a code set of facility status.</xsd:documentation>
+      <xsd:appinfo>
+        <i:Base i:namespace="http://niem.gov/niem/structures/2.0" i:name="Object"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:simpleContent>
+      <xsd:extension base="have-codes:FacilityStatusCodeSimpleType">
+        <xsd:attributeGroup ref="s:SimpleObjectAttributeGroup"/>
+      </xsd:extension>
+    </xsd:simpleContent>
+  </xsd:complexType>
+  <xsd:simpleType name="MorgueCapacityCodeSimpleType">
+    <xsd:annotation>
+      <xsd:documentation>A data type for a code set of the status of the morgue capacity.</xsd:documentation>
+      <xsd:appinfo>
+        <i:Base i:namespace="http://niem.gov/niem/structures/2.0" i:name="Object"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:restriction base="xsd:token">
+      <xsd:enumeration value="Full">
+        <xsd:annotation>
+          <xsd:documentation>All normal space is in use</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="Exceeded">
+        <xsd:annotation>
+          <xsd:documentation>Storage needs exceed available space</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="Open">
+        <xsd:annotation>
+          <xsd:documentation>Space is available</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:complexType name="MorgueCapacityCodeType">
+    <xsd:annotation>
+      <xsd:documentation>A data type for a code set of the status of the morgue capacity.</xsd:documentation>
+      <xsd:appinfo>
+        <i:Base i:namespace="http://niem.gov/niem/structures/2.0" i:name="Object"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:simpleContent>
+      <xsd:extension base="have-codes:MorgueCapacityCodeSimpleType">
+        <xsd:attributeGroup ref="s:SimpleObjectAttributeGroup"/>
+      </xsd:extension>
+    </xsd:simpleContent>
+  </xsd:complexType>
+  <xsd:simpleType name="SecurityStatusCodeSimpleType">
+    <xsd:annotation>
+      <xsd:documentation>A data type for a code set of the status of security procedures in the hospital.</xsd:documentation>
+      <xsd:appinfo>
+        <i:Base i:namespace="http://niem.gov/niem/structures/2.0" i:name="Object"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:restriction base="xsd:token">
+      <xsd:enumeration value="Quarantine">
+        <xsd:annotation>
+          <xsd:documentation>Based on a public health emergency, the entry and exit of the facility is controlled by public health officials</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="RestrictedAccess">
+        <xsd:annotation>
+          <xsd:documentation>Based on security needs, the hospital has activated procedures to allow access to the facility through a reduced number of controlled entrances.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="Elevated">
+        <xsd:annotation>
+          <xsd:documentation>The hospital has activated increased security procedures (awareness, surveillance) due to a potential threat, or specific security related event i.e. increase in local threat level, VIP, bomb threat.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="Normal">
+        <xsd:annotation>
+          <xsd:documentation>The hospital is operating under routine security procedures.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="Lockdown">
+        <xsd:annotation>
+          <xsd:documentation>Based on security needs, the hospital has activated procedures to control entry to the facility to authorized persons only.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:complexType name="SecurityStatusCodeType">
+    <xsd:annotation>
+      <xsd:documentation>A data type for a code set of the status of security procedures in the hospital.</xsd:documentation>
+      <xsd:appinfo>
+        <i:Base i:namespace="http://niem.gov/niem/structures/2.0" i:name="Object"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:simpleContent>
+      <xsd:extension base="have-codes:SecurityStatusCodeSimpleType">
+        <xsd:attributeGroup ref="s:SimpleObjectAttributeGroup"/>
+      </xsd:extension>
+    </xsd:simpleContent>
+  </xsd:complexType>
+</xsd:schema>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema targetNamespace="http://niem.gov/niem/edxl-have/2.1" version="1" xmlns:s="http://niem.gov/niem/structures/2.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:edxl-have="http://niem.gov/niem/edxl-have/2.1" xmlns:have="urn:oasis:names:tc:emergency:EDXL:HAVE:1.0" xmlns:i="http://niem.gov/niem/appinfo/2.0">
+  <xsd:annotation>
+    <xsd:documentation>EDXL-HAVE specifies an XML document format that allows the communication of the status of a hospital, its services, and its resources. These include bed capacity and availability, emergency department status, available service coverage, and the status of a hospital's facility and operations.</xsd:documentation>
+    <xsd:appinfo>
+      <i:ConformantIndicator>true</i:ConformantIndicator>
+    </xsd:appinfo>
+  </xsd:annotation>
+  <xsd:import schemaLocation="../../structures/2.0/structures.xsd" namespace="http://niem.gov/niem/structures/2.0"/>
+  <xsd:import schemaLocation="../../appinfo/2.0/appinfo.xsd" namespace="http://niem.gov/niem/appinfo/2.0"/>
+  <xsd:import schemaLocation="../../external/have/1.0/have.xsd" namespace="urn:oasis:names:tc:emergency:EDXL:HAVE:1.0">
+    <xsd:annotation>
+      <xsd:documentation>Hospital Availability Exchange (HAVE)</xsd:documentation>
+      <xsd:appinfo>
+        <i:ConformantIndicator>false</i:ConformantIndicator>
+      </xsd:appinfo>
+    </xsd:annotation>
+  </xsd:import>
+  <xsd:complexType name="HaveAdapterType">
+    <xsd:annotation>
+      <xsd:documentation>A data type for EDXL-HAVE which specifies an XML document format that allows the communication of the status of a hospital, its services, and its resources.</xsd:documentation>
+      <xsd:appinfo>
+        <i:Base i:namespace="http://niem.gov/niem/structures/2.0" i:name="Object"/>
+        <i:ExternalAdapterTypeIndicator>true</i:ExternalAdapterTypeIndicator>
+      </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="s:ComplexObjectType">
+        <xsd:sequence>
+          <xsd:element ref="have:HospitalStatus" minOccurs="0" maxOccurs="unbounded"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="HaveAdapter" type="edxl-have:HaveAdapterType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>A standard message distribution framework for data sharing among emergency information systems using the XML-based Emergency Data Exchange Language (EDXL).</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+</xsd:schema>

@@ -1,6 +1,7 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:rddl="http://www.rddl.org/">
-<head>
+<html xmlns:rddl="http://www.rddl.org/" xmlns="http://www.w3.org/1999/xhtml"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+
 <style media="all" type="text/css">
 table {
   border-collapse: collapse;
@@ -16,796 +17,255 @@ td.summary {
   padding-right: 0.5em;
 }
 </style>
-<title>NIEM 2.0 Change Log</title>
-</head>
-<body>
-<h1>NIEM 2.0 Change Log</h1>
-<h2>Changes up to NIEM 2.0</h2>
+<title>NIEM 2.1 Change Log</title>
+</head><body>
+<h1>NIEM 2.1 Change Log</h1>
+<h2>Changes in NIEM 2.1</h2>
 <table style="width: 100%;">
 <thead>
 <th>Change ID</th>
 <th>Summary</th>
 </thead>
+<tbody>
 <tr>
-<!--ChangeKey is 106-->
-<td class="id">1</td>
-<td class="summary">Removed SuperType from the model</td>
+<!--ChangeKey is 351-->
+<td class='id'>1</td>
+<td class='summary'>Changed data type of j:ArrestInvolvedWeapon from nc:PropertyType to nc:WeaponType</td>
 </tr>
 <tr>
-<!--ChangeKey is 107-->
-<td class="id">2</td>
-<td class="summary">Moved sequenceID from namespace universal to structures</td>
+<!--ChangeKey is 354-->
+<td class='id'>2</td>
+<td class='summary'>Replaced Infrastructure Protection domain with new content</td>
 </tr>
 <tr>
-<!--ChangeKey is 109-->
-<td class="id">3</td>
-<td class="summary">Modified property names for NIEM Harmonization.</td>
+<!--ChangeKey is 355-->
+<td class='id'>3</td>
+<td class='summary'>Modeled a new justice Offense object; changed data type of element j:Offense from nc:IncidentType to j:OffenseType</td>
 </tr>
 <tr>
-<!--ChangeKey is 110-->
-<td class="id">4</td>
-<td class="summary">Modified property definitions for NIEM Harmonization.</td>
+<!--ChangeKey is 358-->
+<td class='id'>4</td>
+<td class='summary'>Added CPP-related components to the justice domain (Treatment, Evaluation, etc)</td>
 </tr>
 <tr>
-<!--ChangeKey is 112-->
-<td class="id">5</td>
-<td class="summary">Modified type names for NIEM harmonization.</td>
+<!--ChangeKey is 360-->
+<td class='id'>5</td>
+<td class='summary'>Added new MotorCarrier object to the justice domain</td>
 </tr>
 <tr>
-<!--ChangeKey is 114-->
-<td class="id">6</td>
-<td class="summary">Modified type definitions for NIEM Harmonization.</td>
+<!--ChangeKey is 361-->
+<td class='id'>6</td>
+<td class='summary'>Added Family Services domain</td>
 </tr>
 <tr>
-<!--ChangeKey is 115-->
-<td class="id">7</td>
-<td class="summary">Removed property SuperObject.</td>
+<!--ChangeKey is 362-->
+<td class='id'>7</td>
+<td class='summary'>Replaced Geospatial external schemas with updated schemas</td>
 </tr>
 <tr>
-<!--ChangeKey is 116-->
-<td class="id">8</td>
-<td class="summary">Removed property SameAs.</td>
+<!--ChangeKey is 363-->
+<td class='id'>8</td>
+<td class='summary'>Added new Maritime domain</td>
 </tr>
 <tr>
-<!--ChangeKey is 117-->
-<td class="id">9</td>
-<td class="summary">Removed property IsAssociatedWith.</td>
+<!--ChangeKey is 364-->
+<td class='id'>9</td>
+<td class='summary'>Deleted element scr:Detention (duplicates scr:DetentionAugmentation)</td>
 </tr>
 <tr>
-<!--ChangeKey is 118-->
-<td class="id">10</td>
-<td class="summary">Remodeled PropertyType</td>
+<!--ChangeKey is 365-->
+<td class='id'>10</td>
+<td class='summary'>Removed reference associations in justice domain</td>
 </tr>
 <tr>
-<!--ChangeKey is 119-->
-<td class="id">11</td>
-<td class="summary">Added ItemType</td>
+<!--ChangeKey is 366-->
+<td class='id'>11</td>
+<td class='summary'>Loaded screening additions, new definitions, and updates</td>
 </tr>
 <tr>
-<!--ChangeKey is 120-->
-<td class="id">12</td>
-<td class="summary">Added EntityType to core.</td>
+<!--ChangeKey is 367-->
+<td class='id'>12</td>
+<td class='summary'>Loaded immigration additions and updates</td>
 </tr>
 <tr>
-<!--ChangeKey is 121-->
-<td class="id">13</td>
-<td class="summary">Remodeled geographic coordinates and elevations.</td>
+<!--ChangeKey is 368-->
+<td class='id'>13</td>
+<td class='summary'>Replaced emergency management domain with new content</td>
 </tr>
 <tr>
-<!--ChangeKey is 122-->
-<td class="id">14</td>
-<td class="summary">Added GeographicElevationMeasureType</td>
+<!--ChangeKey is 370-->
+<td class='id'>14</td>
+<td class='summary'>Added new CBRN domain</td>
 </tr>
 <tr>
-<!--ChangeKey is 123-->
-<td class="id">15</td>
-<td class="summary">Remodeled the way websites and other virtual file locations are handled.</td>
+<!--ChangeKey is 371-->
+<td class='id'>15</td>
+<td class='summary'>Added international trade content, new definitions, and updates</td>
 </tr>
 <tr>
-<!--ChangeKey is 124-->
-<td class="id">16</td>
-<td class="summary">Added type xsd:anyURI and proxy type niem-xsd:anyURI.</td>
+<!--ChangeKey is 390-->
+<td class='id'>16</td>
+<td class='summary'>Changed the definition of j:VictimOffenseChargeCode so it is not specific to a person.</td>
 </tr>
 <tr>
-<!--ChangeKey is 134-->
-<td class="id">17</td>
-<td class="summary">Added namespace niem-core (namespace prefix = nc)</td>
+<!--ChangeKey is 391-->
+<td class='id'>17</td>
+<td class='summary'>Removed duplicate element j:JurisdictionIdentification</td>
 </tr>
 <tr>
-<!--ChangeKey is 143-->
-<td class="id">18</td>
-<td class="summary">Deleted core namespace</td>
+<!--ChangeKey is 392-->
+<td class='id'>18</td>
+<td class='summary'>Harmonized duplicate elements in immigration and screening</td>
 </tr>
 <tr>
-<!--ChangeKey is 144-->
-<td class="id">19</td>
-<td class="summary">Delete universal namespace</td>
+<!--ChangeKey is 394-->
+<td class='id'>19</td>
+<td class='summary'>Removed "Rad" from the name of cbrn:RadEncounterDeviceLocationType and corresponding property names</td>
 </tr>
 <tr>
-<!--ChangeKey is 147-->
-<td class="id">20</td>
-<td class="summary">Remodeled measures</td>
+<!--ChangeKey is 395-->
+<td class='id'>20</td>
+<td class='summary'>Made elements cbrn:UserName and cbrn:GeographicCoordinates abstract; deleted the data types.</td>
 </tr>
 <tr>
-<!--ChangeKey is 148-->
-<td class="id">21</td>
-<td class="summary">Deleted range properties</td>
+<!--ChangeKey is 398-->
+<td class='id'>21</td>
+<td class='summary'>Changed data type of cbrn:CountValues to cbrn:DoubleListType</td>
 </tr>
 <tr>
-<!--ChangeKey is 151-->
-<td class="id">22</td>
-<td class="summary">Replaced use of AgeMeasureType with TimeMeasureType</td>
+<!--ChangeKey is 401-->
+<td class='id'>22</td>
+<td class='summary'>Harmonized components in CBRN and International Trade (IT) domains</td>
 </tr>
 <tr>
-<!--ChangeKey is 154-->
-<td class="id">23</td>
-<td class="summary">Promoted em LocationAltitudeMeasure and LocationDepthMeasure to core LocationType</td>
+<!--ChangeKey is 402-->
+<td class='id'>23</td>
+<td class='summary'>Added AFCARS permanency goal codes and child welfare additions to the Family Services domain</td>
 </tr>
 <tr>
-<!--ChangeKey is 155-->
-<td class="id">24</td>
-<td class="summary">Added Entity</td>
+<!--ChangeKey is 405-->
+<td class='id'>24</td>
+<td class='summary'>Added a reference to m:Voyage to m:VesselPortAssociationType; removed element m:VoyagePortOfCallAssociation and data type m:VoyagePortOfCallAssociationType.  Also removed element m:PortOfCallReference (had reference target=VesselPortAssociationType)</td>
 </tr>
 <tr>
-<!--ChangeKey is 157-->
-<td class="id">25</td>
-<td class="summary">Replaced old core fingerprints with ANSI/NIST fingerprints</td>
+<!--ChangeKey is 416-->
+<td class='id'>25</td>
+<td class='summary'>Added Hospital Availability Exchange (HAVE) external standard and adapter schema for Emergency Management domain</td>
 </tr>
 <tr>
-<!--ChangeKey is 165-->
-<td class="id">26</td>
-<td class="summary">Refactored part of SupervisionType into core</td>
+<!--ChangeKey is 423-->
+<td class='id'>26</td>
+<td class='summary'>Replaced hazmat codes with updated set.  Definitions now include hazard class or division to distinguish identifical definitions.</td>
 </tr>
 <tr>
-<!--ChangeKey is 169-->
-<td class="id">27</td>
-<td class="summary">Renamed abstract element DocumentCoverageText as DocumentCoverage</td>
+<!--ChangeKey is 433-->
+<td class='id'>27</td>
+<td class='summary'>Added augmented elements and augmented types for augmenations in all domains</td>
 </tr>
 <tr>
-<!--ChangeKey is 171-->
-<td class="id">28</td>
-<td class="summary">Moved ISO and FIPS code elements to core</td>
+<!--ChangeKey is 434-->
+<td class='id'>28</td>
+<td class='summary'>Added missing definitions</td>
 </tr>
 <tr>
-<!--ChangeKey is 176-->
-<td class="id">29</td>
-<td class="summary">Remodeled Activities.</td>
+<!--ChangeKey is 422-->
+<td class='id'>29</td>
+<td class='summary'>Added identification issuing country code substitutions for Intelligence domain</td>
 </tr>
 <tr>
-<!--ChangeKey is 177-->
-<td class="id">30</td>
-<td class="summary">Replaced EventType with ActivityType and removed EventType.</td>
+<!--ChangeKey is 377-->
+<td class='id'>30</td>
+<td class='summary'>Changed intel:AuthenticCode (data type nc:TextType) to intel:AuthenticIndicator (data type niem-xsd:boolean)</td>
 </tr>
 <tr>
-<!--ChangeKey is 178-->
-<td class="id">31</td>
-<td class="summary">Remodeled AddressType</td>
+<!--ChangeKey is 378-->
+<td class='id'>31</td>
+<td class='summary'>Changed the name of intel:CapabilityProficiencyCode (data type nc:TextType) to CapabilityProficiencyText since there is no code set.</td>
 </tr>
 <tr>
-<!--ChangeKey is 179-->
-<td class="id">32</td>
-<td class="summary">Remodeled DateType</td>
+<!--ChangeKey is 379-->
+<td class='id'>32</td>
+<td class='summary'>Changed the data types of im:AlienBirthCountryName, im:AlienCitizenshipCountryName, im:AlienResidencyCountryName from nc:TextType to nc:PropertyNameTextType to be more consistent with country names in Core.</td>
 </tr>
 <tr>
-<!--ChangeKey is 180-->
-<td class="id">33</td>
-<td class="summary">Remodeled MarriageAssociation, CivilUnionAssociation, and DomesticPartnerAssociation</td>
+<!--ChangeKey is 380-->
+<td class='id'>33</td>
+<td class='summary'>Removed intel:PartialDateType and replaced its attributes (dayOfMonth, month, year) with element substitutions for nc:DateRepresentation.  Removed intel:PersonBirthDate and intel:PersonDeathDate since the duplication is no longer needed.</td>
 </tr>
 <tr>
-<!--ChangeKey is 182-->
-<td class="id">34</td>
-<td class="summary">Remodeled ContactInformation</td>
+<!--ChangeKey is 381-->
+<td class='id'>34</td>
+<td class='summary'>Removed element intel:PersonDriverLicenseIdentification (duplicates element nc:DriverLicenseIdentification).</td>
 </tr>
 <tr>
-<!--ChangeKey is 183-->
-<td class="id">35</td>
-<td class="summary">Remodeled Facilities</td>
+<!--ChangeKey is 382-->
+<td class='id'>35</td>
+<td class='summary'>Removed intel elements PersonNationalIdentification and PersonOtherIdentification (duplicates elements in Core).</td>
 </tr>
 <tr>
-<!--ChangeKey is 184-->
-<td class="id">36</td>
-<td class="summary">Remodeled Measures</td>
+<!--ChangeKey is 383-->
+<td class='id'>36</td>
+<td class='summary'>Removed element intel:PersonSSNIdentification (duplicates element in Core).</td>
 </tr>
 <tr>
-<!--ChangeKey is 185-->
-<td class="id">37</td>
-<td class="summary">Replaced ConveyanceLicensePlateIdentification with ConveyanceRegistrationPlateIdentification</td>
+<!--ChangeKey is 385-->
+<td class='id'>37</td>
+<td class='summary'>Changed the definition of j:BondTerminationCategoryText</td>
 </tr>
 <tr>
-<!--ChangeKey is 186-->
-<td class="id">38</td>
-<td class="summary">Remodeled TelephoneNumberType</td>
+<!--ChangeKey is 386-->
+<td class='id'>38</td>
+<td class='summary'>Added j:DrivingIncidentBloodAlcoholContentNumberText to j:DrivingIncidentType</td>
 </tr>
 <tr>
-<!--ChangeKey is 187-->
-<td class="id">39</td>
-<td class="summary">Remodeled ObligationType</td>
+<!--ChangeKey is 387-->
+<td class='id'>39</td>
+<td class='summary'>Added new DriverLicenseEndorsement element, type, and sub-components to justice; made the new element substitutable for nc:DriverLicenseEndorsement</td>
 </tr>
 <tr>
-<!--ChangeKey is 188-->
-<td class="id">40</td>
-<td class="summary">Remodeled IDs</td>
+<!--ChangeKey is 388-->
+<td class='id'>40</td>
+<td class='summary'>Added new element j:CDLHolderCode to j:CitationType</td>
 </tr>
 <tr>
-<!--ChangeKey is 189-->
-<td class="id">41</td>
-<td class="summary">Added TelecommunicationDeviceType</td>
+<!--ChangeKey is 389-->
+<td class='id'>41</td>
+<td class='summary'>Added new element j:JuvenileAsAdultIndicator to j:PersonChargeAssociationType</td>
 </tr>
 <tr>
-<!--ChangeKey is 191-->
-<td class="id">42</td>
-<td class="summary">Loaded ANSI/NIST Fingerprints</td>
+<!--ChangeKey is 373-->
+<td class='id'>42</td>
+<td class='summary'>Harmonized im:ConsulateIndicator and scr:ConsulateIndicator</td>
 </tr>
 <tr>
-<!--ChangeKey is 192-->
-<td class="id">43</td>
-<td class="summary">Remodeled DrugType - generalized SubstanceType, added Chemical element</td>
+<!--ChangeKey is 374-->
+<td class='id'>43</td>
+<td class='summary'>Harmonized im:AlertEntryText and scr:AlertEntryText</td>
 </tr>
 <tr>
-<!--ChangeKey is 194-->
-<td class="id">44</td>
-<td class="summary">Added ComputerType</td>
+<!--ChangeKey is 430-->
+<td class='id'>44</td>
+<td class='summary'>Added keyword to element scr:ClassOfAdmissionClassificationCode</td>
 </tr>
 <tr>
-<!--ChangeKey is 196-->
-<td class="id">45</td>
-<td class="summary">Remodeled Identities</td>
+<!--ChangeKey is 375-->
+<td class='id'>45</td>
+<td class='summary'>Changed the definition of j:PersonStateFingerprintIdentification</td>
 </tr>
 <tr>
-<!--ChangeKey is 198-->
-<td class="id">46</td>
-<td class="summary">Renamed boats as vessels</td>
+<!--ChangeKey is 376-->
+<td class='id'>46</td>
+<td class='summary'>Added j:IdentificationJurisdictionUSPostalServiceCode as a substitution of abstract property nc:IdentificationJurisdiction</td>
 </tr>
 <tr>
-<!--ChangeKey is 199-->
-<td class="id">47</td>
-<td class="summary">Changed justice namespace from prefix "j" release number "1.0" to prefix "jxdm" release number "4.0"</td>
+<!--ChangeKey is 431-->
+<td class='id'>47</td>
+<td class='summary'>New components for SAR - added intel:ThreatTypeCode and type j:TipClassCodeType</td>
 </tr>
 <tr>
-<!--ChangeKey is 200-->
-<td class="id">48</td>
-<td class="summary">Changed geospatial namespace prefix from "gs" to "geo".</td>
+<!--ChangeKey is 432-->
+<td class='id'>48</td>
+<td class='summary'>Added additional codes to sar:TargetSectorCodeSimpleType</td>
 </tr>
-<tr>
-<!--ChangeKey is 205-->
-<td class="id">49</td>
-<td class="summary">Added RoleOfOrganization to justice SubjectType</td>
-</tr>
-<tr>
-<!--ChangeKey is 206-->
-<td class="id">50</td>
-<td class="summary">Fixed definition of scr:DocumentAssociation</td>
-</tr>
-<tr>
-<!--ChangeKey is 209-->
-<td class="id">51</td>
-<td class="summary">Added IncidentDisseminationLevel to IncidentType</td>
-</tr>
-<tr>
-<!--ChangeKey is 210-->
-<td class="id">52</td>
-<td class="summary">Added IncidentCategoryUCRCode</td>
-</tr>
-<tr>
-<!--ChangeKey is 211-->
-<td class="id">53</td>
-<td class="summary">Modified EvidenceType so that it contains an abstract EvidenceObject rather than each possible kind of evidence</td>
-</tr>
-<tr>
-<!--ChangeKey is 212-->
-<td class="id">54</td>
-<td class="summary">Added Incident entry/exit codes</td>
-</tr>
-<tr>
-<!--ChangeKey is 213-->
-<td class="id">55</td>
-<td class="summary">Added VictimLeokaTypeCode</td>
-</tr>
-<tr>
-<!--ChangeKey is 214-->
-<td class="id">56</td>
-<td class="summary">Corrected codes in LEOKAActivityCategoryCodeSimpleType</td>
-</tr>
-<tr>
-<!--ChangeKey is 215-->
-<td class="id">57</td>
-<td class="summary">Renamed justice PersonStateIdentification as PersonStateFingerprintIdentification so it does not clash with core PersonStateIdentification.</td>
-</tr>
-<tr>
-<!--ChangeKey is 216-->
-<td class="id">58</td>
-<td class="summary">Refactored DriverLicense info in justice and moved it to core.</td>
-</tr>
-<tr>
-<!--ChangeKey is 217-->
-<td class="id">59</td>
-<td class="summary">Removed Abstract from element names</td>
-</tr>
-<tr>
-<!--ChangeKey is 219-->
-<td class="id">60</td>
-<td class="summary">Corrected code definitions from ncic:JWTCodeSimpleType, ncic:HULCodeSimpleType</td>
-</tr>
-<tr>
-<!--ChangeKey is 220-->
-<td class="id">61</td>
-<td class="summary">Corrected the base of PercentageType from xsd:decimal to nc:PercentageSimpleType</td>
-</tr>
-<tr>
-<!--ChangeKey is 221-->
-<td class="id">62</td>
-<td class="summary">Added ExplosiveType</td>
-</tr>
-<tr>
-<!--ChangeKey is 222-->
-<td class="id">63</td>
-<td class="summary">Added drug category codes</td>
-</tr>
-<tr>
-<!--ChangeKey is 223-->
-<td class="id">64</td>
-<td class="summary">Added Hazmat codes</td>
-</tr>
-<tr>
-<!--ChangeKey is 224-->
-<td class="id">65</td>
-<td class="summary">Changed justice ViolatedStatuteAssociationType from containing Charge to containing Statute</td>
-</tr>
-<tr>
-<!--ChangeKey is 225-->
-<td class="id">66</td>
-<td class="summary">Added NGA datum codes</td>
-</tr>
-<tr>
-<!--ChangeKey is 229-->
-<td class="id">67</td>
-<td class="summary">Modified code definition in ncic:EXLCodeSimpleType</td>
-</tr>
-<tr>
-<!--ChangeKey is 230-->
-<td class="id">68</td>
-<td class="summary">Applied NCIC TOU 06-2</td>
-</tr>
-<tr>
-<!--ChangeKey is 235-->
-<td class="id">69</td>
-<td class="summary">Changed the definition of ncic:CATCodeSimpleType code "TU" from "Turbocharger" to "Turbocharger/Supercharger"</td>
-</tr>
-<tr>
-<!--ChangeKey is 237-->
-<td class="id">70</td>
-<td class="summary">Updated FIPS 10-4 country codes</td>
-</tr>
-<tr>
-<!--ChangeKey is 238-->
-<td class="id">71</td>
-<td class="summary">Updated ISO 639 language codes</td>
-</tr>
-<tr>
-<!--ChangeKey is 240-->
-<td class="id">72</td>
-<td class="summary">Added iso_639-3:LanguageCodeType and iso_639-3:LanguageCodeSimpleType with code set</td>
-</tr>
-<tr>
-<!--ChangeKey is 243-->
-<td class="id">73</td>
-<td class="summary">Deleted namespaces ISO 639-2b and ISO 639-2t</td>
-</tr>
-<tr>
-<!--ChangeKey is 244-->
-<td class="id">74</td>
-<td class="summary">Restricted cardinality on GeographicCoordinateType</td>
-</tr>
-<tr>
-<!--ChangeKey is 246-->
-<td class="id">75</td>
-<td class="summary">Restricted cardinality on nc:UTMCoordinateType</td>
-</tr>
-<tr>
-<!--ChangeKey is 247-->
-<td class="id">76</td>
-<td class="summary">Restricted cardinality on nc:MGRSCoordinateType</td>
-</tr>
-<tr>
-<!--ChangeKey is 248-->
-<td class="id">77</td>
-<td class="summary">Changed the type of nc:UTMEastingValue and nc:UTMNorthingValue from niem-xsd:integer to niem-xsd:nonNegativeInteger</td>
-</tr>
-<tr>
-<!--ChangeKey is 249-->
-<td class="id">78</td>
-<td class="summary">Removed nc:GeographicDatumID (has been replaced by nc:GeographicDatumCode)</td>
-</tr>
-<tr>
-<!--ChangeKey is 251-->
-<td class="id">79</td>
-<td class="summary">Updated/replaced unece rec 20 units of measurement code sets</td>
-</tr>
-<tr>
-<!--ChangeKey is 253-->
-<td class="id">80</td>
-<td class="summary">Screening updates</td>
-</tr>
-<tr>
-<!--ChangeKey is 254-->
-<td class="id">81</td>
-<td class="summary">Added im:AlienAlertType as parent type of scr:AlertType</td>
-</tr>
-<tr>
-<!--ChangeKey is 255-->
-<td class="id">82</td>
-<td class="summary">Changed scr:PersonAlertType to an association - renamed as scr:PersonAlertAssociationType; added parent type nc:AssociationType and person and alert references</td>
-</tr>
-<tr>
-<!--ChangeKey is 256-->
-<td class="id">83</td>
-<td class="summary">Added new properties to scr:PersonCrossingEncounterType</td>
-</tr>
-<tr>
-<!--ChangeKey is 257-->
-<td class="id">84</td>
-<td class="summary">Added new properties to scr:ConveyanceAugmentationType</td>
-</tr>
-<tr>
-<!--ChangeKey is 258-->
-<td class="id">85</td>
-<td class="summary">Added new properties to scr:PersonDesignatorType</td>
-</tr>
-<tr>
-<!--ChangeKey is 259-->
-<td class="id">86</td>
-<td class="summary">Added scr:VisaType and visa properties</td>
-</tr>
-<tr>
-<!--ChangeKey is 260-->
-<td class="id">87</td>
-<td class="summary">Added new property to scr:BenefitApplicationEncounterType</td>
-</tr>
-<tr>
-<!--ChangeKey is 261-->
-<td class="id">88</td>
-<td class="summary">Replaced and added new elements to scr:ScreeningProcessAugmentationType (renamed from scr:ActivityProcessAugmentationType)</td>
-</tr>
-<tr>
-<!--ChangeKey is 262-->
-<td class="id">89</td>
-<td class="summary">Changed Identification elements to ID elements</td>
-</tr>
-<tr>
-<!--ChangeKey is 263-->
-<td class="id">90</td>
-<td class="summary">Added new property to scr:PersonBiometricAssociationType</td>
-</tr>
-<tr>
-<!--ChangeKey is 264-->
-<td class="id">91</td>
-<td class="summary">Added new properties to scr:PersonDerogatoryInformationType</td>
-</tr>
-<tr>
-<!--ChangeKey is 266-->
-<td class="id">92</td>
-<td class="summary">Added properties to scr:TravelDocumentType</td>
-</tr>
-<tr>
-<!--ChangeKey is 267-->
-<td class="id">93</td>
-<td class="summary">Added additional codes to scr:ClassOfAdmissionCategoryCodeSimpleType</td>
-</tr>
-<tr>
-<!--ChangeKey is 268-->
-<td class="id">94</td>
-<td class="summary">Updated immigration element definitions</td>
-</tr>
-<tr>
-<!--ChangeKey is 270-->
-<td class="id">95</td>
-<td class="summary">Added element Attachment of type nc:BinaryType to niem-core.</td>
-</tr>
-<tr>
-<!--ChangeKey is 271-->
-<td class="id">96</td>
-<td class="summary">Added element TearlineIndicator to niem-core.</td>
-</tr>
-<tr>
-<!--ChangeKey is 272-->
-<td class="id">97</td>
-<td class="summary">Moved j:VehicleMotorCarrierIdentification to niem-core</td>
-</tr>
-<tr>
-<!--ChangeKey is 273-->
-<td class="id">98</td>
-<td class="summary">Added element TargetSectorCode to jxdm</td>
-</tr>
-<tr>
-<!--ChangeKey is 275-->
-<td class="id">99</td>
-<td class="summary">Added TipTaxonomyType to jxdm</td>
-</tr>
-<tr>
-<!--ChangeKey is 276-->
-<td class="id">100</td>
-<td class="summary">Moved PersonOtherID to niem-core:PersonType</td>
-</tr>
-<tr>
-<!--ChangeKey is 277-->
-<td class="id">101</td>
-<td class="summary">Changed type of nc:FacilityName from nc:TextType to nc:ProperNameTextType</td>
-</tr>
-<tr>
-<!--ChangeKey is 278-->
-<td class="id">102</td>
-<td class="summary">Removed ThreeDimensionalGeographicCoordinateType added in 2.0 alpha</td>
-</tr>
-<tr>
-<!--ChangeKey is 279-->
-<td class="id">103</td>
-<td class="summary">Replaced ic-ism and Document security information with an empty metadata adapter type since ic-ism is FOUO; removed the dod and eo-12958 types and namespaces</td>
-</tr>
-<tr>
-<!--ChangeKey is 280-->
-<td class="id">104</td>
-<td class="summary">Renamed types and elements with term "Security" used in a financial sense as "Securities" to avoid semantic overlapping with the safety sense of the word.</td>
-</tr>
-<tr>
-<!--ChangeKey is 281-->
-<td class="id">105</td>
-<td class="summary">Changed three apco type names ending in "SimpleCodeType" to "CodeSimpleType" to be consistent with the other types in the model</td>
-</tr>
-<tr>
-<!--ChangeKey is 282-->
-<td class="id">106</td>
-<td class="summary">Replaced element representation term "CodeText" with "Code"</td>
-</tr>
-<tr>
-<!--ChangeKey is 283-->
-<td class="id">107</td>
-<td class="summary">Refactored Encounters - added PersonEncounterType to niem-core</td>
-</tr>
-<tr>
-<!--ChangeKey is 285-->
-<td class="id">108</td>
-<td class="summary">Harmonized PassportType and moved it into core</td>
-</tr>
-<tr>
-<!--ChangeKey is 286-->
-<td class="id">109</td>
-<td class="summary">Replaced nc:InjuryCauserPerson in nc:InjuryType with its substitution group head nc:InjuryCauser</td>
-</tr>
-<tr>
-<!--ChangeKey is 287-->
-<td class="id">110</td>
-<td class="summary">Refactored and moved engine information into ConveyanceType so that it can apply to any kind of conveyance.</td>
-</tr>
-<tr>
-<!--ChangeKey is 288-->
-<td class="id">111</td>
-<td class="summary">Switched names of Victim and VictimEntity so that Victim is now of type VictimType and VictimEntity is the abstract substitution head</td>
-</tr>
-<tr>
-<!--ChangeKey is 289-->
-<td class="id">112</td>
-<td class="summary">Removed duplicate j:ActivityInvolvedPersonAssociation (already exists in core)</td>
-</tr>
-<tr>
-<!--ChangeKey is 290-->
-<td class="id">113</td>
-<td class="summary">Fixed code definitions in NCIC HULCodeSimpleType and PROCodeSimpleType codes</td>
-</tr>
-<tr>
-<!--ChangeKey is 291-->
-<td class="id">114</td>
-<td class="summary">Created OrganizationUnitAssociationType</td>
-</tr>
-<tr>
-<!--ChangeKey is 292-->
-<td class="id">115</td>
-<td class="summary">Added ncic:RMICodeType (Ransom Money Indicator)</td>
-</tr>
-<tr>
-<!--ChangeKey is 293-->
-<td class="id">116</td>
-<td class="summary">Added ndex:MethodOfAccessCodeType</td>
-</tr>
-<tr>
-<!--ChangeKey is 294-->
-<td class="id">117</td>
-<td class="summary">Renamed j:VictimLEOKACategoryCodeType as j:LEOKACircumstanceCategoryCodeType; element j:VictimLeokaTypeCode as j:LEOKACircumstanceCategoryCode</td>
-</tr>
-<tr>
-<!--ChangeKey is 295-->
-<td class="id">118</td>
-<td class="summary">Modified definitions for codes of type nibrs:LEOKAActivityCategoryCodeSimpleType</td>
-</tr>
-<tr>
-<!--ChangeKey is 297-->
-<td class="id">119</td>
-<td class="summary">Attached orphaned victim elements to j:VictimType; deleted hanging j:VictimProperty (j:VictimAffectedProperty is substitutable for j:VictimEntity)</td>
-</tr>
-<tr>
-<!--ChangeKey is 298-->
-<td class="id">120</td>
-<td class="summary">Added new element j:IdentificationJurisdictionCanadianProvinceCode as a substitution for nc:IdentificationJurisdiction</td>
-</tr>
-<tr>
-<!--ChangeKey is 299-->
-<td class="id">121</td>
-<td class="summary">Fixed the definition for the external geo namespace om</td>
-</tr>
-<tr>
-<!--ChangeKey is 301-->
-<td class="id">122</td>
-<td class="summary">Applied ANSI NIST Biometric modifications</td>
-</tr>
-<tr>
-<!--ChangeKey is 303-->
-<td class="id">123</td>
-<td class="summary">Changed ItemTransactionAssociationType to ItemTransactionType</td>
-</tr>
-<tr>
-<!--ChangeKey is 305-->
-<td class="id">124</td>
-<td class="summary">Updated ISO 3166 country codes</td>
-</tr>
-<tr>
-<!--ChangeKey is 308-->
-<td class="id">125</td>
-<td class="summary">Updated fips10-4 international state codes</td>
-</tr>
-<tr>
-<!--ChangeKey is 309-->
-<td class="id">126</td>
-<td class="summary">Removed nc:VehicleModelCodeText</td>
-</tr>
-<tr>
-<!--ChangeKey is 311-->
-<td class="id">127</td>
-<td class="summary">Removed the term "Abstract" from the middle of element names when used to indicate an abstract element.</td>
-</tr>
-<tr>
-<!--ChangeKey is 312-->
-<td class="id">128</td>
-<td class="summary">Moved applicable elements from nc:ItemType to nc:TangibleItemType</td>
-</tr>
-<tr>
-<!--ChangeKey is 313-->
-<td class="id">129</td>
-<td class="summary">Added abstract ItemColor to nc:TangibleItemType; made other item/vehicle/vessel color element substitutable for the new element.</td>
-</tr>
-<tr>
-<!--ChangeKey is 314-->
-<td class="id">130</td>
-<td class="summary">Moved orphan element j:PersonNCICIdentification to j:PersonAugmentationType</td>
-</tr>
-<tr>
-<!--ChangeKey is 315-->
-<td class="id">131</td>
-<td class="summary">Applied immigration domain fixes</td>
-</tr>
-<tr>
-<!--ChangeKey is 316-->
-<td class="id">132</td>
-<td class="summary">Changed inheritance of nc:ConveyanceType and it:PackageType from nc:PropertyType to nc:ItemType</td>
-</tr>
-<tr>
-<!--ChangeKey is 317-->
-<td class="id">133</td>
-<td class="summary">Changed the definition of nc:PropertyType</td>
-</tr>
-<tr>
-<!--ChangeKey is 318-->
-<td class="id">134</td>
-<td class="summary">Merged ncic, ndex, and nibrs namespaces into one "fbi" namespace</td>
-</tr>
-<tr>
-<!--ChangeKey is 319-->
-<td class="id">135</td>
-<td class="summary">Added nc:PersonReference to nc:DriverLicenseAssociationType</td>
-</tr>
-<tr>
-<!--ChangeKey is 320-->
-<td class="id">136</td>
-<td class="summary">Removed dates in associations duplicated by inherited AssociationBeginDate and AssociationEndDate - nc:ResidenceStartDate, nc:ResidenceEndDate (nc:PersonResidenceAssociationType), nc:ConveyanceTransportationDate (nc:TransportationAssociationType)</td>
-</tr>
-<tr>
-<!--ChangeKey is 321-->
-<td class="id">137</td>
-<td class="summary">Remodeled nc:PersonInvolvementInActivityAssociationType - Dropped nc:PersonReference and nc:ActivityReference, extended from nc:ActivityPersonAssociationType, and renamed as nc:ActivityInvolvedPersonAssociationType</td>
-</tr>
-<tr>
-<!--ChangeKey is 322-->
-<td class="id">138</td>
-<td class="summary">Applied screening domain fixes</td>
-</tr>
-<tr>
-<!--ChangeKey is 323-->
-<td class="id">139</td>
-<td class="summary">Changed the definition of EntityType to "A person, organization, or thing..."</td>
-</tr>
-<tr>
-<!--ChangeKey is 328-->
-<td class="id">140</td>
-<td class="summary">Made appropriate abstract properties concrete where unreferenced by substitutable properties; added object types</td>
-</tr>
-<tr>
-<!--ChangeKey is 329-->
-<td class="id">141</td>
-<td class="summary">Replaced term "Personal" with "Person" in screening and core</td>
-</tr>
-<tr>
-<!--ChangeKey is 330-->
-<td class="id">142</td>
-<td class="summary">Fixed definitions for ansi_d20:DriverLicenseClassCodeSimpleType codes</td>
-</tr>
-<tr>
-<!--ChangeKey is 331-->
-<td class="id">143</td>
-<td class="summary">Updated namespace definitions</td>
-</tr>
-<tr>
-<!--ChangeKey is 332-->
-<td class="id">144</td>
-<td class="summary">Updated versions for schemas dependent on structures and appinfo (which have been updated to version 2.0)</td>
-</tr>
-<tr>
-<!--ChangeKey is 333-->
-<td class="id">145</td>
-<td class="summary">Removed intel:SubjectCautionInformation from type intel:SubjectCautionInformationType</td>
-</tr>
-<tr>
-<!--ChangeKey is 334-->
-<td class="id">146</td>
-<td class="summary">Modified the definitions of elements nc:ContactInformationIsEveningIndicator and nc:ContactInformationIsNightIndicator</td>
-</tr>
-<tr>
-<!--ChangeKey is 335-->
-<td class="id">147</td>
-<td class="summary">Moved element nc:ConditionGroupParentID back to justice</td>
-</tr>
-<tr>
-<!--ChangeKey is 336-->
-<td class="id">148</td>
-<td class="summary">Made nc:EntityPerson and nc:EntityOrganization elements available as references to be substituted for abstract element nc:EntityRepresentation within nc:EntityType</td>
-</tr>
-<tr>
-<!--ChangeKey is 337-->
-<td class="id">149</td>
-<td class="summary">Removed nc:ActivityEntityAssociationType in favor of existing types nc:ActivityPersonAssociationType and nc:ActivityOrganizationAssociationType</td>
-</tr>
-<tr>
-<!--ChangeKey is 338-->
-<td class="id">150</td>
-<td class="summary">Moved j:VehicleIdentification into niem-core under nc:VehicleType</td>
-</tr>
-<tr>
-<!--ChangeKey is 339-->
-<td class="id">151</td>
-<td class="summary">Changed nc:PersonVehicleAssociation to nc:PersonConveyanceAssociation</td>
-</tr>
-<tr>
-<!--ChangeKey is 340-->
-<td class="id">152</td>
-<td class="summary">Changed the parent type of nc:ConveyanceType from nc:ItemType to nc:TangibleItemType</td>
-</tr>
-<tr>
-<!--ChangeKey is 341-->
-<td class="id">153</td>
-<td class="summary">Added element nc:HazardousMaterial of type nc:SubstanceType</td>
-</tr>
-<tr>
-<!--ChangeKey is 342-->
-<td class="id">154</td>
-<td class="summary">Added nc:PassportIdentification to nc:PersonType</td>
-</tr>
-<tr>
-<!--ChangeKey is 346-->
-<td class="id">155</td>
-<td class="summary">Replaced used of "actor" with entities</td>
-</tr>
-<tr>
-<!--ChangeKey is 347-->
-<td class="id">156</td>
-<td class="summary">Added associations from GJXDM 3.1beta to the jxdm domain</td>
-</tr>
-</table>
-</body>
-</html>
+</tbody></table>
+</body></html>

@@ -16,9 +16,9 @@
       </xsd:appinfo>
     </xsd:annotation>
     <xsd:restriction base="xsd:token">
-      <xsd:enumeration value="Circa">
+      <xsd:enumeration value="Unknown">
         <xsd:annotation>
-          <xsd:documentation>Accuracy of the actual date is at, in, or of approximately about the specified date</xsd:documentation>
+          <xsd:documentation>The accuracy of the specified date is not known.</xsd:documentation>
         </xsd:annotation>
       </xsd:enumeration>
       <xsd:enumeration value="Exact">
@@ -26,9 +26,9 @@
           <xsd:documentation>The specified date exhibits or is marked by strict, particular, and complete accordance with fact or a standard.</xsd:documentation>
         </xsd:annotation>
       </xsd:enumeration>
-      <xsd:enumeration value="Unknown">
+      <xsd:enumeration value="Circa">
         <xsd:annotation>
-          <xsd:documentation>The accuracy of the specified date is not known.</xsd:documentation>
+          <xsd:documentation>Accuracy of the actual date is at, in, or of approximately about the specified date</xsd:documentation>
         </xsd:annotation>
       </xsd:enumeration>
     </xsd:restriction>
@@ -54,14 +54,9 @@
       </xsd:appinfo>
     </xsd:annotation>
     <xsd:restriction base="xsd:token">
-      <xsd:enumeration value="Normalized">
+      <xsd:enumeration value="Variant">
         <xsd:annotation>
-          <xsd:documentation>The imposition of a standard.</xsd:documentation>
-        </xsd:annotation>
-      </xsd:enumeration>
-      <xsd:enumeration value="Original">
-        <xsd:annotation>
-          <xsd:documentation>Preceding all others in time or being as first made.</xsd:documentation>
+          <xsd:documentation>Differing from a norm or standard.</xsd:documentation>
         </xsd:annotation>
       </xsd:enumeration>
       <xsd:enumeration value="Transliterated">
@@ -69,9 +64,14 @@
           <xsd:documentation>To transcribe from one alphabet to another.</xsd:documentation>
         </xsd:annotation>
       </xsd:enumeration>
-      <xsd:enumeration value="Variant">
+      <xsd:enumeration value="Original">
         <xsd:annotation>
-          <xsd:documentation>Differing from a norm or standard.</xsd:documentation>
+          <xsd:documentation>Preceding all others in time or being as first made.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="Normalized">
+        <xsd:annotation>
+          <xsd:documentation>The imposition of a standard.</xsd:documentation>
         </xsd:annotation>
       </xsd:enumeration>
     </xsd:restriction>
@@ -97,74 +97,9 @@
       </xsd:appinfo>
     </xsd:annotation>
     <xsd:restriction base="xsd:token">
-      <xsd:enumeration value="Arabic">
-        <xsd:annotation>
-          <xsd:documentation>Arabic</xsd:documentation>
-        </xsd:annotation>
-      </xsd:enumeration>
-      <xsd:enumeration value="Armenian">
-        <xsd:annotation>
-          <xsd:documentation>Armenian</xsd:documentation>
-        </xsd:annotation>
-      </xsd:enumeration>
-      <xsd:enumeration value="Bengali">
-        <xsd:annotation>
-          <xsd:documentation>Bengali</xsd:documentation>
-        </xsd:annotation>
-      </xsd:enumeration>
-      <xsd:enumeration value="Bopomofo">
-        <xsd:annotation>
-          <xsd:documentation>Bopomofo</xsd:documentation>
-        </xsd:annotation>
-      </xsd:enumeration>
-      <xsd:enumeration value="Buhid">
-        <xsd:annotation>
-          <xsd:documentation>Buhid</xsd:documentation>
-        </xsd:annotation>
-      </xsd:enumeration>
-      <xsd:enumeration value="CanadianSyllabics">
-        <xsd:annotation>
-          <xsd:documentation>Canadian Syllabics</xsd:documentation>
-        </xsd:annotation>
-      </xsd:enumeration>
-      <xsd:enumeration value="Cherokee">
-        <xsd:annotation>
-          <xsd:documentation>Cherokee</xsd:documentation>
-        </xsd:annotation>
-      </xsd:enumeration>
-      <xsd:enumeration value="Cypriot">
-        <xsd:annotation>
-          <xsd:documentation>Cypriot</xsd:documentation>
-        </xsd:annotation>
-      </xsd:enumeration>
-      <xsd:enumeration value="Cyrillic">
-        <xsd:annotation>
-          <xsd:documentation>Cyrillic</xsd:documentation>
-        </xsd:annotation>
-      </xsd:enumeration>
       <xsd:enumeration value="Deseret">
         <xsd:annotation>
           <xsd:documentation>Deseret</xsd:documentation>
-        </xsd:annotation>
-      </xsd:enumeration>
-      <xsd:enumeration value="Devanagari">
-        <xsd:annotation>
-          <xsd:documentation>Devanagari</xsd:documentation>
-        </xsd:annotation>
-      </xsd:enumeration>
-      <xsd:enumeration value="Ethiopic">
-        <xsd:annotation>
-          <xsd:documentation>Ethiopic</xsd:documentation>
-        </xsd:annotation>
-      </xsd:enumeration>
-      <xsd:enumeration value="Georgian">
-        <xsd:annotation>
-          <xsd:documentation>Georgian</xsd:documentation>
-        </xsd:annotation>
-      </xsd:enumeration>
-      <xsd:enumeration value="Gothic">
-        <xsd:annotation>
-          <xsd:documentation>Gothic</xsd:documentation>
         </xsd:annotation>
       </xsd:enumeration>
       <xsd:enumeration value="Greek">
@@ -172,164 +107,19 @@
           <xsd:documentation>Greek</xsd:documentation>
         </xsd:annotation>
       </xsd:enumeration>
-      <xsd:enumeration value="Gujarati">
-        <xsd:annotation>
-          <xsd:documentation>Gujarati</xsd:documentation>
-        </xsd:annotation>
-      </xsd:enumeration>
-      <xsd:enumeration value="Gurmukhi">
-        <xsd:annotation>
-          <xsd:documentation>Gurmukhi</xsd:documentation>
-        </xsd:annotation>
-      </xsd:enumeration>
-      <xsd:enumeration value="Han">
-        <xsd:annotation>
-          <xsd:documentation>Han</xsd:documentation>
-        </xsd:annotation>
-      </xsd:enumeration>
       <xsd:enumeration value="Hangul">
         <xsd:annotation>
           <xsd:documentation>Hangul</xsd:documentation>
         </xsd:annotation>
       </xsd:enumeration>
-      <xsd:enumeration value="Hanunoo">
+      <xsd:enumeration value="CanadianSyllabics">
         <xsd:annotation>
-          <xsd:documentation>Hanunoo</xsd:documentation>
+          <xsd:documentation>Canadian Syllabics</xsd:documentation>
         </xsd:annotation>
       </xsd:enumeration>
-      <xsd:enumeration value="Hebrew">
+      <xsd:enumeration value="Gothic">
         <xsd:annotation>
-          <xsd:documentation>Hebrew</xsd:documentation>
-        </xsd:annotation>
-      </xsd:enumeration>
-      <xsd:enumeration value="Hiragana">
-        <xsd:annotation>
-          <xsd:documentation>Hiragana</xsd:documentation>
-        </xsd:annotation>
-      </xsd:enumeration>
-      <xsd:enumeration value="Kannada">
-        <xsd:annotation>
-          <xsd:documentation>Kannada</xsd:documentation>
-        </xsd:annotation>
-      </xsd:enumeration>
-      <xsd:enumeration value="Katakana">
-        <xsd:annotation>
-          <xsd:documentation>Katakana</xsd:documentation>
-        </xsd:annotation>
-      </xsd:enumeration>
-      <xsd:enumeration value="Khmer">
-        <xsd:annotation>
-          <xsd:documentation>Khmer</xsd:documentation>
-        </xsd:annotation>
-      </xsd:enumeration>
-      <xsd:enumeration value="Lao">
-        <xsd:annotation>
-          <xsd:documentation>Lao</xsd:documentation>
-        </xsd:annotation>
-      </xsd:enumeration>
-      <xsd:enumeration value="Latin">
-        <xsd:annotation>
-          <xsd:documentation>Latin</xsd:documentation>
-        </xsd:annotation>
-      </xsd:enumeration>
-      <xsd:enumeration value="Limbu">
-        <xsd:annotation>
-          <xsd:documentation>Limbu</xsd:documentation>
-        </xsd:annotation>
-      </xsd:enumeration>
-      <xsd:enumeration value="LinearB">
-        <xsd:annotation>
-          <xsd:documentation>Linear B</xsd:documentation>
-        </xsd:annotation>
-      </xsd:enumeration>
-      <xsd:enumeration value="Malayalam">
-        <xsd:annotation>
-          <xsd:documentation>Malayalam</xsd:documentation>
-        </xsd:annotation>
-      </xsd:enumeration>
-      <xsd:enumeration value="Mongolian">
-        <xsd:annotation>
-          <xsd:documentation>Mongolian</xsd:documentation>
-        </xsd:annotation>
-      </xsd:enumeration>
-      <xsd:enumeration value="Myanmar">
-        <xsd:annotation>
-          <xsd:documentation>Myanmar</xsd:documentation>
-        </xsd:annotation>
-      </xsd:enumeration>
-      <xsd:enumeration value="Ogham">
-        <xsd:annotation>
-          <xsd:documentation>Ogham</xsd:documentation>
-        </xsd:annotation>
-      </xsd:enumeration>
-      <xsd:enumeration value="OldItalic">
-        <xsd:annotation>
-          <xsd:documentation>Old Italic</xsd:documentation>
-        </xsd:annotation>
-      </xsd:enumeration>
-      <xsd:enumeration value="Oriya">
-        <xsd:annotation>
-          <xsd:documentation>Oriya</xsd:documentation>
-        </xsd:annotation>
-      </xsd:enumeration>
-      <xsd:enumeration value="Osmanya">
-        <xsd:annotation>
-          <xsd:documentation>Osmanya</xsd:documentation>
-        </xsd:annotation>
-      </xsd:enumeration>
-      <xsd:enumeration value="Runic">
-        <xsd:annotation>
-          <xsd:documentation>Runic</xsd:documentation>
-        </xsd:annotation>
-      </xsd:enumeration>
-      <xsd:enumeration value="Shavian">
-        <xsd:annotation>
-          <xsd:documentation>Shavian</xsd:documentation>
-        </xsd:annotation>
-      </xsd:enumeration>
-      <xsd:enumeration value="Sinhala">
-        <xsd:annotation>
-          <xsd:documentation>Sinhala</xsd:documentation>
-        </xsd:annotation>
-      </xsd:enumeration>
-      <xsd:enumeration value="Syriac">
-        <xsd:annotation>
-          <xsd:documentation>Syriac</xsd:documentation>
-        </xsd:annotation>
-      </xsd:enumeration>
-      <xsd:enumeration value="Tagalog">
-        <xsd:annotation>
-          <xsd:documentation>Tagalog</xsd:documentation>
-        </xsd:annotation>
-      </xsd:enumeration>
-      <xsd:enumeration value="Tagbanwa">
-        <xsd:annotation>
-          <xsd:documentation>Tagbanwa</xsd:documentation>
-        </xsd:annotation>
-      </xsd:enumeration>
-      <xsd:enumeration value="TaiLe">
-        <xsd:annotation>
-          <xsd:documentation>Tai Le</xsd:documentation>
-        </xsd:annotation>
-      </xsd:enumeration>
-      <xsd:enumeration value="Tamil">
-        <xsd:annotation>
-          <xsd:documentation>Tamil</xsd:documentation>
-        </xsd:annotation>
-      </xsd:enumeration>
-      <xsd:enumeration value="Telugu">
-        <xsd:annotation>
-          <xsd:documentation>Telugu</xsd:documentation>
-        </xsd:annotation>
-      </xsd:enumeration>
-      <xsd:enumeration value="Thaana">
-        <xsd:annotation>
-          <xsd:documentation>Thaana</xsd:documentation>
-        </xsd:annotation>
-      </xsd:enumeration>
-      <xsd:enumeration value="Thai">
-        <xsd:annotation>
-          <xsd:documentation>Thai</xsd:documentation>
+          <xsd:documentation>Gothic</xsd:documentation>
         </xsd:annotation>
       </xsd:enumeration>
       <xsd:enumeration value="Tibetan">
@@ -337,14 +127,224 @@
           <xsd:documentation>Tibetan</xsd:documentation>
         </xsd:annotation>
       </xsd:enumeration>
-      <xsd:enumeration value="Ugaritic">
+      <xsd:enumeration value="Katakana">
         <xsd:annotation>
-          <xsd:documentation>Ugaritic</xsd:documentation>
+          <xsd:documentation>Katakana</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="Telugu">
+        <xsd:annotation>
+          <xsd:documentation>Telugu</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="Arabic">
+        <xsd:annotation>
+          <xsd:documentation>Arabic</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="OldItalic">
+        <xsd:annotation>
+          <xsd:documentation>Old Italic</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="Ethiopic">
+        <xsd:annotation>
+          <xsd:documentation>Ethiopic</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="Malayalam">
+        <xsd:annotation>
+          <xsd:documentation>Malayalam</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="Myanmar">
+        <xsd:annotation>
+          <xsd:documentation>Myanmar</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="Lao">
+        <xsd:annotation>
+          <xsd:documentation>Lao</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="Syriac">
+        <xsd:annotation>
+          <xsd:documentation>Syriac</xsd:documentation>
         </xsd:annotation>
       </xsd:enumeration>
       <xsd:enumeration value="Yi">
         <xsd:annotation>
           <xsd:documentation>Yi</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="Armenian">
+        <xsd:annotation>
+          <xsd:documentation>Armenian</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="Runic">
+        <xsd:annotation>
+          <xsd:documentation>Runic</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="Bengali">
+        <xsd:annotation>
+          <xsd:documentation>Bengali</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="Shavian">
+        <xsd:annotation>
+          <xsd:documentation>Shavian</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="Latin">
+        <xsd:annotation>
+          <xsd:documentation>Latin</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="Ugaritic">
+        <xsd:annotation>
+          <xsd:documentation>Ugaritic</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="Thaana">
+        <xsd:annotation>
+          <xsd:documentation>Thaana</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="Han">
+        <xsd:annotation>
+          <xsd:documentation>Han</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="LinearB">
+        <xsd:annotation>
+          <xsd:documentation>Linear B</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="TaiLe">
+        <xsd:annotation>
+          <xsd:documentation>Tai Le</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="Cherokee">
+        <xsd:annotation>
+          <xsd:documentation>Cherokee</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="Sinhala">
+        <xsd:annotation>
+          <xsd:documentation>Sinhala</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="Cypriot">
+        <xsd:annotation>
+          <xsd:documentation>Cypriot</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="Tagalog">
+        <xsd:annotation>
+          <xsd:documentation>Tagalog</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="Khmer">
+        <xsd:annotation>
+          <xsd:documentation>Khmer</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="Gurmukhi">
+        <xsd:annotation>
+          <xsd:documentation>Gurmukhi</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="Osmanya">
+        <xsd:annotation>
+          <xsd:documentation>Osmanya</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="Bopomofo">
+        <xsd:annotation>
+          <xsd:documentation>Bopomofo</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="Kannada">
+        <xsd:annotation>
+          <xsd:documentation>Kannada</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="Thai">
+        <xsd:annotation>
+          <xsd:documentation>Thai</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="Ogham">
+        <xsd:annotation>
+          <xsd:documentation>Ogham</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="Georgian">
+        <xsd:annotation>
+          <xsd:documentation>Georgian</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="Hiragana">
+        <xsd:annotation>
+          <xsd:documentation>Hiragana</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="Oriya">
+        <xsd:annotation>
+          <xsd:documentation>Oriya</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="Devanagari">
+        <xsd:annotation>
+          <xsd:documentation>Devanagari</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="Buhid">
+        <xsd:annotation>
+          <xsd:documentation>Buhid</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="Tagbanwa">
+        <xsd:annotation>
+          <xsd:documentation>Tagbanwa</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="Limbu">
+        <xsd:annotation>
+          <xsd:documentation>Limbu</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="Hebrew">
+        <xsd:annotation>
+          <xsd:documentation>Hebrew</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="Mongolian">
+        <xsd:annotation>
+          <xsd:documentation>Mongolian</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="Tamil">
+        <xsd:annotation>
+          <xsd:documentation>Tamil</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="Hanunoo">
+        <xsd:annotation>
+          <xsd:documentation>Hanunoo</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="Cyrillic">
+        <xsd:annotation>
+          <xsd:documentation>Cyrillic</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="Gujarati">
+        <xsd:annotation>
+          <xsd:documentation>Gujarati</xsd:documentation>
         </xsd:annotation>
       </xsd:enumeration>
     </xsd:restriction>
@@ -408,14 +408,14 @@
       </xsd:appinfo>
     </xsd:annotation>
     <xsd:restriction base="xsd:token">
-      <xsd:enumeration value="High">
-        <xsd:annotation>
-          <xsd:documentation>High probability that the data is trustworthy</xsd:documentation>
-        </xsd:annotation>
-      </xsd:enumeration>
       <xsd:enumeration value="Low">
         <xsd:annotation>
           <xsd:documentation>Low probability that the data is trustworthy</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="High">
+        <xsd:annotation>
+          <xsd:documentation>High probability that the data is trustworthy</xsd:documentation>
         </xsd:annotation>
       </xsd:enumeration>
       <xsd:enumeration value="Medium">

@@ -1,0 +1,342 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema targetNamespace="http://niem.gov/niem/geospatial/2.1" version="1" xmlns:s="http://niem.gov/niem/structures/2.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xls="http://niem.gov/niem/external/ogc/xls/1.1.0/dhs-gmo/2.1.0" xmlns:geo="http://niem.gov/niem/geospatial/2.1" xmlns:i="http://niem.gov/niem/appinfo/2.0" xmlns:gml="http://www.opengis.net/gml/3.2">
+  <xsd:annotation>
+    <xsd:documentation>Defines NIEM adapter types for external geospatial components defined by OGC and ISO.  It references local copies of unmodified schemas from external standards in local directory tree fragments that mirror the directory structures of the cannonical schema sources on the world wide web, and a profile of the OGC Open Location Services (XLS) schema that is based on GML version 3.2.1.</xsd:documentation>
+    <xsd:appinfo>
+      <i:ConformantIndicator>true</i:ConformantIndicator>
+    </xsd:appinfo>
+  </xsd:annotation>
+  <xsd:import schemaLocation="../../structures/2.0/structures.xsd" namespace="http://niem.gov/niem/structures/2.0"/>
+  <xsd:import schemaLocation="../../appinfo/2.0/appinfo.xsd" namespace="http://niem.gov/niem/appinfo/2.0"/>
+  <xsd:import schemaLocation="../../external/ogc/ols/1.1.0/dhs-gmo/2.1.0/ols.xsd" namespace="http://niem.gov/niem/external/ogc/xls/1.1.0/dhs-gmo/2.1.0">
+    <xsd:annotation>
+      <xsd:documentation>A profile of OpenGeospatialConsortium (OpenGIS, OGC) OpenLS (Location Services) version 1.1 schemas. A profile of OpenGeospatialConsortium (OpenGIS, OGC) OpenLS (Location Services) version 1.1 schemas that have been edited to use GML version 3.2.1 schemas instead of the GML version 3.0 schemas that were current when OpenLS version 1.1 was promulgated.  See http://www.opengeospatial.org for documentation, http://schemas.opengis.net/ols/ for schemas.</xsd:documentation>
+      <xsd:appinfo>
+        <i:ConformantIndicator>false</i:ConformantIndicator>
+      </xsd:appinfo>
+    </xsd:annotation>
+  </xsd:import>
+  <xsd:import schemaLocation="../../external/ogc/gml/3.2.1/gml.xsd" namespace="http://www.opengis.net/gml/3.2">
+    <xsd:annotation>
+      <xsd:documentation>Geography Markup Language (GML) version 3.2.1 schemas.  See http://www.opengeospatial.org OGC document 07-036 for documentation: "The Geography Markup Language (GML) was originally developed within the Open Geospatial Consortium, Inc. (OGC). ISO 19136 was prepared by ISO/TC 211 jointly with the OGC."  See http://schemas.opengis.net/gml/ for schemas.</xsd:documentation>
+      <xsd:appinfo>
+        <i:ConformantIndicator>false</i:ConformantIndicator>
+      </xsd:appinfo>
+    </xsd:annotation>
+  </xsd:import>
+  <xsd:complexType name="ArcByCenterPointType">
+    <xsd:annotation>
+      <xsd:documentation>A 2D arc defined by its center point, radius, and bearings at start and end.  This variant of the arc requires that the points on the arc shall be computed instead of storing the coordinates directly. The single control point is the center point of the arc plus the radius and the bearing at start and end. This representation can be used only in 2D. The element gml:radius specifies the radius of the arc. The element gml:startAngle specifies the bearing of the arc at the start. The element gml:endAngle specifies the bearing of the arc at the end. The interpolation is fixed as "circularArcCenterPointWithRadius". Since this type describes always a single arc, the attribute "numArc" is fixed to "1".</xsd:documentation>
+      <xsd:appinfo>
+        <i:Base i:namespace="http://niem.gov/niem/structures/2.0" i:name="Object"/>
+        <i:ExternalAdapterTypeIndicator>true</i:ExternalAdapterTypeIndicator>
+      </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="s:ComplexObjectType">
+        <xsd:sequence>
+          <xsd:element ref="gml:ArcByCenterPoint" minOccurs="0" maxOccurs="unbounded"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="ArcType">
+    <xsd:annotation>
+      <xsd:documentation>An Arc is an arc string with only one arc unit, i.e. three control points including the start and end point. As arc is an arc string consisting of a single arc, the attribute ?numArc? is fixed to "1".</xsd:documentation>
+      <xsd:appinfo>
+        <i:Base i:namespace="http://niem.gov/niem/structures/2.0" i:name="Object"/>
+        <i:ExternalAdapterTypeIndicator>true</i:ExternalAdapterTypeIndicator>
+      </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="s:ComplexObjectType">
+        <xsd:sequence>
+          <xsd:element ref="gml:Arc" minOccurs="0" maxOccurs="unbounded"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="CircleByCenterPointType">
+    <xsd:annotation>
+      <xsd:documentation>A 2D ArcByCenterPoint with identical start and end angles that forms a full circle. A gml:CircleByCenterPoint is an gml:ArcByCenterPoint with identical start and end angle to form a full circle. Again, this representation can be used only in 2D.</xsd:documentation>
+      <xsd:appinfo>
+        <i:Base i:namespace="http://niem.gov/niem/structures/2.0" i:name="Object"/>
+        <i:ExternalAdapterTypeIndicator>true</i:ExternalAdapterTypeIndicator>
+      </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="s:ComplexObjectType">
+        <xsd:sequence>
+          <xsd:element ref="gml:CircleByCenterPoint" minOccurs="0" maxOccurs="unbounded"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="CircleType">
+    <xsd:annotation>
+      <xsd:documentation>A Circle is an arc whose ends coincide to form a simple closed loop. The three control points shall be distinct non-co-linear points for the circle to be unambiguously defined. The arc is simply extended past the third control point until the first control point is encountered.</xsd:documentation>
+      <xsd:appinfo>
+        <i:Base i:namespace="http://niem.gov/niem/structures/2.0" i:name="Object"/>
+        <i:ExternalAdapterTypeIndicator>true</i:ExternalAdapterTypeIndicator>
+      </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="s:ComplexObjectType">
+        <xsd:sequence>
+          <xsd:element ref="gml:Circle" minOccurs="0" maxOccurs="unbounded"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="CurveType">
+    <xsd:annotation>
+      <xsd:documentation>A curve is a 1-dimensional primitive. Curves are continuous, connected, and have a measurable length in terms of the coordinate system.  A curve is composed of one or more curve segments. Each curve segment within a curve may be defined using a different interpolation method. The curve segments are connected to one another, with the end point of each segment except the last being the start point of the next segment in the segment list.  The orientation of the curve is positive.</xsd:documentation>
+      <xsd:appinfo>
+        <i:Base i:namespace="http://niem.gov/niem/structures/2.0" i:name="Object"/>
+        <i:ExternalAdapterTypeIndicator>true</i:ExternalAdapterTypeIndicator>
+      </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="s:ComplexObjectType">
+        <xsd:sequence>
+          <xsd:element ref="gml:Curve" minOccurs="0" maxOccurs="unbounded"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="EllipseType">
+    <xsd:annotation>
+      <xsd:documentation>An ellipse specified by a point, major axis, minor axis and rotation.</xsd:documentation>
+      <xsd:appinfo>
+        <i:Base i:namespace="http://niem.gov/niem/structures/2.0" i:name="Object"/>
+        <i:ExternalAdapterTypeIndicator>true</i:ExternalAdapterTypeIndicator>
+      </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="s:ComplexObjectType">
+        <xsd:sequence>
+          <xsd:element ref="xls:Ellipse" minOccurs="0" maxOccurs="unbounded"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="EnvelopeType">
+    <xsd:annotation>
+      <xsd:documentation>Envelope defines an extent using a pair of positions defining opposite corners in arbitrary dimensions. The first direct position is the "lower corner" (a coordinate position consisting of all the minimal ordinates for each dimension for all points within the envelope), the second one the "upper corner" (a coordinate position consisting of all the maximal ordinates for each dimension for all points within the envelope).</xsd:documentation>
+      <xsd:appinfo>
+        <i:Base i:namespace="http://niem.gov/niem/structures/2.0" i:name="Object"/>
+        <i:ExternalAdapterTypeIndicator>true</i:ExternalAdapterTypeIndicator>
+      </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="s:ComplexObjectType">
+        <xsd:sequence>
+          <xsd:element ref="gml:Envelope" minOccurs="0" maxOccurs="unbounded"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="LineStringType">
+    <xsd:annotation>
+      <xsd:documentation>A geometric curve that consists of a single segment with linear interpolation.  A gml:LineString is a special curve that consists of a single segment with linear interpolation. It is defined by two or more coordinate tuples, with linear interpolation between them.</xsd:documentation>
+      <xsd:appinfo>
+        <i:Base i:namespace="http://niem.gov/niem/structures/2.0" i:name="Object"/>
+        <i:ExternalAdapterTypeIndicator>true</i:ExternalAdapterTypeIndicator>
+      </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="s:ComplexObjectType">
+        <xsd:sequence>
+          <xsd:element ref="gml:LineString" minOccurs="0" maxOccurs="unbounded"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="MultiCurveType">
+    <xsd:annotation>
+      <xsd:documentation>A geometry collection that includes one or more curves or line strings. A gml:MultiCurve is defined by one or more gml:AbstractCurves. The members of the geometric aggregate may be specified either using the "standard" property (gml:curveMember) or the array property (gml:curveMembers). It is also valid to use both the "standard" and the array properties in the same collection.</xsd:documentation>
+      <xsd:appinfo>
+        <i:Base i:namespace="http://niem.gov/niem/structures/2.0" i:name="Object"/>
+        <i:ExternalAdapterTypeIndicator>true</i:ExternalAdapterTypeIndicator>
+      </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="s:ComplexObjectType">
+        <xsd:sequence>
+          <xsd:element ref="gml:MultiCurve" minOccurs="0" maxOccurs="unbounded"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="MultiGeometryType">
+    <xsd:annotation>
+      <xsd:documentation>A geometry collection that includes one or more geometries, potentially of different types. Gml:MultiGeometry is a collection of one or more GML geometry objects of arbitrary type. The members of the geometric aggregate may be specified either using the "standard" property (gml:geometryMember) or the array property (gml:geometryMembers). It is also valid to use both the "standard" and the array properties in the same collection.</xsd:documentation>
+      <xsd:appinfo>
+        <i:Base i:namespace="http://niem.gov/niem/structures/2.0" i:name="Object"/>
+        <i:ExternalAdapterTypeIndicator>true</i:ExternalAdapterTypeIndicator>
+      </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="s:ComplexObjectType">
+        <xsd:sequence>
+          <xsd:element ref="gml:MultiGeometry" minOccurs="0" maxOccurs="unbounded"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="MultiPointType">
+    <xsd:annotation>
+      <xsd:documentation>A geometry collection that includes one or more points. A gml:MultiPoint consists of one or more gml:Points. The members of the geometric aggregate may be specified either using the "standard" property (gml:pointMember) or the array property (gml:pointMembers). It is also valid to use both the "standard" and the array properties in the same collection.</xsd:documentation>
+      <xsd:appinfo>
+        <i:Base i:namespace="http://niem.gov/niem/structures/2.0" i:name="Object"/>
+        <i:ExternalAdapterTypeIndicator>true</i:ExternalAdapterTypeIndicator>
+      </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="s:ComplexObjectType">
+        <xsd:sequence>
+          <xsd:element ref="gml:MultiPoint" minOccurs="0" maxOccurs="unbounded"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="MultiSurfaceType">
+    <xsd:annotation>
+      <xsd:documentation>A geometry collection that includes one or more Polygons or Surfaces.</xsd:documentation>
+      <xsd:appinfo>
+        <i:Base i:namespace="http://niem.gov/niem/structures/2.0" i:name="Object"/>
+        <i:ExternalAdapterTypeIndicator>true</i:ExternalAdapterTypeIndicator>
+      </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="s:ComplexObjectType">
+        <xsd:sequence>
+          <xsd:element ref="gml:MultiSurface" minOccurs="0" maxOccurs="unbounded"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="PointType">
+    <xsd:annotation>
+      <xsd:documentation>A 2D or 3D geometric point.  A gml:Point is defined by a single coordinate tuple. The direct position of a point is specified by the gml:pos element which is of type gml:DirectPositionType.</xsd:documentation>
+      <xsd:appinfo>
+        <i:Base i:namespace="http://niem.gov/niem/structures/2.0" i:name="Object"/>
+        <i:ExternalAdapterTypeIndicator>true</i:ExternalAdapterTypeIndicator>
+      </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="s:ComplexObjectType">
+        <xsd:sequence>
+          <xsd:element ref="gml:Point" minOccurs="0" maxOccurs="unbounded"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="PolygonType">
+    <xsd:annotation>
+      <xsd:documentation>A polygon; a geometric surface defined by a single surface patch whose boundary is coplanar.  A gml:Polygon is a special surface that is defined by a single surface patch (see D.3.6). The boundary of this patch is coplanar and the polygon uses planar interpolation in its interior.</xsd:documentation>
+      <xsd:appinfo>
+        <i:Base i:namespace="http://niem.gov/niem/structures/2.0" i:name="Object"/>
+        <i:ExternalAdapterTypeIndicator>true</i:ExternalAdapterTypeIndicator>
+      </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="s:ComplexObjectType">
+        <xsd:sequence>
+          <xsd:element ref="gml:Polygon" minOccurs="0" maxOccurs="unbounded"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="SurfaceType">
+    <xsd:annotation>
+      <xsd:documentation>A Surface is a 2-dimensional primitive and is composed of one or more surface patches.  The surface patches are connected to one another.</xsd:documentation>
+      <xsd:appinfo>
+        <i:Base i:namespace="http://niem.gov/niem/structures/2.0" i:name="Object"/>
+        <i:ExternalAdapterTypeIndicator>true</i:ExternalAdapterTypeIndicator>
+      </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="s:ComplexObjectType">
+        <xsd:sequence>
+          <xsd:element ref="gml:Surface" minOccurs="0" maxOccurs="unbounded"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="Arc" type="geo:ArcType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>An Arc is an arc string with only one arc unit, i.e. three control points including the start and end point. As arc is an arc string consisting of a single arc, the attribute ?numArc? is fixed to "1".</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="ArcByCenterPoint" type="geo:ArcByCenterPointType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>A 2D arc defined by its center point, radius, and bearings at start and end.  This variant of the arc requires that the points on the arc shall be computed instead of storing the coordinates directly. The single control point is the center point of the arc plus the radius and the bearing at start and end. This representation can be used only in 2D. The element gml:radius specifies the radius of the arc. The element gml:startAngle specifies the bearing of the arc at the start. The element gml:endAngle specifies the bearing of the arc at the end. The interpolation is fixed as "circularArcCenterPointWithRadius". Since this type describes always a single arc, the attribute "numArc" is fixed to "1".</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="Circle" type="geo:CircleType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>A Circle is an arc whose ends coincide to form a simple closed loop. The three control points shall be distinct non-co-linear points for the circle to be unambiguously defined. The arc is simply extended past the third control point until the first control point is encountered.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="CircleByCenterPoint" type="geo:CircleByCenterPointType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>A 2D ArcByCenterPoint with identical start and end angles that forms a full circle.  A gml:CircleByCenterPoint is an gml:ArcByCenterPoint with identical start and end angle to form a full circle. Again, this representation can be used only in 2D.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="Curve" type="geo:CurveType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>A curve is a 1-dimensional primitive. Curves are continuous, connected, and have a measurable length in terms of the coordinate system.  A curve is composed of one or more curve segments. Each curve segment within a curve may be defined using a different interpolation method. The curve segments are connected to one another, with the end point of each segment except the last being the start point of the next segment in the segment list.  The orientation of the curve is positive.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="Ellipse" type="geo:EllipseType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>An ellipse specified by a point, major axis, minor axis and rotation.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="Envelope" type="geo:EnvelopeType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>Envelope defines an extent using a pair of positions defining opposite corners in arbitrary dimensions. The first direct position is the "lower corner" (a coordinate position consisting of all the minimal ordinates for each dimension for all points within the envelope), the second one the "upper corner" (a coordinate position consisting of all the maximal ordinates for each dimension for all points within the envelope).</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="LineString" type="geo:LineStringType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>A geometric curve that consists of a single segment with linear interpolation.  A gml:LineString is a special curve that consists of a single segment with linear interpolation. It is defined by two or more coordinate tuples, with linear interpolation between them.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="MultiCurve" type="geo:MultiCurveType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>A geometry collection that includes one or more curves or line strings  A gml:MultiCurve is defined by one or more gml:AbstractCurves. The members of the geometric aggregate may be specified either using the "standard" property (gml:curveMember) or the array property (gml:curveMembers). It is also valid to use both the "standard" and the array properties in the same collection.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="MultiGeometry" type="geo:MultiGeometryType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>A geometry collection that includes one or more geometries, potentially of different types.  gml:MultiGeometry is a collection of one or more GML geometry objects of arbitrary type. The members of the geometric aggregate may be specified either using the "standard" property (gml:geometryMember) or the array property (gml:geometryMembers). It is also valid to use both the "standard" and the array properties in the same collection.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="MultiPoint" type="geo:MultiPointType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>A geometry collection that includes one or more points.  A gml:MultiPoint consists of one or more gml:Points. The members of the geometric aggregate may be specified either using the "standard" property (gml:pointMember) or the array property (gml:pointMembers). It is also valid to use both the "standard" and the array properties in the same collection.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="MultiSurface" type="geo:MultiSurfaceType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>A geometry collection that includes one or more Polygons or Surfaces.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="Point" type="geo:PointType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>A 2D or 3D geometric point.  A gml:Point is defined by a single coordinate tuple. The direct position of a point is specified by the gml:pos element which is of type gml:DirectPositionType.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="Polygon" type="geo:PolygonType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>A polygon; a geometric surface defined by a single surface patch whose boundary is coplanar. A gml:Polygon is a special surface that is defined by a single surface patch (see D.3.6). The boundary of this patch is coplanar and the polygon uses planar interpolation in its interior.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:element name="Surface" type="geo:SurfaceType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>A Surface is a 2-dimensional primitive and is composed of one or more surface patches.  The surface patches are connected to one another.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+</xsd:schema>

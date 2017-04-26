@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema targetNamespace="http://niem.gov/niem/edxl-cap/2.1" version="1" xmlns:s="http://niem.gov/niem/structures/2.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:cap="urn:oasis:names:tc:emergency:cap:1.1" xmlns:edxl-cap="http://niem.gov/niem/edxl-cap/2.1" xmlns:i="http://niem.gov/niem/appinfo/2.0">
+  <xsd:annotation>
+    <xsd:documentation>Common Alerting Protocol</xsd:documentation>
+    <xsd:appinfo>
+      <i:ConformantIndicator>true</i:ConformantIndicator>
+    </xsd:appinfo>
+  </xsd:annotation>
+  <xsd:import schemaLocation="../../structures/2.0/structures.xsd" namespace="http://niem.gov/niem/structures/2.0"/>
+  <xsd:import schemaLocation="../../appinfo/2.0/appinfo.xsd" namespace="http://niem.gov/niem/appinfo/2.0"/>
+  <xsd:import schemaLocation="../../external/cap/1.1/cap.xsd" namespace="urn:oasis:names:tc:emergency:cap:1.1">
+    <xsd:annotation>
+      <xsd:documentation>Common Alerting Protocol (CAP) is a simple but general format for exchanging effective warning messages based on best practices identified in academic research and real-world experience.</xsd:documentation>
+      <xsd:appinfo>
+        <i:ConformantIndicator>false</i:ConformantIndicator>
+      </xsd:appinfo>
+    </xsd:annotation>
+  </xsd:import>
+  <xsd:complexType name="AlertAdapterType">
+    <xsd:annotation>
+      <xsd:documentation>A data type for a simple but general format for exchanging effective warning messages based on best practices identified in academic research and real-world experience.</xsd:documentation>
+      <xsd:appinfo>
+        <i:Base i:namespace="http://niem.gov/niem/structures/2.0" i:name="Object"/>
+        <i:ExternalAdapterTypeIndicator>true</i:ExternalAdapterTypeIndicator>
+      </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="s:ComplexObjectType">
+        <xsd:sequence>
+          <xsd:element ref="cap:alert" minOccurs="0" maxOccurs="unbounded"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="AlertAdapter" type="edxl-cap:AlertAdapterType" nillable="true">
+    <xsd:annotation>
+      <xsd:documentation>A simple but general format for exchanging effective warning messages based on best practices identified in academic research and real-world experience.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+</xsd:schema>

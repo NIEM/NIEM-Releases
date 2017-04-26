@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema targetNamespace="http://niem.gov/niem/itis/2.1" version="1" xmlns:s="http://niem.gov/niem/structures/2.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:itis="http://niem.gov/niem/itis/2.1" xmlns:i="http://niem.gov/niem/appinfo/2.0">
+  <xsd:annotation>
+    <xsd:documentation>Integrated Transportation Information System</xsd:documentation>
+    <xsd:appinfo>
+      <i:ConformantIndicator>true</i:ConformantIndicator>
+    </xsd:appinfo>
+  </xsd:annotation>
+  <xsd:import schemaLocation="../../structures/2.0/structures.xsd" namespace="http://niem.gov/niem/structures/2.0"/>
+  <xsd:import schemaLocation="../../appinfo/2.0/appinfo.xsd" namespace="http://niem.gov/niem/appinfo/2.0"/>
+  <xsd:simpleType name="LightingCodeSimpleType">
+    <xsd:annotation>
+      <xsd:documentation>A data type for lighting conditions.</xsd:documentation>
+      <xsd:appinfo>
+        <i:Base i:namespace="http://niem.gov/niem/structures/2.0" i:name="Object"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:restriction base="xsd:token">
+      <xsd:enumeration value="lighting-unknown">
+        <xsd:annotation>
+          <xsd:documentation>lighting unknown</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="artificial-interior-light">
+        <xsd:annotation>
+          <xsd:documentation>artificial interior light</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="artificial-exterior-light">
+        <xsd:annotation>
+          <xsd:documentation>artificial exterior light</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="moonlight">
+        <xsd:annotation>
+          <xsd:documentation>moonlight</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="dusk">
+        <xsd:annotation>
+          <xsd:documentation>dusk</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="daylight">
+        <xsd:annotation>
+          <xsd:documentation>daylight</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="darkness">
+        <xsd:annotation>
+          <xsd:documentation>darkness</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="dawn">
+        <xsd:annotation>
+          <xsd:documentation>dawn</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:complexType name="LightingCodeType">
+    <xsd:annotation>
+      <xsd:documentation>A data type for lighting conditions.</xsd:documentation>
+      <xsd:appinfo>
+        <i:Base i:namespace="http://niem.gov/niem/structures/2.0" i:name="Object"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:simpleContent>
+      <xsd:extension base="itis:LightingCodeSimpleType">
+        <xsd:attributeGroup ref="s:SimpleObjectAttributeGroup"/>
+      </xsd:extension>
+    </xsd:simpleContent>
+  </xsd:complexType>
+  <xsd:simpleType name="WeatherConditionsCodeSimpleType">
+    <xsd:annotation>
+      <xsd:documentation>A data type for weather conditions.</xsd:documentation>
+      <xsd:appinfo>
+        <i:Base i:namespace="http://niem.gov/niem/structures/2.0" i:name="Object"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:restriction base="xsd:token">
+      <xsd:enumeration value="uV-index-low">
+        <xsd:annotation>
+          <xsd:documentation>uV index - low</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="clear-skies">
+        <xsd:annotation>
+          <xsd:documentation>clear skies</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="overcast">
+        <xsd:annotation>
+          <xsd:documentation>overcast</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="dry">
+        <xsd:annotation>
+          <xsd:documentation>dry</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="mostly-cloudy">
+        <xsd:annotation>
+          <xsd:documentation>mostly cloudy</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="mostly-sunny">
+        <xsd:annotation>
+          <xsd:documentation>mostly sunny</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="uV-index-very-low">
+        <xsd:annotation>
+          <xsd:documentation>uV index - very low</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="fair-skies">
+        <xsd:annotation>
+          <xsd:documentation>fair skies</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="mostly-clear">
+        <xsd:annotation>
+          <xsd:documentation>mostly clear</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="ozone-alert">
+        <xsd:annotation>
+          <xsd:documentation>ozone alert</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="uV-index-moderate">
+        <xsd:annotation>
+          <xsd:documentation>uV index - moderate</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="barometric-pressure">
+        <xsd:annotation>
+          <xsd:documentation>barometric pressure</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="partly-cloudy">
+        <xsd:annotation>
+          <xsd:documentation>partly cloudy</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="uV-index-high">
+        <xsd:annotation>
+          <xsd:documentation>uV index - high</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="uV-index-very-high">
+        <xsd:annotation>
+          <xsd:documentation>uV index - very high</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="sunny">
+        <xsd:annotation>
+          <xsd:documentation>sunny</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="partly-sunny">
+        <xsd:annotation>
+          <xsd:documentation>partly sunny</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="cloudy">
+        <xsd:annotation>
+          <xsd:documentation>cloudy</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="mostly-dry">
+        <xsd:annotation>
+          <xsd:documentation>mostly dry</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:complexType name="WeatherConditionsCodeType">
+    <xsd:annotation>
+      <xsd:documentation>A data type for weather conditions.</xsd:documentation>
+      <xsd:appinfo>
+        <i:Base i:namespace="http://niem.gov/niem/structures/2.0" i:name="Object"/>
+      </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:simpleContent>
+      <xsd:extension base="itis:WeatherConditionsCodeSimpleType">
+        <xsd:attributeGroup ref="s:SimpleObjectAttributeGroup"/>
+      </xsd:extension>
+    </xsd:simpleContent>
+  </xsd:complexType>
+</xsd:schema>

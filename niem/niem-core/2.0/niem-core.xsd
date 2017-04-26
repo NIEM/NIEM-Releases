@@ -278,16 +278,16 @@
       </xsd:appinfo>
     </xsd:annotation>
     <xsd:restriction base="xsd:decimal">
-      <xsd:maxExclusive value="60">
-        <xsd:annotation>
-          <xsd:documentation>The maximum value for an angular second.</xsd:documentation>
-        </xsd:annotation>
-      </xsd:maxExclusive>
       <xsd:minInclusive value="0">
         <xsd:annotation>
           <xsd:documentation>The minimum value for an angular second.</xsd:documentation>
         </xsd:annotation>
       </xsd:minInclusive>
+      <xsd:maxExclusive value="60">
+        <xsd:annotation>
+          <xsd:documentation>The maximum value for an angular second.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:maxExclusive>
     </xsd:restriction>
   </xsd:simpleType>
   <xsd:complexType name="AngularSecondType">
@@ -875,19 +875,14 @@
       </xsd:appinfo>
     </xsd:annotation>
     <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="SSE">
+        <xsd:annotation>
+          <xsd:documentation>South South East</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
       <xsd:enumeration value="E">
         <xsd:annotation>
           <xsd:documentation>East</xsd:documentation>
-        </xsd:annotation>
-      </xsd:enumeration>
-      <xsd:enumeration value="ENE">
-        <xsd:annotation>
-          <xsd:documentation>East North East</xsd:documentation>
-        </xsd:annotation>
-      </xsd:enumeration>
-      <xsd:enumeration value="ESE">
-        <xsd:annotation>
-          <xsd:documentation>East South East</xsd:documentation>
         </xsd:annotation>
       </xsd:enumeration>
       <xsd:enumeration value="N">
@@ -895,44 +890,9 @@
           <xsd:documentation>North</xsd:documentation>
         </xsd:annotation>
       </xsd:enumeration>
-      <xsd:enumeration value="NE">
-        <xsd:annotation>
-          <xsd:documentation>North East</xsd:documentation>
-        </xsd:annotation>
-      </xsd:enumeration>
       <xsd:enumeration value="NNE">
         <xsd:annotation>
           <xsd:documentation>North North East</xsd:documentation>
-        </xsd:annotation>
-      </xsd:enumeration>
-      <xsd:enumeration value="NNW">
-        <xsd:annotation>
-          <xsd:documentation>North North West</xsd:documentation>
-        </xsd:annotation>
-      </xsd:enumeration>
-      <xsd:enumeration value="NW">
-        <xsd:annotation>
-          <xsd:documentation>North West</xsd:documentation>
-        </xsd:annotation>
-      </xsd:enumeration>
-      <xsd:enumeration value="S">
-        <xsd:annotation>
-          <xsd:documentation>South</xsd:documentation>
-        </xsd:annotation>
-      </xsd:enumeration>
-      <xsd:enumeration value="SE">
-        <xsd:annotation>
-          <xsd:documentation>South East</xsd:documentation>
-        </xsd:annotation>
-      </xsd:enumeration>
-      <xsd:enumeration value="SSE">
-        <xsd:annotation>
-          <xsd:documentation>South South East</xsd:documentation>
-        </xsd:annotation>
-      </xsd:enumeration>
-      <xsd:enumeration value="SSW">
-        <xsd:annotation>
-          <xsd:documentation>South South West</xsd:documentation>
         </xsd:annotation>
       </xsd:enumeration>
       <xsd:enumeration value="SW">
@@ -940,19 +900,59 @@
           <xsd:documentation>South West</xsd:documentation>
         </xsd:annotation>
       </xsd:enumeration>
-      <xsd:enumeration value="W">
-        <xsd:annotation>
-          <xsd:documentation>West</xsd:documentation>
-        </xsd:annotation>
-      </xsd:enumeration>
       <xsd:enumeration value="WNW">
         <xsd:annotation>
           <xsd:documentation>West North West</xsd:documentation>
         </xsd:annotation>
       </xsd:enumeration>
+      <xsd:enumeration value="SE">
+        <xsd:annotation>
+          <xsd:documentation>South East</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="W">
+        <xsd:annotation>
+          <xsd:documentation>West</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="SSW">
+        <xsd:annotation>
+          <xsd:documentation>South South West</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="NNW">
+        <xsd:annotation>
+          <xsd:documentation>North North West</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
       <xsd:enumeration value="WSW">
         <xsd:annotation>
           <xsd:documentation>West South West</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="ENE">
+        <xsd:annotation>
+          <xsd:documentation>East North East</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="S">
+        <xsd:annotation>
+          <xsd:documentation>South</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="NE">
+        <xsd:annotation>
+          <xsd:documentation>North East</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="NW">
+        <xsd:annotation>
+          <xsd:documentation>North West</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="ESE">
+        <xsd:annotation>
+          <xsd:documentation>East South East</xsd:documentation>
         </xsd:annotation>
       </xsd:enumeration>
     </xsd:restriction>
@@ -2428,16 +2428,16 @@
       </xsd:appinfo>
     </xsd:annotation>
     <xsd:restriction base="xsd:decimal">
-      <xsd:minInclusive value="-180">
-        <xsd:annotation>
-          <xsd:documentation>The minimum value for a longitude degree.</xsd:documentation>
-        </xsd:annotation>
-      </xsd:minInclusive>
       <xsd:maxExclusive value="180">
         <xsd:annotation>
           <xsd:documentation>The maximum value for a longitude degree.</xsd:documentation>
         </xsd:annotation>
       </xsd:maxExclusive>
+      <xsd:minInclusive value="-180">
+        <xsd:annotation>
+          <xsd:documentation>The minimum value for a longitude degree.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:minInclusive>
     </xsd:restriction>
   </xsd:simpleType>
   <xsd:complexType name="LongitudeDegreeType">
@@ -2941,6 +2941,11 @@
       </xsd:appinfo>
     </xsd:annotation>
     <xsd:restriction base="xsd:token">
+      <xsd:enumeration value="Official">
+        <xsd:annotation>
+          <xsd:documentation>Official</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
       <xsd:enumeration value="Diplomat">
         <xsd:annotation>
           <xsd:documentation>Diplomat</xsd:documentation>
@@ -2949,11 +2954,6 @@
       <xsd:enumeration value="Individual">
         <xsd:annotation>
           <xsd:documentation>Individual</xsd:documentation>
-        </xsd:annotation>
-      </xsd:enumeration>
-      <xsd:enumeration value="Official">
-        <xsd:annotation>
-          <xsd:documentation>Official</xsd:documentation>
         </xsd:annotation>
       </xsd:enumeration>
     </xsd:restriction>
@@ -3003,8 +3003,8 @@
       </xsd:appinfo>
     </xsd:annotation>
     <xsd:restriction base="xsd:decimal">
-      <xsd:minInclusive value="0"/>
       <xsd:maxInclusive value="1"/>
+      <xsd:minInclusive value="0"/>
     </xsd:restriction>
   </xsd:simpleType>
   <xsd:complexType name="PercentageType">
