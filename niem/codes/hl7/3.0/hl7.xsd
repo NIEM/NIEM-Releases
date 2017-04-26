@@ -1,0 +1,441 @@
+<?xml version="1.0" encoding="US-ASCII"?>
+<xs:schema targetNamespace="http://release.niem.gov/niem/codes/hl7/3.0/" version="1" xsi:schemaLocation="http://release.niem.gov/niem/appinfo/3.0/ ../../../appinfo/3.0/appinfo.xsd http://release.niem.gov/niem/conformanceTargets/3.0/ ../../../conformanceTargets/3.0/conformanceTargets.xsd" ct:conformanceTargets="http://reference.niem.gov/niem/specification/naming-and-design-rules/3.0/#ReferenceSchemaDocument" xmlns:structures="http://release.niem.gov/niem/structures/3.0/" xmlns:hl7="http://release.niem.gov/niem/codes/hl7/3.0/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:appinfo="http://release.niem.gov/niem/appinfo/3.0/" xmlns:ct="http://release.niem.gov/niem/conformanceTargets/3.0/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <xs:annotation>
+    <xs:documentation>Source: Health (HL-7); 
+Publication: Religion-HL7 Table 0006_VD; 
+Date: 19 Jul 2004;   http://ushik.ahrq.gov/dr.ui.drConceptualDomain_View?System=mdr&amp;ConceptualDomainID=74288000&amp;ViewDownFile=yes&amp;DownFile=Co</xs:documentation>
+  </xs:annotation>
+  <xs:import schemaLocation="../../../structures/3.0/structures.xsd" namespace="http://release.niem.gov/niem/structures/3.0/"/>
+  <xs:simpleType name="ReligionCodeSimpleType">
+    <xs:annotation>
+      <xs:documentation>A data type for a religion to which a person can subscribe or believe; a categorization of spiritual beliefs.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="ABC">
+        <xs:annotation>
+          <xs:documentation>Christian: American Baptist Church</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AGN">
+        <xs:annotation>
+          <xs:documentation>Agnostic</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AME">
+        <xs:annotation>
+          <xs:documentation>Christian: African Methodist Episcopal Zion</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AMT">
+        <xs:annotation>
+          <xs:documentation>Christian: African Methodist Episcopal</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ANG">
+        <xs:annotation>
+          <xs:documentation>Christian: Anglican</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AOG">
+        <xs:annotation>
+          <xs:documentation>Christian: Assembly of God</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ATH">
+        <xs:annotation>
+          <xs:documentation>Atheist</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="BAH">
+        <xs:annotation>
+          <xs:documentation>Baha'i</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="BAP">
+        <xs:annotation>
+          <xs:documentation>Christian: Baptist</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="BMA">
+        <xs:annotation>
+          <xs:documentation>Buddhist: Mahayana</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="BOT">
+        <xs:annotation>
+          <xs:documentation>Buddhist: Other</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="BTA">
+        <xs:annotation>
+          <xs:documentation>Buddhist: Tantrayana</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="BTH">
+        <xs:annotation>
+          <xs:documentation>Buddhist: Theravada</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="BUD">
+        <xs:annotation>
+          <xs:documentation>Buddhist</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CAT">
+        <xs:annotation>
+          <xs:documentation>Christian: Roman Catholic</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CFR">
+        <xs:annotation>
+          <xs:documentation>Chinese Folk Religionist</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CHR">
+        <xs:annotation>
+          <xs:documentation>Christian</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CHS">
+        <xs:annotation>
+          <xs:documentation>Christian: Christian Science</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CMA">
+        <xs:annotation>
+          <xs:documentation>Christian: Christian Missionary Alliance</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CNF">
+        <xs:annotation>
+          <xs:documentation>Confucian</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="COC">
+        <xs:annotation>
+          <xs:documentation>Christian: Church of Christ</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="COG">
+        <xs:annotation>
+          <xs:documentation>Christian: Church of God</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="COI">
+        <xs:annotation>
+          <xs:documentation>Christian: Church of God in Christ</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="COL">
+        <xs:annotation>
+          <xs:documentation>Christian: Congregational</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="COM">
+        <xs:annotation>
+          <xs:documentation>Christian: Community</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="COP">
+        <xs:annotation>
+          <xs:documentation>Christian: Other Pentecostal</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="COT">
+        <xs:annotation>
+          <xs:documentation>Christian: Other</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CRR">
+        <xs:annotation>
+          <xs:documentation>Christian: Christian Reformed</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="EOT">
+        <xs:annotation>
+          <xs:documentation>Christian: Eastern Orthodox</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="EPI">
+        <xs:annotation>
+          <xs:documentation>Christian: Episcopalian</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ERL">
+        <xs:annotation>
+          <xs:documentation>Ethnic Religionist</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="EVC">
+        <xs:annotation>
+          <xs:documentation>Christian: Evangelical Church</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="FRQ">
+        <xs:annotation>
+          <xs:documentation>Christian: Friends</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="FWB">
+        <xs:annotation>
+          <xs:documentation>Christian: Free Will Baptist</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="GRE">
+        <xs:annotation>
+          <xs:documentation>Christian: Greek Orthodox</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="HIN">
+        <xs:annotation>
+          <xs:documentation>Hindu</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="HOT">
+        <xs:annotation>
+          <xs:documentation>Hindu: Other</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="HSH">
+        <xs:annotation>
+          <xs:documentation>Hindu: Shaivites</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="HVA">
+        <xs:annotation>
+          <xs:documentation>Hindu: Vaishnavites</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="JAI">
+        <xs:annotation>
+          <xs:documentation>Jain</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="JCO">
+        <xs:annotation>
+          <xs:documentation>Jewish: Conservative</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="JEW">
+        <xs:annotation>
+          <xs:documentation>Jewish</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="JOR">
+        <xs:annotation>
+          <xs:documentation>Jewish: Orthodox</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="JOT">
+        <xs:annotation>
+          <xs:documentation>Jewish: Other</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="JRC">
+        <xs:annotation>
+          <xs:documentation>Jewish: Reconstructionist</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="JRF">
+        <xs:annotation>
+          <xs:documentation>Jewish: Reform</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="JRN">
+        <xs:annotation>
+          <xs:documentation>Jewish: Renewal</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="JWN">
+        <xs:annotation>
+          <xs:documentation>Christian: Jehovah's Witness</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="LMS">
+        <xs:annotation>
+          <xs:documentation>Christian: Lutheran Missouri Synod</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="LUT">
+        <xs:annotation>
+          <xs:documentation>Christian: Lutheran</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="MEN">
+        <xs:annotation>
+          <xs:documentation>Christian: Mennonite</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="MET">
+        <xs:annotation>
+          <xs:documentation>Christian: Methodist</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="MOM">
+        <xs:annotation>
+          <xs:documentation>Christian: Latter-day Saints</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="MOS">
+        <xs:annotation>
+          <xs:documentation>Muslim</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="MOT">
+        <xs:annotation>
+          <xs:documentation>Muslim: Other</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="MSH">
+        <xs:annotation>
+          <xs:documentation>Muslim: Shiite</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="MSU">
+        <xs:annotation>
+          <xs:documentation>Muslim: Sunni</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="NAM">
+        <xs:annotation>
+          <xs:documentation>Native American</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="NAZ">
+        <xs:annotation>
+          <xs:documentation>Christian: Church of the Nazarene</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="NOE">
+        <xs:annotation>
+          <xs:documentation>Nonreligious</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="NRL">
+        <xs:annotation>
+          <xs:documentation>New Religionist</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ORT">
+        <xs:annotation>
+          <xs:documentation>Christian: Orthodox</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="OTH">
+        <xs:annotation>
+          <xs:documentation>Other</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="PEN">
+        <xs:annotation>
+          <xs:documentation>Christian: Pentecostal</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="PRC">
+        <xs:annotation>
+          <xs:documentation>Christian: Other Protestant</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="PRE">
+        <xs:annotation>
+          <xs:documentation>Christian: Presbyterian</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="PRO">
+        <xs:annotation>
+          <xs:documentation>Christian: Protestant</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="QUA">
+        <xs:annotation>
+          <xs:documentation>Christian: Friends</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="REC">
+        <xs:annotation>
+          <xs:documentation>Christian: Reformed Church</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="REO">
+        <xs:annotation>
+          <xs:documentation>Christian: Reorganized Church of Jesus Christ-LDS</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="SAA">
+        <xs:annotation>
+          <xs:documentation>Christian: Salvation Army</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="SEV">
+        <xs:annotation>
+          <xs:documentation>Christian: Seventh Day Adventist</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="SHN">
+        <xs:annotation>
+          <xs:documentation>Shintoist</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="SIK">
+        <xs:annotation>
+          <xs:documentation>Sikh</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="SOU">
+        <xs:annotation>
+          <xs:documentation>Christian: Southern Baptist</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="SPI">
+        <xs:annotation>
+          <xs:documentation>Spiritist</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="UCC">
+        <xs:annotation>
+          <xs:documentation>Christian: United Church of Christ</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="UMD">
+        <xs:annotation>
+          <xs:documentation>Christian: United Methodist</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="UNI">
+        <xs:annotation>
+          <xs:documentation>Christian: Unitarian</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="UNU">
+        <xs:annotation>
+          <xs:documentation>Christian: Unitarian Universalist</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="VAR">
+        <xs:annotation>
+          <xs:documentation>Unknown</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="WES">
+        <xs:annotation>
+          <xs:documentation>Christian: Wesleyan</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="WMC">
+        <xs:annotation>
+          <xs:documentation>Christian: Wesleyan Methodist</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="ReligionCodeType">
+    <xs:annotation>
+      <xs:documentation>A data type for a religion to which a person can subscribe or believe; a categorization of spiritual beliefs.</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="hl7:ReligionCodeSimpleType">
+        <xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+</xs:schema>

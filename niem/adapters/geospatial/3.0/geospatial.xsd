@@ -1,0 +1,264 @@
+<?xml version="1.0" encoding="US-ASCII"?>
+<xs:schema targetNamespace="http://release.niem.gov/niem/adapters/geospatial/3.0/" version="1" xsi:schemaLocation="http://release.niem.gov/niem/appinfo/3.0/ ../../../appinfo/3.0/appinfo.xsd http://release.niem.gov/niem/conformanceTargets/3.0/ ../../../conformanceTargets/3.0/conformanceTargets.xsd http://release.niem.gov/niem/localTerminology/3.0/ ../../../localTerminology/3.0/localTerminology.xsd" ct:conformanceTargets="http://reference.niem.gov/niem/specification/naming-and-design-rules/3.0/#ReferenceSchemaDocument" xmlns:ct="http://release.niem.gov/niem/conformanceTargets/3.0/" xmlns:term="http://release.niem.gov/niem/localTerminology/3.0/" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:structures="http://release.niem.gov/niem/structures/3.0/" xmlns:appinfo="http://release.niem.gov/niem/appinfo/3.0/" xmlns:nc="http://release.niem.gov/niem/niem-core/3.0/" xmlns:xls="http://release.niem.gov/niem/external/ogc/xls/1.1.0/dhs-gmo/2.1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:geo="http://release.niem.gov/niem/adapters/geospatial/3.0/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:annotation>
+    <xs:documentation>Defines NIEM adapter types for external geospatial components defined by OGC and ISO.  It references local copies of unmodified schemas from external standards in local directory tree fragments that mirror the directory structures of the cannonical schema sources on the world wide web, and a profile of the OGC Open Location Services (XLS) schema that is based on GML version 3.2.1.</xs:documentation>
+    <xs:appinfo>
+      <term:LocalTerm term="Multi" definition="one or more"/>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:import schemaLocation="../../../niem-core/3.0/niem-core.xsd" namespace="http://release.niem.gov/niem/niem-core/3.0/"/>
+  <xs:import schemaLocation="../../../structures/3.0/structures.xsd" namespace="http://release.niem.gov/niem/structures/3.0/"/>
+  <xs:import schemaLocation="../../../external/ogc/ols/1.1.0/dhs-gmo/2.1.0/ols.xsd" namespace="http://release.niem.gov/niem/external/ogc/xls/1.1.0/dhs-gmo/2.1.0" appinfo:externalImportIndicator="true">
+    <xs:annotation>
+      <xs:documentation>A profile of OpenGeospatialConsortium (OpenGIS, OGC) OpenLS (Location Services) version 1.1 schemas. A profile of OpenGeospatialConsortium (OpenGIS, OGC) OpenLS (Location Services) version 1.1 schemas that have been edited to use GML version 3.2.1 schemas instead of the GML version 3.0 schemas that were current when OpenLS version 1.1 was promulgated.  See http://www.opengeospatial.org for documentation, http://schemas.opengis.net/ols/ for schemas.</xs:documentation>
+    </xs:annotation>
+  </xs:import>
+  <xs:import schemaLocation="../../../external/ogc/gml/3.2.1/gml.xsd" namespace="http://www.opengis.net/gml/3.2" appinfo:externalImportIndicator="true">
+    <xs:annotation>
+      <xs:documentation>Geography Markup Language (GML) version 3.2.1 schemas.  See http://www.opengeospatial.org OGC document 07-036 for documentation: "The Geography Markup Language (GML) was originally developed within the Open Geospatial Consortium, Inc. (OGC). ISO 19136 was prepared by ISO/TC 211 jointly with the OGC."  See http://schemas.opengis.net/gml/ for schemas.</xs:documentation>
+    </xs:annotation>
+  </xs:import>
+  <xs:complexType name="CurveType" appinfo:externalAdapterTypeIndicator="true">
+    <xs:annotation>
+      <xs:documentation>A data type for a curve is a 1-dimensional primitive. Curves are continuous, connected, and have a measurable length in terms of the coordinate system.  A curve is composed of one or more curve segments. Each curve segment within a curve may be defined using a different</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="structures:ObjectType">
+        <xs:sequence>
+          <xs:element ref="gml:Curve" minOccurs="1" maxOccurs="1">
+            <xs:annotation>
+              <xs:documentation>A curve is a 1-dimensional primitive. Curves are continuous, connected, and have a measurable length in terms of the coordinate system.  A curve is composed of one or more curve segments. Each curve segment within a curve may be defined using a different interpolation method. The curve segments are connected to one another, with the end point of each segment except the last being the start point of the next segment in the segment list.  The orientation of the curve is positive.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="EllipseType" appinfo:externalAdapterTypeIndicator="true">
+    <xs:annotation>
+      <xs:documentation>A data type for an ellipse specified by a point, major axis, minor axis and rotation.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="structures:ObjectType">
+        <xs:sequence>
+          <xs:element ref="xls:Ellipse" minOccurs="0" maxOccurs="unbounded">
+            <xs:annotation>
+              <xs:documentation>An ellipse specified by a point, major axis, minor axis and rotation.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="EnvelopeType" appinfo:externalAdapterTypeIndicator="true">
+    <xs:annotation>
+      <xs:documentation>A data type for an envelope, which defines an extent using a pair of positions defining opposite corners in arbitrary dimensions. The first direct position is the "lower corner" (a coordinate position consisting of all the minimal ordinates for each dimension for all points within</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="structures:ObjectType">
+        <xs:sequence>
+          <xs:element ref="gml:Envelope" minOccurs="0" maxOccurs="unbounded">
+            <xs:annotation>
+              <xs:documentation>An envelope which defines an extent using a pair of positions defining opposite corners in arbitrary dimensions. The first direct position is the "lower corner" (a coordinate position consisting of all the minimal ordinates for each dimension for all points within</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="FeatureType" appinfo:externalAdapterTypeIndicator="true">
+    <xs:annotation>
+      <xs:documentation>A data type that encapsulates a GML feature instance.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="structures:ObjectType">
+        <xs:sequence>
+          <xs:element ref="gml:AbstractFeature" minOccurs="1" maxOccurs="1">
+            <xs:annotation>
+              <xs:documentation>This abstract element serves as the head of a substitution group which may contain any elements whose content model is derived from gml:AbstractFeatureType.  This may be used as a variable in the construction of content models.   gml:AbstractFeature may be thought of as "anything that is a GML feature" and may be used to define variables or templates in which the value of a GML property is "any feature". This occurs in particular in a GML feature collection where the feature member properties contain one or multiple copies of gml:AbstractFeature respectively.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="GeometryType" appinfo:externalAdapterTypeIndicator="true">
+    <xs:annotation>
+      <xs:documentation>A data type that encapsulates a GML geometry element.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="structures:ObjectType">
+        <xs:sequence>
+          <xs:element ref="gml:AbstractGeometry" minOccurs="1" maxOccurs="1">
+            <xs:annotation>
+              <xs:documentation>The AbstractGeometry element is the abstract head of the substitution group for all geometry elements of GML. This includes pre-defined and user-defined geometry elements. Any geometry element shall be a direct or indirect extension/restriction of AbstractGeometryType and shall be directly or indirectly in the substitution group of AbstractGeometry.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="LineStringType" appinfo:externalAdapterTypeIndicator="true">
+    <xs:annotation>
+      <xs:documentation>A data type for a geometric curve that consists of a single segment with linear interpolation.  A gml:LineString is a special curve that consists of a single segment with linear interpolation. It is defined by two or more coordinate tuples, with linear interpolation betw</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="structures:ObjectType">
+        <xs:sequence>
+          <xs:element ref="gml:LineString" minOccurs="1" maxOccurs="1">
+            <xs:annotation>
+              <xs:documentation>A gml:LineString is a special curve that consists of a single segment with linear interpolation. It is defined by two or more coordinate tuples, with linear interpolation between them.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="MultiCurveType" appinfo:externalAdapterTypeIndicator="true">
+    <xs:annotation>
+      <xs:documentation>A data type for a geometry collection that includes one or more curves or line strings. A gml:MultiCurve is defined by one or more gml:AbstractCurves. The members of the geometric aggregate may be specified either using the "standard" property (gml:curveMember) or the ar</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="structures:ObjectType">
+        <xs:sequence>
+          <xs:element ref="gml:MultiCurve" minOccurs="1" maxOccurs="1">
+            <xs:annotation>
+              <xs:documentation>A gml:MultiCurve is defined by one or more gml:AbstractCurves. The members of the geometric aggregate may be specified either using the "standard" property (gml:curveMember) or the array property (gml:curveMembers). It is also valid to use both the "standard" and the array properties in the same collection.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="MultiGeometryType" appinfo:externalAdapterTypeIndicator="true">
+    <xs:annotation>
+      <xs:documentation>A data type for a geometry collection that includes one or more geometries, potentially of different types. Gml:MultiGeometry is a collection of one or more GML geometry objects of arbitrary type. The members of the geometric aggregate may be specified either using the "</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="structures:ObjectType">
+        <xs:sequence>
+          <xs:element ref="gml:MultiGeometry" minOccurs="1" maxOccurs="1">
+            <xs:annotation>
+              <xs:documentation>A collection of one or more GML geometry objects of arbitrary type. The members of the geometric aggregate may be specified either using the "standard" property (gml:geometryMember) or the array property (gml:geometryMembers). It is a</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="MultiPointType" appinfo:externalAdapterTypeIndicator="true">
+    <xs:annotation>
+      <xs:documentation>A data type for a geometry collection that includes one or more points. A gml:MultiPoint consists of one or more gml:Points. The members of the geometric aggregate may be specified either using the "standard" property (gml:pointMember) or the array property (gml:pointMem</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="structures:ObjectType">
+        <xs:sequence>
+          <xs:element ref="gml:MultiPoint" minOccurs="1" maxOccurs="1">
+            <xs:annotation>
+              <xs:documentation>A gml:MultiPoint consists of one or more gml:Points. The members of the geometric aggregate may be specified either using the "standard" property (gml:pointMember) or the array property (gml:pointMembers). It is also valid to use both the "standard" and the array properties in the same collection.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="MultiSurfaceType" appinfo:externalAdapterTypeIndicator="true">
+    <xs:annotation>
+      <xs:documentation>A data type for a geometry collection that includes one or more Polygons or Surfaces.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="structures:ObjectType">
+        <xs:sequence>
+          <xs:element ref="gml:MultiSurface" minOccurs="1" maxOccurs="1">
+            <xs:annotation>
+              <xs:documentation>A geometry collection that includes one or more Polygons or Surfaces.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="PointType" appinfo:externalAdapterTypeIndicator="true">
+    <xs:annotation>
+      <xs:documentation>A data type for a 2D or 3D geometric point.  A gml:Point is defined by a single coordinate tuple. The direct position of a point is specified by the gml:pos element which is of type gml:DirectPositionType.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="structures:ObjectType">
+        <xs:sequence>
+          <xs:element ref="gml:Point" minOccurs="1" maxOccurs="1">
+            <xs:annotation>
+              <xs:documentation>A gml:Point is defined by a single coordinate tuple. The direct position of a point is specified by the gml:pos element which is of type gml:DirectPositionType.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="PolygonType" appinfo:externalAdapterTypeIndicator="true">
+    <xs:annotation>
+      <xs:documentation>A data type for a polygon; a geometric surface defined by a single surface patch whose boundary is coplanar.  A gml:Polygon is a special surface that is defined by a single surface patch (see D.3.6). The boundary of this patch is coplanar and the polygon uses planar inte</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="structures:ObjectType">
+        <xs:sequence>
+          <xs:element ref="gml:Polygon" minOccurs="1" maxOccurs="1">
+            <xs:annotation>
+              <xs:documentation>A gml:Polygon is a special surface that is defined by a single surface patch (see D.3.6). The boundary of this patch is coplanar and the polygon uses planar interpolation in its interior.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="SurfaceType" appinfo:externalAdapterTypeIndicator="true">
+    <xs:annotation>
+      <xs:documentation>A data type for a surface, which is a 2-dimensional primitive and is composed of one or more surface patches.  The surface patches are connected to one another.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="structures:ObjectType">
+        <xs:sequence>
+          <xs:element ref="gml:Surface" minOccurs="1" maxOccurs="1">
+            <xs:annotation>
+              <xs:documentation>A Surface is a 2-dimensional primitive and is composed of one or more surface patches.  The surface patches are connected to one another.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="AreaRegionGeometry" type="geo:GeometryType" substitutionGroup="nc:AreaRegion" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A GML geometry that describes a region.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="Ellipse" type="geo:EllipseType" substitutionGroup="nc:AreaRegion" nillable="true">
+    <xs:annotation>
+      <xs:documentation>An ellipse specified by a point, major axis, minor axis and rotation.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="Feature" type="geo:FeatureType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A generic GML feature adapter.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="Geometry" type="geo:GeometryType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A general-purpose GML geometry adapter.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="LocationFeature" type="geo:FeatureType" substitutionGroup="nc:LocationAugmentationPoint" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A GML feature that describes a location.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="LocationGeometry" type="geo:GeometryType" substitutionGroup="nc:LocationAugmentationPoint" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A GML geometry that describes a location.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="LocationGeospatialPoint" type="geo:PointType" substitutionGroup="nc:LocationGeospatialCoordinate" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A 2D or 3D geometric point.  A gml:Point is defined by a single coordinate tuple. The direct position of a point is specified by the gml:pos element which is of type gml:DirectPositionType.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+</xs:schema>

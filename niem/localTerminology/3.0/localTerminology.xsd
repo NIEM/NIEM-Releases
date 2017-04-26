@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="US-ASCII"?>
+<xs:schema
+   elementFormDefault="qualified" 
+   targetNamespace="http://release.niem.gov/niem/localTerminology/3.0/"
+   version="1"
+   xmlns:term="http://release.niem.gov/niem/localTerminology/3.0/"
+   xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <xs:element name="LocalTerm">
+    <xs:complexType>
+      <xs:sequence>
+	<xs:element name="SourceText" type="term:NonemptyStringSimpleType" 
+                    minOccurs="0" maxOccurs="unbounded"/>
+      </xs:sequence>
+      <xs:attribute name="term" type="term:NonemptyStringSimpleType" use="required"/>
+      <xs:attribute name="literal" type="term:NonemptyStringSimpleType"/>
+      <xs:attribute name="definition" type="term:NonemptyStringSimpleType"/>
+      <xs:attribute name="sourceURIs">
+        <xs:simpleType>
+          <xs:restriction>
+            <xs:simpleType>
+              <xs:list itemType="xs:anyURI"/>
+            </xs:simpleType>
+            <xs:minLength value="1"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:simpleType name="NonemptyStringSimpleType">
+    <xs:restriction base="xs:string">
+      <xs:minLength value="1"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+</xs:schema>

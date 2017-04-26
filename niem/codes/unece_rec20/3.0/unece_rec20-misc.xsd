@@ -1,0 +1,869 @@
+<?xml version="1.0" encoding="US-ASCII"?>
+<xs:schema targetNamespace="http://release.niem.gov/niem/codes/unece_rec20/3.0/" version="1" xsi:schemaLocation="http://release.niem.gov/niem/appinfo/3.0/ ../../../appinfo/3.0/appinfo.xsd http://release.niem.gov/niem/conformanceTargets/3.0/ ../../../conformanceTargets/3.0/conformanceTargets.xsd" ct:conformanceTargets="http://reference.niem.gov/niem/specification/naming-and-design-rules/3.0/#ReferenceSchemaDocument" xmlns:structures="http://release.niem.gov/niem/structures/3.0/" xmlns:unece="http://release.niem.gov/niem/codes/unece_rec20/3.0/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:appinfo="http://release.niem.gov/niem/appinfo/3.0/" xmlns:ct="http://release.niem.gov/niem/conformanceTargets/3.0/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <xs:annotation>
+    <xs:documentation>Miscellaneous unit of measure codes.
+Source: UN Economic Commission for Europe (UNECE); 
+Publication: UNECE Recommendation No. 20 Revision 8; 
+Version: Revision 8; 
+Date: 2012; 
+http://www.unece.org/tradewelcome/areas-of-work/un-centre-for-trade-facilitation-and-e-business-uncefact/outputs/cefactrecommendationsrec-index/list-of-trade-facilitation-recommendations-n-16-to-20.html</xs:documentation>
+  </xs:annotation>
+  <xs:import schemaLocation="../../../structures/3.0/structures.xsd" namespace="http://release.niem.gov/niem/structures/3.0/"/>
+  <xs:simpleType name="LengthCodeSimpleType">
+    <xs:annotation>
+      <xs:documentation>A data type for units of measurements for a length value.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="4H">
+        <xs:annotation>
+          <xs:documentation>micrometre (micron)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="77">
+        <xs:annotation>
+          <xs:documentation>milli-inch</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="A11">
+        <xs:annotation>
+          <xs:documentation>angstrom</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="A12">
+        <xs:annotation>
+          <xs:documentation>astronomical unit</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="A45">
+        <xs:annotation>
+          <xs:documentation>decametre</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="A71">
+        <xs:annotation>
+          <xs:documentation>femtometre</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AK">
+        <xs:annotation>
+          <xs:documentation>fathom</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="B57">
+        <xs:annotation>
+          <xs:documentation>light year</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="C45">
+        <xs:annotation>
+          <xs:documentation>nanometre</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="C52">
+        <xs:annotation>
+          <xs:documentation>picometre</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="C63">
+        <xs:annotation>
+          <xs:documentation>parsec</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CMT">
+        <xs:annotation>
+          <xs:documentation>centimetre</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="DMT">
+        <xs:annotation>
+          <xs:documentation>decimetre</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="FOT">
+        <xs:annotation>
+          <xs:documentation>foot</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="HMT">
+        <xs:annotation>
+          <xs:documentation>hectometre</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="INH">
+        <xs:annotation>
+          <xs:documentation>inch</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="KMT">
+        <xs:annotation>
+          <xs:documentation>kilometre</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="M7">
+        <xs:annotation>
+          <xs:documentation>micro-inch</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="MMT">
+        <xs:annotation>
+          <xs:documentation>millimetre</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="MTR">
+        <xs:annotation>
+          <xs:documentation>metre</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="NMI">
+        <xs:annotation>
+          <xs:documentation>nautical mile</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="SMI">
+        <xs:annotation>
+          <xs:documentation>mile (statute mile)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="X1">
+        <xs:annotation>
+          <xs:documentation>Gunter's chain</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="YRD">
+        <xs:annotation>
+          <xs:documentation>yard</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="LengthCodeType">
+    <xs:annotation>
+      <xs:documentation>A data type for units of measurements for a length value.</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="unece:LengthCodeSimpleType">
+        <xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:simpleType name="MassCodeSimpleType">
+    <xs:annotation>
+      <xs:documentation>A data type for units of measurement for a weight value.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="2U">
+        <xs:annotation>
+          <xs:documentation>megagram</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="APZ">
+        <xs:annotation>
+          <xs:documentation>troy ounce or apothecary ounce</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CGM">
+        <xs:annotation>
+          <xs:documentation>centigram</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CWA">
+        <xs:annotation>
+          <xs:documentation>hundred pounds (cwt) / hundred weight (US)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CWI">
+        <xs:annotation>
+          <xs:documentation>hundred weight (UK)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="DG">
+        <xs:annotation>
+          <xs:documentation>decigram</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="DJ">
+        <xs:annotation>
+          <xs:documentation>decagram</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="DTN">
+        <xs:annotation>
+          <xs:documentation>decitonne</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="GRM">
+        <xs:annotation>
+          <xs:documentation>gram</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="GRN">
+        <xs:annotation>
+          <xs:documentation>grain</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="HGM">
+        <xs:annotation>
+          <xs:documentation>hectogram</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="KGM">
+        <xs:annotation>
+          <xs:documentation>kilogram</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="KTN">
+        <xs:annotation>
+          <xs:documentation>kilotonne</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="LBR">
+        <xs:annotation>
+          <xs:documentation>pound</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="LTN">
+        <xs:annotation>
+          <xs:documentation>ton (UK) or long ton (US)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="MC">
+        <xs:annotation>
+          <xs:documentation>microgram</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="MGM">
+        <xs:annotation>
+          <xs:documentation>milligram</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ONZ">
+        <xs:annotation>
+          <xs:documentation>ounce (avoirdupois)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="STI">
+        <xs:annotation>
+          <xs:documentation>stone (UK)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="STN">
+        <xs:annotation>
+          <xs:documentation>ton (US) or short ton (UK/US)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="TNE">
+        <xs:annotation>
+          <xs:documentation>tonne (metric ton)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="MassCodeType">
+    <xs:annotation>
+      <xs:documentation>A data type for units of measurement for a weight value.</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="unece:MassCodeSimpleType">
+        <xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:simpleType name="TemperatureUnitCodeSimpleType">
+    <xs:annotation>
+      <xs:documentation>A data type for temperature unit of measurement codes.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="A48">
+        <xs:annotation>
+          <xs:documentation>degree Rankine</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CEL">
+        <xs:annotation>
+          <xs:documentation>degree Celsius</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="E98">
+        <xs:annotation>
+          <xs:documentation>degree Celsius per kelvin</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="F02">
+        <xs:annotation>
+          <xs:documentation>kelvin per kelvin</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="F10">
+        <xs:annotation>
+          <xs:documentation>kelvin per hour</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="F11">
+        <xs:annotation>
+          <xs:documentation>kelvin per minute</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="F12">
+        <xs:annotation>
+          <xs:documentation>kelvin per second</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="F60">
+        <xs:annotation>
+          <xs:documentation>degree Celsius per bar</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="F61">
+        <xs:annotation>
+          <xs:documentation>kelvin per bar</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="FAH">
+        <xs:annotation>
+          <xs:documentation>degree Fahrenheit</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="H12">
+        <xs:annotation>
+          <xs:documentation>degree Celsius per hour</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="H13">
+        <xs:annotation>
+          <xs:documentation>degree Celsius per minute</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="H14">
+        <xs:annotation>
+          <xs:documentation>degree Celsius per second</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="J20">
+        <xs:annotation>
+          <xs:documentation>degree Fahrenheit per kelvin</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="J21">
+        <xs:annotation>
+          <xs:documentation>degree Fahrenheit per bar</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="J23">
+        <xs:annotation>
+          <xs:documentation>degree Fahrenheit per hour</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="J24">
+        <xs:annotation>
+          <xs:documentation>degree Fahrenheit per minute</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="J25">
+        <xs:annotation>
+          <xs:documentation>degree Fahrenheit per second</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="J26">
+        <xs:annotation>
+          <xs:documentation>reciprocal degree Fahrenheit</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="J28">
+        <xs:annotation>
+          <xs:documentation>degree Rankine per hour</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="J29">
+        <xs:annotation>
+          <xs:documentation>degree Rankine per minute</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="J30">
+        <xs:annotation>
+          <xs:documentation>degree Rankine per second</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="N79">
+        <xs:annotation>
+          <xs:documentation>kelvin per pascal</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="TemperatureUnitCodeType">
+    <xs:annotation>
+      <xs:documentation>A data type for temperature unit of measurement codes.</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="unece:TemperatureUnitCodeSimpleType">
+        <xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:simpleType name="TimeCodeSimpleType">
+    <xs:annotation>
+      <xs:documentation>A data type for units of time.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="ANN">
+        <xs:annotation>
+          <xs:documentation>year</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="B52">
+        <xs:annotation>
+          <xs:documentation>kilosecond</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="B98">
+        <xs:annotation>
+          <xs:documentation>microsecond</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="C26">
+        <xs:annotation>
+          <xs:documentation>millisecond</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="C47">
+        <xs:annotation>
+          <xs:documentation>nanosecond</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="D42">
+        <xs:annotation>
+          <xs:documentation>tropical year</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="DAY">
+        <xs:annotation>
+          <xs:documentation>day</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="HUR">
+        <xs:annotation>
+          <xs:documentation>hour</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="MIN">
+        <xs:annotation>
+          <xs:documentation>minute [unit of time]</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="MON">
+        <xs:annotation>
+          <xs:documentation>month</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="SEC">
+        <xs:annotation>
+          <xs:documentation>second [unit of time]</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="WEE">
+        <xs:annotation>
+          <xs:documentation>week</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="TimeCodeType">
+    <xs:annotation>
+      <xs:documentation>A data type for units of time.</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="unece:TimeCodeSimpleType">
+        <xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:simpleType name="VelocityCodeSimpleType">
+    <xs:annotation>
+      <xs:documentation>A data type for units of measurement for a speed or velocity.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="2M">
+        <xs:annotation>
+          <xs:documentation>centimetre per second</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="2X">
+        <xs:annotation>
+          <xs:documentation>metre per minute</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="C16">
+        <xs:annotation>
+          <xs:documentation>millimetre per second</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="FR">
+        <xs:annotation>
+          <xs:documentation>foot per minute</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="FS">
+        <xs:annotation>
+          <xs:documentation>foot per second</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="HM">
+        <xs:annotation>
+          <xs:documentation>mile per hour (statute mile)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="IU">
+        <xs:annotation>
+          <xs:documentation>inch per second</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="KMH">
+        <xs:annotation>
+          <xs:documentation>kilometre per hour</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="KNT">
+        <xs:annotation>
+          <xs:documentation>knot</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="MTS">
+        <xs:annotation>
+          <xs:documentation>metre per second</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="VelocityCodeType">
+    <xs:annotation>
+      <xs:documentation>A data type for units of measurement for a speed or velocity.</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="unece:VelocityCodeSimpleType">
+        <xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:simpleType name="VolumeUnitCodeSimpleType">
+    <xs:annotation>
+      <xs:documentation>A data type for volume unit of measurement codes.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="4G">
+        <xs:annotation>
+          <xs:documentation>microlitre</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="5I">
+        <xs:annotation>
+          <xs:documentation>standard cubic foot</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="A44">
+        <xs:annotation>
+          <xs:documentation>decalitre</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="BLD">
+        <xs:annotation>
+          <xs:documentation>dry barrel (US)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="BLL">
+        <xs:annotation>
+          <xs:documentation>barrel (US)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="BUA">
+        <xs:annotation>
+          <xs:documentation>bushel (US)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="BUI">
+        <xs:annotation>
+          <xs:documentation>bushel (UK)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CLT">
+        <xs:annotation>
+          <xs:documentation>centilitre</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CMQ">
+        <xs:annotation>
+          <xs:documentation>cubic centimetre</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="DLT">
+        <xs:annotation>
+          <xs:documentation>decilitre</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="DMA">
+        <xs:annotation>
+          <xs:documentation>cubic decametre</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="DMQ">
+        <xs:annotation>
+          <xs:documentation>cubic decimetre</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="FTQ">
+        <xs:annotation>
+          <xs:documentation>cubic foot</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="G21">
+        <xs:annotation>
+          <xs:documentation>cup [unit of volume]</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="G23">
+        <xs:annotation>
+          <xs:documentation>peck</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="G24">
+        <xs:annotation>
+          <xs:documentation>tablespoon (US)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="G25">
+        <xs:annotation>
+          <xs:documentation>teaspoon (US)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="G26">
+        <xs:annotation>
+          <xs:documentation>stere</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="G94">
+        <xs:annotation>
+          <xs:documentation>cubic centimetre per bar</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="G95">
+        <xs:annotation>
+          <xs:documentation>litre per bar</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="G96">
+        <xs:annotation>
+          <xs:documentation>cubic metre per bar</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="G97">
+        <xs:annotation>
+          <xs:documentation>millilitre per bar</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="GLD">
+        <xs:annotation>
+          <xs:documentation>dry gallon (US)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="GLI">
+        <xs:annotation>
+          <xs:documentation>gallon (UK)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="GLL">
+        <xs:annotation>
+          <xs:documentation>gallon (US)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="H19">
+        <xs:annotation>
+          <xs:documentation>cubic hectometre</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="H20">
+        <xs:annotation>
+          <xs:documentation>cubic kilometre</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="HLT">
+        <xs:annotation>
+          <xs:documentation>hectolitre</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="INQ">
+        <xs:annotation>
+          <xs:documentation>cubic inch</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="J57">
+        <xs:annotation>
+          <xs:documentation>barrel (UK petroleum)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="K21">
+        <xs:annotation>
+          <xs:documentation>cubic foot per degree Fahrenheit</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="K23">
+        <xs:annotation>
+          <xs:documentation>cubic foot per psi</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="K6">
+        <xs:annotation>
+          <xs:documentation>kilolitre</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="L43">
+        <xs:annotation>
+          <xs:documentation>peck (UK)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="L61">
+        <xs:annotation>
+          <xs:documentation>pint (US dry)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="L62">
+        <xs:annotation>
+          <xs:documentation>quart (US dry)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="L84">
+        <xs:annotation>
+          <xs:documentation>ton (UK shipping)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="L86">
+        <xs:annotation>
+          <xs:documentation>ton (US shipping)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="LTR">
+        <xs:annotation>
+          <xs:documentation>litre</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="M11">
+        <xs:annotation>
+          <xs:documentation>cubic yard per degree Fahrenheit</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="M14">
+        <xs:annotation>
+          <xs:documentation>cubic yard per psi</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="M67">
+        <xs:annotation>
+          <xs:documentation>acre-foot (based on U.S. survey foot)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="M68">
+        <xs:annotation>
+          <xs:documentation>cord (128 ft3)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="M69">
+        <xs:annotation>
+          <xs:documentation>cubic mile (UK statute)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="M70">
+        <xs:annotation>
+          <xs:documentation>ton, register</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="M71">
+        <xs:annotation>
+          <xs:documentation>cubic metre per pascal</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="MAL">
+        <xs:annotation>
+          <xs:documentation>megalitre</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="MLT">
+        <xs:annotation>
+          <xs:documentation>millilitre</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="MMQ">
+        <xs:annotation>
+          <xs:documentation>cubic millimetre</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="MTQ">
+        <xs:annotation>
+          <xs:documentation>cubic metre</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="OZA">
+        <xs:annotation>
+          <xs:documentation>fluid ounce (US)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="OZI">
+        <xs:annotation>
+          <xs:documentation>fluid ounce (UK)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="PT">
+        <xs:annotation>
+          <xs:documentation>pint (US)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="PTD">
+        <xs:annotation>
+          <xs:documentation>dry pint (US)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="PTI">
+        <xs:annotation>
+          <xs:documentation>pint (UK)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="PTL">
+        <xs:annotation>
+          <xs:documentation>liquid pint (US)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="QT">
+        <xs:annotation>
+          <xs:documentation>quart (US)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="QTD">
+        <xs:annotation>
+          <xs:documentation>dry quart (US)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="QTI">
+        <xs:annotation>
+          <xs:documentation>quart (UK)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="QTL">
+        <xs:annotation>
+          <xs:documentation>liquid quart (US)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="YDQ">
+        <xs:annotation>
+          <xs:documentation>cubic yard</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="VolumeUnitCodeType">
+    <xs:annotation>
+      <xs:documentation>A data type for volume unit of measurement codes.</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="unece:VolumeUnitCodeSimpleType">
+        <xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+</xs:schema>

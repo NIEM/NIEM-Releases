@@ -1,0 +1,817 @@
+<?xml version="1.0" encoding="US-ASCII"?>
+<xs:schema targetNamespace="http://release.niem.gov/niem/codes/core_misc/3.0/" version="1" xsi:schemaLocation="http://release.niem.gov/niem/appinfo/3.0/ ../../../appinfo/3.0/appinfo.xsd http://release.niem.gov/niem/conformanceTargets/3.0/ ../../../conformanceTargets/3.0/conformanceTargets.xsd http://release.niem.gov/niem/localTerminology/3.0/ ../../../localTerminology/3.0/localTerminology.xsd" ct:conformanceTargets="http://reference.niem.gov/niem/specification/naming-and-design-rules/3.0/#ReferenceSchemaDocument" xmlns:term="http://release.niem.gov/niem/localTerminology/3.0/" xmlns:structures="http://release.niem.gov/niem/structures/3.0/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:appinfo="http://release.niem.gov/niem/appinfo/3.0/" xmlns:ct="http://release.niem.gov/niem/conformanceTargets/3.0/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core_misc="http://release.niem.gov/niem/codes/core_misc/3.0/">
+  <xs:annotation>
+    <xs:documentation>Non-authoritative codes for the direction of a person's pose in an image.
+Source: NIEM 3.0; 
+Publication: NIEM 3.0; 
+Version: 3.0; 
+Date: Oct 2013;   
+http://release.niem.gov/niem/3.0/</xs:documentation>
+    <xs:appinfo>
+      <term:LocalTerm term="UTM" literal="Universal Transverse Mercator"/>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:import schemaLocation="../../../structures/3.0/structures.xsd" namespace="http://release.niem.gov/niem/structures/3.0/"/>
+  <xs:simpleType name="ContactInformationAvailabilityCodeSimpleType">
+    <xs:annotation>
+      <xs:documentation>A data type for a period of time or a situation in which an entity is available to be contacted with the given contact information.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="day">
+        <xs:annotation>
+          <xs:documentation>Daytime</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="emergency">
+        <xs:annotation>
+          <xs:documentation>Emergency</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="evening">
+        <xs:annotation>
+          <xs:documentation>Late day or early night</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="night">
+        <xs:annotation>
+          <xs:documentation>Late night</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="primary">
+        <xs:annotation>
+          <xs:documentation>Primary</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="secondary">
+        <xs:annotation>
+          <xs:documentation>Secondary or alternate</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="ContactInformationAvailabilityCodeType">
+    <xs:annotation>
+      <xs:documentation>A data type for a period of time or a situation in which an entity is available to be contacted with the given contact information.</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="core_misc:ContactInformationAvailabilityCodeSimpleType">
+        <xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:simpleType name="DayOfWeekCodeSimpleType">
+    <xs:annotation>
+      <xs:documentation>A data type for days of the week.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="FRI">
+        <xs:annotation>
+          <xs:documentation>Friday</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="MON">
+        <xs:annotation>
+          <xs:documentation>Monday</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="SAT">
+        <xs:annotation>
+          <xs:documentation>Saturday</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="SUN">
+        <xs:annotation>
+          <xs:documentation>Sunday</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="THU">
+        <xs:annotation>
+          <xs:documentation>Thursday</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="TUE">
+        <xs:annotation>
+          <xs:documentation>Tuesday</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="WED">
+        <xs:annotation>
+          <xs:documentation>Wednesday</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="DayOfWeekCodeType">
+    <xs:annotation>
+      <xs:documentation>A data type for days of the week.</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="core_misc:DayOfWeekCodeSimpleType">
+        <xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:simpleType name="ImagePoseCodeSimpleType">
+    <xs:annotation>
+      <xs:documentation>A data type for angles of an entitys pose in a photograph.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="Frontal">
+        <xs:annotation>
+          <xs:documentation>The object in the image is facing the front.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Oblique">
+        <xs:annotation>
+          <xs:documentation>The object in the image is facing a quarter view.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Side">
+        <xs:annotation>
+          <xs:documentation>The object in the image is facing the side.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="ImagePoseCodeType">
+    <xs:annotation>
+      <xs:documentation>A data type for angles of an entitys pose in a photograph.</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="core_misc:ImagePoseCodeSimpleType">
+        <xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:simpleType name="MilitaryDischargeCategoryCodeSimpleType">
+    <xs:annotation>
+      <xs:documentation>A data type for kinds of discharges a person may receive from military service.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="B">
+        <xs:annotation>
+          <xs:documentation>BAD CONDUCT</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="D">
+        <xs:annotation>
+          <xs:documentation>DISHONORABLE</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="G">
+        <xs:annotation>
+          <xs:documentation>GENERAL</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="H">
+        <xs:annotation>
+          <xs:documentation>HONORABLE</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="M">
+        <xs:annotation>
+          <xs:documentation>MEDICAL</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="N">
+        <xs:annotation>
+          <xs:documentation>NOT APPLICABLE</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="O">
+        <xs:annotation>
+          <xs:documentation>OTHER</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Q">
+        <xs:annotation>
+          <xs:documentation>UNDESIRABLE</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="U">
+        <xs:annotation>
+          <xs:documentation>UNKNOWN</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="MilitaryDischargeCategoryCodeType">
+    <xs:annotation>
+      <xs:documentation>A data type for kinds of discharges a person may receive from military service.</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="core_misc:MilitaryDischargeCategoryCodeSimpleType">
+        <xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:simpleType name="OffenseLevelCodeSimpleType">
+    <xs:annotation>
+      <xs:documentation>A data type for levels of an incident.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="F">
+        <xs:annotation>
+          <xs:documentation>Felony</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="G">
+        <xs:annotation>
+          <xs:documentation>Gross Misdemeanor</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="M">
+        <xs:annotation>
+          <xs:documentation>Misdemeanor</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="P">
+        <xs:annotation>
+          <xs:documentation>Petty Misdemeanor</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="OffenseLevelCodeType">
+    <xs:annotation>
+      <xs:documentation>A data type for levels of an incident.</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="core_misc:OffenseLevelCodeSimpleType">
+        <xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:simpleType name="PersonNameCategoryCodeSimpleType">
+    <xs:annotation>
+      <xs:documentation>A data type for a kind of person name.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="Alternate">
+        <xs:annotation>
+          <xs:documentation>Alternate</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Asserted">
+        <xs:annotation>
+          <xs:documentation>Asserted</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Legal">
+        <xs:annotation>
+          <xs:documentation>Legal</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="PersonNameCategoryCodeType">
+    <xs:annotation>
+      <xs:documentation>A data type for a kind of person name.</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="core_misc:PersonNameCategoryCodeSimpleType">
+        <xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:simpleType name="PleaCategoryCodeSimpleType">
+    <xs:annotation>
+      <xs:documentation>A data type for kinds of pleas.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="A">
+        <xs:annotation>
+          <xs:documentation>PLEA IN ABEYANCE</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="C">
+        <xs:annotation>
+          <xs:documentation>NO CONTEST</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="G">
+        <xs:annotation>
+          <xs:documentation>GUILTY</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="I">
+        <xs:annotation>
+          <xs:documentation>N GUILTY/INSANITY</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="M">
+        <xs:annotation>
+          <xs:documentation>GUILTY/MENTAL ILL</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="N">
+        <xs:annotation>
+          <xs:documentation>NOT GUILTY</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="U">
+        <xs:annotation>
+          <xs:documentation>UNKNOWN</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="X">
+        <xs:annotation>
+          <xs:documentation>NO PLEA ENTERED</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="PleaCategoryCodeType">
+    <xs:annotation>
+      <xs:documentation>A data type for kinds of pleas.</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="core_misc:PleaCategoryCodeSimpleType">
+        <xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:simpleType name="StatuteCategoryCodeSimpleType">
+    <xs:annotation>
+      <xs:documentation>A data type for kinds of statutes.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="B">
+        <xs:annotation>
+          <xs:documentation>Both C and P</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="C">
+        <xs:annotation>
+          <xs:documentation>Charging</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="D">
+        <xs:annotation>
+          <xs:documentation>Definition</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="J">
+        <xs:annotation>
+          <xs:documentation>Juvenile Status/CHIP</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="N">
+        <xs:annotation>
+          <xs:documentation>Not Chargeable</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="P">
+        <xs:annotation>
+          <xs:documentation>Penalty</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="StatuteCategoryCodeType">
+    <xs:annotation>
+      <xs:documentation>A data type for kinds of statutes.</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="core_misc:StatuteCategoryCodeSimpleType">
+        <xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:simpleType name="SupervisionLevelCodeSimpleType">
+    <xs:annotation>
+      <xs:documentation>A data type for levels of supervision required for a person.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="1-LOW RISK">
+        <xs:annotation>
+          <xs:documentation>Low risk</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="2-MODERATE RISK">
+        <xs:annotation>
+          <xs:documentation>Moderate risk</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="3-HIGH RISK">
+        <xs:annotation>
+          <xs:documentation>High risk</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="4-EXTREME RISK">
+        <xs:annotation>
+          <xs:documentation>Extreme risk</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="COMPACT OUT">
+        <xs:annotation>
+          <xs:documentation>Compact out</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="FUGITIVE">
+        <xs:annotation>
+          <xs:documentation>Fugitive</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ISP I">
+        <xs:annotation>
+          <xs:documentation>ISP I</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ISP II">
+        <xs:annotation>
+          <xs:documentation>ISP II</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="RESID/IN-STATE CUSTD">
+        <xs:annotation>
+          <xs:documentation>RESID/IN-STATE CUSTODY</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="SupervisionLevelCodeType">
+    <xs:annotation>
+      <xs:documentation>A data type for levels of supervision required for a person.</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="core_misc:SupervisionLevelCodeSimpleType">
+        <xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:simpleType name="SupervisionRestrictionCodeSimpleType">
+    <xs:annotation>
+      <xs:documentation>A data type for restrictions placed upon a person under supervision.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="ABSCONDING">
+        <xs:annotation>
+          <xs:documentation>I will not abscond from parole supervision.  A-Reporting: I will report as directed by the Utah Department of Corrections.  B-Residence: I will establish and reside at a residence of record and will not change my residence without first obtaining permission from my AP&amp;P Officer.  C-Leaving the State: I will not leave the state of Utah, even briefly, or any other state to which I am released or transferred without prior written permission from my AP&amp;P Officer.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ALCOHOL">
+        <xs:annotation>
+          <xs:documentation>Not consume any alcoholic beverages or have them under control or in my possession at any time.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ALCOHOL ESTABLISHMNT">
+        <xs:annotation>
+          <xs:documentation>Not enter any place where alcoholic beverages are being consumed or served as the chief item of order.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ARREST-CITATIONS">
+        <xs:annotation>
+          <xs:documentation>Report any arrests or citations to Adult Probation and Parole within eight hours of occurrence.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ASSOCIATION">
+        <xs:annotation>
+          <xs:documentation>Not knowingly associate with any person who is involved in criminal activity or who has been convicted of a felony without approval from the AP&amp;P Officer.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CHEMICAL ANALYSIS">
+        <xs:annotation>
+          <xs:documentation>Abstain from the illegal use, possession, control, delivery, production, manufacture or distribution of controlled substances (58-37-2 U.C.A.) and submit to tests of breath or body fluids to ensure compliance with the Probation Agreement.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CHILDREN CONGREGATE">
+        <xs:annotation>
+          <xs:documentation>Not enter places or events where children congregate including, but not limited to:  schools, playgrounds, parks, arcades, parties, family functions, holiday festivities or any other place or function where children are present or reasonably expected to be present without prior written approval from Adult Probation and Parole or without the supervision of a responsible adult previously approved by Adult Probation and Parole.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CHILDREN UNDER 18">
+        <xs:annotation>
+          <xs:documentation>Have no contact or association with children under the age of 18 without prior written approval of Adult Probation and Parole.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CONDUCT">
+        <xs:annotation>
+          <xs:documentation>I will obey all state, federal and municipal laws.  I will submit DNA identifier as required by law.  If arrested, cited or questioned by a peace officer; I will notify my AP&amp;P Officer within 48 hours of the incident.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CURFEW">
+        <xs:annotation>
+          <xs:documentation>Be at place of residence between the hours of the designated curfew times every day of the week unless otherwise approved by the supervising AP&amp;P Officer, and comply with the confinement schedule and the confinement area.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="DISCONNECT PHONE">
+        <xs:annotation>
+          <xs:documentation>Not disconnect the telephone line, power cord, or tamper with the transmitter in any way without prior authorization from the supervising AP&amp;P Officer or the Electronic Monitoring Staff.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="DNA">
+        <xs:annotation>
+          <xs:documentation>Comply with Utah Code Annotated Section 53-10-403-406 by submitting an adequate DNA specimen, and, unless determination is made that there is no ability to pay, reimburse the responsible agency $75.00 for the cost of obtaining the specimen.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="DOCUMENTS/DATA/PHOTO">
+        <xs:annotation>
+          <xs:documentation>Not have in my possession any written materials, documents, computer data, photographs which give evidence of gang involvement or activity such as: (1) membership or enemy lists, (2) articles which contain or have upon them gang-associated graffiti, drawings or lettering, (3) photographs or newspaper clippings of gang members, gang crimes or activities including obituaries, (4) photographs of myself in gang clothing, demonstrating hand signs or holding weapons.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="DRIVER LICENSE/ID">
+        <xs:annotation>
+          <xs:documentation>Obtain and carry on my person at all times a valid Utah Driver License, Utah Identification Card or other approved photo identification.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="DRUGS">
+        <xs:annotation>
+          <xs:documentation>Abstain from the illegal use, possession, control, delivery, production, manufacture or distribution of marijuana, narcotics, controlled substances or other drugs as defined in the Controlled Substances Act, Utah Code Annotated 58-37-2 as amended.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ELECTRONIC MONITOR">
+        <xs:annotation>
+          <xs:documentation>Participate in electronic surveillance when offense(s) occurred in the evening or nighttime hours.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="EMPLOYMENT">
+        <xs:annotation>
+          <xs:documentation>Unless otherwise authorized by the AP&amp;P Officer; seek, obtain and maintain verifiable, lawful, full-time employment (32 hours per week minimum) as approved by the AP&amp;P Officer.  Notify the AP&amp;P Officer of any change in my employment within 48 hours of the change.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="EMPLOYMENT VERIFY">
+        <xs:annotation>
+          <xs:documentation>Provide check stubs or other verification of employment to Adult Probation and Parole at least twice monthly.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ENTERTAIN/LURE">
+        <xs:annotation>
+          <xs:documentation>Not have in my possession or under my control any items or materials either designed for, or used to, entertain, lure or attract the attention of children under the age of 18 without prior written approval from Adult Probation and Parole.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="EXPLOIT MATERIAL">
+        <xs:annotation>
+          <xs:documentation>Not have in my possession or under my control any material that describes or depicts human nudity, the exploitation of children, consensual sex acts, non-consensual sex acts, sexual acts involving force or violence including, but not limited to:  computer programs, computer links, photographs, drawings, video tapes, audio tapes, magazines, books, literature, writings, etc. without prior approval from Adult Probation and Parole.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="FEES">
+        <xs:annotation>
+          <xs:documentation>I will pay supervision fees as determined by the Department of Corrections.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="FINANCIAL AGREEMENT">
+        <xs:annotation>
+          <xs:documentation>Obtain permission from the supervising AP&amp;P Officer before entering into any financial agreement requiring installment payments.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="FIREARM/AMMUITION">
+        <xs:annotation>
+          <xs:documentation>Not have in my possession, in my custody, under my control, in a vehicle in which I am a passenger, or on the premises where I reside: (1) any firearm or replica thereof, (2) ammunition, or (3) dangerous weapon (any item which, in the manner of its use or intended use, is capable of causing death or serious bodily injury), and further, I shall not associate with, or be in the company of, any individual who has firearms or dangerous weapons in their possession or under their control.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="FIREARMS USED">
+        <xs:annotation>
+          <xs:documentation>Not be involved in activities in which, or frequent places at which, firearms or dangerous weapons are used, legally or otherwise including, but not limited to, hunting or target shooting.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="FREQUENT GANG PLACES">
+        <xs:annotation>
+          <xs:documentation>Not frequent places where known gang members congregate.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="FREQUENT SCHOOLS">
+        <xs:annotation>
+          <xs:documentation>Not visit or frequent any school ground unless I am a student registered at that school and present during appropriate class hours.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="GANG MEMBERS">
+        <xs:annotation>
+          <xs:documentation>Not associate with any known gang member.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="GED/DIPLOMA">
+        <xs:annotation>
+          <xs:documentation>Earn a GED and/or high school diploma or complete vocational training or an apprentice program as directed.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="HMU ABUSE">
+        <xs:annotation>
+          <xs:documentation>Not physically abuse the electronic monitoring equipment; i.e. Home Monitoring Unit (HMU), transmitter or band.  If the HMU, transmitter or band is lost, damaged or tampered with; understand responsibility for the replacement and/or repair cost of the equipment.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="HMU MOVE">
+        <xs:annotation>
+          <xs:documentation>Not move the Home Monitoring Unit (HMU) without prior authorization from the supervising AP&amp;P Officer or the Electronic Monitoring Staff.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="HOME VISITS">
+        <xs:annotation>
+          <xs:documentation>I will permit visits to my place of residence by officers of Adult Probation and Parole for the purpose of ensuring compliance with the conditions of my parole. I will not interfere with this requirement; i.e. having vicious dogs, perimeter security doors, refusing to open the door, etc.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="INSIGNIAS/EMBLEMS">
+        <xs:annotation>
+          <xs:documentation>Not wear, display, use or possess any insignias, emblems or clothing associated with a specific gang(s) including, but not limited to: belt buckles, jewelry, caps/hats, jackets, shoes/shoe laces, scarves/bandanas, shirts inscribed "In Memory Of" a deceased or incarcerated gang member, or other articles of clothing modified to represent a particular gang(s).</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="INTERSTATE COMPACT">
+        <xs:annotation>
+          <xs:documentation>Execute and adhere to the terms of the Interstate Compact Waiver and Agreement if probation or parole is served outside the state of Utah.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="LAW ENFORCE CONTACT">
+        <xs:annotation>
+          <xs:documentation>If/when contacted by law enforcement, I shall provide my true name, place of residence (street address, not PO Box) and date of birth, and inform the officer(s) of my probation or parole status; I shall report such contact to my supervising agent within 48 hours, including the date and the nature of the contact, the law enforcement agency and any potential charges.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="LEAVE COUNTY">
+        <xs:annotation>
+          <xs:documentation>Not leave county of residence without prior authorization from Adult Probation and Parole.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="MONTHLY PAYMENTS">
+        <xs:annotation>
+          <xs:documentation>Make monthly payments toward any fine, restitution or supervision fees at a rate determined by the supervising AP&amp;P Officer.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="NO ALCOHOL">
+        <xs:annotation>
+          <xs:documentation>Not consume, have in my possession or under my control alcoholic beverages, or frequent businesses where alcohol is the chief item of order.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="NO CONTACT W/VICTM">
+        <xs:annotation>
+          <xs:documentation>No contact with the victim nor the victims family.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="NOT AT COURT">
+        <xs:annotation>
+          <xs:documentation>Not appear in court or at a court building where other known gang member(s) are present and/or where a judicial proceeding involving a gang member is in progress, unless a party to proceedings in that court or subpoenaedto appear.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="NOT DATE">
+        <xs:annotation>
+          <xs:documentation>Not date persons with children residing at home under the age of 18 without prior written approval of Adult Probation and Parole.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="PAGER">
+        <xs:annotation>
+          <xs:documentation>Not be in possession of any beeper or paging device, except in the course of lawful employment.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="PAINT/PENS">
+        <xs:annotation>
+          <xs:documentation>Not have in my possession or under my control spray paint, spray can tips, large marking pens or other items commonly used to create graffiti, or tagger magazines.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="PHONE SERVICES">
+        <xs:annotation>
+          <xs:documentation>Understand the phone line may not have Call Waiting, Call Forwarding, Voice Mail or Caller ID; nor an answering machine, cordless phone, fax machine, computer modem or cellular phone used on the phone line.  Bring copies of phone bill to the supervising agent on a monthly basis for verification if needed.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="POLYGRAPH">
+        <xs:annotation>
+          <xs:documentation>Submit to random polygraph examinations.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="PORNOGRAPHY">
+        <xs:annotation>
+          <xs:documentation>Not view nor have in possession any pornographic material or material exploiting children or depicting unconsensual sex acts or acts involving force or violence.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="PROVIDE PHONE LINE">
+        <xs:annotation>
+          <xs:documentation>Understand the Electronic Monitoring Program requires provision, at personal expense, of a phone line for the use of the HMU.  Understand the HMU may cause some disturbance with existing phone line.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="REGISTRATION/DNA">
+        <xs:annotation>
+          <xs:documentation>Comply with the requirements of Utah Sex Offender Registration and DNA specimen requirements.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="RELEASE">
+        <xs:annotation>
+          <xs:documentation>On the day of my release from the institution of confinement, I will report to my assigned AP&amp;P Officer unless otherwise approved in writing from Adult Probation and Parole.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="REPORTING">
+        <xs:annotation>
+          <xs:documentation>Not abscond from probation supervision.  A-Reporting: Report as directed by the Department of Corrections.  B-Residence: Establish and reside at a residence of record and not change residence without first obtaining permission from the AP&amp;P Officer.  C-Leaving the State: Not leave the state of Utah, even briefly, or any other state to which I am released or transferred without prior written permission from the AP&amp;P Officer.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="RESIDENCE">
+        <xs:annotation>
+          <xs:documentation>Residence and residence changes must be approved by Adult Probation and Parole.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="SEARCHES">
+        <xs:annotation>
+          <xs:documentation>I will permit officers of Adult Probation and Parole to search my person, residence, vehicle or any other property under my control without a warrant at any time, day or night, upon reasonable suspicion to ensure compliance with conditions of my parole.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="SEX STIMULUS MATERIA">
+        <xs:annotation>
+          <xs:documentation>Not have in my possession or under my control any material that acts as a sexual stimulus for my particular deviancy(s) including, but not limited to:  computer programs, computer links, photographs, drawings, video tapes, audio tapes, magazines, books, literature, writings, etc. without the written approval from Adult Probation and Parole.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="SIGNS/GESTURES">
+        <xs:annotation>
+          <xs:documentation>Not display any gang signs, gestures or any posturing associated with any specific gang(s).</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="SPECIAL">
+        <xs:annotation>
+          <xs:documentation>Abide by the following special conditions as ordered by the Board of Pardons.  (enter special conditions)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="STOLEN VEHICLE">
+        <xs:annotation>
+          <xs:documentation>Not be an occupant in any stolen vehicle, or vehicle I should have known was stolen.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="SUBSTANCE TESTING">
+        <xs:annotation>
+          <xs:documentation>Agree to submit to urinalysis or other tests for marijuana, narcotics, controlled substances, alcohol or other drugs upon reasonable suspicion as ascertained by, and at the request of, any AP&amp;P Officer to ensure compliance with the conditions of the Intensive Supervision Program.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="SUPERVISION FEE">
+        <xs:annotation>
+          <xs:documentation>Agree to pay a supervision fee of $30 per month unless granted a waiver by the Department of Corrections under the provisions of Utah Statute 64-13-21.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="THERAPY">
+        <xs:annotation>
+          <xs:documentation>Enter into, participate in and successfully complete sex offender therapy as determined by the treating facility, therapists and the Utah Department of Corrections.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="TREATMENT/COUNSELING">
+        <xs:annotation>
+          <xs:documentation>Enter into, participate in and complete treatment, counseling or therapy as directed.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="TRUTHFULNESS">
+        <xs:annotation>
+          <xs:documentation>I will be cooperative, compliant and truthful in all my dealings with Adult Probation and Parole.  If arrested, cited or questioned by a peace officer; notify the AP&amp;P Officer within 48 hours.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="UNEMPLOYED">
+        <xs:annotation>
+          <xs:documentation>If unemployed, may be ordered to report to an assigned work project on Monday, Wednesday and Friday at 8 am.  Understand that this is work for which no compensation will be received.  Work on this assigned work project from 8 am to 5 pm or until dismissed by the project supervisor or the supervising agent.  on Tuesday and Thursday, report to the Adult Probation and Parole Office at 8 am with a list of potential employers; then go into the community and look for work.  Make a list of the places visited during the day.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="VEHICLE">
+        <xs:annotation>
+          <xs:documentation>Not operate any vehicle other than those reported to Adult Probation and Parole.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="VICIOUS DOGS">
+        <xs:annotation>
+          <xs:documentation>Not own, possess, maintain or raise vicious dogs, nor keep them on the premises where I reside.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="VICTIM CONTACT">
+        <xs:annotation>
+          <xs:documentation>Have no direct or indirect contact with the victim(s) or victims family without prior written approval from Adult Probation and Parole.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="VISITS">
+        <xs:annotation>
+          <xs:documentation>Permit visits to my place of residence, my place of employment or elsewhere by officers of Adult Probation and Parole for the purpose of ensuring compliance with the conditions of the Probation Agreement.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="WEAPONS">
+        <xs:annotation>
+          <xs:documentation>Not possess, have under control, have in my custody or on the premises where residing any explosives, firearmsor dangerous weapons.  (Dangerous weapon is defined as any item that in the manner of its use or intended use is capable of causing death or serious bodily injury.)  Exceptions to this condition may be made by the supervising agent and must be in writing.  This waiver will only apply to individuals on probation for a misdemeanor and who have never been convicted of a felony.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="SupervisionRestrictionCodeType">
+    <xs:annotation>
+      <xs:documentation>A data type for restrictions placed upon a person under supervision.</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="core_misc:SupervisionRestrictionCodeSimpleType">
+        <xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:simpleType name="UTMHemisphereCodeSimpleType">
+    <xs:annotation>
+      <xs:documentation>A data type for a hemisphere designation for a UTM coordinate.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="N">
+        <xs:annotation>
+          <xs:documentation>Northern hemisphere</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="S">
+        <xs:annotation>
+          <xs:documentation>Southern hemisphere</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="UTMHemisphereCodeType">
+    <xs:annotation>
+      <xs:documentation>A data type for a hemisphere designation for a UTM coordinate.</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="core_misc:UTMHemisphereCodeSimpleType">
+        <xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+</xs:schema>

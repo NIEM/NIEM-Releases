@@ -1,0 +1,444 @@
+<?xml version="1.0" encoding="US-ASCII"?>
+<xs:schema targetNamespace="http://release.niem.gov/niem/codes/edxl_have/3.0/" version="1" xsi:schemaLocation="http://release.niem.gov/niem/appinfo/3.0/ ../../../appinfo/3.0/appinfo.xsd http://release.niem.gov/niem/conformanceTargets/3.0/ ../../../conformanceTargets/3.0/conformanceTargets.xsd http://release.niem.gov/niem/localTerminology/3.0/ ../../../localTerminology/3.0/localTerminology.xsd" ct:conformanceTargets="http://reference.niem.gov/niem/specification/naming-and-design-rules/3.0/#ReferenceSchemaDocument" xmlns:term="http://release.niem.gov/niem/localTerminology/3.0/" xmlns:structures="http://release.niem.gov/niem/structures/3.0/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:appinfo="http://release.niem.gov/niem/appinfo/3.0/" xmlns:have-codes="http://release.niem.gov/niem/codes/edxl_have/3.0/" xmlns:ct="http://release.niem.gov/niem/conformanceTargets/3.0/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <xs:annotation>
+    <xs:documentation>Source: OASIS Emergency Data Exchange Language (EDXL); 
+Publication: Emergency Data Exchange Language (EDXL) Hospital AVailability Exchange (HAVE) Version 1.0; 
+Version: 1.0; 
+Date: 22 Dec 2009; 
+http://docs.oasis-open.org/emergency/edxl-have/v1.0/errata/edxl-have-v1.0-os-errata-os.html</xs:documentation>
+    <xs:appinfo>
+      <term:LocalTerm term="Decon" literal="Decontamination"/>
+      <term:LocalTerm term="EOC" literal="Emergency Operations Center"/>
+      <term:LocalTerm term="EMS" literal="Emergency Medical Service"/>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:import schemaLocation="../../../structures/3.0/structures.xsd" namespace="http://release.niem.gov/niem/structures/3.0/"/>
+  <xs:simpleType name="AvailabilityStatusCodeSimpleType">
+    <xs:annotation>
+      <xs:documentation>A data type for a code set of service availability.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="Adequate">
+        <xs:annotation>
+          <xs:documentation>Meets the current needs</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Insufficient">
+        <xs:annotation>
+          <xs:documentation>Current needs are not being met</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="AvailabilityStatusCodeType">
+    <xs:annotation>
+      <xs:documentation>A data type for a code set of service availability.</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="have-codes:AvailabilityStatusCodeSimpleType">
+        <xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:simpleType name="BedCategoryCodeSimpleType">
+    <xs:annotation>
+      <xs:documentation>A data type for a code set of available Bed Types.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="AdultICU">
+        <xs:annotation>
+          <xs:documentation>Capacity status for adult ICU bed type.  i. These can support critically ill or injured patients, including ventilator support.  ii. This category includes all major subtypes of ICU beds, including neuro, cardiac, trauma, or medical, with the exception that this category does not include burn ICU beds.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Burn">
+        <xs:annotation>
+          <xs:documentation>Capacity status for burn beds. 
+i. These are thought of as burn ICU beds, either approved by the American Burn Association or self-designated. 
+ii. These beds are NOT to be included in other ICU bed counts.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="MedicalSurgical">
+        <xs:annotation>
+          <xs:documentation>Capacity status for medical-surgical beds. 
+i. These are also thought of as ward beds.  
+ii. These beds may or may not include cardiac telemetry capability</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="NegativeFlowIsolation">
+        <xs:annotation>
+          <xs:documentation>i. Capacity status for negative airflow isolation beds. These provide respiratory isolation. NOTE: This value may represent available beds included in the counts of other types. 
+</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="OperatingRooms">
+        <xs:annotation>
+          <xs:documentation>i. Capacity status for operating rooms which are equipped staffed and could be made available for patient care in a short period of time.
+</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="OtherIsolation">
+        <xs:annotation>
+          <xs:documentation>i. Capacity status for other isolation beds. These provide isolation where airflow is not a concern.  NOTE: This value may represent available beds included in the counts of other types. 
+</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="PediatricICU">
+        <xs:annotation>
+          <xs:documentation>i. Capacity status for pediatric ICU beds. This is similar to adult ICU beds, but for patients 17-years-old and younger.
+</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Pediatrics">
+        <xs:annotation>
+          <xs:documentation>i. Capacity status for pediatrics beds. These are ward medical/surgical beds for patients 17-years-old and younger.
+</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Psychiatric">
+        <xs:annotation>
+          <xs:documentation>i. Capacity status for psychiatric beds. These are ward beds on a closed/locked psychiatric unit or ward beds where a patient will be attended by a sitter.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="BedCategoryCodeType">
+    <xs:annotation>
+      <xs:documentation>A data type for a code set of available Bed Types.</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="have-codes:BedCategoryCodeSimpleType">
+        <xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:simpleType name="CapacityStatusCodeSimpleType">
+    <xs:annotation>
+      <xs:documentation>A data type for a code set of bed kind or sub-category bed kind.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="NotAvailable">
+        <xs:annotation>
+          <xs:documentation>The type of bed is not available.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="VacantAvailable">
+        <xs:annotation>
+          <xs:documentation>The type of bed is available.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="CapacityStatusCodeType">
+    <xs:annotation>
+      <xs:documentation>A data type for a code set of bed kind or sub-category bed kind.</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="have-codes:CapacityStatusCodeSimpleType">
+        <xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:simpleType name="ClinicalStatusCodeSimpleType">
+    <xs:annotation>
+      <xs:documentation>A data type for a code set of the clinical status of the facility.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="Full">
+        <xs:annotation>
+          <xs:documentation>Hospital clinical resources are exceeded and acceptable care cannot be provided to additional patients. Diversion or community surge response is required.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Level1">
+        <xs:annotation>
+          <xs:documentation>Hospital clinical resources are operating at Level-1 surge conditions.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Level2">
+        <xs:annotation>
+          <xs:documentation>Hospital clinical resources are operating at Level-2 surge conditions.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Normal">
+        <xs:annotation>
+          <xs:documentation>Hospital clinical resources are operating within normal conditions.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="ClinicalStatusCodeType">
+    <xs:annotation>
+      <xs:documentation>A data type for a code set of the clinical status of the facility.</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="have-codes:ClinicalStatusCodeSimpleType">
+        <xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:simpleType name="DeconCapacityCodeSimpleType">
+    <xs:annotation>
+      <xs:documentation>A data type for a code set of the capacity for chemical/biological/radiological patient decontamination.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="Exceeded">
+        <xs:annotation>
+          <xs:documentation>Needs exceed available capacity</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Full">
+        <xs:annotation>
+          <xs:documentation>In use at maximum capacity</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Inactive">
+        <xs:annotation>
+          <xs:documentation>Not being used, but available if needed</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Open">
+        <xs:annotation>
+          <xs:documentation>In use and able to accept additional patients</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="DeconCapacityCodeType">
+    <xs:annotation>
+      <xs:documentation>A data type for a code set of the capacity for chemical/biological/radiological patient decontamination.</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="have-codes:DeconCapacityCodeSimpleType">
+        <xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:simpleType name="EMSOffloadStatusCodeSimpleType">
+    <xs:annotation>
+      <xs:documentation>A data type for a code set of offload times of ambulance capabilities.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="Delayed">
+        <xs:annotation>
+          <xs:documentation>The time required to offload the patient is longer than typical.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Normal">
+        <xs:annotation>
+          <xs:documentation>The time required to offload the patient is typical.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="EMSOffloadStatusCodeType">
+    <xs:annotation>
+      <xs:documentation>A data type for a code set of offload times of ambulance capabilities.</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="have-codes:EMSOffloadStatusCodeSimpleType">
+        <xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:simpleType name="EMSTrafficStatusCodeSimpleType">
+    <xs:annotation>
+      <xs:documentation>A data type for a code set of the status of EMS traffic operations.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="Advisory">
+        <xs:annotation>
+          <xs:documentation>Experiencing specific resource limitations which may affect transport of some EMS traffic.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Closed">
+        <xs:annotation>
+          <xs:documentation>Requesting re-route of EMS traffic to other facilities.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Normal">
+        <xs:annotation>
+          <xs:documentation>Accepting all EMS traffic</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="NotApplicable">
+        <xs:annotation>
+          <xs:documentation>Not Applicable. This hospital does not have an emergency department.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="EMSTrafficStatusCodeType">
+    <xs:annotation>
+      <xs:documentation>A data type for a code set of the status of EMS traffic operations.</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="have-codes:EMSTrafficStatusCodeSimpleType">
+        <xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:simpleType name="EOCPlanCodeSimpleType">
+    <xs:annotation>
+      <xs:documentation>A data type for a code set of whether the hospital has activated its Emergency Operations Plan (EOP)</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="Active">
+        <xs:annotation>
+          <xs:documentation>Active</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Inactive">
+        <xs:annotation>
+          <xs:documentation>Inactive</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="EOCPlanCodeType">
+    <xs:annotation>
+      <xs:documentation>A data type for a code set of whether the hospital has activated its Emergency Operations Plan (EOP)</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="have-codes:EOCPlanCodeSimpleType">
+        <xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:simpleType name="EOCStatusCodeSimpleType">
+    <xs:annotation>
+      <xs:documentation>A data type for a code set of whether the Emergency Operations Center (EOC) is currently operating.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="Active">
+        <xs:annotation>
+          <xs:documentation>Active</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Inactive">
+        <xs:annotation>
+          <xs:documentation>Inactive</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="EOCStatusCodeType">
+    <xs:annotation>
+      <xs:documentation>A data type for a code set of whether the Emergency Operations Center (EOC) is currently operating.</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="have-codes:EOCStatusCodeSimpleType">
+        <xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:simpleType name="FacilityStatusCodeSimpleType">
+    <xs:annotation>
+      <xs:documentation>A data type for a code set of facility status.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="Closed">
+        <xs:annotation>
+          <xs:documentation>Indicates that a hospital is no longer capable of providing services and only emergency services/restoration personnel may remain in the facility.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Compromised">
+        <xs:annotation>
+          <xs:documentation>General operations of the facility have been affected due to damage, operating on emergency backup systems, or facility contamination.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Evacuating">
+        <xs:annotation>
+          <xs:documentation>Indicates that a hospital is in the process of a partial or full evacuation.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Normal">
+        <xs:annotation>
+          <xs:documentation>No conditions exist that adversely affect the general operations of the facility.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="FacilityStatusCodeType">
+    <xs:annotation>
+      <xs:documentation>A data type for a code set of facility status.</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="have-codes:FacilityStatusCodeSimpleType">
+        <xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:simpleType name="MorgueCapacityCodeSimpleType">
+    <xs:annotation>
+      <xs:documentation>A data type for a code set of the status of the morgue capacity.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="Exceeded">
+        <xs:annotation>
+          <xs:documentation>Storage needs exceed available space</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Full">
+        <xs:annotation>
+          <xs:documentation>All normal space is in use</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Open">
+        <xs:annotation>
+          <xs:documentation>Space is available</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="MorgueCapacityCodeType">
+    <xs:annotation>
+      <xs:documentation>A data type for a code set of the status of the morgue capacity.</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="have-codes:MorgueCapacityCodeSimpleType">
+        <xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:simpleType name="SecurityStatusCodeSimpleType">
+    <xs:annotation>
+      <xs:documentation>A data type for a code set of the status of security procedures in the hospital.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="Elevated">
+        <xs:annotation>
+          <xs:documentation>The hospital has activated increased security procedures (awareness, surveillance) due to a potential threat, or specific security related event i.e. increase in local threat level, VIP, bomb threat.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Lockdown">
+        <xs:annotation>
+          <xs:documentation>Based on security needs, the hospital has activated procedures to control entry to the facility to authorized persons only.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Normal">
+        <xs:annotation>
+          <xs:documentation>The hospital is operating under routine security procedures.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Quarantine">
+        <xs:annotation>
+          <xs:documentation>Based on a public health emergency, the entry and exit of the facility is controlled by public health officials</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="RestrictedAccess">
+        <xs:annotation>
+          <xs:documentation>Based on security needs, the hospital has activated procedures to allow access to the facility through a reduced number of controlled entrances.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="SecurityStatusCodeType">
+    <xs:annotation>
+      <xs:documentation>A data type for a code set of the status of security procedures in the hospital.</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="have-codes:SecurityStatusCodeSimpleType">
+        <xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+</xs:schema>

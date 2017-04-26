@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="US-ASCII"?>
+<xs:schema targetNamespace="http://release.niem.gov/niem/codes/edxl_rm/3.0/" version="1" xsi:schemaLocation="http://release.niem.gov/niem/appinfo/3.0/ ../../../appinfo/3.0/appinfo.xsd http://release.niem.gov/niem/conformanceTargets/3.0/ ../../../conformanceTargets/3.0/conformanceTargets.xsd" ct:conformanceTargets="http://reference.niem.gov/niem/specification/naming-and-design-rules/3.0/#ReferenceSchemaDocument" xmlns:structures="http://release.niem.gov/niem/structures/3.0/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:appinfo="http://release.niem.gov/niem/appinfo/3.0/" xmlns:edxl_rm="http://release.niem.gov/niem/codes/edxl_rm/3.0/" xmlns:ct="http://release.niem.gov/niem/conformanceTargets/3.0/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <xs:annotation>
+    <xs:documentation>Source: EDXL Resource Messaging (RM) Standards Working Group (SWG); 
+Publication: Emergency Data Exchange Language Resource Messaging (EDXL-RM) specification; 
+Version: 1.0; 
+Date: 22 Dec 2009;   
+http://docs.oasis-open.org/emerge</xs:documentation>
+  </xs:annotation>
+  <xs:import schemaLocation="../../../structures/3.0/structures.xsd" namespace="http://release.niem.gov/niem/structures/3.0/"/>
+  <xs:simpleType name="ContentCategoryCodeSimpleType">
+    <xs:annotation>
+      <xs:documentation>A data type code indicating the purpose or kind of resource content or payload being sent</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="Accept">
+        <xs:annotation>
+          <xs:documentation>In response to a resource message; "I'll get back to you with an answer one way or the other (could still result in a "decline")"</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Acknowledge">
+        <xs:annotation>
+          <xs:documentation>In response to any resource message, "I have received your message but have not yet processed it"</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Cancel">
+        <xs:annotation>
+          <xs:documentation>Message used to revoke any previous resource message.  NOTE:  This message may be used to "cancel" or "recall" resource:  Resource requested and perhaps en route, but no longer needed.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Commit Resource">
+        <xs:annotation>
+          <xs:documentation>Message used to agree or commit specific resource in response to a  Resource Request or Requisition, or to a "Request Return"</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Decline">
+        <xs:annotation>
+          <xs:documentation>In response to a resource message; "I cannot meet your request"</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Notify Auxiliary Recipients">
+        <xs:annotation>
+          <xs:documentation>Message used to advise or notify an auxiliary recipient (e.g. a government official) about any resource message as an "FYI", where the auxiliary recipient was not included on original distribution.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Notify Resource Request Disposition">
+        <xs:annotation>
+          <xs:documentation>Message used to report on the current "status" of any resource in relation to a Resource Requisition, Release Resource, or Request to Return Resource.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Offer Unsolicited Resources">
+        <xs:annotation>
+          <xs:documentation>Message used to offer available resources (that have not been requested) to assist with an emergency response.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Release Resource">
+        <xs:annotation>
+          <xs:documentation>Message used by authorities at the incident to "release" (demobilize) resource back to its original point of assignment or to another location / assignment.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Request Extension">
+        <xs:annotation>
+          <xs:documentation>A request initiated by the requester / receiver of resource, "I want to extend how long I need to keep this resource"</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Request Information (RFI)">
+        <xs:annotation>
+          <xs:documentation>Message used to ask resource questions or provide general description of situation and general resources needs.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Request Quote">
+        <xs:annotation>
+          <xs:documentation>Message used to request a price quote from a seller or supplier.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Request Resource">
+        <xs:annotation>
+          <xs:documentation>Message used to request needed resources from one or many recipients, possibly spawning multiple responses.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Request Resource Disposition">
+        <xs:annotation>
+          <xs:documentation>Message used to request current "status" of resource in relation to a previous Resource Requisition or Release Resource.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Request Return">
+        <xs:annotation>
+          <xs:documentation>Message used to request release (demobilize) of resources back to its original point of assignment or to another location / assignment ("I want my stuff back").</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Requisition Resource">
+        <xs:annotation>
+          <xs:documentation>Message used to "order" specific resource, or to confirm specific resource to be "ordered" relating to one or more responses to a "Request Resource".</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Response to Offer Unsolicited Resources">
+        <xs:annotation>
+          <xs:documentation>Message used as the response to an offer of unsolicited resources, indicating accept or decline.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Response to Request Information (RFI)">
+        <xs:annotation>
+          <xs:documentation>Message used as the response to an RFI message providing general information or to list resource that may meet the specified need.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Response to Request Quote">
+        <xs:annotation>
+          <xs:documentation>Message used as the response to a "Request Quote".  Allows sender to list resource(s) which they feel represent suitable match with the request, with pricing information.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Response to Request Resource">
+        <xs:annotation>
+          <xs:documentation>Message used as the response to a "Request Resource".  Allows sender to list resource(s) which they feel represent suitable match with a resource request.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Response to Request Return">
+        <xs:annotation>
+          <xs:documentation>Message used as the response to a "Request Return" indicating whether the resource may be released, with relevant time-line information.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Update">
+        <xs:annotation>
+          <xs:documentation>Message used to provide information superseding a previously sent Resource Message (change/modify one or more information elements of the message).  Example:  Change requested resource quantity.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="ContentCategoryCodeType">
+    <xs:annotation>
+      <xs:documentation>A data type code indicating the purpose or kind of resource content or payload being sent</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="edxl_rm:ContentCategoryCodeSimpleType">
+        <xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:simpleType name="ResponseCodeSimpleType">
+    <xs:annotation>
+      <xs:documentation>A data type code  indicating an accept or decline of a Request</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="Accept">
+        <xs:annotation>
+          <xs:documentation>Accept</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Decline">
+        <xs:annotation>
+          <xs:documentation>Decline</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="ResponseCodeType">
+    <xs:annotation>
+      <xs:documentation>A data type code  indicating an accept or decline of a Request</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="edxl_rm:ResponseCodeSimpleType">
+        <xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+</xs:schema>
