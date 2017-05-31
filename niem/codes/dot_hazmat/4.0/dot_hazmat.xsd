@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="US-ASCII"?>
-<xs:schema targetNamespace="http://release.niem.gov/niem/codes/dot_hazmat/4.0/" version="beta1" xsi:schemaLocation="http://release.niem.gov/niem/appinfo/4.0/ ../../../appinfo/4.0/appinfo.xsd http://release.niem.gov/niem/conformanceTargets/3.0/ ../../../conformanceTargets/3.0/conformanceTargets.xsd" ct:conformanceTargets="http://reference.niem.gov/niem/specification/naming-and-design-rules/4.0/#ReferenceSchemaDocument" xmlns:appinfo="http://release.niem.gov/niem/appinfo/4.0/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:hazmat="http://release.niem.gov/niem/codes/dot_hazmat/4.0/" xmlns:ct="http://release.niem.gov/niem/conformanceTargets/3.0/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:structures="http://release.niem.gov/niem/structures/4.0/">
+<xs:schema targetNamespace="http://release.niem.gov/niem/codes/dot_hazmat/4.0/" version="1" xsi:schemaLocation="http://release.niem.gov/niem/appinfo/4.0/ ../../../utility/appinfo/4.0/appinfo.xsd http://release.niem.gov/niem/conformanceTargets/3.0/ ../../../utility/conformanceTargets/3.0/conformanceTargets.xsd" ct:conformanceTargets="http://reference.niem.gov/niem/specification/naming-and-design-rules/4.0/#ReferenceSchemaDocument" xmlns:appinfo="http://release.niem.gov/niem/appinfo/4.0/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:hazmat="http://release.niem.gov/niem/codes/dot_hazmat/4.0/" xmlns:ct="http://release.niem.gov/niem/conformanceTargets/3.0/" xmlns:structures="http://release.niem.gov/niem/structures/4.0/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <xs:annotation>
     <xs:documentation>Source: US Department of Transportation (DoT)
 Pipeline and Hazardous Materials Safetey Administration (PHMSA); 
@@ -7,8 +7,11 @@ Publication: Title 49 CFR 172.101 Table&#xa0;(List of Hazardous Materials);
 Date: 18 Jan 2012; 
 Source Updats: 18 Jan 2012; 
 http://www.phmsa.dot.gov/portal/site/PHMSA/menuitem.ebdc7a8a7e39f2e55cf2031050248a0c/?vgnextoid=d84ddf479bd7d110VgnVCM1000009ed07898RCRD&amp;vgnextchannel=4f347fd9b896b110VgnVCM1000009ed07898RCRD&amp;vgnextfmt=print</xs:documentation>
+    <xs:appinfo>
+      <appinfo:LocalTerm term="UN" literal="United Nations"/>
+    </xs:appinfo>
   </xs:annotation>
-  <xs:import schemaLocation="../../../structures/4.0/structures.xsd" namespace="http://release.niem.gov/niem/structures/4.0/"/>
+  <xs:import schemaLocation="../../../utility/structures/4.0/structures.xsd" namespace="http://release.niem.gov/niem/structures/4.0/"/>
   <xs:simpleType name="HazmatUNCodeSimpleType">
     <xs:annotation>
       <xs:documentation>A data type for a United Nations/North American (UN/NA) Hazardous Materials Code pertaining to a hazardous material.</xs:documentation>
@@ -2176,12 +2179,12 @@ http://www.phmsa.dot.gov/portal/site/PHMSA/menuitem.ebdc7a8a7e39f2e55cf203105024
       </xs:enumeration>
       <xs:enumeration value="UN1003">
         <xs:annotation>
-          <xs:documentation>Air, refrigerated liquid, (cryogenic liquid)</xs:documentation>
+          <xs:documentation>Air, refrigerated liquid, (cryogenic liquid) non-pressurized</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
       <xs:enumeration value="UN1003">
         <xs:annotation>
-          <xs:documentation>Air, refrigerated liquid, (cryogenic liquid) non-pressurized</xs:documentation>
+          <xs:documentation>Air, refrigerated liquid, (cryogenic liquid)</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
       <xs:enumeration value="UN1005">
@@ -2391,12 +2394,12 @@ http://www.phmsa.dot.gov/portal/site/PHMSA/menuitem.ebdc7a8a7e39f2e55cf203105024
       </xs:enumeration>
       <xs:enumeration value="UN1057">
         <xs:annotation>
-          <xs:documentation>Lighter refills containing flammable gas not exceeding 4 fluid ounces (7.22 cubic inches) and 65 grams of flammable gas</xs:documentation>
+          <xs:documentation>Lighters containing flammable gas</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
       <xs:enumeration value="UN1057">
         <xs:annotation>
-          <xs:documentation>Lighters containing flammable gas</xs:documentation>
+          <xs:documentation>Lighter refills containing flammable gas not exceeding 4 fluid ounces (7.22 cubic inches) and 65 grams of flammable gas</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
       <xs:enumeration value="UN1058">
@@ -2971,17 +2974,17 @@ http://www.phmsa.dot.gov/portal/site/PHMSA/menuitem.ebdc7a8a7e39f2e55cf203105024
       </xs:enumeration>
       <xs:enumeration value="UN1202">
         <xs:annotation>
+          <xs:documentation>Heating oil, light</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="UN1202">
+        <xs:annotation>
           <xs:documentation>Gas oil</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
       <xs:enumeration value="UN1202">
         <xs:annotation>
           <xs:documentation>Diesel fuel</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="UN1202">
-        <xs:annotation>
-          <xs:documentation>Heating oil, light</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
       <xs:enumeration value="UN1203">
@@ -3187,12 +3190,12 @@ http://www.phmsa.dot.gov/portal/site/PHMSA/menuitem.ebdc7a8a7e39f2e55cf203105024
       </xs:enumeration>
       <xs:enumeration value="UN1263">
         <xs:annotation>
-          <xs:documentation>Paint related material including paint thinning, drying, removing, or reducing compound</xs:documentation>
+          <xs:documentation>Paint including paint, lacquer, enamel, stain, shellac solutions, varnish, polish, liquid filler, and liquid lacquer base</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
       <xs:enumeration value="UN1263">
         <xs:annotation>
-          <xs:documentation>Paint including paint, lacquer, enamel, stain, shellac solutions, varnish, polish, liquid filler, and liquid lacquer base</xs:documentation>
+          <xs:documentation>Paint related material including paint thinning, drying, removing, or reducing compound</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
       <xs:enumeration value="UN1264">
@@ -3217,12 +3220,12 @@ http://www.phmsa.dot.gov/portal/site/PHMSA/menuitem.ebdc7a8a7e39f2e55cf203105024
       </xs:enumeration>
       <xs:enumeration value="UN1268">
         <xs:annotation>
-          <xs:documentation>Petroleum distillates, n.o.s. or Petroleum products, n.o.s.</xs:documentation>
+          <xs:documentation>Petroleum distillates, n.o.s. or  Petroleum products, n.o.s.</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
       <xs:enumeration value="UN1268">
         <xs:annotation>
-          <xs:documentation>Petroleum distillates, n.o.s. or  Petroleum products, n.o.s.</xs:documentation>
+          <xs:documentation>Petroleum distillates, n.o.s. or Petroleum products, n.o.s.</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
       <xs:enumeration value="UN1272">
@@ -4552,12 +4555,12 @@ http://www.phmsa.dot.gov/portal/site/PHMSA/menuitem.ebdc7a8a7e39f2e55cf203105024
       </xs:enumeration>
       <xs:enumeration value="UN1611">
         <xs:annotation>
-          <xs:documentation>Hexaethyl tetraphosphate, liquid</xs:documentation>
+          <xs:documentation>Hexaethyl tetraphosphate, solid</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
       <xs:enumeration value="UN1611">
         <xs:annotation>
-          <xs:documentation>Hexaethyl tetraphosphate, solid</xs:documentation>
+          <xs:documentation>Hexaethyl tetraphosphate, liquid</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
       <xs:enumeration value="UN1612">
@@ -5108,12 +5111,12 @@ http://www.phmsa.dot.gov/portal/site/PHMSA/menuitem.ebdc7a8a7e39f2e55cf203105024
       </xs:enumeration>
       <xs:enumeration value="UN1738">
         <xs:annotation>
-          <xs:documentation>Benzyl chloride unstabilized</xs:documentation>
+          <xs:documentation>Benzyl chloride</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
       <xs:enumeration value="UN1738">
         <xs:annotation>
-          <xs:documentation>Benzyl chloride</xs:documentation>
+          <xs:documentation>Benzyl chloride unstabilized</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
       <xs:enumeration value="UN1739">
@@ -5143,12 +5146,12 @@ http://www.phmsa.dot.gov/portal/site/PHMSA/menuitem.ebdc7a8a7e39f2e55cf203105024
       </xs:enumeration>
       <xs:enumeration value="UN1744">
         <xs:annotation>
-          <xs:documentation>Bromine</xs:documentation>
+          <xs:documentation>Bromine solutions</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
       <xs:enumeration value="UN1744">
         <xs:annotation>
-          <xs:documentation>Bromine solutions</xs:documentation>
+          <xs:documentation>Bromine</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
       <xs:enumeration value="UN1745">
@@ -5168,12 +5171,12 @@ http://www.phmsa.dot.gov/portal/site/PHMSA/menuitem.ebdc7a8a7e39f2e55cf203105024
       </xs:enumeration>
       <xs:enumeration value="UN1748">
         <xs:annotation>
-          <xs:documentation>Calcium hypochlorite, dry  or  Calcium hypochlorite mixtures dry with more than 39 percent available chlorine (8.8 percent available oxygen)</xs:documentation>
+          <xs:documentation>Calcium hypochlorite, dry or Calcium hypochlorite mixtures dry with more than 39 percent available chlorine (8.8 percent available oxygen)</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
       <xs:enumeration value="UN1748">
         <xs:annotation>
-          <xs:documentation>Calcium hypochlorite, dry or Calcium hypochlorite mixtures dry with more than 39 percent available chlorine (8.8 percent available oxygen)</xs:documentation>
+          <xs:documentation>Calcium hypochlorite, dry  or  Calcium hypochlorite mixtures dry with more than 39 percent available chlorine (8.8 percent available oxygen)</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
       <xs:enumeration value="UN1749">
@@ -5363,12 +5366,12 @@ http://www.phmsa.dot.gov/portal/site/PHMSA/menuitem.ebdc7a8a7e39f2e55cf203105024
       </xs:enumeration>
       <xs:enumeration value="UN1788">
         <xs:annotation>
-          <xs:documentation>Hydrobromic acid, with more than 49 percent hydrobromic acid</xs:documentation>
+          <xs:documentation>Hydrobromic acid, with not more than 49 percent hydrobromic acid</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
       <xs:enumeration value="UN1788">
         <xs:annotation>
-          <xs:documentation>Hydrobromic acid, with not more than 49 percent hydrobromic acid</xs:documentation>
+          <xs:documentation>Hydrobromic acid, with more than 49 percent hydrobromic acid</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
       <xs:enumeration value="UN1789">
@@ -5413,12 +5416,12 @@ http://www.phmsa.dot.gov/portal/site/PHMSA/menuitem.ebdc7a8a7e39f2e55cf203105024
       </xs:enumeration>
       <xs:enumeration value="UN1796">
         <xs:annotation>
-          <xs:documentation>Nitrating acid mixtures with not more than 50 percent nitric acid</xs:documentation>
+          <xs:documentation>Nitrating acid mixtures with more than 50 percent nitric acid</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
       <xs:enumeration value="UN1796">
         <xs:annotation>
-          <xs:documentation>Nitrating acid mixtures with more than 50 percent nitric acid</xs:documentation>
+          <xs:documentation>Nitrating acid mixtures with not more than 50 percent nitric acid</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
       <xs:enumeration value="UN1798">
@@ -5548,12 +5551,12 @@ http://www.phmsa.dot.gov/portal/site/PHMSA/menuitem.ebdc7a8a7e39f2e55cf203105024
       </xs:enumeration>
       <xs:enumeration value="UN1826">
         <xs:annotation>
-          <xs:documentation>Nitrating acid mixtures, spent with more than 50 percent nitric acid</xs:documentation>
+          <xs:documentation>Nitrating acid mixtures spent with not more than 50 percent nitric acid</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
       <xs:enumeration value="UN1826">
         <xs:annotation>
-          <xs:documentation>Nitrating acid mixtures spent with not more than 50 percent nitric acid</xs:documentation>
+          <xs:documentation>Nitrating acid mixtures, spent with more than 50 percent nitric acid</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
       <xs:enumeration value="UN1827">
@@ -5983,11 +5986,6 @@ http://www.phmsa.dot.gov/portal/site/PHMSA/menuitem.ebdc7a8a7e39f2e55cf203105024
       </xs:enumeration>
       <xs:enumeration value="UN1950">
         <xs:annotation>
-          <xs:documentation>Aerosols, corrosive, Packing Group II or III, (each not exceeding 1 L capacity)</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="UN1950">
-        <xs:annotation>
           <xs:documentation>Aerosols, flammable, n.o.s. (engine starting fluid) (each not exceeding 1 L capacity)</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
@@ -5999,6 +5997,11 @@ http://www.phmsa.dot.gov/portal/site/PHMSA/menuitem.ebdc7a8a7e39f2e55cf203105024
       <xs:enumeration value="UN1950">
         <xs:annotation>
           <xs:documentation>Aerosols, flammable, (each not exceeding 1 L capacity)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="UN1950">
+        <xs:annotation>
+          <xs:documentation>Aerosols, corrosive, Packing Group II or III, (each not exceeding 1 L capacity)</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
       <xs:enumeration value="UN1950">
@@ -6018,11 +6021,6 @@ http://www.phmsa.dot.gov/portal/site/PHMSA/menuitem.ebdc7a8a7e39f2e55cf203105024
       </xs:enumeration>
       <xs:enumeration value="UN1953">
         <xs:annotation>
-          <xs:documentation>Compressed gas, toxic, flammable, n.o.s. Inhalation Hazard Zone B</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="UN1953">
-        <xs:annotation>
           <xs:documentation>Compressed gas, toxic, flammable, n.o.s. Inhalation Hazard Zone C</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
@@ -6036,14 +6034,14 @@ http://www.phmsa.dot.gov/portal/site/PHMSA/menuitem.ebdc7a8a7e39f2e55cf203105024
           <xs:documentation>Compressed gas, toxic, flammable, n.o.s. Inhalation Hazard Zone D</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
+      <xs:enumeration value="UN1953">
+        <xs:annotation>
+          <xs:documentation>Compressed gas, toxic, flammable, n.o.s. Inhalation Hazard Zone B</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
       <xs:enumeration value="UN1954">
         <xs:annotation>
           <xs:documentation>Compressed gas, flammable, n.o.s.</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="UN1955">
-        <xs:annotation>
-          <xs:documentation>Compressed gas, toxic, n.o.s. Inhalation Hazard Zone D</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
       <xs:enumeration value="UN1955">
@@ -6054,6 +6052,11 @@ http://www.phmsa.dot.gov/portal/site/PHMSA/menuitem.ebdc7a8a7e39f2e55cf203105024
       <xs:enumeration value="UN1955">
         <xs:annotation>
           <xs:documentation>Compressed gas, toxic, n.o.s. Inhalation Hazard Zone B</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="UN1955">
+        <xs:annotation>
+          <xs:documentation>Compressed gas, toxic, n.o.s. Inhalation Hazard Zone D</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
       <xs:enumeration value="UN1955">
@@ -6293,12 +6296,12 @@ http://www.phmsa.dot.gov/portal/site/PHMSA/menuitem.ebdc7a8a7e39f2e55cf203105024
       </xs:enumeration>
       <xs:enumeration value="UN2014">
         <xs:annotation>
-          <xs:documentation>Hydrogen peroxide, aqueous solutions with not less than 20 percent but not more than 40 percent hydrogen peroxide (stabilized as necessary)</xs:documentation>
+          <xs:documentation>Hydrogen peroxide, aqueous solutions with more than 40 percent but not more than 60 percent hydrogen peroxide (stabilized as necessary)</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
       <xs:enumeration value="UN2014">
         <xs:annotation>
-          <xs:documentation>Hydrogen peroxide, aqueous solutions with more than 40 percent but not more than 60 percent hydrogen peroxide (stabilized as necessary)</xs:documentation>
+          <xs:documentation>Hydrogen peroxide, aqueous solutions with not less than 20 percent but not more than 40 percent hydrogen peroxide (stabilized as necessary)</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
       <xs:enumeration value="UN2015">
@@ -6383,12 +6386,12 @@ http://www.phmsa.dot.gov/portal/site/PHMSA/menuitem.ebdc7a8a7e39f2e55cf203105024
       </xs:enumeration>
       <xs:enumeration value="UN2031">
         <xs:annotation>
-          <xs:documentation>Nitric acid other than red fuming, with more than 20 percent and less than 65 percent nitric acid.</xs:documentation>
+          <xs:documentation>Nitric acid other than red fuming, with at least 65 percent, but  not more than 70 percent nitric acid</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
       <xs:enumeration value="UN2031">
         <xs:annotation>
-          <xs:documentation>Nitric acid other than red fuming, with at least 65 percent, but  not more than 70 percent nitric acid</xs:documentation>
+          <xs:documentation>Nitric acid other than red fuming, with more than 20 percent and less than 65 percent nitric acid.</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
       <xs:enumeration value="UN2031">
@@ -9063,12 +9066,12 @@ http://www.phmsa.dot.gov/portal/site/PHMSA/menuitem.ebdc7a8a7e39f2e55cf203105024
       </xs:enumeration>
       <xs:enumeration value="UN2790">
         <xs:annotation>
-          <xs:documentation>Acetic acid solution, with more than 10 percent and less than 50 percent acid, by mass</xs:documentation>
+          <xs:documentation>Acetic acid solution, not less than 50 percent but not more than 80 percent acid, by mass</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
       <xs:enumeration value="UN2790">
         <xs:annotation>
-          <xs:documentation>Acetic acid solution, not less than 50 percent but not more than 80 percent acid, by mass</xs:documentation>
+          <xs:documentation>Acetic acid solution, with more than 10 percent and less than 50 percent acid, by mass</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
       <xs:enumeration value="UN2793">
@@ -10027,13 +10030,13 @@ http://www.phmsa.dot.gov/portal/site/PHMSA/menuitem.ebdc7a8a7e39f2e55cf203105024
       </xs:enumeration>
       <xs:enumeration value="UN3091">
         <xs:annotation>
-          <xs:documentation>Lithium batteries, contained in equipment.
-</xs:documentation>
+          <xs:documentation>Lithium batteries packed with equipment</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
       <xs:enumeration value="UN3091">
         <xs:annotation>
-          <xs:documentation>Lithium batteries packed with equipment</xs:documentation>
+          <xs:documentation>Lithium batteries, contained in equipment.
+</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
       <xs:enumeration value="UN3092">
@@ -10208,12 +10211,12 @@ http://www.phmsa.dot.gov/portal/site/PHMSA/menuitem.ebdc7a8a7e39f2e55cf203105024
       </xs:enumeration>
       <xs:enumeration value="UN3126">
         <xs:annotation>
-          <xs:documentation>Self-heating solid, corrosive, organic, n.o.s.</xs:documentation>
+          <xs:documentation>Self-heating, solid, corrosive, organic, n.o.s.</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
       <xs:enumeration value="UN3126">
         <xs:annotation>
-          <xs:documentation>Self-heating, solid, corrosive, organic, n.o.s.</xs:documentation>
+          <xs:documentation>Self-heating solid, corrosive, organic, n.o.s.</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
       <xs:enumeration value="UN3127">
@@ -10223,12 +10226,12 @@ http://www.phmsa.dot.gov/portal/site/PHMSA/menuitem.ebdc7a8a7e39f2e55cf203105024
       </xs:enumeration>
       <xs:enumeration value="UN3128">
         <xs:annotation>
-          <xs:documentation>Self-heating, solid, toxic, organic, n.o.s.</xs:documentation>
+          <xs:documentation>Self-heating solid, toxic, organic, n.o.s.</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
       <xs:enumeration value="UN3128">
         <xs:annotation>
-          <xs:documentation>Self-heating solid, toxic, organic, n.o.s.</xs:documentation>
+          <xs:documentation>Self-heating, solid, toxic, organic, n.o.s.</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
       <xs:enumeration value="UN3129">
@@ -10288,12 +10291,12 @@ http://www.phmsa.dot.gov/portal/site/PHMSA/menuitem.ebdc7a8a7e39f2e55cf203105024
       </xs:enumeration>
       <xs:enumeration value="UN3140">
         <xs:annotation>
-          <xs:documentation>Alkaloids, liquid, n.o.s., or   Alkaloid salts, liquid, n.o.s.</xs:documentation>
+          <xs:documentation>Alkaloids, liquid, n.o.s., or  Alkaloid salts, liquid, n.o.s.</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
       <xs:enumeration value="UN3140">
         <xs:annotation>
-          <xs:documentation>Alkaloids, liquid, n.o.s., or  Alkaloid salts, liquid, n.o.s.</xs:documentation>
+          <xs:documentation>Alkaloids, liquid, n.o.s., or   Alkaloid salts, liquid, n.o.s.</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
       <xs:enumeration value="UN3140">
@@ -10333,12 +10336,12 @@ http://www.phmsa.dot.gov/portal/site/PHMSA/menuitem.ebdc7a8a7e39f2e55cf203105024
       </xs:enumeration>
       <xs:enumeration value="UN3147">
         <xs:annotation>
-          <xs:documentation>Dyes, solid, corrosive, n.o.s. or  Dye intermediates, solid, corrosive, n.o.s.</xs:documentation>
+          <xs:documentation>Dyes, solid, corrosive, n.o.s.  or  Dye intermediates, solid, corrosive, n.o.s.</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
       <xs:enumeration value="UN3147">
         <xs:annotation>
-          <xs:documentation>Dyes, solid, corrosive, n.o.s.  or  Dye intermediates, solid, corrosive, n.o.s.</xs:documentation>
+          <xs:documentation>Dyes, solid, corrosive, n.o.s. or  Dye intermediates, solid, corrosive, n.o.s.</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
       <xs:enumeration value="UN3147">
@@ -10408,17 +10411,17 @@ http://www.phmsa.dot.gov/portal/site/PHMSA/menuitem.ebdc7a8a7e39f2e55cf203105024
       </xs:enumeration>
       <xs:enumeration value="UN3160">
         <xs:annotation>
-          <xs:documentation>Liquefied gas, toxic, flammable, n.o.s. Inhalation Hazard Zone A</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="UN3160">
-        <xs:annotation>
           <xs:documentation>Liquefied gas, toxic, flammable, n.o.s. Inhalation Hazard Zone B</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
       <xs:enumeration value="UN3160">
         <xs:annotation>
           <xs:documentation>Liquefied gas, toxic, flammable, n.o.s. Inhalation Hazard Zone C</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="UN3160">
+        <xs:annotation>
+          <xs:documentation>Liquefied gas, toxic, flammable, n.o.s. Inhalation Hazard Zone A</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
       <xs:enumeration value="UN3160">
@@ -10468,11 +10471,6 @@ http://www.phmsa.dot.gov/portal/site/PHMSA/menuitem.ebdc7a8a7e39f2e55cf203105024
       </xs:enumeration>
       <xs:enumeration value="UN3166">
         <xs:annotation>
-          <xs:documentation>Vehicle, flammable gas powered or Vehicle, fuel cell, flammable gas powered</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="UN3166">
-        <xs:annotation>
           <xs:documentation>Vehicle, flammable liquid powered or Vehicle, fuel cell, flammable liquid powered</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
@@ -10484,6 +10482,11 @@ http://www.phmsa.dot.gov/portal/site/PHMSA/menuitem.ebdc7a8a7e39f2e55cf203105024
       <xs:enumeration value="UN3166">
         <xs:annotation>
           <xs:documentation>Engines, internal combustion, or Engines, fuel cell, flammable gas powered</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="UN3166">
+        <xs:annotation>
+          <xs:documentation>Vehicle, flammable gas powered or Vehicle, fuel cell, flammable gas powered</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
       <xs:enumeration value="UN3167">
@@ -10503,22 +10506,17 @@ http://www.phmsa.dot.gov/portal/site/PHMSA/menuitem.ebdc7a8a7e39f2e55cf203105024
       </xs:enumeration>
       <xs:enumeration value="UN3170">
         <xs:annotation>
-          <xs:documentation>Aluminum smelting by-products  or   Aluminum remelting by-products</xs:documentation>
+          <xs:documentation>Aluminum smelting by-products  or  Aluminum remelting by-products</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
       <xs:enumeration value="UN3170">
         <xs:annotation>
-          <xs:documentation>Aluminum smelting by-products  or  Aluminum remelting by-products</xs:documentation>
+          <xs:documentation>Aluminum smelting by-products  or   Aluminum remelting by-products</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
       <xs:enumeration value="UN3171">
         <xs:annotation>
           <xs:documentation>Battery-powered vehicle or  Battery-powered equipment</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="UN3172">
-        <xs:annotation>
-          <xs:documentation>Toxins, extracted from living sources, liquid, n.o.s.</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
       <xs:enumeration value="UN3172">
@@ -10529,6 +10527,11 @@ http://www.phmsa.dot.gov/portal/site/PHMSA/menuitem.ebdc7a8a7e39f2e55cf203105024
       <xs:enumeration value="UN3172">
         <xs:annotation>
           <xs:documentation>Toxins, from living sources, solid, n.o.s.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="UN3172">
+        <xs:annotation>
+          <xs:documentation>Toxins, extracted from living sources, liquid, n.o.s.</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
       <xs:enumeration value="UN3174">
@@ -10888,12 +10891,12 @@ http://www.phmsa.dot.gov/portal/site/PHMSA/menuitem.ebdc7a8a7e39f2e55cf203105024
       </xs:enumeration>
       <xs:enumeration value="UN3259">
         <xs:annotation>
-          <xs:documentation>Amines, solid, corrosive, n.o.s.,  or   Polyamines, solid, corrosive n.o.s.</xs:documentation>
+          <xs:documentation>Amines, solid, corrosive, n.o.s.,  or  Polyamines, solid, corrosive n.o.s.</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
       <xs:enumeration value="UN3259">
         <xs:annotation>
-          <xs:documentation>Amines, solid, corrosive, n.o.s.,  or  Polyamines, solid, corrosive n.o.s.</xs:documentation>
+          <xs:documentation>Amines, solid, corrosive, n.o.s.,  or   Polyamines, solid, corrosive n.o.s.</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
       <xs:enumeration value="UN3259">
@@ -11123,11 +11126,6 @@ http://www.phmsa.dot.gov/portal/site/PHMSA/menuitem.ebdc7a8a7e39f2e55cf203105024
       </xs:enumeration>
       <xs:enumeration value="UN3303">
         <xs:annotation>
-          <xs:documentation>Compressed gas, toxic, oxidizing, n.o.s. Inhalation Hazard Zone A</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="UN3303">
-        <xs:annotation>
           <xs:documentation>Compressed gas, toxic, oxidizing, n.o.s. Inhalation Hazard Zone B</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
@@ -11141,9 +11139,9 @@ http://www.phmsa.dot.gov/portal/site/PHMSA/menuitem.ebdc7a8a7e39f2e55cf203105024
           <xs:documentation>Compressed gas, toxic, oxidizing, n.o.s. Inhalation Hazard Zone C</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
-      <xs:enumeration value="UN3304">
+      <xs:enumeration value="UN3303">
         <xs:annotation>
-          <xs:documentation>Compressed gas, toxic, corrosive, n.o.s. Inhalation Hazard Zone C</xs:documentation>
+          <xs:documentation>Compressed gas, toxic, oxidizing, n.o.s. Inhalation Hazard Zone A</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
       <xs:enumeration value="UN3304">
@@ -11161,9 +11159,9 @@ http://www.phmsa.dot.gov/portal/site/PHMSA/menuitem.ebdc7a8a7e39f2e55cf203105024
           <xs:documentation>Compressed gas, toxic, corrosive, n.o.s. Inhalation Hazard Zone B</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
-      <xs:enumeration value="UN3305">
+      <xs:enumeration value="UN3304">
         <xs:annotation>
-          <xs:documentation>Compressed gas, toxic, flammable, corrosive, n.o.s. Inhalation Hazard Zone C</xs:documentation>
+          <xs:documentation>Compressed gas, toxic, corrosive, n.o.s. Inhalation Hazard Zone C</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
       <xs:enumeration value="UN3305">
@@ -11178,12 +11176,12 @@ http://www.phmsa.dot.gov/portal/site/PHMSA/menuitem.ebdc7a8a7e39f2e55cf203105024
       </xs:enumeration>
       <xs:enumeration value="UN3305">
         <xs:annotation>
-          <xs:documentation>Compressed gas, toxic, flammable, corrosive, n.o.s. Inhalation Hazard Zone D</xs:documentation>
+          <xs:documentation>Compressed gas, toxic, flammable, corrosive, n.o.s. Inhalation Hazard Zone C</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
-      <xs:enumeration value="UN3306">
+      <xs:enumeration value="UN3305">
         <xs:annotation>
-          <xs:documentation>Compressed gas, toxic, oxidizing, corrosive, n.o.s. Inhalation Hazard Zone B</xs:documentation>
+          <xs:documentation>Compressed gas, toxic, flammable, corrosive, n.o.s. Inhalation Hazard Zone D</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
       <xs:enumeration value="UN3306">
@@ -11198,12 +11196,12 @@ http://www.phmsa.dot.gov/portal/site/PHMSA/menuitem.ebdc7a8a7e39f2e55cf203105024
       </xs:enumeration>
       <xs:enumeration value="UN3306">
         <xs:annotation>
-          <xs:documentation>Compressed gas, toxic, oxdizing, corrosive, n.o.s. Inhalation Hazard Zone A</xs:documentation>
+          <xs:documentation>Compressed gas, toxic, oxidizing, corrosive, n.o.s. Inhalation Hazard Zone B</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
-      <xs:enumeration value="UN3307">
+      <xs:enumeration value="UN3306">
         <xs:annotation>
-          <xs:documentation>Liquefied gas, toxic, oxidizing, n.o.s. Inhalation Hazard Zone A</xs:documentation>
+          <xs:documentation>Compressed gas, toxic, oxdizing, corrosive, n.o.s. Inhalation Hazard Zone A</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
       <xs:enumeration value="UN3307">
@@ -11218,12 +11216,12 @@ http://www.phmsa.dot.gov/portal/site/PHMSA/menuitem.ebdc7a8a7e39f2e55cf203105024
       </xs:enumeration>
       <xs:enumeration value="UN3307">
         <xs:annotation>
-          <xs:documentation>Liquefied gas, toxic, oxidizing, n.o.s. Inhalation Hazard Zone B</xs:documentation>
+          <xs:documentation>Liquefied gas, toxic, oxidizing, n.o.s. Inhalation Hazard Zone A</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
-      <xs:enumeration value="UN3308">
+      <xs:enumeration value="UN3307">
         <xs:annotation>
-          <xs:documentation>Liquefied gas, toxic, corrosive, n.o.s. Inhalation Hazard Zone B</xs:documentation>
+          <xs:documentation>Liquefied gas, toxic, oxidizing, n.o.s. Inhalation Hazard Zone B</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
       <xs:enumeration value="UN3308">
@@ -11238,12 +11236,12 @@ http://www.phmsa.dot.gov/portal/site/PHMSA/menuitem.ebdc7a8a7e39f2e55cf203105024
       </xs:enumeration>
       <xs:enumeration value="UN3308">
         <xs:annotation>
-          <xs:documentation>Liquefied gas, toxic, corrosive, n.o.s. Inhalation Hazard Zone C</xs:documentation>
+          <xs:documentation>Liquefied gas, toxic, corrosive, n.o.s. Inhalation Hazard Zone B</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
-      <xs:enumeration value="UN3309">
+      <xs:enumeration value="UN3308">
         <xs:annotation>
-          <xs:documentation>Liquefied gas, toxic, flammable, corrosive, n.o.s. Inhalation Hazard Zone D</xs:documentation>
+          <xs:documentation>Liquefied gas, toxic, corrosive, n.o.s. Inhalation Hazard Zone C</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
       <xs:enumeration value="UN3309">
@@ -11254,6 +11252,11 @@ http://www.phmsa.dot.gov/portal/site/PHMSA/menuitem.ebdc7a8a7e39f2e55cf203105024
       <xs:enumeration value="UN3309">
         <xs:annotation>
           <xs:documentation>Liquefied gas, toxic, flammable, corrosive, n.o.s. Inhalation Hazard Zone C</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="UN3309">
+        <xs:annotation>
+          <xs:documentation>Liquefied gas, toxic, flammable, corrosive, n.o.s. Inhalation Hazard Zone D</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
       <xs:enumeration value="UN3309">
@@ -11473,11 +11476,6 @@ http://www.phmsa.dot.gov/portal/site/PHMSA/menuitem.ebdc7a8a7e39f2e55cf203105024
       </xs:enumeration>
       <xs:enumeration value="UN3355">
         <xs:annotation>
-          <xs:documentation>Insecticide gases, toxic, flammable, n.o.s. Inhalation Hazard Zone B</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="UN3355">
-        <xs:annotation>
           <xs:documentation>Insecticide gases, toxic, flammable, n.o.s. Inhalation Hazard Zone A</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
@@ -11489,6 +11487,11 @@ http://www.phmsa.dot.gov/portal/site/PHMSA/menuitem.ebdc7a8a7e39f2e55cf203105024
       <xs:enumeration value="UN3355">
         <xs:annotation>
           <xs:documentation>Insecticide gases, toxic, flammable, n.o.s.Inhalation Hazard Zone D</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="UN3355">
+        <xs:annotation>
+          <xs:documentation>Insecticide gases, toxic, flammable, n.o.s. Inhalation Hazard Zone B</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
       <xs:enumeration value="UN3356">
@@ -11683,12 +11686,12 @@ http://www.phmsa.dot.gov/portal/site/PHMSA/menuitem.ebdc7a8a7e39f2e55cf203105024
       </xs:enumeration>
       <xs:enumeration value="UN3397">
         <xs:annotation>
-          <xs:documentation>Organometallic substance, solid, water-reactive, self-heating</xs:documentation>
+          <xs:documentation>Organometallic substance, solid, water reacitve, self-heating</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
       <xs:enumeration value="UN3397">
         <xs:annotation>
-          <xs:documentation>Organometallic substance, solid, water reacitve, self-heating</xs:documentation>
+          <xs:documentation>Organometallic substance, solid, water-reactive, self-heating</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
       <xs:enumeration value="UN3398">
@@ -11798,12 +11801,12 @@ http://www.phmsa.dot.gov/portal/site/PHMSA/menuitem.ebdc7a8a7e39f2e55cf203105024
       </xs:enumeration>
       <xs:enumeration value="UN3418">
         <xs:annotation>
-          <xs:documentation>2,4-Toluylenediamine solution or 2,4-Toluenediamine solution</xs:documentation>
+          <xs:documentation>2,4-Tolylenediamine solution or 2,4-Toluenediamine solution</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
       <xs:enumeration value="UN3418">
         <xs:annotation>
-          <xs:documentation>2,4-Tolylenediamine solution or 2,4-Toluenediamine solution</xs:documentation>
+          <xs:documentation>2,4-Toluylenediamine solution or 2,4-Toluenediamine solution</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
       <xs:enumeration value="UN3419">

@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="US-ASCII"?>
-<xs:schema targetNamespace="http://release.niem.gov/niem/domains/surfaceTransportation/4.0/" version="beta1" xsi:schemaLocation="http://release.niem.gov/niem/appinfo/4.0/ ../../../appinfo/4.0/appinfo.xsd http://release.niem.gov/niem/conformanceTargets/3.0/ ../../../conformanceTargets/3.0/conformanceTargets.xsd" ct:conformanceTargets="http://reference.niem.gov/niem/specification/naming-and-design-rules/4.0/#ReferenceSchemaDocument" xmlns:structures="http://release.niem.gov/niem/structures/4.0/" xmlns:st="http://release.niem.gov/niem/domains/surfaceTransportation/4.0/" xmlns:appinfo="http://release.niem.gov/niem/appinfo/4.0/" xmlns:ct="http://release.niem.gov/niem/conformanceTargets/3.0/" xmlns:nc="http://release.niem.gov/niem/niem-core/4.0/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mmucc="http://release.niem.gov/niem/codes/mmucc/4.0/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:niem-xs="http://release.niem.gov/niem/proxy/xsd/4.0/">
+<xs:schema targetNamespace="http://release.niem.gov/niem/domains/surfaceTransportation/4.0/" version="1" xsi:schemaLocation="http://release.niem.gov/niem/appinfo/4.0/ ../../../utility/appinfo/4.0/appinfo.xsd http://release.niem.gov/niem/conformanceTargets/3.0/ ../../../utility/conformanceTargets/3.0/conformanceTargets.xsd" ct:conformanceTargets="http://reference.niem.gov/niem/specification/naming-and-design-rules/4.0/#ReferenceSchemaDocument" xmlns:structures="http://release.niem.gov/niem/structures/4.0/" xmlns:st="http://release.niem.gov/niem/domains/surfaceTransportation/4.0/" xmlns:appinfo="http://release.niem.gov/niem/appinfo/4.0/" xmlns:ct="http://release.niem.gov/niem/conformanceTargets/3.0/" xmlns:nc="http://release.niem.gov/niem/niem-core/4.0/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mmucc="http://release.niem.gov/niem/codes/mmucc/4.0/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:niem-xs="http://release.niem.gov/niem/proxy/xsd/4.0/">
   <xs:annotation>
     <xs:documentation>Surface Transportation</xs:documentation>
+    <xs:appinfo>
+      <appinfo:LocalTerm term="AADT" literal="Annual average daily traffic"/>
+    </xs:appinfo>
   </xs:annotation>
-  <xs:import schemaLocation="../../../structures/4.0/structures.xsd" namespace="http://release.niem.gov/niem/structures/4.0/"/>
-  <xs:import schemaLocation="../../../proxy/xsd/4.0/xs.xsd" namespace="http://release.niem.gov/niem/proxy/xsd/4.0/"/>
   <xs:import schemaLocation="../../../niem-core/4.0/niem-core.xsd" namespace="http://release.niem.gov/niem/niem-core/4.0/"/>
+  <xs:import schemaLocation="../../../utility/structures/4.0/structures.xsd" namespace="http://release.niem.gov/niem/structures/4.0/"/>
+  <xs:import schemaLocation="../../../proxy/xsd/4.0/xs.xsd" namespace="http://release.niem.gov/niem/proxy/xsd/4.0/"/>
   <xs:import schemaLocation="../../../codes/mmucc/4.0/mmucc.xsd" namespace="http://release.niem.gov/niem/codes/mmucc/4.0/"/>
   <xs:simpleType name="CategoryOfGovernmentOwnershipCodeSimpleType">
     <xs:annotation>
@@ -515,15 +518,15 @@
         <xs:sequence>
           <xs:element ref="st:RoadwayStructureIdentification" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="st:RoadwayInclinationValue" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="st:AADTRamp" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="st:ThroughLanesNumber" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="st:AADTRampNumeric" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="st:ThroughLanesNumeric" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="st:BridgeStructure" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="st:RoadwayCurveApplicableIndicator" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="st:RoadwayCurveRadiusLengthMeasure" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="st:RoadwayCurveLengthMeasure" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="st:RoadwayCurveSuperelevationMeasure" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="st:RoadwayGradeSlopePercent" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="st:AverageAnnualDailyTraffic" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="st:AverageAnnualDailyTrafficNumeric" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="st:RoadwayLaneWidthMeasure" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="st:RoadwayShoulderWidthMeasure" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="st:RoadwayMedianWidthMeasure" minOccurs="0" maxOccurs="unbounded"/>
@@ -1354,22 +1357,22 @@
       </xs:extension>
     </xs:simpleContent>
   </xs:complexType>
-  <xs:element name="AADTRamp" type="nc:NumericType" nillable="true">
+  <xs:element name="AADTRampNumeric" type="nc:NumericType" nillable="true">
     <xs:annotation>
       <xs:documentation>An AADT on ramp</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="AADTRampYear" type="niem-xs:gYear" nillable="true">
+  <xs:element name="AADTRampYearDate" type="niem-xs:gYear" nillable="true">
     <xs:annotation>
       <xs:documentation>A year of AADT on Ramp</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="AADTRoadIntersectingNumber" type="nc:NumericType" nillable="true">
+  <xs:element name="AADTRoadIntersectingNumeric" type="nc:NumericType" nillable="true">
     <xs:annotation>
       <xs:documentation>An AADT value to represent the current data year. For two-way facilities, provide the AADT for both directions; provide the directional AADT if part of a one-way couplet or for one-way streets</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="AADTRoadIntersectingYear" type="niem-xs:gYear" nillable="true">
+  <xs:element name="AADTRoadIntersectingYearDate" type="niem-xs:gYear" nillable="true">
     <xs:annotation>
       <xs:documentation>An AADT year road intersection</xs:documentation>
     </xs:annotation>
@@ -1379,12 +1382,12 @@
       <xs:documentation>A identifier for each approach of an intersection</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="AverageAnnualDailyTraffic" type="nc:NumericType" nillable="true">
+  <xs:element name="AverageAnnualDailyTrafficNumeric" type="nc:NumericType" nillable="true">
     <xs:annotation>
       <xs:documentation>An AADT value to represent the current data year. For two-way facilities, provide the AADT for both directions; provide the directional AADT if part of a one-way couplet or for one-way streets</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="AverageAnnualDailyTrafficYear" type="niem-xs:gYear" nillable="true">
+  <xs:element name="AverageAnnualDailyTrafficYearDate" type="niem-xs:gYear" nillable="true">
     <xs:annotation>
       <xs:documentation>An AADT year</xs:documentation>
     </xs:annotation>
@@ -1494,9 +1497,9 @@
       <xs:documentation>An Indication of whether the segment operates as a one- or two-way roadway</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="RampLength" type="nc:NumericType" nillable="true">
+  <xs:element name="RampLengthValue" type="nc:NumericType" nillable="true">
     <xs:annotation>
-      <xs:documentation>A number describing the length of the ramp. In the case of ramp connecting to an at-grade intersection, this would be measured from painted nose of gore to intersection curb line. In the case of ramp connecting to another ramp or a freeway, this would be measured from painted nose of gore to painted nose of gore</xs:documentation>
+      <xs:documentation>A number describing the length of the ramp. In the case of ramp connecting to an at-grade intersection, this would be measured from painted nose of gore to intersection curb line. In the case of ramp connecting to another ramp or a freeway, this would be</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="RoadwayAnnualAverageDailyTrafficAugmentationPoint" abstract="true">
@@ -1624,7 +1627,7 @@
       <xs:documentation>A unique federal inspection/inventory identification assigned to a bridge, underpass, overpass, or tunnel bridge/structure that is also linkable to the national bridge inventory.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="RouteNumber" type="niem-xs:integer" nillable="true">
+  <xs:element name="RouteNumeric" type="niem-xs:integer" nillable="true">
     <xs:annotation>
       <xs:documentation>A signed route number</xs:documentation>
     </xs:annotation>
@@ -1636,12 +1639,12 @@
   </xs:element>
   <xs:element name="SegmentBeginPointLocation" type="nc:LocationType" nillable="true">
     <xs:annotation>
-      <xs:documentation>A location point defining the location of the beginning of the the segment</xs:documentation>
+      <xs:documentation>A location point defining the location of the beginning of the segment</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="SegmentEndPointLocation" type="nc:LocationType" nillable="true">
     <xs:annotation>
-      <xs:documentation>A location point defining the location of the end of the the segment</xs:documentation>
+      <xs:documentation>A location point defining the location of the end of the segment</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="SegmentID" type="niem-xs:string" nillable="true">
@@ -1649,7 +1652,7 @@
       <xs:documentation>A unique segment identifier</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="SegmentLength" type="nc:NumericType" nillable="true">
+  <xs:element name="SegmentLengthValue" type="nc:NumericType" nillable="true">
     <xs:annotation>
       <xs:documentation>A description of the length of the segment</xs:documentation>
     </xs:annotation>
@@ -1659,9 +1662,9 @@
       <xs:documentation>A surface category description of the segment</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="ThroughLanesNumber" type="nc:NumericType" nillable="true">
+  <xs:element name="ThroughLanesNumeric" type="nc:NumericType" nillable="true">
     <xs:annotation>
-      <xs:documentation>A total number of through lanes on the segment. This excludes auxiliary lanes, such as collector-distributor lanes, weaving lanes, frontage road lanes, parking and turning lanes, acceleration/deceleration lanes, toll collection lanes, shoulders, and truck climbing lanes</xs:documentation>
+      <xs:documentation>A total number of through lanes on the segment. This excludes auxiliary lanes, such as collector-distributor lanes, weaving lanes, frontage road lanes, parking and turning lanes, acceleration/deceleration lanes, toll collection lanes, shoulders, and truck</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="TrafficAccessControlCode" type="st:TrafficAccessControlCodeType" nillable="true">

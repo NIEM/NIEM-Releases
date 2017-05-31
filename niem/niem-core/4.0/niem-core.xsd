@@ -1,29 +1,49 @@
 <?xml version="1.0" encoding="US-ASCII"?>
-<xs:schema targetNamespace="http://release.niem.gov/niem/niem-core/4.0/" version="beta1" xsi:schemaLocation="http://release.niem.gov/niem/appinfo/4.0/ ../../appinfo/4.0/appinfo.xsd http://release.niem.gov/niem/conformanceTargets/3.0/ ../../conformanceTargets/3.0/conformanceTargets.xsd" ct:conformanceTargets="http://reference.niem.gov/niem/specification/naming-and-design-rules/4.0/#ReferenceSchemaDocument" xmlns:hl7="http://release.niem.gov/niem/codes/hl7/4.0/" xmlns:fips_5-2="http://release.niem.gov/niem/codes/fips_5-2/4.0/" xmlns:genc="http://release.niem.gov/niem/codes/nga_genc/4.0/" xmlns:can="http://release.niem.gov/niem/codes/canada_post/4.0/" xmlns:dod_jcs-pub2.0="http://release.niem.gov/niem/codes/dod_jcs-pub2.0/4.0/" xmlns:niem-xs="http://release.niem.gov/niem/proxy/xsd/4.0/" xmlns:structures="http://release.niem.gov/niem/structures/4.0/" xmlns:iso_3166="http://release.niem.gov/niem/codes/iso_3166-1/4.0/" xmlns:iso_639-3="http://release.niem.gov/niem/codes/iso_639-3/4.0/" xmlns:nga="http://release.niem.gov/niem/codes/nga_datum/4.0/" xmlns:occs="http://release.niem.gov/niem/codes/occs_facility/4.0/" xmlns:nc="http://release.niem.gov/niem/niem-core/4.0/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:usps="http://release.niem.gov/niem/codes/usps_states/4.0/" xmlns:unece="http://release.niem.gov/niem/codes/unece_rec20/4.0/" xmlns:iso_4217="http://release.niem.gov/niem/codes/iso_4217/4.0/" xmlns:dea="http://release.niem.gov/niem/codes/dea_ctlsub/4.0/" xmlns:ct="http://release.niem.gov/niem/conformanceTargets/3.0/" xmlns:xml="http://www.w3.org/XML/1998/namespace" xmlns:xCard="http://release.niem.gov/niem/codes/xCard/4.0/" xmlns:census="http://release.niem.gov/niem/codes/census_uscounty/4.0/" xmlns:commodity="http://release.niem.gov/niem/codes/census_commodity/4.0/" xmlns:dol="http://release.niem.gov/niem/codes/dol_soc/4.0/" xmlns:cli="http://reference.niem.gov/niem/specification/code-lists/1.1/code-lists-instance/" xmlns:appinfo="http://release.niem.gov/niem/appinfo/4.0/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<xs:schema targetNamespace="http://release.niem.gov/niem/niem-core/4.0/" version="1" xsi:schemaLocation="http://release.niem.gov/niem/appinfo/4.0/ ../../utility/appinfo/4.0/appinfo.xsd http://release.niem.gov/niem/conformanceTargets/3.0/ ../../utility/conformanceTargets/3.0/conformanceTargets.xsd" ct:conformanceTargets="http://reference.niem.gov/niem/specification/naming-and-design-rules/4.0/#ReferenceSchemaDocument" xmlns:fips_5-2="http://release.niem.gov/niem/codes/fips_5-2/4.0/" xmlns:hl7="http://release.niem.gov/niem/codes/hl7/4.0/" xmlns:can="http://release.niem.gov/niem/codes/canada_post/4.0/" xmlns:dod_jcs-pub2.0="http://release.niem.gov/niem/codes/dod_jcs-pub2.0/4.0/" xmlns:niem-xs="http://release.niem.gov/niem/proxy/xsd/4.0/" xmlns:structures="http://release.niem.gov/niem/structures/4.0/" xmlns:iso_3166="http://release.niem.gov/niem/codes/iso_3166-1/4.0/" xmlns:iso_639-3="http://release.niem.gov/niem/codes/iso_639-3/4.0/" xmlns:cli="http://reference.niem.gov/niem/specification/code-lists/4.0/code-lists-instance/" xmlns:nga="http://release.niem.gov/niem/codes/nga_datum/4.0/" xmlns:occs="http://release.niem.gov/niem/codes/occs_facility/4.0/" xmlns:nc="http://release.niem.gov/niem/niem-core/4.0/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:usps="http://release.niem.gov/niem/codes/usps_states/4.0/" xmlns:unece="http://release.niem.gov/niem/codes/unece_rec20/4.0/" xmlns:iso_4217="http://release.niem.gov/niem/codes/iso_4217/4.0/" xmlns:dea="http://release.niem.gov/niem/codes/dea_ctlsub/4.0/" xmlns:ct="http://release.niem.gov/niem/conformanceTargets/3.0/" xmlns:xml="http://www.w3.org/XML/1998/namespace" xmlns:xCard="http://release.niem.gov/niem/codes/xCard/4.0/" xmlns:census="http://release.niem.gov/niem/codes/census_uscounty/4.0/" xmlns:commodity="http://release.niem.gov/niem/codes/census_commodity/4.0/" xmlns:dol="http://release.niem.gov/niem/codes/dol_soc/4.0/" xmlns:hazmat="http://release.niem.gov/niem/codes/dot_hazmat/4.0/" xmlns:appinfo="http://release.niem.gov/niem/appinfo/4.0/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <xs:annotation>
     <xs:documentation>NIEM Core.</xs:documentation>
+    <xs:appinfo>
+      <appinfo:LocalTerm term="UMTS" literal="Universal Mobile Telecommunications Service"/>
+      <appinfo:LocalTerm term="GSM" literal="Global System for Mobile communication"/>
+      <appinfo:LocalTerm term="UTC" literal="Coordinated Universal Time"/>
+      <appinfo:LocalTerm term="SSN" literal="Social Security Number"/>
+      <appinfo:LocalTerm term="ISO" literal="International Organization for Standardization"/>
+      <appinfo:LocalTerm term="Alpha3" definition="Three-letter"/>
+      <appinfo:LocalTerm term="Alpha2" definition="Two-letter"/>
+      <appinfo:LocalTerm term="2D" literal="Two-dimensional"/>
+      <appinfo:LocalTerm term="3D" literal="Three-dimensional"/>
+      <appinfo:LocalTerm term="IMEI" literal="International Mobile Equipment Identity"/>
+      <appinfo:LocalTerm term="DEA" literal="Drug Enforcement Administration"/>
+      <appinfo:LocalTerm term="UTM" literal="Universal Transverse Mercator"/>
+      <appinfo:LocalTerm term="ESN" literal="electronic serial number"/>
+      <appinfo:LocalTerm term="FIPS" literal="Federal Information Processing Standards"/>
+      <appinfo:LocalTerm term="NANP" literal="North American Numbering Plan"/>
+      <appinfo:LocalTerm term="GENC" literal="Geopolitical Entities, Names, and Codes"/>
+      <appinfo:LocalTerm term="MAC" literal="media access control address"/>
+      <appinfo:LocalTerm term="CMV" literal="Commercial Motor Vehicle"/>
+    </xs:appinfo>
   </xs:annotation>
-  <xs:import schemaLocation="../../codes/iso_4217/4.0/iso_4217.xsd" namespace="http://release.niem.gov/niem/codes/iso_4217/4.0/"/>
-  <xs:import schemaLocation="../../specification/code-lists/1.1/code-lists-instance.xsd" namespace="http://reference.niem.gov/niem/specification/code-lists/1.1/code-lists-instance/"/>
-  <xs:import schemaLocation="../../codes/census_commodity/4.0/census_commodity.xsd" namespace="http://release.niem.gov/niem/codes/census_commodity/4.0/"/>
-  <xs:import schemaLocation="../../structures/4.0/structures.xsd" namespace="http://release.niem.gov/niem/structures/4.0/"/>
-  <xs:import schemaLocation="../../codes/unece_rec20/4.0/unece_rec20-misc.xsd" namespace="http://release.niem.gov/niem/codes/unece_rec20/4.0/"/>
-  <xs:import schemaLocation="../../codes/iso_639-3/4.0/iso_639-3.xsd" namespace="http://release.niem.gov/niem/codes/iso_639-3/4.0/"/>
-  <xs:import schemaLocation="../../proxy/xsd/4.0/xs.xsd" namespace="http://release.niem.gov/niem/proxy/xsd/4.0/"/>
+  <xs:import schemaLocation="../../codes/xCard/4.0/xCard.xsd" namespace="http://release.niem.gov/niem/codes/xCard/4.0/"/>
   <xs:import schemaLocation="../../codes/occs_facility/4.0/occs_facility.xsd" namespace="http://release.niem.gov/niem/codes/occs_facility/4.0/"/>
   <xs:import schemaLocation="../../codes/usps_states/4.0/usps_states.xsd" namespace="http://release.niem.gov/niem/codes/usps_states/4.0/"/>
-  <xs:import schemaLocation="../../codes/nga_genc/4.0/nga_genc.xsd" namespace="http://release.niem.gov/niem/codes/nga_genc/4.0/"/>
-  <xs:import schemaLocation="../../codes/dod_jcs-pub2.0/4.0/dod_jcs-pub2.0.xsd" namespace="http://release.niem.gov/niem/codes/dod_jcs-pub2.0/4.0/"/>
-  <xs:import schemaLocation="../../codes/fips_5-2/4.0/fips_5-2.xsd" namespace="http://release.niem.gov/niem/codes/fips_5-2/4.0/"/>
-  <xs:import schemaLocation="../../codes/census_uscounty/4.0/census_uscounty.xsd" namespace="http://release.niem.gov/niem/codes/census_uscounty/4.0/"/>
-  <xs:import schemaLocation="../../codes/canada_post/4.0/post-canada.xsd" namespace="http://release.niem.gov/niem/codes/canada_post/4.0/"/>
-  <xs:import schemaLocation="../../codes/iso_3166-1/4.0/iso_3166.xsd" namespace="http://release.niem.gov/niem/codes/iso_3166-1/4.0/"/>
-  <xs:import schemaLocation="../../codes/dea_ctlsub/4.0/dea.xsd" namespace="http://release.niem.gov/niem/codes/dea_ctlsub/4.0/"/>
-  <xs:import schemaLocation="../../codes/nga_datum/4.0/nga_datum.xsd" namespace="http://release.niem.gov/niem/codes/nga_datum/4.0/"/>
+  <xs:import schemaLocation="../../codes/unece_rec20/4.0/unece_rec20-misc.xsd" namespace="http://release.niem.gov/niem/codes/unece_rec20/4.0/"/>
+  <xs:import schemaLocation="../../codes/iso_4217/4.0/iso_4217.xsd" namespace="http://release.niem.gov/niem/codes/iso_4217/4.0/"/>
   <xs:import schemaLocation="../../codes/hl7/4.0/hl7.xsd" namespace="http://release.niem.gov/niem/codes/hl7/4.0/"/>
-  <xs:import schemaLocation="../../codes/dol_soc/4.0/dol_soc.xsd" namespace="http://release.niem.gov/niem/codes/dol_soc/4.0/"/>
+  <xs:import schemaLocation="../../utility/structures/4.0/structures.xsd" namespace="http://release.niem.gov/niem/structures/4.0/"/>
+  <xs:import schemaLocation="../../codes/dod_jcs-pub2.0/4.0/dod_jcs-pub2.0.xsd" namespace="http://release.niem.gov/niem/codes/dod_jcs-pub2.0/4.0/"/>
+  <xs:import schemaLocation="../../codes/dea_ctlsub/4.0/dea.xsd" namespace="http://release.niem.gov/niem/codes/dea_ctlsub/4.0/"/>
+  <xs:import schemaLocation="../../codes/canada_post/4.0/post-canada.xsd" namespace="http://release.niem.gov/niem/codes/canada_post/4.0/"/>
+  <xs:import schemaLocation="../../codes/iso_639-3/4.0/iso_639-3.xsd" namespace="http://release.niem.gov/niem/codes/iso_639-3/4.0/"/>
   <xs:import schemaLocation="../../external/xml/1.0/xml.xsd" namespace="http://www.w3.org/XML/1998/namespace"/>
-  <xs:import schemaLocation="../../codes/xCard/4.0/xCard.xsd" namespace="http://release.niem.gov/niem/codes/xCard/4.0/"/>
+  <xs:import schemaLocation="../../codes/census_uscounty/4.0/census_uscounty.xsd" namespace="http://release.niem.gov/niem/codes/census_uscounty/4.0/"/>
+  <xs:import schemaLocation="../../codes/dot_hazmat/4.0/dot_hazmat.xsd" namespace="http://release.niem.gov/niem/codes/dot_hazmat/4.0/"/>
+  <xs:import schemaLocation="../../codes/census_commodity/4.0/census_commodity.xsd" namespace="http://release.niem.gov/niem/codes/census_commodity/4.0/"/>
+  <xs:import schemaLocation="../../codes/dol_soc/4.0/dol_soc.xsd" namespace="http://release.niem.gov/niem/codes/dol_soc/4.0/"/>
+  <xs:import schemaLocation="../../codes/nga_datum/4.0/nga_datum.xsd" namespace="http://release.niem.gov/niem/codes/nga_datum/4.0/"/>
+  <xs:import schemaLocation="../../codes/fips_5-2/4.0/fips_5-2.xsd" namespace="http://release.niem.gov/niem/codes/fips_5-2/4.0/"/>
+  <xs:import schemaLocation="../../utility/code-lists-spec/4.0/code-lists-instance.xsd" namespace="http://reference.niem.gov/niem/specification/code-lists/4.0/code-lists-instance/"/>
+  <xs:import schemaLocation="../../proxy/xsd/4.0/xs.xsd" namespace="http://release.niem.gov/niem/proxy/xsd/4.0/"/>
+  <xs:import schemaLocation="../../codes/iso_3166-1/4.0/iso_3166.xsd" namespace="http://release.niem.gov/niem/codes/iso_3166-1/4.0/"/>
   <xs:complexType name="ActivityConveyanceAssociationType">
     <xs:annotation>
       <xs:documentation>A data type for an association between an activity and a conveyance.</xs:documentation>
@@ -840,6 +860,25 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
+  <xs:complexType name="CrisisType">
+    <xs:annotation>
+      <xs:documentation>A data type for a crisis.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="structures:ObjectType">
+        <xs:sequence>
+          <xs:element ref="nc:CrisisIdentification" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:CrisisName" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:CrisisLocation" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:CrisisImage" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:CrisisURLID" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:CrisisDescriptionText" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:CrisisStatus" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:CrisisAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
   <xs:complexType name="CrossStreetType">
     <xs:annotation>
       <xs:documentation>A data type for a location identified by two or more streets which intersect.</xs:documentation>
@@ -1342,7 +1381,7 @@
           <xs:element ref="nc:DocumentCategoryDescriptionText" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:DocumentContentListText" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:DocumentCopyrightIndicator" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="nc:DocumentCountryCodeAbstract" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:DocumentCountry" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:DocumentCreationDate" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:DocumentDescriptionText" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:DocumentDispositionAuthorityName" minOccurs="0" maxOccurs="unbounded"/>
@@ -1396,6 +1435,7 @@
           <xs:element ref="nc:DocumentIssuanceDate" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:DocumentStatusDetails" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:DocumentIssuanceLocation" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:DocumentEUDataPrivacyIndicator" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:DocumentAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
       </xs:extension>
@@ -1449,13 +1489,16 @@
   </xs:complexType>
   <xs:complexType name="ElectronicAddressType">
     <xs:annotation>
-      <xs:documentation>A data type for an Internet Protocol (IP) address or Uniform Resource Locator (URL) that uniquely identifies a specific site on the Internet or another network.</xs:documentation>
+      <xs:documentation>A data type for an address, ID, or Uniform Resource Locator (URL) that uniquely identifies a specific site on the Internet or another network.</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
       <xs:extension base="structures:ObjectType">
         <xs:sequence>
           <xs:element ref="nc:ElectronicAddressDescriptionText" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="nc:ElectronicAddressMACNumberID" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:MACAddressID" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:IPv4AddressID" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:IPv6AddressID" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:URLID" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:ElectronicAddressAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
       </xs:extension>
@@ -1483,6 +1526,21 @@
         <xs:sequence>
           <xs:element ref="nc:EntityRepresentationAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:EntityAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="EquipmentType">
+    <xs:annotation>
+      <xs:documentation>A data type for a tangible property (other than land or buildings) of more or less durable nature which is useful in carrying on the operations of a business.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="structures:ObjectType">
+        <xs:sequence>
+          <xs:element ref="nc:RoleOfItem" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:EquipmentIdentification" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:EquipmentName" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:EquipmentAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -1600,6 +1658,51 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
+  <xs:simpleType name="FinancialAccountHolderCodeSimpleType">
+    <xs:annotation>
+      <xs:documentation>A data type for a kind of financial account holder.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="FATCA101">
+        <xs:annotation>
+          <xs:documentation>Owner Documented FFI with specified US owners (ODFFI)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="FATCA102">
+        <xs:annotation>
+          <xs:documentation>Passive NFFE with substantial US owners (or controlling persons under an applicable IGA)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="FATCA103">
+        <xs:annotation>
+          <xs:documentation>Non-Participating FFI (NPFFI)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="FinancialAccountHolderCodeType">
+    <xs:annotation>
+      <xs:documentation>A data type for a kind of financial account holder.</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="nc:FinancialAccountHolderCodeSimpleType">
+        <xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="FinancialAccountHolderType">
+    <xs:annotation>
+      <xs:documentation>A data type for an entity that holds a financial account.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="nc:EntityType">
+        <xs:sequence>
+          <xs:element ref="nc:FinancialAccountHolderCode" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:FinancialAccountHolderAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
   <xs:simpleType name="FinancialAccountNumberCategoryCodeSimpleType">
     <xs:annotation>
       <xs:documentation>A data type for a kind of financial account number.</xs:documentation>
@@ -1641,6 +1744,24 @@
         <xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
       </xs:extension>
     </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="FinancialAccountType">
+    <xs:annotation>
+      <xs:documentation>A data type for a financial account maintained by a financial institution.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="structures:ObjectType">
+        <xs:sequence>
+          <xs:element ref="nc:FinancialAccountCategoryText" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:FinancialAccountListedName" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:FinancialAccountNumberID" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:FinancialAccountPresentBalanceAmount" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:FinancialAccountClosedIndicator" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:FinancialAccountHolder" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:FinancialAccountAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
   </xs:complexType>
   <xs:complexType name="FiscalYearDateType">
     <xs:annotation>
@@ -1724,7 +1845,7 @@
     <xs:complexContent>
       <xs:extension base="structures:ObjectType">
         <xs:sequence>
-          <xs:element ref="nc:IdentityPersonRepresentation" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:IdentityCharacteristics" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:IdentityCreationDate" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:IdentityCreationEventText" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:IdentityTerminationDate" minOccurs="0" maxOccurs="unbounded"/>
@@ -2396,6 +2517,33 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
+  <xs:simpleType name="MessageCategoryFATCACodeSimpleType">
+    <xs:annotation>
+      <xs:documentation>A data type for kind of Foreign Account Tax Compliance Act (FATCA) message.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="FATCA">
+        <xs:annotation>
+          <xs:documentation>Foreign Account Tax Compliance Act</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Other">
+        <xs:annotation>
+          <xs:documentation>Other</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="MessageCategoryFATCACodeType">
+    <xs:annotation>
+      <xs:documentation>A data type for kind of Foreign Account Tax Compliance Act (FATCA) message.</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="nc:MessageCategoryFATCACodeSimpleType">
+        <xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
   <xs:complexType name="MessageType">
     <xs:annotation>
       <xs:documentation>A data type for an electronic form of communication that can be exchanged asynchronously.</xs:documentation>
@@ -2414,6 +2562,8 @@
           <xs:element ref="nc:MessageText" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:MessageAttachmentAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:MessageCategoryAbstract" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:MessageReferenceID" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:MessageFATCAUsageRestrictionText" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:MessageAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
       </xs:extension>
@@ -2435,7 +2585,7 @@
           <xs:element ref="nc:LastVerifiedDate" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:ProbabilityPercent" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:QualityComment" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="nc:ReliabilityPercent" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:ConfidencePercent" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:ReportedDate" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:ReportingOrganizationText" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:ReportingPersonRoleText" minOccurs="0" maxOccurs="unbounded"/>
@@ -2534,7 +2684,7 @@
           <xs:element ref="nc:MilitaryServiceActiveIndicator" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:MilitaryServiceTimeMeasure" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:MilitaryStatus" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="nc:MilitaryCountryAbstract" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:MilitaryCountry" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:MilitarySummaryAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
       </xs:extension>
@@ -2551,6 +2701,7 @@
           <xs:element ref="nc:MissionCommencementNoEarlierThanDate" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:MissionCommencementNoLaterThanDate" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:ContactInformation" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:MissionID" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:MissionAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
       </xs:extension>
@@ -2616,7 +2767,7 @@
     </xs:annotation>
     <xs:simpleContent>
       <xs:extension base="niem-xs:decimal">
-        <xs:attribute ref="nc:confidenceNumeric" use="optional"/>
+        <xs:attribute ref="nc:confidencePercent" use="optional"/>
         <xs:attribute ref="nc:toleranceNumeric" use="optional"/>
       </xs:extension>
     </xs:simpleContent>
@@ -2878,6 +3029,67 @@
           <xs:element ref="nc:PassportStolenLostIndicator" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:PassportTransmissionTrackingID" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:PassportAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:simpleType name="PaymentMethodCodeSimpleType">
+    <xs:annotation>
+      <xs:documentation>A data type for a specific method of payment.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="Cash">
+        <xs:annotation>
+          <xs:documentation>Cash</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Check">
+        <xs:annotation>
+          <xs:documentation>Check</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Dividends">
+        <xs:annotation>
+          <xs:documentation>Dividends</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Gross Proceeds/Redemptions">
+        <xs:annotation>
+          <xs:documentation>Gross Proceeds/Redemptions</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Interest">
+        <xs:annotation>
+          <xs:documentation>Interest</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Other">
+        <xs:annotation>
+          <xs:documentation>Other</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="PaymentMethodCodeType">
+    <xs:annotation>
+      <xs:documentation>A data type for a specific method of payment.</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="nc:PaymentMethodCodeSimpleType">
+        <xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="PaymentType">
+    <xs:annotation>
+      <xs:documentation>A data type for a monetary payment.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="structures:ObjectType">
+        <xs:sequence>
+          <xs:element ref="nc:PaymentAmount" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:PaymentMethodAbstract" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:PaymentAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -3547,6 +3759,31 @@
       <xs:extension base="nc:TextType"/>
     </xs:simpleContent>
   </xs:complexType>
+  <xs:complexType name="PublicServiceType">
+    <xs:annotation>
+      <xs:documentation>A data type for a set of deeds and acts performed by or on behalf of a public agency for the benefit of a citizen, a business or another public agency.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="structures:ObjectType">
+        <xs:sequence>
+          <xs:element ref="nc:PublicServiceName" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:PublicServiceDescriptionText" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:PublicServiceCategoryAbstract" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:PublicServiceLanguageAbstract" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:PublicServiceWebsiteURI" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:PublicServiceChannelText" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:PublicServiceLocation" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:PublicServiceRequiredService" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:PublicServiceRelatedService" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:PublicServiceInputResourceDocument" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:PublicServiceOutputResourceDocument" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:PublicServiceRelatedLocation" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:PublicServiceAvailabilitySchedule" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:PublicServiceAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
   <xs:complexType name="QuantityType">
     <xs:annotation>
       <xs:documentation>A data type for a count or tally.</xs:documentation>
@@ -3609,7 +3846,7 @@
         <xs:sequence>
           <xs:element ref="nc:RecommendationDescriptionText" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:RecommendationEntity" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="nc:RecommendationSubject" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:RecommendationSubjectText" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:RecommendationDate" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:RecommendationCategoryAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:RecommendationComment" minOccurs="0" maxOccurs="unbounded"/>
@@ -3711,6 +3948,27 @@
           <xs:element ref="nc:ReleaseToLocation" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:ReleaseSupervisor" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:ReleaseAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="RequestType">
+    <xs:annotation>
+      <xs:documentation>A data type for a formal message requesting something that is submitted to an authority.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="structures:ObjectType">
+        <xs:sequence>
+          <xs:element ref="nc:RequestContactInformation" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:RequestDate" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:RequestDecisionText" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:RequestDescriptionText" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:RequestIdentification" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:RequestText" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:RequestDecisionDate" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:RequestCategoryAbstract" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:RequestStatus" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:RequestAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -4750,9 +5008,9 @@
       </xs:extension>
     </xs:simpleContent>
   </xs:complexType>
-  <xs:attribute name="confidenceNumeric" type="xs:decimal">
+  <xs:attribute name="confidencePercent" type="xs:decimal">
     <xs:annotation>
-      <xs:documentation>A decimal value that indicates belief in the accuracy of the tolerance.</xs:documentation>
+      <xs:documentation>A value that indicates belief that content is accurate or trustworthy.</xs:documentation>
     </xs:annotation>
   </xs:attribute>
   <xs:attribute name="fiscalYearStartDate" type="xs:date">
@@ -5292,7 +5550,7 @@
   </xs:element>
   <xs:element name="AnomalyContactInformation" type="nc:ContactInformationType" nillable="true">
     <xs:annotation>
-      <xs:documentation>A point of contact (POC) for further information regarding an anomaly.</xs:documentation>
+      <xs:documentation>A point of contact for further information regarding an anomaly.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="AnomalyDateTime" type="nc:DateType" nillable="true">
@@ -5840,6 +6098,11 @@
       <xs:documentation>A violation of a condition.</xs:documentation>
     </xs:annotation>
   </xs:element>
+  <xs:element name="ConfidencePercent" type="niem-xs:decimal" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A value that indicates belief that content is accurate or trustworthy.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
   <xs:element name="ConsumptionRateMeasure" type="nc:ConsumptionRateMeasureType" nillable="true">
     <xs:annotation>
       <xs:documentation>A measure of a rate of consumption.</xs:documentation>
@@ -6050,6 +6313,11 @@
       <xs:documentation>A person being conveyed.</xs:documentation>
     </xs:annotation>
   </xs:element>
+  <xs:element name="CoordinatingAgency" type="nc:OrganizationType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>An institution that provides information resources, such as geographic information, field surveys, and telecommunications.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
   <xs:element name="CountryAugmentationPoint" abstract="true">
     <xs:annotation>
       <xs:documentation>An augmentation point for type nc:CountryType</xs:documentation>
@@ -6065,6 +6333,11 @@
       <xs:documentation>A data concept for a representation of a country.</xs:documentation>
     </xs:annotation>
   </xs:element>
+  <xs:element name="CourtCase" type="nc:CaseType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A court case.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
   <xs:element name="CoworkerAssociation" type="nc:PersonAssociationType" nillable="true">
     <xs:annotation>
       <xs:documentation>An association between people who work together.</xs:documentation>
@@ -6073,6 +6346,51 @@
   <xs:element name="CreatorName" type="nc:TextType" nillable="true">
     <xs:annotation>
       <xs:documentation>A name of an entity primarily responsible for generating or producing the information.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="Crisis" type="nc:CrisisType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A crisis.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="CrisisAugmentationPoint" abstract="true">
+    <xs:annotation>
+      <xs:documentation>An augmentation point for type nc:CrisisType</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="CrisisDescriptionText" type="nc:TextType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A description of a crisis.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="CrisisIdentification" type="nc:IdentificationType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>An identification of a crisis.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="CrisisImage" type="nc:ImageType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>An image of a crisis.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="CrisisLocation" type="nc:LocationType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A location of a crisis.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="CrisisName" type="nc:TextType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A name of a crisis.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="CrisisStatus" type="nc:StatusType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A status of a crisis.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="CrisisURLID" type="niem-xs:anyURI" nillable="true">
+    <xs:annotation>
+      <xs:documentation>An URL identifier for information about a crisis.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="CrossStreetAugmentationPoint" abstract="true">
@@ -6595,12 +6913,7 @@
       <xs:documentation>True if a document is copyrighted; false otherwise.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="DocumentCountryCodeAbstract" abstract="true">
-    <xs:annotation>
-      <xs:documentation>A data concept for a country being discussed in a document.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="DocumentCountryISO3166Alpha2Code" type="iso_3166:CountryAlpha2CodeType" substitutionGroup="nc:DocumentCountryCodeAbstract" nillable="true">
+  <xs:element name="DocumentCountry" type="nc:CountryType" nillable="true">
     <xs:annotation>
       <xs:documentation>A country being discussed in a document.</xs:documentation>
     </xs:annotation>
@@ -6653,6 +6966,11 @@
   <xs:element name="DocumentDisputedReasonText" type="nc:TextType" nillable="true">
     <xs:annotation>
       <xs:documentation>A reason why the accuracy of a document is disputed.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="DocumentEUDataPrivacyIndicator" type="niem-xs:boolean" nillable="true">
+    <xs:annotation>
+      <xs:documentation>True if the data is protected under the EU Data Protection Regulation 2016-679 and should be treated differently; false otherwise.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="DocumentEffectiveDate" type="nc:DateType" nillable="true">
@@ -6977,7 +7295,7 @@
   </xs:element>
   <xs:element name="ElectronicAddress" type="nc:ElectronicAddressType" nillable="true">
     <xs:annotation>
-      <xs:documentation>An Internet Protocol (IP) address or Uniform Resource Locator (URL) that uniquely identifies a specific site on the Internet or another network.</xs:documentation>
+      <xs:documentation>An address, ID, or Uniform Resource Locator (URL) that uniquely identifies a specific site on the Internet or another network.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="ElectronicAddressAugmentationPoint" abstract="true">
@@ -6988,11 +7306,6 @@
   <xs:element name="ElectronicAddressDescriptionText" type="nc:TextType" nillable="true">
     <xs:annotation>
       <xs:documentation>A description of a network address, such as what the site is used for or a name of an online forum or group that is reached at the address.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="ElectronicAddressMACNumberID" type="niem-xs:string" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A code assigned to a hardware device that connects to the Internet, (i.e., MAC address, physical address, Ethernet address), and uniquely identifies that hardware device on a LAN thereby allowing data to be passed among hardware devices.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="ElectronicEquipment" type="nc:ItemType" nillable="true">
@@ -7165,6 +7478,11 @@
       <xs:documentation>A description of an entity.</xs:documentation>
     </xs:annotation>
   </xs:element>
+  <xs:element name="EntityItem" type="nc:ItemType" substitutionGroup="nc:EntityRepresentationAbstract" nillable="true">
+    <xs:annotation>
+      <xs:documentation>An item capable of bearing legal rights and responsibilities.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
   <xs:element name="EntityName" type="nc:TextType" nillable="true">
     <xs:annotation>
       <xs:documentation>A name of an entity.</xs:documentation>
@@ -7183,6 +7501,26 @@
   <xs:element name="EntityRepresentationAbstract" abstract="true">
     <xs:annotation>
       <xs:documentation>A data concept for a person, organization, or thing capable of bearing legal rights and responsibilities.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="Equipment" type="nc:EquipmentType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A tangible property (other than land or buildings) of more or less durable nature which is useful in carrying on the operations of a business.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="EquipmentAugmentationPoint" abstract="true">
+    <xs:annotation>
+      <xs:documentation>An augmentation point for EquipmentType.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="EquipmentIdentification" type="nc:IdentificationType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>An identification of a piece of equipment.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="EquipmentName" type="niem-xs:string" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A name of a piece of equipment.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="ExpirationDate" type="nc:DateType" nillable="true">
@@ -7385,9 +7723,59 @@
       <xs:documentation>An amount of money charged.</xs:documentation>
     </xs:annotation>
   </xs:element>
+  <xs:element name="FinancialAccount" type="nc:FinancialAccountType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A financial account maintained by a financial institution.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="FinancialAccountAugmentationPoint" abstract="true">
+    <xs:annotation>
+      <xs:documentation>An augmentation point for FinancialAccountType.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="FinancialAccountCategoryText" type="nc:TextType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A kind of account or financial service maintained by a financial institution.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="FinancialAccountClosedIndicator" type="niem-xs:boolean" nillable="true">
+    <xs:annotation>
+      <xs:documentation>True if the account was closed or transferred in its entirety during the calendar year; false otherwise.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="FinancialAccountHolder" type="nc:FinancialAccountHolderType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>An entity that holds a financial account.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="FinancialAccountHolderAugmentationPoint" abstract="true">
+    <xs:annotation>
+      <xs:documentation>An augmentation point for type nc:FinancialAccountHolderType</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="FinancialAccountHolderCode" type="nc:FinancialAccountHolderCodeType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A kind of financial account holder.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="FinancialAccountListedName" type="nc:TextType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A name of a person or organization appearing on a financial account.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
   <xs:element name="FinancialAccountNumberCategoryCode" type="nc:FinancialAccountNumberCategoryCodeType" substitutionGroup="nc:IdentificationCategoryAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A kind of financial account number.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="FinancialAccountNumberID" type="niem-xs:string" nillable="true">
+    <xs:annotation>
+      <xs:documentation>An identifier assigned to a type of financial account.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="FinancialAccountPresentBalanceAmount" type="nc:AmountType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>An account balance at the time of financial compilation.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="FinancialObligationExemptionAmount" type="nc:AmountType" nillable="true">
@@ -7415,7 +7803,7 @@
       <xs:documentation>An augmentation point for FullTelephoneNumberType.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="GenericEntity" type="nc:GenericEntityType" nillable="true">
+  <xs:element name="GenericEntity" type="nc:GenericEntityType" substitutionGroup="nc:EntityRepresentationAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A basic set of information about a person or an organization.</xs:documentation>
     </xs:annotation>
@@ -7448,6 +7836,21 @@
   <xs:element name="HazardousMaterial" type="nc:SubstanceType" nillable="true">
     <xs:annotation>
       <xs:documentation>A substance which can cause harm.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="HazardousMaterialCode" type="hazmat:HazmatUNCodeType" substitutionGroup="nc:HazmatAbstract" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A hazardous material.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="HazmatAbstract" abstract="true">
+    <xs:annotation>
+      <xs:documentation>A data concept for a hazardous material.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="HazmatCodeText" type="nc:TextType" substitutionGroup="nc:HazmatAbstract" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A hazardous material.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="HexBinaryObject" type="niem-xs:hexBinary" substitutionGroup="nc:BinaryObjectAbstract" nillable="true">
@@ -7483,6 +7886,16 @@
   <xs:element name="HighwayPositionText" type="nc:TextType" nillable="true">
     <xs:annotation>
       <xs:documentation>A designation of a specific place on a highway.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="IPv4AddressID" type="niem-xs:string" nillable="true">
+    <xs:annotation>
+      <xs:documentation>An identifier assigned to a computer or other device connected to a TCP/IP network, based on version 4 of the Internet Protocol.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="IPv6AddressID" type="niem-xs:string" nillable="true">
+    <xs:annotation>
+      <xs:documentation>An identifier assigned to a computer or other device connected to a TCP/IP network, based on version 6 of the Internet Protocol.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="Identification" type="nc:IdentificationType" nillable="true">
@@ -7550,6 +7963,11 @@
       <xs:documentation>An augmentation point for IdentityType.</xs:documentation>
     </xs:annotation>
   </xs:element>
+  <xs:element name="IdentityCharacteristics" type="nc:PersonType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A set of person characteristics used as an identification.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
   <xs:element name="IdentityCreationDate" type="nc:DateType" nillable="true">
     <xs:annotation>
       <xs:documentation>A date an identity is created.</xs:documentation>
@@ -7558,11 +7976,6 @@
   <xs:element name="IdentityCreationEventText" type="nc:TextType" nillable="true">
     <xs:annotation>
       <xs:documentation>An occurrence that leads to the creation of an identity.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="IdentityPersonRepresentation" type="nc:PersonType" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A set of person characteristics used as an identification.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="IdentityStolenIndicator" type="niem-xs:boolean" nillable="true">
@@ -8582,7 +8995,7 @@
   </xs:element>
   <xs:element name="LocationCountry" type="nc:CountryType" nillable="true">
     <xs:annotation>
-      <xs:documentation>A data concept for a country, territory, dependency, or other such geopolitical subdivision of a location.</xs:documentation>
+      <xs:documentation>A country, territory, dependency, or other such geopolitical subdivision of a location.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="LocationCountryISO3166Alpha2Code" type="iso_3166:CountryAlpha2CodeType" substitutionGroup="nc:CountryRepresentationAbstract" nillable="true">
@@ -8742,7 +9155,7 @@
   </xs:element>
   <xs:element name="LocationState" type="nc:StateType" nillable="true">
     <xs:annotation>
-      <xs:documentation>A data concept for a state, commonwealth, province, or other such geopolitical subdivision of a country.</xs:documentation>
+      <xs:documentation>A state, commonwealth, province, or other such geopolitical subdivision of a country.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="LocationStateFIPS5-2Code" type="fips_5-2:USStateNumericCodeType" substitutionGroup="nc:StateRepresentationAbstract" nillable="true">
@@ -8770,7 +9183,7 @@
       <xs:documentation>A description of the immediate area around a location.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="LocationUTMCoordinate" type="nc:UTMCoordinateType" substitutionGroup="nc:LocationGeospatialCoordinateAbstract" nillable="true">
+  <xs:element name="LocationUTMCoordinateValue" type="nc:UTMCoordinateType" substitutionGroup="nc:LocationGeospatialCoordinateAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A coordinate from the Universal Transverse Mercator (UTM) Coordinate System, which represents a location with a hemisphere, zone, an easting value, and a northing value.</xs:documentation>
     </xs:annotation>
@@ -8798,6 +9211,11 @@
   <xs:element name="LongitudeSecondValue" type="nc:AngularSecondType" nillable="true">
     <xs:annotation>
       <xs:documentation>A longitude value that specifies a second of a minute. The value comes from a restricted range of 0 (inclusive) to 60 (exclusive).</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="MACAddressID" type="niem-xs:string" nillable="true">
+    <xs:annotation>
+      <xs:documentation>An identifier assigned to a hardware device that connects to the Internet; Media Access Control.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="Machinery" type="nc:ItemType" nillable="true">
@@ -9120,9 +9538,19 @@
       <xs:documentation>A data concept for a kind of message category.</xs:documentation>
     </xs:annotation>
   </xs:element>
+  <xs:element name="MessageCategoryFATCACode" type="nc:MessageCategoryFATCACodeType" substitutionGroup="nc:MessageCategoryAbstract" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A kind of message.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
   <xs:element name="MessageCategoryText" type="nc:TextType" substitutionGroup="nc:MessageCategoryAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A kind of message category.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="MessageFATCAUsageRestrictionText" type="nc:TextType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A set of information about restrictions for use of the information this message contains and the legal framework under which it is given.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="MessageID" type="niem-xs:string" nillable="true">
@@ -9153,6 +9581,11 @@
   <xs:element name="MessageRecipientName" type="nc:TextType" substitutionGroup="nc:MessageRecipientAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A name of an entity which receives a message.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="MessageReferenceID" type="niem-xs:string" nillable="true">
+    <xs:annotation>
+      <xs:documentation>An identifier that references a sender's or otherwise related message.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="MessageSenderAbstract" abstract="true">
@@ -9190,7 +9623,7 @@
       <xs:documentation>A body or main content of a message.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="Metadata" type="nc:MetadataType" nillable="true" appinfo:appliesToTypes="structures:AssociationType structures:ObjectType">
+  <xs:element name="Metadata" type="nc:MetadataType" nillable="true" appinfo:appliesToTypes="structures:ObjectType structures:AssociationType">
     <xs:annotation>
       <xs:documentation>Information that further qualifies primary data; data about data.</xs:documentation>
     </xs:annotation>
@@ -9200,12 +9633,7 @@
       <xs:documentation>A name of a military branch in which a person served.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="MilitaryCountryAbstract" abstract="true">
-    <xs:annotation>
-      <xs:documentation>A data concept for a country in whose military a person served.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="MilitaryCountryGENCCode" type="genc:CountryAlpha3CodeType" substitutionGroup="nc:MilitaryCountryAbstract" nillable="true">
+  <xs:element name="MilitaryCountry" type="nc:CountryType" nillable="true">
     <xs:annotation>
       <xs:documentation>A country in whose military a person served.</xs:documentation>
     </xs:annotation>
@@ -9382,7 +9810,7 @@
   </xs:element>
   <xs:element name="ObligationExemption" type="nc:ObligationExemptionType" nillable="true">
     <xs:annotation>
-      <xs:documentation>A waival or dismissal of an obligation.</xs:documentation>
+      <xs:documentation>A waiving or dismissal of an obligation.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="ObligationExemptionAugmentationPoint" abstract="true">
@@ -9773,6 +10201,36 @@
   <xs:element name="PatientMedicalFacility" type="nc:OrganizationType" nillable="true">
     <xs:annotation>
       <xs:documentation>A medical facility receiving patient.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="Payment" type="nc:PaymentType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A monetary payment.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="PaymentAmount" type="nc:AmountType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>An amount of money paid.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="PaymentAugmentationPoint" abstract="true">
+    <xs:annotation>
+      <xs:documentation>An augmentation point for type nc:PaymentType</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="PaymentMethodAbstract" abstract="true">
+    <xs:annotation>
+      <xs:documentation>A data concept for a specific method of payment.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="PaymentMethodCode" type="nc:PaymentMethodCodeType" substitutionGroup="nc:PaymentMethodAbstract" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A specific method of payment.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="PaymentMethodText" type="nc:TextType" substitutionGroup="nc:PaymentMethodAbstract" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A specific method of payment.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="Percent" type="niem-xs:decimal" nillable="true">
@@ -10605,11 +11063,6 @@
       <xs:documentation>An identification of a person based on a state-issued ID card.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="PersonStolenIdentityAssociation" type="nc:PersonIdentityAssociationType" nillable="true">
-    <xs:annotation>
-      <xs:documentation>An association between a person and a stolen identity used by that person.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
   <xs:element name="PersonSurName" type="nc:PersonNameTextType" nillable="true">
     <xs:annotation>
       <xs:documentation>A last name or family name of a person.</xs:documentation>
@@ -10930,6 +11383,96 @@
       <xs:documentation>A quantity of time spent towards completion of a requirement.</xs:documentation>
     </xs:annotation>
   </xs:element>
+  <xs:element name="PublicService" type="nc:PublicServiceType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A set of deeds and acts performed by or on behalf of a public agency for the benefit of a citizen, a business or another public agency.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="PublicServiceAugmentationPoint" abstract="true">
+    <xs:annotation>
+      <xs:documentation>An augmentation point for type nc:PublicServiceType</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="PublicServiceAvailabilitySchedule" type="nc:ScheduleType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A time frame in which a public service is available.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="PublicServiceCategoryAbstract" abstract="true">
+    <xs:annotation>
+      <xs:documentation>A data concept for a different public services category.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="PublicServiceCategoryText" type="nc:TextType" substitutionGroup="nc:PublicServiceCategoryAbstract" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A kind of public service.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="PublicServiceChannelText" type="nc:TextType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A particular end or object through which the service may be available.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="PublicServiceDescriptionText" type="nc:TextType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A description of the public service.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="PublicServiceInputResourceDocument" type="nc:DocumentType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A resource required by the service in order to operate.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="PublicServiceLanguageAbstract" abstract="true">
+    <xs:annotation>
+      <xs:documentation>A data concept for the language in which the service is available.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="PublicServiceLanguageCode" type="iso_639-3:LanguageCodeType" substitutionGroup="nc:PublicServiceLanguageAbstract" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A language in which the service is available.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="PublicServiceLanguageName" type="nc:TextType" substitutionGroup="nc:PublicServiceLanguageAbstract" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A name of a language in which the service is available.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="PublicServiceLocation" type="nc:LocationType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A physical location at which a user may interact with a public service.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="PublicServiceName" type="nc:TextType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A name of a public service.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="PublicServiceOutputResourceDocument" type="nc:DocumentType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A resource produced by a public service.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="PublicServiceRelatedLocation" type="nc:LocationType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A location or place related to an available public service.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="PublicServiceRelatedService" type="nc:PublicServiceType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A public service related to this service, but not required.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="PublicServiceRequiredService" type="nc:PublicServiceType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A public service that is required by this service.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="PublicServiceWebsiteURI" type="niem-xs:anyURI" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A web page through which a public service may be available.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
   <xs:element name="PublisherName" type="nc:TextType" nillable="true">
     <xs:annotation>
       <xs:documentation>A name of an entity responsible for the publication of the information.</xs:documentation>
@@ -11050,7 +11593,7 @@
       <xs:documentation>A person or organization who makes a recommendation.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="RecommendationSubject" type="nc:TextType" nillable="true">
+  <xs:element name="RecommendationSubjectText" type="nc:TextType" nillable="true">
     <xs:annotation>
       <xs:documentation>A subject of a recommendation.</xs:documentation>
     </xs:annotation>
@@ -11220,11 +11763,6 @@
       <xs:documentation>A location to which someone or something is released.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="ReliabilityPercent" type="niem-xs:decimal" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A value that indicates belief that content is accurate or trustworthy.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
   <xs:element name="ReportedDate" type="nc:DateType" nillable="true">
     <xs:annotation>
       <xs:documentation>A date information was observed, measured, identified, or became known.</xs:documentation>
@@ -11248,6 +11786,66 @@
   <xs:element name="RepositoryID" type="niem-xs:string" nillable="true">
     <xs:annotation>
       <xs:documentation>An identifier assigned to the repository from which the information originated.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="Request" type="nc:RequestType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A formal message requesting something that is submitted to an authority.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="RequestAugmentationPoint" abstract="true">
+    <xs:annotation>
+      <xs:documentation>An augmentation point for RequestType.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="RequestCategoryAbstract" abstract="true">
+    <xs:annotation>
+      <xs:documentation>A data concept for a kind of request.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="RequestCategoryText" type="nc:TextType" substitutionGroup="nc:RequestCategoryAbstract" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A kind of request.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="RequestContactInformation" type="nc:ContactInformationType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A set of contact information for a point of contact for the request.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="RequestDate" type="nc:DateType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A date on which a request was made.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="RequestDecisionDate" type="nc:DateType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A date on which a decision was recorded for a request.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="RequestDecisionText" type="nc:TextType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A decision that was made over a request.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="RequestDescriptionText" type="nc:TextType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A description of a request.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="RequestIdentification" type="nc:IdentificationType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>An identification of a request.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="RequestStatus" type="nc:StatusType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A status of a request.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="RequestText" type="nc:TextType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A request message.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="ResidenceDescriptionText" type="nc:TextType" nillable="true">
@@ -11475,6 +12073,11 @@
       <xs:documentation>A date range during which the parties in a Person Union were separated.</xs:documentation>
     </xs:annotation>
   </xs:element>
+  <xs:element name="ServiceDeliveryNGO" type="nc:OrganizationType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>An institution that provides aid directly to individuals.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
   <xs:element name="Site" type="nc:SiteType" nillable="true">
     <xs:annotation>
       <xs:documentation>A specific place or position.</xs:documentation>
@@ -11560,7 +12163,7 @@
       <xs:documentation>An augmentation point for type nc:StateType</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="StateCode" type="nc:CodeType" nillable="true">
+  <xs:element name="StateCode" type="nc:CodeType" substitutionGroup="nc:StateRepresentationAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A state, commonwealth, province, or other such geopolitical subdivision of a country.</xs:documentation>
     </xs:annotation>
@@ -12030,7 +12633,12 @@
       <xs:documentation>A treatment that was provided or could be provisioned.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="UTMCoordinate" type="nc:UTMCoordinateType" nillable="true">
+  <xs:element name="URLID" type="niem-xs:anyURI" nillable="true">
+    <xs:annotation>
+      <xs:documentation>An identifier representing a universal resource locator (URL).</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="UTMCoordinateValue" type="nc:UTMCoordinateType" nillable="true">
     <xs:annotation>
       <xs:documentation>A coordinate from the Universal Transverse Mercator (UTM) Coordinate System, which represents a location with a hemisphere, zone, an easting value, and a northing value.</xs:documentation>
     </xs:annotation>

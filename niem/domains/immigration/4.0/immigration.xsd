@@ -1,15 +1,31 @@
 <?xml version="1.0" encoding="US-ASCII"?>
-<xs:schema targetNamespace="http://release.niem.gov/niem/domains/immigration/4.0/" version="beta1" xsi:schemaLocation="http://release.niem.gov/niem/appinfo/4.0/ ../../../appinfo/4.0/appinfo.xsd http://release.niem.gov/niem/conformanceTargets/3.0/ ../../../conformanceTargets/3.0/conformanceTargets.xsd" ct:conformanceTargets="http://reference.niem.gov/niem/specification/naming-and-design-rules/4.0/#ReferenceSchemaDocument" xmlns:structures="http://release.niem.gov/niem/structures/4.0/" xmlns:hs="http://release.niem.gov/niem/domains/humanServices/4.0/" xmlns:scr="http://release.niem.gov/niem/domains/screening/4.0/" xmlns:appinfo="http://release.niem.gov/niem/appinfo/4.0/" xmlns:ct="http://release.niem.gov/niem/conformanceTargets/3.0/" xmlns:nc="http://release.niem.gov/niem/niem-core/4.0/" xmlns:j="http://release.niem.gov/niem/domains/jxdm/6.0/" xmlns:im="http://release.niem.gov/niem/domains/immigration/4.0/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:iso_3166="http://release.niem.gov/niem/codes/iso_3166-1/4.0/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:niem-xs="http://release.niem.gov/niem/proxy/xsd/4.0/">
+<xs:schema targetNamespace="http://release.niem.gov/niem/domains/immigration/4.0/" version="1" xsi:schemaLocation="http://release.niem.gov/niem/appinfo/4.0/ ../../../utility/appinfo/4.0/appinfo.xsd http://release.niem.gov/niem/conformanceTargets/3.0/ ../../../utility/conformanceTargets/3.0/conformanceTargets.xsd" ct:conformanceTargets="http://reference.niem.gov/niem/specification/naming-and-design-rules/4.0/#ReferenceSchemaDocument" xmlns:structures="http://release.niem.gov/niem/structures/4.0/" xmlns:hs="http://release.niem.gov/niem/domains/humanServices/4.0/" xmlns:scr="http://release.niem.gov/niem/domains/screening/4.0/" xmlns:appinfo="http://release.niem.gov/niem/appinfo/4.0/" xmlns:ct="http://release.niem.gov/niem/conformanceTargets/3.0/" xmlns:nc="http://release.niem.gov/niem/niem-core/4.0/" xmlns:j="http://release.niem.gov/niem/domains/jxdm/6.0/" xmlns:im="http://release.niem.gov/niem/domains/immigration/4.0/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:iso_3166="http://release.niem.gov/niem/codes/iso_3166-1/4.0/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:niem-xs="http://release.niem.gov/niem/proxy/xsd/4.0/">
   <xs:annotation>
     <xs:documentation>Immigration</xs:documentation>
+    <xs:appinfo>
+      <appinfo:LocalTerm term="SEVIS" literal="Student and Exchange Visitor Information System"/>
+      <appinfo:LocalTerm term="ICE" literal="Immigration and Customs Enforcement"/>
+      <appinfo:LocalTerm term="PIN" literal="Personal Identification Number"/>
+      <appinfo:LocalTerm term="M1" literal="M1 visa"/>
+      <appinfo:LocalTerm term="Hague" definition="The Hague is the seat of government in the Netherlands, and the capital city of the province of South Holland."/>
+      <appinfo:LocalTerm term="F2" literal="F-2 visa"/>
+      <appinfo:LocalTerm term="F1" literal="F-1 visa"/>
+      <appinfo:LocalTerm term="M2" literal="M2 visa"/>
+      <appinfo:LocalTerm term="PL94-484" literal="Public Law 94-484"/>
+      <appinfo:LocalTerm term="K9" literal="canine"/>
+      <appinfo:LocalTerm term="SSN" literal="Social Security Number"/>
+      <appinfo:LocalTerm term="J2" literal="J-2 visa"/>
+      <appinfo:LocalTerm term="USCIS" literal="United States Citizenship and Immigration Services"/>
+      <appinfo:LocalTerm term="I20s" literal="Form I-20"/>
+    </xs:appinfo>
   </xs:annotation>
-  <xs:import schemaLocation="../../jxdm/6.0/jxdm.xsd" namespace="http://release.niem.gov/niem/domains/jxdm/6.0/"/>
-  <xs:import schemaLocation="../../../structures/4.0/structures.xsd" namespace="http://release.niem.gov/niem/structures/4.0/"/>
-  <xs:import schemaLocation="../../../codes/iso_3166-1/4.0/iso_3166.xsd" namespace="http://release.niem.gov/niem/codes/iso_3166-1/4.0/"/>
-  <xs:import schemaLocation="../../../proxy/xsd/4.0/xs.xsd" namespace="http://release.niem.gov/niem/proxy/xsd/4.0/"/>
   <xs:import schemaLocation="../../../niem-core/4.0/niem-core.xsd" namespace="http://release.niem.gov/niem/niem-core/4.0/"/>
+  <xs:import schemaLocation="../../jxdm/6.0/jxdm.xsd" namespace="http://release.niem.gov/niem/domains/jxdm/6.0/"/>
   <xs:import schemaLocation="../../humanServices/4.0/hs.xsd" namespace="http://release.niem.gov/niem/domains/humanServices/4.0/"/>
   <xs:import schemaLocation="../../screening/4.0/screening.xsd" namespace="http://release.niem.gov/niem/domains/screening/4.0/"/>
+  <xs:import schemaLocation="../../../utility/structures/4.0/structures.xsd" namespace="http://release.niem.gov/niem/structures/4.0/"/>
+  <xs:import schemaLocation="../../../proxy/xsd/4.0/xs.xsd" namespace="http://release.niem.gov/niem/proxy/xsd/4.0/"/>
+  <xs:import schemaLocation="../../../codes/iso_3166-1/4.0/iso_3166.xsd" namespace="http://release.niem.gov/niem/codes/iso_3166-1/4.0/"/>
   <xs:complexType name="AlienAlertType">
     <xs:annotation>
       <xs:documentation>A data type for the significant information regarding an alien communicated to immigration or enforcement officials notifying them of potential risk or risks.</xs:documentation>
@@ -221,7 +237,7 @@
           <xs:element ref="im:AuthorizationToDropBelowFullTime" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="im:StudentEmployment" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="im:ProgramExtensionRequest" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="im:Request" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:Request" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="im:Transfer" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="im:EducationLevelClassification" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="im:StudentTerminationClassification" minOccurs="0" maxOccurs="unbounded"/>
@@ -8039,34 +8055,6 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-  <xs:complexType name="RequestStatusType">
-    <xs:annotation>
-      <xs:documentation>A data type for the classification of the status of an official request made by United States immigration authorities.</xs:documentation>
-    </xs:annotation>
-    <xs:complexContent>
-      <xs:extension base="structures:ObjectType">
-        <xs:sequence>
-          <xs:element ref="im:RequestStatusCategoryText" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="im:RequestStatusAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
-        </xs:sequence>
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
-  <xs:complexType name="RequestType">
-    <xs:annotation>
-      <xs:documentation>A data type for the official statement made by a United States immigration officer asking for an item or information.</xs:documentation>
-    </xs:annotation>
-    <xs:complexContent>
-      <xs:extension base="nc:ActivityType">
-        <xs:sequence>
-          <xs:element ref="im:RequestDecisionDate" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="im:RequestCategoryText" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="im:RequestStatus" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="im:RequestAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
-        </xs:sequence>
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
   <xs:complexType name="ResidentRoleType">
     <xs:annotation>
       <xs:documentation>A data type for the role of Resident that is played by a Person with respect to a Country</xs:documentation>
@@ -10377,41 +10365,6 @@
   <xs:element name="ReleaseReasonDescriptionText" type="nc:TextType" nillable="true">
     <xs:annotation>
       <xs:documentation>A description of the DETENTION REASON TYPE for the release of a detainee.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="Request" type="im:RequestType" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A request made to the Department of Homeland Security (DHS) / Immigration and Customs Enforcement (ICE) by the alien student.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="RequestAugmentationPoint" abstract="true">
-    <xs:annotation>
-      <xs:documentation>An augmentation point for RequestType.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="RequestCategoryText" type="nc:TextType" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A field indicating the kind of request made to the DHS by an alien student.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="RequestDecisionDate" type="nc:DateType" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A date on which an adjudication decision was recorded for the alien student request.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="RequestStatus" type="im:RequestStatusType" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A status of a request made by an alien student.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="RequestStatusAugmentationPoint" abstract="true">
-    <xs:annotation>
-      <xs:documentation>An augmentation point for RequestStatusType.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="RequestStatusCategoryText" type="nc:TextType" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A kind of description of status related to an alien student request.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="RequestedDeportationDate" type="nc:DateType" nillable="true">

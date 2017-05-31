@@ -1,27 +1,66 @@
 <?xml version="1.0" encoding="US-ASCII"?>
-<xs:schema targetNamespace="http://release.niem.gov/niem/domains/militaryOperations/4.0/" version="beta1" xsi:schemaLocation="http://release.niem.gov/niem/appinfo/4.0/ ../../../appinfo/4.0/appinfo.xsd http://release.niem.gov/niem/conformanceTargets/3.0/ ../../../conformanceTargets/3.0/conformanceTargets.xsd" ct:conformanceTargets="http://reference.niem.gov/niem/specification/naming-and-design-rules/4.0/#ReferenceSchemaDocument" xmlns:structures="http://release.niem.gov/niem/structures/4.0/" xmlns:appinfo="http://release.niem.gov/niem/appinfo/4.0/" xmlns:ct="http://release.niem.gov/niem/conformanceTargets/3.0/" xmlns:mo="http://release.niem.gov/niem/domains/militaryOperations/4.0/" xmlns:nc="http://release.niem.gov/niem/niem-core/4.0/" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:nga="http://release.niem.gov/niem/codes/nga_datum/4.0/" xmlns:genc="http://release.niem.gov/niem/codes/nga_genc/4.0/" xmlns:unece="http://release.niem.gov/niem/codes/unece_rec20/4.0/" xmlns:geo="http://release.niem.gov/niem/adapters/geospatial/4.0/" xmlns:xls="http://release.niem.gov/niem/external/ogc/xls/1.1.0/dhs-gmo/2.1.0" xmlns:j="http://release.niem.gov/niem/domains/jxdm/6.0/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:iso_3166="http://release.niem.gov/niem/codes/iso_3166-1/4.0/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:niem-xs="http://release.niem.gov/niem/proxy/xsd/4.0/">
+<xs:schema targetNamespace="http://release.niem.gov/niem/domains/militaryOperations/4.0/" version="1" xsi:schemaLocation="http://release.niem.gov/niem/appinfo/4.0/ ../../../utility/appinfo/4.0/appinfo.xsd http://release.niem.gov/niem/conformanceTargets/3.0/ ../../../utility/conformanceTargets/3.0/conformanceTargets.xsd" ct:conformanceTargets="http://reference.niem.gov/niem/specification/naming-and-design-rules/4.0/#ReferenceSchemaDocument" xmlns:structures="http://release.niem.gov/niem/structures/4.0/" xmlns:appinfo="http://release.niem.gov/niem/appinfo/4.0/" xmlns:mo="http://release.niem.gov/niem/domains/militaryOperations/4.0/" xmlns:ct="http://release.niem.gov/niem/conformanceTargets/3.0/" xmlns:nc="http://release.niem.gov/niem/niem-core/4.0/" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:nga="http://release.niem.gov/niem/codes/nga_datum/4.0/" xmlns:geo="http://release.niem.gov/niem/adapters/geospatial/4.0/" xmlns:xls="http://release.niem.gov/niem/external/ogc/xls/1.1.0/dhs-gmo/2.1.0" xmlns:j="http://release.niem.gov/niem/domains/jxdm/6.0/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:iso_3166="http://release.niem.gov/niem/codes/iso_3166-1/4.0/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:niem-xs="http://release.niem.gov/niem/proxy/xsd/4.0/">
   <xs:annotation>
     <xs:documentation>MilOps - Distribution A</xs:documentation>
+    <xs:appinfo>
+      <appinfo:LocalTerm term="UUID" literal="Universally unique identifier"/>
+      <appinfo:LocalTerm term="ULN" literal="Unit Line Number"/>
+      <appinfo:LocalTerm term="MGRS" literal="Military Grid Reference System"/>
+      <appinfo:LocalTerm term="MILSTD2525-B" literal="Military Standard 2525 B (MIL-STD-2525B)"/>
+      <appinfo:LocalTerm term="MILSTD2525-C" literal="Military Standard 2525 C (MIL-STD-2525C)"/>
+      <appinfo:LocalTerm term="MILSTD2525-D" literal="Military Standard 2525 D (MIL-STD-2525D)"/>
+      <appinfo:LocalTerm term="SIDC" literal="Symbol Identification Code"/>
+      <appinfo:LocalTerm term="OPEX" literal="Operation Exercise"/>
+      <appinfo:LocalTerm term="STANAG" literal="Standardization Agreement"/>
+      <appinfo:LocalTerm term="UIC" literal="Unit Identification Code"/>
+      <appinfo:LocalTerm term="URN" literal="Unit Reference Number"/>
+      <appinfo:LocalTerm term="WGS84" literal="World Geodetic System 84"/>
+    </xs:appinfo>
   </xs:annotation>
-  <xs:import schemaLocation="../../jxdm/6.0/jxdm.xsd" namespace="http://release.niem.gov/niem/domains/jxdm/6.0/"/>
+  <xs:import schemaLocation="../../../adapters/geospatial/4.0/geospatial.xsd" namespace="http://release.niem.gov/niem/adapters/geospatial/4.0/"/>
+  <xs:import schemaLocation="../../../niem-core/4.0/niem-core.xsd" namespace="http://release.niem.gov/niem/niem-core/4.0/"/>
   <xs:import schemaLocation="../../../external/ogc/ols/1.1.0/dhs-gmo/2.1.0/ols.xsd" namespace="http://release.niem.gov/niem/external/ogc/xls/1.1.0/dhs-gmo/2.1.0" appinfo:externalImportIndicator="true">
     <xs:annotation>
       <xs:documentation>A profile of OpenGeospatialConsortium (OpenGIS, OGC) OpenLS (Location Services) version 1.1 schemas. A profile of OpenGeospatialConsortium (OpenGIS, OGC) OpenLS (Location Services) version 1.1 schemas that have been edited to use GML version 3.2.1 schemas instead of the GML version 3.0 schemas that were current when OpenLS version 1.1 was promulgated.  See http://www.opengeospatial.org for documentation, http://schemas.opengis.net/ols/ for schemas.</xs:documentation>
     </xs:annotation>
   </xs:import>
-  <xs:import schemaLocation="../../../structures/4.0/structures.xsd" namespace="http://release.niem.gov/niem/structures/4.0/"/>
-  <xs:import schemaLocation="../../../codes/unece_rec20/4.0/unece_rec20-misc.xsd" namespace="http://release.niem.gov/niem/codes/unece_rec20/4.0/"/>
-  <xs:import schemaLocation="../../../codes/iso_3166-1/4.0/iso_3166.xsd" namespace="http://release.niem.gov/niem/codes/iso_3166-1/4.0/"/>
-  <xs:import schemaLocation="../../../proxy/xsd/4.0/xs.xsd" namespace="http://release.niem.gov/niem/proxy/xsd/4.0/"/>
-  <xs:import schemaLocation="../../../niem-core/4.0/niem-core.xsd" namespace="http://release.niem.gov/niem/niem-core/4.0/"/>
-  <xs:import schemaLocation="../../../adapters/geospatial/4.0/geospatial.xsd" namespace="http://release.niem.gov/niem/adapters/geospatial/4.0/"/>
+  <xs:import schemaLocation="../../jxdm/6.0/jxdm.xsd" namespace="http://release.niem.gov/niem/domains/jxdm/6.0/"/>
+  <xs:import schemaLocation="../../../codes/nga_datum/4.0/nga_datum.xsd" namespace="http://release.niem.gov/niem/codes/nga_datum/4.0/"/>
+  <xs:import schemaLocation="../../../utility/structures/4.0/structures.xsd" namespace="http://release.niem.gov/niem/structures/4.0/"/>
   <xs:import schemaLocation="../../../external/ogc/gml/3.2.1/gml.xsd" namespace="http://www.opengis.net/gml/3.2" appinfo:externalImportIndicator="true">
     <xs:annotation>
       <xs:documentation>Geography Markup Language (GML) version 3.2.1 schemas.  See http://www.opengeospatial.org OGC document 07-036 for documentation: "The Geography Markup Language (GML) was originally developed within the Open Geospatial Consortium, Inc. (OGC). ISO 19136 was prepared by ISO/TC 211 jointly with the OGC."  See http://schemas.opengis.net/gml/ for schemas.</xs:documentation>
     </xs:annotation>
   </xs:import>
-  <xs:import schemaLocation="../../../codes/nga_genc/4.0/nga_genc.xsd" namespace="http://release.niem.gov/niem/codes/nga_genc/4.0/"/>
-  <xs:import schemaLocation="../../../codes/nga_datum/4.0/nga_datum.xsd" namespace="http://release.niem.gov/niem/codes/nga_datum/4.0/"/>
+  <xs:import schemaLocation="../../../proxy/xsd/4.0/xs.xsd" namespace="http://release.niem.gov/niem/proxy/xsd/4.0/"/>
+  <xs:import schemaLocation="../../../codes/iso_3166-1/4.0/iso_3166.xsd" namespace="http://release.niem.gov/niem/codes/iso_3166-1/4.0/"/>
+  <xs:simpleType name="AbbreviatedNameSimpleType">
+    <xs:annotation>
+      <xs:documentation>A data type for a shortened name.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:token">
+      <xs:maxLength value="30">
+        <xs:annotation>
+          <xs:documentation>Max length 30</xs:documentation>
+        </xs:annotation>
+      </xs:maxLength>
+      <xs:minLength value="4">
+        <xs:annotation>
+          <xs:documentation>Min length 4</xs:documentation>
+        </xs:annotation>
+      </xs:minLength>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="AbbreviatedNameType">
+    <xs:annotation>
+      <xs:documentation>A data type for a shortened name.</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="mo:AbbreviatedNameSimpleType">
+        <xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
   <xs:complexType name="AimpointType">
     <xs:annotation>
       <xs:documentation>A data type for a point associated with a target and assigned for a specific weapon impact.</xs:documentation>
@@ -164,8 +203,7 @@
     <xs:complexContent>
       <xs:extension base="structures:ObjectType">
         <xs:sequence>
-          <xs:element ref="mo:EquipmentName" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="mo:EquipmentIdentification" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:Equipment" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="mo:EquipmentSetAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
       </xs:extension>
@@ -203,7 +241,7 @@
     <xs:complexContent>
       <xs:extension base="structures:AugmentationType">
         <xs:sequence>
-          <xs:element ref="mo:FacilityAllegianceCountryAbstract" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="mo:FacilityAllegianceCountry" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -342,7 +380,29 @@
       </xs:extension>
     </xs:simpleContent>
   </xs:complexType>
-  <xs:simpleType name="MGRSUPS100000MeterCoordinateSimpleType">
+  <xs:simpleType name="MGRSCoordinateStringSimpleType">
+    <xs:annotation>
+      <xs:documentation>A data type for a complete coordinate string from the Military Grid Reference System (MGRS) which represents a location with a Universal Transverse Mercator (UTM) or Univeral Polar Steriographic (UPS) coordinate and a unique military grid square.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:pattern value="(((0[1-9]|[1-5][0-9]|60)[C-HJ-NP-X][A-HJ-NP-Z][A-HJ-NP-V])|([ABYZ][A-CF-HJ-LP-UX-Z][A-HJ-NP-Z])) ([0-9][0-9]){0,5}">
+        <xs:annotation>
+          <xs:documentation>MGRS coordinate pattern</xs:documentation>
+        </xs:annotation>
+      </xs:pattern>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="MGRSCoordinateStringType">
+    <xs:annotation>
+      <xs:documentation>A data type for a complete coordinate string from the Military Grid Reference System (MGRS) which represents a location with a Universal Transverse Mercator (UTM) or Univeral Polar Steriographic (UPS) coordinate and a unique military grid square.</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="mo:MGRSCoordinateStringSimpleType">
+        <xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:simpleType name="MGRSUTM100000MeterCoordinateSimpleType">
     <xs:annotation>
       <xs:documentation>A data type for a 100,000-meter precision level MGRS coordinate.</xs:documentation>
     </xs:annotation>
@@ -359,17 +419,17 @@
       </xs:length>
     </xs:restriction>
   </xs:simpleType>
-  <xs:complexType name="MGRSUPS100000MeterCoordinateType">
+  <xs:complexType name="MGRSUTM100000MeterCoordinateType">
     <xs:annotation>
       <xs:documentation>A data type for a 100,000-meter precision level MGRS coordinate.</xs:documentation>
     </xs:annotation>
     <xs:simpleContent>
-      <xs:extension base="mo:MGRSUPS100000MeterCoordinateSimpleType">
+      <xs:extension base="mo:MGRSUTM100000MeterCoordinateSimpleType">
         <xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
       </xs:extension>
     </xs:simpleContent>
   </xs:complexType>
-  <xs:simpleType name="MGRSUPS10000MeterCoordinateSimpleType">
+  <xs:simpleType name="MGRSUTM10000MeterCoordinateSimpleType">
     <xs:annotation>
       <xs:documentation>A data type for a 10,000-meter precision level MGRS coordinate.</xs:documentation>
     </xs:annotation>
@@ -386,17 +446,17 @@
       </xs:length>
     </xs:restriction>
   </xs:simpleType>
-  <xs:complexType name="MGRSUPS10000MeterCoordinateType">
+  <xs:complexType name="MGRSUTM10000MeterCoordinateType">
     <xs:annotation>
       <xs:documentation>A data type for a 10,000-meter precision level MGRS coordinate.</xs:documentation>
     </xs:annotation>
     <xs:simpleContent>
-      <xs:extension base="mo:MGRSUPS10000MeterCoordinateSimpleType">
+      <xs:extension base="mo:MGRSUTM10000MeterCoordinateSimpleType">
         <xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
       </xs:extension>
     </xs:simpleContent>
   </xs:complexType>
-  <xs:simpleType name="MGRSUPS1000MeterCoordinateSimpleType">
+  <xs:simpleType name="MGRSUTM1000MeterCoordinateSimpleType">
     <xs:annotation>
       <xs:documentation>A data type for a 1,000-meter precision level MGRS coordinate.</xs:documentation>
     </xs:annotation>
@@ -413,17 +473,17 @@
       </xs:length>
     </xs:restriction>
   </xs:simpleType>
-  <xs:complexType name="MGRSUPS1000MeterCoordinateType">
+  <xs:complexType name="MGRSUTM1000MeterCoordinateType">
     <xs:annotation>
       <xs:documentation>A data type for a 1,000-meter precision level MGRS coordinate.</xs:documentation>
     </xs:annotation>
     <xs:simpleContent>
-      <xs:extension base="mo:MGRSUPS1000MeterCoordinateSimpleType">
+      <xs:extension base="mo:MGRSUTM1000MeterCoordinateSimpleType">
         <xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
       </xs:extension>
     </xs:simpleContent>
   </xs:complexType>
-  <xs:simpleType name="MGRSUPS100MeterCoordinateSimpleType">
+  <xs:simpleType name="MGRSUTM100MeterCoordinateSimpleType">
     <xs:annotation>
       <xs:documentation>A data type for a 100-meter precision level MGRS coordinate.</xs:documentation>
     </xs:annotation>
@@ -440,17 +500,17 @@
       </xs:length>
     </xs:restriction>
   </xs:simpleType>
-  <xs:complexType name="MGRSUPS100MeterCoordinateType">
+  <xs:complexType name="MGRSUTM100MeterCoordinateType">
     <xs:annotation>
       <xs:documentation>A data type for a 100-meter precision level MGRS coordinate.</xs:documentation>
     </xs:annotation>
     <xs:simpleContent>
-      <xs:extension base="mo:MGRSUPS100MeterCoordinateSimpleType">
+      <xs:extension base="mo:MGRSUTM100MeterCoordinateSimpleType">
         <xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
       </xs:extension>
     </xs:simpleContent>
   </xs:complexType>
-  <xs:simpleType name="MGRSUPS10MeterCoordinateSimpleType">
+  <xs:simpleType name="MGRSUTM10MeterCoordinateSimpleType">
     <xs:annotation>
       <xs:documentation>A data type for a 10-meter precision level MGRS coordinate.</xs:documentation>
     </xs:annotation>
@@ -467,17 +527,17 @@
       </xs:length>
     </xs:restriction>
   </xs:simpleType>
-  <xs:complexType name="MGRSUPS10MeterCoordinateType">
+  <xs:complexType name="MGRSUTM10MeterCoordinateType">
     <xs:annotation>
       <xs:documentation>A data type for a 10-meter precision level MGRS coordinate.</xs:documentation>
     </xs:annotation>
     <xs:simpleContent>
-      <xs:extension base="mo:MGRSUPS10MeterCoordinateSimpleType">
+      <xs:extension base="mo:MGRSUTM10MeterCoordinateSimpleType">
         <xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
       </xs:extension>
     </xs:simpleContent>
   </xs:complexType>
-  <xs:simpleType name="MGRSUPS1MeterCoordinateSimpleType">
+  <xs:simpleType name="MGRSUTM1MeterCoordinateSimpleType">
     <xs:annotation>
       <xs:documentation>A data type for a 1-meter precision level MGRS coordinate.</xs:documentation>
     </xs:annotation>
@@ -494,12 +554,12 @@
       </xs:length>
     </xs:restriction>
   </xs:simpleType>
-  <xs:complexType name="MGRSUPS1MeterCoordinateType">
+  <xs:complexType name="MGRSUTM1MeterCoordinateType">
     <xs:annotation>
       <xs:documentation>A data type for a 1-meter precision level MGRS coordinate.</xs:documentation>
     </xs:annotation>
     <xs:simpleContent>
-      <xs:extension base="mo:MGRSUPS1MeterCoordinateSimpleType">
+      <xs:extension base="mo:MGRSUTM1MeterCoordinateSimpleType">
         <xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
       </xs:extension>
     </xs:simpleContent>
@@ -631,6 +691,18 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
+  <xs:complexType name="MissionAugmentationType">
+    <xs:annotation>
+      <xs:documentation>A data type for additional information about an nc:Mission.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="structures:AugmentationType">
+        <xs:sequence>
+          <xs:element ref="mo:OperationPlan" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
   <xs:complexType name="MissionEssentialTaskListType">
     <xs:annotation>
       <xs:documentation>A data type for a list Mission Essential Tasks.</xs:documentation>
@@ -670,8 +742,8 @@
           <xs:element ref="mo:CourseAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="mo:ElevationMeasure" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="mo:AltitudeMeasure" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="mo:SpeedValue" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="mo:SlopeValue" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:SpeedMeasure" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="mo:MotionAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
       </xs:extension>
@@ -781,6 +853,22 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
+  <xs:complexType name="OperationPlanType">
+    <xs:annotation>
+      <xs:documentation>A data type for a specification for any plan for the conduct of military operations prepared in response to actual and potential contingencies.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="structures:ObjectType">
+        <xs:sequence>
+          <xs:element ref="mo:OperationPlanCreateDate" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="mo:OperationPlanTitleText" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="mo:OperationPlanUpdateDate" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="mo:OperationPlanIdentification" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="mo:OperationPlanAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
   <xs:complexType name="OrdnanceType">
     <xs:annotation>
       <xs:documentation>A data type describing explosives, chemicals, pyrotechnics, and similar stores, e.g., bombs, guns and ammunition, flares, smoke, or napalm.</xs:documentation>
@@ -856,17 +944,15 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-  <xs:complexType name="SpeedValueType">
+  <xs:complexType name="SpeedMeasureAugmentationType">
     <xs:annotation>
-      <xs:documentation>A data type for a speed.</xs:documentation>
+      <xs:documentation>A data type for additional information about an nc:SpeedMeasure.</xs:documentation>
     </xs:annotation>
-    <xs:simpleContent>
-      <xs:extension base="nc:NonNegativeDecimalSimpleType">
-        <xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
-        <xs:attribute ref="mo:speedUnitCode" use="optional"/>
+    <xs:complexContent>
+      <xs:extension base="structures:AugmentationType">
         <xs:attribute ref="nc:sigmaErrorValue" use="optional"/>
       </xs:extension>
-    </xs:simpleContent>
+    </xs:complexContent>
   </xs:complexType>
   <xs:complexType name="TargetType">
     <xs:annotation>
@@ -1446,6 +1532,7 @@
           <xs:element ref="mo:OrganizationUniqueID" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="mo:UnitIdentificationCodeID" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="mo:UnitName" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="mo:UnitAbbreviatedName" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="mo:UnitShortName" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="mo:UnitTypeCodeText" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="mo:UnitPresentLocation" minOccurs="0" maxOccurs="unbounded"/>
@@ -1577,11 +1664,6 @@
   <xs:attribute name="codespaceID" type="xs:token">
     <xs:annotation>
       <xs:documentation>A identifier name or URI for a controlled vocabulary.</xs:documentation>
-    </xs:annotation>
-  </xs:attribute>
-  <xs:attribute name="speedUnitCode" type="unece:VelocityCodeSimpleType">
-    <xs:annotation>
-      <xs:documentation>A unit of measurement for a speed or velocity.</xs:documentation>
     </xs:annotation>
   </xs:attribute>
   <xs:element name="AimpointAugmentationPoint" abstract="true">
@@ -1789,6 +1871,11 @@
       <xs:documentation>A precise point, associated with a target and assigned as the impact point for a single unitary weapon to create a desired effect. Also called DPI.</xs:documentation>
     </xs:annotation>
   </xs:element>
+  <xs:element name="DestinationLocation" type="nc:LocationType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A geographic location for a deployment destination of forces or cargo.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
   <xs:element name="DirectionDatumAbstract" abstract="true">
     <xs:annotation>
       <xs:documentation>A data concept for a reference direction as determined by the means by which it is established (e.g., by the direction of a geographic or magnetic pole of the Earth).</xs:documentation>
@@ -1802,16 +1889,6 @@
   <xs:element name="ElevationMeasure" type="nc:LocationHeightMeasureType" nillable="true">
     <xs:annotation>
       <xs:documentation>A height above a fixed reference point, most commonly a reference geoid, a mathematical model of the Earth's sea level as an equipotential gravitational surface.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="EquipmentIdentification" type="nc:IdentificationType" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A unique identification assigned to identify a specific piece of equipment.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="EquipmentName" type="niem-xs:string" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A name of a piece of equipment.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="EquipmentSet" type="mo:EquipmentSetType" nillable="true">
@@ -1904,12 +1981,7 @@
       <xs:documentation>A start and stop time of the Event.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="FacilityAllegianceCountryAbstract" abstract="true">
-    <xs:annotation>
-      <xs:documentation>A data concept for a designator for a country to which a facility owes its allegiance.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="FacilityAllegianceCountryCode" type="genc:CountryAlpha3CodeType" substitutionGroup="mo:FacilityAllegianceCountryAbstract" nillable="true">
+  <xs:element name="FacilityAllegianceCountry" type="nc:CountryType" nillable="true">
     <xs:annotation>
       <xs:documentation>A designator for a country to which a facility owes its allegiance.</xs:documentation>
     </xs:annotation>
@@ -1999,32 +2071,37 @@
       <xs:documentation>A data concept for a coordinate from the Military Grid Reference System (MGRS) which represents a location using the Universal Transverse Mercator (UTM) and the UPS grid systems and a unique military grid labeling convention.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="MGRSUPS100000MeterCoordinate" type="mo:MGRSUPS10000MeterCoordinateType" substitutionGroup="mo:MGRSCoordinateAbstract" nillable="true">
+  <xs:element name="MGRSCoordinateStringText" type="mo:MGRSCoordinateStringType" substitutionGroup="mo:MGRSCoordinateAbstract" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A complete coordinate string from the Military Grid Reference System (MGRS) which represents a location with a Universal Transverse Mercator (UTM) or Univeral Polar Steriographic (UPS) coordinate and a unique military grid square.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="MGRSUTM100000MeterCoordinateValue" type="mo:MGRSUTM10000MeterCoordinateType" substitutionGroup="mo:MGRSCoordinateAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A 100,000-meter precision level MGRS coordinate.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="MGRSUPS10000MeterCoordinate" type="mo:MGRSUPS10000MeterCoordinateType" substitutionGroup="mo:MGRSCoordinateAbstract" nillable="true">
+  <xs:element name="MGRSUTM10000MeterCoordinateValue" type="mo:MGRSUTM10000MeterCoordinateType" substitutionGroup="mo:MGRSCoordinateAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A 10,000-meter precision level MGRS coordinate.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="MGRSUPS1000MeterCoordinate" type="mo:MGRSUPS1000MeterCoordinateType" substitutionGroup="mo:MGRSCoordinateAbstract" nillable="true">
+  <xs:element name="MGRSUTM1000MeterCoordinateValue" type="mo:MGRSUTM1000MeterCoordinateType" substitutionGroup="mo:MGRSCoordinateAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A 1,000-meter precision level MGRS coordinate.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="MGRSUPS100MeterCoordinate" type="mo:MGRSUPS100MeterCoordinateType" substitutionGroup="mo:MGRSCoordinateAbstract" nillable="true">
+  <xs:element name="MGRSUTM100MeterCoordinateValue" type="mo:MGRSUTM100MeterCoordinateType" substitutionGroup="mo:MGRSCoordinateAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A 100-meter precision level MGRS coordinate.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="MGRSUPS10MeterCoordinate" type="mo:MGRSUPS10MeterCoordinateType" substitutionGroup="mo:MGRSCoordinateAbstract" nillable="true">
+  <xs:element name="MGRSUTM10MeterCoordinateValue" type="mo:MGRSUTM10MeterCoordinateType" substitutionGroup="mo:MGRSCoordinateAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A 10-meter precision level MGRS coordinate.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="MGRSUPS1MeterCoordinate" type="mo:MGRSUPS1MeterCoordinateType" substitutionGroup="mo:MGRSCoordinateAbstract" nillable="true">
+  <xs:element name="MGRSUTM1MeterCoordinateValue" type="mo:MGRSUTM1MeterCoordinateType" substitutionGroup="mo:MGRSCoordinateAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A 1-meter precision level MGRS coordinate.</xs:documentation>
     </xs:annotation>
@@ -2067,6 +2144,11 @@
   <xs:element name="MeanPointOfImpactAimpoint" type="mo:AimpointType" nillable="true">
     <xs:annotation>
       <xs:documentation>A point whose coordinates are the arithmetic means of the coordinates of the separate points of impact/burst of a finite number of projectiles fired or released at the same aiming point under a given set of conditions.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="MissionAugmentation" type="mo:MissionAugmentationType" substitutionGroup="nc:MissionAugmentationPoint" nillable="true">
+    <xs:annotation>
+      <xs:documentation>Additional information about a nc:Mission.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="MissionEssentialTask" type="mo:MissionEssentialTaskType" nillable="true">
@@ -2199,6 +2281,26 @@
       <xs:documentation>A data concept for a military symbol code often used to display the track on a GUI.</xs:documentation>
     </xs:annotation>
   </xs:element>
+  <xs:element name="OperationPlan" type="mo:OperationPlanType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A specification for any plan for the conduct of military operations prepared in response to actual and potential contingencies.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="OperationPlanAugmentationPoint" abstract="true">
+    <xs:annotation>
+      <xs:documentation>An augmentation point for type mo:OperationPlanType</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="OperationPlanCreateDate" type="nc:DateType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A date on which the plan was created.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="OperationPlanIdentification" type="nc:IdentificationType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>An identification of the subject plan.  Also known as a PID.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
   <xs:element name="OperationPlanTaskOrganization" type="mo:OperationPlanTaskOrganizationType" nillable="true">
     <xs:annotation>
       <xs:documentation>An organization that assigns to responsible commanders the means with which to accomplish their assigned tasks in any planned action.</xs:documentation>
@@ -2207,6 +2309,16 @@
   <xs:element name="OperationPlanTaskOrganizationAugmentationPoint" abstract="true">
     <xs:annotation>
       <xs:documentation>An augmentation point for type OperationPlanTaskOrganizationType</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="OperationPlanTitleText" type="niem-xs:string" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A name of the plan, operation, or exercise for the defined Plan Identification Number (PID).</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="OperationPlanUpdateDate" type="nc:DateType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A date of last change to plan information data.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="OrdnanceAugmentationPoint" abstract="true">
@@ -2242,6 +2354,21 @@
   <xs:element name="PitchValue" type="nc:Degree180PlusMinusType" nillable="true">
     <xs:annotation>
       <xs:documentation>An angle of rotation of a thing about its longitudinal axis, measured in degrees between the lateral axis and the horizontal plane; negative values indicate the  left side is rotated downward.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="PointOfOriginLocation" type="nc:LocationType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A geographic location of a beginning point of a deployment where unit or non-unit-related cargo or personnel are located.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="PortOfDebarkationLocation" type="nc:LocationType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A geographic point at which cargo or personnel are discharged. This may be a seaport or aerial port of debarkation; for unit requirements; it may or may not coincide with the destination. Also called POD.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="PortOfEmbarkationLocation" type="nc:LocationType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A geographic point in a routing scheme from which cargo or personnel depart.  Also called POE.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="RelativeOrientationAugmentationPoint" abstract="true">
@@ -2304,9 +2431,9 @@
       <xs:documentation>An identification for a Sortie.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="SpeedValue" type="mo:SpeedValueType" nillable="true">
+  <xs:element name="SpeedMeasureAugmentation" type="mo:SpeedMeasureAugmentationType" substitutionGroup="nc:SpeedMeasureAugmentationPoint" nillable="true">
     <xs:annotation>
-      <xs:documentation>A magnitude of motion (rate of change of position) of an object.</xs:documentation>
+      <xs:documentation>Additional information about an nc:SpeedMeasure.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="SupportingMissionEssentialTask" type="mo:MissionEssentialTaskType" nillable="true">
@@ -2409,6 +2536,11 @@
       <xs:documentation>A military element whose structure is prescribed by competent authority.</xs:documentation>
     </xs:annotation>
   </xs:element>
+  <xs:element name="UnitAbbreviatedName" type="mo:AbbreviatedNameType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>An abbreviated unit name.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
   <xs:element name="UnitAugmentationPoint" abstract="true">
     <xs:annotation>
       <xs:documentation>An augmentation point for type mo:UnitType</xs:documentation>
@@ -2469,7 +2601,7 @@
       <xs:documentation>An identifier for a seven-character alphanumeric code that describes a unique increment of a unit deployment, i.e., advance party, main body, equipment by sea and air, reception team, or trail party, in the time-phased force and deployment data. Also called ULN. (JP 3-35)</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="UnitMetadata" type="nc:MetadataType" nillable="true" appinfo:appliesToTypes="structures:AssociationType structures:ObjectType">
+  <xs:element name="UnitMetadata" type="nc:MetadataType" nillable="true" appinfo:appliesToTypes="structures:ObjectType structures:AssociationType">
     <xs:annotation>
       <xs:documentation>Information that further qualifies primary data about a unit; data about unit data.</xs:documentation>
     </xs:annotation>

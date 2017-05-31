@@ -1,16 +1,44 @@
 <?xml version="1.0" encoding="US-ASCII"?>
-<xs:schema targetNamespace="http://release.niem.gov/niem/domains/maritime/4.0/" version="beta1" xsi:schemaLocation="http://release.niem.gov/niem/appinfo/4.0/ ../../../appinfo/4.0/appinfo.xsd http://release.niem.gov/niem/conformanceTargets/3.0/ ../../../conformanceTargets/3.0/conformanceTargets.xsd" ct:conformanceTargets="http://reference.niem.gov/niem/specification/naming-and-design-rules/4.0/#ReferenceSchemaDocument" xmlns:structures="http://release.niem.gov/niem/structures/4.0/" xmlns:appinfo="http://release.niem.gov/niem/appinfo/4.0/" xmlns:scr="http://release.niem.gov/niem/domains/screening/4.0/" xmlns:ct="http://release.niem.gov/niem/conformanceTargets/3.0/" xmlns:nc="http://release.niem.gov/niem/niem-core/4.0/" xmlns:geo="http://release.niem.gov/niem/adapters/geospatial/4.0/" xmlns:hazmat="http://release.niem.gov/niem/codes/dot_hazmat/4.0/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:iso_3166="http://release.niem.gov/niem/codes/iso_3166-1/4.0/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:ncic="http://release.niem.gov/niem/codes/fbi_ncic/4.0/" xmlns:m="http://release.niem.gov/niem/domains/maritime/4.0/" xmlns:niem-xs="http://release.niem.gov/niem/proxy/xsd/4.0/">
+<xs:schema targetNamespace="http://release.niem.gov/niem/domains/maritime/4.0/" version="1" xsi:schemaLocation="http://release.niem.gov/niem/appinfo/4.0/ ../../../utility/appinfo/4.0/appinfo.xsd http://release.niem.gov/niem/conformanceTargets/3.0/ ../../../utility/conformanceTargets/3.0/conformanceTargets.xsd" ct:conformanceTargets="http://reference.niem.gov/niem/specification/naming-and-design-rules/4.0/#ReferenceSchemaDocument" xmlns:structures="http://release.niem.gov/niem/structures/4.0/" xmlns:scr="http://release.niem.gov/niem/domains/screening/4.0/" xmlns:appinfo="http://release.niem.gov/niem/appinfo/4.0/" xmlns:ct="http://release.niem.gov/niem/conformanceTargets/3.0/" xmlns:nc="http://release.niem.gov/niem/niem-core/4.0/" xmlns:geo="http://release.niem.gov/niem/adapters/geospatial/4.0/" xmlns:hazmat="http://release.niem.gov/niem/codes/dot_hazmat/4.0/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:iso_3166="http://release.niem.gov/niem/codes/iso_3166-1/4.0/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:ncic="http://release.niem.gov/niem/codes/fbi_ncic/4.0/" xmlns:niem-xs="http://release.niem.gov/niem/proxy/xsd/4.0/" xmlns:m="http://release.niem.gov/niem/domains/maritime/4.0/">
   <xs:annotation>
     <xs:documentation>Maritime</xs:documentation>
+    <xs:appinfo>
+      <appinfo:LocalTerm term="MMSI" literal="Maritime Mobile Service Identity"/>
+      <appinfo:LocalTerm term="ISPS" literal="International Ship and Port Facility Security"/>
+      <appinfo:LocalTerm term="IRCS" literal="International Registered Call Sign"/>
+      <appinfo:LocalTerm term="UNLOCODE" literal="United Nations Code for Trade and Transport Locations"/>
+      <appinfo:LocalTerm term="TRDM" literal="US Transportation Command (USTRANSCOM) Reference Data Model (TRDM)"/>
+      <appinfo:LocalTerm term="Helo" literal="helicopter"/>
+      <appinfo:LocalTerm term="UN" literal="United Nations"/>
+      <appinfo:LocalTerm term="DOC" literal="Document of Compliance"/>
+      <appinfo:LocalTerm term="ISO" literal="International Organization for Standardization"/>
+      <appinfo:LocalTerm term="COTP" literal="Captain of the Port"/>
+      <appinfo:LocalTerm term="CANUSLexiconAPR07" literal="April 2007 Canada/USA Bi-National Vessel of Interest (VOI) Lexicon"/>
+      <appinfo:LocalTerm term="Alpha3" definition="Three-letter"/>
+      <appinfo:LocalTerm term="Alpha2" definition="Two-letter"/>
+      <appinfo:LocalTerm term="ISSC" literal="International Ship Security Certificate"/>
+      <appinfo:LocalTerm term="ISM" literal="International Safety Management"/>
+      <appinfo:LocalTerm term="IMO" literal="International Maritime Organization"/>
+      <appinfo:LocalTerm term="CANUS" literal="Canada/USA"/>
+      <appinfo:LocalTerm term="APR" literal="April"/>
+      <appinfo:LocalTerm term="UNECE" literal="United Nations Economic Commission for Europe"/>
+      <appinfo:LocalTerm term="USMTF" literal="United States Message Text Format"/>
+      <appinfo:LocalTerm term="SCONUM" literal="Ship Control Number"/>
+      <appinfo:LocalTerm term="HIN" literal="Hull Identification Number"/>
+      <appinfo:LocalTerm term="FIPS" literal="Federal Information Processing Standards"/>
+      <appinfo:LocalTerm term="CVSSA" literal="Cruise Vessel Security and Safety Act"/>
+      <appinfo:LocalTerm term="CDC" literal="Certain Dangerous Cargo"/>
+      <appinfo:LocalTerm term="BE" literal="Basic Encyclopedia"/>
+    </xs:appinfo>
   </xs:annotation>
-  <xs:import schemaLocation="../../../structures/4.0/structures.xsd" namespace="http://release.niem.gov/niem/structures/4.0/"/>
-  <xs:import schemaLocation="../../../codes/iso_3166-1/4.0/iso_3166.xsd" namespace="http://release.niem.gov/niem/codes/iso_3166-1/4.0/"/>
-  <xs:import schemaLocation="../../../codes/dot_hazmat/4.0/dot_hazmat.xsd" namespace="http://release.niem.gov/niem/codes/dot_hazmat/4.0/"/>
-  <xs:import schemaLocation="../../../proxy/xsd/4.0/xs.xsd" namespace="http://release.niem.gov/niem/proxy/xsd/4.0/"/>
-  <xs:import schemaLocation="../../../niem-core/4.0/niem-core.xsd" namespace="http://release.niem.gov/niem/niem-core/4.0/"/>
   <xs:import schemaLocation="../../../adapters/geospatial/4.0/geospatial.xsd" namespace="http://release.niem.gov/niem/adapters/geospatial/4.0/"/>
+  <xs:import schemaLocation="../../../niem-core/4.0/niem-core.xsd" namespace="http://release.niem.gov/niem/niem-core/4.0/"/>
+  <xs:import schemaLocation="../../../codes/dot_hazmat/4.0/dot_hazmat.xsd" namespace="http://release.niem.gov/niem/codes/dot_hazmat/4.0/"/>
   <xs:import schemaLocation="../../screening/4.0/screening.xsd" namespace="http://release.niem.gov/niem/domains/screening/4.0/"/>
+  <xs:import schemaLocation="../../../utility/structures/4.0/structures.xsd" namespace="http://release.niem.gov/niem/structures/4.0/"/>
   <xs:import schemaLocation="../../../codes/fbi_ncic/4.0/fbi_ncic.xsd" namespace="http://release.niem.gov/niem/codes/fbi_ncic/4.0/"/>
+  <xs:import schemaLocation="../../../proxy/xsd/4.0/xs.xsd" namespace="http://release.niem.gov/niem/proxy/xsd/4.0/"/>
+  <xs:import schemaLocation="../../../codes/iso_3166-1/4.0/iso_3166.xsd" namespace="http://release.niem.gov/niem/codes/iso_3166-1/4.0/"/>
   <xs:simpleType name="CANUSLexiconAPR07CategoryCodeSimpleType">
     <xs:annotation>
       <xs:documentation>A data type for a category defined by the April 2007 Canada/USA Bi-National Vessel of Interest (VOI) Lexicon category codes.</xs:documentation>

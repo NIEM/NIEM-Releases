@@ -1,20 +1,30 @@
 <?xml version="1.0" encoding="US-ASCII"?>
-<xs:schema targetNamespace="http://release.niem.gov/niem/domains/emergencyManagement/4.0/" version="beta1" xsi:schemaLocation="http://release.niem.gov/niem/appinfo/4.0/ ../../../appinfo/4.0/appinfo.xsd http://release.niem.gov/niem/conformanceTargets/3.0/ ../../../conformanceTargets/3.0/conformanceTargets.xsd" ct:conformanceTargets="http://reference.niem.gov/niem/specification/naming-and-design-rules/4.0/#ReferenceSchemaDocument" xmlns:edxl_rm="http://release.niem.gov/niem/codes/edxl_rm/4.0/" xmlns:structures="http://release.niem.gov/niem/structures/4.0/" xmlns:appinfo="http://release.niem.gov/niem/appinfo/4.0/" xmlns:scr="http://release.niem.gov/niem/domains/screening/4.0/" xmlns:ct="http://release.niem.gov/niem/conformanceTargets/3.0/" xmlns:nc="http://release.niem.gov/niem/niem-core/4.0/" xmlns:edxl-cap="http://release.niem.gov/niem/adapters/edxl-cap/4.0/" xmlns:iso_639-3="http://release.niem.gov/niem/codes/iso_639-3/4.0/" xmlns:biom="http://release.niem.gov/niem/domains/biometrics/4.0/" xmlns:apco="http://release.niem.gov/niem/codes/apco_event/4.0/" xmlns:j="http://release.niem.gov/niem/domains/jxdm/6.0/" xmlns:em="http://release.niem.gov/niem/domains/emergencyManagement/4.0/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:it="http://release.niem.gov/niem/domains/internationalTrade/4.0/" xmlns:have-codes="http://release.niem.gov/niem/codes/edxl_have/4.0/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:niem-xs="http://release.niem.gov/niem/proxy/xsd/4.0/">
+<xs:schema targetNamespace="http://release.niem.gov/niem/domains/emergencyManagement/4.0/" version="1" xsi:schemaLocation="http://release.niem.gov/niem/appinfo/4.0/ ../../../utility/appinfo/4.0/appinfo.xsd http://release.niem.gov/niem/conformanceTargets/3.0/ ../../../utility/conformanceTargets/3.0/conformanceTargets.xsd" ct:conformanceTargets="http://reference.niem.gov/niem/specification/naming-and-design-rules/4.0/#ReferenceSchemaDocument" xmlns:edxl_rm="http://release.niem.gov/niem/codes/edxl_rm/4.0/" xmlns:structures="http://release.niem.gov/niem/structures/4.0/" xmlns:scr="http://release.niem.gov/niem/domains/screening/4.0/" xmlns:appinfo="http://release.niem.gov/niem/appinfo/4.0/" xmlns:ct="http://release.niem.gov/niem/conformanceTargets/3.0/" xmlns:nc="http://release.niem.gov/niem/niem-core/4.0/" xmlns:edxl-cap="http://release.niem.gov/niem/adapters/edxl-cap/4.0/" xmlns:iso_639-3="http://release.niem.gov/niem/codes/iso_639-3/4.0/" xmlns:biom="http://release.niem.gov/niem/domains/biometrics/4.0/" xmlns:apco="http://release.niem.gov/niem/codes/apco_event/4.0/" xmlns:em="http://release.niem.gov/niem/domains/emergencyManagement/4.0/" xmlns:j="http://release.niem.gov/niem/domains/jxdm/6.0/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:it="http://release.niem.gov/niem/domains/internationalTrade/4.0/" xmlns:have-codes="http://release.niem.gov/niem/codes/edxl_have/4.0/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:niem-xs="http://release.niem.gov/niem/proxy/xsd/4.0/">
   <xs:annotation>
     <xs:documentation>Emergency Management</xs:documentation>
+    <xs:appinfo>
+      <appinfo:LocalTerm term="NIST" literal="National Institute of Standards and Technology"/>
+      <appinfo:LocalTerm term="URN" literal="Uniform Resource Name"/>
+      <appinfo:LocalTerm term="Geo" literal="geo-coded"/>
+      <appinfo:LocalTerm term="Passcode" definition="A numeric password."/>
+      <appinfo:LocalTerm term="OBGYN" literal="Obstetrics &amp; Gynecology"/>
+      <appinfo:LocalTerm term="EOC" literal="Emergency Operations Center"/>
+      <appinfo:LocalTerm term="EMS" literal="Emergency Medical Service"/>
+      <appinfo:LocalTerm term="Decon" literal="Decontamination"/>
+    </xs:appinfo>
   </xs:annotation>
-  <xs:import schemaLocation="../../../structures/4.0/structures.xsd" namespace="http://release.niem.gov/niem/structures/4.0/"/>
-  <xs:import schemaLocation="../../internationalTrade/4.0/internationalTrade.xsd" namespace="http://release.niem.gov/niem/domains/internationalTrade/4.0/"/>
-  <xs:import schemaLocation="../../../codes/iso_639-3/4.0/iso_639-3.xsd" namespace="http://release.niem.gov/niem/codes/iso_639-3/4.0/"/>
-  <xs:import schemaLocation="../../../proxy/xsd/4.0/xs.xsd" namespace="http://release.niem.gov/niem/proxy/xsd/4.0/"/>
-  <xs:import schemaLocation="../../../adapters/edxl-cap/4.0/edxl-cap.xsd" namespace="http://release.niem.gov/niem/adapters/edxl-cap/4.0/"/>
-  <xs:import schemaLocation="../../../niem-core/4.0/niem-core.xsd" namespace="http://release.niem.gov/niem/niem-core/4.0/"/>
-  <xs:import schemaLocation="../../../codes/edxl_rm/4.0/edxl_rm.xsd" namespace="http://release.niem.gov/niem/codes/edxl_rm/4.0/"/>
-  <xs:import schemaLocation="../../screening/4.0/screening.xsd" namespace="http://release.niem.gov/niem/domains/screening/4.0/"/>
   <xs:import schemaLocation="../../jxdm/6.0/jxdm.xsd" namespace="http://release.niem.gov/niem/domains/jxdm/6.0/"/>
-  <xs:import schemaLocation="../../../codes/apco_event/4.0/apco_event.xsd" namespace="http://release.niem.gov/niem/codes/apco_event/4.0/"/>
-  <xs:import schemaLocation="../../biometrics/4.0/biom.xsd" namespace="http://release.niem.gov/niem/domains/biometrics/4.0/"/>
+  <xs:import schemaLocation="../../../utility/structures/4.0/structures.xsd" namespace="http://release.niem.gov/niem/structures/4.0/"/>
+  <xs:import schemaLocation="../../../codes/edxl_rm/4.0/edxl_rm.xsd" namespace="http://release.niem.gov/niem/codes/edxl_rm/4.0/"/>
+  <xs:import schemaLocation="../../../niem-core/4.0/niem-core.xsd" namespace="http://release.niem.gov/niem/niem-core/4.0/"/>
   <xs:import schemaLocation="../../../codes/edxl_have/4.0/have-codes.xsd" namespace="http://release.niem.gov/niem/codes/edxl_have/4.0/"/>
+  <xs:import schemaLocation="../../../codes/iso_639-3/4.0/iso_639-3.xsd" namespace="http://release.niem.gov/niem/codes/iso_639-3/4.0/"/>
+  <xs:import schemaLocation="../../biometrics/4.0/biom.xsd" namespace="http://release.niem.gov/niem/domains/biometrics/4.0/"/>
+  <xs:import schemaLocation="../../internationalTrade/4.0/internationalTrade.xsd" namespace="http://release.niem.gov/niem/domains/internationalTrade/4.0/"/>
+  <xs:import schemaLocation="../../screening/4.0/screening.xsd" namespace="http://release.niem.gov/niem/domains/screening/4.0/"/>
+  <xs:import schemaLocation="../../../codes/apco_event/4.0/apco_event.xsd" namespace="http://release.niem.gov/niem/codes/apco_event/4.0/"/>
+  <xs:import schemaLocation="../../../adapters/edxl-cap/4.0/edxl-cap.xsd" namespace="http://release.niem.gov/niem/adapters/edxl-cap/4.0/"/>
+  <xs:import schemaLocation="../../../proxy/xsd/4.0/xs.xsd" namespace="http://release.niem.gov/niem/proxy/xsd/4.0/"/>
   <xs:complexType name="AccessType">
     <xs:annotation>
       <xs:documentation>A data type for a credential class that describes the access rights</xs:documentation>
@@ -715,11 +725,11 @@
       <xs:extension base="em:PersonIDCardType">
         <xs:sequence>
           <xs:element ref="em:PersonHumanResource" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="em:BadgeJobTitle" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="em:BadgeJobTitleText" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="em:BadgeCredential" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="em:BadgeTemplateFile" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="em:Barcode" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="em:BadgeNotes" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="em:BadgeNotesText" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="em:BadgeAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
       </xs:extension>
@@ -1051,7 +1061,7 @@
         <xs:sequence>
           <xs:element ref="nc:ItemBarCodeIdentification" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="em:BarcodeCode" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="em:BarcodeContent" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="em:BarcodeContentText" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="em:BarcodeImage" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="em:BarcodeAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
@@ -1798,7 +1808,7 @@
       <xs:extension base="structures:ObjectType">
         <xs:sequence>
           <xs:element ref="em:ContactRoleCode" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="em:RoleDescription" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="em:RoleDescriptionText" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="em:ContactRoleAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
       </xs:extension>
@@ -2381,7 +2391,6 @@
     <xs:complexContent>
       <xs:extension base="structures:ObjectType">
         <xs:sequence>
-          <xs:element ref="em:URL" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="em:DataLinkDateTime" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="em:DataLinkCategoryText" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="j:ServiceCallOperator" minOccurs="0" maxOccurs="unbounded"/>
@@ -2389,6 +2398,7 @@
           <xs:element ref="nc:OrganizationIdentification" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:SourceIDText" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="em:RestrictionCategoryText" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:URLID" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="em:DataLinkAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
       </xs:extension>
@@ -2621,7 +2631,7 @@
           <xs:element ref="nc:ActivityName" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="em:DeploymentStartDate" minOccurs="0" maxOccurs="1"/>
           <xs:element ref="em:DeploymentEndDate" minOccurs="0" maxOccurs="1"/>
-          <xs:element ref="em:DeploymentDays" minOccurs="0" maxOccurs="1"/>
+          <xs:element ref="em:DeploymentDaysNumeric" minOccurs="0" maxOccurs="1"/>
           <xs:element ref="em:DeploymentSummaryAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
       </xs:extension>
@@ -3239,9 +3249,9 @@
     <xs:complexContent>
       <xs:extension base="structures:ObjectType">
         <xs:sequence>
-          <xs:element ref="em:EducationMajor" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="em:EducationMinor" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="em:EducationInstitution" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="em:EducationMajorText" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="em:EducationMinorText" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="em:EducationInstitutionText" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="em:DegreeIssuingDate" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:EffectiveDate" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:EndDate" minOccurs="0" maxOccurs="unbounded"/>
@@ -3321,7 +3331,7 @@
     <xs:complexContent>
       <xs:extension base="nc:IncidentType">
         <xs:sequence>
-          <xs:element ref="em:IncidentSummary" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="em:IncidentSummaryText" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="em:IncidentPublishDate" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="em:IncidentUpdateDate" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="em:ParentIncident" minOccurs="0" maxOccurs="unbounded"/>
@@ -3582,7 +3592,7 @@ National Institutes of Health, National Heart, Lung, and Blood Institute</xs:doc
     <xs:complexContent>
       <xs:extension base="structures:ObjectType">
         <xs:sequence>
-          <xs:element ref="em:OrganizationID" minOccurs="0" maxOccurs="1"/>
+          <xs:element ref="nc:OrganizationIdentification" minOccurs="0" maxOccurs="1"/>
           <xs:element ref="nc:OrganizationName" minOccurs="0" maxOccurs="1"/>
           <xs:element ref="em:DeploymentStatusCode" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="em:FirstResponderAvailabilityStatusCode" minOccurs="0" maxOccurs="unbounded"/>
@@ -3923,7 +3933,7 @@ National Institutes of Health, National Heart, Lung, and Blood Institute</xs:doc
         <xs:sequence>
           <xs:element ref="em:InsuranceName" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="em:InsurancePhoneNumber" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="em:InsuranceGroupNumber" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="em:InsuranceGroupNumberID" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:Address" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
       </xs:extension>
@@ -4070,7 +4080,7 @@ National Institutes of Health, National Heart, Lung, and Blood Institute</xs:doc
     <xs:complexContent>
       <xs:extension base="structures:ObjectType">
         <xs:sequence>
-          <xs:element ref="em:LCRTitle" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="em:LCRTitleText" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="em:LCRCategoryCode" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="em:LCRID" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="em:IsStateLCRIndicator" minOccurs="0" maxOccurs="unbounded"/>
@@ -4092,7 +4102,7 @@ National Institutes of Health, National Heart, Lung, and Blood Institute</xs:doc
     <xs:complexContent>
       <xs:extension base="structures:AugmentationType">
         <xs:sequence>
-          <xs:element ref="em:LocationAcronym" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="em:LocationAcronymText" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="em:LocationInformationText" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:LocationDirectionsText" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
@@ -4454,7 +4464,6 @@ National Institutes of Health, National Heart, Lung, and Blood Institute</xs:doc
     <xs:complexContent>
       <xs:extension base="nc:MissionType">
         <xs:sequence>
-          <xs:element ref="nc:MissionID" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:IncidentEvent" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="edxl-cap:AlertAdapter" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:MissionStagingLocation" minOccurs="0" maxOccurs="unbounded"/>
@@ -4825,7 +4834,7 @@ National Institutes of Health, National Heart, Lung, and Blood Institute</xs:doc
           <xs:element ref="nc:EmployeePositionName" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:EmployeeOccupationText" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:EmployeeOccupationCategoryText" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="em:OrganizationPersonRelation" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="em:OrganizationPersonRelationText" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:EmployeeShiftText" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:EmploymentStatus" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="em:PersonHumanResource" minOccurs="0" maxOccurs="unbounded"/>
@@ -4993,8 +5002,8 @@ National Institutes of Health, National Heart, Lung, and Blood Institute</xs:doc
       <xs:extension base="structures:ObjectType">
         <xs:sequence>
           <xs:element ref="em:PeerReviewDescriptionText" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="em:PeerReviewAuthor" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="em:PeerReviewSubject" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="em:PeerReviewAuthorText" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="em:PeerReviewSubjectText" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="em:PeerReviewDate" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="em:PeerReviewAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
@@ -5048,7 +5057,7 @@ National Institutes of Health, National Heart, Lung, and Blood Institute</xs:doc
     <xs:complexContent>
       <xs:extension base="nc:IdentificationType">
         <xs:sequence>
-          <xs:element ref="em:NameOnCard" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="em:NameOnCardText" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="em:IDCategoryCodeAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="em:SignatureAuthorityName" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="em:AgencySymbol" minOccurs="0" maxOccurs="unbounded"/>
@@ -5071,7 +5080,7 @@ National Institutes of Health, National Heart, Lung, and Blood Institute</xs:doc
       <xs:extension base="j:PublicationType">
         <xs:sequence>
           <xs:element ref="em:PublicationDate" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="em:PublicationPage" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="em:PublicationPageText" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="em:PersonPublicationAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
       </xs:extension>
@@ -5185,8 +5194,8 @@ National Institutes of Health, National Heart, Lung, and Blood Institute</xs:doc
         <xs:sequence>
           <xs:element ref="em:PhysicalFitnessLevelCode" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="em:ExerciseCode" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="em:ExerciseDescription" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="em:ExerciseWeeklyFrequency" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="em:ExerciseDescriptionText" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="em:ExerciseWeeklyFrequencyValue" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="em:ExerciseMinutesEachTime" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="em:ExerciseOrganizationName" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="em:LastExerciseTime" minOccurs="0" maxOccurs="unbounded"/>
@@ -5291,7 +5300,7 @@ National Institutes of Health, National Heart, Lung, and Blood Institute</xs:doc
     <xs:complexContent>
       <xs:extension base="structures:ObjectType">
         <xs:sequence>
-          <xs:element ref="em:ProhibitiveDeploymentConditionDescription" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="em:ProhibitiveDeploymentConditionDescriptionText" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="em:ProhibitiveDeploymentConditionAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
       </xs:extension>
@@ -5661,7 +5670,7 @@ National Institutes of Health, National Heart, Lung, and Blood Institute</xs:doc
           <xs:element ref="em:CoordinateDateTime" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:SpeedMeasure" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="em:UncertaintyDistanceText" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="em:Firebox" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="em:FireboxText" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="em:ServiceCallResponseLocationAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
       </xs:extension>
@@ -5709,7 +5718,7 @@ National Institutes of Health, National Heart, Lung, and Blood Institute</xs:doc
           <xs:element ref="em:SkillName" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="em:SkillDescriptionText" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="em:SkillAcquiredCategoryCode" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="em:SkillUseHistory" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="em:SkillUseHistoryText" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="em:SkillAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
       </xs:extension>
@@ -5829,8 +5838,8 @@ National Institutes of Health, National Heart, Lung, and Blood Institute</xs:doc
         <xs:sequence>
           <xs:element ref="em:ResourceInformation" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="em:TeamDescriptionText" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="em:TeamSizeMinimum" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="em:TeamSizeMaximum" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="em:TeamSizeMinimumValue" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="em:TeamSizeMaximumValue" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="em:TeamAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
       </xs:extension>
@@ -5843,12 +5852,12 @@ National Institutes of Health, National Heart, Lung, and Blood Institute</xs:doc
     <xs:complexContent>
       <xs:extension base="structures:ObjectType">
         <xs:sequence>
-          <xs:element ref="em:Course" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="em:CourseLevel" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="em:CourseText" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="em:CourseLevelText" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="em:ProvidingOrganizationName" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="em:RegistrationJurisdictionName" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="em:IsIssuedCertificationIndicator" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="em:DurationInDays" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="em:TrainingDuration" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:EffectiveDate" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:EndDate" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="em:TrainingAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
@@ -6828,12 +6837,12 @@ National Institutes of Health, National Heart, Lung, and Blood Institute</xs:doc
       <xs:documentation>A data element specifies the effective date range for a credential appeared on a badge</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="BadgeJobTitle" type="nc:TextType" nillable="true">
+  <xs:element name="BadgeJobTitleText" type="nc:TextType" nillable="true">
     <xs:annotation>
       <xs:documentation>A data element for the the job title of the Person that appears on the Badge</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="BadgeNotes" type="nc:TextType" nillable="true">
+  <xs:element name="BadgeNotesText" type="nc:TextType" nillable="true">
     <xs:annotation>
       <xs:documentation>A data element for Notes about the Badge, if needed</xs:documentation>
     </xs:annotation>
@@ -6863,7 +6872,7 @@ National Institutes of Health, National Heart, Lung, and Blood Institute</xs:doc
       <xs:documentation>A data element for a barcode code type information</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="BarcodeContent" type="nc:TextType" nillable="true">
+  <xs:element name="BarcodeContentText" type="nc:TextType" nillable="true">
     <xs:annotation>
       <xs:documentation>A data element for a bar code content information</xs:documentation>
     </xs:annotation>
@@ -6913,17 +6922,17 @@ National Institutes of Health, National Heart, Lung, and Blood Institute</xs:doc
       <xs:documentation>A status describing of the availability of burn center services</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="CATGDamage" type="nc:TextType" nillable="true">
+  <xs:element name="CATGDamageText" type="nc:TextType" nillable="true">
     <xs:annotation>
       <xs:documentation>An element for the description of the damage to the facility like Beaches, Parks, Transit, and Other.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="CATGRepairs" type="nc:TextType" nillable="true">
+  <xs:element name="CATGRepairsText" type="nc:TextType" nillable="true">
     <xs:annotation>
       <xs:documentation>An element for the repairs necessary to return the facility like Beaches, Parks, Transit, and Other to a pre-disaster state.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="CDDebris" type="niem-xs:integer" nillable="true">
+  <xs:element name="CDDebrisValue" type="niem-xs:integer" nillable="true">
     <xs:annotation>
       <xs:documentation>An element for the construction and demolition materials. Debris reulting from destruction of buildings or homes. (cubic yards)</xs:documentation>
     </xs:annotation>
@@ -7008,12 +7017,12 @@ National Institutes of Health, National Heart, Lung, and Blood Institute</xs:doc
       <xs:documentation>An element for the Roads and Bridges of Cat-C.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="Cat-CDamage" type="nc:TextType" nillable="true">
+  <xs:element name="Cat-CDamageText" type="nc:TextType" nillable="true">
     <xs:annotation>
       <xs:documentation>An element for the description of the damage caused to the road, bridge, culvert, or low water crossing.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="Cat-CRepairs" type="nc:TextType" nillable="true">
+  <xs:element name="Cat-CRepairsText" type="nc:TextType" nillable="true">
     <xs:annotation>
       <xs:documentation>An element for the repairs necessary to return the facility to a pre-disaster state. .</xs:documentation>
     </xs:annotation>
@@ -7023,7 +7032,7 @@ National Institutes of Health, National Heart, Lung, and Blood Institute</xs:doc
       <xs:documentation>An element for the Water Control Facilities of Cat-D.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="Cat-DDamage" type="nc:TextType" nillable="true">
+  <xs:element name="Cat-DDamageText" type="nc:TextType" nillable="true">
     <xs:annotation>
       <xs:documentation>An element for the description of the damage caused to the Water Control Facilities(Cat-D).</xs:documentation>
     </xs:annotation>
@@ -7038,7 +7047,7 @@ National Institutes of Health, National Heart, Lung, and Blood Institute</xs:doc
       <xs:documentation>An element for the common purposes for water control facilities .</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="Cat-DRepairs" type="nc:TextType" nillable="true">
+  <xs:element name="Cat-DRepairsText" type="nc:TextType" nillable="true">
     <xs:annotation>
       <xs:documentation>An element for the repairs necessary to return the Water Control Facilities(Cat-D).to a pre-disaster state. .</xs:documentation>
     </xs:annotation>
@@ -7048,7 +7057,7 @@ National Institutes of Health, National Heart, Lung, and Blood Institute</xs:doc
       <xs:documentation>An element for the common types of Buildings, Equipment and Content eligible under Category E.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="Cat-EDamage" type="nc:TextType" nillable="true">
+  <xs:element name="Cat-EDamageText" type="nc:TextType" nillable="true">
     <xs:annotation>
       <xs:documentation>An element for the description of the damage caused to the Buildings, Equipment and Content (Cat-E).</xs:documentation>
     </xs:annotation>
@@ -7058,7 +7067,7 @@ National Institutes of Health, National Heart, Lung, and Blood Institute</xs:doc
       <xs:documentation>An element for the common name for the Buildings, Equipment and Content (Cat-E).</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="Cat-ERepairs" type="nc:TextType" nillable="true">
+  <xs:element name="Cat-ERepairsText" type="nc:TextType" nillable="true">
     <xs:annotation>
       <xs:documentation>An element for the repairs necessary to return the Buildings, Equipment and Content (Cat-E) to a pre-disaster state. .</xs:documentation>
     </xs:annotation>
@@ -7068,7 +7077,7 @@ National Institutes of Health, National Heart, Lung, and Blood Institute</xs:doc
       <xs:documentation>An element for the Utilities of Cat-F.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="Cat-FDamage" type="nc:TextType" nillable="true">
+  <xs:element name="Cat-FDamageText" type="nc:TextType" nillable="true">
     <xs:annotation>
       <xs:documentation>An element for the description of the damage caused to the Utilities (Cat-F).</xs:documentation>
     </xs:annotation>
@@ -7078,7 +7087,7 @@ National Institutes of Health, National Heart, Lung, and Blood Institute</xs:doc
       <xs:documentation>An element for the common name for the Utilities (Cat-F).</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="Cat-FRepairs" type="nc:TextType" nillable="true">
+  <xs:element name="Cat-FRepairsText" type="nc:TextType" nillable="true">
     <xs:annotation>
       <xs:documentation>An element for the repairs necessary to return the Utilities (Cat-F) to a pre-disaster state. .</xs:documentation>
     </xs:annotation>
@@ -7218,14 +7227,14 @@ National Institutes of Health, National Heart, Lung, and Blood Institute</xs:doc
       <xs:documentation>A data element for the Date/Time that the coordinates were recorded by the device in UTC.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="Course" type="nc:TextType" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A data element for the name of the training course</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="CourseLevel" type="nc:TextType" nillable="true">
+  <xs:element name="CourseLevelText" type="nc:TextType" nillable="true">
     <xs:annotation>
       <xs:documentation>A data element that describes the level of the provided course and training (i.e. Beginner, Intermediate, Advanced)</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="CourseText" type="nc:TextType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A data element for the name of the training course</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="CredentialClass" type="em:CredentialClassType" nillable="true">
@@ -7398,7 +7407,7 @@ National Institutes of Health, National Heart, Lung, and Blood Institute</xs:doc
       <xs:documentation>An identifier of the person who last verified the data</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="DataLastVerifiedNote" type="nc:TextType" nillable="true">
+  <xs:element name="DataLastVerifiedNoteText" type="nc:TextType" nillable="true">
     <xs:annotation>
       <xs:documentation>An element for a note to the last verified the data</xs:documentation>
     </xs:annotation>
@@ -7448,7 +7457,7 @@ National Institutes of Health, National Heart, Lung, and Blood Institute</xs:doc
       <xs:documentation>A date on which the degree was awarded</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="DeliveryMethod" type="nc:TextType" nillable="true">
+  <xs:element name="DeliveryMethodText" type="nc:TextType" nillable="true">
     <xs:annotation>
       <xs:documentation>An element for the resource delivery method</xs:documentation>
     </xs:annotation>
@@ -7468,7 +7477,7 @@ National Institutes of Health, National Heart, Lung, and Blood Institute</xs:doc
       <xs:documentation>A data element for a textual description of an entity  that accepted the deployment</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="DeploymentDays" type="niem-xs:integer" nillable="true">
+  <xs:element name="DeploymentDaysNumeric" type="niem-xs:integer" nillable="true">
     <xs:annotation>
       <xs:documentation>A data element for the number days deployed</xs:documentation>
     </xs:annotation>
@@ -7571,11 +7580,6 @@ National Institutes of Health, National Heart, Lung, and Blood Institute</xs:doc
   <xs:element name="DrainageNavigationShapeCode" type="em:DrainageNavigationShapeCodeType" nillable="true">
     <xs:annotation>
       <xs:documentation>An element for the common shape of drainage basins or navigable waterways</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="DurationInDays" type="niem-xs:duration" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A data element for the duration of the training in number of days</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="DwellingCategoryCode" type="em:DwellingCategoryCodeType" nillable="true">
@@ -7703,7 +7707,7 @@ National Institutes of Health, National Heart, Lung, and Blood Institute</xs:doc
       <xs:documentation>An element that specifies the environmental or historic/preservation concerns with the work</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="EPMCost" type="niem-xs:integer" nillable="true">
+  <xs:element name="EPMCostValue" type="niem-xs:integer" nillable="true">
     <xs:annotation>
       <xs:documentation>An element that specifies the emergency repairs necessary to lessen an immediate threat to life, safety or property For PublicAssistanceCategoryCode C-G of work, capture emergency protective measures that were necessary.</xs:documentation>
     </xs:annotation>
@@ -7733,7 +7737,7 @@ National Institutes of Health, National Heart, Lung, and Blood Institute</xs:doc
       <xs:documentation>True if there is any environmental or historic/preservation concerns in the recovery work; false if not</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="EPMNarrative" type="nc:TextType" nillable="true">
+  <xs:element name="EPMNarrativeText" type="nc:TextType" nillable="true">
     <xs:annotation>
       <xs:documentation>An element for the short narative statement describing the threat that justified the use of Emergency Protective measures.</xs:documentation>
     </xs:annotation>
@@ -7753,17 +7757,17 @@ National Institutes of Health, National Heart, Lung, and Blood Institute</xs:doc
       <xs:documentation>An augmentation point for EducationType</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="EducationInstitution" type="nc:TextType" nillable="true">
+  <xs:element name="EducationInstitutionText" type="nc:TextType" nillable="true">
     <xs:annotation>
       <xs:documentation>A textual representation of the Educational Institution that awarded the degree</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="EducationMajor" type="nc:TextType" nillable="true">
+  <xs:element name="EducationMajorText" type="nc:TextType" nillable="true">
     <xs:annotation>
       <xs:documentation>A textual representation of the Educational Degree Major (i.e. Business Administration)</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="EducationMinor" type="nc:TextType" nillable="true">
+  <xs:element name="EducationMinorText" type="nc:TextType" nillable="true">
     <xs:annotation>
       <xs:documentation>A textual representation of the Educational Degree Minor (i.e. Art History)</xs:documentation>
     </xs:annotation>
@@ -7813,7 +7817,7 @@ National Institutes of Health, National Heart, Lung, and Blood Institute</xs:doc
       <xs:documentation>A textual representation of the type of exercise</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="ExerciseDescription" type="nc:TextType" nillable="true">
+  <xs:element name="ExerciseDescriptionText" type="nc:TextType" nillable="true">
     <xs:annotation>
       <xs:documentation>A textual description of the type of exercise</xs:documentation>
     </xs:annotation>
@@ -7828,7 +7832,7 @@ National Institutes of Health, National Heart, Lung, and Blood Institute</xs:doc
       <xs:documentation>A data element for the name of the organization that the exercise is performed at (i.e. Gold's Gym)</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="ExerciseWeeklyFrequency" type="niem-xs:integer" nillable="true">
+  <xs:element name="ExerciseWeeklyFrequencyValue" type="niem-xs:integer" nillable="true">
     <xs:annotation>
       <xs:documentation>A number count representation of how many times a week an exercise if performed by a person (e.g. 1, 2, 3)</xs:documentation>
     </xs:annotation>
@@ -7873,9 +7877,9 @@ National Institutes of Health, National Heart, Lung, and Blood Institute</xs:doc
       <xs:documentation>A data element for FIPS 201 conformance level of an identification card</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="FacilityCategory" type="nc:TextType" nillable="true">
+  <xs:element name="FacilityCategoryText" type="nc:TextType" nillable="true">
     <xs:annotation>
-      <xs:documentation>An element for the major catagories of Category C work. Road and bridge repair.</xs:documentation>
+      <xs:documentation>A major kind of Category C work. Road and bridge repair.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="FedFloodControlIndicator" type="niem-xs:boolean" nillable="true">
@@ -7888,7 +7892,7 @@ National Institutes of Health, National Heart, Lung, and Blood Institute</xs:doc
       <xs:documentation>A data element for the severity of a fire and the corresponding response based on procedure (e.g. three alarm fire).</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="Firebox" type="nc:TextType" nillable="true">
+  <xs:element name="FireboxText" type="nc:TextType" nillable="true">
     <xs:annotation>
       <xs:documentation>A data element for the name of ID of a firebox</xs:documentation>
     </xs:annotation>
@@ -7973,7 +7977,7 @@ National Institutes of Health, National Heart, Lung, and Blood Institute</xs:doc
       <xs:documentation>An element that specifies if work is not complete then how will it be completed?</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="InaccesibleHomesCount" type="niem-xs:integer" nillable="true">
+  <xs:element name="InaccesibleHomesCountValue" type="niem-xs:integer" nillable="true">
     <xs:annotation>
       <xs:documentation>An element for the estimated number of inaccessible homes.</xs:documentation>
     </xs:annotation>
@@ -7983,9 +7987,9 @@ National Institutes of Health, National Heart, Lung, and Blood Institute</xs:doc
       <xs:documentation>An element that specifies if the damaged area/item is assessed as inaccessible, why?</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="InaccessibleDescription" type="nc:TextType" nillable="true">
+  <xs:element name="InaccessibleDescriptionText" type="nc:TextType" nillable="true">
     <xs:annotation>
-      <xs:documentation>An element that briefly describe the cause of inaccessibility:</xs:documentation>
+      <xs:documentation>A description of the cause of inaccessibility:</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="IncidentActionCode" type="em:IncidentActionCodeType" nillable="true">
@@ -8013,7 +8017,7 @@ National Institutes of Health, National Heart, Lung, and Blood Institute</xs:doc
       <xs:documentation>An element for an incident publish date</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="IncidentSummary" type="nc:TextType" nillable="true">
+  <xs:element name="IncidentSummaryText" type="nc:TextType" nillable="true">
     <xs:annotation>
       <xs:documentation>An element for an incident summary</xs:documentation>
     </xs:annotation>
@@ -8028,7 +8032,7 @@ National Institutes of Health, National Heart, Lung, and Blood Institute</xs:doc
       <xs:documentation>True if higher capability resources should be included in the resource inquiry result; false otherwise.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="IndividualAssistenceFloodWaterDepth" type="niem-xs:integer" nillable="true">
+  <xs:element name="IndividualAssistenceFloodWaterDepthValue" type="niem-xs:integer" nillable="true">
     <xs:annotation>
       <xs:documentation>An element that specifies the flood water depth(inches). If damage is from flood or similar, how deep was the water?</xs:documentation>
     </xs:annotation>
@@ -8068,9 +8072,9 @@ National Institutes of Health, National Heart, Lung, and Blood Institute</xs:doc
       <xs:documentation>Additional information about insurance</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="InsuranceGroupNumber" type="niem-xs:string" nillable="true">
+  <xs:element name="InsuranceGroupNumberID" type="niem-xs:string" nillable="true">
     <xs:annotation>
-      <xs:documentation>A data element for the insurance group number</xs:documentation>
+      <xs:documentation>An identifier for the insurance group number</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="InsuranceName" type="nc:TextType" nillable="true">
@@ -8153,7 +8157,7 @@ National Institutes of Health, National Heart, Lung, and Blood Institute</xs:doc
       <xs:documentation>An identifier for a license, registration or certificate</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="LCRTitle" type="nc:TextType" nillable="true">
+  <xs:element name="LCRTitleText" type="nc:TextType" nillable="true">
     <xs:annotation>
       <xs:documentation>A data element that specifies the title of a license, certificate or registration (LCR)</xs:documentation>
     </xs:annotation>
@@ -8208,7 +8212,7 @@ National Institutes of Health, National Heart, Lung, and Blood Institute</xs:doc
       <xs:documentation>An augmentation point for LicenseCertificationRegistrationType</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="LocationAcronym" type="nc:TextType" nillable="true">
+  <xs:element name="LocationAcronymText" type="nc:TextType" nillable="true">
     <xs:annotation>
       <xs:documentation>An acronym for the name of a Location</xs:documentation>
     </xs:annotation>
@@ -8231,11 +8235,6 @@ National Institutes of Health, National Heart, Lung, and Blood Institute</xs:doc
   <xs:element name="LogicalAndAugmentationPoint" abstract="true">
     <xs:annotation>
       <xs:documentation>An augmentation point for LogicalAndType</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="LogicalOperator" type="nc:TextType" nillable="true">
-    <xs:annotation>
-      <xs:documentation>An element for a operator for logical operations</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="LogicalOperatorText" type="nc:TextType" nillable="true">
@@ -8393,7 +8392,7 @@ National Institutes of Health, National Heart, Lung, and Blood Institute</xs:doc
       <xs:documentation>An augmentation point for NISTSP800733PIVCardDataType</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="NameOnCard" type="nc:TextType" nillable="true">
+  <xs:element name="NameOnCardText" type="nc:TextType" nillable="true">
     <xs:annotation>
       <xs:documentation>A data element that is the name of the person which is printed on an identification card</xs:documentation>
     </xs:annotation>
@@ -8563,16 +8562,6 @@ National Institutes of Health, National Heart, Lung, and Blood Institute</xs:doc
       <xs:documentation>A textual description of the type association between an organization and  a person</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="OrganizationDescription" type="nc:TextType" nillable="true">
-    <xs:annotation>
-      <xs:documentation>An element describes an organization</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="OrganizationID" type="nc:IdentificationType" nillable="true">
-    <xs:annotation>
-      <xs:documentation>An identifier of an organization</xs:documentation>
-    </xs:annotation>
-  </xs:element>
   <xs:element name="OrganizationIDProviderName" type="nc:TextType" nillable="true">
     <xs:annotation>
       <xs:documentation>A name of the provider that has provided the identification scheme. This could also be the name a particular identification list</xs:documentation>
@@ -8593,7 +8582,7 @@ National Institutes of Health, National Heart, Lung, and Blood Institute</xs:doc
       <xs:documentation>An element for note of a person</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="OrganizationPersonRelation" type="nc:TextType" nillable="true">
+  <xs:element name="OrganizationPersonRelationText" type="nc:TextType" nillable="true">
     <xs:annotation>
       <xs:documentation>An element for the relationship between a person and an organization</xs:documentation>
     </xs:annotation>
@@ -8613,7 +8602,7 @@ National Institutes of Health, National Heart, Lung, and Blood Institute</xs:doc
       <xs:documentation>An identifier that uniquely identifies each resource message. This element identifies the ResourceMessageID of the original message to which this message refers</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="OtherBeachComponent" type="nc:TextType" nillable="true">
+  <xs:element name="OtherBeachComponentText" type="nc:TextType" nillable="true">
     <xs:annotation>
       <xs:documentation>An element for the other major components of a beach that can be damaged which are not included in Beach Components list.</xs:documentation>
     </xs:annotation>
@@ -8623,22 +8612,22 @@ National Institutes of Health, National Heart, Lung, and Blood Institute</xs:doc
       <xs:documentation>A kind of other bridge types not listed in bridge type codes.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="OtherBridgeComponent" type="nc:TextType" nillable="true">
+  <xs:element name="OtherBridgeComponentText" type="nc:TextType" nillable="true">
     <xs:annotation>
       <xs:documentation>An element for the other bridge components.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="OtherBuildingComponent" type="nc:TextType" nillable="true">
+  <xs:element name="OtherBuildingComponentText" type="nc:TextType" nillable="true">
     <xs:annotation>
       <xs:documentation>An element for the other Buildings, Equipment and Content that are not listed in the Cat-E type list.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="OtherCat-D" type="nc:TextType" nillable="true">
+  <xs:element name="OtherCat-Dtext" type="nc:TextType" nillable="true">
     <xs:annotation>
       <xs:documentation>An element for the other Water Control Facilities that are not listed in the Cat-D type list.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="OtherCatG" type="nc:TextType" nillable="true">
+  <xs:element name="OtherCatGText" type="nc:TextType" nillable="true">
     <xs:annotation>
       <xs:documentation>An element for the other parks not listed in the Cat-G type list. .</xs:documentation>
     </xs:annotation>
@@ -8653,92 +8642,92 @@ National Institutes of Health, National Heart, Lung, and Blood Institute</xs:doc
       <xs:documentation>An element that specifies other Retention Detention Type that is not listed in the RetentionDetentionCode codelist</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="OtherCommsComponent" type="nc:TextType" nillable="true">
+  <xs:element name="OtherCommsComponentText" type="nc:TextType" nillable="true">
     <xs:annotation>
       <xs:documentation>An element for the Other Comms Component not listed in the Utilities.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="OtherCulvertMaterial" type="nc:TextType" nillable="true">
+  <xs:element name="OtherCulvertMaterialText" type="nc:TextType" nillable="true">
     <xs:annotation>
       <xs:documentation>An element for the other types of culvert material.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="OtherCulvertRoad" type="nc:TextType" nillable="true">
+  <xs:element name="OtherCulvertRoadText" type="nc:TextType" nillable="true">
     <xs:annotation>
       <xs:documentation>An element for the other roads types if not listed in culvert road code type.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="OtherCulvertShape" type="nc:TextType" nillable="true">
+  <xs:element name="OtherCulvertShapeText" type="nc:TextType" nillable="true">
     <xs:annotation>
       <xs:documentation>An element for the other other types of culvert</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="OtherDebris" type="nc:TextType" nillable="true">
+  <xs:element name="OtherDebrisQuantity" type="niem-xs:nonNegativeInteger" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A count of other debris</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="OtherDebrisText" type="nc:TextType" nillable="true">
     <xs:annotation>
       <xs:documentation>An element for the other types of debirs that is not listed</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="OtherDebrisQuanitity" type="niem-xs:nonNegativeInteger" nillable="true">
-    <xs:annotation>
-      <xs:documentation>An element for the quantity of other debris</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="OtherEPM" type="nc:TextType" nillable="true">
+  <xs:element name="OtherEPMText" type="nc:TextType" nillable="true">
     <xs:annotation>
       <xs:documentation>An element that specifies other snow measures that are not listed in the EPMCode</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="OtherGasComponent" type="nc:TextType" nillable="true">
+  <xs:element name="OtherGasComponentText" type="nc:TextType" nillable="true">
     <xs:annotation>
       <xs:documentation>An element for the Other Gas Component not listed in the Utilities.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="OtherLeveeMaterial" type="nc:TextType" nillable="true">
+  <xs:element name="OtherLeveeMaterialText" type="nc:TextType" nillable="true">
     <xs:annotation>
       <xs:documentation>An element that specifies other Levee Material Type that is not listed in theLeveeMaterialCode list</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="OtherLowWaterRoad" type="nc:TextType" nillable="true">
+  <xs:element name="OtherLowWaterRoadText" type="nc:TextType" nillable="true">
     <xs:annotation>
       <xs:documentation>An element for the other bridge types not listed in low water road type codes.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="OtherNavMaterial" type="nc:TextType" nillable="true">
+  <xs:element name="OtherNavMaterialText" type="nc:TextType" nillable="true">
     <xs:annotation>
       <xs:documentation>An element that specifies other Drainage Navigation Material Type that is not listed in the DrainageNavigationMaterialCode codelist</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="OtherParks" type="nc:TextType" nillable="true">
+  <xs:element name="OtherParksText" type="nc:TextType" nillable="true">
     <xs:annotation>
       <xs:documentation>An element for the other parks not listed in the Park's Type.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="OtherRoad" type="nc:TextType" nillable="true">
+  <xs:element name="OtherRoadText" type="nc:TextType" nillable="true">
     <xs:annotation>
       <xs:documentation>An element for the other roads types if not listed in road type code.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="OtherSnow" type="nc:TextType" nillable="true">
+  <xs:element name="OtherSnowText" type="nc:TextType" nillable="true">
     <xs:annotation>
       <xs:documentation>An element that specifies other snow measures that are not listed in the SnowActivitiesCode.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="OtherTransit" type="nc:TextType" nillable="true">
-    <xs:annotation>
-      <xs:documentation>An element for the other Transit not listed in the Transit Type.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="OtherTransitComponent" type="nc:TextType" nillable="true">
+  <xs:element name="OtherTransitComponentText" type="nc:TextType" nillable="true">
     <xs:annotation>
       <xs:documentation>An element for the other transit Component not listed in Transit Component.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="OtherTreatmentComponent" type="nc:TextType" nillable="true">
+  <xs:element name="OtherTransitText" type="nc:TextType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>An element for the other Transit not listed in the Transit Type.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="OtherTreatmentComponentText" type="nc:TextType" nillable="true">
     <xs:annotation>
       <xs:documentation>An element for the Other Treatment Component not listed in the Utilities.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="OtherWaterStorageComponent" type="nc:TextType" nillable="true">
+  <xs:element name="OtherWaterStorageComponentText" type="nc:TextType" nillable="true">
     <xs:annotation>
       <xs:documentation>An element for the other Water Storage Component not listed in the Utilities</xs:documentation>
     </xs:annotation>
@@ -8808,7 +8797,7 @@ National Institutes of Health, National Heart, Lung, and Blood Institute</xs:doc
       <xs:documentation>An augmentation point for PeerReviewType</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="PeerReviewAuthor" type="nc:TextType" nillable="true">
+  <xs:element name="PeerReviewAuthorText" type="nc:TextType" nillable="true">
     <xs:annotation>
       <xs:documentation>A data element for the person who wrote the peer review</xs:documentation>
     </xs:annotation>
@@ -8823,7 +8812,7 @@ National Institutes of Health, National Heart, Lung, and Blood Institute</xs:doc
       <xs:documentation>A data element that is the description text of a peer review</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="PeerReviewSubject" type="nc:TextType" nillable="true">
+  <xs:element name="PeerReviewSubjectText" type="nc:TextType" nillable="true">
     <xs:annotation>
       <xs:documentation>A data element for the subject of a peer review</xs:documentation>
     </xs:annotation>
@@ -8948,7 +8937,7 @@ National Institutes of Health, National Heart, Lung, and Blood Institute</xs:doc
       <xs:documentation>An augmentation point for ProhibitiveDeploymentConditionType</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="ProhibitiveDeploymentConditionDescription" type="nc:TextType" nillable="true">
+  <xs:element name="ProhibitiveDeploymentConditionDescriptionText" type="nc:TextType" nillable="true">
     <xs:annotation>
       <xs:documentation>A textual description of the prohibitive deployment condition</xs:documentation>
     </xs:annotation>
@@ -8968,14 +8957,14 @@ National Institutes of Health, National Heart, Lung, and Blood Institute</xs:doc
       <xs:documentation>A date of a publication</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="PublicationPage" type="nc:TextType" nillable="true">
+  <xs:element name="PublicationPageText" type="nc:TextType" nillable="true">
     <xs:annotation>
       <xs:documentation>A data element for page or page numbers on which a publication is appeared in a periodical</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="PutrescentDebris" type="niem-xs:integer" nillable="true">
+  <xs:element name="PutrescentDebrisQuantity" type="niem-xs:integer" nillable="true">
     <xs:annotation>
-      <xs:documentation>An element for the quantity of putrescent debris like rotting vegetative debris. (cubic yards)</xs:documentation>
+      <xs:documentation>A count of putrescent debris like rotting vegetative debris. (cubic yards)</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="QualificationCriteriaCategoryCode" type="em:CriteriaCategoryCodeType" nillable="true">
@@ -9038,7 +9027,7 @@ National Institutes of Health, National Heart, Lung, and Blood Institute</xs:doc
       <xs:documentation>A data element for information on related Incidents of an incident</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="RepairCost" type="niem-xs:integer" nillable="true">
+  <xs:element name="RepairCostValue" type="niem-xs:integer" nillable="true">
     <xs:annotation>
       <xs:documentation>An element that specifies the cost of all emergency protective measures.</xs:documentation>
     </xs:annotation>
@@ -9248,9 +9237,9 @@ National Institutes of Health, National Heart, Lung, and Blood Institute</xs:doc
       <xs:documentation>An element that specifies the various types of road surface. Helps determine reliability of cost estimates.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="RoleDescription" type="nc:TextType" nillable="true">
+  <xs:element name="RoleDescriptionText" type="nc:TextType" nillable="true">
     <xs:annotation>
-      <xs:documentation>An element describes a contact role</xs:documentation>
+      <xs:documentation>A description of a contact role</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="Roster" type="em:RosterType" nillable="true">
@@ -9293,9 +9282,9 @@ National Institutes of Health, National Heart, Lung, and Blood Institute</xs:doc
       <xs:documentation>An element that classifies the level of damagefor single family structures and choose the option that best describes the minor damage:</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="SandSoilMudDebris" type="niem-xs:integer" nillable="true">
+  <xs:element name="SandSoilMudDebrisQuantity" type="niem-xs:integer" nillable="true">
     <xs:annotation>
-      <xs:documentation>An element for the quantity of sand/soil/mud/rocks: (cubic yards)</xs:documentation>
+      <xs:documentation>A count of sand/soil/mud/rocks: (cubic yards)</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="SearchText" type="nc:TextType" nillable="true">
@@ -9373,7 +9362,7 @@ National Institutes of Health, National Heart, Lung, and Blood Institute</xs:doc
       <xs:documentation>A data element that is the name of a skill</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="SkillUseHistory" type="niem-xs:string" nillable="true">
+  <xs:element name="SkillUseHistoryText" type="niem-xs:string" nillable="true">
     <xs:annotation>
       <xs:documentation>A textual description about the skill usage of a person</xs:documentation>
     </xs:annotation>
@@ -9433,12 +9422,12 @@ National Institutes of Health, National Heart, Lung, and Blood Institute</xs:doc
       <xs:documentation>True if a team leader; false otherwise</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="TeamSizeMaximum" type="niem-xs:integer" nillable="true">
+  <xs:element name="TeamSizeMaximumValue" type="niem-xs:integer" nillable="true">
     <xs:annotation>
       <xs:documentation>A data element for the maximum size (i.e., number of members) of a eam</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="TeamSizeMinimum" type="niem-xs:integer" nillable="true">
+  <xs:element name="TeamSizeMinimumValue" type="niem-xs:integer" nillable="true">
     <xs:annotation>
       <xs:documentation>A data element for the minimum size (i.e., number of members) of a  team</xs:documentation>
     </xs:annotation>
@@ -9456,6 +9445,11 @@ National Institutes of Health, National Heart, Lung, and Blood Institute</xs:doc
   <xs:element name="TrainingAugmentationPoint" abstract="true">
     <xs:annotation>
       <xs:documentation>An augmentation point for TrainingType</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="TrainingDuration" type="niem-xs:duration" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A data element for the duration of the training in number of days</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="TransitCategoryCode" type="em:TransitCategoryCodeType" nillable="true">
@@ -9496,11 +9490,6 @@ National Institutes of Health, National Heart, Lung, and Blood Institute</xs:doc
   <xs:element name="TriageYellowQuantity" type="nc:QuantityType" nillable="true">
     <xs:annotation>
       <xs:documentation>A count of the Number of victims with delayed needs</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="URL" type="niem-xs:anyURI" nillable="true">
-    <xs:annotation>
-      <xs:documentation>An element for a Uniform Resource Identifier Reference (URI)</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="USACEBeachIndicator" type="niem-xs:boolean" nillable="true">
@@ -9583,19 +9572,19 @@ National Institutes of Health, National Heart, Lung, and Blood Institute</xs:doc
       <xs:documentation>A Value from a certified list maintained by the Community of Interest (COI) for the referenced element</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="VegetativeDebris" type="niem-xs:integer" nillable="true">
+  <xs:element name="VegetativeDebrisQuantity" type="niem-xs:integer" nillable="true">
     <xs:annotation>
-      <xs:documentation>An element for the quantity of vegetative debris:trees, limbs, brush, etc (cubic yards)</xs:documentation>
+      <xs:documentation>A count of vegetative debris:trees, limbs, brush, etc (cubic yards)</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="VehicleDebris" type="niem-xs:integer" nillable="true">
+  <xs:element name="VehicleDebrisQuantity" type="niem-xs:integer" nillable="true">
     <xs:annotation>
-      <xs:documentation>An element for the quantity of  vehicles</xs:documentation>
+      <xs:documentation>A count of  vehicles</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="VesselDebris" type="niem-xs:integer" nillable="true">
+  <xs:element name="VesselDebrisQuantity" type="niem-xs:integer" nillable="true">
     <xs:annotation>
-      <xs:documentation>An element for the quantity of  vessels</xs:documentation>
+      <xs:documentation>A count of  vessels</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="VolunteerIndicator" type="niem-xs:boolean" nillable="true">
@@ -9638,14 +9627,14 @@ National Institutes of Health, National Heart, Lung, and Blood Institute</xs:doc
       <xs:documentation>An element for water based collection and distribution types</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="WetDebris" type="niem-xs:integer" nillable="true">
+  <xs:element name="WetDebrisValue" type="niem-xs:integer" nillable="true">
     <xs:annotation>
       <xs:documentation>An element for the wet debris removed from bodies of water. (cubic yards)</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="WhiteDebris" type="niem-xs:integer" nillable="true">
+  <xs:element name="WhiteDebrisValue" type="niem-xs:integer" nillable="true">
     <xs:annotation>
-      <xs:documentation>An element for the white goods: household appliances such as refridgerators, washers, dryers, etc. (cubic yards)</xs:documentation>
+      <xs:documentation>An element for the white goods: household appliances such as refrigerators, washers, dryers, etc. (cubic yards)</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="X509CertificateForCardAuthentication" type="nc:BinaryType" nillable="true">

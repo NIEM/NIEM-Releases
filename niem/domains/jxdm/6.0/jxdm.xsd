@@ -1,29 +1,108 @@
 <?xml version="1.0" encoding="US-ASCII"?>
-<xs:schema targetNamespace="http://release.niem.gov/niem/domains/jxdm/6.0/" version="beta1" xsi:schemaLocation="http://release.niem.gov/niem/appinfo/4.0/ ../../../appinfo/4.0/appinfo.xsd http://release.niem.gov/niem/conformanceTargets/3.0/ ../../../conformanceTargets/3.0/conformanceTargets.xsd" ct:conformanceTargets="http://reference.niem.gov/niem/specification/naming-and-design-rules/4.0/#ReferenceSchemaDocument" xmlns:niem-xs="http://release.niem.gov/niem/proxy/xsd/4.0/" xmlns:biom="http://release.niem.gov/niem/domains/biometrics/4.0/" xmlns:structures="http://release.niem.gov/niem/structures/4.0/" xmlns:apco="http://release.niem.gov/niem/codes/apco_event/4.0/" xmlns:j="http://release.niem.gov/niem/domains/jxdm/6.0/" xmlns:em="http://release.niem.gov/niem/domains/emergencyManagement/4.0/" xmlns:cbrn="http://release.niem.gov/niem/domains/cbrn/4.0/" xmlns:ndex="http://release.niem.gov/niem/codes/fbi_ndex/4.0/" xmlns:sar="http://release.niem.gov/niem/codes/pmise_sar/4.0/" xmlns:im="http://release.niem.gov/niem/domains/immigration/4.0/" xmlns:nc="http://release.niem.gov/niem/niem-core/4.0/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:ncic="http://release.niem.gov/niem/codes/fbi_ncic/4.0/" xmlns:aamva_d20="http://release.niem.gov/niem/codes/aamva_d20/4.0/" xmlns:atf="http://release.niem.gov/niem/codes/atf/4.0/" xmlns:dea="http://release.niem.gov/niem/codes/dea_ctlsub/4.0/" xmlns:nlets="http://release.niem.gov/niem/codes/nlets/4.0/" xmlns:ct="http://release.niem.gov/niem/conformanceTargets/3.0/" xmlns:mmucc="http://release.niem.gov/niem/codes/mmucc/4.0/" xmlns:intel="http://release.niem.gov/niem/domains/intelligence/4.0/" xmlns:ucr="http://release.niem.gov/niem/codes/fbi_ucr/4.0/" xmlns:hazmat="http://release.niem.gov/niem/codes/dot_hazmat/4.0/" xmlns:appinfo="http://release.niem.gov/niem/appinfo/4.0/" xmlns:st="http://release.niem.gov/niem/domains/surfaceTransportation/4.0/" xmlns:hs="http://release.niem.gov/niem/domains/humanServices/4.0/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<xs:schema targetNamespace="http://release.niem.gov/niem/domains/jxdm/6.0/" version="1" xsi:schemaLocation="http://release.niem.gov/niem/appinfo/4.0/ ../../../utility/appinfo/4.0/appinfo.xsd http://release.niem.gov/niem/conformanceTargets/3.0/ ../../../utility/conformanceTargets/3.0/conformanceTargets.xsd" ct:conformanceTargets="http://reference.niem.gov/niem/specification/naming-and-design-rules/4.0/#ReferenceSchemaDocument" xmlns:niem-xs="http://release.niem.gov/niem/proxy/xsd/4.0/" xmlns:biom="http://release.niem.gov/niem/domains/biometrics/4.0/" xmlns:structures="http://release.niem.gov/niem/structures/4.0/" xmlns:apco="http://release.niem.gov/niem/codes/apco_event/4.0/" xmlns:j="http://release.niem.gov/niem/domains/jxdm/6.0/" xmlns:em="http://release.niem.gov/niem/domains/emergencyManagement/4.0/" xmlns:cbrn="http://release.niem.gov/niem/domains/cbrn/4.0/" xmlns:sar="http://release.niem.gov/niem/codes/pmise_sar/4.0/" xmlns:ndex="http://release.niem.gov/niem/codes/fbi_ndex/4.0/" xmlns:im="http://release.niem.gov/niem/domains/immigration/4.0/" xmlns:nc="http://release.niem.gov/niem/niem-core/4.0/" xmlns:ncic="http://release.niem.gov/niem/codes/fbi_ncic/4.0/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:aamva_d20="http://release.niem.gov/niem/codes/aamva_d20/4.0/" xmlns:atf="http://release.niem.gov/niem/codes/atf/4.0/" xmlns:dea="http://release.niem.gov/niem/codes/dea_ctlsub/4.0/" xmlns:ct="http://release.niem.gov/niem/conformanceTargets/3.0/" xmlns:nlets="http://release.niem.gov/niem/codes/nlets/4.0/" xmlns:mmucc="http://release.niem.gov/niem/codes/mmucc/4.0/" xmlns:intel="http://release.niem.gov/niem/domains/intelligence/4.0/" xmlns:ucr="http://release.niem.gov/niem/codes/fbi_ucr/4.0/" xmlns:st="http://release.niem.gov/niem/domains/surfaceTransportation/4.0/" xmlns:appinfo="http://release.niem.gov/niem/appinfo/4.0/" xmlns:hs="http://release.niem.gov/niem/domains/humanServices/4.0/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <xs:annotation>
     <xs:documentation>Justice</xs:documentation>
+    <xs:appinfo>
+      <appinfo:LocalTerm term="ACD" literal="AAMVA Code Dictionary"/>
+      <appinfo:LocalTerm term="CJIS" literal="Criminal Justice Information System"/>
+      <appinfo:LocalTerm term="BPH" literal="Board of Parole Hearings"/>
+      <appinfo:LocalTerm term="TCD" literal="traffic control device"/>
+      <appinfo:LocalTerm term="DMH" literal="Department of Mental Health"/>
+      <appinfo:LocalTerm term="TCN" literal="Transaction Control Number"/>
+      <appinfo:LocalTerm term="GVWR" literal="gross vehicle weight rating"/>
+      <appinfo:LocalTerm term="MCMIS" literal="Motor Carrier Management Information System"/>
+      <appinfo:LocalTerm term="MHSDS" literal="Mental Health Services Delivery System"/>
+      <appinfo:LocalTerm term="HRSO" literal="high risk sex offender"/>
+      <appinfo:LocalTerm term="AAMVA" literal="The American Association of Motor Vehicle Administrators"/>
+      <appinfo:LocalTerm term="FCN" literal="file control number"/>
+      <appinfo:LocalTerm term="OCA" literal="Originating Case Agency"/>
+      <appinfo:LocalTerm term="NCMEC" literal="National Center for Missing &amp; Exploited Children"/>
+      <appinfo:LocalTerm term="MDO" literal="mentally disordered offender"/>
+      <appinfo:LocalTerm term="COMPAS" literal="Correctional Offender Management Profiling for Alternative Sanctions"/>
+      <appinfo:LocalTerm term="NCIC" literal="National Crime Information Center"/>
+      <appinfo:LocalTerm term="PRISM" literal="Performance and Registration Information Systems Management"/>
+      <appinfo:LocalTerm term="VINA" literal="Vehicle Identification Number Analysis"/>
+      <appinfo:LocalTerm term="AFIS" literal="Automated Fingerprint Identification System"/>
+      <appinfo:LocalTerm term="USDOT" literal="United States Department of Transportation"/>
+      <appinfo:LocalTerm term="APCO" literal="Association of Public-Safety Communications Officials (APCO) - International, Inc."/>
+      <appinfo:LocalTerm term="NLETS" literal="National Law Enforcement Telecommunication Systems"/>
+      <appinfo:LocalTerm term="NIBRS" literal="National Incident Based Reporting System"/>
+      <appinfo:LocalTerm term="MCO" literal="Manufacturer's certificate of origin"/>
+      <appinfo:LocalTerm term="TripleI" literal="III - Interstate Identification Index system"/>
+      <appinfo:LocalTerm term="MMUCC" literal="Model Minimum Uniform Crash Criteria"/>
+      <appinfo:LocalTerm term="SAFESTAT" literal="Safety Status Measurement System"/>
+      <appinfo:LocalTerm term="XRay" literal="X-Ray"/>
+      <appinfo:LocalTerm term="ISSN" literal="International Standard Serial Number"/>
+      <appinfo:LocalTerm term="TYPA" literal="(Article) Type"/>
+      <appinfo:LocalTerm term="UCR" literal="Uniform Crime Reporting"/>
+      <appinfo:LocalTerm term="ICC" literal="Interstate Commerce Commission"/>
+      <appinfo:LocalTerm term="DEA" literal="Drug Enforcement Administration"/>
+      <appinfo:LocalTerm term="EMS" literal="Emergency Medical Service"/>
+      <appinfo:LocalTerm term="Amber" literal="America's Missing: Broadcast Emergency Response"/>
+      <appinfo:LocalTerm term="LIS" literal="License Plate State"/>
+      <appinfo:LocalTerm term="FIPS" literal="Federal Information Processing Standards"/>
+      <appinfo:LocalTerm term="BOP" literal="Bureau of Prisons"/>
+      <appinfo:LocalTerm term="HME" literal="Hazardous Material Endorsement"/>
+      <appinfo:LocalTerm term="Brady" literal="Brady Law"/>
+      <appinfo:LocalTerm term="CHRI" literal="Criminal History Record Information"/>
+      <appinfo:LocalTerm term="Alpha" definition="Letter(s)"/>
+      <appinfo:LocalTerm term="XRays" literal="X-Rays"/>
+      <appinfo:LocalTerm term="VICAP" literal="Violent Criminal Apprehension Program"/>
+      <appinfo:LocalTerm term="DOT" literal="Department of Transportation"/>
+      <appinfo:LocalTerm term="NICB" literal="National Insurance Crime Bureau"/>
+      <appinfo:LocalTerm term="GDEP" literal="Geographic-Drug Enforcement Program"/>
+      <appinfo:LocalTerm term="CMV" literal="Commercial Motor Vehicle"/>
+      <appinfo:LocalTerm term="SMT" literal="Scars, Marks, Tattoos, and Other Characteristics"/>
+      <appinfo:LocalTerm term="TYPO" literal="(ORI) Type"/>
+      <appinfo:LocalTerm term="FBI" literal="Federal Bureau of Investigation"/>
+      <appinfo:LocalTerm term="MCSIP" literal="Motor Carrier Safety Improvement Process"/>
+      <appinfo:LocalTerm term="ANSID20" literal="The Data Dictionary for Traffic Record Systems, maintained by AAMVA, the American Association of Motor Vehicle Administrators"/>
+      <appinfo:LocalTerm term="Multi" literal="Multiple"/>
+      <appinfo:LocalTerm term="POST" literal="Peace Official Standards and Training"/>
+      <appinfo:LocalTerm term="NDEx" literal="National Data Exchange"/>
+      <appinfo:LocalTerm term="REALID" definition="Public Law 109&#x2013;13, 119 Statute 302, enacted May 11, 2005, was an Act of Congress that modified U.S. federal law pertaining to security, authentication, and issuance procedures standards for the state driver's licenses and identification (ID) cards, as well as various immigration issues pertaining to terrorism."/>
+      <appinfo:LocalTerm term="JABS" literal="JABS" definition="Joint Automated Booking System"/>
+      <appinfo:LocalTerm term="IBIS" literal="Integrated Ballistic Identification System"/>
+      <appinfo:LocalTerm term="LEOKA" literal="Law Enforcement Officer Killed or Assaulted"/>
+      <appinfo:LocalTerm term="LSTA" definition="State/Country Index"/>
+      <appinfo:LocalTerm term="FFLID" literal="federal firearms license"/>
+      <appinfo:LocalTerm term="NDEX" literal="National Data Exchange"/>
+      <appinfo:LocalTerm term="ORI" definition="A nine-character identifier assigned by the FBI Criminal Justice Information Systems (CJIS) staff to an organization, which must have met the established qualifying criteria for ORI assignment to identify the agency in transactions on CJIS Systems."/>
+      <appinfo:LocalTerm term="VIN" literal="Vehicle Identification Number"/>
+      <appinfo:LocalTerm term="IAFIS" literal="Integrated Automated Fingerprint Identification System"/>
+      <appinfo:LocalTerm term="TYP" literal="(Firearm) Type"/>
+      <appinfo:LocalTerm term="HazMat" literal="Hazardous Materials"/>
+      <appinfo:LocalTerm term="CDL" literal="Commercial Driver's License"/>
+      <appinfo:LocalTerm term="MACR" literal="Monthly Arrest and Citation Register"/>
+      <appinfo:LocalTerm term="RES" literal="Registration State"/>
+      <appinfo:LocalTerm term="USMS" literal="United States Marshal Service"/>
+      <appinfo:LocalTerm term="MO" literal="Modus Operandi"/>
+      <appinfo:LocalTerm term="ISBN" literal="International Standard Book Number"/>
+      <appinfo:LocalTerm term="DHS" literal="Department of Homeland Security"/>
+      <appinfo:LocalTerm term="CODIS" literal="Combined DNA Index System"/>
+      <appinfo:LocalTerm term="DNA" literal="Deoxyribonucleic acid"/>
+    </xs:appinfo>
   </xs:annotation>
-  <xs:import schemaLocation="../../emergencyManagement/4.0/emergencyManagement.xsd" namespace="http://release.niem.gov/niem/domains/emergencyManagement/4.0/"/>
-  <xs:import schemaLocation="../../../structures/4.0/structures.xsd" namespace="http://release.niem.gov/niem/structures/4.0/"/>
-  <xs:import schemaLocation="../../../codes/atf/4.0/atf.xsd" namespace="http://release.niem.gov/niem/codes/atf/4.0/"/>
-  <xs:import schemaLocation="../../../proxy/xsd/4.0/xs.xsd" namespace="http://release.niem.gov/niem/proxy/xsd/4.0/"/>
-  <xs:import schemaLocation="../../../niem-core/4.0/niem-core.xsd" namespace="http://release.niem.gov/niem/niem-core/4.0/"/>
-  <xs:import schemaLocation="../../humanServices/4.0/hs.xsd" namespace="http://release.niem.gov/niem/domains/humanServices/4.0/"/>
-  <xs:import schemaLocation="../../immigration/4.0/immigration.xsd" namespace="http://release.niem.gov/niem/domains/immigration/4.0/"/>
-  <xs:import schemaLocation="../../../codes/nlets/4.0/nlets.xsd" namespace="http://release.niem.gov/niem/codes/nlets/4.0/"/>
-  <xs:import schemaLocation="../../intelligence/4.0/intelligence.xsd" namespace="http://release.niem.gov/niem/domains/intelligence/4.0/"/>
-  <xs:import schemaLocation="../../../codes/aamva_d20/4.0/aamva_d20.xsd" namespace="http://release.niem.gov/niem/codes/aamva_d20/4.0/"/>
-  <xs:import schemaLocation="../../surfaceTransportation/4.0/st.xsd" namespace="http://release.niem.gov/niem/domains/surfaceTransportation/4.0/"/>
-  <xs:import schemaLocation="../../../codes/fbi_ncic/4.0/fbi_ncic.xsd" namespace="http://release.niem.gov/niem/codes/fbi_ncic/4.0/"/>
   <xs:import schemaLocation="../../../codes/fbi_ucr/4.0/fbi_ucr.xsd" namespace="http://release.niem.gov/niem/codes/fbi_ucr/4.0/"/>
+  <xs:import schemaLocation="../../../codes/nlets/4.0/nlets.xsd" namespace="http://release.niem.gov/niem/codes/nlets/4.0/"/>
+  <xs:import schemaLocation="../../emergencyManagement/4.0/emergencyManagement.xsd" namespace="http://release.niem.gov/niem/domains/emergencyManagement/4.0/"/>
+  <xs:import schemaLocation="../../immigration/4.0/immigration.xsd" namespace="http://release.niem.gov/niem/domains/immigration/4.0/"/>
+  <xs:import schemaLocation="../../../codes/fbi_ndex/4.0/fbi_ndex.xsd" namespace="http://release.niem.gov/niem/codes/fbi_ndex/4.0/"/>
+  <xs:import schemaLocation="../../../codes/aamva_d20/4.0/aamva_d20.xsd" namespace="http://release.niem.gov/niem/codes/aamva_d20/4.0/"/>
+  <xs:import schemaLocation="../../../codes/atf/4.0/atf.xsd" namespace="http://release.niem.gov/niem/codes/atf/4.0/"/>
+  <xs:import schemaLocation="../../../utility/structures/4.0/structures.xsd" namespace="http://release.niem.gov/niem/structures/4.0/"/>
+  <xs:import schemaLocation="../../../codes/fbi_ncic/4.0/fbi_ncic.xsd" namespace="http://release.niem.gov/niem/codes/fbi_ncic/4.0/"/>
+  <xs:import schemaLocation="../../../codes/mmucc/4.0/mmucc.xsd" namespace="http://release.niem.gov/niem/codes/mmucc/4.0/"/>
+  <xs:import schemaLocation="../../cbrn/4.0/cbrn.xsd" namespace="http://release.niem.gov/niem/domains/cbrn/4.0/"/>
+  <xs:import schemaLocation="../../../niem-core/4.0/niem-core.xsd" namespace="http://release.niem.gov/niem/niem-core/4.0/"/>
+  <xs:import schemaLocation="../../../codes/dea_ctlsub/4.0/dea.xsd" namespace="http://release.niem.gov/niem/codes/dea_ctlsub/4.0/"/>
+  <xs:import schemaLocation="../../../codes/pmise_sar/4.0/sar.xsd" namespace="http://release.niem.gov/niem/codes/pmise_sar/4.0/"/>
+  <xs:import schemaLocation="../../humanServices/4.0/hs.xsd" namespace="http://release.niem.gov/niem/domains/humanServices/4.0/"/>
+  <xs:import schemaLocation="../../intelligence/4.0/intelligence.xsd" namespace="http://release.niem.gov/niem/domains/intelligence/4.0/"/>
   <xs:import schemaLocation="../../biometrics/4.0/biom.xsd" namespace="http://release.niem.gov/niem/domains/biometrics/4.0/"/>
   <xs:import schemaLocation="../../../codes/apco_event/4.0/apco_event.xsd" namespace="http://release.niem.gov/niem/codes/apco_event/4.0/"/>
-  <xs:import schemaLocation="../../cbrn/4.0/cbrn.xsd" namespace="http://release.niem.gov/niem/domains/cbrn/4.0/"/>
-  <xs:import schemaLocation="../../../codes/dot_hazmat/4.0/dot_hazmat.xsd" namespace="http://release.niem.gov/niem/codes/dot_hazmat/4.0/"/>
-  <xs:import schemaLocation="../../../codes/dea_ctlsub/4.0/dea.xsd" namespace="http://release.niem.gov/niem/codes/dea_ctlsub/4.0/"/>
-  <xs:import schemaLocation="../../../codes/fbi_ndex/4.0/fbi_ndex.xsd" namespace="http://release.niem.gov/niem/codes/fbi_ndex/4.0/"/>
-  <xs:import schemaLocation="../../../codes/pmise_sar/4.0/sar.xsd" namespace="http://release.niem.gov/niem/codes/pmise_sar/4.0/"/>
-  <xs:import schemaLocation="../../../codes/mmucc/4.0/mmucc.xsd" namespace="http://release.niem.gov/niem/codes/mmucc/4.0/"/>
+  <xs:import schemaLocation="../../../proxy/xsd/4.0/xs.xsd" namespace="http://release.niem.gov/niem/proxy/xsd/4.0/"/>
+  <xs:import schemaLocation="../../surfaceTransportation/4.0/st.xsd" namespace="http://release.niem.gov/niem/domains/surfaceTransportation/4.0/"/>
   <xs:complexType name="AcademicAssessmentType">
     <xs:annotation>
       <xs:documentation>A data type for an institution or agency assessment process for determining academic needs of a subject.</xs:documentation>
@@ -3515,25 +3594,9 @@
     <xs:complexContent>
       <xs:extension base="nc:AssociationType">
         <xs:sequence>
-          <xs:element ref="j:FinancialAccount" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:FinancialAccount" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:Organization" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="j:FinancialAccountInstitutionAssociationAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
-        </xs:sequence>
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
-  <xs:complexType name="FinancialAccountType">
-    <xs:annotation>
-      <xs:documentation>A data type for a financial account maintained by a financial institution.</xs:documentation>
-    </xs:annotation>
-    <xs:complexContent>
-      <xs:extension base="structures:ObjectType">
-        <xs:sequence>
-          <xs:element ref="j:FinancialAccountCategoryText" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="j:FinancialAccountListedName" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="j:FinancialAccountNumberID" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="j:FinancialAccountPresentBalanceAmount" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="j:FinancialAccountAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -3548,11 +3611,11 @@
           <xs:element ref="j:BankruptcyIndicator" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="j:Debt" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="j:DebtTotalAmount" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="j:FinancialAccount" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="j:FinancialCompilationDate" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="j:MonthlyIncomeTotalAmount" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="j:MonthlyLivingExpense" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="j:PreparingOfficialNote" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:FinancialAccount" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:Insurance" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="j:FinancialCompilationAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
@@ -5317,7 +5380,7 @@
     <xs:complexContent>
       <xs:extension base="structures:AugmentationType">
         <xs:sequence>
-          <xs:element ref="nc:MilitaryCountryAbstract" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:MilitaryCountry" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="j:MilitaryDischargeRankText" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="j:MilitaryDisciplinaryAction" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="j:MilitaryDutiesText" minOccurs="0" maxOccurs="unbounded"/>
@@ -10417,7 +10480,7 @@
   </xs:element>
   <xs:element name="ActivityTransferredCustodyOrganizationAssociation" type="nc:ActivityOrganizationAssociationType" nillable="true">
     <xs:annotation>
-      <xs:documentation>A relationship between an activity and an organization that was tranferred custody.</xs:documentation>
+      <xs:documentation>A relationship between an activity and an organization that was transferred custody.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="ActivityUnitAssociation" type="j:ActivityUnitAssociationType" nillable="true">
@@ -11597,12 +11660,12 @@
   </xs:element>
   <xs:element name="BailBondsmanOrganization" type="nc:OrganizationType" nillable="true">
     <xs:annotation>
-      <xs:documentation>A bailbondsman organization, generally one specializing in posting bond.</xs:documentation>
+      <xs:documentation>A bail bondsman organization, generally one specializing in posting bond.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="BailBondsmanPerson" type="nc:PersonType" nillable="true">
     <xs:annotation>
-      <xs:documentation>A bailbondsman person, generally from an organization specializing in posting bond.</xs:documentation>
+      <xs:documentation>A bail bondsman person, generally from an organization specializing in posting bond.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="BailConditionDescriptionText" type="nc:TextType" nillable="true">
@@ -12057,7 +12120,7 @@
   </xs:element>
   <xs:element name="CaseJuror" type="j:JurorType" nillable="true">
     <xs:annotation>
-      <xs:documentation>An empanelled juror or an alternate juror.</xs:documentation>
+      <xs:documentation>An empaneled juror or an alternate juror.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="CaseLineageCase" type="nc:CaseType" nillable="true">
@@ -12177,12 +12240,12 @@
   </xs:element>
   <xs:element name="CaseProtectionOrderIndicator" type="niem-xs:boolean" nillable="true">
     <xs:annotation>
-      <xs:documentation>True if a Domestic Violence Protection Order or Antiharassment Order is filed with the Judgment and Sentence; false otherwise.</xs:documentation>
+      <xs:documentation>True if a Domestic Violence Protection Order or Anti-Harassment Order is filed with the Judgment and Sentence; false otherwise.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="CaseRespondentAttorney" type="j:CaseOfficialType" nillable="true">
     <xs:annotation>
-      <xs:documentation>An attorney in a court case representing the party that is required to answer a petition for a court order or writ requiring the respondent to take some action, halt an activity or obey a courts direction. In such matters the moving party (the one filing</xs:documentation>
+      <xs:documentation>An attorney in a court case representing the party that is required to answer a petition for a court order or writ requiring the respondent to take some action, halt an activity or obey a courts direction.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="CaseRespondentParty" type="nc:EntityType" nillable="true">
@@ -12392,7 +12455,7 @@
   </xs:element>
   <xs:element name="ChargeAgencyRecordIdentification" type="nc:IdentificationType" nillable="true">
     <xs:annotation>
-      <xs:documentation>A case identification assigned by the charging agency. This element, called the Originating Case Agency number (OCA) in the III (Interstate Identification Index), can be used to enter an AFIS or Process Control Number from the arrest finge</xs:documentation>
+      <xs:documentation>A case identification assigned by the charging agency. This element, called the Originating Case Agency number (OCA) in the III (Interstate Identification Index), can be used to enter an AFIS or Process Control Number from the arrest fingerprint.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="ChargeApplicabilityText" type="nc:TextType" nillable="true">
@@ -12657,7 +12720,7 @@
   </xs:element>
   <xs:element name="ChargeSeverityDescriptionText" type="nc:TextType" nillable="true">
     <xs:annotation>
-      <xs:documentation>A description of the level of the offense such as Grade A Misdemeanor, Gross Misdemeanor, Aggravated Misdemeanor.  States may transmit numeric grade levels (1,2,3) or define degrees alphanumerically (A,B, C.)</xs:documentation>
+      <xs:documentation>A description of the level of the offense such as Grade A Misdemeanor, Gross Misdemeanor, Aggravated Misdemeanor.  States may transmit numeric grade levels (1, 2, 3) or define degrees alphanumerically (A, B, C.)</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="ChargeSeverityLevel" type="j:SeverityLevelType" nillable="true">
@@ -13907,7 +13970,7 @@
   </xs:element>
   <xs:element name="CourtOrderServiceOfficialEnforcement" type="j:EnforcementOfficialType" substitutionGroup="j:CourtOrderServiceOfficialAbstract" nillable="true">
     <xs:annotation>
-      <xs:documentation>An enforcment official who delivered a court order.</xs:documentation>
+      <xs:documentation>An enforcement official who delivered a court order.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="CourtOrderServiceOfficialJudicial" type="j:JudicialOfficialType" substitutionGroup="j:CourtOrderServiceOfficialAbstract" nillable="true">
@@ -16921,21 +16984,6 @@
       <xs:documentation>A final plea offered by a defendant in relation to a charge that was accepted by the court.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="FinancialAccount" type="j:FinancialAccountType" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A financial account maintained by a financial institution.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="FinancialAccountAugmentationPoint" abstract="true">
-    <xs:annotation>
-      <xs:documentation>An augmentation point for FinancialAccountType.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="FinancialAccountCategoryText" type="nc:TextType" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A kind of account or financial service maintained by a financial institution.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
   <xs:element name="FinancialAccountInstitutionAssociation" type="j:FinancialAccountInstitutionAssociationType" nillable="true">
     <xs:annotation>
       <xs:documentation>A relationship between a financial account and the institution that manages it.</xs:documentation>
@@ -16944,21 +16992,6 @@
   <xs:element name="FinancialAccountInstitutionAssociationAugmentationPoint" abstract="true">
     <xs:annotation>
       <xs:documentation>An augmentation point for FinancialAccountInstitutionAssociationType.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="FinancialAccountListedName" type="nc:TextType" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A name of a person or organization appearing on a financial account.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="FinancialAccountNumberID" type="niem-xs:string" nillable="true">
-    <xs:annotation>
-      <xs:documentation>An identifier assigned to a type of financial account.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="FinancialAccountPresentBalanceAmount" type="nc:AmountType" nillable="true">
-    <xs:annotation>
-      <xs:documentation>An account balance at the time of financial compilation.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="FinancialCompilation" type="j:FinancialCompilationType" nillable="true">
@@ -17391,11 +17424,6 @@
       <xs:documentation>A 1-digit placard number from bottom of diamond.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="HazardousMaterialCode" type="hazmat:HazmatUNCodeType" substitutionGroup="nc:SubstanceAbstract" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A hazardous material.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
   <xs:element name="HealedFracturedFingerPositionAbstract" abstract="true">
     <xs:annotation>
       <xs:documentation>A data concept for a finger position code for a finger that is healed from a fracture/break.</xs:documentation>
@@ -17623,7 +17651,7 @@
   </xs:element>
   <xs:element name="HearingDecisionPanelMember" type="nc:PersonType" nillable="true">
     <xs:annotation>
-      <xs:documentation>A person assembled as as part of a group to make a hearing decision.</xs:documentation>
+      <xs:documentation>A person assembled as part of a group to make a hearing decision.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="HearingDecisionReaffirmedIndicator" type="niem-xs:boolean" nillable="true">
@@ -20001,7 +20029,7 @@
       <xs:documentation>True if a person is a primary indicator; false if a person in an alternate juror.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="JusticeMetadata" type="j:JusticeMetadataType" nillable="true" appinfo:appliesToTypes="structures:AssociationType structures:ObjectType">
+  <xs:element name="JusticeMetadata" type="j:JusticeMetadataType" nillable="true" appinfo:appliesToTypes="structures:ObjectType structures:AssociationType">
     <xs:annotation>
       <xs:documentation>Information that further qualifies the kind of data represented.</xs:documentation>
     </xs:annotation>
@@ -20773,7 +20801,7 @@
   </xs:element>
   <xs:element name="MentalHealthCertification" type="j:CertificationType" nillable="true">
     <xs:annotation>
-      <xs:documentation>An official pronouncement of the status of the mental health of subject, thru the testimony of medical professionals and/or declared by a court of law.</xs:documentation>
+      <xs:documentation>An official pronouncement of the status of the mental health of subject, through the testimony of medical professionals and/or declared by a court of law.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="MentalHealthCertificationAugmentationPoint" abstract="true">
@@ -22728,7 +22756,7 @@
   </xs:element>
   <xs:element name="ParoleHearingBoardRecommendationText" type="nc:TextType" nillable="true">
     <xs:annotation>
-      <xs:documentation>A recommendationsof the Board during a parole hearing.</xs:documentation>
+      <xs:documentation>A recommendation of the Board during a parole hearing.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="ParoleHearingDecisionAugmentationPoint" abstract="true">
@@ -23353,7 +23381,7 @@
   </xs:element>
   <xs:element name="PawnConsignedOutTransaction" type="j:PawnTransactionType" substitutionGroup="j:PawnTransaction" nillable="true">
     <xs:annotation>
-      <xs:documentation>An outbound transaction where goods are consigned by the Licensee (Consignor) to another business or organisation (Consignee).</xs:documentation>
+      <xs:documentation>An outbound transaction where goods are consigned by the Licensee (Consignor) to another business or organization (Consignee).</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="PawnIncomingConsignmentCancellationTransaction" type="j:PawnTransactionType" substitutionGroup="j:PawnTransaction" nillable="true">
@@ -23363,7 +23391,7 @@
   </xs:element>
   <xs:element name="PawnIncomingConsignmentTransaction" type="j:PawnTransactionType" substitutionGroup="j:PawnTransaction" nillable="true">
     <xs:annotation>
-      <xs:documentation>An inbound transaction where goods were consigned by an individual or an organisation (Consignor)</xs:documentation>
+      <xs:documentation>An inbound transaction where goods were consigned by an individual or an organization (Consignor)</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="PawnItemReturnTransaction" type="j:PawnTransactionType" substitutionGroup="j:PawnTransaction" nillable="true">
@@ -23383,7 +23411,7 @@
   </xs:element>
   <xs:element name="PawnPurchaseTransaction" type="j:PawnTransactionType" substitutionGroup="j:PawnTransaction" nillable="true">
     <xs:annotation>
-      <xs:documentation>An inbound transaction where goods are purchased from an individual or an organisation.</xs:documentation>
+      <xs:documentation>An inbound transaction where goods are purchased from an individual or an organization.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="PawnReceiver" type="nc:PersonType" nillable="true">
@@ -23398,7 +23426,7 @@
   </xs:element>
   <xs:element name="PawnReturnToLegitimateOwnerTransaction" type="j:PawnTransactionType" substitutionGroup="j:PawnTransaction" nillable="true">
     <xs:annotation>
-      <xs:documentation>An outbound transaction where goods are returned to their legitimate owner, which can be a person or organisation.</xs:documentation>
+      <xs:documentation>An outbound transaction where goods are returned to their legitimate owner, which can be a person or organization.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="PawnSaleOfForfeitedGoodsTransaction" type="j:PawnTransactionType" substitutionGroup="j:PawnTransaction" nillable="true">
@@ -23443,7 +23471,7 @@
   </xs:element>
   <xs:element name="PersonAFISIdentification" type="nc:IdentificationType" nillable="true">
     <xs:annotation>
-      <xs:documentation>An identification number issued by an agency's automatic fingerprint system based on submitted fingerprints other than PersonFBIID and PersonSSID.</xs:documentation>
+      <xs:documentation>An identification number issued by an agency's automatic fingerprint system based on submitted fingerprints other than FBI ID and SSN.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="PersonAdultIndicator" type="niem-xs:boolean" nillable="true">
@@ -24483,7 +24511,7 @@
   </xs:element>
   <xs:element name="PersonResidenceAssociationAugmentation" type="j:PersonResidenceAssociationAugmentationType" substitutionGroup="nc:PersonResidenceAssociationAugmentationPoint" nillable="true">
     <xs:annotation>
-      <xs:documentation>Additional information about a ResidenceAssociation.</xs:documentation>
+      <xs:documentation>Additional information about a Residence Association.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="PersonResidentCode" type="ucr:ResidentCodeType" substitutionGroup="nc:PersonResidentAbstract" nillable="true">
@@ -25838,7 +25866,7 @@
   </xs:element>
   <xs:element name="RoommateAssociation" type="nc:PersonAssociationType" nillable="true">
     <xs:annotation>
-      <xs:documentation>A relationship between people living in the the same room.</xs:documentation>
+      <xs:documentation>A relationship between people living in the same residence.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="Sanction" type="j:SanctionType" nillable="true">
@@ -27588,7 +27616,7 @@
   </xs:element>
   <xs:element name="SubjectDependentLivingWithIndicator" type="niem-xs:boolean" nillable="true">
     <xs:annotation>
-      <xs:documentation>True if subject has a dependant, e.g., children, handicapped, living with them; false otherwise.</xs:documentation>
+      <xs:documentation>True if subject has a dependent, e.g., children, handicapped, living with them; false otherwise.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="SubjectDetainmentLocation" type="nc:LocationType" nillable="true">
@@ -27936,7 +27964,7 @@
       <xs:documentation>True if the subject had a program violation; false otherwise.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="SubjectPropertyAccount" type="j:FinancialAccountType" nillable="true">
+  <xs:element name="SubjectPropertyAccount" type="nc:FinancialAccountType" nillable="true">
     <xs:annotation>
       <xs:documentation>A set of details about a subject's personal property account within the agency or facility.</xs:documentation>
     </xs:annotation>
@@ -28603,7 +28631,7 @@
   </xs:element>
   <xs:element name="SupervisionIncidentPersonAssociation" type="j:SupervisionIncidentPersonAssociationType" nillable="true">
     <xs:annotation>
-      <xs:documentation>An association between SupervisionIncident and Person.</xs:documentation>
+      <xs:documentation>An association between Supervision Incident and Person.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="SupervisionIncidentPersonAssociationAugmentationPoint" abstract="true">
@@ -30293,7 +30321,7 @@
   </xs:element>
   <xs:element name="VisitationSupervisingOfficialEnforcement" type="j:EnforcementOfficialType" substitutionGroup="j:VisitationSupervisingOfficialAbstract" nillable="true">
     <xs:annotation>
-      <xs:documentation>An enforcment official who supervised a visit.</xs:documentation>
+      <xs:documentation>An enforcement official who supervised a visit.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="VisitationSupervisingOfficialJudicial" type="j:JudicialOfficialType" substitutionGroup="j:VisitationSupervisingOfficialAbstract" nillable="true">

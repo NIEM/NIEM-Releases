@@ -1,15 +1,27 @@
 <?xml version="1.0" encoding="US-ASCII"?>
-<xs:schema targetNamespace="http://release.niem.gov/niem/domains/humanServices/4.0/" version="beta1" xsi:schemaLocation="http://release.niem.gov/niem/appinfo/4.0/ ../../../appinfo/4.0/appinfo.xsd http://release.niem.gov/niem/conformanceTargets/3.0/ ../../../conformanceTargets/3.0/conformanceTargets.xsd" ct:conformanceTargets="http://reference.niem.gov/niem/specification/naming-and-design-rules/4.0/#ReferenceSchemaDocument" xmlns:structures="http://release.niem.gov/niem/structures/4.0/" xmlns:hs="http://release.niem.gov/niem/domains/humanServices/4.0/" xmlns:scr="http://release.niem.gov/niem/domains/screening/4.0/" xmlns:appinfo="http://release.niem.gov/niem/appinfo/4.0/" xmlns:ct="http://release.niem.gov/niem/conformanceTargets/3.0/" xmlns:nc="http://release.niem.gov/niem/niem-core/4.0/" xmlns:j="http://release.niem.gov/niem/domains/jxdm/6.0/" xmlns:im="http://release.niem.gov/niem/domains/immigration/4.0/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:census="http://release.niem.gov/niem/codes/census_uscounty/4.0/" xmlns:niem-xs="http://release.niem.gov/niem/proxy/xsd/4.0/">
+<xs:schema targetNamespace="http://release.niem.gov/niem/domains/humanServices/4.0/" version="1" xsi:schemaLocation="http://release.niem.gov/niem/appinfo/4.0/ ../../../utility/appinfo/4.0/appinfo.xsd http://release.niem.gov/niem/conformanceTargets/3.0/ ../../../utility/conformanceTargets/3.0/conformanceTargets.xsd" ct:conformanceTargets="http://reference.niem.gov/niem/specification/naming-and-design-rules/4.0/#ReferenceSchemaDocument" xmlns:structures="http://release.niem.gov/niem/structures/4.0/" xmlns:hs="http://release.niem.gov/niem/domains/humanServices/4.0/" xmlns:scr="http://release.niem.gov/niem/domains/screening/4.0/" xmlns:appinfo="http://release.niem.gov/niem/appinfo/4.0/" xmlns:ct="http://release.niem.gov/niem/conformanceTargets/3.0/" xmlns:nc="http://release.niem.gov/niem/niem-core/4.0/" xmlns:j="http://release.niem.gov/niem/domains/jxdm/6.0/" xmlns:im="http://release.niem.gov/niem/domains/immigration/4.0/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:census="http://release.niem.gov/niem/codes/census_uscounty/4.0/" xmlns:niem-xs="http://release.niem.gov/niem/proxy/xsd/4.0/">
   <xs:annotation>
     <xs:documentation>Human Services</xs:documentation>
+    <xs:appinfo>
+      <appinfo:LocalTerm term="ICWA" literal="Indian Child Welfare Act"/>
+      <appinfo:LocalTerm term="Comp" literal="Compensation"/>
+      <appinfo:LocalTerm term="EBT" literal="Electronic Benefit Transfer"/>
+      <appinfo:LocalTerm term="FS" literal="Food Stamps"/>
+      <appinfo:LocalTerm term="PARIS" literal="Public Assistance Reporting Information System"/>
+      <appinfo:LocalTerm term="SSA" literal="Social Security Administration"/>
+      <appinfo:LocalTerm term="SSI" literal="Supplemental Security Income"/>
+      <appinfo:LocalTerm term="SSN" literal="Social Security Number"/>
+      <appinfo:LocalTerm term="TANF" literal="Temporary Assistance to Needy Families"/>
+      <appinfo:LocalTerm term="VA" literal="Veterans Affairs"/>
+    </xs:appinfo>
   </xs:annotation>
-  <xs:import schemaLocation="../../jxdm/6.0/jxdm.xsd" namespace="http://release.niem.gov/niem/domains/jxdm/6.0/"/>
-  <xs:import schemaLocation="../../../structures/4.0/structures.xsd" namespace="http://release.niem.gov/niem/structures/4.0/"/>
-  <xs:import schemaLocation="../../../proxy/xsd/4.0/xs.xsd" namespace="http://release.niem.gov/niem/proxy/xsd/4.0/"/>
-  <xs:import schemaLocation="../../../niem-core/4.0/niem-core.xsd" namespace="http://release.niem.gov/niem/niem-core/4.0/"/>
   <xs:import schemaLocation="../../immigration/4.0/immigration.xsd" namespace="http://release.niem.gov/niem/domains/immigration/4.0/"/>
-  <xs:import schemaLocation="../../screening/4.0/screening.xsd" namespace="http://release.niem.gov/niem/domains/screening/4.0/"/>
+  <xs:import schemaLocation="../../../niem-core/4.0/niem-core.xsd" namespace="http://release.niem.gov/niem/niem-core/4.0/"/>
+  <xs:import schemaLocation="../../jxdm/6.0/jxdm.xsd" namespace="http://release.niem.gov/niem/domains/jxdm/6.0/"/>
   <xs:import schemaLocation="../../../codes/census_uscounty/4.0/census_uscounty.xsd" namespace="http://release.niem.gov/niem/codes/census_uscounty/4.0/"/>
+  <xs:import schemaLocation="../../screening/4.0/screening.xsd" namespace="http://release.niem.gov/niem/domains/screening/4.0/"/>
+  <xs:import schemaLocation="../../../utility/structures/4.0/structures.xsd" namespace="http://release.niem.gov/niem/structures/4.0/"/>
+  <xs:import schemaLocation="../../../proxy/xsd/4.0/xs.xsd" namespace="http://release.niem.gov/niem/proxy/xsd/4.0/"/>
   <xs:simpleType name="AFCARSPermanencyGoalCodeSimpleType">
     <xs:annotation>
       <xs:documentation>A data type for a list of case plan goals for permanency defined for the Adoption and Foster Care Analysis Reporting System in 45 CFR 1355, Appendix A, roman numeral VI.</xs:documentation>
@@ -7467,11 +7479,6 @@
       <xs:documentation>A county in which a child resides.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="CourtCase" type="nc:CaseType" nillable="true">
-    <xs:annotation>
-      <xs:documentation>An element that contains the details of a court case.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
   <xs:element name="CourtEventAttendee" type="hs:CourtEventAttendeeType" nillable="true">
     <xs:annotation>
       <xs:documentation>A person attending a court event</xs:documentation>
@@ -7739,7 +7746,7 @@
   </xs:element>
   <xs:element name="EmployerFEINID" type="niem-xs:string" nillable="true">
     <xs:annotation>
-      <xs:documentation>A Federal Identification Number for the Employer.</xs:documentation>
+      <xs:documentation>An identifier for the Federal Identification Number for the Employer.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="EmployerName" type="nc:TextType" nillable="true">
@@ -8702,7 +8709,7 @@
       <xs:documentation>A description of past in-patient hospitalizations due to mental health issues.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="Metadata" type="hs:MetadataType" nillable="true" appinfo:appliesToTypes="structures:AssociationType structures:ObjectType">
+  <xs:element name="Metadata" type="hs:MetadataType" nillable="true" appinfo:appliesToTypes="structures:ObjectType structures:AssociationType">
     <xs:annotation>
       <xs:documentation>Information that further qualifies primary juvenile data; data about data. A typical use is internal tracking IDs.</xs:documentation>
     </xs:annotation>

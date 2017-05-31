@@ -1,14 +1,30 @@
 <?xml version="1.0" encoding="US-ASCII"?>
-<xs:schema targetNamespace="http://release.niem.gov/niem/domains/agriculture/4.0/" version="beta1" xsi:schemaLocation="http://release.niem.gov/niem/appinfo/4.0/ ../../../appinfo/4.0/appinfo.xsd http://release.niem.gov/niem/conformanceTargets/3.0/ ../../../conformanceTargets/3.0/conformanceTargets.xsd" ct:conformanceTargets="http://reference.niem.gov/niem/specification/naming-and-design-rules/4.0/#ReferenceSchemaDocument" xmlns:structures="http://release.niem.gov/niem/structures/4.0/" xmlns:appinfo="http://release.niem.gov/niem/appinfo/4.0/" xmlns:ct="http://release.niem.gov/niem/conformanceTargets/3.0/" xmlns:nc="http://release.niem.gov/niem/niem-core/4.0/" xmlns:usda_fsa="http://release.niem.gov/niem/codes/usda_fsa/4.0/" xmlns:ag_codes="http://release.niem.gov/niem/codes/ag_codes/4.0/" xmlns:geo="http://release.niem.gov/niem/adapters/geospatial/4.0/" xmlns:ag="http://release.niem.gov/niem/domains/agriculture/4.0/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:niem-xs="http://release.niem.gov/niem/proxy/xsd/4.0/">
+<xs:schema targetNamespace="http://release.niem.gov/niem/domains/agriculture/4.0/" version="1" xsi:schemaLocation="http://release.niem.gov/niem/appinfo/4.0/ ../../../utility/appinfo/4.0/appinfo.xsd http://release.niem.gov/niem/conformanceTargets/3.0/ ../../../utility/conformanceTargets/3.0/conformanceTargets.xsd" ct:conformanceTargets="http://reference.niem.gov/niem/specification/naming-and-design-rules/4.0/#ReferenceSchemaDocument" xmlns:structures="http://release.niem.gov/niem/structures/4.0/" xmlns:appinfo="http://release.niem.gov/niem/appinfo/4.0/" xmlns:ct="http://release.niem.gov/niem/conformanceTargets/3.0/" xmlns:nc="http://release.niem.gov/niem/niem-core/4.0/" xmlns:usda_fsa="http://release.niem.gov/niem/codes/usda_fsa/4.0/" xmlns:ag_codes="http://release.niem.gov/niem/codes/ag_codes/4.0/" xmlns:geo="http://release.niem.gov/niem/adapters/geospatial/4.0/" xmlns:ag="http://release.niem.gov/niem/domains/agriculture/4.0/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:niem-xs="http://release.niem.gov/niem/proxy/xsd/4.0/">
   <xs:annotation>
     <xs:documentation>Agriculture</xs:documentation>
+    <xs:appinfo>
+      <appinfo:LocalTerm term="CLU" literal="Common Land Unit"/>
+      <appinfo:LocalTerm term="MICS" literal="Mobile Implement Control System"/>
+      <appinfo:LocalTerm term="FIPS" literal="Federal Information Processing Standards"/>
+      <appinfo:LocalTerm term="CVT" literal="Commodity Validation Table"/>
+      <appinfo:LocalTerm term="CM" literal="Common Management"/>
+      <appinfo:LocalTerm term="USDA" literal="United States Department of Agriculture"/>
+      <appinfo:LocalTerm term="ACRSI" literal="Acreage and Crop Reporting Streamlining Initiative"/>
+      <appinfo:LocalTerm term="FSA" literal="Farm Service Agency"/>
+      <appinfo:LocalTerm term="INCITS" literal="InterNational Committee for Information Technology Standards"/>
+      <appinfo:LocalTerm term="AIP" literal="Approved Insurance Provider"/>
+      <appinfo:LocalTerm term="ANSI" literal="American National Standards Institute"/>
+      <appinfo:LocalTerm term="RMA" literal="Risk Management Agency"/>
+      <appinfo:LocalTerm term="NRCS" literal="Natural Resources Conservation Service"/>
+      <appinfo:LocalTerm term="SCIMS" literal="Service Center Information Management System"/>
+    </xs:appinfo>
   </xs:annotation>
-  <xs:import schemaLocation="../../../structures/4.0/structures.xsd" namespace="http://release.niem.gov/niem/structures/4.0/"/>
-  <xs:import schemaLocation="../../../proxy/xsd/4.0/xs.xsd" namespace="http://release.niem.gov/niem/proxy/xsd/4.0/"/>
-  <xs:import schemaLocation="../../../niem-core/4.0/niem-core.xsd" namespace="http://release.niem.gov/niem/niem-core/4.0/"/>
   <xs:import schemaLocation="../../../adapters/geospatial/4.0/geospatial.xsd" namespace="http://release.niem.gov/niem/adapters/geospatial/4.0/"/>
+  <xs:import schemaLocation="../../../niem-core/4.0/niem-core.xsd" namespace="http://release.niem.gov/niem/niem-core/4.0/"/>
   <xs:import schemaLocation="../../../codes/usda_fsa/4.0/usda_fsa.xsd" namespace="http://release.niem.gov/niem/codes/usda_fsa/4.0/"/>
   <xs:import schemaLocation="../../../codes/ag_codes/4.0/ag_codes.xsd" namespace="http://release.niem.gov/niem/codes/ag_codes/4.0/"/>
+  <xs:import schemaLocation="../../../utility/structures/4.0/structures.xsd" namespace="http://release.niem.gov/niem/structures/4.0/"/>
+  <xs:import schemaLocation="../../../proxy/xsd/4.0/xs.xsd" namespace="http://release.niem.gov/niem/proxy/xsd/4.0/"/>
   <xs:complexType name="AcreageSubmissionFileType">
     <xs:annotation>
       <xs:documentation>A data type containing the entire set of the crops planted on a farm, itemized down to the acreage of individual fields and subfields and the individual producer stakeholders.
@@ -17,7 +33,7 @@
     <xs:complexContent>
       <xs:extension base="structures:ObjectType">
         <xs:sequence>
-          <xs:element ref="ag:CropYear" minOccurs="1" maxOccurs="1"/>
+          <xs:element ref="ag:CropYearValue" minOccurs="1" maxOccurs="1"/>
           <xs:element ref="ag:OriginatorIdentificationID" minOccurs="1" maxOccurs="1"/>
           <xs:element ref="ag:CustomerInfo" minOccurs="1" maxOccurs="unbounded"/>
           <xs:element ref="ag:FarmCropAcreage" minOccurs="1" maxOccurs="unbounded"/>
@@ -35,12 +51,12 @@
         <xs:sequence>
           <xs:element ref="nc:LocationStateFIPS5-2Code" minOccurs="1" maxOccurs="1"/>
           <xs:element ref="nc:LocationCountyCode" minOccurs="1" maxOccurs="1"/>
-          <xs:element ref="ag:SubfieldNumber" minOccurs="0" maxOccurs="1"/>
+          <xs:element ref="ag:SubfieldNumberID" minOccurs="0" maxOccurs="1"/>
           <xs:element ref="ag:CoreProductCode" minOccurs="1" maxOccurs="1"/>
           <xs:element ref="ag:CoreProductCategoryCode" minOccurs="0" maxOccurs="1"/>
           <xs:element ref="ag:ProductIntendedUseCode" minOccurs="0" maxOccurs="1"/>
-          <xs:element ref="ag:OriginalReportedAcreage" minOccurs="1" maxOccurs="1"/>
-          <xs:element ref="ag:FinalReportedAcreage" minOccurs="1" maxOccurs="1"/>
+          <xs:element ref="ag:OriginalReportedAcreageValue" minOccurs="1" maxOccurs="1"/>
+          <xs:element ref="ag:FinalReportedAcreageValue" minOccurs="1" maxOccurs="1"/>
           <xs:element ref="ag:ReportedAcreageModifiedIndicator" minOccurs="1" maxOccurs="1"/>
           <xs:element ref="ag:ReportedAcreageModifiedReasonCode" minOccurs="0" maxOccurs="1"/>
           <xs:element ref="ag:ReportedAcreageModifiedOtherReasonText" minOccurs="0" maxOccurs="1"/>
@@ -210,7 +226,7 @@
     <xs:annotation>
       <xs:documentation>A system-generated internal identifier of a common land unit (CLU). This identifier is for internal access use only.
   A CLU is the smallest unit of land that has a permanent, contiguous boundary, common land cover and land management, a common owner, and a common producer association.
-  A CLU is closely related to FSA&amp;aps definition of 'fields', according to Handbook 2-CP. A CLU is also closely related to land units such as parcels, farmsteads, and lots that are used by NRCS, RMA and RD.
+  A CLU is closely related to FS's definition of 'fields', according to Handbook 2-CP. A CLU is also closely related to land units such as parcels, farmsteads, and lots that are used by NRCS, RMA and RD.
   The authoritative source of CLU Identifier is Farm Records. CLU Identifier can remain constant even if the precise geospatial shape of the CLU is slightly altered.</xs:documentation>
     </xs:annotation>
   </xs:element>
@@ -219,24 +235,24 @@
       <xs:documentation>True if the producer has requested that a Common Land Unit (CLU) be reviewed; false otherwise.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="CoreProductCategoryCode" type="ag_codes:CoreProductCategoryCodeType" nillable="true">
+  <xs:element name="CoreProductCategoryCode" type="ag_codes:CoreProductCategoryType" nillable="true">
     <xs:annotation>
       <xs:documentation>A product type code providing a subclassification of agricultural products in addition to the main classification provided by the Core Product Code. Each product classified by a Core Product Code is also assigned a Core Product Type Code providing greater clarification of the crop/commodity, tree, livestock ,etc. Codes are maintained by the Pilot CVT (Crop Validation Table).</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="CoreProductCode" type="ag_codes:CoreProductCodeType" nillable="true">
+  <xs:element name="CoreProductCode" type="ag_codes:CoreProductType" nillable="true">
     <xs:annotation>
       <xs:documentation>A product code providing a classification of agricultural products defined by the Pilot CVT (Crop Validation Table). Products are classified into individual crop and commodity types, tree types, and types of livestock.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="CropYear" type="ag_codes:CropYearType" nillable="true">
+  <xs:element name="CropYearValue" type="ag_codes:CropYearType" nillable="true">
     <xs:annotation>
       <xs:documentation>A period of time (in year) within which the crop is normally grown and designated by the calendar year in which the crop is normally harvested.
-  For crops:
-  - Harvested over 2 calendar years, the crop year is the calendar year in which the majority of the crop would have been harvested.
-  - Grown over more than 2 calendar years, each year in the growing period will be considered as a separate crop year designated by the calendar year in which the crop sustained a loss.
-  - For which CAT coverage is available, the crop year will be as defined by such coverage.
-  RMA's regulations define Crop Year as the period within which the insured crop is normally grown, regardless of whether or not it is actually grown, and designated by the calendar year in which the insured crop is normally harvested, unless otherwise specified in the Crop Provisions.</xs:documentation>
+				For crops:
+				- Harvested over 2 calendar years, the crop year is the calendar year in which the majority of the crop would have been harvested.
+				- Grown over more than 2 calendar years, each year in the growing period will be considered as a separate crop year designated by the calendar year in which the crop sustained a loss.
+				- For which CAT coverage is available, the crop year will be as defined by such coverage.
+				RMA's regulations define Crop Year as the period within which the insured crop is normally grown, regardless of whether or not it is actually grown, and designated by the calendar year in which the insured crop is normally harvested, unless otherwise specified in the Crop Provisions</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="CroppingPracticeCode" type="ag_codes:CroppingPracticeCodeType" nillable="true">
@@ -273,7 +289,7 @@
   <xs:element name="FarmNumberID" type="ag_codes:FarmNumberIDType" nillable="true">
     <xs:annotation>
       <xs:documentation>An identifier assigned to all land under control of a particular operator within a particular county.
-  Each County assigns Farm Numbers independently. As a result, farms in different counties might be assigned the same Farm Number; i.e, a Farm</xs:documentation>
+  Each County assigns Farm Numbers independently. As a result, farms in different counties might be assigned the same Farm Number; i.e, a Farm Number might be unique only within a particular county. Thus, to uniquely identify a farm, the State FSA Code and County FSA Code must be specified in combination with the Farm Number.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="FieldCropAcreage" type="ag:FieldCropAcreageType" nillable="true">
@@ -288,8 +304,9 @@
   </xs:element>
   <xs:element name="FieldNumberID" type="ag_codes:FieldNumberIDType" nillable="true">
     <xs:annotation>
-      <xs:documentation>An identifier assigned to a field of land that is part of a farm tract.
-  Field numbers are assigned by an FSA county office, and are unique within that offics farms. A Field Number is used in conjunction with Tract Number, State FSA Code and C</xs:documentation>
+      <xs:documentation>An identifier number assigned to a field of land that is part of a farm tract.
+  Field numbers are assigned by an FSA county office, and are unique within that offics farms. A Field Number is used in conjunction with Tract Number, State FSA Code and County FSA Code for uniqueness.
+  Field number and Tract Number are not necessarily unique based upon State ANSI Code and County ANSI Code in instances where the ANSI codes are not the same as the FSA codes.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="FileCustomerID" type="ag_codes:FileCustomerIDType" nillable="true">
@@ -302,7 +319,7 @@
       <xs:documentation>A mandatory final value for the date that a specific crop was planted.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="FinalReportedAcreage" type="ag_codes:FinalReportedAcreageType" nillable="true">
+  <xs:element name="FinalReportedAcreageValue" type="ag_codes:FinalReportedAcreageType" nillable="true">
     <xs:annotation>
       <xs:documentation>A final number of acres that were reported.</xs:documentation>
     </xs:annotation>
@@ -354,7 +371,7 @@
   </xs:element>
   <xs:element name="IrrigationPracticeCode" type="ag_codes:IrrigationPracticeCodeType" nillable="true">
     <xs:annotation>
-      <xs:documentation>A code identifying the irrigation practice used for a unit of land with a cropCode identifying the irrigation practice used for a unit of land with a crop.</xs:documentation>
+      <xs:documentation>A code identifying the irrigation practice used for a unit of land with a crop code identifying the irrigation practice used for a unit of land with a crop.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="LocationCoordinatesAbstract" abstract="true">
@@ -379,7 +396,7 @@
   </xs:element>
   <xs:element name="LocationPolygonCoordinates" type="geo:PolygonType" substitutionGroup="ag:LocationCoordinatesAbstract" nillable="true">
     <xs:annotation>
-      <xs:documentation>A gml:Polygon is a special surface that is defined by a single surface patch. The boundary of this patch is coplanar and the polygon uses planar interpolation in its interior.</xs:documentation>
+      <xs:documentation>A gml Polygon is a special surface that is defined by a single surface patch. The boundary of this patch is coplanar and the polygon uses planar interpolation in its interior.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="MICSCode" type="ag_codes:MICSCodeType" nillable="true">
@@ -402,7 +419,7 @@
       <xs:documentation>A mandatory original date when a specific crop was planted.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="OriginalReportedAcreage" type="ag_codes:OriginalReportedAcreageType" nillable="true">
+  <xs:element name="OriginalReportedAcreageValue" type="ag_codes:OriginalReportedAcreageType" nillable="true">
     <xs:annotation>
       <xs:documentation>An original, unmodified, number of acres that were reported.</xs:documentation>
     </xs:annotation>
@@ -410,7 +427,8 @@
   <xs:element name="OriginatorIdentificationID" type="ag_codes:OriginatorIdentificationIDType" nillable="true">
     <xs:annotation>
       <xs:documentation>An identifier of the entity responsible for originating/publishing data.
-  For Acreage Reporting it identifies the FSA Service Center, Approved Insurance Provider (AIP), or Third Party Site which collected and published the acreage data and any accomp</xs:documentation>
+  For Acreage Reporting it identifies the FSA Service Center, Approved Insurance Provider (AIP), or Third Party Site which collected and published the acreage data and any accompanying geospatial data.
+  The identification consists of a prefix indicating the type of Originator, followed by an  identification that uniquely identifies the Originator for that type.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="PlantedDateModifiedIndicator" type="niem-xs:boolean" nillable="true">
@@ -448,14 +466,14 @@
       <xs:documentation>A Producer's share of a crop and the benefits coming from that crop, expressed as a percentage.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="ProductIntendedUseCode" type="ag_codes:ProductIntendedUseCodeType" nillable="true">
+  <xs:element name="ProductIntendedUseCode" type="ag_codes:ProductIntendedUseType" nillable="true">
     <xs:annotation>
       <xs:documentation>A product code identifying the intended use for an agricultural product such as a crop/commodity, tree, livestock, etc. Codes for intended uses are specific to a particular combination of Core Product Code and Core Product Type Code and are maintained by the Pilot CVT (Crop Validation Table).</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="ProductPlantingCode" type="ag_codes:ProductPlantingCodeType" nillable="true">
     <xs:annotation>
-      <xs:documentation>A code identifying the planting of a product/crop as either conventional (plannted as normal or no planting required) or unconventional/irregular in a predefined way.</xs:documentation>
+      <xs:documentation>A code identifying the planting of a product/crop as either conventional (planted as normal or no planting required) or unconventional/irregular in a predefined way.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="ReportedAcreageModifiedIndicator" type="niem-xs:boolean" nillable="true">
@@ -473,20 +491,21 @@
       <xs:documentation>A reason code identifying the reason that the reported acreage was modified from its original value.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="SubfieldNumber" type="ag_codes:SubfieldNumberType" nillable="true">
+  <xs:element name="SubfieldNumberID" type="ag_codes:SubfieldNumberType" nillable="true">
     <xs:annotation>
-      <xs:documentation>An alpha number that is used to uniquely identify a subfield within a field, within a tract within a farm within a state and county. Subfields are areas of a field that share a set of common planting characteristic in terms of crop, crop type, intended use, etc. By convention the first defined subfield is given a value of 'A', with subsequent subfields following in alphabetic order.</xs:documentation>
+      <xs:documentation>An alpha number identifier that is used to uniquely identify a subfield within a field, within a tract within a farm within a state and county. Subfields are areas of a field that share a set of common planting characteristic in terms of crop, crop type, intended us</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="TaxIdentificationCategoryCode" type="ag_codes:TaxIdentificationCategoryCodeType" nillable="true">
     <xs:annotation>
-      <xs:documentation>A type code identifying the type of identification assigned to a specific individual, business or other entity and is used to authenticate the individual/entity for matters of taxation and other governement business.</xs:documentation>
+      <xs:documentation>A type code identifying the type of identification assigned to a specific individual, business or other entity and is used to authenticate the individual/entity for matters of taxation and other government business.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="TaxIdentificationID" type="ag_codes:TaxIdentificationIDType" nillable="true">
     <xs:annotation>
-      <xs:documentation>A tax identifier assigned to a specific individual, business or other entity and is used to authenticate the individual/entity for matters of taxation and other federal governement business.
-  Tax Identification may be a Social Security or Employer Id</xs:documentation>
+      <xs:documentation>A tax identifier assigned to a specific individual, business or other entity and is used to authenticate the individual/entity for matters of taxation and other federal government business.
+  Tax Identification may be a Social Security or Employer Identification number.
+  Federal Tax Identification is not necessarily unique for all United States Department of Agriculture (USDA) customers unless it is combined with a Tax Identification Type Code.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="TractCropAcreage" type="ag:TractCropAcreageType" nillable="true">

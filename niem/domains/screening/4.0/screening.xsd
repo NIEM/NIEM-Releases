@@ -1,18 +1,27 @@
 <?xml version="1.0" encoding="US-ASCII"?>
-<xs:schema targetNamespace="http://release.niem.gov/niem/domains/screening/4.0/" version="beta1" xsi:schemaLocation="http://release.niem.gov/niem/appinfo/4.0/ ../../../appinfo/4.0/appinfo.xsd http://release.niem.gov/niem/conformanceTargets/3.0/ ../../../conformanceTargets/3.0/conformanceTargets.xsd" ct:conformanceTargets="http://reference.niem.gov/niem/specification/naming-and-design-rules/4.0/#ReferenceSchemaDocument" xmlns:cbrn="http://release.niem.gov/niem/domains/cbrn/4.0/" xmlns:structures="http://release.niem.gov/niem/structures/4.0/" xmlns:appinfo="http://release.niem.gov/niem/appinfo/4.0/" xmlns:scr="http://release.niem.gov/niem/domains/screening/4.0/" xmlns:ct="http://release.niem.gov/niem/conformanceTargets/3.0/" xmlns:nc="http://release.niem.gov/niem/niem-core/4.0/" xmlns:intel="http://release.niem.gov/niem/domains/intelligence/4.0/" xmlns:j="http://release.niem.gov/niem/domains/jxdm/6.0/" xmlns:em="http://release.niem.gov/niem/domains/emergencyManagement/4.0/" xmlns:im="http://release.niem.gov/niem/domains/immigration/4.0/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:it="http://release.niem.gov/niem/domains/internationalTrade/4.0/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:m="http://release.niem.gov/niem/domains/maritime/4.0/" xmlns:niem-xs="http://release.niem.gov/niem/proxy/xsd/4.0/">
+<xs:schema targetNamespace="http://release.niem.gov/niem/domains/screening/4.0/" version="1" xsi:schemaLocation="http://release.niem.gov/niem/appinfo/4.0/ ../../../utility/appinfo/4.0/appinfo.xsd http://release.niem.gov/niem/conformanceTargets/3.0/ ../../../utility/conformanceTargets/3.0/conformanceTargets.xsd" ct:conformanceTargets="http://reference.niem.gov/niem/specification/naming-and-design-rules/4.0/#ReferenceSchemaDocument" xmlns:cbrn="http://release.niem.gov/niem/domains/cbrn/4.0/" xmlns:structures="http://release.niem.gov/niem/structures/4.0/" xmlns:scr="http://release.niem.gov/niem/domains/screening/4.0/" xmlns:appinfo="http://release.niem.gov/niem/appinfo/4.0/" xmlns:nc="http://release.niem.gov/niem/niem-core/4.0/" xmlns:ct="http://release.niem.gov/niem/conformanceTargets/3.0/" xmlns:intel="http://release.niem.gov/niem/domains/intelligence/4.0/" xmlns:em="http://release.niem.gov/niem/domains/emergencyManagement/4.0/" xmlns:j="http://release.niem.gov/niem/domains/jxdm/6.0/" xmlns:im="http://release.niem.gov/niem/domains/immigration/4.0/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:it="http://release.niem.gov/niem/domains/internationalTrade/4.0/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:niem-xs="http://release.niem.gov/niem/proxy/xsd/4.0/" xmlns:m="http://release.niem.gov/niem/domains/maritime/4.0/">
   <xs:annotation>
     <xs:documentation>The People Screening domain provides harmonized information sharing content within the Screening Portfolio of DHS.  The Screening namespace is initially being populated with person screening information for immigrant and non-immigrant person types who have been encountered and identified by the Screening Portfolio Components.  Screening expands on encounter-related NIEM elements currently included in the Immigration and Intelligence domains.</xs:documentation>
+    <xs:appinfo>
+      <appinfo:LocalTerm term="TECS" literal="Traveler Encounter Compliance System"/>
+      <appinfo:LocalTerm term="INS" literal="Immigration and Naturalization Service"/>
+      <appinfo:LocalTerm term="LPR" literal="License Plate Reader"/>
+      <appinfo:LocalTerm term="NCIC" literal="National Crime Information Center"/>
+      <appinfo:LocalTerm term="ASA" literal="Army Security Agency"/>
+      <appinfo:LocalTerm term="IATA" literal="International Air Transport Association"/>
+      <appinfo:LocalTerm term="EFTS" literal="Electronic Fingerprint Transmission Specification"/>
+    </xs:appinfo>
   </xs:annotation>
-  <xs:import schemaLocation="../../jxdm/6.0/jxdm.xsd" namespace="http://release.niem.gov/niem/domains/jxdm/6.0/"/>
+  <xs:import schemaLocation="../../cbrn/4.0/cbrn.xsd" namespace="http://release.niem.gov/niem/domains/cbrn/4.0/"/>
   <xs:import schemaLocation="../../emergencyManagement/4.0/emergencyManagement.xsd" namespace="http://release.niem.gov/niem/domains/emergencyManagement/4.0/"/>
+  <xs:import schemaLocation="../../immigration/4.0/immigration.xsd" namespace="http://release.niem.gov/niem/domains/immigration/4.0/"/>
+  <xs:import schemaLocation="../../../niem-core/4.0/niem-core.xsd" namespace="http://release.niem.gov/niem/niem-core/4.0/"/>
+  <xs:import schemaLocation="../../jxdm/6.0/jxdm.xsd" namespace="http://release.niem.gov/niem/domains/jxdm/6.0/"/>
+  <xs:import schemaLocation="../../intelligence/4.0/intelligence.xsd" namespace="http://release.niem.gov/niem/domains/intelligence/4.0/"/>
   <xs:import schemaLocation="../../maritime/4.0/maritime.xsd" namespace="http://release.niem.gov/niem/domains/maritime/4.0/"/>
   <xs:import schemaLocation="../../internationalTrade/4.0/internationalTrade.xsd" namespace="http://release.niem.gov/niem/domains/internationalTrade/4.0/"/>
-  <xs:import schemaLocation="../../../structures/4.0/structures.xsd" namespace="http://release.niem.gov/niem/structures/4.0/"/>
-  <xs:import schemaLocation="../../cbrn/4.0/cbrn.xsd" namespace="http://release.niem.gov/niem/domains/cbrn/4.0/"/>
+  <xs:import schemaLocation="../../../utility/structures/4.0/structures.xsd" namespace="http://release.niem.gov/niem/structures/4.0/"/>
   <xs:import schemaLocation="../../../proxy/xsd/4.0/xs.xsd" namespace="http://release.niem.gov/niem/proxy/xsd/4.0/"/>
-  <xs:import schemaLocation="../../../niem-core/4.0/niem-core.xsd" namespace="http://release.niem.gov/niem/niem-core/4.0/"/>
-  <xs:import schemaLocation="../../immigration/4.0/immigration.xsd" namespace="http://release.niem.gov/niem/domains/immigration/4.0/"/>
-  <xs:import schemaLocation="../../intelligence/4.0/intelligence.xsd" namespace="http://release.niem.gov/niem/domains/intelligence/4.0/"/>
   <xs:simpleType name="ActivityProcessCategoryCodeSimpleType">
     <xs:annotation>
       <xs:documentation>A data type for a kind of activity process.</xs:documentation>

@@ -1,16 +1,33 @@
 <?xml version="1.0" encoding="US-ASCII"?>
-<xs:schema targetNamespace="http://release.niem.gov/niem/domains/internationalTrade/4.0/" version="beta1" xsi:schemaLocation="http://release.niem.gov/niem/appinfo/4.0/ ../../../appinfo/4.0/appinfo.xsd http://release.niem.gov/niem/conformanceTargets/3.0/ ../../../conformanceTargets/3.0/conformanceTargets.xsd" ct:conformanceTargets="http://reference.niem.gov/niem/specification/naming-and-design-rules/4.0/#ReferenceSchemaDocument" xmlns:cbrn="http://release.niem.gov/niem/domains/cbrn/4.0/" xmlns:structures="http://release.niem.gov/niem/structures/4.0/" xmlns:appinfo="http://release.niem.gov/niem/appinfo/4.0/" xmlns:scr="http://release.niem.gov/niem/domains/screening/4.0/" xmlns:ct="http://release.niem.gov/niem/conformanceTargets/3.0/" xmlns:nc="http://release.niem.gov/niem/niem-core/4.0/" xmlns:itcodes="http://release.niem.gov/niem/codes/it_codes/4.0/" xmlns:j="http://release.niem.gov/niem/domains/jxdm/6.0/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:iso_3166="http://release.niem.gov/niem/codes/iso_3166-1/4.0/" xmlns:it="http://release.niem.gov/niem/domains/internationalTrade/4.0/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:niem-xs="http://release.niem.gov/niem/proxy/xsd/4.0/">
+<xs:schema targetNamespace="http://release.niem.gov/niem/domains/internationalTrade/4.0/" version="1" xsi:schemaLocation="http://release.niem.gov/niem/appinfo/4.0/ ../../../utility/appinfo/4.0/appinfo.xsd http://release.niem.gov/niem/conformanceTargets/3.0/ ../../../utility/conformanceTargets/3.0/conformanceTargets.xsd" ct:conformanceTargets="http://reference.niem.gov/niem/specification/naming-and-design-rules/4.0/#ReferenceSchemaDocument" xmlns:cbrn="http://release.niem.gov/niem/domains/cbrn/4.0/" xmlns:structures="http://release.niem.gov/niem/structures/4.0/" xmlns:scr="http://release.niem.gov/niem/domains/screening/4.0/" xmlns:appinfo="http://release.niem.gov/niem/appinfo/4.0/" xmlns:ct="http://release.niem.gov/niem/conformanceTargets/3.0/" xmlns:nc="http://release.niem.gov/niem/niem-core/4.0/" xmlns:itcodes="http://release.niem.gov/niem/codes/it_codes/4.0/" xmlns:j="http://release.niem.gov/niem/domains/jxdm/6.0/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:iso_3166="http://release.niem.gov/niem/codes/iso_3166-1/4.0/" xmlns:it="http://release.niem.gov/niem/domains/internationalTrade/4.0/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:niem-xs="http://release.niem.gov/niem/proxy/xsd/4.0/">
   <xs:annotation>
     <xs:documentation>International Trade</xs:documentation>
+    <xs:appinfo>
+      <appinfo:LocalTerm term="IATA" literal="International Air Transport Association"/>
+      <appinfo:LocalTerm term="MFA" literal="Multi Fibre Arrangement"/>
+      <appinfo:LocalTerm term="CHAI" literal="HMRC Charity application form"/>
+      <appinfo:LocalTerm term="ISO" literal="International Organization for Standardization"/>
+      <appinfo:LocalTerm term="INCOTERMS" literal="International Commercial Terms"/>
+      <appinfo:LocalTerm term="IMO" literal="International Maritime Organization"/>
+      <appinfo:LocalTerm term="SCAC" literal="Standard Carrier Alpha Code"/>
+      <appinfo:LocalTerm term="UCR" literal="Unique Customs Reference"/>
+      <appinfo:LocalTerm term="NTN" literal="National Training Numbers"/>
+      <appinfo:LocalTerm term="EMS" literal="Emergency Medical Service"/>
+      <appinfo:LocalTerm term="HTS" literal="Harmonized Tariff Schedule"/>
+      <appinfo:LocalTerm term="ChA1" literal="HMRC Charity application form"/>
+      <appinfo:LocalTerm term="UNDG" literal="United Nations Development Group"/>
+      <appinfo:LocalTerm term="VIR" literal="Vehicle Inspection Report"/>
+      <appinfo:LocalTerm term="WCO" literal="World Customs Organization"/>
+    </xs:appinfo>
   </xs:annotation>
-  <xs:import schemaLocation="../../jxdm/6.0/jxdm.xsd" namespace="http://release.niem.gov/niem/domains/jxdm/6.0/"/>
-  <xs:import schemaLocation="../../../structures/4.0/structures.xsd" namespace="http://release.niem.gov/niem/structures/4.0/"/>
   <xs:import schemaLocation="../../cbrn/4.0/cbrn.xsd" namespace="http://release.niem.gov/niem/domains/cbrn/4.0/"/>
-  <xs:import schemaLocation="../../../codes/iso_3166-1/4.0/iso_3166.xsd" namespace="http://release.niem.gov/niem/codes/iso_3166-1/4.0/"/>
-  <xs:import schemaLocation="../../../proxy/xsd/4.0/xs.xsd" namespace="http://release.niem.gov/niem/proxy/xsd/4.0/"/>
   <xs:import schemaLocation="../../../niem-core/4.0/niem-core.xsd" namespace="http://release.niem.gov/niem/niem-core/4.0/"/>
+  <xs:import schemaLocation="../../jxdm/6.0/jxdm.xsd" namespace="http://release.niem.gov/niem/domains/jxdm/6.0/"/>
   <xs:import schemaLocation="../../../codes/it_codes/4.0/it_codes.xsd" namespace="http://release.niem.gov/niem/codes/it_codes/4.0/"/>
   <xs:import schemaLocation="../../screening/4.0/screening.xsd" namespace="http://release.niem.gov/niem/domains/screening/4.0/"/>
+  <xs:import schemaLocation="../../../utility/structures/4.0/structures.xsd" namespace="http://release.niem.gov/niem/structures/4.0/"/>
+  <xs:import schemaLocation="../../../proxy/xsd/4.0/xs.xsd" namespace="http://release.niem.gov/niem/proxy/xsd/4.0/"/>
+  <xs:import schemaLocation="../../../codes/iso_3166-1/4.0/iso_3166.xsd" namespace="http://release.niem.gov/niem/codes/iso_3166-1/4.0/"/>
   <xs:complexType name="AdditionalDocumentType">
     <xs:annotation>
       <xs:documentation>A data type for an applied augmentation for type nc:DocumentType</xs:documentation>
@@ -245,7 +262,7 @@
         <xs:sequence>
           <xs:element ref="it:ConsignmentItemMaterialText" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="it:ConsignmentItemShapeDescriptionText" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="it:EquipmentIdentification" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:EquipmentIdentification" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:Document" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="it:CustomsProcedure" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="it:CountryOfOrigin" minOccurs="0" maxOccurs="unbounded"/>
@@ -578,21 +595,17 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-  <xs:complexType name="EquipmentType">
+  <xs:complexType name="EquipmentAugmentationType">
     <xs:annotation>
-      <xs:documentation>A data type for a tangible property (other than land or buildings) of more or less durable nature which is useful in carrying on the operations of a business.</xs:documentation>
+      <xs:documentation>A data type for additional information about equipment.</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
-      <xs:extension base="nc:ItemType">
+      <xs:extension base="structures:AugmentationType">
         <xs:sequence>
-          <xs:element ref="nc:RoleOfItem" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="it:EquipmentSealIdentification" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="it:EquipmentIdentification" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="it:EquipmentID" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="it:EquipmentCharacteristicText" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="it:EquipmentLoadedStatusText" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="it:EquipmentLegalStatusIndicator" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="it:EquipmentAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="it:EquipmentLoadedStatusText" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="it:EquipmentSealIdentification" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -1379,7 +1392,7 @@
       <xs:documentation>A data type representing the equipment used in Means of Transport</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
-      <xs:extension base="it:EquipmentType">
+      <xs:extension base="nc:EquipmentType">
         <xs:sequence>
           <xs:element ref="it:TransportEquipmentAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
@@ -2427,29 +2440,14 @@
       <xs:documentation>A location type where Entry Customs Office is located.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="Equipment" type="it:EquipmentType" nillable="true">
+  <xs:element name="EquipmentAugmentation" type="it:EquipmentAugmentationType" substitutionGroup="nc:EquipmentAugmentationPoint" nillable="true">
     <xs:annotation>
-      <xs:documentation>A tangible property (other than land or buildings) of more or less durable nature which is useful in carrying on the operations of a business.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="EquipmentAugmentationPoint" abstract="true">
-    <xs:annotation>
-      <xs:documentation>An augmentation point for EquipmentType.</xs:documentation>
+      <xs:documentation>Additional information about equipment.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="EquipmentCharacteristicText" type="nc:TextType" nillable="true">
     <xs:annotation>
       <xs:documentation>A characteristic of a piece of transport equipment.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="EquipmentID" type="niem-xs:string" nillable="true">
-    <xs:annotation>
-      <xs:documentation>An identifier (letters and/or numbers) for equipment e.g. unit load device.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="EquipmentIdentification" type="nc:IdentificationType" nillable="true">
-    <xs:annotation>
-      <xs:documentation>An identification (letters and/or numbers) which identifies equipment e.g. unit load device.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="EquipmentLegalStatusIndicator" type="niem-xs:boolean" nillable="true">
@@ -2795,11 +2793,6 @@
   <xs:element name="HazardousMaterialDataAugmentationPoint" abstract="true">
     <xs:annotation>
       <xs:documentation>An augmentation point for HazardousMaterialDataType.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="HazmatCodeText" type="niem-xs:string" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A unique code that identifies the Hazardous material.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="HazmatCommonName" type="nc:TextType" nillable="true">

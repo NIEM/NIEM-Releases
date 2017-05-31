@@ -1,15 +1,48 @@
 <?xml version="1.0" encoding="US-ASCII"?>
-<xs:schema targetNamespace="http://release.niem.gov/niem/domains/biometrics/4.0/" version="beta1" xsi:schemaLocation="http://release.niem.gov/niem/appinfo/4.0/ ../../../appinfo/4.0/appinfo.xsd http://release.niem.gov/niem/conformanceTargets/3.0/ ../../../conformanceTargets/3.0/conformanceTargets.xsd" ct:conformanceTargets="http://reference.niem.gov/niem/specification/naming-and-design-rules/4.0/#ReferenceSchemaDocument" xmlns:structures="http://release.niem.gov/niem/structures/4.0/" xmlns:appinfo="http://release.niem.gov/niem/appinfo/4.0/" xmlns:nc="http://release.niem.gov/niem/niem-core/4.0/" xmlns:ct="http://release.niem.gov/niem/conformanceTargets/3.0/" xmlns:genc="http://release.niem.gov/niem/codes/nga_genc/4.0/" xmlns:iso_639-3="http://release.niem.gov/niem/codes/iso_639-3/4.0/" xmlns:biom="http://release.niem.gov/niem/domains/biometrics/4.0/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:iso_3166="http://release.niem.gov/niem/codes/iso_3166-1/4.0/" xmlns:ncic="http://release.niem.gov/niem/codes/fbi_ncic/4.0/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:niem-xs="http://release.niem.gov/niem/proxy/xsd/4.0/">
+<xs:schema targetNamespace="http://release.niem.gov/niem/domains/biometrics/4.0/" version="1" xsi:schemaLocation="http://release.niem.gov/niem/appinfo/4.0/ ../../../utility/appinfo/4.0/appinfo.xsd http://release.niem.gov/niem/conformanceTargets/3.0/ ../../../utility/conformanceTargets/3.0/conformanceTargets.xsd" ct:conformanceTargets="http://reference.niem.gov/niem/specification/naming-and-design-rules/4.0/#ReferenceSchemaDocument" xmlns:structures="http://release.niem.gov/niem/structures/4.0/" xmlns:appinfo="http://release.niem.gov/niem/appinfo/4.0/" xmlns:ct="http://release.niem.gov/niem/conformanceTargets/3.0/" xmlns:nc="http://release.niem.gov/niem/niem-core/4.0/" xmlns:iso_639-3="http://release.niem.gov/niem/codes/iso_639-3/4.0/" xmlns:biom="http://release.niem.gov/niem/domains/biometrics/4.0/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ncic="http://release.niem.gov/niem/codes/fbi_ncic/4.0/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:niem-xs="http://release.niem.gov/niem/proxy/xsd/4.0/">
   <xs:annotation>
     <xs:documentation>Biometric Schema Version 1.0</xs:documentation>
+    <xs:appinfo>
+      <appinfo:LocalTerm term="NCIC" literal="GlossaryLiteral&#xd;&#xa;National Crime Information Center"/>
+      <appinfo:LocalTerm term="EFS" literal="Extended Feature Set"/>
+      <appinfo:LocalTerm term="ANSI" literal="American National Standards Institute"/>
+      <appinfo:LocalTerm term="FTF" literal="free text field"/>
+      <appinfo:LocalTerm term="UTC" literal="Coordinated Universal Time"/>
+      <appinfo:LocalTerm term="3D" literal="Three-dimensional"/>
+      <appinfo:LocalTerm term="AVI" literal="Assigned voice indicator"/>
+      <appinfo:LocalTerm term="CBEFF" literal="Common Biometric Exchange Formats Framework"/>
+      <appinfo:LocalTerm term="EJI" literal="Equal Justice Initiative"/>
+      <appinfo:LocalTerm term="IEC" literal="International Electrotechnical Commission"/>
+      <appinfo:LocalTerm term="ISO" literal="International Organization for Standardization"/>
+      <appinfo:LocalTerm term="MISC" literal="Miscellaneous"/>
+      <appinfo:LocalTerm term="NIST" literal="National Institute of Standards and Technology"/>
+      <appinfo:LocalTerm term="PHD" literal="Photo Capture Date"/>
+      <appinfo:LocalTerm term="ppi" literal="Pixels per inch"/>
+      <appinfo:LocalTerm term="ppmm" literal="Pixels per millimeter"/>
+      <appinfo:LocalTerm term="PUM" literal="Position Uncertainty"/>
+      <appinfo:LocalTerm term="SBCC" literal="Subject Body Class Code"/>
+      <appinfo:LocalTerm term="SBSC" literal="Subject Body Status Code"/>
+      <appinfo:LocalTerm term="SMS" literal="Scar/Mark/Tattoo Size"/>
+      <appinfo:LocalTerm term="SMT" literal="Scars, Marks, and Tattoos"/>
+      <appinfo:LocalTerm term="SPC" literal="Speaker Plurality Code"/>
+      <appinfo:LocalTerm term="STR" literal="Short tandem repeat"/>
+      <appinfo:LocalTerm term="TDD" literal="Tooth data detail"/>
+      <appinfo:LocalTerm term="VCD" literal="Vocal content diary"/>
+      <appinfo:LocalTerm term="VOC" literal="Vocal Content"/>
+      <appinfo:LocalTerm term="X-STR" literal="Short tandem repeat (STR) on the X-chromosome"/>
+      <appinfo:LocalTerm term="Y-STR" literal="Short tandem repeat (STR) on the Y-chromosome"/>
+      <appinfo:LocalTerm term="ADA" literal="American Dental Association"/>
+      <appinfo:LocalTerm term="DNA" literal="Deoxyribonucleic acid"/>
+      <appinfo:LocalTerm term="DNASTR" literal="Deoxyribonucleic acid short tandem repeat"/>
+      <appinfo:LocalTerm term="GENC" literal="Geopolitical Entities, Names, and Codes (GENC) Standard"/>
+      <appinfo:LocalTerm term="Mito" literal="Mitochondrial"/>
+    </xs:appinfo>
   </xs:annotation>
-  <xs:import schemaLocation="../../../structures/4.0/structures.xsd" namespace="http://release.niem.gov/niem/structures/4.0/"/>
-  <xs:import schemaLocation="../../../codes/iso_639-3/4.0/iso_639-3.xsd" namespace="http://release.niem.gov/niem/codes/iso_639-3/4.0/"/>
-  <xs:import schemaLocation="../../../codes/iso_3166-1/4.0/iso_3166.xsd" namespace="http://release.niem.gov/niem/codes/iso_3166-1/4.0/"/>
-  <xs:import schemaLocation="../../../proxy/xsd/4.0/xs.xsd" namespace="http://release.niem.gov/niem/proxy/xsd/4.0/"/>
   <xs:import schemaLocation="../../../niem-core/4.0/niem-core.xsd" namespace="http://release.niem.gov/niem/niem-core/4.0/"/>
-  <xs:import schemaLocation="../../../codes/nga_genc/4.0/nga_genc.xsd" namespace="http://release.niem.gov/niem/codes/nga_genc/4.0/"/>
+  <xs:import schemaLocation="../../../codes/iso_639-3/4.0/iso_639-3.xsd" namespace="http://release.niem.gov/niem/codes/iso_639-3/4.0/"/>
+  <xs:import schemaLocation="../../../utility/structures/4.0/structures.xsd" namespace="http://release.niem.gov/niem/structures/4.0/"/>
   <xs:import schemaLocation="../../../codes/fbi_ncic/4.0/fbi_ncic.xsd" namespace="http://release.niem.gov/niem/codes/fbi_ncic/4.0/"/>
+  <xs:import schemaLocation="../../../proxy/xsd/4.0/xs.xsd" namespace="http://release.niem.gov/niem/proxy/xsd/4.0/"/>
   <xs:simpleType name="ANSIRecordCategoryCodeSimpleType">
     <xs:annotation>
       <xs:documentation>A data type for a kind of record based on ANSI/NIST-ITL 1-2013</xs:documentation>
@@ -648,7 +681,7 @@
         <xs:sequence>
           <xs:element ref="biom:MetricCodeText" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="biom:MetricValue" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="biom:Vendor" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="biom:VendorName" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="biom:BiometricCaptureMetricAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
       </xs:extension>
@@ -1142,10 +1175,10 @@
     <xs:complexContent>
       <xs:extension base="structures:ObjectType">
         <xs:sequence>
-          <xs:element ref="biom:LipPrintWidth" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="biom:LipPrintHeight" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="biom:PhiltrumWidth" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="biom:PhiltrumHeight" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="biom:LipPrintWidthValue" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="biom:LipPrintHeightValue" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="biom:PhiltrumWidthValue" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="biom:PhiltrumHeightValue" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="biom:UpperLipCharacterizationCodeList" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="biom:LowerLipCharacterizationCodeList" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="biom:LipContactLineDescriptorCode" minOccurs="0" maxOccurs="unbounded"/>
@@ -2279,7 +2312,7 @@
       <xs:extension base="structures:ObjectType">
         <xs:sequence>
           <xs:element ref="biom:RadiographSizeText" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="biom:RadiographImageSeries" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="biom:RadiographImageSeriesCodeText" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="biom:RadiographImageSeriesText" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="biom:RadiographImageInformationText" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="biom:DentalRadiographImageInformationAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
@@ -2839,7 +2872,7 @@
       <xs:extension base="structures:ObjectType">
         <xs:sequence>
           <xs:element ref="biom:FeatureColorFieldReferencedCode" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="biom:FeatureColorFieldOccurenceReferenced" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="biom:FeatureColorFieldOccurenceReferencedValue" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="biom:FeatureColorHexidecimalValue" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="biom:FeatureColorCommentText" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="biom:EFSFeatureColorAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
@@ -3145,7 +3178,7 @@
           <xs:element ref="biom:AssociatedContext" minOccurs="0" maxOccurs="255"/>
           <xs:element ref="biom:DigitalAudioRecordHashValue" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="biom:SourceInformation" minOccurs="0" maxOccurs="255"/>
-          <xs:element ref="biom:VoiceData" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="biom:VoiceDataBinaryObject" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="biom:ExtendedAudioPackageDataRecordAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
       </xs:extension>
@@ -5832,7 +5865,7 @@
     <xs:annotation>
       <xs:documentation>A data type for a friction ridge image position</xs:documentation>
     </xs:annotation>
-    <xs:union memberTypes="biom:PlantarPositionCodeSimpleType biom:UnknownPositionCodeSimpleType biom:PalmPositionCodeSimpleType biom:FingerPositionCodeSimpleType"/>
+    <xs:union memberTypes="biom:UnknownPositionCodeSimpleType biom:PalmPositionCodeSimpleType biom:FingerPositionCodeSimpleType biom:PlantarPositionCodeSimpleType"/>
   </xs:simpleType>
   <xs:complexType name="FrictionRidgePositionCodeType">
     <xs:annotation>
@@ -11305,8 +11338,7 @@
           <xs:element ref="biom:RecordingSourceCategoryCode" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="biom:SourceOrganizationName" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:OrganizationPrimaryContactInformation" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="biom:RecordingSourceCountryISO3166Alpha2Code" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="biom:RecordingSourceCountryGENCAlpha3Code" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="biom:RecordingSourceCountry" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="biom:RecordingSettingDetailAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
       </xs:extension>
@@ -11436,12 +11468,12 @@
       <xs:extension base="structures:ObjectType">
         <xs:sequence>
           <xs:element ref="biom:ResolutionMeansCode" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="biom:ResolutionScaleLength" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="biom:ResolutionScaleLengthValue" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="biom:ResolutionScaleUnitCode" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="biom:ResolutionScaleXCoordinateA" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="biom:ResolutionScaleYCoordinateA" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="biom:ResolutionScaleXCoordinateB" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="biom:ResolutionScaleYCoordinateB" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="biom:ResolutionScaleXCoordinateAValue" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="biom:ResolutionScaleYCoordinateAValue" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="biom:ResolutionScaleXCoordinateBValue" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="biom:ResolutionScaleYCoordinateBValue" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="biom:ResolutionCommentText" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="biom:ResolutionMethodInformationAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
@@ -11697,7 +11729,7 @@
           <xs:element ref="nc:LocationDescriptionText" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:LocationElevation" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:Location2DGeospatialCoordinate" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="nc:LocationUTMCoordinate" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:LocationUTMCoordinateValue" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="biom:LocationAlternateGeographicSystemValue" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="biom:CellPhoneTowerCodeText" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="biom:SegmentGeographicalLocationAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
@@ -14764,7 +14796,7 @@
       <xs:documentation>A fourth information item, feature _ comment / COM, allows a free text comment or description to be provided by the examiner about the referenced field and subfield in this instance of a Type-9 record.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="FeatureColorFieldOccurenceReferenced" type="niem-xs:positiveInteger" nillable="true">
+  <xs:element name="FeatureColorFieldOccurenceReferencedValue" type="niem-xs:positiveInteger" nillable="true">
     <xs:annotation>
       <xs:documentation>A second information item, feature _ field occurrence / FTO, indicates which repeating subfield of the specified field the label is applied to. Note that this is a 1-based index, not a 0-based index. Occurrences are numbered starting with 1.</xs:documentation>
     </xs:annotation>
@@ -15129,12 +15161,7 @@
       <xs:documentation>An augmentation point for ForensicInvestigatoryVoiceDetail</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="ForensicSourceCountryGENCAlpha3Code" type="genc:CountryAlpha3CodeType" substitutionGroup="biom:SourceCountryCodeAbstract" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A country code, describing where a forensic analysis was performed.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="ForensicSourceCountryISO3166Alpha2Code" type="iso_3166:CountryAlpha2CodeType" substitutionGroup="biom:SourceCountryCodeAbstract" nillable="true">
+  <xs:element name="ForensicSourceCountry" type="nc:CountryType" substitutionGroup="biom:SourceCountryCodeAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A country code, describing where a forensic analysis was performed.</xs:documentation>
     </xs:annotation>
@@ -15769,7 +15796,7 @@
       <xs:documentation>A kind of lip print additional descriptive text</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="LipPrintHeight" type="niem-xs:positiveInteger" nillable="true">
+  <xs:element name="LipPrintHeightValue" type="niem-xs:positiveInteger" nillable="true">
     <xs:annotation>
       <xs:documentation>A lip print height</xs:documentation>
     </xs:annotation>
@@ -15824,7 +15851,7 @@
       <xs:documentation>A kind of lip print surface descriptive text</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="LipPrintWidth" type="niem-xs:positiveInteger" nillable="true">
+  <xs:element name="LipPrintWidthValue" type="niem-xs:positiveInteger" nillable="true">
     <xs:annotation>
       <xs:documentation>A lip print width.</xs:documentation>
     </xs:annotation>
@@ -15874,7 +15901,7 @@
       <xs:documentation>A comment used to describe a physical media object.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="MedicalImageryDataBlock" type="niem-xs:base64Binary" substitutionGroup="biom:SourceExternalReferenceAbstract" nillable="true">
+  <xs:element name="MedicalImageryDataBlockBinaryObject" type="niem-xs:base64Binary" substitutionGroup="biom:SourceExternalReferenceAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>An imagery data block for the image</xs:documentation>
     </xs:annotation>
@@ -16889,12 +16916,12 @@
       <xs:documentation>An identifier that represents the PERSON PHYSICAL MARKING.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="PhiltrumHeight" type="niem-xs:positiveInteger" nillable="true">
+  <xs:element name="PhiltrumHeightValue" type="niem-xs:positiveInteger" nillable="true">
     <xs:annotation>
       <xs:documentation>A philtrum height</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="PhiltrumWidth" type="niem-xs:positiveInteger" nillable="true">
+  <xs:element name="PhiltrumWidthValue" type="niem-xs:positiveInteger" nillable="true">
     <xs:annotation>
       <xs:documentation>A philtrum width.</xs:documentation>
     </xs:annotation>
@@ -17234,7 +17261,7 @@
       <xs:documentation>A kind of radiograph image information text</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="RadiographImageSeries" type="nc:TextType" nillable="true">
+  <xs:element name="RadiographImageSeriesCodeText" type="nc:TextType" nillable="true">
     <xs:annotation>
       <xs:documentation>A kind of Radiograph Image Series. Only integer and periods are in the code text. An example is 8.1.3.9.1.5 for the National Provider Identifier Number of Dentist that treated the patient.</xs:documentation>
     </xs:annotation>
@@ -17358,12 +17385,7 @@
       <xs:documentation>A kind of site or agency that created a recording.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="RecordingSourceCountryGENCAlpha3Code" type="genc:CountryAlpha3CodeType" substitutionGroup="biom:SourceCountryCodeAbstract" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A country code, describing where a recording was created.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="RecordingSourceCountryISO3166Alpha2Code" type="iso_3166:CountryAlpha2CodeType" substitutionGroup="biom:SourceCountryCodeAbstract" nillable="true">
+  <xs:element name="RecordingSourceCountry" type="nc:CountryType" substitutionGroup="biom:SourceCountryCodeAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A country code, describing where a recording was created.</xs:documentation>
     </xs:annotation>
@@ -17418,7 +17440,7 @@
       <xs:documentation>An augmentation point for ResolutionMethodInformation</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="ResolutionScaleLength" type="niem-xs:decimal" nillable="true">
+  <xs:element name="ResolutionScaleLengthValue" type="niem-xs:decimal" nillable="true">
     <xs:annotation>
       <xs:documentation>A known scale units, specifies the length of the known scale from point A to point B.</xs:documentation>
     </xs:annotation>
@@ -17428,22 +17450,22 @@
       <xs:documentation>A known scale units indicates whether the known scales units are in inches or millimeters.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="ResolutionScaleXCoordinateA" type="niem-xs:nonNegativeInteger" nillable="true">
+  <xs:element name="ResolutionScaleXCoordinateAValue" type="niem-xs:nonNegativeInteger" nillable="true">
     <xs:annotation>
       <xs:documentation>A known scale x coordinate for point A is expressed in number of pixels from the left of the image.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="ResolutionScaleXCoordinateB" type="niem-xs:nonNegativeInteger" nillable="true">
+  <xs:element name="ResolutionScaleXCoordinateBValue" type="niem-xs:nonNegativeInteger" nillable="true">
     <xs:annotation>
       <xs:documentation>A known scale x coordinate for point B is expressed in number of pixels from the left of the image.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="ResolutionScaleYCoordinateA" type="niem-xs:nonNegativeInteger" nillable="true">
+  <xs:element name="ResolutionScaleYCoordinateAValue" type="niem-xs:nonNegativeInteger" nillable="true">
     <xs:annotation>
       <xs:documentation>A known scale y coordinate for point A is expressed in number of pixels from the top of the image.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="ResolutionScaleYCoordinateB" type="niem-xs:nonNegativeInteger" nillable="true">
+  <xs:element name="ResolutionScaleYCoordinateBValue" type="niem-xs:nonNegativeInteger" nillable="true">
     <xs:annotation>
       <xs:documentation>A known scale y coordinate for point B is expressed in number of pixels from the top of the image.</xs:documentation>
     </xs:annotation>
@@ -18250,7 +18272,7 @@
       <xs:documentation>A vector's Y coordinate in units of .0254 mm</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="Vendor" type="nc:TextType" nillable="true">
+  <xs:element name="VendorName" type="nc:TextType" nillable="true">
     <xs:annotation>
       <xs:documentation>A vendor name</xs:documentation>
     </xs:annotation>
@@ -18305,7 +18327,7 @@
       <xs:documentation>A code assessing the predominant vocal style across the audio time segment.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="VoiceData" type="niem-xs:base64Binary" nillable="true">
+  <xs:element name="VoiceDataBinaryObject" type="niem-xs:base64Binary" nillable="true">
     <xs:annotation>
       <xs:documentation>A voice data block</xs:documentation>
     </xs:annotation>
