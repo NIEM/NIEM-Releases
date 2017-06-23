@@ -3997,7 +3997,6 @@
           <xs:element ref="j:HearingBoardActionHearingComment" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="j:HearingCancellation" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="j:HearingCategoryAbstract" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="j:HearingCategoryText" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="j:HearingComment" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="j:HearingContinuanceDate" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="j:HearingContinuanceGoodCauseIndicator" minOccurs="0" maxOccurs="unbounded"/>
@@ -4638,18 +4637,6 @@
           <xs:element ref="j:ItemSeizure" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="j:ItemPartialLotAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="j:LivestockSexAbstract" minOccurs="0" maxOccurs="unbounded"/>
-        </xs:sequence>
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
-  <xs:complexType name="ItemDispositionAugmentationType">
-    <xs:annotation>
-      <xs:documentation>A data type for additional information about a disposition of a property item.</xs:documentation>
-    </xs:annotation>
-    <xs:complexContent>
-      <xs:extension base="structures:AugmentationType">
-        <xs:sequence>
-          <xs:element ref="j:ItemDispositionAbstract" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -9220,6 +9207,7 @@
           <xs:element ref="j:SupervisionRestrictionLocation" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="j:SupervisionRestrictionPerson" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="j:SupervisionRestriction" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="j:SupervisionRestrictionAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="j:SupervisionRestrictionAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
       </xs:extension>
@@ -17516,10 +17504,10 @@
   </xs:element>
   <xs:element name="HearingCategoryAbstract" abstract="true">
     <xs:annotation>
-      <xs:documentation>A data concept for a kind of reason a hearing was cancelled.</xs:documentation>
+      <xs:documentation>A data concept for a kind of hearing conducted.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="HearingCategoryText" type="nc:TextType" nillable="true">
+  <xs:element name="HearingCategoryText" type="nc:TextType" substitutionGroup="j:HearingCategoryAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A kind of hearing conducted.</xs:documentation>
     </xs:annotation>
@@ -19364,17 +19352,7 @@
       <xs:documentation>A feature or characteristic of a property item.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="ItemDispositionAbstract" abstract="true">
-    <xs:annotation>
-      <xs:documentation>A data concept for an indication of what happened to a property item.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="ItemDispositionAugmentation" type="j:ItemDispositionAugmentationType" substitutionGroup="nc:ItemDispositionAugmentationPoint" nillable="true">
-    <xs:annotation>
-      <xs:documentation>Additional information about a disposition of a property item.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="ItemDispositionCode" type="ucr:PropertyLossCodeType" substitutionGroup="j:ItemDispositionAbstract" nillable="true">
+  <xs:element name="ItemDispositionCode" type="ucr:PropertyLossCodeType" substitutionGroup="nc:ItemDispositionAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>An indication of what happened to a property item.</xs:documentation>
     </xs:annotation>
@@ -20294,17 +20272,17 @@
       <xs:documentation>A security level of the location.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="LocationStateNCICLISCode" type="ncic:CountryCodeType" substitutionGroup="nc:StateRepresentationAbstract" nillable="true">
+  <xs:element name="LocationStateNCICLISCode" type="ncic:CountryCodeType" substitutionGroup="nc:StateRepresentation" nillable="true">
     <xs:annotation>
       <xs:documentation>A state, commonwealth, province, or other such geopolitical subdivision of a country.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="LocationStateNCICLSTACode" type="ncic:CountryCodeType" substitutionGroup="nc:StateRepresentationAbstract" nillable="true">
+  <xs:element name="LocationStateNCICLSTACode" type="ncic:CountryCodeType" substitutionGroup="nc:StateRepresentation" nillable="true">
     <xs:annotation>
       <xs:documentation>A state, commonwealth, province, or other such geopolitical subdivision of a country.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="LocationStateNCICRESCode" type="ncic:CountryCodeType" substitutionGroup="nc:StateRepresentationAbstract" nillable="true">
+  <xs:element name="LocationStateNCICRESCode" type="ncic:CountryCodeType" substitutionGroup="nc:StateRepresentation" nillable="true">
     <xs:annotation>
       <xs:documentation>A state, commonwealth, province, or other such geopolitical subdivision of a country.</xs:documentation>
     </xs:annotation>

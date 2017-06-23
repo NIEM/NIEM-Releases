@@ -854,7 +854,7 @@
     <xs:complexContent>
       <xs:extension base="structures:ObjectType">
         <xs:sequence>
-          <xs:element ref="nc:CountryRepresentationAbstract" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:CountryRepresentation" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:CountryAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
       </xs:extension>
@@ -915,7 +915,7 @@
     <xs:complexContent>
       <xs:extension base="structures:ObjectType">
         <xs:sequence>
-          <xs:element ref="nc:DateRepresentationAbstract" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:DateRepresentation" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:DateAccuracyAbstract" minOccurs="0" maxOccurs="1"/>
           <xs:element ref="nc:DateMarginOfErrorDuration" minOccurs="0" maxOccurs="1"/>
           <xs:element ref="nc:DateAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
@@ -1524,7 +1524,7 @@
     <xs:complexContent>
       <xs:extension base="structures:ObjectType">
         <xs:sequence>
-          <xs:element ref="nc:EntityRepresentationAbstract" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:EntityRepresentation" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:EntityAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
       </xs:extension>
@@ -2073,6 +2073,7 @@
     <xs:complexContent>
       <xs:extension base="nc:DispositionType">
         <xs:sequence>
+          <xs:element ref="nc:ItemDispositionAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:ItemDispositionLocation" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:Item" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:ItemHoldingOrganization" minOccurs="0" maxOccurs="unbounded"/>
@@ -2396,6 +2397,7 @@
           <xs:element ref="nc:LocationSurroundingAreaDescriptionText" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:LocationIdentification" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:LocationHeightAbstract" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:LocationFloorNumberText" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:LocationAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
       </xs:extension>
@@ -2512,6 +2514,7 @@
           <xs:element ref="nc:MedicalConditionDescriptionText" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:MedicalConditionPresentIndicator" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:MedicalConditionSeverityText" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:MedicalConditionDateRange" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:MedicalConditionAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
       </xs:extension>
@@ -4105,7 +4108,7 @@
     <xs:complexContent>
       <xs:extension base="structures:ObjectType">
         <xs:sequence>
-          <xs:element ref="nc:StateRepresentationAbstract" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:StateRepresentation" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:StateAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
       </xs:extension>
@@ -4917,7 +4920,7 @@
       <xs:documentation>A data type for a velocity measurement.</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
-      <xs:extension base="nc:MeasureType">
+      <xs:extension base="nc:SpeedMeasureType">
         <xs:sequence>
           <xs:element ref="nc:Bearing" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:VelocityMeasureAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
@@ -6323,12 +6326,12 @@
       <xs:documentation>An augmentation point for type nc:CountryType</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="CountryCode" type="nc:CodeType" substitutionGroup="nc:CountryRepresentationAbstract" nillable="true">
+  <xs:element name="CountryCode" type="nc:CodeType" substitutionGroup="nc:CountryRepresentation" nillable="true">
     <xs:annotation>
       <xs:documentation>A country, territory, dependency, or other such geopolitical subdivision of a location.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="CountryRepresentationAbstract" abstract="true">
+  <xs:element name="CountryRepresentation" abstract="true">
     <xs:annotation>
       <xs:documentation>A data concept for a representation of a country.</xs:documentation>
     </xs:annotation>
@@ -6438,7 +6441,7 @@
       <xs:documentation>A class to which the Drug Enforcement Agency (DEA) has assigned the product under the Controlled Substances Act of 1970.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="Date" type="niem-xs:date" substitutionGroup="nc:DateRepresentationAbstract" nillable="true">
+  <xs:element name="Date" type="niem-xs:date" substitutionGroup="nc:DateRepresentation" nillable="true">
     <xs:annotation>
       <xs:documentation>A full date.</xs:documentation>
     </xs:annotation>
@@ -6458,7 +6461,7 @@
       <xs:documentation>A subjective assessment of the uncertainty of an estimated point by bounding an elements value with an estimated margin of error.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="DateRange" type="nc:DateRangeType" substitutionGroup="nc:DateRepresentationAbstract" nillable="true">
+  <xs:element name="DateRange" type="nc:DateRangeType" substitutionGroup="nc:DateRepresentation" nillable="true">
     <xs:annotation>
       <xs:documentation>A time period measured by a starting and ending point.</xs:documentation>
     </xs:annotation>
@@ -6468,17 +6471,17 @@
       <xs:documentation>An augmentation point for DateRangeType.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="DateRepresentationAbstract" abstract="true">
+  <xs:element name="DateRepresentation" abstract="true">
     <xs:annotation>
       <xs:documentation>A data concept for a representation of a date.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="DateTime" type="niem-xs:dateTime" substitutionGroup="nc:DateRepresentationAbstract" nillable="true">
+  <xs:element name="DateTime" type="niem-xs:dateTime" substitutionGroup="nc:DateRepresentation" nillable="true">
     <xs:annotation>
       <xs:documentation>A full date and time.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="DayDate" type="niem-xs:gDay" substitutionGroup="nc:DateRepresentationAbstract" nillable="true">
+  <xs:element name="DayDate" type="niem-xs:gDay" substitutionGroup="nc:DateRepresentation" nillable="true">
     <xs:annotation>
       <xs:documentation>A day date.</xs:documentation>
     </xs:annotation>
@@ -7478,7 +7481,7 @@
       <xs:documentation>A description of an entity.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="EntityItem" type="nc:ItemType" substitutionGroup="nc:EntityRepresentationAbstract" nillable="true">
+  <xs:element name="EntityItem" type="nc:ItemType" substitutionGroup="nc:EntityRepresentation" nillable="true">
     <xs:annotation>
       <xs:documentation>An item capable of bearing legal rights and responsibilities.</xs:documentation>
     </xs:annotation>
@@ -7488,17 +7491,17 @@
       <xs:documentation>A name of an entity.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="EntityOrganization" type="nc:OrganizationType" substitutionGroup="nc:EntityRepresentationAbstract" nillable="true">
+  <xs:element name="EntityOrganization" type="nc:OrganizationType" substitutionGroup="nc:EntityRepresentation" nillable="true">
     <xs:annotation>
       <xs:documentation>An organization capable of bearing legal rights and responsibilities.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="EntityPerson" type="nc:PersonType" substitutionGroup="nc:EntityRepresentationAbstract" nillable="true">
+  <xs:element name="EntityPerson" type="nc:PersonType" substitutionGroup="nc:EntityRepresentation" nillable="true">
     <xs:annotation>
       <xs:documentation>A person capable of bearing legal rights and responsibilities.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="EntityRepresentationAbstract" abstract="true">
+  <xs:element name="EntityRepresentation" abstract="true">
     <xs:annotation>
       <xs:documentation>A data concept for a person, organization, or thing capable of bearing legal rights and responsibilities.</xs:documentation>
     </xs:annotation>
@@ -7788,7 +7791,7 @@
       <xs:documentation>True if a fingerprint biometric was taken; false otherwise.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="FiscalYearDate" type="nc:FiscalYearDateType" nillable="true">
+  <xs:element name="FiscalYearDate" type="nc:FiscalYearDateType" substitutionGroup="nc:DateRepresentation" nillable="true">
     <xs:annotation>
       <xs:documentation>A year of a twelve month period that does not necessarily correspond to the calendar year.</xs:documentation>
     </xs:annotation>
@@ -7803,7 +7806,7 @@
       <xs:documentation>An augmentation point for FullTelephoneNumberType.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="GenericEntity" type="nc:GenericEntityType" substitutionGroup="nc:EntityRepresentationAbstract" nillable="true">
+  <xs:element name="GenericEntity" type="nc:GenericEntityType" substitutionGroup="nc:EntityRepresentation" nillable="true">
     <xs:annotation>
       <xs:documentation>A basic set of information about a person or an organization.</xs:documentation>
     </xs:annotation>
@@ -7900,7 +7903,7 @@
   </xs:element>
   <xs:element name="Identification" type="nc:IdentificationType" nillable="true">
     <xs:annotation>
-      <xs:documentation>A representation of an identity.</xs:documentation>
+      <xs:documentation>An identification to represent an identity.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="IdentificationAugmentationPoint" abstract="true">
@@ -8411,6 +8414,11 @@
   <xs:element name="ItemDisposition" type="nc:ItemDispositionType" nillable="true">
     <xs:annotation>
       <xs:documentation>A result or outcome that happens to an item after it has been handled or processed.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="ItemDispositionAbstract" abstract="true">
+    <xs:annotation>
+      <xs:documentation>A data concept for an indication of what happened to a property item.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="ItemDispositionAugmentationPoint" abstract="true">
@@ -8953,7 +8961,7 @@
       <xs:documentation>An augmentation point for LocationType.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="LocationCanadianProvinceCode" type="can:CanadianProvinceCodeType" substitutionGroup="nc:StateRepresentationAbstract" nillable="true">
+  <xs:element name="LocationCanadianProvinceCode" type="can:CanadianProvinceCodeType" substitutionGroup="nc:StateRepresentation" nillable="true">
     <xs:annotation>
       <xs:documentation>A province.</xs:documentation>
     </xs:annotation>
@@ -8998,22 +9006,22 @@
       <xs:documentation>A country, territory, dependency, or other such geopolitical subdivision of a location.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="LocationCountryISO3166Alpha2Code" type="iso_3166:CountryAlpha2CodeType" substitutionGroup="nc:CountryRepresentationAbstract" nillable="true">
+  <xs:element name="LocationCountryISO3166Alpha2Code" type="iso_3166:CountryAlpha2CodeType" substitutionGroup="nc:CountryRepresentation" nillable="true">
     <xs:annotation>
       <xs:documentation>A country, territory, dependency, or other such geopolitical subdivision of a location.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="LocationCountryISO3166Alpha3Code" type="iso_3166:CountryAlpha3CodeType" substitutionGroup="nc:CountryRepresentationAbstract" nillable="true">
+  <xs:element name="LocationCountryISO3166Alpha3Code" type="iso_3166:CountryAlpha3CodeType" substitutionGroup="nc:CountryRepresentation" nillable="true">
     <xs:annotation>
       <xs:documentation>A country, territory, dependency, or other such geopolitical subdivision of a location.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="LocationCountryISO3166NumericCode" type="iso_3166:CountryNumericCodeType" substitutionGroup="nc:CountryRepresentationAbstract" nillable="true">
+  <xs:element name="LocationCountryISO3166NumericCode" type="iso_3166:CountryNumericCodeType" substitutionGroup="nc:CountryRepresentation" nillable="true">
     <xs:annotation>
       <xs:documentation>A country, territory, dependency, or other such geopolitical subdivision of a location.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="LocationCountryName" type="nc:ProperNameTextType" substitutionGroup="nc:CountryRepresentationAbstract" nillable="true">
+  <xs:element name="LocationCountryName" type="nc:ProperNameTextType" substitutionGroup="nc:CountryRepresentation" nillable="true">
     <xs:annotation>
       <xs:documentation>A name of a country, territory, dependency, or other such geopolitical subdivision of a location.</xs:documentation>
     </xs:annotation>
@@ -9058,7 +9066,7 @@
       <xs:documentation>An association between a location and its emergency services.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="LocationFloorNumberText" type="nc:TextType" substitutionGroup="nc:LocationHeightAbstract" nillable="true">
+  <xs:element name="LocationFloorNumberText" type="nc:TextType" nillable="true">
     <xs:annotation>
       <xs:documentation>A floor number of a location.</xs:documentation>
     </xs:annotation>
@@ -9158,17 +9166,17 @@
       <xs:documentation>A state, commonwealth, province, or other such geopolitical subdivision of a country.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="LocationStateFIPS5-2Code" type="fips_5-2:USStateNumericCodeType" substitutionGroup="nc:StateRepresentationAbstract" nillable="true">
+  <xs:element name="LocationStateFIPS5-2Code" type="fips_5-2:USStateNumericCodeType" substitutionGroup="nc:StateRepresentation" nillable="true">
     <xs:annotation>
       <xs:documentation>A state, commonwealth, province, or other such geopolitical subdivision of a country.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="LocationStateName" type="nc:ProperNameTextType" substitutionGroup="nc:StateRepresentationAbstract" nillable="true">
+  <xs:element name="LocationStateName" type="nc:ProperNameTextType" substitutionGroup="nc:StateRepresentation" nillable="true">
     <xs:annotation>
       <xs:documentation>A name of a state, commonwealth, province, or other such geopolitical subdivision of a country.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="LocationStateUSPostalServiceCode" type="usps:USStateCodeType" substitutionGroup="nc:StateRepresentationAbstract" nillable="true">
+  <xs:element name="LocationStateUSPostalServiceCode" type="usps:USStateCodeType" substitutionGroup="nc:StateRepresentation" nillable="true">
     <xs:annotation>
       <xs:documentation>A state, commonwealth, province, or other such geopolitical subdivision of a country.</xs:documentation>
     </xs:annotation>
@@ -9738,7 +9746,7 @@
       <xs:documentation>An element for the resource staging location</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="MonthDate" type="niem-xs:gMonth" substitutionGroup="nc:DateRepresentationAbstract" nillable="true">
+  <xs:element name="MonthDate" type="niem-xs:gMonth" substitutionGroup="nc:DateRepresentation" nillable="true">
     <xs:annotation>
       <xs:documentation>A month.</xs:documentation>
     </xs:annotation>
@@ -11483,7 +11491,7 @@
       <xs:documentation>A remark, explanation, or observation regarding the accuracy or trustworthiness of the information.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="QuarterID" type="nc:QuarterIDType" nillable="true">
+  <xs:element name="QuarterID" type="nc:QuarterIDType" substitutionGroup="nc:DateRepresentation" nillable="true">
     <xs:annotation>
       <xs:documentation>An identifier of a three-month period in a calendar or fiscal year.</xs:documentation>
     </xs:annotation>
@@ -12163,17 +12171,17 @@
       <xs:documentation>An augmentation point for type nc:StateType</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="StateCode" type="nc:CodeType" substitutionGroup="nc:StateRepresentationAbstract" nillable="true">
+  <xs:element name="StateCode" type="nc:CodeType" substitutionGroup="nc:StateRepresentation" nillable="true">
     <xs:annotation>
       <xs:documentation>A state, commonwealth, province, or other such geopolitical subdivision of a country.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="StateISO3166Code" type="iso_3166:CountrySubdivisionCodeType" substitutionGroup="nc:StateRepresentationAbstract" nillable="true">
+  <xs:element name="StateISO3166Code" type="iso_3166:CountrySubdivisionCodeType" substitutionGroup="nc:StateRepresentation" nillable="true">
     <xs:annotation>
       <xs:documentation>A state, commonwealth, province, or other such geopolitical subdivision of a country.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="StateRepresentationAbstract" abstract="true">
+  <xs:element name="StateRepresentation" abstract="true">
     <xs:annotation>
       <xs:documentation>A data concept for a state, commonwealth, province, or other such geopolitical subdivision of a country.</xs:documentation>
     </xs:annotation>
@@ -12918,17 +12926,17 @@
       <xs:documentation>A unit of measure of the weight value.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="YearDate" type="niem-xs:gYear" substitutionGroup="nc:DateRepresentationAbstract" nillable="true">
+  <xs:element name="YearDate" type="niem-xs:gYear" substitutionGroup="nc:DateRepresentation" nillable="true">
     <xs:annotation>
       <xs:documentation>A year.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="YearMonthDate" type="niem-xs:gYearMonth" substitutionGroup="nc:DateRepresentationAbstract" nillable="true">
+  <xs:element name="YearMonthDate" type="niem-xs:gYearMonth" substitutionGroup="nc:DateRepresentation" nillable="true">
     <xs:annotation>
       <xs:documentation>A year and month.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="ZuluDateTime" type="nc:ZuluDateTimeType" substitutionGroup="nc:DateRepresentationAbstract" nillable="true">
+  <xs:element name="ZuluDateTime" type="nc:ZuluDateTimeType" substitutionGroup="nc:DateRepresentation" nillable="true">
     <xs:annotation>
       <xs:documentation>A date and time with no offset from Coordinated Universal Time (UTC).</xs:documentation>
     </xs:annotation>

@@ -4,8 +4,9 @@
     <xs:documentation>MilOps - Distribution A</xs:documentation>
     <xs:appinfo>
       <appinfo:LocalTerm term="UUID" literal="Universally unique identifier"/>
-      <appinfo:LocalTerm term="ULN" literal="Unit Line Number"/>
+      <appinfo:LocalTerm term="UTM" literal="Univeral Transvere Mercator"/>
       <appinfo:LocalTerm term="MGRS" literal="Military Grid Reference System"/>
+      <appinfo:LocalTerm term="DSN" literal="Defense Switched Network"/>
       <appinfo:LocalTerm term="MILSTD2525-B" literal="Military Standard 2525 B (MIL-STD-2525B)"/>
       <appinfo:LocalTerm term="MILSTD2525-C" literal="Military Standard 2525 C (MIL-STD-2525C)"/>
       <appinfo:LocalTerm term="MILSTD2525-D" literal="Military Standard 2525 D (MIL-STD-2525D)"/>
@@ -385,7 +386,7 @@
       <xs:documentation>A data type for a complete coordinate string from the Military Grid Reference System (MGRS) which represents a location with a Universal Transverse Mercator (UTM) or Univeral Polar Steriographic (UPS) coordinate and a unique military grid square.</xs:documentation>
     </xs:annotation>
     <xs:restriction base="xs:string">
-      <xs:pattern value="(((0[1-9]|[1-5][0-9]|60)[C-HJ-NP-X][A-HJ-NP-Z][A-HJ-NP-V])|([ABYZ][A-CF-HJ-LP-UX-Z][A-HJ-NP-Z])) ([0-9][0-9]){0,5}">
+      <xs:pattern value="(((0[1-9]|[1-5][0-9]|60)[C-HJ-NP-X][A-HJ-NP-Z][A-HJ-NP-V])|([ABYZ][A-CF-HJ-LP-UX-Z][A-HJ-NP-Z]))([0-9][0-9]){0,5}">
         <xs:annotation>
           <xs:documentation>MGRS coordinate pattern</xs:documentation>
         </xs:annotation>
@@ -402,9 +403,36 @@
       </xs:extension>
     </xs:simpleContent>
   </xs:complexType>
+  <xs:simpleType name="MGRSUPS1MeterCoordinateSimpleType">
+    <xs:annotation>
+      <xs:documentation>A data type for a 1-meter precision level MGRS UPS coordinate.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:token">
+      <xs:length value="13">
+        <xs:annotation>
+          <xs:documentation>A length for MGRS UPS 1-meter coordinate.</xs:documentation>
+        </xs:annotation>
+      </xs:length>
+      <xs:pattern value="([ABYZ])([A-CF-HJ-LP-UX-Z])([A-HJ-NP-Z])([0-9]{5}[0-9]{5})">
+        <xs:annotation>
+          <xs:documentation>A pattern for MGRS UPS 1-meter coordinate.</xs:documentation>
+        </xs:annotation>
+      </xs:pattern>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="MGRSUPS1MeterCoordinateType">
+    <xs:annotation>
+      <xs:documentation>A data type for a 1-meter precision level MGRS UPS coordinate.</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="mo:MGRSUPS1MeterCoordinateSimpleType">
+        <xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
   <xs:simpleType name="MGRSUTM100000MeterCoordinateSimpleType">
     <xs:annotation>
-      <xs:documentation>A data type for a 100,000-meter precision level MGRS coordinate.</xs:documentation>
+      <xs:documentation>A data type for a 100,000-meter precision level MGRS UTM coordinate.</xs:documentation>
     </xs:annotation>
     <xs:restriction base="xs:token">
       <xs:pattern value="(0[1-9]|[1-5][0-9]|60)([C-HJ-NP-X])([A-HJ-NP-Z])([A-HJ-NP-V])">
@@ -421,7 +449,7 @@
   </xs:simpleType>
   <xs:complexType name="MGRSUTM100000MeterCoordinateType">
     <xs:annotation>
-      <xs:documentation>A data type for a 100,000-meter precision level MGRS coordinate.</xs:documentation>
+      <xs:documentation>A data type for a 100,000-meter precision level MGRS UTM coordinate.</xs:documentation>
     </xs:annotation>
     <xs:simpleContent>
       <xs:extension base="mo:MGRSUTM100000MeterCoordinateSimpleType">
@@ -431,7 +459,7 @@
   </xs:complexType>
   <xs:simpleType name="MGRSUTM10000MeterCoordinateSimpleType">
     <xs:annotation>
-      <xs:documentation>A data type for a 10,000-meter precision level MGRS coordinate.</xs:documentation>
+      <xs:documentation>A data type for a 10,000-meter precision level MGRS UTM coordinate.</xs:documentation>
     </xs:annotation>
     <xs:restriction base="xs:token">
       <xs:pattern value="(0[1-9]|[1-5][0-9]|60)([C-HJ-NP-X])([A-HJ-NP-Z])([A-HJ-NP-V])([0-9]{1}[0-9]{1})">
@@ -448,7 +476,7 @@
   </xs:simpleType>
   <xs:complexType name="MGRSUTM10000MeterCoordinateType">
     <xs:annotation>
-      <xs:documentation>A data type for a 10,000-meter precision level MGRS coordinate.</xs:documentation>
+      <xs:documentation>A data type for a 10,000-meter precision level MGRS UTM coordinate.</xs:documentation>
     </xs:annotation>
     <xs:simpleContent>
       <xs:extension base="mo:MGRSUTM10000MeterCoordinateSimpleType">
@@ -458,7 +486,7 @@
   </xs:complexType>
   <xs:simpleType name="MGRSUTM1000MeterCoordinateSimpleType">
     <xs:annotation>
-      <xs:documentation>A data type for a 1,000-meter precision level MGRS coordinate.</xs:documentation>
+      <xs:documentation>A data type for a 1,000-meter precision level MGRS UTM coordinate.</xs:documentation>
     </xs:annotation>
     <xs:restriction base="xs:token">
       <xs:pattern value="(0[1-9]|[1-5][0-9]|60)([C-HJ-NP-X])([A-HJ-NP-Z])([A-HJ-NP-V])([0-9]{2}[0-9]{2})">
@@ -475,7 +503,7 @@
   </xs:simpleType>
   <xs:complexType name="MGRSUTM1000MeterCoordinateType">
     <xs:annotation>
-      <xs:documentation>A data type for a 1,000-meter precision level MGRS coordinate.</xs:documentation>
+      <xs:documentation>A data type for a 1,000-meter precision level MGRS UTM coordinate.</xs:documentation>
     </xs:annotation>
     <xs:simpleContent>
       <xs:extension base="mo:MGRSUTM1000MeterCoordinateSimpleType">
@@ -485,7 +513,7 @@
   </xs:complexType>
   <xs:simpleType name="MGRSUTM100MeterCoordinateSimpleType">
     <xs:annotation>
-      <xs:documentation>A data type for a 100-meter precision level MGRS coordinate.</xs:documentation>
+      <xs:documentation>A data type for a 100-meter precision level MGRS UTM coordinate.</xs:documentation>
     </xs:annotation>
     <xs:restriction base="xs:token">
       <xs:pattern value="(0[1-9]|[1-5][0-9]|60)([C-HJ-NP-X])([A-HJ-NP-Z])([A-HJ-NP-V])([0-9]{3}[0-9]{3})">
@@ -502,7 +530,7 @@
   </xs:simpleType>
   <xs:complexType name="MGRSUTM100MeterCoordinateType">
     <xs:annotation>
-      <xs:documentation>A data type for a 100-meter precision level MGRS coordinate.</xs:documentation>
+      <xs:documentation>A data type for a 100-meter precision level MGRS UTM coordinate.</xs:documentation>
     </xs:annotation>
     <xs:simpleContent>
       <xs:extension base="mo:MGRSUTM100MeterCoordinateSimpleType">
@@ -512,7 +540,7 @@
   </xs:complexType>
   <xs:simpleType name="MGRSUTM10MeterCoordinateSimpleType">
     <xs:annotation>
-      <xs:documentation>A data type for a 10-meter precision level MGRS coordinate.</xs:documentation>
+      <xs:documentation>A data type for a 10-meter precision level MGRS UTM coordinate.</xs:documentation>
     </xs:annotation>
     <xs:restriction base="xs:token">
       <xs:pattern value="(0[1-9]|[1-5][0-9]|60)([C-HJ-NP-X])([A-HJ-NP-Z])([A-HJ-NP-V])([0-9]{4}[0-9]{4})">
@@ -529,7 +557,7 @@
   </xs:simpleType>
   <xs:complexType name="MGRSUTM10MeterCoordinateType">
     <xs:annotation>
-      <xs:documentation>A data type for a 10-meter precision level MGRS coordinate.</xs:documentation>
+      <xs:documentation>A data type for a 10-meter precision level MGRS UTM coordinate.</xs:documentation>
     </xs:annotation>
     <xs:simpleContent>
       <xs:extension base="mo:MGRSUTM10MeterCoordinateSimpleType">
@@ -539,7 +567,7 @@
   </xs:complexType>
   <xs:simpleType name="MGRSUTM1MeterCoordinateSimpleType">
     <xs:annotation>
-      <xs:documentation>A data type for a 1-meter precision level MGRS coordinate.</xs:documentation>
+      <xs:documentation>A data type for a 1-meter precision level MGRS UTM coordinate.</xs:documentation>
     </xs:annotation>
     <xs:restriction base="xs:token">
       <xs:pattern value="(0[1-9]|[1-5][0-9]|60)([C-HJ-NP-X])([A-HJ-NP-Z])([A-HJ-NP-V])([0-9]{5}[0-9]{5})">
@@ -556,7 +584,7 @@
   </xs:simpleType>
   <xs:complexType name="MGRSUTM1MeterCoordinateType">
     <xs:annotation>
-      <xs:documentation>A data type for a 1-meter precision level MGRS coordinate.</xs:documentation>
+      <xs:documentation>A data type for a 1-meter precision level MGRS UTM coordinate.</xs:documentation>
     </xs:annotation>
     <xs:simpleContent>
       <xs:extension base="mo:MGRSUTM1MeterCoordinateSimpleType">
@@ -1191,7 +1219,7 @@
   </xs:simpleType>
   <xs:complexType name="TimeZoneOffsetCodeType">
     <xs:annotation>
-      <xs:documentation>A data type for  regions or divisions of the globe approximately coinciding with meridians at successive hours from the observatory at Greenwich, England.</xs:documentation>
+      <xs:documentation>A data type for regions or divisions of the globe approximately coinciding with meridians at successive hours from the observatory at Greenwich, England.</xs:documentation>
     </xs:annotation>
     <xs:simpleContent>
       <xs:extension base="mo:TimeZoneOffsetCodeSimpleType">
@@ -1234,7 +1262,7 @@
     <xs:restriction base="xs:string">
       <xs:pattern value="[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}">
         <xs:annotation>
-          <xs:documentation>greater than or equal to -90</xs:documentation>
+          <xs:documentation>A pattern for UUID.</xs:documentation>
         </xs:annotation>
       </xs:pattern>
     </xs:restriction>
@@ -2076,34 +2104,39 @@
       <xs:documentation>A complete coordinate string from the Military Grid Reference System (MGRS) which represents a location with a Universal Transverse Mercator (UTM) or Univeral Polar Steriographic (UPS) coordinate and a unique military grid square.</xs:documentation>
     </xs:annotation>
   </xs:element>
+  <xs:element name="MGRSUPS1MeterCoordinateValue" type="mo:MGRSUPS1MeterCoordinateType" substitutionGroup="mo:MGRSCoordinateAbstract" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A 1-meter precision level MGRS UPS coordinate.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
   <xs:element name="MGRSUTM100000MeterCoordinateValue" type="mo:MGRSUTM10000MeterCoordinateType" substitutionGroup="mo:MGRSCoordinateAbstract" nillable="true">
     <xs:annotation>
-      <xs:documentation>A 100,000-meter precision level MGRS coordinate.</xs:documentation>
+      <xs:documentation>A 100,000-meter precision level MGRS UTM coordinate.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="MGRSUTM10000MeterCoordinateValue" type="mo:MGRSUTM10000MeterCoordinateType" substitutionGroup="mo:MGRSCoordinateAbstract" nillable="true">
     <xs:annotation>
-      <xs:documentation>A 10,000-meter precision level MGRS coordinate.</xs:documentation>
+      <xs:documentation>A 10,000-meter precision level MGRS UTM coordinate.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="MGRSUTM1000MeterCoordinateValue" type="mo:MGRSUTM1000MeterCoordinateType" substitutionGroup="mo:MGRSCoordinateAbstract" nillable="true">
     <xs:annotation>
-      <xs:documentation>A 1,000-meter precision level MGRS coordinate.</xs:documentation>
+      <xs:documentation>A 1,000-meter precision level MGRS UTM coordinate.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="MGRSUTM100MeterCoordinateValue" type="mo:MGRSUTM100MeterCoordinateType" substitutionGroup="mo:MGRSCoordinateAbstract" nillable="true">
     <xs:annotation>
-      <xs:documentation>A 100-meter precision level MGRS coordinate.</xs:documentation>
+      <xs:documentation>A 100-meter precision level MGRS UTM coordinate.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="MGRSUTM10MeterCoordinateValue" type="mo:MGRSUTM10MeterCoordinateType" substitutionGroup="mo:MGRSCoordinateAbstract" nillable="true">
     <xs:annotation>
-      <xs:documentation>A 10-meter precision level MGRS coordinate.</xs:documentation>
+      <xs:documentation>A 10-meter precision level MGRS UTM coordinate.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="MGRSUTM1MeterCoordinateValue" type="mo:MGRSUTM1MeterCoordinateType" substitutionGroup="mo:MGRSCoordinateAbstract" nillable="true">
     <xs:annotation>
-      <xs:documentation>A 1-meter precision level MGRS coordinate.</xs:documentation>
+      <xs:documentation>A 1-meter precision level MGRS UTM coordinate.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="MILSTD2525-B-SIDC-Code" type="mo:MILSTD2525-B-SIDC-Type" nillable="true">
@@ -2663,7 +2696,7 @@
   </xs:element>
   <xs:element name="WGS84LocationCylinder" type="mo:WGS84LocationCylinderType" substitutionGroup="nc:LocationGeospatialCoordinateAbstract" nillable="true">
     <xs:annotation>
-      <xs:documentation>A location identified by a cylinder oriented vertically and centered on a point described with WGS84  coordinates. If it is appropriate for the radius and half-height properties to represent an error value  (for example, because the event is a laser-designated target), then the true event location follows a normal distribution such that the cylinder defines the one-sigma (p&#x2248;0.67) deviation.  (A cylinder with  twice the volume would be the two-sigma (p&#x2248;0.95) deviation, etc.)  Otherwise the cylinder encloses the  full physical extent of the event.</xs:documentation>
+      <xs:documentation>A location identified by a cylinder oriented vertically and centered on a point described with WGS84 coordinates. If it is appropriate for the radius and half-height properties to represent an error value  (for example, because the event is a laser-designated target), then the true event location follows a normal distribution such that the cylinder defines the one-sigma (p&#x2248;0.67)(almost equal to) deviation.  (A cylinder with  twice the volume would be the two-sigma (p&#x2248;0.95)(almost equal to) deviation, etc.)  Otherwise the cylinder encloses the  full physical extent of the event.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="WGS84LocationCylinderAugmentationPoint" abstract="true">

@@ -4709,7 +4709,7 @@ National Institutes of Health, National Heart, Lung, and Blood Institute</xs:doc
           <xs:element ref="em:NotificationSourceAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="em:NotificationRecipient" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="em:NotificationOriginator" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="em:NotificationRepresentationAbstract" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="em:NotificationRepresentation" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="em:NotificationFunctionCategoryCode" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="em:NotificationKeywordText" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="em:NotificationLanguageCode" minOccurs="0" maxOccurs="unbounded"/>
@@ -6542,7 +6542,7 @@ National Institutes of Health, National Heart, Lung, and Blood Institute</xs:doc
       <xs:documentation>A date and time the monitoring station received the event based on the time zone of the site</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="AlarmNotification" type="em:AlarmNotificationType" substitutionGroup="em:NotificationRepresentationAbstract" nillable="true">
+  <xs:element name="AlarmNotification" type="em:AlarmNotificationType" substitutionGroup="em:NotificationRepresentation" nillable="true">
     <xs:annotation>
       <xs:documentation>An event that begins when an assembly of equipment or a device installed in or for commercial or residential premises, or other property, is triggered to transmit a signal, visibly, audibly, electronically, mechanically, or otherwise, to indicate</xs:documentation>
     </xs:annotation>
@@ -6707,7 +6707,7 @@ National Institutes of Health, National Heart, Lung, and Blood Institute</xs:doc
       <xs:documentation>A description of the recommended action to be taken by recipients of the alert message. An extended human readable instruction to targeted recipients. If different instructions are intended for different recipients, they should be represented by use of multiple info blocks</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="AlertNotification" type="em:AlertNotificationType" substitutionGroup="em:NotificationRepresentationAbstract" nillable="true">
+  <xs:element name="AlertNotification" type="em:AlertNotificationType" substitutionGroup="em:NotificationRepresentation" nillable="true">
     <xs:annotation>
       <xs:documentation>A notification of an incident or threat that may require a coordinated response or action. A type of NOTIFICATION</xs:documentation>
     </xs:annotation>
@@ -7937,7 +7937,7 @@ National Institutes of Health, National Heart, Lung, and Blood Institute</xs:doc
       <xs:documentation>An element for the common components of natural gas facilities</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="GeneralNotification" type="em:GeneralNotificationType" substitutionGroup="em:NotificationRepresentationAbstract" nillable="true">
+  <xs:element name="GeneralNotification" type="em:GeneralNotificationType" substitutionGroup="em:NotificationRepresentation" nillable="true">
     <xs:annotation>
       <xs:documentation>An element for representing a generalized notification to broadcast</xs:documentation>
     </xs:annotation>
@@ -8002,7 +8002,7 @@ National Institutes of Health, National Heart, Lung, and Blood Institute</xs:doc
       <xs:documentation>An augmentation point for IncidentAuthorType</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="IncidentNotification" type="em:IncidentNotificationType" substitutionGroup="em:NotificationRepresentationAbstract" nillable="true">
+  <xs:element name="IncidentNotification" type="em:IncidentNotificationType" substitutionGroup="em:NotificationRepresentation" nillable="true">
     <xs:annotation>
       <xs:documentation>An element for representing an incident</xs:documentation>
     </xs:annotation>
@@ -8492,7 +8492,7 @@ National Institutes of Health, National Heart, Lung, and Blood Institute</xs:doc
       <xs:documentation>An element for recipient of the notification</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="NotificationRepresentationAbstract" abstract="true">
+  <xs:element name="NotificationRepresentation" abstract="true">
     <xs:annotation>
       <xs:documentation>A data concept for notification types and details</xs:documentation>
     </xs:annotation>
@@ -8542,7 +8542,7 @@ National Institutes of Health, National Heart, Lung, and Blood Institute</xs:doc
       <xs:documentation>An element for an emergency operation</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="OperationalStatusNotification" type="em:OperationalStatusNotificationType" substitutionGroup="em:NotificationRepresentationAbstract" nillable="true">
+  <xs:element name="OperationalStatusNotification" type="em:OperationalStatusNotificationType" substitutionGroup="em:NotificationRepresentation" nillable="true">
     <xs:annotation>
       <xs:documentation>An element for an emergency operation notification</xs:documentation>
     </xs:annotation>
@@ -8622,7 +8622,7 @@ National Institutes of Health, National Heart, Lung, and Blood Institute</xs:doc
       <xs:documentation>An element for the other Buildings, Equipment and Content that are not listed in the Cat-E type list.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="OtherCat-Dtext" type="nc:TextType" nillable="true">
+  <xs:element name="OtherCat-DText" type="nc:TextType" nillable="true">
     <xs:annotation>
       <xs:documentation>An element for the other Water Control Facilities that are not listed in the Cat-D type list.</xs:documentation>
     </xs:annotation>
@@ -9507,7 +9507,7 @@ National Institutes of Health, National Heart, Lung, and Blood Institute</xs:doc
       <xs:documentation>A structure that contains date information about when a unit was assigned to an incident</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="UnitLogoffNotification" type="em:UnitLogoffNotificationType" substitutionGroup="em:NotificationRepresentationAbstract" nillable="true">
+  <xs:element name="UnitLogoffNotification" type="em:UnitLogoffNotificationType" substitutionGroup="em:NotificationRepresentation" nillable="true">
     <xs:annotation>
       <xs:documentation>An element to represent that the specified units are being logged off</xs:documentation>
     </xs:annotation>
@@ -9517,7 +9517,7 @@ National Institutes of Health, National Heart, Lung, and Blood Institute</xs:doc
       <xs:documentation>An augmentation point for UnitLogoffNotificationType</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="UnitLogonNotification" type="em:UnitLogonNotificationType" substitutionGroup="em:NotificationRepresentationAbstract" nillable="true">
+  <xs:element name="UnitLogonNotification" type="em:UnitLogonNotificationType" substitutionGroup="em:NotificationRepresentation" nillable="true">
     <xs:annotation>
       <xs:documentation>An element to represent that the specified units are being logged on</xs:documentation>
     </xs:annotation>
