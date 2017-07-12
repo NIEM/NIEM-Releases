@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="US-ASCII"?>
+<xs:schema targetNamespace="http://release.niem.gov/niem/codes/dod_jcs-pub2.0/4.0/" version="1" xsi:schemaLocation="http://release.niem.gov/niem/appinfo/4.0/ ../../../utility/appinfo/4.0/appinfo.xsd http://release.niem.gov/niem/conformanceTargets/3.0/ ../../../utility/conformanceTargets/3.0/conformanceTargets.xsd" ct:conformanceTargets="http://reference.niem.gov/niem/specification/naming-and-design-rules/4.0/#ReferenceSchemaDocument" xmlns:appinfo="http://release.niem.gov/niem/appinfo/4.0/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:ct="http://release.niem.gov/niem/conformanceTargets/3.0/" xmlns:structures="http://release.niem.gov/niem/structures/4.0/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dod_jcs-pub2.0="http://release.niem.gov/niem/codes/dod_jcs-pub2.0/4.0/">
+  <xs:annotation>
+    <xs:documentation>Intelligence discipline codes.
+Source: DoD Joint Staff; 
+Publication: Joint Publication 2.0 - Joint Intelligence; 
+Date: 2 Oct 2013;  
+http://www.dtic.mil/doctrine/new_pubs/jp2_0.pdf</xs:documentation>
+  </xs:annotation>
+  <xs:import schemaLocation="../../../utility/structures/4.0/structures.xsd" namespace="http://release.niem.gov/niem/structures/4.0/"/>
+  <xs:simpleType name="DocumentIntelligenceCategoryCodeSimpleType">
+    <xs:annotation>
+      <xs:documentation>A data type for natures or genres of a document or resource.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="CI">
+        <xs:annotation>
+          <xs:documentation>Counterintelligence</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="COMINT">
+        <xs:annotation>
+          <xs:documentation>communications intelligence</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ELINT">
+        <xs:annotation>
+          <xs:documentation>electronic intelligence</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="FISINT">
+        <xs:annotation>
+          <xs:documentation>foreign instrumentation signals intelligence</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="GEOINT">
+        <xs:annotation>
+          <xs:documentation>Geospatial Intelligence</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="HUMINT">
+        <xs:annotation>
+          <xs:documentation>Human Intelligence</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="IMINT">
+        <xs:annotation>
+          <xs:documentation>imagery intelligence</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="MASINT">
+        <xs:annotation>
+          <xs:documentation>Measurement and Signature Intelligence</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="OSINT">
+        <xs:annotation>
+          <xs:documentation>Open-Source Intelligence</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="SIGINT">
+        <xs:annotation>
+          <xs:documentation>Signals Intelligence</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="TECHINT">
+        <xs:annotation>
+          <xs:documentation>Technical Intelligence</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="DocumentIntelligenceCategoryCodeType">
+    <xs:annotation>
+      <xs:documentation>A data type for natures or genres of a document or resource.</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="dod_jcs-pub2.0:DocumentIntelligenceCategoryCodeSimpleType">
+        <xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+</xs:schema>

@@ -1,0 +1,889 @@
+<?xml version="1.0" encoding="US-ASCII"?>
+<xs:schema targetNamespace="http://release.niem.gov/niem/codes/fbi_nibrs/4.0/" version="1" xsi:schemaLocation="http://release.niem.gov/niem/appinfo/4.0/ ../../../utility/appinfo/4.0/appinfo.xsd http://release.niem.gov/niem/conformanceTargets/3.0/ ../../../utility/conformanceTargets/3.0/conformanceTargets.xsd" ct:conformanceTargets="http://reference.niem.gov/niem/specification/naming-and-design-rules/4.0/#ReferenceSchemaDocument" xmlns:appinfo="http://release.niem.gov/niem/appinfo/4.0/" xmlns:nibrs="http://release.niem.gov/niem/codes/fbi_nibrs/4.0/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:ct="http://release.niem.gov/niem/conformanceTargets/3.0/" xmlns:structures="http://release.niem.gov/niem/structures/4.0/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <xs:annotation>
+    <xs:documentation>FBI National Incident-Based Reporting System</xs:documentation>
+  </xs:annotation>
+  <xs:import schemaLocation="../../../utility/structures/4.0/structures.xsd" namespace="http://release.niem.gov/niem/structures/4.0/"/>
+  <xs:simpleType name="CriminalActivityCategoryCodeSimpleType">
+    <xs:annotation>
+      <xs:documentation>A data type for a code that identifies additional information on criminal activity of offenders in the offense.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="A">
+        <xs:annotation>
+          <xs:documentation>Simple/Gross Neglect (unintentionally, intentionally, or knowingly  failing to provide food, water, shelter, veterinary care, hoarding, etc.)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="B">
+        <xs:annotation>
+          <xs:documentation>Buying/Receiving</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="C">
+        <xs:annotation>
+          <xs:documentation>Cultivating/Manufacturing/Publishing (i.e., production of any type)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="D">
+        <xs:annotation>
+          <xs:documentation>Distributing/Selling</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="E">
+        <xs:annotation>
+          <xs:documentation>Exploiting Children</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="F">
+        <xs:annotation>
+          <xs:documentation>Organized Abuse (Dog Fighting and Cock Fighting)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="G">
+        <xs:annotation>
+          <xs:documentation>Other Gang</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="I">
+        <xs:annotation>
+          <xs:documentation>Intentional Abuse and Torture (tormenting, mutilating, maiming, poisoning, or abandonment)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="J">
+        <xs:annotation>
+          <xs:documentation>Juvenile Gang</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="N">
+        <xs:annotation>
+          <xs:documentation>None/Unknown</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="O">
+        <xs:annotation>
+          <xs:documentation>Operating/Promoting/Assisting</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="P">
+        <xs:annotation>
+          <xs:documentation>Possessing/Concealing</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="S">
+        <xs:annotation>
+          <xs:documentation>Animal Sexual Abuse (Bestiality)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="T">
+        <xs:annotation>
+          <xs:documentation>Transporting/Transmitting/Importing</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="U">
+        <xs:annotation>
+          <xs:documentation>Using/Consuming</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="CriminalActivityCategoryCodeType">
+    <xs:annotation>
+      <xs:documentation>A data type for a code that identifies additional information on criminal activity of offenders in the offense.</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="nibrs:CriminalActivityCategoryCodeSimpleType">
+        <xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:simpleType name="LocationCategoryCodeSimpleType">
+    <xs:annotation>
+      <xs:documentation>A data type for kinds or functional descriptions of a location.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="01">
+        <xs:annotation>
+          <xs:documentation>Air/Bus/Train Terminal</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="02">
+        <xs:annotation>
+          <xs:documentation>Bank/Savings and Loan</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="03">
+        <xs:annotation>
+          <xs:documentation>Bar/Nightclub</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="04">
+        <xs:annotation>
+          <xs:documentation>Church/Synagogue/Temple/Mosque</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="05">
+        <xs:annotation>
+          <xs:documentation>Commercial/Office Building</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="06">
+        <xs:annotation>
+          <xs:documentation>construction site</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="07">
+        <xs:annotation>
+          <xs:documentation>convenience store</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="08">
+        <xs:annotation>
+          <xs:documentation>Department/Discount Store</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="09">
+        <xs:annotation>
+          <xs:documentation>Drug Store/Doctor&#x2019;s Office/Hospital</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="10">
+        <xs:annotation>
+          <xs:documentation>Field/Woods</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="11">
+        <xs:annotation>
+          <xs:documentation>Government/Public Building</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="12">
+        <xs:annotation>
+          <xs:documentation>Grocery/Supermarket</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="13">
+        <xs:annotation>
+          <xs:documentation>Highway/Road/Alley/Street/Sidewalk</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="14">
+        <xs:annotation>
+          <xs:documentation>Hotel/Motel/Etc.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="15">
+        <xs:annotation>
+          <xs:documentation>Jail/Prison/Penitentiary/Corrections Facility</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="16">
+        <xs:annotation>
+          <xs:documentation>Lake/Waterway/Beach</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="17">
+        <xs:annotation>
+          <xs:documentation>liquor store</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="18">
+        <xs:annotation>
+          <xs:documentation>Parking/Drop Lot/Garage</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="19">
+        <xs:annotation>
+          <xs:documentation>rental storage facility</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="20">
+        <xs:annotation>
+          <xs:documentation>Residence/Home</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="21">
+        <xs:annotation>
+          <xs:documentation>restaurant</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="22">
+        <xs:annotation>
+          <xs:documentation>School/College</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="23">
+        <xs:annotation>
+          <xs:documentation>Service/Gas Station</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="24">
+        <xs:annotation>
+          <xs:documentation>specialty store</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="25">
+        <xs:annotation>
+          <xs:documentation>Other/Unknown</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="37">
+        <xs:annotation>
+          <xs:documentation>Abandoned/ Condemned Structure</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="38">
+        <xs:annotation>
+          <xs:documentation>Amusement Park</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="39">
+        <xs:annotation>
+          <xs:documentation>Arena/ Stadium/ Fairgrounds/Coliseum</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="40">
+        <xs:annotation>
+          <xs:documentation>ATM Separate from Bank</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="41">
+        <xs:annotation>
+          <xs:documentation>Auto Dealership New/Used</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="42">
+        <xs:annotation>
+          <xs:documentation>Camp/ Campground</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="44">
+        <xs:annotation>
+          <xs:documentation>Daycare Facility</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="45">
+        <xs:annotation>
+          <xs:documentation>Dock/ Wharf/ Freight/Modal Terminal</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="46">
+        <xs:annotation>
+          <xs:documentation>Farm Facility</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="47">
+        <xs:annotation>
+          <xs:documentation>Gambling Facility/ Casino/ Race Track</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="48">
+        <xs:annotation>
+          <xs:documentation>Industrial Site</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="49">
+        <xs:annotation>
+          <xs:documentation>Military Installation</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="50">
+        <xs:annotation>
+          <xs:documentation>Park/ Playground</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="51">
+        <xs:annotation>
+          <xs:documentation>Rest Area</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="52">
+        <xs:annotation>
+          <xs:documentation>School - College/ University</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="53">
+        <xs:annotation>
+          <xs:documentation>School - Elementary/ Secondary</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="54">
+        <xs:annotation>
+          <xs:documentation>Shelter - Mission/ Homeless</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="55">
+        <xs:annotation>
+          <xs:documentation>Shopping Mall</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="56">
+        <xs:annotation>
+          <xs:documentation>Tribal Lands</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="57">
+        <xs:annotation>
+          <xs:documentation>Community Center</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="58">
+        <xs:annotation>
+          <xs:documentation>Cyberspace</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="LocationCategoryCodeType">
+    <xs:annotation>
+      <xs:documentation>A data type for kinds or functional descriptions of a location.</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="nibrs:LocationCategoryCodeSimpleType">
+        <xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:simpleType name="NIBRSReportCategoryCodeSimpleType">
+    <xs:annotation>
+      <xs:documentation>A data type for a kind of report contained in the NIBRS submission.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="GROUP A INCIDENT REPORT">
+        <xs:annotation>
+          <xs:documentation>Group A Incident Report</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="GROUP A INCIDENT REPORT_LEOKA">
+        <xs:annotation>
+          <xs:documentation>Group A Incident Report LEOKA</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="GROUP B ARREST REPORT">
+        <xs:annotation>
+          <xs:documentation>Group B Arrest Report</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ZERO REPORT">
+        <xs:annotation>
+          <xs:documentation>Zero Report</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="NIBRSReportCategoryCodeType">
+    <xs:annotation>
+      <xs:documentation>A data type for a kind of report contained in the NIBRS submission.</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="nibrs:NIBRSReportCategoryCodeSimpleType">
+        <xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:simpleType name="OffenseCodeSimpleType">
+    <xs:annotation>
+      <xs:documentation>A data type for Uniform Crime Reporting (UCR) offense codes.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="09A">
+        <xs:annotation>
+          <xs:documentation>Murder &amp; Nonnegligent Manslaughter</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="09B">
+        <xs:annotation>
+          <xs:documentation>Negligent Manslaughter</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="09C">
+        <xs:annotation>
+          <xs:documentation>Justifiable Homicide</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="100">
+        <xs:annotation>
+          <xs:documentation>Kidnapping/Abduction</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="11A">
+        <xs:annotation>
+          <xs:documentation>Rape</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="11B">
+        <xs:annotation>
+          <xs:documentation>Sodomy</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="11C">
+        <xs:annotation>
+          <xs:documentation>Sexual Assault With An Object</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="11D">
+        <xs:annotation>
+          <xs:documentation>Fondling</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="120">
+        <xs:annotation>
+          <xs:documentation>Robbery</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="13A">
+        <xs:annotation>
+          <xs:documentation>Aggravated Assault</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="13B">
+        <xs:annotation>
+          <xs:documentation>Simple Assault</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="13C">
+        <xs:annotation>
+          <xs:documentation>Intimidation</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="200">
+        <xs:annotation>
+          <xs:documentation>Arson</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="210">
+        <xs:annotation>
+          <xs:documentation>Extortion/Blackmail</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="220">
+        <xs:annotation>
+          <xs:documentation>Burglary/Breaking &amp; Entering</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="23A">
+        <xs:annotation>
+          <xs:documentation>Pocket-picking</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="23B">
+        <xs:annotation>
+          <xs:documentation>Purse-snatching</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="23C">
+        <xs:annotation>
+          <xs:documentation>Shoplifting</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="23D">
+        <xs:annotation>
+          <xs:documentation>Theft From Building</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="23E">
+        <xs:annotation>
+          <xs:documentation>Theft From Coin-Operated Machine or Device</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="23F">
+        <xs:annotation>
+          <xs:documentation>Theft From Motor Vehicle</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="23G">
+        <xs:annotation>
+          <xs:documentation>Theft of Motor Vehicle Parts or Accessories</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="23H">
+        <xs:annotation>
+          <xs:documentation>All Other Larceny</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="240">
+        <xs:annotation>
+          <xs:documentation>Motor Vehicle Theft</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="250">
+        <xs:annotation>
+          <xs:documentation>Counterfeiting/Forgery</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="26A">
+        <xs:annotation>
+          <xs:documentation>False Pretenses/Swindle/Confidence Game</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="26B">
+        <xs:annotation>
+          <xs:documentation>Credit Card/Automated Teller Machine Fraud</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="26C">
+        <xs:annotation>
+          <xs:documentation>Impersonation</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="26D">
+        <xs:annotation>
+          <xs:documentation>Welfare Fraud</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="26E">
+        <xs:annotation>
+          <xs:documentation>Wire Fraud</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="26F">
+        <xs:annotation>
+          <xs:documentation>Identity Theft</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="26G">
+        <xs:annotation>
+          <xs:documentation>Hacking/Computer Invasion</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="270">
+        <xs:annotation>
+          <xs:documentation>Embezzlement</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="280">
+        <xs:annotation>
+          <xs:documentation>Stolen Offenses</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="290">
+        <xs:annotation>
+          <xs:documentation>Destruction/Damage/Vandalism of Property</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="35A">
+        <xs:annotation>
+          <xs:documentation>Drug/Narcotic Violations</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="35B">
+        <xs:annotation>
+          <xs:documentation>Drug Equipment Violations</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="36A">
+        <xs:annotation>
+          <xs:documentation>Incest</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="36B">
+        <xs:annotation>
+          <xs:documentation>Statutory Rape</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="370">
+        <xs:annotation>
+          <xs:documentation>Pornography/Obscene Material</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="39A">
+        <xs:annotation>
+          <xs:documentation>Betting/Wagering</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="39B">
+        <xs:annotation>
+          <xs:documentation>Operating/Promoting/Assisting Gambling</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="39C">
+        <xs:annotation>
+          <xs:documentation>Gambling Equipment Violation</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="39D">
+        <xs:annotation>
+          <xs:documentation>Sports Tampering</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="40A">
+        <xs:annotation>
+          <xs:documentation>Prostitution</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="40B">
+        <xs:annotation>
+          <xs:documentation>Assisting or Promoting Prostitution</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="40C">
+        <xs:annotation>
+          <xs:documentation>Purchasing Prostitution</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="510">
+        <xs:annotation>
+          <xs:documentation>Bribery</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="520">
+        <xs:annotation>
+          <xs:documentation>Weapon Law Violations</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="64A">
+        <xs:annotation>
+          <xs:documentation>Human Trafficking, Commercial Sex Acts</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="64B">
+        <xs:annotation>
+          <xs:documentation>Human Trafficking, Involuntary Servitude</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="720">
+        <xs:annotation>
+          <xs:documentation>Animal Cruelty</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="90A">
+        <xs:annotation>
+          <xs:documentation>Bad Checks</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="90B">
+        <xs:annotation>
+          <xs:documentation>Curfew/Loitering/Vagrancy Violations</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="90C">
+        <xs:annotation>
+          <xs:documentation>Disorderly Conduct</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="90D">
+        <xs:annotation>
+          <xs:documentation>Driving Under the Influence</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="90E">
+        <xs:annotation>
+          <xs:documentation>Drunkenness</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="90F">
+        <xs:annotation>
+          <xs:documentation>Family Offenses, Nonviolent</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="90G">
+        <xs:annotation>
+          <xs:documentation>Liquor Law Violations</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="90H">
+        <xs:annotation>
+          <xs:documentation>Peeping Tom</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="90J">
+        <xs:annotation>
+          <xs:documentation>Trespass of Real</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="90Z">
+        <xs:annotation>
+          <xs:documentation>All Other Offenses</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="OffenseCodeType">
+    <xs:annotation>
+      <xs:documentation>A data type for Uniform Crime Reporting (UCR) offense codes.</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="nibrs:OffenseCodeSimpleType">
+        <xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:simpleType name="ReportActionCategoryCodeSimpleType">
+    <xs:annotation>
+      <xs:documentation>A data type for a kind of action to be taken on the report.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="A">
+        <xs:annotation>
+          <xs:documentation>Add</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="D">
+        <xs:annotation>
+          <xs:documentation>Delete</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="I">
+        <xs:annotation>
+          <xs:documentation>Incident Report</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="R">
+        <xs:annotation>
+          <xs:documentation>Replace</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="ReportActionCategoryCodeType">
+    <xs:annotation>
+      <xs:documentation>A data type for a kind of action to be taken on the report.</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="nibrs:ReportActionCategoryCodeSimpleType">
+        <xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:simpleType name="VictimToSubjectRelationshipCodeSimpleType">
+    <xs:annotation>
+      <xs:documentation>A data type for a code that identifies the victim's relationship to subject who perpetrated a crime against them, depicting who the victim was to the offender.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="Acquaintance">
+        <xs:annotation>
+          <xs:documentation>NIBRS CODE: AQ | Victim Was Acquaintance</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Babysittee">
+        <xs:annotation>
+          <xs:documentation>NIBRS CODE: BE | Victim Was Babysittee (the baby)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Boyfriend_Girlfriend">
+        <xs:annotation>
+          <xs:documentation>NIBRS CODE: BG | Victim Was Boyfriend/Girlfriend</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Child of Boyfriend_Girlfriend">
+        <xs:annotation>
+          <xs:documentation>NIBRS CODE: CF | Victim Was Child of Boyfriend or Girlfriend</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Employee">
+        <xs:annotation>
+          <xs:documentation>NIBRS CODE: EE | Victim was Employee</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Employer">
+        <xs:annotation>
+          <xs:documentation>NIBRS CODE: ER | Victim was Employer</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Ex_Spouse">
+        <xs:annotation>
+          <xs:documentation>NIBRS CODE: XS | Victim was Ex-Spouse</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Family Member">
+        <xs:annotation>
+          <xs:documentation>NIBRS CODE: OF | Victim Was Other Family Member</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Family Member_Child">
+        <xs:annotation>
+          <xs:documentation>NIBRS CODE: CH | Victim Was Child</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Family Member_Grandchild">
+        <xs:annotation>
+          <xs:documentation>NIBRS CODE: GC | Victim Was Grandchild</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Family Member_Grandparent">
+        <xs:annotation>
+          <xs:documentation>NIBRS CODE: GP | Victim Was Grandparent</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Family Member_In-Law">
+        <xs:annotation>
+          <xs:documentation>NIBRS CODE: IL | Victim Was In-law</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Family Member_Parent">
+        <xs:annotation>
+          <xs:documentation>NIBRS CODE: PA | Victim Was Parent</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Family Member_Sibling">
+        <xs:annotation>
+          <xs:documentation>NIBRS CODE: SB | Victim Was Sibling (brother or sister)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Family Member_Spouse">
+        <xs:annotation>
+          <xs:documentation>NIBRS CODE: SE | Victim Was Spouse</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Family Member_Spouse_Common Law">
+        <xs:annotation>
+          <xs:documentation>NIBRS CODE: CS | Victim Was Common-Law Spouse</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Family Member_Stepchild">
+        <xs:annotation>
+          <xs:documentation>NIBRS CODE: SC | Victim Was Stepchild</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Family Member_Stepparent">
+        <xs:annotation>
+          <xs:documentation>NIBRS CODE: SP | Victim Was Stepparent</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Family Member_Stepsibling">
+        <xs:annotation>
+          <xs:documentation>NIBRS CODE: SS | Victim Was Stepsibling (stepbrother or stepsister)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Friend">
+        <xs:annotation>
+          <xs:documentation>NIBRS CODE: FR | Victim Was Friend</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Neighbor">
+        <xs:annotation>
+          <xs:documentation>NIBRS CODE: NE | Victim Was Neighbor</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="NonFamily_Otherwise Known">
+        <xs:annotation>
+          <xs:documentation>NIBRS CODE: OK | Victim was Otherwise Known</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Relationship Unknown">
+        <xs:annotation>
+          <xs:documentation>NIBRS CODE: RU | Relationship Unknown</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Stranger">
+        <xs:annotation>
+          <xs:documentation>NIBRS CODE: ST | Victim Was Stranger</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Victim Was Offender">
+        <xs:annotation>
+          <xs:documentation>NIBRS CODE: VO | Victim Was Offender</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="VictimToSubjectRelationshipCodeType">
+    <xs:annotation>
+      <xs:documentation>A data type for a code that identifies the victim's relationship to subject who perpetrated a crime against them, depicting who the victim was to the offender.</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="nibrs:VictimToSubjectRelationshipCodeSimpleType">
+        <xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+</xs:schema>

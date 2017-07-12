@@ -1,0 +1,4388 @@
+<?xml version="1.0" encoding="US-ASCII"?>
+<xs:schema targetNamespace="http://release.niem.gov/niem/codes/aamva_d20/4.0/" version="1" xsi:schemaLocation="http://release.niem.gov/niem/appinfo/4.0/ ../../../utility/appinfo/4.0/appinfo.xsd http://release.niem.gov/niem/conformanceTargets/3.0/ ../../../utility/conformanceTargets/3.0/conformanceTargets.xsd" ct:conformanceTargets="http://reference.niem.gov/niem/specification/naming-and-design-rules/4.0/#ReferenceSchemaDocument" xmlns:appinfo="http://release.niem.gov/niem/appinfo/4.0/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:aamva_d20="http://release.niem.gov/niem/codes/aamva_d20/4.0/" xmlns:ct="http://release.niem.gov/niem/conformanceTargets/3.0/" xmlns:structures="http://release.niem.gov/niem/structures/4.0/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <xs:annotation>
+    <xs:documentation>Motor vehicle administration codes from the Data Dictionary for Traffic Record Systems, maintained by AAMVA, the American Association of Motor Vehicle Administrators.  
+Publication: ANSI-D20 Data Dictionary Release 5.0.0; 
+Version: May 2009; 
+http://www.aamva.org/D20/</xs:documentation>
+    <xs:appinfo>
+      <appinfo:LocalTerm term="HazMat" literal="Hazardous Materials"/>
+      <appinfo:LocalTerm term="CMV" literal="Commercial Motor Vehicle"/>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:import schemaLocation="../../../utility/structures/4.0/structures.xsd" namespace="http://release.niem.gov/niem/structures/4.0/"/>
+  <xs:simpleType name="AccidentSeverityCodeSimpleType">
+    <xs:annotation>
+      <xs:documentation>A data type for severity levels of an accident.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="1">
+        <xs:annotation>
+          <xs:documentation>Fatal Accident</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="2">
+        <xs:annotation>
+          <xs:documentation>Incapacitating Injury Accident</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="3">
+        <xs:annotation>
+          <xs:documentation>Non-incapacitating Evident Injury</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="4">
+        <xs:annotation>
+          <xs:documentation>Possible Injury Accident</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="5">
+        <xs:annotation>
+          <xs:documentation>Non-injury Accident</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="9">
+        <xs:annotation>
+          <xs:documentation>Unknown</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="AccidentSeverityCodeType">
+    <xs:annotation>
+      <xs:documentation>A data type for severity levels of an accident.</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="aamva_d20:AccidentSeverityCodeSimpleType">
+        <xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:simpleType name="BrandCodeSimpleType">
+    <xs:annotation>
+      <xs:documentation>A data type for a brand applied to a vehicle title or odometer.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="00">
+        <xs:annotation>
+          <xs:documentation>Clear</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="01">
+        <xs:annotation>
+          <xs:documentation>Flood damage</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="02">
+        <xs:annotation>
+          <xs:documentation>Fire damage</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="03">
+        <xs:annotation>
+          <xs:documentation>Hail damage</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="04">
+        <xs:annotation>
+          <xs:documentation>Salt damage</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="05">
+        <xs:annotation>
+          <xs:documentation>Vandalism</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="06">
+        <xs:annotation>
+          <xs:documentation>Kit</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="07">
+        <xs:annotation>
+          <xs:documentation>Dismantled</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="08">
+        <xs:annotation>
+          <xs:documentation>Junk</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="09">
+        <xs:annotation>
+          <xs:documentation>Rebuilt</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="10">
+        <xs:annotation>
+          <xs:documentation>Reconstructed</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="11">
+        <xs:annotation>
+          <xs:documentation>Salvage</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="12">
+        <xs:annotation>
+          <xs:documentation>Test Vehicle</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="13">
+        <xs:annotation>
+          <xs:documentation>Refurbished</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="14">
+        <xs:annotation>
+          <xs:documentation>Collision</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="15">
+        <xs:annotation>
+          <xs:documentation>Reserved</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="16">
+        <xs:annotation>
+          <xs:documentation>Salvage Retention</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="17">
+        <xs:annotation>
+          <xs:documentation>Prior Taxi</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="18">
+        <xs:annotation>
+          <xs:documentation>Prior Police</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="19">
+        <xs:annotation>
+          <xs:documentation>Original Taxi</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="20">
+        <xs:annotation>
+          <xs:documentation>Original Police</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="21">
+        <xs:annotation>
+          <xs:documentation>Remanufactured</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="22">
+        <xs:annotation>
+          <xs:documentation>Gray Market</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="23">
+        <xs:annotation>
+          <xs:documentation>Warranty Return</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="24">
+        <xs:annotation>
+          <xs:documentation>Antique</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="25">
+        <xs:annotation>
+          <xs:documentation>Classic</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="26">
+        <xs:annotation>
+          <xs:documentation>Agricultural Vehicle</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="27">
+        <xs:annotation>
+          <xs:documentation>Logging Vehicle</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="28">
+        <xs:annotation>
+          <xs:documentation>Street Rod</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="29">
+        <xs:annotation>
+          <xs:documentation>Vehicle Contains Reissued VIN</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="30">
+        <xs:annotation>
+          <xs:documentation>Replica</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="31">
+        <xs:annotation>
+          <xs:documentation>Totaled</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="32">
+        <xs:annotation>
+          <xs:documentation>Owner Retained</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="33">
+        <xs:annotation>
+          <xs:documentation>Bond Posted</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="34">
+        <xs:annotation>
+          <xs:documentation>Memorandum Copy</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="35">
+        <xs:annotation>
+          <xs:documentation>Parts Only</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="36">
+        <xs:annotation>
+          <xs:documentation>Recovered Theft</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="37">
+        <xs:annotation>
+          <xs:documentation>Undisclosed Lien</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="38">
+        <xs:annotation>
+          <xs:documentation>Prior Owner Retained</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="39">
+        <xs:annotation>
+          <xs:documentation>Vehicle Non-conformity Uncorrected</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="40">
+        <xs:annotation>
+          <xs:documentation>Vehicle Non-conformity Corrected</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="41">
+        <xs:annotation>
+          <xs:documentation>Vehicle Safety Defect Uncorrected</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="42">
+        <xs:annotation>
+          <xs:documentation>Vehicle Safety Defect Corrected</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="43">
+        <xs:annotation>
+          <xs:documentation>VIN replaced by a new state assigned VIN</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="45">
+        <xs:annotation>
+          <xs:documentation>Gray Market</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="46">
+        <xs:annotation>
+          <xs:documentation>Gray Market</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="68">
+        <xs:annotation>
+          <xs:documentation>Actual</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="69">
+        <xs:annotation>
+          <xs:documentation>Not Actual</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="70">
+        <xs:annotation>
+          <xs:documentation>Not Actual - Odometer tampering verified</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="71">
+        <xs:annotation>
+          <xs:documentation>Exempt from Odometer Disclosure</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="72">
+        <xs:annotation>
+          <xs:documentation>Exceeds Mechanical Limits</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="73">
+        <xs:annotation>
+          <xs:documentation>Odometer may be Altered</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="74">
+        <xs:annotation>
+          <xs:documentation>Odometer Replaced</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="75">
+        <xs:annotation>
+          <xs:documentation>Reading at Time of Renewal</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="76">
+        <xs:annotation>
+          <xs:documentation>Odometer Discrepancy</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="77">
+        <xs:annotation>
+          <xs:documentation>Call Title Division</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="78">
+        <xs:annotation>
+          <xs:documentation>Rectify Previous Exceeds Mechanical Limits Brand</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="BrandCodeType">
+    <xs:annotation>
+      <xs:documentation>A data type for a brand applied to a vehicle title or odometer.</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="aamva_d20:BrandCodeSimpleType">
+        <xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:simpleType name="BrandDamagePercentageCategoryCodeSimpleType">
+    <xs:annotation>
+      <xs:documentation>A data type for the percentage of damage in a brand on a vehicle.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="R">
+        <xs:annotation>
+          <xs:documentation>Reported</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="T">
+        <xs:annotation>
+          <xs:documentation>Threshold</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="BrandDamagePercentageCategoryCodeType">
+    <xs:annotation>
+      <xs:documentation>A data type for the percentage of damage in a brand on a vehicle.</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="aamva_d20:BrandDamagePercentageCategoryCodeSimpleType">
+        <xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:simpleType name="BrandVehicleDispositionCodeSimpleType">
+    <xs:annotation>
+      <xs:documentation>A data type for vehicle dispositions.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="01">
+        <xs:annotation>
+          <xs:documentation>Scrapped</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="02">
+        <xs:annotation>
+          <xs:documentation>Sold Out Of State</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="03">
+        <xs:annotation>
+          <xs:documentation>Stolen or Never Recovered</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="04">
+        <xs:annotation>
+          <xs:documentation>Crushed</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="09">
+        <xs:annotation>
+          <xs:documentation>Unknown</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="BrandVehicleDispositionCodeType">
+    <xs:annotation>
+      <xs:documentation>A data type for vehicle dispositions.</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="aamva_d20:BrandVehicleDispositionCodeSimpleType">
+        <xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:simpleType name="BranderCategoryCodeSimpleType">
+    <xs:annotation>
+      <xs:documentation>A data type for kinds of branders.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="I">
+        <xs:annotation>
+          <xs:documentation>Insurance Carrier</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="J">
+        <xs:annotation>
+          <xs:documentation>Junk Yard</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="S">
+        <xs:annotation>
+          <xs:documentation>State</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="V">
+        <xs:annotation>
+          <xs:documentation>Salvage Yard</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="BranderCategoryCodeType">
+    <xs:annotation>
+      <xs:documentation>A data type for kinds of branders.</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="aamva_d20:BranderCategoryCodeSimpleType">
+        <xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:simpleType name="CMVCodeSimpleType">
+    <xs:annotation>
+      <xs:documentation>A data type for whether a person was operating a commercial motor vehicle in an incident.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="1">
+        <xs:annotation>
+          <xs:documentation>Commercial</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="2">
+        <xs:annotation>
+          <xs:documentation>Noncommercial</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="9">
+        <xs:annotation>
+          <xs:documentation>Unknown</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="CMVCodeType">
+    <xs:annotation>
+      <xs:documentation>A data type for whether a person was operating a commercial motor vehicle in an incident.</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="aamva_d20:CMVCodeSimpleType">
+        <xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:simpleType name="CountryCodeSimpleType">
+    <xs:annotation>
+      <xs:documentation>A data type for country codes specified by DHS as part of the DHS Western Hemisphere Travel Initiative.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="CAN">
+        <xs:annotation>
+          <xs:documentation>Canada</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="USA">
+        <xs:annotation>
+          <xs:documentation>U.S.A.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="CountryCodeType">
+    <xs:annotation>
+      <xs:documentation>A data type for country codes specified by DHS as part of the DHS Western Hemisphere Travel Initiative.</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="aamva_d20:CountryCodeSimpleType">
+        <xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:simpleType name="CourtCategoryCodeSimpleType">
+    <xs:annotation>
+      <xs:documentation>A data type for kinds of courts.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="ADM">
+        <xs:annotation>
+          <xs:documentation>Administrative Adjudication</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CHA">
+        <xs:annotation>
+          <xs:documentation>Chancery Court</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CIR">
+        <xs:annotation>
+          <xs:documentation>Circuit Court</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CIT">
+        <xs:annotation>
+          <xs:documentation>City Court</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CIV">
+        <xs:annotation>
+          <xs:documentation>Civil Court</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="COC">
+        <xs:annotation>
+          <xs:documentation>County Court</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="COR">
+        <xs:annotation>
+          <xs:documentation>Corporation Court</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CRI">
+        <xs:annotation>
+          <xs:documentation>Criminal Court</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="DIS">
+        <xs:annotation>
+          <xs:documentation>District Court</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="DOT">
+        <xs:annotation>
+          <xs:documentation>Secretary USDOT</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="FED">
+        <xs:annotation>
+          <xs:documentation>U.S. District Court</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="GEN">
+        <xs:annotation>
+          <xs:documentation>General Court Martial</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="HUS">
+        <xs:annotation>
+          <xs:documentation>Hustings Court</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="JPC">
+        <xs:annotation>
+          <xs:documentation>Justice of Peace Court</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="JUS">
+        <xs:annotation>
+          <xs:documentation>Justice Court</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="JUV">
+        <xs:annotation>
+          <xs:documentation>Juvenile Court</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="LEC">
+        <xs:annotation>
+          <xs:documentation>Law &amp; Equity Court</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="MAG">
+        <xs:annotation>
+          <xs:documentation>Magistrate Court</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="MAY">
+        <xs:annotation>
+          <xs:documentation>Mayor's Court</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="MUN">
+        <xs:annotation>
+          <xs:documentation>Municipal Court</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="OTH">
+        <xs:annotation>
+          <xs:documentation>Other</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="POL">
+        <xs:annotation>
+          <xs:documentation>Police Court</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="SJC">
+        <xs:annotation>
+          <xs:documentation>Special Justice Court</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="SPL">
+        <xs:annotation>
+          <xs:documentation>Special Court Martial</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="SSP">
+        <xs:annotation>
+          <xs:documentation>State Supreme Court</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="SUM">
+        <xs:annotation>
+          <xs:documentation>Summary Court Martial</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="SUP">
+        <xs:annotation>
+          <xs:documentation>Superior Court</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="TJC">
+        <xs:annotation>
+          <xs:documentation>Trial Justice Court</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="TRA">
+        <xs:annotation>
+          <xs:documentation>Traffic Court</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="TRI">
+        <xs:annotation>
+          <xs:documentation>Tribal Court</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="TWN">
+        <xs:annotation>
+          <xs:documentation>Town Court</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="UNK">
+        <xs:annotation>
+          <xs:documentation>Unknown</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="USC">
+        <xs:annotation>
+          <xs:documentation>U.S. Commissioner</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="USM">
+        <xs:annotation>
+          <xs:documentation>U.S. Magistrate Court</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="USS">
+        <xs:annotation>
+          <xs:documentation>U.S. Supreme Court</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="CourtCategoryCodeType">
+    <xs:annotation>
+      <xs:documentation>A data type for kinds of courts.</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="aamva_d20:CourtCategoryCodeSimpleType">
+        <xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:simpleType name="DecalPeriodCodeSimpleType">
+    <xs:annotation>
+      <xs:documentation>A data type for the lifespan of a decal.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="2">
+        <xs:annotation>
+          <xs:documentation>2 Years</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="F">
+        <xs:annotation>
+          <xs:documentation>Full Year Decal</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="I">
+        <xs:annotation>
+          <xs:documentation>Infinite</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="P">
+        <xs:annotation>
+          <xs:documentation>Partial Year Decal</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="R">
+        <xs:annotation>
+          <xs:documentation>Prorated Decal</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="DecalPeriodCodeType">
+    <xs:annotation>
+      <xs:documentation>A data type for the lifespan of a decal.</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="aamva_d20:DecalPeriodCodeSimpleType">
+        <xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:simpleType name="DriverLicenseClassCodeSimpleType">
+    <xs:annotation>
+      <xs:documentation>A data type for kinds of vehicles that a licensed driver may be approved to operate.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="A">
+        <xs:annotation>
+          <xs:documentation>Class "A" vehicles - any combination of vehicles with a GCWR of 26,001 or more pounds, provided the GVWR of the vehicle(s) being towed is in excess of 10,000 pounds [49 CFR 383.91(a)(1)]. (Holders of a Class A license may, with the appropriate endorsement, operate all Class B &amp; C vehicles).</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="B">
+        <xs:annotation>
+          <xs:documentation>Class "B" vehicles - any single vehicle with a GVWR of 26,001 or more pounds, or any such vehicle towing a vehicle not in excess of 10,000 pounds GVWR [49 CFR 383.91(a)(2)]. (Holders of a Class B license may, with the appropriate endorsement, operate all Class C vehicles).</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="C">
+        <xs:annotation>
+          <xs:documentation>Class "C" vehicles - any single vehicle, or combination of vehicles, that meets neither the definition of Group A nor that of Group B, but that either is designed to transport 16 or more passengers including the driver, or is used in the transportation of materials found to be hazardous for the purposes of the Hazardous Materials Transportation Act and which require the motor vehicle to be placarded under the Hazardous Materials Regulations (49 CFR part 172, subpart F) [49 CFR 383.91(a)(3)].</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="M">
+        <xs:annotation>
+          <xs:documentation>Class "M" vehicles - Motorcycles, Mopeds, Motor-driven Cycles.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="DriverLicenseClassCodeType">
+    <xs:annotation>
+      <xs:documentation>A data type for kinds of vehicles that a licensed driver may be approved to operate.</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="aamva_d20:DriverLicenseClassCodeSimpleType">
+        <xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:simpleType name="DriverLicenseMedicalCertificationRestrictionCodeSimpleType">
+    <xs:annotation>
+      <xs:documentation>A data type for a restriction imposed on a commercial driver by a medical examiner.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="1">
+        <xs:annotation>
+          <xs:documentation>Wearing corrective lenses</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="2">
+        <xs:annotation>
+          <xs:documentation>Wearing hearing aid</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="3">
+        <xs:annotation>
+          <xs:documentation>Accompanied by a waiver/exemption</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="4">
+        <xs:annotation>
+          <xs:documentation>Driving within an exempt intra city zone</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="5">
+        <xs:annotation>
+          <xs:documentation>Accompanied by a Skill Performance Evaluation certificate (SPE)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="6">
+        <xs:annotation>
+          <xs:documentation>Qualified by operation of 49 CFR 391.64</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="DriverLicenseMedicalCertificationRestrictionCodeType">
+    <xs:annotation>
+      <xs:documentation>A data type for a restriction imposed on a commercial driver by a medical examiner.</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="aamva_d20:DriverLicenseMedicalCertificationRestrictionCodeSimpleType">
+        <xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:simpleType name="DriverLicenseMedicalCertificationStatusCodeSimpleType">
+    <xs:annotation>
+      <xs:documentation>A data type for an indication of the status of a driver's medical certification.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="C">
+        <xs:annotation>
+          <xs:documentation>The driver is certified.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="N">
+        <xs:annotation>
+          <xs:documentation>The driver is not certified.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="DriverLicenseMedicalCertificationStatusCodeType">
+    <xs:annotation>
+      <xs:documentation>A data type for an indication of the status of a driver's medical certification.</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="aamva_d20:DriverLicenseMedicalCertificationStatusCodeSimpleType">
+        <xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:simpleType name="DriverLicenseMedicalSelfCertificationCodeSimpleType">
+    <xs:annotation>
+      <xs:documentation>A data type for a driver's self certification of the commercial driver's status regarding 49 CFR 390.3 and the type of driving.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="EA">
+        <xs:annotation>
+          <xs:documentation>Excepted Intrastate</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="EI">
+        <xs:annotation>
+          <xs:documentation>Excepted Interstate</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="NA">
+        <xs:annotation>
+          <xs:documentation>Non-excepted Intrastate</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="NI">
+        <xs:annotation>
+          <xs:documentation>Non-excepted Interstate</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="DriverLicenseMedicalSelfCertificationCodeType">
+    <xs:annotation>
+      <xs:documentation>A data type for a driver's self certification of the commercial driver's status regarding 49 CFR 390.3 and the type of driving.</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="aamva_d20:DriverLicenseMedicalSelfCertificationCodeSimpleType">
+        <xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:simpleType name="DriverLicensePermitEndorsementCodeSimpleType">
+    <xs:annotation>
+      <xs:documentation>A data type for endorsements on a driver license permit which authorizes the operation of specified kinds of vehicles carrying specified loads.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="L">
+        <xs:annotation>
+          <xs:documentation>Motorcycle</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="N">
+        <xs:annotation>
+          <xs:documentation>Tank</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="O">
+        <xs:annotation>
+          <xs:documentation>Other</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="P">
+        <xs:annotation>
+          <xs:documentation>Passenger</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="S">
+        <xs:annotation>
+          <xs:documentation>School and Passenger Bus</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="T">
+        <xs:annotation>
+          <xs:documentation>Doubles/Triples</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="DriverLicensePermitEndorsementCodeType">
+    <xs:annotation>
+      <xs:documentation>A data type for endorsements on a driver license permit which authorizes the operation of specified kinds of vehicles carrying specified loads.</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="aamva_d20:DriverLicensePermitEndorsementCodeSimpleType">
+        <xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:simpleType name="DriverLicenseWithdrawalActionCodeSimpleType">
+    <xs:annotation>
+      <xs:documentation>A data type for kinds of driver license withdrawal actions.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="1">
+        <xs:annotation>
+          <xs:documentation>Revoked</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="2">
+        <xs:annotation>
+          <xs:documentation>Barred</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="3">
+        <xs:annotation>
+          <xs:documentation>Suspended</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="4">
+        <xs:annotation>
+          <xs:documentation>Canceled</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="5">
+        <xs:annotation>
+          <xs:documentation>Denied</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="6">
+        <xs:annotation>
+          <xs:documentation>Disqualified</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="7">
+        <xs:annotation>
+          <xs:documentation>Other Withdrawal</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="DriverLicenseWithdrawalActionCodeType">
+    <xs:annotation>
+      <xs:documentation>A data type for kinds of driver license withdrawal actions.</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="aamva_d20:DriverLicenseWithdrawalActionCodeSimpleType">
+        <xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:simpleType name="DriverLicenseWithdrawalBasisCodeSimpleType">
+    <xs:annotation>
+      <xs:documentation>A data type for bases for withdrawal action for a driver.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="0">
+        <xs:annotation>
+          <xs:documentation>Unknown</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="1">
+        <xs:annotation>
+          <xs:documentation>Conviction</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="2">
+        <xs:annotation>
+          <xs:documentation>Administrative Adjudication</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="3">
+        <xs:annotation>
+          <xs:documentation>Administrative Action</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="4">
+        <xs:annotation>
+          <xs:documentation>Repeated Violations</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="5">
+        <xs:annotation>
+          <xs:documentation>Withdrawal resulting from point system</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="6">
+        <xs:annotation>
+          <xs:documentation>Court Ordered or Requested</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="7">
+        <xs:annotation>
+          <xs:documentation>Court Recommended</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="8">
+        <xs:annotation>
+          <xs:documentation>NRVC Action or Reciprocity</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="9">
+        <xs:annotation>
+          <xs:documentation>Administrative Per Se</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="DriverLicenseWithdrawalBasisCodeType">
+    <xs:annotation>
+      <xs:documentation>A data type for bases for withdrawal action for a driver.</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="aamva_d20:DriverLicenseWithdrawalBasisCodeSimpleType">
+        <xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:simpleType name="DriverLicenseWithdrawalDueProcessStatusCodeSimpleType">
+    <xs:annotation>
+      <xs:documentation>A data type for due process statuses of a withdrawal action.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="0">
+        <xs:annotation>
+          <xs:documentation>Not Defined</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="1">
+        <xs:annotation>
+          <xs:documentation>Hearing Held; Action Confirmed</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="2">
+        <xs:annotation>
+          <xs:documentation>Hearing Offered but not Requested</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="3">
+        <xs:annotation>
+          <xs:documentation>Hearing Requested; not yet Held</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="4">
+        <xs:annotation>
+          <xs:documentation>Department Action Appealed to Court</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="5">
+        <xs:annotation>
+          <xs:documentation>Hearing not Applicable</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="DriverLicenseWithdrawalDueProcessStatusCodeType">
+    <xs:annotation>
+      <xs:documentation>A data type for due process statuses of a withdrawal action.</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="aamva_d20:DriverLicenseWithdrawalDueProcessStatusCodeSimpleType">
+        <xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:simpleType name="DriverLicenseWithdrawalEligibilityCodeSimpleType">
+    <xs:annotation>
+      <xs:documentation>A data type for when a driver may be eligible to apply for reinstatement of driving privileges that have been withdrawn.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="Date">
+        <xs:annotation>
+          <xs:documentation>A person will become eligible to apply for reinstatement of those driving privileges withdrawn on a given date.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Indefinite">
+        <xs:annotation>
+          <xs:documentation>It has not yet been determined when or if a person will be eligible to apply for reinstatement of those driving privileges withdrawn.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Permanent">
+        <xs:annotation>
+          <xs:documentation>A person will never be eligible to apply for reinstatement of those driving privileges withdrawn.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="DriverLicenseWithdrawalEligibilityCodeType">
+    <xs:annotation>
+      <xs:documentation>A data type for when a driver may be eligible to apply for reinstatement of driving privileges that have been withdrawn.</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="aamva_d20:DriverLicenseWithdrawalEligibilityCodeSimpleType">
+        <xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:simpleType name="DriverLicenseWithdrawalExtentCodeSimpleType">
+    <xs:annotation>
+      <xs:documentation>A data type for extents of withdrawals.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="1">
+        <xs:annotation>
+          <xs:documentation>Commercial</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="2">
+        <xs:annotation>
+          <xs:documentation>Permit</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="3">
+        <xs:annotation>
+          <xs:documentation>All</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="4">
+        <xs:annotation>
+          <xs:documentation>Non-CDL</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="DriverLicenseWithdrawalExtentCodeType">
+    <xs:annotation>
+      <xs:documentation>A data type for extents of withdrawals.</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="aamva_d20:DriverLicenseWithdrawalExtentCodeSimpleType">
+        <xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:simpleType name="DrivingEndorsementCodeSimpleType">
+    <xs:annotation>
+      <xs:documentation>A data type for endorsements on a driver license which authorizes the operation of specified kinds of vehicles carrying specified loads.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="H">
+        <xs:annotation>
+          <xs:documentation>Hazardous Material</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="L">
+        <xs:annotation>
+          <xs:documentation>Motorcycle</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="N">
+        <xs:annotation>
+          <xs:documentation>Tank</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="O">
+        <xs:annotation>
+          <xs:documentation>Other</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="P">
+        <xs:annotation>
+          <xs:documentation>Passenger</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="S">
+        <xs:annotation>
+          <xs:documentation>School and Passenger Bus</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="T">
+        <xs:annotation>
+          <xs:documentation>Doubles/Triples</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="X">
+        <xs:annotation>
+          <xs:documentation>Combined Tank/Hazmat</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="DrivingEndorsementCodeType">
+    <xs:annotation>
+      <xs:documentation>A data type for endorsements on a driver license which authorizes the operation of specified kinds of vehicles carrying specified loads.</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="aamva_d20:DrivingEndorsementCodeSimpleType">
+        <xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:simpleType name="DrivingInsuranceStatusCodeSimpleType">
+    <xs:annotation>
+      <xs:documentation>A data type for the ways in which a driver of a vehicle may or may not be insured.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="N">
+        <xs:annotation>
+          <xs:documentation>No insurance</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="O">
+        <xs:annotation>
+          <xs:documentation>Insured owner</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="P">
+        <xs:annotation>
+          <xs:documentation>Insured non-owner</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="DrivingInsuranceStatusCodeType">
+    <xs:annotation>
+      <xs:documentation>A data type for the ways in which a driver of a vehicle may or may not be insured.</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="aamva_d20:DrivingInsuranceStatusCodeSimpleType">
+        <xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:simpleType name="DrivingOffenseCodeSimpleType">
+    <xs:annotation>
+      <xs:documentation>A data type for ACD codes for a driving offense.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="A04">
+        <xs:annotation>
+          <xs:documentation>Driving under the influence of alcohol with BAC at or over .04</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="A08">
+        <xs:annotation>
+          <xs:documentation>Driving under the influence of alcohol with BAC at or over .08</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="A10">
+        <xs:annotation>
+          <xs:documentation>Driving under the influence of alcohol with BAC at or over .10</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="A11">
+        <xs:annotation>
+          <xs:documentation>Driving under the influence of alcohol with BAC at or over __ (detail field required)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="A12">
+        <xs:annotation>
+          <xs:documentation>Refused to submit to test for alcohol - Implied Consent Law</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="A20">
+        <xs:annotation>
+          <xs:documentation>Driving under the influence of alcohol or drugs</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="A21">
+        <xs:annotation>
+          <xs:documentation>Driving under the influence of alcohol</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="A22">
+        <xs:annotation>
+          <xs:documentation>Driving under the influence of drugs</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="A23">
+        <xs:annotation>
+          <xs:documentation>Driving under the influence of alcohol and drugs</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="A24">
+        <xs:annotation>
+          <xs:documentation>Driving under the influence of medication not intended to intoxicate</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="A25">
+        <xs:annotation>
+          <xs:documentation>Driving while impaired - ability definitely impaired</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="A26">
+        <xs:annotation>
+          <xs:documentation>Drinking alcohol while operating a vehicle</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="A31">
+        <xs:annotation>
+          <xs:documentation>Illegal possession of alcohol</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="A33">
+        <xs:annotation>
+          <xs:documentation>Illegal possession of drugs (controlled substances)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="A35">
+        <xs:annotation>
+          <xs:documentation>Possession of open alcohol container</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="A41">
+        <xs:annotation>
+          <xs:documentation>Driver violation of ignition interlock or immobilization device</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="A50">
+        <xs:annotation>
+          <xs:documentation>Motor vehicle used in the commission of a felony involving the manufacturing, distributing, or dispensing a con-trolled substance</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="A60">
+        <xs:annotation>
+          <xs:documentation>Underage Convicted of Drinking and Driving at .02 or higher BAC</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="A61">
+        <xs:annotation>
+          <xs:documentation>Underage Administrative Per Se - Drinking and Driving at .02 or higher BAC</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="A90">
+        <xs:annotation>
+          <xs:documentation>Administrative Per Se for .10 BAC</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="A94">
+        <xs:annotation>
+          <xs:documentation>Administrative Per Se for .04 BAC</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="A98">
+        <xs:annotation>
+          <xs:documentation>Administrative Per Se for .08 BAC</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="B01">
+        <xs:annotation>
+          <xs:documentation>Hit and run - failure to stop and render aid after accident</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="B02">
+        <xs:annotation>
+          <xs:documentation>Hit and run - failure to stop and render aid after accident - Fatal accident</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="B03">
+        <xs:annotation>
+          <xs:documentation>Hit and run - failure to stop and render aid after accident - Personal injury accident</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="B04">
+        <xs:annotation>
+          <xs:documentation>Hit and run - failure to stop and render aid after accident - Property damage accident</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="B05">
+        <xs:annotation>
+          <xs:documentation>Leaving accident scene before police arrive</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="B06">
+        <xs:annotation>
+          <xs:documentation>Leaving accident scene before police arrive - Fatal accident</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="B07">
+        <xs:annotation>
+          <xs:documentation>Leaving accident scene before police arrive - Personal injury accident</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="B08">
+        <xs:annotation>
+          <xs:documentation>Leaving accident scene before police arrive - Property damage accident</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="B14">
+        <xs:annotation>
+          <xs:documentation>Failure to reveal identity after fatal or personal injury accident</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="B19">
+        <xs:annotation>
+          <xs:documentation>Driving while out of service order is in effect and transporting 16 or more passengers, including the driver and/or transporting hazardous materials that require a placard.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="B20">
+        <xs:annotation>
+          <xs:documentation>Driving while license withdrawn</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="B21">
+        <xs:annotation>
+          <xs:documentation>Driving while license barred</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="B22">
+        <xs:annotation>
+          <xs:documentation>Driving while license canceled</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="B23">
+        <xs:annotation>
+          <xs:documentation>Driving while license denied</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="B24">
+        <xs:annotation>
+          <xs:documentation>Driving while license disqualified</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="B25">
+        <xs:annotation>
+          <xs:documentation>Driving while license revoked</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="B26">
+        <xs:annotation>
+          <xs:documentation>Driving while license suspended</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="B27">
+        <xs:annotation>
+          <xs:documentation>General, driving while an out of service order is in effect (for violations not covered by B19).</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="B41">
+        <xs:annotation>
+          <xs:documentation>Possess or provide counterfeit or altered driver license (includes DL, CDL, and Instruction Permit) or ID</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="B51">
+        <xs:annotation>
+          <xs:documentation>Expired or no driver license (includes DL, CDL, and Instruction Permit)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="B56">
+        <xs:annotation>
+          <xs:documentation>Driving a CMV without obtaining a CDL</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="B57">
+        <xs:annotation>
+          <xs:documentation>Driving a CMV without a CDL in the drivers possession</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="B61">
+        <xs:annotation>
+          <xs:documentation>Failed to file accident report</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="B63">
+        <xs:annotation>
+          <xs:documentation>Failed to file future proof of financial responsibility</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="B64">
+        <xs:annotation>
+          <xs:documentation>Failed to file insurance certification</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="B65">
+        <xs:annotation>
+          <xs:documentation>Failed to file medical certification/disability information</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="B74">
+        <xs:annotation>
+          <xs:documentation>Failed to show insurance certification</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="B78">
+        <xs:annotation>
+          <xs:documentation>Failed to show non-commercial driver license</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="B91">
+        <xs:annotation>
+          <xs:documentation>Improper classification or endorsement on driver license (includes DL, CDL, and Instruction Permit)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="D02">
+        <xs:annotation>
+          <xs:documentation>Misrepresentation of identity or other facts on application for driver license (includes DL, CDL, and Instruction Permit)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="D06">
+        <xs:annotation>
+          <xs:documentation>Misrepresentation of identity or other facts to obtain alcohol</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="D07">
+        <xs:annotation>
+          <xs:documentation>Possess multiple driver licenses (includes DL, CDL, and Instruction Permit)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="D10">
+        <xs:annotation>
+          <xs:documentation>Manufacture or make false driver license (includes DL, CDL, and Instruction Permit)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="D16">
+        <xs:annotation>
+          <xs:documentation>Show or use improperly - Driver license (includes DL, CDL, and Instruction Permit)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="D27">
+        <xs:annotation>
+          <xs:documentation>Violate limited license conditions</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="D29">
+        <xs:annotation>
+          <xs:documentation>Violate restrictions of driver license (includes DL, CDL, and Instruction Permit)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="D35">
+        <xs:annotation>
+          <xs:documentation>Failure to comply with financial responsibility law</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="D36">
+        <xs:annotation>
+          <xs:documentation>Failure to maintain required liability insurance</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="D37">
+        <xs:annotation>
+          <xs:documentation>Failure to pay for damages or make installment payment</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="D38">
+        <xs:annotation>
+          <xs:documentation>Failure to post security or obtain release from liability</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="D39">
+        <xs:annotation>
+          <xs:documentation>Unsatisfied judgment</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="D45">
+        <xs:annotation>
+          <xs:documentation>Failure to appear for trial or court appearance.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="D51">
+        <xs:annotation>
+          <xs:documentation>Failure to make required payment of child support</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="D53">
+        <xs:annotation>
+          <xs:documentation>Failure to make required payment of fine and costs</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="D56">
+        <xs:annotation>
+          <xs:documentation>Failure to answer a citation, pay fines, penalties and/or costs related to the original violation </xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="D70">
+        <xs:annotation>
+          <xs:documentation>Driver's view obstructed</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="D72">
+        <xs:annotation>
+          <xs:documentation>Inability to control vehicle</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="D74">
+        <xs:annotation>
+          <xs:documentation>Operating a motor vehicle improperly because of drowsiness</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="D75">
+        <xs:annotation>
+          <xs:documentation>Operating a motor vehicle improperly due to physical or mental disabili-ty</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="D78">
+        <xs:annotation>
+          <xs:documentation>Perjury about the operation of a motor vehicle</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="E01">
+        <xs:annotation>
+          <xs:documentation>Operating without equipment as required by law</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="E02">
+        <xs:annotation>
+          <xs:documentation>Operating without brakes as required by law</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="E03">
+        <xs:annotation>
+          <xs:documentation>Operating without HAZMAT safety equipment as required by law</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="E04">
+        <xs:annotation>
+          <xs:documentation>Operating without HAZMAT placards/markings as required by law</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="E05">
+        <xs:annotation>
+          <xs:documentation>Operating without lights as required by law</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="E06">
+        <xs:annotation>
+          <xs:documentation>Operating without school bus equipment as required by law</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="E23">
+        <xs:annotation>
+          <xs:documentation>Use of radar or laser detector prohibited by law</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="E31">
+        <xs:annotation>
+          <xs:documentation>Defective brakes</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="E33">
+        <xs:annotation>
+          <xs:documentation>Defective HAZMAT safety devices</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="E34">
+        <xs:annotation>
+          <xs:documentation>Defective lights</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="E36">
+        <xs:annotation>
+          <xs:documentation>Defective school bus equipment</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="E37">
+        <xs:annotation>
+          <xs:documentation>Defective tires</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="E50">
+        <xs:annotation>
+          <xs:documentation>Failure to use equipment as required</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="E51">
+        <xs:annotation>
+          <xs:documentation>Failure to use brakes</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="E53">
+        <xs:annotation>
+          <xs:documentation>Failure to use HAZMAT safety devices as required</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="E54">
+        <xs:annotation>
+          <xs:documentation>Failure to use headlight dimmer as required</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="E55">
+        <xs:annotation>
+          <xs:documentation>Failure to use lights as required</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="E56">
+        <xs:annotation>
+          <xs:documentation>Failure to use school bus safety equipment as required</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="E57">
+        <xs:annotation>
+          <xs:documentation>Failure to use snow tires or chains as required</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="E70">
+        <xs:annotation>
+          <xs:documentation>Equipment used improperly or obstructed</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="E71">
+        <xs:annotation>
+          <xs:documentation>Brakes used improperly</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="F02">
+        <xs:annotation>
+          <xs:documentation>Child or youth restraint not used properly as required</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="F03">
+        <xs:annotation>
+          <xs:documentation>Motorcycle safety equipment not used properly as required</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="F04">
+        <xs:annotation>
+          <xs:documentation>Seat belt not used properly as required</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="F05">
+        <xs:annotation>
+          <xs:documentation>Carrying unsecured passengers in open area of vehicle</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="F06">
+        <xs:annotation>
+          <xs:documentation>Improper operation of or riding on a motorcycle</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="F34">
+        <xs:annotation>
+          <xs:documentation>Stopping, standing, or parking: obstructing or impeding traffic</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="F66">
+        <xs:annotation>
+          <xs:documentation>Unsafe condition of vehicle (no specified component)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="M02">
+        <xs:annotation>
+          <xs:documentation>Failure to obey barrier</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="M03">
+        <xs:annotation>
+          <xs:documentation>Failure to obey construction or maintenance zone markers</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="M04">
+        <xs:annotation>
+          <xs:documentation>Failure to obey flagger</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="M05">
+        <xs:annotation>
+          <xs:documentation>Failure to obey lane markings or signal</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="M08">
+        <xs:annotation>
+          <xs:documentation>Failure to obey police or peace officer</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="M09">
+        <xs:annotation>
+          <xs:documentation>Failure to obey railroad crossing restrictions</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="M10">
+        <xs:annotation>
+          <xs:documentation>Failure to obey railroad gates, signs or signals</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="M11">
+        <xs:annotation>
+          <xs:documentation>Failure to obey restricted lane</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="M12">
+        <xs:annotation>
+          <xs:documentation>Failure to obey safety zone</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="M13">
+        <xs:annotation>
+          <xs:documentation>Failure to obey school crossing guard</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="M14">
+        <xs:annotation>
+          <xs:documentation>Failure to obey sign or traffic control device</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="M15">
+        <xs:annotation>
+          <xs:documentation>Failure to obey stop sign</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="M16">
+        <xs:annotation>
+          <xs:documentation>Failure to obey traffic signal or light</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="M17">
+        <xs:annotation>
+          <xs:documentation>Failure to obey traffic sign</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="M18">
+        <xs:annotation>
+          <xs:documentation>Failure to obey warning light or flasher</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="M19">
+        <xs:annotation>
+          <xs:documentation>Failure to obey yield sign</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="M20">
+        <xs:annotation>
+          <xs:documentation>For drivers who are not required to always stop, failure to slow down at a railroad-highway grade crossing and check that tracks are clear of approaching train.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="M21">
+        <xs:annotation>
+          <xs:documentation>For drivers who are not required to always stop, failure to stop before reaching tracks at a railroad-highway grade crossing when the tracks are not clear.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="M22">
+        <xs:annotation>
+          <xs:documentation>For drivers who are always required to stop, failure to stop as required before driving onto railroad-highway grade crossing.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="M23">
+        <xs:annotation>
+          <xs:documentation>For all drivers, failing to have sufficient space to drive completely through the railroad-highway grade crossing without stopping.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="M24">
+        <xs:annotation>
+          <xs:documentation>For all drivers, failing to negotiate a railroad-highway grade crossing because of insufficient undercarriage clearance.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="M25">
+        <xs:annotation>
+          <xs:documentation>Failure to stop - basic rule at unsigned intersection or when entering roadway from private driveway, alley, etc.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="M30">
+        <xs:annotation>
+          <xs:documentation>Following improperly</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="M31">
+        <xs:annotation>
+          <xs:documentation>Failure to leave sufficient distance for overtaking by other vehicles</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="M32">
+        <xs:annotation>
+          <xs:documentation>Following emergency vehicle unlawfully</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="M33">
+        <xs:annotation>
+          <xs:documentation>Following fire equipment unlawfully</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="M34">
+        <xs:annotation>
+          <xs:documentation>Following too closely</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="M40">
+        <xs:annotation>
+          <xs:documentation>Improper lane or location</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="M41">
+        <xs:annotation>
+          <xs:documentation>Failure to keep in proper lane</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="M42">
+        <xs:annotation>
+          <xs:documentation>Improper or erratic (unsafe) lane changes</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="M43">
+        <xs:annotation>
+          <xs:documentation>Ran off road</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="M44">
+        <xs:annotation>
+          <xs:documentation>Improper lane or location - crossover</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="M45">
+        <xs:annotation>
+          <xs:documentation>Improper lane or location - crosswalk</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="M46">
+        <xs:annotation>
+          <xs:documentation>Improper lane or location - entrance/exit ramp or way</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="M47">
+        <xs:annotation>
+          <xs:documentation>Improper lane or location - in bicycle lane</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="M48">
+        <xs:annotation>
+          <xs:documentation>Improper lane or location - in occupied lane</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="M49">
+        <xs:annotation>
+          <xs:documentation>Improper lane or location - in HOV or restricted lane</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="M50">
+        <xs:annotation>
+          <xs:documentation>Improper lane or location - limited access highway</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="M51">
+        <xs:annotation>
+          <xs:documentation>Improper lane or location - median</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="M55">
+        <xs:annotation>
+          <xs:documentation>Improper lane or location - on rail or streetcar tracks</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="M56">
+        <xs:annotation>
+          <xs:documentation>Improper lane or location - on fire hose</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="M57">
+        <xs:annotation>
+          <xs:documentation>Improper lane or location - oncoming traffic lane</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="M58">
+        <xs:annotation>
+          <xs:documentation>Improper lane or location - road shoulder, ditch or sidewalk</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="M60">
+        <xs:annotation>
+          <xs:documentation>Improper lane or location - slower vehicle lane</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="M61">
+        <xs:annotation>
+          <xs:documentation>Improper lane or location - straddling center line(s)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="M62">
+        <xs:annotation>
+          <xs:documentation>Improper lane or location - traveling in turn (or center) lane</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="M70">
+        <xs:annotation>
+          <xs:documentation>Improper passing</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="M71">
+        <xs:annotation>
+          <xs:documentation>Passing in violation of posted sign or pavement marking</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="M72">
+        <xs:annotation>
+          <xs:documentation>Passing in violation of opposite directions restriction</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="M73">
+        <xs:annotation>
+          <xs:documentation>Passing on wrong side</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="M74">
+        <xs:annotation>
+          <xs:documentation>Passing on hill or curve</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="M75">
+        <xs:annotation>
+          <xs:documentation>Passing school bus displaying warning not to pass</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="M76">
+        <xs:annotation>
+          <xs:documentation>Passing where prohibited</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="M77">
+        <xs:annotation>
+          <xs:documentation>Passing with insufficient distance or visibility</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="M80">
+        <xs:annotation>
+          <xs:documentation>Inattentive/distracted,careless, or negligent driving</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="M81">
+        <xs:annotation>
+          <xs:documentation>Careless driving</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="M82">
+        <xs:annotation>
+          <xs:documentation>Inattentive/distracted driving</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="M83">
+        <xs:annotation>
+          <xs:documentation>Negligent driving</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="M84">
+        <xs:annotation>
+          <xs:documentation>Reckless driving</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="M85">
+        <xs:annotation>
+          <xs:documentation>Texting While Driving</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="M86">
+        <xs:annotation>
+          <xs:documentation>Using a Hand-held Mobile Telephone While Driving</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="N01">
+        <xs:annotation>
+          <xs:documentation>Failure to yield right of way (FTY ROW)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="N02">
+        <xs:annotation>
+          <xs:documentation>FTY ROW to animal rider or animal-drawn vehicle</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="N03">
+        <xs:annotation>
+          <xs:documentation>FTY ROW to cyclist</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="N04">
+        <xs:annotation>
+          <xs:documentation>FTY ROW to emergency vehicle (i.e. ambulance, fire equipment, police, etc.)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="N05">
+        <xs:annotation>
+          <xs:documentation>FTY ROW to funeral procession, procession or parade</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="N06">
+        <xs:annotation>
+          <xs:documentation>FTY ROW to other vehicle</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="N07">
+        <xs:annotation>
+          <xs:documentation>FTY ROW to overtaking vehicle</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="N08">
+        <xs:annotation>
+          <xs:documentation>FTY ROW to pedestrian (includes handicapped or blind)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="N09">
+        <xs:annotation>
+          <xs:documentation>FTY ROW to school bus</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="N20">
+        <xs:annotation>
+          <xs:documentation>FTY ROW at crosswalk</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="N21">
+        <xs:annotation>
+          <xs:documentation>FTY ROW at rotary/roundabout/circular intersection</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="N22">
+        <xs:annotation>
+          <xs:documentation>FTY ROW at stop sign</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="N23">
+        <xs:annotation>
+          <xs:documentation>FTY ROW at traffic sign</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="N24">
+        <xs:annotation>
+          <xs:documentation>FTY ROW at traffic signal</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="N25">
+        <xs:annotation>
+          <xs:documentation>FTY ROW at unsigned intersection</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="N26">
+        <xs:annotation>
+          <xs:documentation>FTY ROW at yield sign</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="N30">
+        <xs:annotation>
+          <xs:documentation>FTY ROW when warning displayed on other vehicle</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="N31">
+        <xs:annotation>
+          <xs:documentation>FTY ROW when turning</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="N40">
+        <xs:annotation>
+          <xs:documentation>Failure to use or improper signal</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="N41">
+        <xs:annotation>
+          <xs:documentation>Failure to cancel directional signals</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="N42">
+        <xs:annotation>
+          <xs:documentation>Failure to signal intention to pass </xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="N43">
+        <xs:annotation>
+          <xs:documentation>Failure to signal lane change or turn</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="N44">
+        <xs:annotation>
+          <xs:documentation>Giving wrong signal</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="N50">
+        <xs:annotation>
+          <xs:documentation>Improper turn</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="N51">
+        <xs:annotation>
+          <xs:documentation>Improper method of turning</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="N52">
+        <xs:annotation>
+          <xs:documentation>Improper position for turning</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="N53">
+        <xs:annotation>
+          <xs:documentation>Making improper left turn</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="N54">
+        <xs:annotation>
+          <xs:documentation>Making improper right turn</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="N55">
+        <xs:annotation>
+          <xs:documentation>Making improper turn around (not U turn)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="N56">
+        <xs:annotation>
+          <xs:documentation>Making improper U turn</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="N60">
+        <xs:annotation>
+          <xs:documentation>Driving wrong way</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="N61">
+        <xs:annotation>
+          <xs:documentation>Driving wrong way at rotary/roundabout/circular intersection</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="N62">
+        <xs:annotation>
+          <xs:documentation>Driving wrong way on divided highway</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="N63">
+        <xs:annotation>
+          <xs:documentation>Driving wrong way on one way street or road</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="N70">
+        <xs:annotation>
+          <xs:documentation>Driving on wrong side</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="N71">
+        <xs:annotation>
+          <xs:documentation>Driving on wrong side of divided highway</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="N72">
+        <xs:annotation>
+          <xs:documentation>Driving on wrong side of undivided street or road</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="N80">
+        <xs:annotation>
+          <xs:documentation>Coasting (operating with gears disengaged)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="N82">
+        <xs:annotation>
+          <xs:documentation>Improper backing</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="N83">
+        <xs:annotation>
+          <xs:documentation>Improper Start from a Parked Position</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="N84">
+        <xs:annotation>
+          <xs:documentation>Unsafe operation</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="S01">
+        <xs:annotation>
+          <xs:documentation>01-05 &gt; Speed limit (detail optional)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="S06">
+        <xs:annotation>
+          <xs:documentation>06-10 &gt; Speed limit (detail optional)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="S14">
+        <xs:annotation>
+          <xs:documentation>Speeding 11-14 &gt; speed limit</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="S15">
+        <xs:annotation>
+          <xs:documentation>Speeding 15 mph or more above speed limit (detail optional)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="S16">
+        <xs:annotation>
+          <xs:documentation>16-20 &gt; Speed limit (detail optional)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="S21">
+        <xs:annotation>
+          <xs:documentation>21-25 &gt; Speed limit (detail optional)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="S26">
+        <xs:annotation>
+          <xs:documentation>26-30 &gt; Speed limit (detail optional)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="S31">
+        <xs:annotation>
+          <xs:documentation>31-35 &gt; Speed limit (detail optional)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="S36">
+        <xs:annotation>
+          <xs:documentation>36-40 &gt; Speed limit (detail optional)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="S41">
+        <xs:annotation>
+          <xs:documentation>41+   &gt; Speed limit (detail optional)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="S51">
+        <xs:annotation>
+          <xs:documentation>01-10 &gt; Speed limit (detail optional)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="S71">
+        <xs:annotation>
+          <xs:documentation>21-30 &gt; Speed limit (detail optional)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="S81">
+        <xs:annotation>
+          <xs:documentation>31-40 &gt; Speed limit (detail optional)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="S91">
+        <xs:annotation>
+          <xs:documentation>41+   &gt; Speed limit (detail optional)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="S92">
+        <xs:annotation>
+          <xs:documentation>Speeding - Speed limit and actual speed (detail required)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="S93">
+        <xs:annotation>
+          <xs:documentation>Speeding</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="S94">
+        <xs:annotation>
+          <xs:documentation>Prima Facie speed violation or driving too fast for conditions</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="S95">
+        <xs:annotation>
+          <xs:documentation>Speed contest (racing) on road open to traffic</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="S96">
+        <xs:annotation>
+          <xs:documentation>Speed less than minimum</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="S97">
+        <xs:annotation>
+          <xs:documentation>Operating at erratic or suddenly changing speeds</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="S98">
+        <xs:annotation>
+          <xs:documentation>Speeding on freeway (wasting fuel)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="U01">
+        <xs:annotation>
+          <xs:documentation>Fleeing or evading police or roadblock</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="U02">
+        <xs:annotation>
+          <xs:documentation>Resisting arrest</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="U03">
+        <xs:annotation>
+          <xs:documentation>Using a motor vehicle in connection with a felony (not traffic offense)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="U04">
+        <xs:annotation>
+          <xs:documentation>Using a motor vehicle in connection with a misdemeanor (not traffic offense)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="U05">
+        <xs:annotation>
+          <xs:documentation>Using a motor vehicle to aid and abet a felon</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="U06">
+        <xs:annotation>
+          <xs:documentation>Vehicular assault</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="U07">
+        <xs:annotation>
+          <xs:documentation>Vehicular homicide</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="U08">
+        <xs:annotation>
+          <xs:documentation>Vehicular manslaughter</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="U09">
+        <xs:annotation>
+          <xs:documentation>Negligent homicide while operating a CMV</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="U10">
+        <xs:annotation>
+          <xs:documentation>Causing a fatality through the negligent operation of a CMV</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="U21">
+        <xs:annotation>
+          <xs:documentation>Illegal operation of emergency vehicle</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="U27">
+        <xs:annotation>
+          <xs:documentation>Vehicular Feticide (1st Degree)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="U28">
+        <xs:annotation>
+          <xs:documentation>Vehicular Feticide (2nd Degree)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="U31">
+        <xs:annotation>
+          <xs:documentation>Violation resulting in fatal accident</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="W00">
+        <xs:annotation>
+          <xs:documentation>Withdrawal, Non-ACD violation (A withdrawal issued by the State of Record for a single conviction which is neither traffic safety related, driver control related or federally mandated)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="W01">
+        <xs:annotation>
+          <xs:documentation>Accumulation of convictions (including point systems and/or being judged a habitual offender or violator)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="W13">
+        <xs:annotation>
+          <xs:documentation>Parental consent withdrawn</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="W14">
+        <xs:annotation>
+          <xs:documentation>Physical or mental disability</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="W15">
+        <xs:annotation>
+          <xs:documentation>Physicians' or specialists' report recommended</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="W20">
+        <xs:annotation>
+          <xs:documentation>Unable to pass DL test(s) or meet qualifications</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="W30">
+        <xs:annotation>
+          <xs:documentation>Two serious violations within three years</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="W31">
+        <xs:annotation>
+          <xs:documentation>Three serious violations within three years</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="W40">
+        <xs:annotation>
+          <xs:documentation>The accumulation of two or more major offenses.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="W41">
+        <xs:annotation>
+          <xs:documentation>An additional major offenses after reinstatement.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="W50">
+        <xs:annotation>
+          <xs:documentation>The accumulation of two out-of-service order general violations (violations not covered by W51) within ten years.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="W51">
+        <xs:annotation>
+          <xs:documentation>The accumulation of two out-of-service order violations within ten years while transporting 16 or more passengers, including the driver and/or transporting hazardous materials that require a placard.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="W52">
+        <xs:annotation>
+          <xs:documentation>The accumulation of three or more out-of-service order violations within ten years.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="W60">
+        <xs:annotation>
+          <xs:documentation>The accumulation of two RRGC violations within three years.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="W61">
+        <xs:annotation>
+          <xs:documentation>The accumulation of three or more RRGC violations within three years.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="W70">
+        <xs:annotation>
+          <xs:documentation>Imminent hazard.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="W80">
+        <xs:annotation>
+          <xs:documentation>Failed employer-directed drug test</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="W81">
+        <xs:annotation>
+          <xs:documentation>Refusal to submit to an employer-directed drug test</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="DrivingOffenseCodeType">
+    <xs:annotation>
+      <xs:documentation>A data type for ACD codes for a driving offense.</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="aamva_d20:DrivingOffenseCodeSimpleType">
+        <xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:simpleType name="DrivingPermitRestrictionCodeSimpleType">
+    <xs:annotation>
+      <xs:documentation>A data type for categories of driving restrictions for permits.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="B">
+        <xs:annotation>
+          <xs:documentation>Corrective lenses must be worn</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="C">
+        <xs:annotation>
+          <xs:documentation>Mechanical Aid</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="D">
+        <xs:annotation>
+          <xs:documentation>Prosthetic Aid</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="E">
+        <xs:annotation>
+          <xs:documentation>No Manual Transmission</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="F">
+        <xs:annotation>
+          <xs:documentation>Outside Mirror</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="G">
+        <xs:annotation>
+          <xs:documentation>Limit to Daylight Only</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="H">
+        <xs:annotation>
+          <xs:documentation>Limited to Employment</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="I">
+        <xs:annotation>
+          <xs:documentation>Limited - other</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="J">
+        <xs:annotation>
+          <xs:documentation>Other</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="K">
+        <xs:annotation>
+          <xs:documentation>Intrastate Only</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="L">
+        <xs:annotation>
+          <xs:documentation>No Air Brakes Equipped Vehicle</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="M">
+        <xs:annotation>
+          <xs:documentation>No Class A Passenger Vehicle</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="N">
+        <xs:annotation>
+          <xs:documentation>No Class A and Class B Passenger Vehicle</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="O">
+        <xs:annotation>
+          <xs:documentation>No Tractor-Trailer</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="P">
+        <xs:annotation>
+          <xs:documentation>No Passengers in CMV Bus</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="V">
+        <xs:annotation>
+          <xs:documentation>Medical Variance</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="W">
+        <xs:annotation>
+          <xs:documentation>Farm Waiver</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="X">
+        <xs:annotation>
+          <xs:documentation>No Cargo in CMV Tank Vehicle</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="DrivingPermitRestrictionCodeType">
+    <xs:annotation>
+      <xs:documentation>A data type for categories of driving restrictions for permits.</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="aamva_d20:DrivingPermitRestrictionCodeSimpleType">
+        <xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:simpleType name="DrivingRestrictionCodeSimpleType">
+    <xs:annotation>
+      <xs:documentation>A data type for categories of driving restrictions.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="B">
+        <xs:annotation>
+          <xs:documentation>Corrective lenses must be worn</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="C">
+        <xs:annotation>
+          <xs:documentation>Mechanical Aid</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="D">
+        <xs:annotation>
+          <xs:documentation>Prosthetic Aid</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="E">
+        <xs:annotation>
+          <xs:documentation>No Manual Transmission</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="F">
+        <xs:annotation>
+          <xs:documentation>Outside Mirror</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="G">
+        <xs:annotation>
+          <xs:documentation>Limit to Daylight Only</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="H">
+        <xs:annotation>
+          <xs:documentation>Limited to Employment</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="I">
+        <xs:annotation>
+          <xs:documentation>Limited - other</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="J">
+        <xs:annotation>
+          <xs:documentation>Other</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="K">
+        <xs:annotation>
+          <xs:documentation>Intrastate Only</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="L">
+        <xs:annotation>
+          <xs:documentation>No Air Brakes Equipped Vehicle</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="M">
+        <xs:annotation>
+          <xs:documentation>No Class A Passenger Vehicle</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="N">
+        <xs:annotation>
+          <xs:documentation>No Class A and Class B Passenger Vehicle</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="O">
+        <xs:annotation>
+          <xs:documentation>No Tractor-Trailer</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="P">
+        <xs:annotation>
+          <xs:documentation>No Passengers in CMV Bus</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="V">
+        <xs:annotation>
+          <xs:documentation>Medical Variance</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="W">
+        <xs:annotation>
+          <xs:documentation>Farm Waiver</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="X">
+        <xs:annotation>
+          <xs:documentation>No Cargo in CMV Tank Vehicle</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Z">
+        <xs:annotation>
+          <xs:documentation>No Full Ait Break equipped CMV</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="DrivingRestrictionCodeType">
+    <xs:annotation>
+      <xs:documentation>A data type for categories of driving restrictions.</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="aamva_d20:DrivingRestrictionCodeSimpleType">
+        <xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:simpleType name="DrivingStatusCodeSimpleType">
+    <xs:annotation>
+      <xs:documentation>A data type for statuses of a drivers privilege type.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="ELG">
+        <xs:annotation>
+          <xs:documentation>The individual does not have a current valid license and has nothing on record that would prevent issuance.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="LIC">
+        <xs:annotation>
+          <xs:documentation>The individual has a current valid license with all their driving privileges intact.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="NEN">
+        <xs:annotation>
+          <xs:documentation>The individual has been withdrawn in a specific jurisdiction for an offense which is not federally mandated and not related to traffic safety.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="NOT">
+        <xs:annotation>
+          <xs:documentation>The individual does not have a current valid license and has an adverse action on record that prevents issuance in all jurisdictions.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="RPD">
+        <xs:annotation>
+          <xs:documentation>The individual has been reported deceased.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="DrivingStatusCodeType">
+    <xs:annotation>
+      <xs:documentation>A data type for statuses of a drivers privilege type.</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="aamva_d20:DrivingStatusCodeSimpleType">
+        <xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:simpleType name="HazMatCodeSimpleType">
+    <xs:annotation>
+      <xs:documentation>A data type for whether a driver was operating a vehicle carrying hazardous materials.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="1">
+        <xs:annotation>
+          <xs:documentation>Hazardous Materials</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="2">
+        <xs:annotation>
+          <xs:documentation>No Hazardous Materials</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="9">
+        <xs:annotation>
+          <xs:documentation>Unknown</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="HazMatCodeType">
+    <xs:annotation>
+      <xs:documentation>A data type for whether a driver was operating a vehicle carrying hazardous materials.</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="aamva_d20:HazMatCodeSimpleType">
+        <xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:simpleType name="InsuranceCoverageCategoryCodeSimpleType">
+    <xs:annotation>
+      <xs:documentation>A data type for categories of coverage provided by an insurance policy.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="01">
+        <xs:annotation>
+          <xs:documentation>All inclusive (all vehicles owned or not)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="02">
+        <xs:annotation>
+          <xs:documentation>Limited to vehicles insurer is aware of</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="03">
+        <xs:annotation>
+          <xs:documentation>Broadform</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="04">
+        <xs:annotation>
+          <xs:documentation>Driver other vehicle</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="05">
+        <xs:annotation>
+          <xs:documentation>Not to exceed 1.5 Tons</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="06">
+        <xs:annotation>
+          <xs:documentation>Not for hire</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="InsuranceCoverageCategoryCodeType">
+    <xs:annotation>
+      <xs:documentation>A data type for categories of coverage provided by an insurance policy.</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="aamva_d20:InsuranceCoverageCategoryCodeSimpleType">
+        <xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:simpleType name="JurisdictionAuthorityCodeSimpleType">
+    <xs:annotation>
+      <xs:documentation>A data type for an authority with jurisdiction over a particular area.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="AB">
+        <xs:annotation>
+          <xs:documentation>Alberta, Canada</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AG">
+        <xs:annotation>
+          <xs:documentation>Aguascalientes, Mexico</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AK">
+        <xs:annotation>
+          <xs:documentation>Alaska, USA</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AL">
+        <xs:annotation>
+          <xs:documentation>Alabama, USA</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AR">
+        <xs:annotation>
+          <xs:documentation>Arkansas, USA</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AS">
+        <xs:annotation>
+          <xs:documentation>American Samoa, US Territorial Possession</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AZ">
+        <xs:annotation>
+          <xs:documentation>Arizona, USA</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="BA">
+        <xs:annotation>
+          <xs:documentation>Baja Clifornia, Mexico</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="BC">
+        <xs:annotation>
+          <xs:documentation>British Columbia, Canada</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="BJ">
+        <xs:annotation>
+          <xs:documentation>Baja California Sur, Mexico</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CA">
+        <xs:annotation>
+          <xs:documentation>California, USA</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CE">
+        <xs:annotation>
+          <xs:documentation>Campeche, Mexico</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CH">
+        <xs:annotation>
+          <xs:documentation>Chihuahua, Mexico</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CI">
+        <xs:annotation>
+          <xs:documentation>Chiapas, Mexico</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CL">
+        <xs:annotation>
+          <xs:documentation>Colima, Mexico</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CO">
+        <xs:annotation>
+          <xs:documentation>Colorado, USA</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CT">
+        <xs:annotation>
+          <xs:documentation>Connecticut, USA</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CU">
+        <xs:annotation>
+          <xs:documentation>Coahuila de Zaragoza, Mexico</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="DC">
+        <xs:annotation>
+          <xs:documentation>District of Columbia, USA</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="DE">
+        <xs:annotation>
+          <xs:documentation>Delaware, USA</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="DF">
+        <xs:annotation>
+          <xs:documentation>Distrito Federal Mexico</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="DO">
+        <xs:annotation>
+          <xs:documentation>Durango, Mexico</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="DS">
+        <xs:annotation>
+          <xs:documentation>U.S. Department of State</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="DT">
+        <xs:annotation>
+          <xs:documentation>U.S. Department of Transportation</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="EM">
+        <xs:annotation>
+          <xs:documentation>(Estados) Mexico</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="FH">
+        <xs:annotation>
+          <xs:documentation>Federal Motor Carrier Safety Administration (FMCSA used to be the OMC in the FHWA)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="FL">
+        <xs:annotation>
+          <xs:documentation>Florida, USA</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="FM">
+        <xs:annotation>
+          <xs:documentation>Federal States of Micronesia, US Territorial Possession</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="GA">
+        <xs:annotation>
+          <xs:documentation>Georgia, USA</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="GM">
+        <xs:annotation>
+          <xs:documentation>Guam, US Territorial Possession</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="GR">
+        <xs:annotation>
+          <xs:documentation>Guerrero, Mexico</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="GS">
+        <xs:annotation>
+          <xs:documentation>General Services Administration (GSA)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="GU">
+        <xs:annotation>
+          <xs:documentation>Guanajuato, Mexico</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="HI">
+        <xs:annotation>
+          <xs:documentation>Hawaii, USA</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="HL">
+        <xs:annotation>
+          <xs:documentation>Hidalgo, Mexico</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="IA">
+        <xs:annotation>
+          <xs:documentation>Iowa, USA</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ID">
+        <xs:annotation>
+          <xs:documentation>Idaho, USA</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="IL">
+        <xs:annotation>
+          <xs:documentation>Illinois, USA</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="IN">
+        <xs:annotation>
+          <xs:documentation>Indiana, USA</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="IR">
+        <xs:annotation>
+          <xs:documentation>Internal Revenue Service (IRS)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="JL">
+        <xs:annotation>
+          <xs:documentation>Jalisco, Mexico</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="KS">
+        <xs:annotation>
+          <xs:documentation>Kansas, USA</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="KY">
+        <xs:annotation>
+          <xs:documentation>Kentucky, USA</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="LA">
+        <xs:annotation>
+          <xs:documentation>Louisiana, USA</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="MA">
+        <xs:annotation>
+          <xs:documentation>Massachusetts, USA</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="MB">
+        <xs:annotation>
+          <xs:documentation>Manitoba, Canada</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="MC">
+        <xs:annotation>
+          <xs:documentation>Michoacan de Ocampo, Mexico</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="MD">
+        <xs:annotation>
+          <xs:documentation>Maryland, USA</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ME">
+        <xs:annotation>
+          <xs:documentation>Maine, USA</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="MH">
+        <xs:annotation>
+          <xs:documentation>Marshal Islands, US Territorial Possession</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="MI">
+        <xs:annotation>
+          <xs:documentation>Michigan, USA</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="MN">
+        <xs:annotation>
+          <xs:documentation>Minnesota, USA</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="MO">
+        <xs:annotation>
+          <xs:documentation>Missouri, USA</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="MP">
+        <xs:annotation>
+          <xs:documentation>Northern Mariana Islands, US Territorial Possession</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="MR">
+        <xs:annotation>
+          <xs:documentation>Morelos, Mexico</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="MS">
+        <xs:annotation>
+          <xs:documentation>Mississippi, USA</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="MT">
+        <xs:annotation>
+          <xs:documentation>Montana, USA</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="MX">
+        <xs:annotation>
+          <xs:documentation>Mexico (United Mexican States)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="NA">
+        <xs:annotation>
+          <xs:documentation>Nayarit, Mexico</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="NB">
+        <xs:annotation>
+          <xs:documentation>New Brunswick, Canada</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="NC">
+        <xs:annotation>
+          <xs:documentation>North Carolina, USA</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ND">
+        <xs:annotation>
+          <xs:documentation>North Dakota, USA</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="NE">
+        <xs:annotation>
+          <xs:documentation>Nebraska, USA</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="NF">
+        <xs:annotation>
+          <xs:documentation>Newfoundland and Labrador, Canada</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="NH">
+        <xs:annotation>
+          <xs:documentation>New Hampshire, USA</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="NJ">
+        <xs:annotation>
+          <xs:documentation>New Jersey, USA</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="NL">
+        <xs:annotation>
+          <xs:documentation>Nuevo Leon, Mexico</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="NM">
+        <xs:annotation>
+          <xs:documentation>New Mexico, USA</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="NS">
+        <xs:annotation>
+          <xs:documentation>Nova Scotia, Canada</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="NT">
+        <xs:annotation>
+          <xs:documentation>Northwest Territory, Canada</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="NU">
+        <xs:annotation>
+          <xs:documentation>Nunavut, Canada</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="NV">
+        <xs:annotation>
+          <xs:documentation>Nevada, USA</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="NY">
+        <xs:annotation>
+          <xs:documentation>New York, USA</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="OA">
+        <xs:annotation>
+          <xs:documentation>Oaxaca, Mexico</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="OH">
+        <xs:annotation>
+          <xs:documentation>Ohio, USA</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="OK">
+        <xs:annotation>
+          <xs:documentation>Oklahoma, USA</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ON">
+        <xs:annotation>
+          <xs:documentation>Ontario, Canada</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="OR">
+        <xs:annotation>
+          <xs:documentation>Oregon, USA</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="PA">
+        <xs:annotation>
+          <xs:documentation>Pennsylvania, USA</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="PB">
+        <xs:annotation>
+          <xs:documentation>Puebla, Mexico</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="PE">
+        <xs:annotation>
+          <xs:documentation>Prince Edward Island, Canada</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="PR">
+        <xs:annotation>
+          <xs:documentation>Puerto Rico, US Territorial Possession</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="PW">
+        <xs:annotation>
+          <xs:documentation>Palau (till 1994), US Territorial Possession</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="PZ">
+        <xs:annotation>
+          <xs:documentation>Panamanian Canal Zone till December 2000, US Territorial Possession</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="QC">
+        <xs:annotation>
+          <xs:documentation>Quebec, Canada</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="QR">
+        <xs:annotation>
+          <xs:documentation>Quintana Roo, Mexico</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="QU">
+        <xs:annotation>
+          <xs:documentation>Queretaro de Arteaga, Mexico</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="RI">
+        <xs:annotation>
+          <xs:documentation>Rhode Island, USA</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="SC">
+        <xs:annotation>
+          <xs:documentation>South Carolina, USA</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="SD">
+        <xs:annotation>
+          <xs:documentation>South Dakota, USA</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="SI">
+        <xs:annotation>
+          <xs:documentation>Sinaloa, Mexico</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="SK">
+        <xs:annotation>
+          <xs:documentation>Saskatchewan, Canada</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="SL">
+        <xs:annotation>
+          <xs:documentation>San Luis Potosi, Mexico</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="SO">
+        <xs:annotation>
+          <xs:documentation>Sonora, Mexico</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="TA">
+        <xs:annotation>
+          <xs:documentation>Tamaulipas, Mexico</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="TB">
+        <xs:annotation>
+          <xs:documentation>Tabasco, Mexico</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="TL">
+        <xs:annotation>
+          <xs:documentation>Tlaxcala, Mexico</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="TN">
+        <xs:annotation>
+          <xs:documentation>Tennessee, USA</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="TS">
+        <xs:annotation>
+          <xs:documentation>Transportation Security Administration (TSA)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="TX">
+        <xs:annotation>
+          <xs:documentation>Texas, USA</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="UT">
+        <xs:annotation>
+          <xs:documentation>Utah, USA</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="VA">
+        <xs:annotation>
+          <xs:documentation>Virginia, USA</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="VC">
+        <xs:annotation>
+          <xs:documentation>Veracruz-Llave, Mexico</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="VI">
+        <xs:annotation>
+          <xs:documentation>Virgin Islands, US Territorial Possession</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="VT">
+        <xs:annotation>
+          <xs:documentation>Vermont, USA</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="WA">
+        <xs:annotation>
+          <xs:documentation>Washington, USA</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="WI">
+        <xs:annotation>
+          <xs:documentation>Wisconsin, USA</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="WK">
+        <xs:annotation>
+          <xs:documentation>Wake Island, US Territorial Possession</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="WV">
+        <xs:annotation>
+          <xs:documentation>West Virginia, USA</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="WY">
+        <xs:annotation>
+          <xs:documentation>Wyoming, USA</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="YT">
+        <xs:annotation>
+          <xs:documentation>Yukon Territory, Canada</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="YU">
+        <xs:annotation>
+          <xs:documentation>Yucatan, Mexico</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ZA">
+        <xs:annotation>
+          <xs:documentation>Zacatecas, Mexico</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="JurisdictionAuthorityCodeType">
+    <xs:annotation>
+      <xs:documentation>A data type for an authority with jurisdiction over a particular area.</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="aamva_d20:JurisdictionAuthorityCodeSimpleType">
+        <xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:simpleType name="LienReleaseReasonCodeSimpleType">
+    <xs:annotation>
+      <xs:documentation>A data type for reasons a legal encumbrance may be removed from a property.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="01">
+        <xs:annotation>
+          <xs:documentation>Lien paid off.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="02">
+        <xs:annotation>
+          <xs:documentation>Vehicle repossessed.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="03">
+        <xs:annotation>
+          <xs:documentation>Lien perfected in error (lienholder has no interest in the vehicle).</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="04">
+        <xs:annotation>
+          <xs:documentation>Paper title requested.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="05">
+        <xs:annotation>
+          <xs:documentation>Lien paid off with no title printed.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="LienReleaseReasonCodeType">
+    <xs:annotation>
+      <xs:documentation>A data type for reasons a legal encumbrance may be removed from a property.</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="aamva_d20:LienReleaseReasonCodeSimpleType">
+        <xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:simpleType name="MedicalPractitionerSpecialtyCodeSimpleType">
+    <xs:annotation>
+      <xs:documentation>A data type for a code indicating the specialty of the medical practitioner.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="AN">
+        <xs:annotation>
+          <xs:documentation>Advanced Practice Nurse</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CH">
+        <xs:annotation>
+          <xs:documentation>Chiropractor</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="DO">
+        <xs:annotation>
+          <xs:documentation>Osteopathic Doctor</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="MD">
+        <xs:annotation>
+          <xs:documentation>Medical Doctor</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="PA">
+        <xs:annotation>
+          <xs:documentation>Physician Assistant</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="XX">
+        <xs:annotation>
+          <xs:documentation>Other</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="MedicalPractitionerSpecialtyCodeType">
+    <xs:annotation>
+      <xs:documentation>A data type for a code indicating the specialty of the medical practitioner.</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="aamva_d20:MedicalPractitionerSpecialtyCodeSimpleType">
+        <xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:simpleType name="PassFailCodeSimpleType">
+    <xs:annotation>
+      <xs:documentation>A data type for whether something has passed or failed some sort of test.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="F">
+        <xs:annotation>
+          <xs:documentation>Fail</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="P">
+        <xs:annotation>
+          <xs:documentation>Pass</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="PassFailCodeType">
+    <xs:annotation>
+      <xs:documentation>A data type for whether something has passed or failed some sort of test.</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="aamva_d20:PassFailCodeSimpleType">
+        <xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:simpleType name="PersonOrganDonorCodeSimpleType">
+    <xs:annotation>
+      <xs:documentation>A data type for organs a person could be willing to donate upon death.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="A">
+        <xs:annotation>
+          <xs:documentation>Any organ                                               </xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="B">
+        <xs:annotation>
+          <xs:documentation>Bone                                                    </xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="C">
+        <xs:annotation>
+          <xs:documentation>Connective tissue (tendons, ligaments, fascia)          </xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="E">
+        <xs:annotation>
+          <xs:documentation>Eyes                                                    </xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="F">
+        <xs:annotation>
+          <xs:documentation>Cornea                                                  </xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="H">
+        <xs:annotation>
+          <xs:documentation>Heart                                                   </xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="I">
+        <xs:annotation>
+          <xs:documentation>Heart Valves                                            </xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="K">
+        <xs:annotation>
+          <xs:documentation>Kidney                                                  </xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="L">
+        <xs:annotation>
+          <xs:documentation>Liver/Iliac Vessels                                     </xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="M">
+        <xs:annotation>
+          <xs:documentation>Lymph Nodes                                             </xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="N">
+        <xs:annotation>
+          <xs:documentation>Intestine                                               </xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="P">
+        <xs:annotation>
+          <xs:documentation>Pancreas/Islet Cells                                    </xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Q">
+        <xs:annotation>
+          <xs:documentation>Pancreas/Spleen/Iliac vessels                           </xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="R">
+        <xs:annotation>
+          <xs:documentation>Radius, Humerus &amp; Ulna</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="S">
+        <xs:annotation>
+          <xs:documentation>Skin                                                    </xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="T">
+        <xs:annotation>
+          <xs:documentation>Hepatocytes                                             </xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="U">
+        <xs:annotation>
+          <xs:documentation>Lungs                                                   </xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="V">
+        <xs:annotation>
+          <xs:documentation>Veins                                                   </xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="W">
+        <xs:annotation>
+          <xs:documentation>Cartoid Arteries                                        </xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Z">
+        <xs:annotation>
+          <xs:documentation>No organs</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="PersonOrganDonorCodeType">
+    <xs:annotation>
+      <xs:documentation>A data type for organs a person could be willing to donate upon death.</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="aamva_d20:PersonOrganDonorCodeSimpleType">
+        <xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:simpleType name="RegistrationPlateColorCodeSimpleType">
+    <xs:annotation>
+      <xs:documentation>A data type for colors of a vehicle registration plate or license plate.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="A">
+        <xs:annotation>
+          <xs:documentation>Maroon</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="B">
+        <xs:annotation>
+          <xs:documentation>Blue</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="E">
+        <xs:annotation>
+          <xs:documentation>Gray</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="G">
+        <xs:annotation>
+          <xs:documentation>Green</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="I">
+        <xs:annotation>
+          <xs:documentation>Ivory</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="K">
+        <xs:annotation>
+          <xs:documentation>Black</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="N">
+        <xs:annotation>
+          <xs:documentation>Brown</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="O">
+        <xs:annotation>
+          <xs:documentation>Orange</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="R">
+        <xs:annotation>
+          <xs:documentation>Red</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="W">
+        <xs:annotation>
+          <xs:documentation>White</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="RegistrationPlateColorCodeType">
+    <xs:annotation>
+      <xs:documentation>A data type for colors of a vehicle registration plate or license plate.</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="aamva_d20:RegistrationPlateColorCodeSimpleType">
+        <xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:simpleType name="RegistrationStatusCodeSimpleType">
+    <xs:annotation>
+      <xs:documentation>A data type for activities recorded for a registration.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="00">
+        <xs:annotation>
+          <xs:documentation>Active</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="01">
+        <xs:annotation>
+          <xs:documentation>Canceled</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="02">
+        <xs:annotation>
+          <xs:documentation>Stolen</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="03">
+        <xs:annotation>
+          <xs:documentation>Expired</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="04">
+        <xs:annotation>
+          <xs:documentation>Revoked</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="05">
+        <xs:annotation>
+          <xs:documentation>Suspended</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="06">
+        <xs:annotation>
+          <xs:documentation>Swap</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="07">
+        <xs:annotation>
+          <xs:documentation>Inactive</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="99">
+        <xs:annotation>
+          <xs:documentation>No Status</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="RegistrationStatusCodeType">
+    <xs:annotation>
+      <xs:documentation>A data type for activities recorded for a registration.</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="aamva_d20:RegistrationStatusCodeSimpleType">
+        <xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:simpleType name="RegistrationStatusDetailCodeSimpleType">
+    <xs:annotation>
+      <xs:documentation>A data type for additional information regarding a registration status.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="A">
+        <xs:annotation>
+          <xs:documentation>Vehicle, Plates &amp; VIN Stolen</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="B">
+        <xs:annotation>
+          <xs:documentation>Plates &amp; VIN Stolen (not vehicle)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="C">
+        <xs:annotation>
+          <xs:documentation>Vehicle &amp; Plate Stolen (not VIN)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="D">
+        <xs:annotation>
+          <xs:documentation>Vehicle &amp; VIN Stolen (not plate)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="E">
+        <xs:annotation>
+          <xs:documentation>Vehicle Stolen (not plate &amp; VIN)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="F">
+        <xs:annotation>
+          <xs:documentation>Plate Stolen (not Vehicle &amp; VIN)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="G">
+        <xs:annotation>
+          <xs:documentation>VIN Stolen (not vehicle &amp; plate)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="H">
+        <xs:annotation>
+          <xs:documentation>Junk</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="I">
+        <xs:annotation>
+          <xs:documentation>Excise Tax Due</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="J">
+        <xs:annotation>
+          <xs:documentation>Non-renewable</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="K">
+        <xs:annotation>
+          <xs:documentation>Insurance</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="L">
+        <xs:annotation>
+          <xs:documentation>Insurance Pending</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="M">
+        <xs:annotation>
+          <xs:documentation>Revoked Check</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="N">
+        <xs:annotation>
+          <xs:documentation>Pending Revoked Check</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="O">
+        <xs:annotation>
+          <xs:documentation>Revoked Credit Card</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="P">
+        <xs:annotation>
+          <xs:documentation>Pending Revoked Credit Card</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Q">
+        <xs:annotation>
+          <xs:documentation>Advanced Renew</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="R">
+        <xs:annotation>
+          <xs:documentation>Advanced Registration</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="S">
+        <xs:annotation>
+          <xs:documentation>Lost</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="T">
+        <xs:annotation>
+          <xs:documentation>Owner Citation</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="U">
+        <xs:annotation>
+          <xs:documentation>Reinstatement Fee Due</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="RegistrationStatusDetailCodeType">
+    <xs:annotation>
+      <xs:documentation>A data type for additional information regarding a registration status.</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="aamva_d20:RegistrationStatusDetailCodeSimpleType">
+        <xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:simpleType name="SmogCertificateCodeSimpleType">
+    <xs:annotation>
+      <xs:documentation>A data type for whether or not a vehicle has a current smog certificate.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="B">
+        <xs:annotation>
+          <xs:documentation>Biannual</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="E">
+        <xs:annotation>
+          <xs:documentation>Exempt</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="N">
+        <xs:annotation>
+          <xs:documentation>No</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Y">
+        <xs:annotation>
+          <xs:documentation>Year</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="SmogCertificateCodeType">
+    <xs:annotation>
+      <xs:documentation>A data type for whether or not a vehicle has a current smog certificate.</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="aamva_d20:SmogCertificateCodeSimpleType">
+        <xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:simpleType name="TitleStatusCodeSimpleType">
+    <xs:annotation>
+      <xs:documentation>A data type for statuses for a title.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="00">
+        <xs:annotation>
+          <xs:documentation>Active</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="01">
+        <xs:annotation>
+          <xs:documentation>In Process</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="02">
+        <xs:annotation>
+          <xs:documentation>Mailed</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="03">
+        <xs:annotation>
+          <xs:documentation>Canceled</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="04">
+        <xs:annotation>
+          <xs:documentation>Stolen Title</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="05">
+        <xs:annotation>
+          <xs:documentation>Already Surrendered</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="06">
+        <xs:annotation>
+          <xs:documentation>Held by Garagekeeper</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="07">
+        <xs:annotation>
+          <xs:documentation>Held for Revenue</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="08">
+        <xs:annotation>
+          <xs:documentation>Returned for Correction</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="09">
+        <xs:annotation>
+          <xs:documentation>Held in Abeyance</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="10">
+        <xs:annotation>
+          <xs:documentation>Transferred</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="11">
+        <xs:annotation>
+          <xs:documentation>Title Returned Unclaimed</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="12">
+        <xs:annotation>
+          <xs:documentation>Vehicle Titled Out of State</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="13">
+        <xs:annotation>
+          <xs:documentation>Revoked</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="14">
+        <xs:annotation>
+          <xs:documentation>Title Application Withdrawn</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="15">
+        <xs:annotation>
+          <xs:documentation>Inactive</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="16">
+        <xs:annotation>
+          <xs:documentation>Suspended</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="17">
+        <xs:annotation>
+          <xs:documentation>Vehicle Reported Sold Out of State by Owner</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="97">
+        <xs:annotation>
+          <xs:documentation>Other</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="TitleStatusCodeType">
+    <xs:annotation>
+      <xs:documentation>A data type for statuses for a title.</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="aamva_d20:TitleStatusCodeSimpleType">
+        <xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:simpleType name="VehicleFuelCategoryCodeSimpleType">
+    <xs:annotation>
+      <xs:documentation>A data type for kinds of fuel or motive power used to propel a vehicle.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="A">
+        <xs:annotation>
+          <xs:documentation>Gasohol</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="C">
+        <xs:annotation>
+          <xs:documentation>Compressed Natural Gas</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="D">
+        <xs:annotation>
+          <xs:documentation>Diesel</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="E">
+        <xs:annotation>
+          <xs:documentation>Electric</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="G">
+        <xs:annotation>
+          <xs:documentation>Gasoline</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="H">
+        <xs:annotation>
+          <xs:documentation>Hybrid</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="K">
+        <xs:annotation>
+          <xs:documentation>Kerosene</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="L">
+        <xs:annotation>
+          <xs:documentation>Liquefied Petroleum Gas (Butane &amp; Propane)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="N">
+        <xs:annotation>
+          <xs:documentation>Liquefied Natural Gas</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="O">
+        <xs:annotation>
+          <xs:documentation>Other</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="S">
+        <xs:annotation>
+          <xs:documentation>Steam</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="VehicleFuelCategoryCodeType">
+    <xs:annotation>
+      <xs:documentation>A data type for kinds of fuel or motive power used to propel a vehicle.</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="aamva_d20:VehicleFuelCategoryCodeSimpleType">
+        <xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:simpleType name="VehicleOdometerReadingUnitCodeSimpleType">
+    <xs:annotation>
+      <xs:documentation>A data type for the units of measurement associated with an odometer reading.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="K">
+        <xs:annotation>
+          <xs:documentation>Kilometers</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="M">
+        <xs:annotation>
+          <xs:documentation>Miles</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="VehicleOdometerReadingUnitCodeType">
+    <xs:annotation>
+      <xs:documentation>A data type for the units of measurement associated with an odometer reading.</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="aamva_d20:VehicleOdometerReadingUnitCodeSimpleType">
+        <xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:simpleType name="VehicleTitleDocumentCategoryCodeSimpleType">
+    <xs:annotation>
+      <xs:documentation>A data type for kinds of an individual title document.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="Duplicate">
+        <xs:annotation>
+          <xs:documentation>Duplicate</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Original">
+        <xs:annotation>
+          <xs:documentation>Original</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Replacement">
+        <xs:annotation>
+          <xs:documentation>Replacement</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Salvage">
+        <xs:annotation>
+          <xs:documentation>Salvage</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="VehicleTitleDocumentCategoryCodeType">
+    <xs:annotation>
+      <xs:documentation>A data type for kinds of an individual title document.</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="aamva_d20:VehicleTitleDocumentCategoryCodeSimpleType">
+        <xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:simpleType name="VehicleTransmissionCategoryCodeSimpleType">
+    <xs:annotation>
+      <xs:documentation>A data type for kinds of transmission units in a vehicle.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="A">
+        <xs:annotation>
+          <xs:documentation>Automatic</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="M">
+        <xs:annotation>
+          <xs:documentation>Manual</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="VehicleTransmissionCategoryCodeType">
+    <xs:annotation>
+      <xs:documentation>A data type for kinds of transmission units in a vehicle.</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="aamva_d20:VehicleTransmissionCategoryCodeSimpleType">
+        <xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:simpleType name="VehicleUseCodeSimpleType">
+    <xs:annotation>
+      <xs:documentation>A data type for ways in which a vehicle is used.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="00">
+        <xs:annotation>
+          <xs:documentation>None (not in use)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="01">
+        <xs:annotation>
+          <xs:documentation>Personal</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="02">
+        <xs:annotation>
+          <xs:documentation>Driver Training</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="03">
+        <xs:annotation>
+          <xs:documentation>Construction/Maintenance</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="04">
+        <xs:annotation>
+          <xs:documentation>Ambulance</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="05">
+        <xs:annotation>
+          <xs:documentation>Military</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="06">
+        <xs:annotation>
+          <xs:documentation>Taxi</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="07">
+        <xs:annotation>
+          <xs:documentation>Transportation of property</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="08">
+        <xs:annotation>
+          <xs:documentation>Agriculture</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="09">
+        <xs:annotation>
+          <xs:documentation>Wrecker or Tow</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="10">
+        <xs:annotation>
+          <xs:documentation>Police</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="11">
+        <xs:annotation>
+          <xs:documentation>Other Business</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="12">
+        <xs:annotation>
+          <xs:documentation>Fire fighting</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="13">
+        <xs:annotation>
+          <xs:documentation>Bus</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="97">
+        <xs:annotation>
+          <xs:documentation>Other</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="99">
+        <xs:annotation>
+          <xs:documentation>Unknown</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="VehicleUseCodeType">
+    <xs:annotation>
+      <xs:documentation>A data type for ways in which a vehicle is used.</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="aamva_d20:VehicleUseCodeSimpleType">
+        <xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+</xs:schema>

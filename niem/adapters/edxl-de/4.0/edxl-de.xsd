@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="US-ASCII"?>
+<xs:schema targetNamespace="http://release.niem.gov/niem/adapters/edxl-de/4.0/" version="1" xsi:schemaLocation="http://release.niem.gov/niem/appinfo/4.0/ ../../../utility/appinfo/4.0/appinfo.xsd http://release.niem.gov/niem/conformanceTargets/3.0/ ../../../utility/conformanceTargets/3.0/conformanceTargets.xsd" ct:conformanceTargets="http://reference.niem.gov/niem/specification/naming-and-design-rules/4.0/#ReferenceSchemaDocument" xmlns:appinfo="http://release.niem.gov/niem/appinfo/4.0/" xmlns:de="urn:oasis:names:tc:emergency:EDXL:DE:1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:ct="http://release.niem.gov/niem/conformanceTargets/3.0/" xmlns:structures="http://release.niem.gov/niem/structures/4.0/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:edxl-de="http://release.niem.gov/niem/adapters/edxl-de/4.0/">
+  <xs:annotation>
+    <xs:documentation>Distribution Element</xs:documentation>
+  </xs:annotation>
+  <xs:import schemaLocation="../../../external/de/1.0/de.xsd" namespace="urn:oasis:names:tc:emergency:EDXL:DE:1.0" appinfo:externalImportIndicator="true">
+    <xs:annotation>
+      <xs:documentation>This Distribution Element specification describes a standard message distribution framework for data sharing among emergency information systems using the XML-based Emergency Data Exchange Language (EDXL). This format may be used over any data transmission system, including but not limited to the SOAP HTTP binding.</xs:documentation>
+    </xs:annotation>
+  </xs:import>
+  <xs:import schemaLocation="../../../utility/structures/4.0/structures.xsd" namespace="http://release.niem.gov/niem/structures/4.0/"/>
+  <xs:complexType name="DistributionElementAdapterType" appinfo:externalAdapterTypeIndicator="true">
+    <xs:annotation>
+      <xs:documentation>A data type for a standard message distribution framework for data sharing among emergency information systems using the XML-based Emergency Data Exchange Language (EDXL).</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="structures:ObjectType">
+        <xs:sequence>
+          <xs:element ref="de:EDXLDistribution" minOccurs="0" maxOccurs="unbounded">
+            <xs:annotation>
+              <xs:documentation>A container for all of the elements related to the distribution of EDXL content messages. Asserts the originator's intent as to the dissemination of that particular message or set of messages.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="DistributionElementAdapter" type="edxl-de:DistributionElementAdapterType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A standard message distribution framework for data sharing among emergency information systems using the XML-based Emergency Data Exchange Language (EDXL).</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+</xs:schema>
