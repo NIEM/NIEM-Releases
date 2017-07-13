@@ -1,7 +1,7 @@
 
 # NIEM 4.0
 
-This is the NIEM 4.0 release.
+This is the NIEM 4.0 release. NIEM 4.0 is the current release. 
 
 This release reflects updates to the [NIEM Naming and Design Rules][NDR], as well
 as the new [NIEM Code Lists Specification][Code Lists Specification].
