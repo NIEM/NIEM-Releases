@@ -42,6 +42,6 @@ The following issues from the [issue tracker](https://github.com/NIEM/NIEM-Relea
 
 ## Feedback
 
-Please submit feedback by Friday, February 16.
+Please submit feedback by Wednesday, February 21.
 
 Feedback may be submitted by either creating a [new issue](https://github.com/NIEM/NIEM-Releases/issues) or by emailing niem-comments@lists.gatech.edu.
