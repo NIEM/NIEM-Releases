@@ -1,145 +1,47 @@
 
-# NIEM 4.0
+# NIEM 4.1
 
-This is the NIEM 4.0 release. NIEM 4.0 is the current release. 
+This is the NIEM 4.1 alpha 1 pre-release.
 
-This release reflects updates to the [NIEM Naming and Design Rules][NDR], as well
-as the new [NIEM Code Lists Specification][Code Lists Specification].
+NIEM 4.1 will be a minor release and is scheduled to be published in summer 2018.
 
-## NDR 4.0
+## Minor releases
 
-This release of NIEM reflects updates to the
-[NIEM Naming and Design Rules][NDR], including:
+In a minor release, domains may update their content as needed.
 
-- The structures schema incorporates a new attribute, uri, that supports
-  cross-document and within-document references, in the style of Linked Data.
-- The vocabulary for local terminology, formerly in its own namespace, has been
-  moved into the appinfo namespace.
-- Abstract elements now have names that end in "Abstract", other than
-  augmentation points and representation elements
+Core and all namespaces imported by Core are locked until the next major release (5.0). A core supplement may be published as an interim solution, with changes published in newly created schemas.
 
-## Code Lists Specification 4.0
+The NIEM architecture also remains locked in minor releases. Only additive changes that do not affect are permitted.
 
-This release reflects the new [Code Lists Specification], including:
+## Core Supplement
 
-- NIEM Core contains a new type, `nc:CodeType`, which supports code lists that
-  are identified at run time, including GENC (see below).
-- The release contains codes for countries and subdivisions (e.g., states) that
-  are provided as CSV spreadsheet files. See below for more info.
+Because Core is locked until the next major release, a supplemental file can be published to provide access to new or harmonized content in the interim.
 
-## Content
+Core Supplement 4.0.1 is scheduleded to be published as part of the 4.1 release.  This will provide updates to Core content and code tables in an additive manner, and can be used along side the existing Core 4.0 namespace.
 
-### Domains with new or updated content
+## Content changes
 
-- **Agriculture** (*new domain in NIEM 4.0*)
-- **Biometrics**
-- **Emergency Management**
-- **Human Services**
-  - content adopted from the former CYFS domain
-- **Justice**
-- **Military Operations**
-- **Surface Transportation**
+### Domain changes
 
-Note: All domains have been changed, to some degree. The list above shows
-domains with additional changes beyond the regular updates to move to the 4.0
-major release, apply harmonization changes, etc.
+Content changes have been made in the following domains:
 
-### Support for the international community
+- Biometrics
+- Human Services
+- Military Operations
 
-- Added **address codes**
-- Added **nc:Crisis**
-- Added **nc:DocumentEUDataPrivacyIndicator** to nc:DocumentType
-- Added **message** elements to support message references and FATCA information
-- Added **nc:ServiceDeliveryNGO** and **nc:CoordinatingAgency** organizations
-- Added **nc:Payment**
-- Added **nc:PublicService**
-- Promoted **FinancialAccount** from the Justice domain to Core and added additional content
-- Reviewed Core definitions to remove unnecessary US-specific terms
+Most domains have been updated because of cross-domain dependencies.
 
-### Harmonization and issue resolution
+### Issue resolution
 
-Core-related changes include:
+The following issues from the [issue tracker](https://github.com/NIEM/NIEM-Releases/issues) have been addressed:
 
-- Refactored **measures**
-  - Created measure subtypes so that only the appropriate unit codes are available in each type
-  - For example, length unit codes are now available on nc:LengthMeasureType, not nc:MeasureType itself
-- Updated the representations of **GENC** codes
-  - Codes for countries and administrative subdivisions (e.g., states,
-    provinces) are represented according to the new [Code Lists Specification]
-  - Example usage:
+- Remove references to "cyfs" from Human Services definitions (#4)
+- Create a polygon node element of type nc:LocationType (#9)
+- Add keyword "GVWR" to nc:VehicleMaximumLoadWeightMeasure (#10)
+- Fix type of element mo:MGRSUTM100000MeterCoordinateValue (#11)
 
-    ```xml
-    <nc:CountryCode
-      cli:codeListURI="http://api.nsgreg.nga.mil/geo-political/GENC/3/3-6"
-      cli:codeListColumnName="char3">USA</nc:CountryCode>
-    ```
+## Feedback
 
-  - The URI `http://api.nsgreg.nga.mil/geo-political/GENC/3/3-6` is resolved by
-    [niem/xml-catalog.xml](niem/xml-catalog.xml) to the CSV spreadsheet
-    [niem/codes/genc/geo-political/3-6/genc_geo-political_3-6_char3.csv](niem/codes/genc/geo-political/3-6/genc_geo-political_3-6_char3.csv). The
-    code value `USA` appears in the spreadsheet's column headed `char3`.
-  - See `niem/codes/genc/` for GENC CSV code sets provided with this release
-  - See the [Code Lists Specification] for examples, more details, and how to build and use new CSVs for updated GENC codes
-- Added **nc:ArrivalType** and **nc:DepartureType**
-- Added / promoted additional  representations for **nc:DateType**:
-  - Fiscal year
-  - Quarter
-  - Zulu date/time
-  - Month
-  - Day
-  - Date ranges
-- Added **nc:BinaryHash** to nc:BinaryType
-- Added **nc:CountryType** and **nc:StateType**
-  - Bundles multiple representations of country and state codes to allow for easier reuse
-- Added additional **entity** representations
-  - **nc:EntityItem**
-  - **nc:GenericEntity**
-    - simple name, contact info, description fields
-    - for use when an entity cannot be determined to be either a person or an organization
-- Added **nc:LocationFloorNumberText**
-- Added **nc:OrganizationLEIIdentification**
-- Added **nc:RecommendationType**
-- Added **nc:TelephoneNumberDescriptionText**
-- Harmonized **capability** content
-- Harmonized **equipment** content
-- Harmonized **hazmat** code and text elements
-- Harmonized **medical condition** content
-- Harmonized **mission** content
-- Harmonized **permit** content
-- Harmonized **PersonStolenIdentityAssociation**
-- Harmonized **request** content
-- Harmonized **SubjectCautionInformation** content
-- Harmonized **task** content
-- Moved **AnomalyType** from Maritime to Core
-- Moved **CourtCase** to Core
-- Moved **MGRS** (Military Grid Reference System) coordinates from Core to MilOps
-- Moved **MissionID** to nc:MissionType
-- Moved **OrientationType** from MilOps to Core
-- Removed the **core_misc** namespace
-  - Moved the existing code sets into Core
-- Removed **FIPS 5-2 state** alpha codes
-  - FIPS 5-2 reuses USPS state alpha code
-- Removed the **FIPS 10-4** namespace (deprecated country codes)
-- Removed **nc:ContactInformationAssociationType**
-  - Largely overlapped nc:ContactInformationType
-- Updated **nc:AngularDegreeValue** from an integer to a decimal data type
-- Updated **nc:ElectronicAddressType**
-- Updated **nc:PersonNationality** to correct the definition
-- Updated **nc:RelativeLocationDistanceText** to a measure
-- Updated **nc:ReliabilityPercent** as nc:ConfidencePercent
-- Updated **nc:UTMCoordinateType** to fix the representation so it follows the common pattern
-- Updated the representation of **percent** values
-  - Percents should now be represented as a decimal value, with **100% represented as "100"**.
-  - Values less than 0 and greater than 100 are now allowed.
+Please submit feedback by Friday, February 16.
 
-### Miscellaneous
-- Incorporated all 3.0-related Core Supplements
-- Moved supporting schemas into a new `utility` folder to simplify the release folder layout:
-  - appinfo
-  - code-lists-spec
-  - conformanceTargets
-  - structures
-
-
-[Code Lists Specification]: https://github.com/NIEM/NIEM-Code-Lists-Spec
-[NDR]: https://github.com/NIEM/NIEM-NDR
+Feedback may be submitted by either creating a [new issue](https://github.com/NIEM/NIEM-Releases/issues) or by emailing niem-comments@lists.gatech.edu.
