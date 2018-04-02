@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="US-ASCII"?>
-<xs:schema targetNamespace="http://release.niem.gov/niem/domains/jxdm/6.1/" version="alpha1" xsi:schemaLocation="http://release.niem.gov/niem/appinfo/4.0/ ../../../utility/appinfo/4.0/appinfo.xsd http://release.niem.gov/niem/conformanceTargets/3.0/ ../../../utility/conformanceTargets/3.0/conformanceTargets.xsd" ct:conformanceTargets="http://reference.niem.gov/niem/specification/naming-and-design-rules/4.0/#ReferenceSchemaDocument" xmlns:niem-xs="http://release.niem.gov/niem/proxy/xsd/4.0/" xmlns:intel="http://release.niem.gov/niem/domains/intelligence/4.1/" xmlns:structures="http://release.niem.gov/niem/structures/4.0/" xmlns:apco="http://release.niem.gov/niem/codes/apco_event/4.0/" xmlns:hs="http://release.niem.gov/niem/domains/humanServices/4.1/" xmlns:sar="http://release.niem.gov/niem/codes/pmise_sar/4.0/" xmlns:ndex="http://release.niem.gov/niem/codes/fbi_ndex/4.0/" xmlns:nc="http://release.niem.gov/niem/niem-core/4.0/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:ncic="http://release.niem.gov/niem/codes/fbi_ncic/4.0/" xmlns:aamva_d20="http://release.niem.gov/niem/codes/aamva_d20/4.0/" xmlns:biom="http://release.niem.gov/niem/domains/biometrics/4.1/" xmlns:atf="http://release.niem.gov/niem/codes/atf/4.0/" xmlns:j="http://release.niem.gov/niem/domains/jxdm/6.1/" xmlns:em="http://release.niem.gov/niem/domains/emergencyManagement/4.1/" xmlns:cbrn="http://release.niem.gov/niem/domains/cbrn/4.1/" xmlns:dea="http://release.niem.gov/niem/codes/dea_ctlsub/4.0/" xmlns:ct="http://release.niem.gov/niem/conformanceTargets/3.0/" xmlns:nlets="http://release.niem.gov/niem/codes/nlets/4.0/" xmlns:mmucc="http://release.niem.gov/niem/codes/mmucc/4.0/" xmlns:im="http://release.niem.gov/niem/domains/immigration/4.1/" xmlns:ucr="http://release.niem.gov/niem/codes/fbi_ucr/4.0/" xmlns:st="http://release.niem.gov/niem/domains/surfaceTransportation/4.0/" xmlns:appinfo="http://release.niem.gov/niem/appinfo/4.0/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<xs:schema targetNamespace="http://release.niem.gov/niem/domains/jxdm/6.1/" version="beta1" xsi:schemaLocation="http://release.niem.gov/niem/appinfo/4.0/ ../../../utility/appinfo/4.0/appinfo.xsd http://release.niem.gov/niem/conformanceTargets/3.0/ ../../../utility/conformanceTargets/3.0/conformanceTargets.xsd" ct:conformanceTargets="http://reference.niem.gov/niem/specification/naming-and-design-rules/4.0/#ReferenceSchemaDocument" xmlns:niem-xs="http://release.niem.gov/niem/proxy/xsd/4.0/" xmlns:intel="http://release.niem.gov/niem/domains/intelligence/4.1/" xmlns:structures="http://release.niem.gov/niem/structures/4.0/" xmlns:apco="http://release.niem.gov/niem/codes/apco_event/4.0/" xmlns:hs="http://release.niem.gov/niem/domains/humanServices/4.1/" xmlns:sar="http://release.niem.gov/niem/codes/pmise_sar/4.0/" xmlns:ndex="http://release.niem.gov/niem/codes/fbi_ndex/4.0/" xmlns:nc="http://release.niem.gov/niem/niem-core/4.0/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:ncic="http://release.niem.gov/niem/codes/fbi_ncic/4.0/" xmlns:aamva_d20="http://release.niem.gov/niem/codes/aamva_d20/4.0/" xmlns:biom="http://release.niem.gov/niem/domains/biometrics/4.1/" xmlns:atf="http://release.niem.gov/niem/codes/atf/4.0/" xmlns:j="http://release.niem.gov/niem/domains/jxdm/6.1/" xmlns:em="http://release.niem.gov/niem/domains/emergencyManagement/4.1/" xmlns:cbrn="http://release.niem.gov/niem/domains/cbrn/4.1/" xmlns:dea="http://release.niem.gov/niem/codes/dea_ctlsub/4.0/" xmlns:ct="http://release.niem.gov/niem/conformanceTargets/3.0/" xmlns:nlets="http://release.niem.gov/niem/codes/nlets/4.0/" xmlns:mmucc="http://release.niem.gov/niem/codes/mmucc/4.0/" xmlns:im="http://release.niem.gov/niem/domains/immigration/4.1/" xmlns:ucr="http://release.niem.gov/niem/codes/fbi_ucr/4.0/" xmlns:st="http://release.niem.gov/niem/domains/surfaceTransportation/4.0/" xmlns:appinfo="http://release.niem.gov/niem/appinfo/4.0/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <xs:annotation>
     <xs:documentation>Justice</xs:documentation>
     <xs:appinfo>
@@ -17052,7 +17052,7 @@
       <xs:documentation>A data concept for a kind of firearm.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="FirearmCategoryCode" type="ncic:GTYP3CodeType" substitutionGroup="j:FirearmCategoryAbstract" nillable="true">
+  <xs:element name="FirearmCategoryCode" type="ncic:GTYPCodeType" substitutionGroup="j:FirearmCategoryAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A kind of firearm.</xs:documentation>
     </xs:annotation>
@@ -17060,6 +17060,11 @@
   <xs:element name="FirearmCategoryDescriptionAbstract" abstract="true">
     <xs:annotation>
       <xs:documentation>A data concept for a description of a kind of firearm.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="FirearmCategoryDescriptionCode" type="ncic:GTYP2CodeType" substitutionGroup="j:FirearmCategoryDescriptionAbstract" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A description of a kind of firearm.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="FirearmCategoryDescriptionText" type="nc:TextType" substitutionGroup="j:FirearmCategoryDescriptionAbstract" nillable="true">
@@ -17075,6 +17080,11 @@
   <xs:element name="FirearmFinishAbstract" abstract="true">
     <xs:annotation>
       <xs:documentation>A data concept for a surface coating or finish of a firearm.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="FirearmFinishCode" type="ncic:VCOCodeType" substitutionGroup="j:FirearmFinishAbstract" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A surface coating or finish of a firearm.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="FirearmFinishText" type="nc:TextType" substitutionGroup="j:FirearmFinishAbstract" nillable="true">
@@ -19317,7 +19327,7 @@
       <xs:documentation>A kind of property.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="ItemCategoryNCICTYPCode" type="ncic:GTYP3CodeType" substitutionGroup="nc:ItemCategoryAbstract" nillable="true">
+  <xs:element name="ItemCategoryNCICTYPCode" type="ncic:GTYPCodeType" substitutionGroup="nc:ItemCategoryAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A kind of property.</xs:documentation>
     </xs:annotation>
@@ -27450,6 +27460,11 @@
   <xs:element name="SubjectAssignmentCategoryAbstract" abstract="true">
     <xs:annotation>
       <xs:documentation>A data concept for a kind of assignment.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="SubjectAssignmentCategoryCode" type="ndex:AssignmentCategoryCodeType" substitutionGroup="j:SubjectAssignmentCategoryAbstract" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A kind of assignment.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="SubjectAssignmentCategoryText" type="nc:TextType" substitutionGroup="j:SubjectAssignmentCategoryAbstract" nillable="true">

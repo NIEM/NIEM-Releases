@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="US-ASCII"?>
-<xs:schema targetNamespace="http://release.niem.gov/niem/domains/biometrics/4.1/" version="alpha1" xsi:schemaLocation="http://release.niem.gov/niem/appinfo/4.0/ ../../../utility/appinfo/4.0/appinfo.xsd http://release.niem.gov/niem/conformanceTargets/3.0/ ../../../utility/conformanceTargets/3.0/conformanceTargets.xsd" ct:conformanceTargets="http://reference.niem.gov/niem/specification/naming-and-design-rules/4.0/#ReferenceSchemaDocument" xmlns:biom="http://release.niem.gov/niem/domains/biometrics/4.1/" xmlns:structures="http://release.niem.gov/niem/structures/4.0/" xmlns:appinfo="http://release.niem.gov/niem/appinfo/4.0/" xmlns:ct="http://release.niem.gov/niem/conformanceTargets/3.0/" xmlns:nc="http://release.niem.gov/niem/niem-core/4.0/" xmlns:iso_639-3="http://release.niem.gov/niem/codes/iso_639-3/4.0/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ncic="http://release.niem.gov/niem/codes/fbi_ncic/4.0/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:mo="http://release.niem.gov/niem/domains/militaryOperations/4.1/" xmlns:niem-xs="http://release.niem.gov/niem/proxy/xsd/4.0/">
+<xs:schema targetNamespace="http://release.niem.gov/niem/domains/biometrics/4.1/" version="beta1" xsi:schemaLocation="http://release.niem.gov/niem/appinfo/4.0/ ../../../utility/appinfo/4.0/appinfo.xsd http://release.niem.gov/niem/conformanceTargets/3.0/ ../../../utility/conformanceTargets/3.0/conformanceTargets.xsd" ct:conformanceTargets="http://reference.niem.gov/niem/specification/naming-and-design-rules/4.0/#ReferenceSchemaDocument" xmlns:biom="http://release.niem.gov/niem/domains/biometrics/4.1/" xmlns:structures="http://release.niem.gov/niem/structures/4.0/" xmlns:appinfo="http://release.niem.gov/niem/appinfo/4.0/" xmlns:ct="http://release.niem.gov/niem/conformanceTargets/3.0/" xmlns:nc="http://release.niem.gov/niem/niem-core/4.0/" xmlns:iso_639-3="http://release.niem.gov/niem/codes/iso_639-3/4.0/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ncic="http://release.niem.gov/niem/codes/fbi_ncic/4.0/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:mo="http://release.niem.gov/niem/domains/militaryOperations/4.1/" xmlns:niem-xs="http://release.niem.gov/niem/proxy/xsd/4.0/">
   <xs:annotation>
     <xs:documentation>Biometric Schema Version 1.0</xs:documentation>
     <xs:appinfo>
@@ -2306,7 +2306,9 @@
       <xs:documentation>A data type for decimal values with 2 digit after decimal</xs:documentation>
     </xs:annotation>
     <xs:restriction base="xs:decimal">
+      <xs:minInclusive value="00.00"/>
       <xs:fractionDigits value="2"/>
+      <xs:totalDigits value="4"/>
     </xs:restriction>
   </xs:simpleType>
   <xs:complexType name="Decimal2DigitPrecisionType">
@@ -5697,6 +5699,24 @@
       </xs:extension>
     </xs:simpleContent>
   </xs:complexType>
+  <xs:simpleType name="HexTripleByteSimpleType">
+    <xs:annotation>
+      <xs:documentation>A data type for a triple hexadecimal byte</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:hexBinary">
+      <xs:length value="3"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="HexTripleByteType">
+    <xs:annotation>
+      <xs:documentation>A data type for a triple hexadecimal byte</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="biom:HexTripleByteSimpleType">
+        <xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
   <xs:simpleType name="HypothenarPositionCodeSimpleType">
     <xs:annotation>
       <xs:documentation>A data type for extended palm position exemplar or search captures</xs:documentation>
@@ -6015,7 +6035,6 @@
     </xs:annotation>
     <xs:restriction base="xs:nonNegativeInteger">
       <xs:minInclusive value="2"/>
-      <xs:maxInclusive value="99"/>
     </xs:restriction>
   </xs:simpleType>
   <xs:complexType name="ImageFeatureVertexQuantityType">
@@ -6603,6 +6622,73 @@
     </xs:annotation>
     <xs:simpleContent>
       <xs:extension base="biom:ImpressionCaptureCategoryCodeSimpleType">
+        <xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:simpleType name="ImpressionCaptureCodeSimpleType">
+    <xs:annotation>
+      <xs:documentation>A data type for a kind of impression capture by which an image was obtained</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:integer">
+      <xs:enumeration value="0">
+        <xs:annotation>
+          <xs:documentation>Plain contact</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="1">
+        <xs:annotation>
+          <xs:documentation>Rolled contact</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="24">
+        <xs:annotation>
+          <xs:documentation>Plain contactless - stationary subject</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="25">
+        <xs:annotation>
+          <xs:documentation>Rolled contactless - stationary subject</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="28">
+        <xs:annotation>
+          <xs:documentation>Other</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="29">
+        <xs:annotation>
+          <xs:documentation>Unknown</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="4">
+        <xs:annotation>
+          <xs:documentation>Latent Image</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="41">
+        <xs:annotation>
+          <xs:documentation>Latent unknown friction ridge print lift</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="42">
+        <xs:annotation>
+          <xs:documentation>Latent unknown friction ridge print lift</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="8">
+        <xs:annotation>
+          <xs:documentation>Livescan swipe</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="ImpressionCaptureCodeType">
+    <xs:annotation>
+      <xs:documentation>A data type for a kind of impression capture by which an image was obtained</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="biom:ImpressionCaptureCodeSimpleType">
         <xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
       </xs:extension>
     </xs:simpleContent>
@@ -7978,7 +8064,7 @@
       </xs:enumeration>
       <xs:enumeration value="X">
         <xs:annotation>
-          <xs:documentation>Undetermined</xs:documentation>
+          <xs:documentation>Ridge ending or bifurcation, no distinction provided</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
     </xs:restriction>
@@ -14881,7 +14967,7 @@
       <xs:documentation>A data for one or both of the third or fourth information items shall be present in each subfield. The first two information items are mandatory. The first information item, feature - field number / FTF, indicates the field which is annotated with c</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="FeatureColorHexidecimalValue" type="niem-xs:hexBinary" nillable="true">
+  <xs:element name="FeatureColorHexidecimalValue" type="biom:HexTripleByteType" nillable="true">
     <xs:annotation>
       <xs:documentation>A third information item, feature _ color / FTC, is an RGB color value expressed as a hexadecimal number.Some basic colors are red (FF0000), yellow (FFFF00), blue (0000FF), green (008000), black (000000) and white (FFFFFF). Leading zeros are require</xs:documentation>
     </xs:annotation>
@@ -14891,7 +14977,7 @@
       <xs:documentation>An index identifier or unique label applied to minutiae by a latent examiner to allow correlation of features between images</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="FeatureLineColorValue" type="niem-xs:hexBinary" nillable="true">
+  <xs:element name="FeatureLineColorValue" type="biom:HexTripleByteType" nillable="true">
     <xs:annotation>
       <xs:documentation>A fifth information item, line color / TLC, is an RGB color value expressed as a hexadecimal number. Some basic colors are red (FF0000), yellow (FFFF00), blue (0000FF), green (008000), black (000000) and white (FFFFFF). Leading zeros are required.</xs:documentation>
     </xs:annotation>
@@ -15349,6 +15435,11 @@
   <xs:element name="FrictionRidgeImageTonalReversalCode" type="biom:FrictionRidgeImageTonalReversalCodeType" nillable="true">
     <xs:annotation>
       <xs:documentation>A full or partial reversal of ridge and valley tones in an image</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="FrictionRidgeImpressionCaptureCode" type="biom:ImpressionCaptureCodeType" substitutionGroup="biom:FrictionRidgeImageImpressionCaptureCategoryAbstract" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A method used to capture a friction ridge impression. Conforms to ITL 2015.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="FrictionRidgePositionCode" type="biom:FrictionRidgePositionCodeType" nillable="true">
@@ -16851,7 +16942,7 @@
       <xs:documentation>A nominal number of pixels per unit distance (ppmm or ppi) of a transmitted biometric image.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="NominalTransmittingResolutionValue" type="niem-xs:decimal" nillable="true">
+  <xs:element name="NominalTransmittingResolutionValue" type="biom:Decimal2DigitPrecisionType" nillable="true">
     <xs:annotation>
       <xs:documentation>A transaction's transmitting resolution, in pixels per mm. Valid value between 19.29 and 20.08 OR equal to 00.00 (corresponds to 500ppi postive and negative 2% ) OR between 38.58 and 40.16 (corresponds to 1000ppi postive and negative 2%.) Shoul</xs:documentation>
     </xs:annotation>

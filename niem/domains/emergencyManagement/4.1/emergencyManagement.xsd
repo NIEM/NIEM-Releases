@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="US-ASCII"?>
-<xs:schema targetNamespace="http://release.niem.gov/niem/domains/emergencyManagement/4.1/" version="alpha1" xsi:schemaLocation="http://release.niem.gov/niem/appinfo/4.0/ ../../../utility/appinfo/4.0/appinfo.xsd http://release.niem.gov/niem/conformanceTargets/3.0/ ../../../utility/conformanceTargets/3.0/conformanceTargets.xsd" ct:conformanceTargets="http://reference.niem.gov/niem/specification/naming-and-design-rules/4.0/#ReferenceSchemaDocument" xmlns:edxl_rm="http://release.niem.gov/niem/codes/edxl_rm/4.0/" xmlns:biom="http://release.niem.gov/niem/domains/biometrics/4.1/" xmlns:structures="http://release.niem.gov/niem/structures/4.0/" xmlns:appinfo="http://release.niem.gov/niem/appinfo/4.0/" xmlns:ct="http://release.niem.gov/niem/conformanceTargets/3.0/" xmlns:nc="http://release.niem.gov/niem/niem-core/4.0/" xmlns:em="http://release.niem.gov/niem/domains/emergencyManagement/4.1/" xmlns:j="http://release.niem.gov/niem/domains/jxdm/6.1/" xmlns:edxl-cap="http://release.niem.gov/niem/adapters/edxl-cap/4.0/" xmlns:iso_639-3="http://release.niem.gov/niem/codes/iso_639-3/4.0/" xmlns:it="http://release.niem.gov/niem/domains/internationalTrade/4.1/" xmlns:apco="http://release.niem.gov/niem/codes/apco_event/4.0/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:scr="http://release.niem.gov/niem/domains/screening/4.1/" xmlns:have-codes="http://release.niem.gov/niem/codes/edxl_have/4.0/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:niem-xs="http://release.niem.gov/niem/proxy/xsd/4.0/">
+<xs:schema targetNamespace="http://release.niem.gov/niem/domains/emergencyManagement/4.1/" version="beta1" xsi:schemaLocation="http://release.niem.gov/niem/appinfo/4.0/ ../../../utility/appinfo/4.0/appinfo.xsd http://release.niem.gov/niem/conformanceTargets/3.0/ ../../../utility/conformanceTargets/3.0/conformanceTargets.xsd" ct:conformanceTargets="http://reference.niem.gov/niem/specification/naming-and-design-rules/4.0/#ReferenceSchemaDocument" xmlns:niem-xs="http://release.niem.gov/niem/proxy/xsd/4.0/" xmlns:structures="http://release.niem.gov/niem/structures/4.0/" xmlns:apco="http://release.niem.gov/niem/codes/apco_event/4.0/" xmlns:iso_639-3="http://release.niem.gov/niem/codes/iso_639-3/4.0/" xmlns:edxl_rm="http://release.niem.gov/niem/codes/edxl_rm/4.0/" xmlns:nc="http://release.niem.gov/niem/niem-core/4.0/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:biom="http://release.niem.gov/niem/domains/biometrics/4.1/" xmlns:j="http://release.niem.gov/niem/domains/jxdm/6.1/" xmlns:em="http://release.niem.gov/niem/domains/emergencyManagement/4.1/" xmlns:cbrn="http://release.niem.gov/niem/domains/cbrn/4.1/" xmlns:scr="http://release.niem.gov/niem/domains/screening/4.1/" xmlns:ct="http://release.niem.gov/niem/conformanceTargets/3.0/" xmlns:have-codes="http://release.niem.gov/niem/codes/edxl_have/4.0/" xmlns:it="http://release.niem.gov/niem/domains/internationalTrade/4.1/" xmlns:edxl-cap="http://release.niem.gov/niem/adapters/edxl-cap/4.0/" xmlns:mo="http://release.niem.gov/niem/domains/militaryOperations/4.1/" xmlns:appinfo="http://release.niem.gov/niem/appinfo/4.0/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <xs:annotation>
     <xs:documentation>Emergency Management</xs:documentation>
     <xs:appinfo>
@@ -19,6 +19,8 @@
   <xs:import schemaLocation="../../../niem-core/4.0/niem-core.xsd" namespace="http://release.niem.gov/niem/niem-core/4.0/"/>
   <xs:import schemaLocation="../../../codes/edxl_have/4.0/have-codes.xsd" namespace="http://release.niem.gov/niem/codes/edxl_have/4.0/"/>
   <xs:import schemaLocation="../../../codes/iso_639-3/4.0/iso_639-3.xsd" namespace="http://release.niem.gov/niem/codes/iso_639-3/4.0/"/>
+  <xs:import schemaLocation="../../militaryOperations/4.1/mo.xsd" namespace="http://release.niem.gov/niem/domains/militaryOperations/4.1/"/>
+  <xs:import schemaLocation="../../cbrn/4.1/cbrn.xsd" namespace="http://release.niem.gov/niem/domains/cbrn/4.1/"/>
   <xs:import schemaLocation="../../internationalTrade/4.1/internationalTrade.xsd" namespace="http://release.niem.gov/niem/domains/internationalTrade/4.1/"/>
   <xs:import schemaLocation="../../../codes/apco_event/4.0/apco_event.xsd" namespace="http://release.niem.gov/niem/codes/apco_event/4.0/"/>
   <xs:import schemaLocation="../../screening/4.1/screening.xsd" namespace="http://release.niem.gov/niem/domains/screening/4.1/"/>
@@ -4843,6 +4845,24 @@ National Institutes of Health, National Heart, Lung, and Blood Institute</xs:doc
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
+  <xs:simpleType name="OtherTextSimpleType">
+    <xs:annotation>
+      <xs:documentation>A data type to limit length of  other text</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="255"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="OtherTextType">
+    <xs:annotation>
+      <xs:documentation>A data type to limit length of other text</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="em:OtherTextSimpleType">
+        <xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
   <xs:complexType name="OwnerInformationType">
     <xs:annotation>
       <xs:documentation>A data type for a structure that defines ownership of a resource</xs:documentation>
@@ -5289,6 +5309,63 @@ National Institutes of Health, National Heart, Lung, and Blood Institute</xs:doc
     </xs:annotation>
     <xs:simpleContent>
       <xs:extension base="em:PowerComponentCodeSimpleType">
+        <xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="PreliminaryDamageAssessmentType">
+    <xs:annotation>
+      <xs:documentation>A data type for a preliminary damage assessement report</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="structures:ObjectType">
+        <xs:sequence>
+          <xs:element ref="em:ReportID" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="em:ReportAuthorName" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="cbrn:ReportDateTime" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="em:AssessmentDate" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="em:IncidentID" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="em:IncidentStartDate" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="em:ProgramKindCode" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:Address" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="em:TribeIndicator" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="em:TribeKindCode" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="em:IncidentKindCodeAbstract" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="em:IncidentKindOtherText" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="em:ImmediateNeedsTernaryIndicatorCode" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="em:ImmediateNeedsText" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="em:AssessmentKindAbstract" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="mo:DamageLocation" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="em:DeviceURI" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="em:AssessmentImage" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="em:PreliminaryDamageAssessmentAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:simpleType name="ProgramKindCodeSimpleType">
+    <xs:annotation>
+      <xs:documentation>A data type for a Program which assessment will support</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="IndividualAssistance">
+        <xs:annotation>
+          <xs:documentation>Individual Assistance</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="PublicAssistance">
+        <xs:annotation>
+          <xs:documentation>Public Assistance</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="ProgramKindCodeType">
+    <xs:annotation>
+      <xs:documentation>A data type for a kind of assessement program</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="em:ProgramKindCodeSimpleType">
         <xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
       </xs:extension>
     </xs:simpleContent>
@@ -5845,6 +5922,38 @@ National Institutes of Health, National Heart, Lung, and Blood Institute</xs:doc
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
+  <xs:simpleType name="TernaryIndicatorCodeSimpleType">
+    <xs:annotation>
+      <xs:documentation>A data type for a Ternary Indicator</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="No">
+        <xs:annotation>
+          <xs:documentation>No</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Unknown">
+        <xs:annotation>
+          <xs:documentation>Unknown</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Yes">
+        <xs:annotation>
+          <xs:documentation>Yes</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="TernaryIndicatorCodeType">
+    <xs:annotation>
+      <xs:documentation>A data type for a Ternary Indicator code (Yes, No, Unknown)</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="em:TernaryIndicatorCodeSimpleType">
+        <xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
   <xs:complexType name="TrainingType">
     <xs:annotation>
       <xs:documentation>A data type for a credential class that represents a person's training credentials</xs:documentation>
@@ -6081,6 +6190,2843 @@ National Institutes of Health, National Heart, Lung, and Blood Institute</xs:doc
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
+  </xs:complexType>
+  <xs:simpleType name="TribeKindCodeSimpleType">
+    <xs:annotation>
+      <xs:documentation>A data type for a Tribal Entity</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="AK12">
+        <xs:annotation>
+          <xs:documentation>Alatna Village</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AK126">
+        <xs:annotation>
+          <xs:documentation>Craig Community Association</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AK13">
+        <xs:annotation>
+          <xs:documentation>Algaaciq Native Village</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AK130">
+        <xs:annotation>
+          <xs:documentation>Curyung Tribal Council</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AK135">
+        <xs:annotation>
+          <xs:documentation>Douglas Indian Association</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AK142">
+        <xs:annotation>
+          <xs:documentation>Egegik Village</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AK143">
+        <xs:annotation>
+          <xs:documentation>Eklutna Native Village</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AK148">
+        <xs:annotation>
+          <xs:documentation>Emmonak Village</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AK15">
+        <xs:annotation>
+          <xs:documentation>Allakaket Village</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AK150">
+        <xs:annotation>
+          <xs:documentation>Evansville Village</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AK164">
+        <xs:annotation>
+          <xs:documentation>Galena Village</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AK17">
+        <xs:annotation>
+          <xs:documentation>Angoon Community Association</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AK172">
+        <xs:annotation>
+          <xs:documentation>Gulkana Village</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AK176">
+        <xs:annotation>
+          <xs:documentation>Healy Lake Village</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AK18">
+        <xs:annotation>
+          <xs:documentation>Anvik Village</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AK180">
+        <xs:annotation>
+          <xs:documentation>Holy Cross Village</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AK181">
+        <xs:annotation>
+          <xs:documentation>Hoonah Indian Association</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AK189">
+        <xs:annotation>
+          <xs:documentation>Hughes Village</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AK191">
+        <xs:annotation>
+          <xs:documentation>Huslia Village</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AK192">
+        <xs:annotation>
+          <xs:documentation>Hydaburg Cooperative Association</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AK193">
+        <xs:annotation>
+          <xs:documentation>Igiugig Village</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AK197">
+        <xs:annotation>
+          <xs:documentation>Inupiat Community of the Arctic Slope</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AK201">
+        <xs:annotation>
+          <xs:documentation>Iqurmuit Traditional Council</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AK202">
+        <xs:annotation>
+          <xs:documentation>Ivanoff Bay Village</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AK210">
+        <xs:annotation>
+          <xs:documentation>Kaguyak Village</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AK212">
+        <xs:annotation>
+          <xs:documentation>Kaktovik Village</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AK218">
+        <xs:annotation>
+          <xs:documentation>Kasigluk Traditional Elders Council</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AK220">
+        <xs:annotation>
+          <xs:documentation>Kenaitze Indian Tribe</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AK221">
+        <xs:annotation>
+          <xs:documentation>Ketchikan Indian Corporation</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AK229">
+        <xs:annotation>
+          <xs:documentation>King Island Native Community</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AK23">
+        <xs:annotation>
+          <xs:documentation>Asa`carsarmiut Tribe</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AK230">
+        <xs:annotation>
+          <xs:documentation>King Salmon Tribe</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AK234">
+        <xs:annotation>
+          <xs:documentation>Klawock Cooperative Association</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AK235">
+        <xs:annotation>
+          <xs:documentation>Knik Tribe</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AK237">
+        <xs:annotation>
+          <xs:documentation>Kokhanok Village</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AK239">
+        <xs:annotation>
+          <xs:documentation>Koyukuk Native Village</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AK248">
+        <xs:annotation>
+          <xs:documentation>Levelock Village</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AK249">
+        <xs:annotation>
+          <xs:documentation>Lime Village</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AK26">
+        <xs:annotation>
+          <xs:documentation>Atqasuk Village</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AK267">
+        <xs:annotation>
+          <xs:documentation>Manley Hot Springs Village</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AK268">
+        <xs:annotation>
+          <xs:documentation>Manokotak Village</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AK274">
+        <xs:annotation>
+          <xs:documentation>McGrath Native Village</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AK277">
+        <xs:annotation>
+          <xs:documentation>Mentasta Traditional Council</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AK281">
+        <xs:annotation>
+          <xs:documentation>Metlakatla Indian Community Annette Island Reserve</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AK3">
+        <xs:annotation>
+          <xs:documentation>Agdaagux Tribe of King Cove</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AK306">
+        <xs:annotation>
+          <xs:documentation>Naknek Native Village</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AK308">
+        <xs:annotation>
+          <xs:documentation>Native Village of Afognak</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AK310">
+        <xs:annotation>
+          <xs:documentation>Native Village of Akhiok</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AK311">
+        <xs:annotation>
+          <xs:documentation>Native Village of Akutan</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AK312">
+        <xs:annotation>
+          <xs:documentation>Native Village of Aleknagik</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AK313">
+        <xs:annotation>
+          <xs:documentation>Native Village of Ambler</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AK314">
+        <xs:annotation>
+          <xs:documentation>Native Village of Atka</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AK315">
+        <xs:annotation>
+          <xs:documentation>Native Village of Barrow Inupiat Traditional Government</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AK317">
+        <xs:annotation>
+          <xs:documentation>Native Village of Belkofski</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AK318">
+        <xs:annotation>
+          <xs:documentation>Native Village of Brevig Mission</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AK319">
+        <xs:annotation>
+          <xs:documentation>Native Village of Buckland</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AK320">
+        <xs:annotation>
+          <xs:documentation>Native Village of Cantwell</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AK321">
+        <xs:annotation>
+          <xs:documentation>Native Village of Chenega</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AK324">
+        <xs:annotation>
+          <xs:documentation>Native Village of Chignik Lagoon</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AK325">
+        <xs:annotation>
+          <xs:documentation>Native Village of Chitina</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AK326">
+        <xs:annotation>
+          <xs:documentation>Native Village of Chuathbaluk</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AK328">
+        <xs:annotation>
+          <xs:documentation>Native Village of Council</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AK329">
+        <xs:annotation>
+          <xs:documentation>Native Village of Deering</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AK330">
+        <xs:annotation>
+          <xs:documentation>Native Village of Diomede</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AK332">
+        <xs:annotation>
+          <xs:documentation>Native Village of Eagle</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AK333">
+        <xs:annotation>
+          <xs:documentation>Native Village of Eek</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AK334">
+        <xs:annotation>
+          <xs:documentation>Native Village of Ekuk</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AK335">
+        <xs:annotation>
+          <xs:documentation>Native Village of Ekwok</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AK336">
+        <xs:annotation>
+          <xs:documentation>Native Village of Elim</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AK337">
+        <xs:annotation>
+          <xs:documentation>Native Village of Eyak (Cordova)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AK338">
+        <xs:annotation>
+          <xs:documentation>Native Village of False Pass</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AK339">
+        <xs:annotation>
+          <xs:documentation>Native Village of Fort Yukon</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AK34">
+        <xs:annotation>
+          <xs:documentation>Beaver Village</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AK340">
+        <xs:annotation>
+          <xs:documentation>Native Village of Gakona</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AK341">
+        <xs:annotation>
+          <xs:documentation>Native Village of Gambell</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AK342">
+        <xs:annotation>
+          <xs:documentation>Native Village of Georgetown</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AK343">
+        <xs:annotation>
+          <xs:documentation>Native Village of Goodnews Bay</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AK344">
+        <xs:annotation>
+          <xs:documentation>Native Village of Hamilton</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AK345">
+        <xs:annotation>
+          <xs:documentation>Native Village of Hooper Bay</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AK346">
+        <xs:annotation>
+          <xs:documentation>Native Village of Kanatak</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AK347">
+        <xs:annotation>
+          <xs:documentation>Native Village of Karluk</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AK349">
+        <xs:annotation>
+          <xs:documentation>Native Village of Kiana</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AK350">
+        <xs:annotation>
+          <xs:documentation>Native Village of Kipnuk</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AK351">
+        <xs:annotation>
+          <xs:documentation>Native Village of Kivalina</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AK352">
+        <xs:annotation>
+          <xs:documentation>Native Village of Kluti Kaah</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AK354">
+        <xs:annotation>
+          <xs:documentation>Native Village of Kobuk</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AK355">
+        <xs:annotation>
+          <xs:documentation>Native Village of Kongiganak</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AK356">
+        <xs:annotation>
+          <xs:documentation>Native Village of Kotzebue</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AK357">
+        <xs:annotation>
+          <xs:documentation>Native Village of Koyuk</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AK358">
+        <xs:annotation>
+          <xs:documentation>Native Village of Kwigillingok</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AK359">
+        <xs:annotation>
+          <xs:documentation>Native Village of Kwinhagak</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AK361">
+        <xs:annotation>
+          <xs:documentation>Native Village of Larsen Bay</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AK362">
+        <xs:annotation>
+          <xs:documentation>Native Village of Marshall (aka Fortuna Ledge)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AK363">
+        <xs:annotation>
+          <xs:documentation>Native Village of Mary's Igloo</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AK364">
+        <xs:annotation>
+          <xs:documentation>Native Village of Mekoryuk</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AK365">
+        <xs:annotation>
+          <xs:documentation>Native Village of Minto</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AK366">
+        <xs:annotation>
+          <xs:documentation>Native Village of Nanwalek (aka English Bay)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AK367">
+        <xs:annotation>
+          <xs:documentation>Native Village of Napaimute</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AK368">
+        <xs:annotation>
+          <xs:documentation>Native Village of Napakiak</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AK369">
+        <xs:annotation>
+          <xs:documentation>Native Village of Napaskiak</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AK370">
+        <xs:annotation>
+          <xs:documentation>Native Village of Nelson Lagoon</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AK371">
+        <xs:annotation>
+          <xs:documentation>Native Village of Nightmute</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AK372">
+        <xs:annotation>
+          <xs:documentation>Native Village of Nikolski</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AK373">
+        <xs:annotation>
+          <xs:documentation>Native Village of Noatak</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AK374">
+        <xs:annotation>
+          <xs:documentation>Native Village of Nuiqsut (aka Nooiksut)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AK375">
+        <xs:annotation>
+          <xs:documentation>Native Village of Nunam Iqua</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AK376">
+        <xs:annotation>
+          <xs:documentation>Native Village of Nunapitchuk</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AK377">
+        <xs:annotation>
+          <xs:documentation>Native Village of Old Harbor</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AK378">
+        <xs:annotation>
+          <xs:documentation>Native Village of Ouzinkie</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AK379">
+        <xs:annotation>
+          <xs:documentation>Native Village of Paimiut</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AK380">
+        <xs:annotation>
+          <xs:documentation>Native Village of Perryville</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AK381">
+        <xs:annotation>
+          <xs:documentation>Native Village of Pilot Point</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AK382">
+        <xs:annotation>
+          <xs:documentation>Native Village of Pitka's Point</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AK383">
+        <xs:annotation>
+          <xs:documentation>Native Village of Point Hope</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AK384">
+        <xs:annotation>
+          <xs:documentation>Native Village of Point Lay</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AK385">
+        <xs:annotation>
+          <xs:documentation>Native Village of Port Graham</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AK386">
+        <xs:annotation>
+          <xs:documentation>Native Village of Port Heiden</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AK387">
+        <xs:annotation>
+          <xs:documentation>Native Village of Port Lions</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AK388">
+        <xs:annotation>
+          <xs:documentation>Native Village of Ruby</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AK389">
+        <xs:annotation>
+          <xs:documentation>Native Village of Saint Michael</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AK390">
+        <xs:annotation>
+          <xs:documentation>Native Village of Savoonga</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AK391">
+        <xs:annotation>
+          <xs:documentation>Native Village of Scammon Bay</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AK392">
+        <xs:annotation>
+          <xs:documentation>Native Village of Selawik</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AK393">
+        <xs:annotation>
+          <xs:documentation>Native Village of Shaktoolik</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AK395">
+        <xs:annotation>
+          <xs:documentation>Native Village of Shishmaref</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AK396">
+        <xs:annotation>
+          <xs:documentation>Native Village of Shungnak</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AK397">
+        <xs:annotation>
+          <xs:documentation>Native Village of Stevens</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AK398">
+        <xs:annotation>
+          <xs:documentation>Native Village of Tanacross</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AK399">
+        <xs:annotation>
+          <xs:documentation>Native Village of Tanana</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AK400">
+        <xs:annotation>
+          <xs:documentation>Native Village of Tatitlek</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AK401">
+        <xs:annotation>
+          <xs:documentation>Native Village of Tazlina</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AK402">
+        <xs:annotation>
+          <xs:documentation>Native Village of Teller</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AK403">
+        <xs:annotation>
+          <xs:documentation>Native Village of Tetlin</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AK404">
+        <xs:annotation>
+          <xs:documentation>Native Village of Tuntutuliak</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AK405">
+        <xs:annotation>
+          <xs:documentation>Native Village of Tununak</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AK406">
+        <xs:annotation>
+          <xs:documentation>Native Village of Tyonek</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AK407">
+        <xs:annotation>
+          <xs:documentation>Native Village of Unalakleet</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AK408">
+        <xs:annotation>
+          <xs:documentation>Native Village of Unga</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AK411">
+        <xs:annotation>
+          <xs:documentation>Native Village of Venetie Tribal Government (Artic Village and Village of Venetie)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AK412">
+        <xs:annotation>
+          <xs:documentation>Native Village of Wales</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AK413">
+        <xs:annotation>
+          <xs:documentation>Native Village of White Mountain</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AK417">
+        <xs:annotation>
+          <xs:documentation>Nenana Native Association</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AK418">
+        <xs:annotation>
+          <xs:documentation>New Koliganek Village Council</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AK42">
+        <xs:annotation>
+          <xs:documentation>Birch Creek Tribe</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AK420">
+        <xs:annotation>
+          <xs:documentation>New Stuyahok Village</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AK421">
+        <xs:annotation>
+          <xs:documentation>Newhalen Village</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AK422">
+        <xs:annotation>
+          <xs:documentation>Newtok Village</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AK425">
+        <xs:annotation>
+          <xs:documentation>Nikolai Village</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AK426">
+        <xs:annotation>
+          <xs:documentation>Ninilchik Village</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AK429">
+        <xs:annotation>
+          <xs:documentation>Nome Eskimo Community</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AK430">
+        <xs:annotation>
+          <xs:documentation>Nondalton Village</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AK432">
+        <xs:annotation>
+          <xs:documentation>Noorvik Native Community</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AK435">
+        <xs:annotation>
+          <xs:documentation>Northway Village</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AK439">
+        <xs:annotation>
+          <xs:documentation>Nulato Village</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AK440">
+        <xs:annotation>
+          <xs:documentation>Nunakauyarmiui Tribe (formerly Native Village of Toksook Bay)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AK448">
+        <xs:annotation>
+          <xs:documentation>Organized Village of Grayling (aka Holikachuk)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AK450">
+        <xs:annotation>
+          <xs:documentation>Organized Village of Kake</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AK451">
+        <xs:annotation>
+          <xs:documentation>Organized Village of Kasaan</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AK452">
+        <xs:annotation>
+          <xs:documentation>Organized Village of Kwethluk</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AK453">
+        <xs:annotation>
+          <xs:documentation>Organized Village of Saxman</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AK454">
+        <xs:annotation>
+          <xs:documentation>Orutsararmuit Native Village (aka Bethel)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AK457">
+        <xs:annotation>
+          <xs:documentation>Oscarville Traditional Village</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AK470">
+        <xs:annotation>
+          <xs:documentation>Pauloff Harbor Village</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AK474">
+        <xs:annotation>
+          <xs:documentation>Pedro Bay Village</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AK478">
+        <xs:annotation>
+          <xs:documentation>Petersburg Indian Association</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AK480">
+        <xs:annotation>
+          <xs:documentation>Pilot Station Traditional Village</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AK490">
+        <xs:annotation>
+          <xs:documentation>Platinum Traditional Village</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AK498">
+        <xs:annotation>
+          <xs:documentation>Portage Creek Village (aka Ohgsenakale)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AK503">
+        <xs:annotation>
+          <xs:documentation>Seldovia Village Tribe</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AK526">
+        <xs:annotation>
+          <xs:documentation>Qagan Tayagungin Tribe of Sand Point Village</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AK527">
+        <xs:annotation>
+          <xs:documentation>Qawalangin Tribe of Unalaska</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AK536">
+        <xs:annotation>
+          <xs:documentation>Rampart Village</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AK573">
+        <xs:annotation>
+          <xs:documentation>Seldovia Village Tribe</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AK580">
+        <xs:annotation>
+          <xs:documentation>Shageluk Native Village</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AK589">
+        <xs:annotation>
+          <xs:documentation>Shoonaq` Tribe of Kodiak</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AK593">
+        <xs:annotation>
+          <xs:documentation>Sitka Tribe of Alaska</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AK594">
+        <xs:annotation>
+          <xs:documentation>Skagway Village</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AK6">
+        <xs:annotation>
+          <xs:documentation>Akiachak Native Community</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AK603">
+        <xs:annotation>
+          <xs:documentation>South Naknek Village</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AK611">
+        <xs:annotation>
+          <xs:documentation>Stebbins Community Association</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AK622">
+        <xs:annotation>
+          <xs:documentation>Takotna Village</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AK623">
+        <xs:annotation>
+          <xs:documentation>Tangirnaq Native Village (aka Woody Island)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AK631">
+        <xs:annotation>
+          <xs:documentation>Telida Village</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AK650">
+        <xs:annotation>
+          <xs:documentation>Traditional Village of Togiak</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AK654">
+        <xs:annotation>
+          <xs:documentation>Tuluksak Native Community</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AK660">
+        <xs:annotation>
+          <xs:documentation>Twin Hills Village</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AK661">
+        <xs:annotation>
+          <xs:documentation>Ugashik Village</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AK662">
+        <xs:annotation>
+          <xs:documentation>Umkumiut Native Village</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AK67">
+        <xs:annotation>
+          <xs:documentation>Central Council of the Tlingit - Haida Indian Tribes</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AK673">
+        <xs:annotation>
+          <xs:documentation>Village of Alakanuk</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AK674">
+        <xs:annotation>
+          <xs:documentation>Village of Anaktuvuk Pass</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AK675">
+        <xs:annotation>
+          <xs:documentation>Village of Aniak</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AK676">
+        <xs:annotation>
+          <xs:documentation>Village of Atmautluak</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AK677">
+        <xs:annotation>
+          <xs:documentation>Village of Bill Moore's Slough</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AK678">
+        <xs:annotation>
+          <xs:documentation>Village of Chefornak</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AK679">
+        <xs:annotation>
+          <xs:documentation>Village of Clarks Point</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AK68">
+        <xs:annotation>
+          <xs:documentation>Chalkyitsik Village</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AK680">
+        <xs:annotation>
+          <xs:documentation>Village of Crooked Creek</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AK681">
+        <xs:annotation>
+          <xs:documentation>Village of Dot Lake</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AK682">
+        <xs:annotation>
+          <xs:documentation>Village of Iliamna</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AK683">
+        <xs:annotation>
+          <xs:documentation>Village of Kalskag</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AK684">
+        <xs:annotation>
+          <xs:documentation>Village of Kaltag</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AK685">
+        <xs:annotation>
+          <xs:documentation>Village of Kotlik</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AK686">
+        <xs:annotation>
+          <xs:documentation>Village of Lower Kalskag</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AK687">
+        <xs:annotation>
+          <xs:documentation>Village of Ohogamiut</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AK689">
+        <xs:annotation>
+          <xs:documentation>Village of Red Devil</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AK69">
+        <xs:annotation>
+          <xs:documentation>Cheesh-Na Tribe</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AK690">
+        <xs:annotation>
+          <xs:documentation>Village of Salamatoff</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AK691">
+        <xs:annotation>
+          <xs:documentation>Village of Sleetmute</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AK692">
+        <xs:annotation>
+          <xs:documentation>Village of Solomon</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AK693">
+        <xs:annotation>
+          <xs:documentation>Village of Stony River</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AK694">
+        <xs:annotation>
+          <xs:documentation>Village of Wainwright</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AK7">
+        <xs:annotation>
+          <xs:documentation>Akiak Native Community</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AK713">
+        <xs:annotation>
+          <xs:documentation>Wrangell Cooperative Association</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AK715">
+        <xs:annotation>
+          <xs:documentation>Yakutat Tlingit Tribe</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AK724">
+        <xs:annotation>
+          <xs:documentation>Yupiit of Andreafski</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AK74">
+        <xs:annotation>
+          <xs:documentation>Chevak Native Village</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AK79">
+        <xs:annotation>
+          <xs:documentation>Chickaloon Native Village</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AK82">
+        <xs:annotation>
+          <xs:documentation>Chignik Bay Tribal Council</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AK83">
+        <xs:annotation>
+          <xs:documentation>Chignik Lake Village</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AK84">
+        <xs:annotation>
+          <xs:documentation>Chilkat Indian Village (Klukwan)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AK85">
+        <xs:annotation>
+          <xs:documentation>Chilkoot Indian Association (Haines)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AK86">
+        <xs:annotation>
+          <xs:documentation>Chinik Eskimo Community</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AK92">
+        <xs:annotation>
+          <xs:documentation>Chuloonawick Native Village</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AK93">
+        <xs:annotation>
+          <xs:documentation>Circle Native Community</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AL491">
+        <xs:annotation>
+          <xs:documentation>Poarch Band of Creeks</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AZ101">
+        <xs:annotation>
+          <xs:documentation>Colorado River Indian Tribes of the Colorado River Indian Reservation Arizona and California</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AZ161">
+        <xs:annotation>
+          <xs:documentation>Fort McDowell Yavapai Nation Arizona</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AZ166">
+        <xs:annotation>
+          <xs:documentation>Gila River Indian Community of the Gila River Indian ReservationArizona</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AZ175">
+        <xs:annotation>
+          <xs:documentation>Havasupai Tribe of the Havasupai Reservation Arizona</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AZ183">
+        <xs:annotation>
+          <xs:documentation>Hopi Tribe of Arizona</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AZ188">
+        <xs:annotation>
+          <xs:documentation>Hualapai Indian Tribe of the Hualapai Indian Reservation Arizona</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AZ211">
+        <xs:annotation>
+          <xs:documentation>Kaibab Band of Paiute Indians of the Kaibab Indian Reservation Arizona</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AZ465">
+        <xs:annotation>
+          <xs:documentation>Pascua Yaqui Tribe of Arizona</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AZ5">
+        <xs:annotation>
+          <xs:documentation>Ak Chin Indian Community of the Maricopa (Ak Chin) Indian Reservation Arizona</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AZ530">
+        <xs:annotation>
+          <xs:documentation>Quechan Tribe of the Fort Yuma Indian Reservation California - Arizona</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AZ556">
+        <xs:annotation>
+          <xs:documentation>Salt River Pima-Maricopa Indian Community of the Salt River Reservation Arizona</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AZ559">
+        <xs:annotation>
+          <xs:documentation>San Carlos Apache Tribe of the San Carlos Reservation Arizona</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AZ560">
+        <xs:annotation>
+          <xs:documentation>San Juan Southern Paiute Tribe of Arizona</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AZ642">
+        <xs:annotation>
+          <xs:documentation>Tohono O'odham Nation of Arizona</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AZ648">
+        <xs:annotation>
+          <xs:documentation>Tonto Apache Tribe of Arizona</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AZ704">
+        <xs:annotation>
+          <xs:documentation>White Mountain Apache Tribe of the Fort Apache Reservation Arizona</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AZ717">
+        <xs:annotation>
+          <xs:documentation>Yavapai-Apache Nation of the Camp Verde Indian Reservation Arizona</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AZ718">
+        <xs:annotation>
+          <xs:documentation>Yavapai-Prescott Tribe of the Yavapai Reservation Arizona</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AZ97">
+        <xs:annotation>
+          <xs:documentation>Cocopah Tribe of Arizona</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CA100">
+        <xs:annotation>
+          <xs:documentation>Cold Springs Rancheria of Mono Indians of California</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CA118">
+        <xs:annotation>
+          <xs:documentation>Cortina Indian Rancheria of Wintun Indians of California</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CA125">
+        <xs:annotation>
+          <xs:documentation>Coyote Valley Band of Pomo Indians of California</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CA132">
+        <xs:annotation>
+          <xs:documentation>Death Valley Timbi-Sha Shoshone Band of California</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CA136">
+        <xs:annotation>
+          <xs:documentation>Dry Creek Rancheria of Pomo Indians of California</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CA145">
+        <xs:annotation>
+          <xs:documentation>Elem Indian Colony of Pomo Indians of the Sulphur Bank Rancheria California</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CA146">
+        <xs:annotation>
+          <xs:documentation>Elk Valley Rancheria of California</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CA149">
+        <xs:annotation>
+          <xs:documentation>Enterprise Rancheria of Maidu Indians of California</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CA152">
+        <xs:annotation>
+          <xs:documentation>Ewiiaapaayp Band of Kumeyaay Indians California (formerly the Cuyapaipe Community of Diegueno Mission Indians of the Cuyapaipe Reservation)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CA153">
+        <xs:annotation>
+          <xs:documentation>Federated Indians of Graton Rancheria</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CA158">
+        <xs:annotation>
+          <xs:documentation>Fort Bidwell Indian Community of the Fort Bidwell Reservation California</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CA159">
+        <xs:annotation>
+          <xs:documentation>Fort Independence Indian Community of Paiute Indians of the Fort Independence Reservation California</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CA16">
+        <xs:annotation>
+          <xs:documentation>Alturas Indian Rancheria California</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CA162">
+        <xs:annotation>
+          <xs:documentation>Fort Mojave Indian Tribe of Arizona California - Nevada</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CA168">
+        <xs:annotation>
+          <xs:documentation>Greenville Rancheria</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CA170">
+        <xs:annotation>
+          <xs:documentation>Grindstone Indian Rancheria of Wintun-Wailaki Indians of California</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CA171">
+        <xs:annotation>
+          <xs:documentation>Guidiville Rancheria of California</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CA173">
+        <xs:annotation>
+          <xs:documentation>Habematolel Pomo of Upper Lake California (formerly the Upper Lake Band of Pomo Indians of Upper Lake Rancheria of California</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CA182">
+        <xs:annotation>
+          <xs:documentation>Hoopa Valley Tribe California</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CA184">
+        <xs:annotation>
+          <xs:documentation>Hopland Band of Pomo Indians of the Hopland Rancheria California</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CA194">
+        <xs:annotation>
+          <xs:documentation>Iipay Nation of Santa Ysabel California (formerly Santa Ysabel Band of Diegueno Mission Indians of the Santa Ysabel Reservation California)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CA195">
+        <xs:annotation>
+          <xs:documentation>Inaja Band of Diegueno Mission Indians of the Inaja and Cosmit Reservation California</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CA198">
+        <xs:annotation>
+          <xs:documentation>Ione Band of Miwok Indians of California</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CA203">
+        <xs:annotation>
+          <xs:documentation>Jackson Band of Miwuk Indians (formerly Jackson Rancheria of Me-Wuk Indians of California)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CA206">
+        <xs:annotation>
+          <xs:documentation>Jamul Indian Village of California</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CA215">
+        <xs:annotation>
+          <xs:documentation>Karuk Tribe</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CA217">
+        <xs:annotation>
+          <xs:documentation>Kashia Band of Pomo Indians of the Stewarts Point Rancheria</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CA236">
+        <xs:annotation>
+          <xs:documentation>Koi Nation of Northern California (formerly Lower Lake Rancheria California)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CA240">
+        <xs:annotation>
+          <xs:documentation>La Jolla Band of Luiseno Indians California</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CA242">
+        <xs:annotation>
+          <xs:documentation>La Posta Band of Diegueno Mission Indians of the La Posta Indian Reservation California</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CA252">
+        <xs:annotation>
+          <xs:documentation>Lone Pine Paiute-Shoshone Tribe (formerly Paiute-Shoshone Indians of the Lone Pine Community)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CA253">
+        <xs:annotation>
+          <xs:documentation>Los Coyotes Band of Cahuilla - Cupeno Indians of the Los Coyotes Reservation California</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CA262">
+        <xs:annotation>
+          <xs:documentation>Lytton Rancheria of California</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CA265">
+        <xs:annotation>
+          <xs:documentation>Manchester Band of Pomo Indians of the Manchester Rancheria</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CA269">
+        <xs:annotation>
+          <xs:documentation>Manzanita Band of Diegueno Mission Indians of the Manzanita Reservation California</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CA275">
+        <xs:annotation>
+          <xs:documentation>Mechoopda Indian Tribe of Chico Rancheria California</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CA279">
+        <xs:annotation>
+          <xs:documentation>Mesa Grande Band of Diegueno Mission Indians of the Mesa Grande Reservation California</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CA28">
+        <xs:annotation>
+          <xs:documentation>Augustine Band of Cahuilla Indians California (formerly Augustine Band of Cahuilla Mission Indians of the Augustine Reservation California)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CA285">
+        <xs:annotation>
+          <xs:documentation>Middletown Rancheria of Pomo Indians of California</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CA300">
+        <xs:annotation>
+          <xs:documentation>Mooretown Rancheria of Maidu Indians of California</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CA301">
+        <xs:annotation>
+          <xs:documentation>Morongo Band of Mission Indians California</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CA33">
+        <xs:annotation>
+          <xs:documentation>Bear River Band of the Rohnerville Rancheria of California</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CA35">
+        <xs:annotation>
+          <xs:documentation>Berry Creek Rancheria of Maidu Indians of California</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CA36">
+        <xs:annotation>
+          <xs:documentation>Big Lagoon Rancheria California</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CA37">
+        <xs:annotation>
+          <xs:documentation>Big Pine Band of Owens Valley Paiute Shoshone Indians of the Big Pine Reservation California</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CA39">
+        <xs:annotation>
+          <xs:documentation>Big Sandy Rancheria of Mono Indians of California</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CA4">
+        <xs:annotation>
+          <xs:documentation>Agua Caliente Band of Cahuilla Indians of the Agua Caliente Indian Reservation California</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CA41">
+        <xs:annotation>
+          <xs:documentation>Big Valley Band of Pomo Indians of the Big Valley Rancheria California</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CA434">
+        <xs:annotation>
+          <xs:documentation>Northfork Rancheria of Mono Indians of California</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CA44">
+        <xs:annotation>
+          <xs:documentation>Paiute-Shoshone Indians of the Bishop Community of the Bishop Colony California</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CA46">
+        <xs:annotation>
+          <xs:documentation>Blue Lake Rancheria of California</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CA464">
+        <xs:annotation>
+          <xs:documentation>Pala Band of Luiseno Mission Indians of the Pala Reservation California</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CA466">
+        <xs:annotation>
+          <xs:documentation>Paskenta Band of Nomlaki Indians</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CA47">
+        <xs:annotation>
+          <xs:documentation>Bridgeport Indian Colony (formerly Bridgeport Paiute Indian Colony of California)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CA471">
+        <xs:annotation>
+          <xs:documentation>Pauma Band of Luiseno Mission Indians of the Pauma and Yuima Reservation California</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CA473">
+        <xs:annotation>
+          <xs:documentation>Pechanga Band of Luiseno Mission Indians of the Pechanga Reservation California</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CA479">
+        <xs:annotation>
+          <xs:documentation>Picayune Rancheria of Chukchansi Indians of California</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CA481">
+        <xs:annotation>
+          <xs:documentation>Pinoleville Pomo Nation California</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CA483">
+        <xs:annotation>
+          <xs:documentation>Pit River Tribe California</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CA49">
+        <xs:annotation>
+          <xs:documentation>Buena Vista Rancheria of Me-Wuk Indians</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CA499">
+        <xs:annotation>
+          <xs:documentation>Potter Valley Tribe California (formerly the Potter Valley Rancheria of Pomo Indians of California)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CA529">
+        <xs:annotation>
+          <xs:documentation>Quartz Valley Indian Community of the Quartz Valley Reservation of Calfornia</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CA53">
+        <xs:annotation>
+          <xs:documentation>Cabazon Band of Mission Indians California (formerly Cabazon Band of Cahuilla Mission Indians of the Cabazon Reservation)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CA534">
+        <xs:annotation>
+          <xs:documentation>Ramona Band of Cahuilla California</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CA539">
+        <xs:annotation>
+          <xs:documentation>Redding Rancheria of California</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CA540">
+        <xs:annotation>
+          <xs:documentation>Redwood Valley or Little River Band of Pomo Indians of the Redwood Valley Rancheria California</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CA543">
+        <xs:annotation>
+          <xs:documentation>Resighini Rancheria California</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CA544">
+        <xs:annotation>
+          <xs:documentation>Rincon Band of Luiseno Mission Indians of the Rincon Reservation California</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CA545">
+        <xs:annotation>
+          <xs:documentation>Robinson Rancheria</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CA548">
+        <xs:annotation>
+          <xs:documentation>Round Valley Indian Tribes of the Round Valley Reservation California</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CA55">
+        <xs:annotation>
+          <xs:documentation>Cachil DeHe Band of Wintun Indians of the Colusa Indian Community of the Colusa Rancheria California</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CA561">
+        <xs:annotation>
+          <xs:documentation>San Manual Band of Serrano Mission Indians of the San Manual Reservation California</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CA563">
+        <xs:annotation>
+          <xs:documentation>San Pasqual Band of Diegueno Mission Indians of California</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CA564">
+        <xs:annotation>
+          <xs:documentation>Santa Rosa Band of Cahuilla Indians California</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CA566">
+        <xs:annotation>
+          <xs:documentation>Santa Rosa Indian Community of the Santa Rosa Rancheria California</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CA567">
+        <xs:annotation>
+          <xs:documentation>Santa Ynez Band of Chumash Mission Indians of the Santa Ynez Reservation California</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CA57">
+        <xs:annotation>
+          <xs:documentation>Cahto Indian Tribe of the Laytonville Rancheria California</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CA572">
+        <xs:annotation>
+          <xs:documentation>Scotts Valley Band of Pomo Indians of California</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CA584">
+        <xs:annotation>
+          <xs:documentation>Sherwood Valley Rancheria of Pomo Indians of California</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CA585">
+        <xs:annotation>
+          <xs:documentation>Shingle Springs Band of Miwok Indians Shingle Springs Rancheria (Verona Tract) California</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CA59">
+        <xs:annotation>
+          <xs:documentation>Cahuilla Band of Mission Indians of the Cahuilla Reservation California</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CA598">
+        <xs:annotation>
+          <xs:documentation>Smith River Rancheria of California</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CA60">
+        <xs:annotation>
+          <xs:documentation>California Valley Miwok Tribe California (formerly the Sheep Ranch Rancheria of Me-Wuk Indians of California)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CA601">
+        <xs:annotation>
+          <xs:documentation>Soboba Band of Luiseno Indians California</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CA61">
+        <xs:annotation>
+          <xs:documentation>Campo Band of Diegueno Mission Indians of the Campo Indian Reservation California</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CA617">
+        <xs:annotation>
+          <xs:documentation>Susanville Indian Rancheria California</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CA62">
+        <xs:annotation>
+          <xs:documentation>Capitan Grande Band of Diegueno Mission Indians of California</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CA620">
+        <xs:annotation>
+          <xs:documentation>Sycuan Band of the Kumeyaay Nation (formerly the Sycuan Band of Diegueno Mission Indians of California)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CA621">
+        <xs:annotation>
+          <xs:documentation>Table Mountain Rancheria of California</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CA630">
+        <xs:annotation>
+          <xs:documentation>Tejon Indian Tribe</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CA649">
+        <xs:annotation>
+          <xs:documentation>Torres Martinez Desert Cahuilla Indians California (formerly the Torres-Martinez Band of Cahuilla Missions Indians of California)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CA653">
+        <xs:annotation>
+          <xs:documentation>Tule River Indian Tribe of the Tule River Reservation California</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CA656">
+        <xs:annotation>
+          <xs:documentation>Tuolumne Band of Me-Wuk Indians of the Tuolumme Rancheria of California</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CA659">
+        <xs:annotation>
+          <xs:documentation>Twenty-Nine Palms Band of Mission Indians of California</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CA66">
+        <xs:annotation>
+          <xs:documentation>Cedarville Rancheria California</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CA664">
+        <xs:annotation>
+          <xs:documentation>United Auburn Indian Community of the Auburn Rancheria</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CA671">
+        <xs:annotation>
+          <xs:documentation>Utu Utu Gwaitu Paiute Tribe of the Benton Paiute Reservation California</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CA707">
+        <xs:annotation>
+          <xs:documentation>Wilton Rancheria</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CA708">
+        <xs:annotation>
+          <xs:documentation>Arapaho Tribe of the Wind River Reservation Wyoming</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CA71">
+        <xs:annotation>
+          <xs:documentation>Chemehuevi Indian Tribe of the Chemehuevi Reservation California</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CA710">
+        <xs:annotation>
+          <xs:documentation>Winnemucca Indian Colony of Nevada</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CA711">
+        <xs:annotation>
+          <xs:documentation>Wiyot Tribe California</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CA72">
+        <xs:annotation>
+          <xs:documentation>Cher-Ae Heights Indian Community of the Trinidad Rancheria California</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CA720">
+        <xs:annotation>
+          <xs:documentation>Yocha Dehe Wintun Nation California</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CA725">
+        <xs:annotation>
+          <xs:documentation>Yurok Tribe of the Yurok Reservation California</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CA81">
+        <xs:annotation>
+          <xs:documentation>Chicken Ranch Rancheria of Me-Wuk Indians of California</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CA95">
+        <xs:annotation>
+          <xs:documentation>Cloverdale Rancheria of Pomo Indians</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CO604">
+        <xs:annotation>
+          <xs:documentation>Southern Ute Indian Tribe of the Southern Ute Reservation Colorado</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CO670">
+        <xs:annotation>
+          <xs:documentation>Ute Mountain Tribe of the Ute Mountain Reservation Colorado New Mexico and Utah</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CT270">
+        <xs:annotation>
+          <xs:documentation>Mashantucket Pequot Indian Tribe</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CT298">
+        <xs:annotation>
+          <xs:documentation>Mohegan Indian Tribe of Connecticut</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="FL283">
+        <xs:annotation>
+          <xs:documentation>Miccosukee Tribe of Indians</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="FL575">
+        <xs:annotation>
+          <xs:documentation>Seminole Tribe of Florida</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="IA553">
+        <xs:annotation>
+          <xs:documentation>Sac and Fox Tribe of the Mississippi in Iowa</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ID238">
+        <xs:annotation>
+          <xs:documentation>Kootenai Tribe of Idaho</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ID423">
+        <xs:annotation>
+          <xs:documentation>Nez Perce Tribe</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ID590">
+        <xs:annotation>
+          <xs:documentation>Shoshone-Bannock Tribes of the Fort Hall Reservation of Idaho</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ID98">
+        <xs:annotation>
+          <xs:documentation>Coeur D'Alene Tribe of the Coeur D'Alene Reservation Idaho</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="KS199">
+        <xs:annotation>
+          <xs:documentation>Iowa Tribe of Kansas and Nebraska</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="KS227">
+        <xs:annotation>
+          <xs:documentation>Kickapoo Tribe of Indians of the Kickapoo Reservation in Kansas</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="KS500">
+        <xs:annotation>
+          <xs:documentation>Prairie Band Potawatomi Nation</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="KS552">
+        <xs:annotation>
+          <xs:documentation>Sac - Fox of Missouri in Kansas and Nebraska</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="LA120">
+        <xs:annotation>
+          <xs:documentation>Coushatta Tribe of Louisiana</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="LA207">
+        <xs:annotation>
+          <xs:documentation>Jena Band of Choctaw Indians</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="LA655">
+        <xs:annotation>
+          <xs:documentation>Tunica-Biloxi Indian Tribe of Louisiana</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="LA90">
+        <xs:annotation>
+          <xs:documentation>Chitimacha Tribe of Louisiana</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="MA272">
+        <xs:annotation>
+          <xs:documentation>Mashpee Wampanoag Tribe</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="MA586">
+        <xs:annotation>
+          <xs:documentation>Shinnecock Indian Nation</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="MA696">
+        <xs:annotation>
+          <xs:documentation>Wampanoag Tribe of Gay Head (Aquinnah)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ME186">
+        <xs:annotation>
+          <xs:documentation>Houlton Band of Maliseet Indians</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ME21">
+        <xs:annotation>
+          <xs:documentation>Aroostook Band of Micmac Indians of Maine</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ME468">
+        <xs:annotation>
+          <xs:documentation>Passamaquoddy Tribe of Maine</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ME475">
+        <xs:annotation>
+          <xs:documentation>Penobscot Nation</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="MI167">
+        <xs:annotation>
+          <xs:documentation>Grand Traverse Band of Ottawa and Chippewa Indians Michigan</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="MI174">
+        <xs:annotation>
+          <xs:documentation>Hannahville Indian Community Michigan</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="MI223">
+        <xs:annotation>
+          <xs:documentation>Keweenaw Bay Indian Community Michigan</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="MI245">
+        <xs:annotation>
+          <xs:documentation>Lac Vieux Desert Band of Lake Superior Chippewa Indians Michigan</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="MI250">
+        <xs:annotation>
+          <xs:documentation>Little River Band of Ottawa Indians Michigan</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="MI251">
+        <xs:annotation>
+          <xs:documentation>Little Traverse Bay Bands of Odawa Indians Michigan</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="MI273">
+        <xs:annotation>
+          <xs:documentation>Match-E-Be-Nash-She-Wish Band of Pottawatomi Indians of Michigan</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="MI32">
+        <xs:annotation>
+          <xs:documentation>Bay Mills Indian Community Michigan</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="MI438">
+        <xs:annotation>
+          <xs:documentation>Nottawaseppi Huron Band of the Potawatomi Michigan (formerly Huron Potawatomi Inc Michigan)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="MI493">
+        <xs:annotation>
+          <xs:documentation>Pokagon Band of Potawatomi Indians Michigan and Indiana</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="MI554">
+        <xs:annotation>
+          <xs:documentation>Saginaw Chippewa Indian Tribe of Michigan</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="MI571">
+        <xs:annotation>
+          <xs:documentation>Sault Ste Marie Tribe of Chippewa Indians of Michigan</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="MN260">
+        <xs:annotation>
+          <xs:documentation>Lower Sioux Indian Community in the State of Minnesota</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="MN286">
+        <xs:annotation>
+          <xs:documentation>Minnesota Chippewa Tribe</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="MN502">
+        <xs:annotation>
+          <xs:documentation>Prairie Island Indian Community in the State of Minnesota</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="MN538">
+        <xs:annotation>
+          <xs:documentation>Red Lake Band of Chippewa Indians Minnesota</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="MN581">
+        <xs:annotation>
+          <xs:documentation>Shakopee Mdewakanton Sioux Community of Minnesota</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="MN667">
+        <xs:annotation>
+          <xs:documentation>Upper Sioux Community Minnesota</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="MO141">
+        <xs:annotation>
+          <xs:documentation>Eastern Shawnee Tribe of Oklahoma</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="MS295">
+        <xs:annotation>
+          <xs:documentation>Mississippi Band of Choctaw Indians Mississippi</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="MT103">
+        <xs:annotation>
+          <xs:documentation>Confederated Salish - Kootenai Tribes of the Flathead Reservation Montana</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="MT129">
+        <xs:annotation>
+          <xs:documentation>Crow Tribe of Montana</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="MT157">
+        <xs:annotation>
+          <xs:documentation>Fort Belknap Indian Community of the Fort Belknap Reservation of Montana</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="MT25">
+        <xs:annotation>
+          <xs:documentation>Assiniboine and Sioux Tribes of the Fort Peck Indian Reservation Montana</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="MT433">
+        <xs:annotation>
+          <xs:documentation>Northern Cheyenne Tribe of the Northern Cheyenne Indian Reservation Montana</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="MT45">
+        <xs:annotation>
+          <xs:documentation>Blackfeet Tribe of the Blackfeet Indian Reservation of Montana</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="MT88">
+        <xs:annotation>
+          <xs:documentation>Chippewa-Cree Indians of the Rocky Boy's Reservation Montana</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="NC139">
+        <xs:annotation>
+          <xs:documentation>Eastern Band of Cherokee Indians</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ND605">
+        <xs:annotation>
+          <xs:documentation>Spirit Lake Tribe North Dakota (formerly Devils Lake Sioux Tribe)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ND610">
+        <xs:annotation>
+          <xs:documentation>Standing Rock Sioux Tribe of North and South Dakota</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ND641">
+        <xs:annotation>
+          <xs:documentation>Three Affiliated Tribes of the Fort Berthold Reservation North Dakota</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ND657">
+        <xs:annotation>
+          <xs:documentation>Turtle Mountain Band of Chippewa Indians of North Dakota</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="NE444">
+        <xs:annotation>
+          <xs:documentation>Omaha Tribe of Nebraska</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="NE495">
+        <xs:annotation>
+          <xs:documentation>Ponca Tribe of Nebraska</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="NE569">
+        <xs:annotation>
+          <xs:documentation>Santee Sioux Nation Nebraska (formerly the Santee Sioux Tribe of the Santee Reservation of Nebraska)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="NE709">
+        <xs:annotation>
+          <xs:documentation>Winnebago Tribe of Nebraska</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="NM209">
+        <xs:annotation>
+          <xs:documentation>Jicarilla Apache Nation New Mexico</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="NM222">
+        <xs:annotation>
+          <xs:documentation>Kewa Pueblo New Mexico (formerly Pueblo of Santo Domingo New Mexico)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="NM280">
+        <xs:annotation>
+          <xs:documentation>Mescalero Apache Tribe of the Mescalero Reservation New Mexico</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="NM414">
+        <xs:annotation>
+          <xs:documentation>Navajo Nation</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="NM443">
+        <xs:annotation>
+          <xs:documentation>Ohkay Owingeh New Mexico (formerly Pueblo of San Juan New Mexico)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="NM506">
+        <xs:annotation>
+          <xs:documentation>Pueblo of Acoma New Mexico</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="NM507">
+        <xs:annotation>
+          <xs:documentation>Pueblo of Cochiti New Mexico</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="NM508">
+        <xs:annotation>
+          <xs:documentation>Pueblo of Isleta New Mexico</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="NM509">
+        <xs:annotation>
+          <xs:documentation>Pueblo of Jemez New Mexico</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="NM510">
+        <xs:annotation>
+          <xs:documentation>Pueblo of Laguna New Mexico</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="NM511">
+        <xs:annotation>
+          <xs:documentation>Pueblo of Nambe New Mexico</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="NM512">
+        <xs:annotation>
+          <xs:documentation>Pueblo of Picuris New Mexico</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="NM513">
+        <xs:annotation>
+          <xs:documentation>Pueblo of Pojoaque New Mexico</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="NM514">
+        <xs:annotation>
+          <xs:documentation>Pueblo of San Felipe New Mexico</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="NM515">
+        <xs:annotation>
+          <xs:documentation>Pueblo of San Ildelfonso New Mexico</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="NM517">
+        <xs:annotation>
+          <xs:documentation>Pueblo of Sandia New Mexico</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="NM518">
+        <xs:annotation>
+          <xs:documentation>Pueblo of Santa Ana New Mexico</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="NM519">
+        <xs:annotation>
+          <xs:documentation>Pueblo of Santa Clara New Mexico</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="NM521">
+        <xs:annotation>
+          <xs:documentation>Pueblo of Taos New Mexico</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="NM522">
+        <xs:annotation>
+          <xs:documentation>Pueblo of Tesuque New Mexico</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="NM523">
+        <xs:annotation>
+          <xs:documentation>Pueblo of Zia New Mexico</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="NM726">
+        <xs:annotation>
+          <xs:documentation>Zuni Tribe of the Zuni Reservation New Mexico</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="NV138">
+        <xs:annotation>
+          <xs:documentation>Duckwater Shoshone Tribe of the Duckwater Reservation Nevada</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="NV147">
+        <xs:annotation>
+          <xs:documentation>Ely Shoshone Tribe of Nevada</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="NV160">
+        <xs:annotation>
+          <xs:documentation>Fort McDermitt Paiute and Shoshone Tribes of the Fort McDermitt Indian Reservation Nevada and Oregon</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="NV246">
+        <xs:annotation>
+          <xs:documentation>Las Vegas Tribe of Paiute Indians of the Las Vegas Indian Colony Nevada</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="NV255">
+        <xs:annotation>
+          <xs:documentation>Lovelock Piaute Tribe of the Lovelock Indian Colony Nevada</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="NV296">
+        <xs:annotation>
+          <xs:documentation>Moapa Band of Paiute Indians of the Moapa River Indian Reservation Nevada</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="NV462">
+        <xs:annotation>
+          <xs:documentation>Paiute-Shoshone Tribe of the Fallon Reservation and Colony Nevada</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="NV525">
+        <xs:annotation>
+          <xs:documentation>Pyramid Lake Paiute Tribe of the Pyramid Lake Reservation Nevada</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="NV542">
+        <xs:annotation>
+          <xs:documentation>Reno-Sparks Indian Colony Nevada</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="NV591">
+        <xs:annotation>
+          <xs:documentation>Shoshone-Paiute Tribes of the Duck Valley Reservation Nevada</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="NV615">
+        <xs:annotation>
+          <xs:documentation>Summit Lake Paiute Tribe of Nevada</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="NV624">
+        <xs:annotation>
+          <xs:documentation>Te-Moak Tribe of Western Shoshone Indians of Nevada</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="NV695">
+        <xs:annotation>
+          <xs:documentation>Walker River Paiute Tribe of the Walker River Reservation Nevada</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="NV702">
+        <xs:annotation>
+          <xs:documentation>Washoe Tribe of Nevada and California</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="NV719">
+        <xs:annotation>
+          <xs:documentation>Yerington Paiute Tribe of the Yerington Colony and Campbell Ranch Nevada</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="NV721">
+        <xs:annotation>
+          <xs:documentation>Yomba Shoshone Tribe of the Yomba Reservation Nevada</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="NY445">
+        <xs:annotation>
+          <xs:documentation>Oneida Nation of New York</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="NY447">
+        <xs:annotation>
+          <xs:documentation>Onondaga Nation of New York</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="NY555">
+        <xs:annotation>
+          <xs:documentation>Saint Regis Mohawk Tribe (formerly St Regis Band of Mohawk Indians of New York)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="NY578">
+        <xs:annotation>
+          <xs:documentation>Seneca Nation of Indians</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="NY64">
+        <xs:annotation>
+          <xs:documentation>Cayuga Nation</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="NY645">
+        <xs:annotation>
+          <xs:documentation>Tonawanda Band of Seneca</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="NY658">
+        <xs:annotation>
+          <xs:documentation>Tuscarora Nation of New York</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="OK10">
+        <xs:annotation>
+          <xs:documentation>Alabama-Quassarte Tribal Town</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="OK102">
+        <xs:annotation>
+          <xs:documentation>Comanche Nation Oklahoma</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="OK134">
+        <xs:annotation>
+          <xs:documentation>Delaware Nation Oklahoma</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="OK163">
+        <xs:annotation>
+          <xs:documentation>Fort Sill Apache Tribe of Oklahoma</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="OK19">
+        <xs:annotation>
+          <xs:documentation>Apache Tribe of Oklahoma</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="OK2">
+        <xs:annotation>
+          <xs:documentation>Absentee-Shawnee Tribe of Indians of Oklahoma</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="OK200">
+        <xs:annotation>
+          <xs:documentation>Iowa Tribe of Oklahoma</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="OK219">
+        <xs:annotation>
+          <xs:documentation>Kaw Nation Oklahoma</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="OK224">
+        <xs:annotation>
+          <xs:documentation>Kialegee Tribal Town</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="OK228">
+        <xs:annotation>
+          <xs:documentation>Kickapoo Tribe of Oklahoma</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="OK231">
+        <xs:annotation>
+          <xs:documentation>Kiowa Indian Tribe of Oklahoma</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="OK282">
+        <xs:annotation>
+          <xs:documentation>Miami Tribe of Oklahoma</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="OK458">
+        <xs:annotation>
+          <xs:documentation>Otoe-Missouria Tribe of Indians Oklahoma</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="OK459">
+        <xs:annotation>
+          <xs:documentation>Ottawa Tribe of Oklahoma</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="OK472">
+        <xs:annotation>
+          <xs:documentation>Pawnee Nation of Oklahoma</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="OK477">
+        <xs:annotation>
+          <xs:documentation>Peoria Tribe of Indians of Oklahoma</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="OK494">
+        <xs:annotation>
+          <xs:documentation>Ponca Tribe of Indians of Oklahoma</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="OK551">
+        <xs:annotation>
+          <xs:documentation>Sac - Fox Nation Oklahoma</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="OK56">
+        <xs:annotation>
+          <xs:documentation>Caddo Nation of Oklahoma (formerly the Caddo Indian Tribe of Oklahoma)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="OK576">
+        <xs:annotation>
+          <xs:documentation>Seneca-Cayuga Nation</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="OK582">
+        <xs:annotation>
+          <xs:documentation>Shawnee Tribe</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="OK632">
+        <xs:annotation>
+          <xs:documentation>The Chickasaw Nation</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="OK633">
+        <xs:annotation>
+          <xs:documentation>The Choctaw Nation of Oklahoma</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="OK634">
+        <xs:annotation>
+          <xs:documentation>The Modoc Tribe of Oklahoma</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="OK635">
+        <xs:annotation>
+          <xs:documentation>The Muscogee (Creek) Nation</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="OK636">
+        <xs:annotation>
+          <xs:documentation>The Osage Nation (formerly Osage Tribe Oklahoma)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="OK637">
+        <xs:annotation>
+          <xs:documentation>The Quapaw Tribe of Indians</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="OK638">
+        <xs:annotation>
+          <xs:documentation>The Seminole Nation of Oklahoma</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="OK639">
+        <xs:annotation>
+          <xs:documentation>Thlopthlocco Tribal Town</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="OK647">
+        <xs:annotation>
+          <xs:documentation>Tonkawa Tribe of Indians of Oklahoma</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="OK666">
+        <xs:annotation>
+          <xs:documentation>United Keetoowah Band of Cherokee Indians in Oklahoma</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="OK705">
+        <xs:annotation>
+          <xs:documentation>Wichita and Affiliated Tribes Oklahoma</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="OK714">
+        <xs:annotation>
+          <xs:documentation>Wyandotte Nation Oklahoma (formerly the Wyandotte Tribe of Oklahoma)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="OK729">
+        <xs:annotation>
+          <xs:documentation>Delaware Tribe of Indians</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="OK73">
+        <xs:annotation>
+          <xs:documentation>Cherokee Nation of Oklahoma</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="OK75">
+        <xs:annotation>
+          <xs:documentation>Cheyenne - Arapaho Tribes of Oklahoma</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="OK94">
+        <xs:annotation>
+          <xs:documentation>Citizen Potawatomi Nation Oklahoma</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="OR105">
+        <xs:annotation>
+          <xs:documentation>Confederated Tribes of Siletz Indians of Oregon (formerly Confederated Tribes of the Siletz Reservation Oregon)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="OR108">
+        <xs:annotation>
+          <xs:documentation>Confederated Tribes of the Coos Lower Umpqua and Siuslaw Indians of Oregon</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="OR110">
+        <xs:annotation>
+          <xs:documentation>Confederated Tribes of the Grand Ronde Community of Oregon</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="OR112">
+        <xs:annotation>
+          <xs:documentation>Confederated Tribes of the Umatilla Reservation</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="OR113">
+        <xs:annotation>
+          <xs:documentation>Confederated Tribes of the Warm Springs Reservation of Oregon</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="OR116">
+        <xs:annotation>
+          <xs:documentation>Coquille Tribe of Oregon</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="OR121">
+        <xs:annotation>
+          <xs:documentation>Cow Creek Band of Umpqua Indians</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="OR233">
+        <xs:annotation>
+          <xs:documentation>Klamath Tribes Oregon (formerly the Klamath Indian Tribe of Oregon)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="OR51">
+        <xs:annotation>
+          <xs:documentation>Burns Paiute Tribe (formerly Burns Paiute Tribe of the Burns Paiute Indian Colony of Oregon)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="RI307">
+        <xs:annotation>
+          <xs:documentation>Narragansett Indian Tribe of Rhode Island</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="SC63">
+        <xs:annotation>
+          <xs:documentation>Catawba Indian Nation (aka Catawba Tribe of South Carolina)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="SD128">
+        <xs:annotation>
+          <xs:documentation>Crow Creek Sioux Tribe of the Crow Creek Reservation South Dakota</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="SD155">
+        <xs:annotation>
+          <xs:documentation>Flandreau Santee Sioux Tribe of South Dakota</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="SD256">
+        <xs:annotation>
+          <xs:documentation>Lower Brule Sioux Tribe of the Lower Brule Reservation South Dakota</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="SD441">
+        <xs:annotation>
+          <xs:documentation>Oglala Sioux Tribe</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="SD547">
+        <xs:annotation>
+          <xs:documentation>Rosebud Sioux Tribe of the Rosebud Indian Reservation South Dakota</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="SD592">
+        <xs:annotation>
+          <xs:documentation>Sisseton-Wahpeton Oyate of the Lake Traverse Reservation South Dakota (formerly the Sisseton-Wahpeton Sioux Tribe of the Lake Traverse Reservation)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="SD716">
+        <xs:annotation>
+          <xs:documentation>Yankton Sioux Tribe of South Dakota</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="SD78">
+        <xs:annotation>
+          <xs:documentation>Cheyenne River Sioux Tribe of the Cheyenne River Reservation South Dakota</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="TX226">
+        <xs:annotation>
+          <xs:documentation>Kickapoo Traditional Tribe of Texas</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="TX722">
+        <xs:annotation>
+          <xs:documentation>Ysleta Del Sur Pueblo</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="TX8">
+        <xs:annotation>
+          <xs:documentation>Alabama-Coushatta Tribe of Texas</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="UT109">
+        <xs:annotation>
+          <xs:documentation>Confederated Tribes of the Goshute Reservation Nevada and Utah</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="UT436">
+        <xs:annotation>
+          <xs:documentation>Northwestern Band of Shoshoni Nation</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="UT463">
+        <xs:annotation>
+          <xs:documentation>Paiute Indian Tribe of Utah</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="UT597">
+        <xs:annotation>
+          <xs:documentation>Skull Valley Band of Goshute Indians of Utah</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="UT669">
+        <xs:annotation>
+          <xs:documentation>Ute Indian Tribe of the Uintah and Ouray Reservation Utah</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="WA104">
+        <xs:annotation>
+          <xs:documentation>Confederated Tribes and Bands of the Yakama Nation Washington</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="WA106">
+        <xs:annotation>
+          <xs:documentation>Confederated Tribes of the Chehalis Reservation Washington</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="WA107">
+        <xs:annotation>
+          <xs:documentation>Confederated Tribes of the Colville Reservation Washington</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="WA123">
+        <xs:annotation>
+          <xs:documentation>Cowlitz Indian Tribe</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="WA178">
+        <xs:annotation>
+          <xs:documentation>Hoh Indian Tribe</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="WA205">
+        <xs:annotation>
+          <xs:documentation>Jamestown S'Klallam Tribe of Washington</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="WA214">
+        <xs:annotation>
+          <xs:documentation>Kalispel Indian Community of the Kalispel Reservation Washington</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="WA257">
+        <xs:annotation>
+          <xs:documentation>Lower Elwha Tribal Community</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="WA261">
+        <xs:annotation>
+          <xs:documentation>Lummi Tribe of the Lummi Reservation Washington</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="WA264">
+        <xs:annotation>
+          <xs:documentation>Makah Indian Tribe of the Makah Indian Reservation Washington</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="WA303">
+        <xs:annotation>
+          <xs:documentation>Muckleshoot Indian Tribe</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="WA427">
+        <xs:annotation>
+          <xs:documentation>Nisqually Indian Tribe</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="WA431">
+        <xs:annotation>
+          <xs:documentation>Nooksack Indian Tribe of Washington</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="WA496">
+        <xs:annotation>
+          <xs:documentation>Port Gamble SKlallam Tribe</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="WA524">
+        <xs:annotation>
+          <xs:documentation>Puyallup Tribe of the Puyallup Reservation Washington</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="WA531">
+        <xs:annotation>
+          <xs:documentation>Quileute Tribe of the Quileute Reservation Washington</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="WA532">
+        <xs:annotation>
+          <xs:documentation>Quinault Indian Nation</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="WA557">
+        <xs:annotation>
+          <xs:documentation>Samish Indian Nation</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="WA570">
+        <xs:annotation>
+          <xs:documentation>Sauk-Suiattle Tribe of Washington</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="WA587">
+        <xs:annotation>
+          <xs:documentation>Shoalwater Bay Indian Tribe of the Shoalwater Bay Indian Reservation Washington</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="WA595">
+        <xs:annotation>
+          <xs:documentation>Skokomish Indian Tribe</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="WA599">
+        <xs:annotation>
+          <xs:documentation>Snoqualmie Indian Tribe</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="WA606">
+        <xs:annotation>
+          <xs:documentation>Spokane Tribe of the Spokane Reservation Washington</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="WA607">
+        <xs:annotation>
+          <xs:documentation>Squaxin Island Tribe of the Squaxin Island Reservation Washington</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="WA612">
+        <xs:annotation>
+          <xs:documentation>Stillaguamish Tribe of Indians of Washington</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="WA616">
+        <xs:annotation>
+          <xs:documentation>Suquamish Indian Tribe of the Port Madison Reservation Washington</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="WA618">
+        <xs:annotation>
+          <xs:documentation>Swinomish Indian Tribal Community</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="WA651">
+        <xs:annotation>
+          <xs:documentation>Tulalip Tribes of the Tulalip Reservation Washington</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="WA668">
+        <xs:annotation>
+          <xs:documentation>Upper Skagit Indian Tribe of Washington</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="WI156">
+        <xs:annotation>
+          <xs:documentation>Forest County Potawatomi Community Wisconsin</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="WI177">
+        <xs:annotation>
+          <xs:documentation>Ho-Chunk Nation of Wisconsin</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="WI243">
+        <xs:annotation>
+          <xs:documentation>Lac Courte Oreilles Band of Lake Superior Chippewa Indians of Wisconsin</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="WI244">
+        <xs:annotation>
+          <xs:documentation>Lac du Flambeau Band of Lake Superior Chippewa Indians of the Lac du Flambeau Reservation of Wisconsin</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="WI276">
+        <xs:annotation>
+          <xs:documentation>Menominee Indian Tribe of Wisconsin</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="WI30">
+        <xs:annotation>
+          <xs:documentation>Bad River Band of the Lake Superior Tribe of Chippewa Indians of the Bad River Reservation Wisconsin</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="WI446">
+        <xs:annotation>
+          <xs:documentation>Oneida Tribe of Indians of Wisconsin</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="WI537">
+        <xs:annotation>
+          <xs:documentation>Red Cliff Band of Lake Superior Chippewa Indians of Wisconsin</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="WI602">
+        <xs:annotation>
+          <xs:documentation>Sokaogon Chippewa Community Wisconsin</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="WI608">
+        <xs:annotation>
+          <xs:documentation>St Croix Chippewa Indians of Wisconsin</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="WI614">
+        <xs:annotation>
+          <xs:documentation>Stockbridge Munsee Community Wisconsin</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="WY728">
+        <xs:annotation>
+          <xs:documentation>Shoshone Tribe of the Wind River Reservation Wyoming</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="TribeKindCodeType">
+    <xs:annotation>
+      <xs:documentation>A data type for a kind of tribal land</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="em:TribeKindCodeSimpleType">
+        <xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
+      </xs:extension>
+    </xs:simpleContent>
   </xs:complexType>
   <xs:complexType name="UnitLogoffNotificationType">
     <xs:annotation>
@@ -6760,6 +9706,21 @@ National Institutes of Health, National Heart, Lung, and Blood Institute</xs:doc
   <xs:element name="ArrivalLocation" type="nc:LocationType" nillable="true">
     <xs:annotation>
       <xs:documentation>A textual description of the location where the specified resource has arrived at dateTime of the resource message when transported to or from an Incident</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="AssessmentDate" type="niem-xs:dateTime" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A date of this assessment</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="AssessmentImage" type="nc:ImageType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A picture of the assessment</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="AssessmentKindAbstract" abstract="true">
+    <xs:annotation>
+      <xs:documentation>A data concept for assessment information</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="AssistanceInNeedQuantity" type="nc:QuantityType" nillable="true">
@@ -7552,6 +10513,11 @@ National Institutes of Health, National Heart, Lung, and Blood Institute</xs:doc
       <xs:documentation>An element that classifies the level of damage</xs:documentation>
     </xs:annotation>
   </xs:element>
+  <xs:element name="DeviceURI" type="em:OtherTextType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A URI of the device that generated this report</xs:documentation>
+    </xs:annotation>
+  </xs:element>
   <xs:element name="DisasterDeclarationText" type="nc:TextType" nillable="true">
     <xs:annotation>
       <xs:documentation>An element for a disaster declaration level. eg: Presidential Declared, State Declared, City Declared Declared File</xs:documentation>
@@ -7967,6 +10933,16 @@ National Institutes of Health, National Heart, Lung, and Blood Institute</xs:doc
       <xs:documentation>A data concept for a code list for identification information types for a resource e.g.  ID card number etc.</xs:documentation>
     </xs:annotation>
   </xs:element>
+  <xs:element name="ImmediateNeedsTernaryIndicatorCode" type="em:TernaryIndicatorCodeType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>An indication if there are immediate needs (Yes, No, Unknown)</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="ImmediateNeedsText" type="em:OtherTextType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A description of Immediate Needs</xs:documentation>
+    </xs:annotation>
+  </xs:element>
   <xs:element name="ImpactedUnitsNumeric" type="niem-xs:integer" nillable="true">
     <xs:annotation>
       <xs:documentation>A data element for the impacted units.  If dwelling type is multi-family then how many units were impacted.</xs:documentation>
@@ -8002,6 +10978,21 @@ National Institutes of Health, National Heart, Lung, and Blood Institute</xs:doc
       <xs:documentation>An augmentation point for IncidentAuthorType</xs:documentation>
     </xs:annotation>
   </xs:element>
+  <xs:element name="IncidentID" type="em:OtherTextType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>An identifier of the incident</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="IncidentKindCodeAbstract" abstract="true">
+    <xs:annotation>
+      <xs:documentation>A data concept for a kind of Incident</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="IncidentKindOtherText" type="em:OtherTextType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A description of the Other kind of incident</xs:documentation>
+    </xs:annotation>
+  </xs:element>
   <xs:element name="IncidentNotification" type="em:IncidentNotificationType" substitutionGroup="em:NotificationRepresentation" nillable="true">
     <xs:annotation>
       <xs:documentation>An element for representing an incident</xs:documentation>
@@ -8015,6 +11006,11 @@ National Institutes of Health, National Heart, Lung, and Blood Institute</xs:doc
   <xs:element name="IncidentPublishDate" type="nc:DateType" nillable="true">
     <xs:annotation>
       <xs:documentation>An element for an incident publish date</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="IncidentStartDate" type="niem-xs:dateTime" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A date of the start of the incident</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="IncidentSummaryText" type="nc:TextType" nillable="true">
@@ -8912,6 +11908,16 @@ National Institutes of Health, National Heart, Lung, and Blood Institute</xs:doc
       <xs:documentation>An identifier of the preceding message for this message</xs:documentation>
     </xs:annotation>
   </xs:element>
+  <xs:element name="PreliminaryDamageAssessement" type="em:PreliminaryDamageAssessmentType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A Preliminary Damage Assessement report</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="PreliminaryDamageAssessmentAugmentationPoint" abstract="true">
+    <xs:annotation>
+      <xs:documentation>An augmentation point for PreliminaryDamageAssessmentType</xs:documentation>
+    </xs:annotation>
+  </xs:element>
   <xs:element name="PrimaryResidenceIndicator" type="niem-xs:boolean" nillable="true">
     <xs:annotation>
       <xs:documentation>True if this home is occupied at least 6 months per year and is this a primary residence; false if dwelling occupied as a vacation residence? Or simply vacant.</xs:documentation>
@@ -8925,6 +11931,11 @@ National Institutes of Health, National Heart, Lung, and Blood Institute</xs:doc
   <xs:element name="PrivateIneligibleInfrastructureIndicator" type="niem-xs:boolean" nillable="true">
     <xs:annotation>
       <xs:documentation>True if this is a private road/bridge.Privately owned roads and bridges are generally not eligible for PA funding; false if not</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="ProgramKindCode" type="em:ProgramKindCodeType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A kind of assessement program</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="ProhibitiveDeploymentCondition" type="em:ProhibitiveDeploymentConditionType" nillable="true">
@@ -9030,6 +12041,16 @@ National Institutes of Health, National Heart, Lung, and Blood Institute</xs:doc
   <xs:element name="RepairCostValue" type="niem-xs:integer" nillable="true">
     <xs:annotation>
       <xs:documentation>An element that specifies the cost of all emergency protective measures.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="ReportAuthorName" type="em:OtherTextType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A name or identity of the report creator</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="ReportID" type="em:OtherTextType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>An identifier for this report</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="ReportToLocation" type="nc:LocationType" nillable="true">
@@ -9490,6 +12511,16 @@ National Institutes of Health, National Heart, Lung, and Blood Institute</xs:doc
   <xs:element name="TriageYellowQuantity" type="nc:QuantityType" nillable="true">
     <xs:annotation>
       <xs:documentation>A count of the Number of victims with delayed needs</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="TribeIndicator" type="niem-xs:boolean" nillable="true">
+    <xs:annotation>
+      <xs:documentation>True if this assessment is on tribal lands; false otherwise</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="TribeKindCode" type="em:TribeKindCodeType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A kind of tribal land</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="USACEBeachIndicator" type="niem-xs:boolean" nillable="true">

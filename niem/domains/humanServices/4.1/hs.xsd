@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="US-ASCII"?>
-<xs:schema targetNamespace="http://release.niem.gov/niem/domains/humanServices/4.1/" version="alpha1" xsi:schemaLocation="http://release.niem.gov/niem/appinfo/4.0/ ../../../utility/appinfo/4.0/appinfo.xsd http://release.niem.gov/niem/conformanceTargets/3.0/ ../../../utility/conformanceTargets/3.0/conformanceTargets.xsd" ct:conformanceTargets="http://reference.niem.gov/niem/specification/naming-and-design-rules/4.0/#ReferenceSchemaDocument" xmlns:structures="http://release.niem.gov/niem/structures/4.0/" xmlns:appinfo="http://release.niem.gov/niem/appinfo/4.0/" xmlns:ct="http://release.niem.gov/niem/conformanceTargets/3.0/" xmlns:nc="http://release.niem.gov/niem/niem-core/4.0/" xmlns:j="http://release.niem.gov/niem/domains/jxdm/6.1/" xmlns:im="http://release.niem.gov/niem/domains/immigration/4.1/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:hs="http://release.niem.gov/niem/domains/humanServices/4.1/" xmlns:scr="http://release.niem.gov/niem/domains/screening/4.1/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:census="http://release.niem.gov/niem/codes/census_uscounty/4.0/" xmlns:niem-xs="http://release.niem.gov/niem/proxy/xsd/4.0/">
+<xs:schema targetNamespace="http://release.niem.gov/niem/domains/humanServices/4.1/" version="beta1" xsi:schemaLocation="http://release.niem.gov/niem/appinfo/4.0/ ../../../utility/appinfo/4.0/appinfo.xsd http://release.niem.gov/niem/conformanceTargets/3.0/ ../../../utility/conformanceTargets/3.0/conformanceTargets.xsd" ct:conformanceTargets="http://reference.niem.gov/niem/specification/naming-and-design-rules/4.0/#ReferenceSchemaDocument" xmlns:structures="http://release.niem.gov/niem/structures/4.0/" xmlns:appinfo="http://release.niem.gov/niem/appinfo/4.0/" xmlns:ct="http://release.niem.gov/niem/conformanceTargets/3.0/" xmlns:nc="http://release.niem.gov/niem/niem-core/4.0/" xmlns:j="http://release.niem.gov/niem/domains/jxdm/6.1/" xmlns:im="http://release.niem.gov/niem/domains/immigration/4.1/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:hs="http://release.niem.gov/niem/domains/humanServices/4.1/" xmlns:scr="http://release.niem.gov/niem/domains/screening/4.1/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:census="http://release.niem.gov/niem/codes/census_uscounty/4.0/" xmlns:niem-xs="http://release.niem.gov/niem/proxy/xsd/4.0/">
   <xs:annotation>
     <xs:documentation>Human Services</xs:documentation>
     <xs:appinfo>
@@ -1784,6 +1784,178 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
+  <xs:simpleType name="ExploitationIndustryCodeSimpleType">
+    <xs:annotation>
+      <xs:documentation>A data type for an industry in which a victim of human trafficking can be exploited.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="Agriculture and Animal Husbandry">
+        <xs:annotation>
+          <xs:documentation>Agriculture and Animal Husbandry (including field labor, fishing, herding/livestock)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Arts and Entertainment">
+        <xs:annotation>
+          <xs:documentation>Arts and Entertainment</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Carnival">
+        <xs:annotation>
+          <xs:documentation>Carnival</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Commercial Cleaning Services">
+        <xs:annotation>
+          <xs:documentation>Commercial Cleaning Services</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Construction">
+        <xs:annotation>
+          <xs:documentation>Construction</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Did not disclose">
+        <xs:annotation>
+          <xs:documentation>Did not disclose</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Domestic Work">
+        <xs:annotation>
+          <xs:documentation>Domestic Work</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Escort Services">
+        <xs:annotation>
+          <xs:documentation>Escort Services</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Factories and Manufacturing">
+        <xs:annotation>
+          <xs:documentation>Factories and Manufacturing</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Forestry and Logging">
+        <xs:annotation>
+          <xs:documentation>Forestry and Logging</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Health and Beauty Services">
+        <xs:annotation>
+          <xs:documentation>Health and Beauty Services (e.g., massage parlors/nail salon, spa)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Health Care">
+        <xs:annotation>
+          <xs:documentation>Health Care ((including childcare and elder care)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Hotels and Hospitality">
+        <xs:annotation>
+          <xs:documentation>Hotels and Hospitality (i.e. casinos, hotels)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Illicit Activities">
+        <xs:annotation>
+          <xs:documentation>Illicit Activities</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Illicit Massage Health and Beauty">
+        <xs:annotation>
+          <xs:documentation>Illicit Massage Health and Beauty</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Landscaping">
+        <xs:annotation>
+          <xs:documentation>Landscaping</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Mining and Quarrying">
+        <xs:annotation>
+          <xs:documentation>Mining and Quarrying</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Other">
+        <xs:annotation>
+          <xs:documentation>Other</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Outdoor Solicitation">
+        <xs:annotation>
+          <xs:documentation>Outdoor Solicitation</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Peddling and Begging">
+        <xs:annotation>
+          <xs:documentation>Peddling and Begging</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Personal Sexual Servitude">
+        <xs:annotation>
+          <xs:documentation>Personal Sexual Servitude</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Pornography">
+        <xs:annotation>
+          <xs:documentation>Pornography</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Recreation and Sports">
+        <xs:annotation>
+          <xs:documentation>Recreation and Sports</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Religious Institution">
+        <xs:annotation>
+          <xs:documentation>Religious Institution</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Remote Interactive Sexual Acts">
+        <xs:annotation>
+          <xs:documentation>Remote Interactive Sexual Acts (including Online Ad/Webchat)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Restaurants and Food Service">
+        <xs:annotation>
+          <xs:documentation>Restaurants and Food Service (Bars and Cantinas)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Retail Sales">
+        <xs:annotation>
+          <xs:documentation>Retail Sales</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Strip Clubs">
+        <xs:annotation>
+          <xs:documentation>Strip Clubs</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Transportation">
+        <xs:annotation>
+          <xs:documentation>Transportation</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Traveling Sales Crew">
+        <xs:annotation>
+          <xs:documentation>Traveling Sales Crew</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Unknown">
+        <xs:annotation>
+          <xs:documentation>Unknown</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="ExploitationIndustryCodeType">
+    <xs:annotation>
+      <xs:documentation>A data type for an industry in which a victim of human trafficking can be exploited.</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="hs:ExploitationIndustryCodeSimpleType">
+        <xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
   <xs:complexType name="FindingType">
     <xs:annotation>
       <xs:documentation>A data type for the details of the authoritative decision of the court.</xs:documentation>
@@ -2190,6 +2362,7 @@
         <xs:sequence>
           <xs:element ref="hs:IdentifiedAsVictimStatus" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="hs:ProspectiveVictimStatus" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="hs:PolyvictimizationCategoryAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="hs:RecentPolyvictimizationIndicator" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="hs:TraffickingEvent" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="hs:VictimTraffickerRelationshipDescriptionText" minOccurs="0" maxOccurs="unbounded"/>
@@ -3006,6 +3179,133 @@
       </xs:extension>
     </xs:simpleContent>
   </xs:complexType>
+  <xs:simpleType name="LivingSituationCategoryCodeSimpleType">
+    <xs:annotation>
+      <xs:documentation>A data type for a kind of living situtation.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="Assisted Living (Temporary)">
+        <xs:annotation>
+          <xs:documentation>Assisted Living (Temporary)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Did Not Disclose">
+        <xs:annotation>
+          <xs:documentation>Did Not Disclose</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="DV/Crisis Shelter">
+        <xs:annotation>
+          <xs:documentation>DV/Crisis Shelter</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Foster Family Home (Non-Relative)">
+        <xs:annotation>
+          <xs:documentation>Foster Family Home (Non-Relative)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Foster Family Home (Relative)">
+        <xs:annotation>
+          <xs:documentation>Foster Family Home (Relative, Including Kinship Care)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Friends Home">
+        <xs:annotation>
+          <xs:documentation>Friends Home</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Group Home">
+        <xs:annotation>
+          <xs:documentation>Group Home</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Homeless Shelter">
+        <xs:annotation>
+          <xs:documentation>Homeless Shelter</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Human Trafficking Specific Shelter">
+        <xs:annotation>
+          <xs:documentation>Human Trafficking Specific Shelter</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Independent Living (Supervised)">
+        <xs:annotation>
+          <xs:documentation>Independent Living (Supervised)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Institution">
+        <xs:annotation>
+          <xs:documentation>Institution</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Juvenile Detention Facility/Jail/Prison">
+        <xs:annotation>
+          <xs:documentation>Juvenile Detention Facility/Jail/Prison</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Living In Own Home">
+        <xs:annotation>
+          <xs:documentation>Living In Own Home</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Other">
+        <xs:annotation>
+          <xs:documentation>Other</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Other Relative(s) Home">
+        <xs:annotation>
+          <xs:documentation>Other Relative(s) Home (With No Involvement Of The Foster Care System)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Out-Of-State/Tribal Service Area">
+        <xs:annotation>
+          <xs:documentation>Out-Of-State/Tribal Service Area</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Pre-Adoptive Home">
+        <xs:annotation>
+          <xs:documentation>Pre-Adoptive Home</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Runaway/Homeless">
+        <xs:annotation>
+          <xs:documentation>Runaway/Homeless</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Runaway Homeless Youth">
+        <xs:annotation>
+          <xs:documentation>Runaway Homeless Youth</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Trial Home Visit">
+        <xs:annotation>
+          <xs:documentation>Trial Home Visit</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Unknown">
+        <xs:annotation>
+          <xs:documentation>Unknown</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Youth Emergency Shelter">
+        <xs:annotation>
+          <xs:documentation>Youth Emergency Shelter</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="LivingSituationCategoryCodeType">
+    <xs:annotation>
+      <xs:documentation>A data type for a kind of living situtation.</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="hs:LivingSituationCategoryCodeSimpleType">
+        <xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
   <xs:complexType name="MedicalHealthDetailsType">
     <xs:annotation>
       <xs:documentation>A data type for details about a person's medical health.</xs:documentation>
@@ -3625,13 +3925,13 @@
           <xs:element ref="hs:RecentLifeChangesDescriptionText" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="hs:EmployerContactInformation" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="hs:AlienIdentification" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="hs:CurrentLivingSituationDescriptionText" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="hs:CurrentLivingSituationCategoryAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="hs:HobbiesInterestsDescriptionText" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="hs:HousingPermanencyCategoryCode" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="hs:PerceivedAgeMeasure" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="hs:PersonGenderIdentityAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="hs:PersonPhysicalConditionText" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="hs:RecentLivingSituationDescriptionText" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="hs:RecentLivingSituationCategoryAbstract" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -4291,6 +4591,68 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
+  <xs:simpleType name="PolyvictimizationCategoryCodeSimpleType">
+    <xs:annotation>
+      <xs:documentation>A data type for a kind of additional victimization</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="Assault">
+        <xs:annotation>
+          <xs:documentation>Assault</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Bullying">
+        <xs:annotation>
+          <xs:documentation>Bullying</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Child Maltreatment by an adult">
+        <xs:annotation>
+          <xs:documentation>Child Maltreatment by an adult</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Did not disclose">
+        <xs:annotation>
+          <xs:documentation>Did not disclose</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Opt Out">
+        <xs:annotation>
+          <xs:documentation>Opt Out</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Psychological or emotional abuse">
+        <xs:annotation>
+          <xs:documentation>Psychological or emotional abuse</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Sexual Victimization">
+        <xs:annotation>
+          <xs:documentation>Sexual Victimization</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Unknown">
+        <xs:annotation>
+          <xs:documentation>Unknown</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Witnessed and indirect victimization">
+        <xs:annotation>
+          <xs:documentation>Witnessed and indirect victimization</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="PolyvictimizationCategoryCodeType">
+    <xs:annotation>
+      <xs:documentation>A data type for a kind of additional victimization.</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="hs:PolyvictimizationCategoryCodeSimpleType">
+        <xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
   <xs:complexType name="PreScreeningType">
     <xs:annotation>
       <xs:documentation>A data type for</xs:documentation>
@@ -4772,6 +5134,279 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
+  <xs:simpleType name="ReportingOrganizationCategoryCodeSimpleType">
+    <xs:annotation>
+      <xs:documentation>A data type for a kind of an organization reporting information.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="Advocate">
+        <xs:annotation>
+          <xs:documentation>Advocate</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Community Action Organization">
+        <xs:annotation>
+          <xs:documentation>Community Action Organization</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Consultant">
+        <xs:annotation>
+          <xs:documentation>Consultant</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Educational Department">
+        <xs:annotation>
+          <xs:documentation>Educational Department</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Elementary and Secondary School">
+        <xs:annotation>
+          <xs:documentation>Elementary and Secondary School</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Environmental Organization">
+        <xs:annotation>
+          <xs:documentation>Environmental Organization</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Financial Institution">
+        <xs:annotation>
+          <xs:documentation>Financial Institution</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Health Department">
+        <xs:annotation>
+          <xs:documentation>Health Department</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Hospital">
+        <xs:annotation>
+          <xs:documentation>Hospital</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Indian Tribal Program">
+        <xs:annotation>
+          <xs:documentation>Indian Tribal Program</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Intermediary Organization">
+        <xs:annotation>
+          <xs:documentation>Intermediary Organization (Insurance, Etc.)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Junior College, College and University">
+        <xs:annotation>
+          <xs:documentation>Junior College, College and University</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Law Enforcement Agency">
+        <xs:annotation>
+          <xs:documentation>Law Enforcement Agency (Including Criminal Rehabilitation)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Library and Museum">
+        <xs:annotation>
+          <xs:documentation>Library and Museum</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Nursing Home OR Other Domiciliary Care Facility">
+        <xs:annotation>
+          <xs:documentation>Nursing Home OR Other Domiciliary Care Facility</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Other Educational Organization">
+        <xs:annotation>
+          <xs:documentation>Other Educational Organization</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Other Health Organization">
+        <xs:annotation>
+          <xs:documentation>Other Health Organization</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Other Social Services Organization">
+        <xs:annotation>
+          <xs:documentation>Other Social Services Organization</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Other Special Interest Organization">
+        <xs:annotation>
+          <xs:documentation>Other Special Interest Organization</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Planning and Administrative Organizations">
+        <xs:annotation>
+          <xs:documentation>Planning and Administrative Organizations</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Rehabilitation Organization">
+        <xs:annotation>
+          <xs:documentation>Rehabilitation Organization (Other Than Criminal)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Research Institution, Foundation and Laboratory">
+        <xs:annotation>
+          <xs:documentation>Research Institution, Foundation and Laboratory</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="School Board and School District">
+        <xs:annotation>
+          <xs:documentation>School Board and School District</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Shelter">
+        <xs:annotation>
+          <xs:documentation>Shelter</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Substance Abuse Treatment Center">
+        <xs:annotation>
+          <xs:documentation>Substance Abuse Treatment Center</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Supplier Organizations">
+        <xs:annotation>
+          <xs:documentation>Supplier Organizations (Service, Supplies, Material and Equipment)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Unknown">
+        <xs:annotation>
+          <xs:documentation>Unknown</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Vocational and Training School">
+        <xs:annotation>
+          <xs:documentation>Vocational and Training School</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Welfare Department">
+        <xs:annotation>
+          <xs:documentation>Welfare Department</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="ReportingOrganizationCategoryCodeType">
+    <xs:annotation>
+      <xs:documentation>A data type for a kind of an organization reporting information.</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="hs:ReportingOrganizationCategoryCodeSimpleType">
+        <xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:simpleType name="ReportingOrganizationClassCodeSimpleType">
+    <xs:annotation>
+      <xs:documentation>A data type for a class of an organization reporting information.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="City Government">
+        <xs:annotation>
+          <xs:documentation>City Government</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="County Government">
+        <xs:annotation>
+          <xs:documentation>County Government</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Federal Government">
+        <xs:annotation>
+          <xs:documentation>Federal Government</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Foreign Non-Profit Organization">
+        <xs:annotation>
+          <xs:documentation>Foreign Non-Profit Organization</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Foreign Profit Organization">
+        <xs:annotation>
+          <xs:documentation>Foreign Profit Organization</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="International">
+        <xs:annotation>
+          <xs:documentation>International (U.S. and Foreign)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Interstate Government Affiliated Organizations">
+        <xs:annotation>
+          <xs:documentation>Interstate Government Affiliated Organizations</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Non-Profit Private Non-Government Organizations">
+        <xs:annotation>
+          <xs:documentation>Non-Profit Private Non-Government Organizations</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Non-Profit Public Non-Government Organizations">
+        <xs:annotation>
+          <xs:documentation>Non-Profit Public Non-Government Organizations</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Other">
+        <xs:annotation>
+          <xs:documentation>Other (Towns, Villages, American Indian Tribes)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Private Profit (Large Business) Organizations">
+        <xs:annotation>
+          <xs:documentation>Private Profit (Large Business) Organizations</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Private Profit (Small Business) Organizations">
+        <xs:annotation>
+          <xs:documentation>Private Profit (Small Business) Organizations</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Special Unit of Government">
+        <xs:annotation>
+          <xs:documentation>Special Unit of Government</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Sponsored Organizations">
+        <xs:annotation>
+          <xs:documentation>Sponsored Organizations</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="State Government">
+        <xs:annotation>
+          <xs:documentation>State Government</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Unknown">
+        <xs:annotation>
+          <xs:documentation>Unknown</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="ReportingOrganizationClassCodeType">
+    <xs:annotation>
+      <xs:documentation>A data type for a class of an organization reporting information.</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="hs:ReportingOrganizationClassCodeSimpleType">
+        <xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="ReportingOrganizationType">
+    <xs:annotation>
+      <xs:documentation>A data type for an organization reporting information.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="nc:OrganizationType">
+        <xs:sequence>
+          <xs:element ref="hs:ReportingOrganizationCategoryAbstract" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="hs:ReportingOrganizationClassAbstract" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="hs:ReportingOrganizationAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
   <xs:simpleType name="RepresentationAppointmentCategoryCodeSimpleType">
     <xs:annotation>
       <xs:documentation>A data type for the type of appointment that is made</xs:documentation>
@@ -5114,6 +5749,78 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
+  <xs:simpleType name="ServiceCategoryCodeSimpleType">
+    <xs:annotation>
+      <xs:documentation>A data type for a kind of a service that will be provided as part of a case plan.  Categories include:  assessment, treatment, program, benefit, education, transportation, respite care.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="Basic Necessities">
+        <xs:annotation>
+          <xs:documentation>Basic Necessities</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Case Management Services">
+        <xs:annotation>
+          <xs:documentation>Case Management Services</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Educational Services">
+        <xs:annotation>
+          <xs:documentation>Educational Services</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Employment Services">
+        <xs:annotation>
+          <xs:documentation>Employment Services</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Housing Services">
+        <xs:annotation>
+          <xs:documentation>Housing Services</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Language Services">
+        <xs:annotation>
+          <xs:documentation>Language Services</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Legal Services">
+        <xs:annotation>
+          <xs:documentation>Legal Services</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Medical and Dental Services">
+        <xs:annotation>
+          <xs:documentation>Medical and Dental Services</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Mental Health Services">
+        <xs:annotation>
+          <xs:documentation>Mental Health Services</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Other Services">
+        <xs:annotation>
+          <xs:documentation>Other Services</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Safety Planning">
+        <xs:annotation>
+          <xs:documentation>Safety Planning</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="ServiceCategoryCodeType">
+    <xs:annotation>
+      <xs:documentation>A data type for a kind of a service that will be provided as part of a case plan.  Categories include:  assessment, treatment, program, benefit, education, transportation, respite care.</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="hs:ServiceCategoryCodeSimpleType">
+        <xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
   <xs:complexType name="ServicePlanGoalType">
     <xs:annotation>
       <xs:documentation>A data type for elements that describe a service plan goal.</xs:documentation>
@@ -5139,9 +5846,9 @@
           <xs:element ref="hs:ResponsibilityForServiceCostText" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="hs:ResponsibleEntityDescriptionText" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="hs:ServiceCostValue" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="hs:ServiceDescriptionText" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="hs:ServiceCategoryAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="hs:ReferredOutServiceReasonText" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="hs:UnprovidedServiceReasonText" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="hs:UnprovidedServiceReasonCategoryAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="hs:ServiceAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
       </xs:extension>
@@ -5561,6 +6268,273 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
+  <xs:simpleType name="ToolAdministratorCategoryCodeSimpleType">
+    <xs:annotation>
+      <xs:documentation>A data type for a kind of administrator of a tool.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="Child Advocacy Service Center">
+        <xs:annotation>
+          <xs:documentation>Child Advocacy Service Center</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Health Care Provider">
+        <xs:annotation>
+          <xs:documentation>Health Care Provider</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Law Enforcement">
+        <xs:annotation>
+          <xs:documentation>Law Enforcement</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="National Hotline Call Specialist">
+        <xs:annotation>
+          <xs:documentation>National Hotline Call Specialist</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Other">
+        <xs:annotation>
+          <xs:documentation>Other</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Self-Administered">
+        <xs:annotation>
+          <xs:documentation>Self-Administered</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Service Provider">
+        <xs:annotation>
+          <xs:documentation>Service Provider</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Sexual Assault Nurse Examiner">
+        <xs:annotation>
+          <xs:documentation>Sexual Assault Nurse Examiner</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Social Service Provider">
+        <xs:annotation>
+          <xs:documentation>Social Service Provider</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="State Hotline Call Specialist">
+        <xs:annotation>
+          <xs:documentation>State Hotline Call Specialist</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="ToolAdministratorCategoryCodeType">
+    <xs:annotation>
+      <xs:documentation>A data type for .</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="hs:ToolAdministratorCategoryCodeSimpleType">
+        <xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="ToolAdministratorType">
+    <xs:annotation>
+      <xs:documentation>A data type for an entity that administers a pre-screening tool.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="nc:EntityType">
+        <xs:sequence>
+          <xs:element ref="hs:ToolAdministratorCategoryAbstract" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="hs:ToolAdministratorAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:simpleType name="TraffickedVenueCodeSimpleType">
+    <xs:annotation>
+      <xs:documentation>A data type for a venue or kind of facility where a victim of human trafficking can be trafficked.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="Bar/Cantina/Restaurant">
+        <xs:annotation>
+          <xs:documentation>Bar/Cantina/Restaurant</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Beauty Salon/Spa">
+        <xs:annotation>
+          <xs:documentation>Beauty Salon/Spa</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Boat/Ocean/Lake/Fishery">
+        <xs:annotation>
+          <xs:documentation>Boat/Ocean/Lake/Fishery</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Bus Station/Truck Stop">
+        <xs:annotation>
+          <xs:documentation>Bus Station/Truck Stop</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Carnival">
+        <xs:annotation>
+          <xs:documentation>Carnival</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Casino">
+        <xs:annotation>
+          <xs:documentation>Casino</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Child Care Facility">
+        <xs:annotation>
+          <xs:documentation>Child Care Facility</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Construction Site">
+        <xs:annotation>
+          <xs:documentation>Construction Site</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Dance/Strip Clubs">
+        <xs:annotation>
+          <xs:documentation>Dance/Strip Clubs</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Did Not Disclose">
+        <xs:annotation>
+          <xs:documentation>Did Not Disclose</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Diplomatic Residence">
+        <xs:annotation>
+          <xs:documentation>Diplomatic Residence</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Educational Setting">
+        <xs:annotation>
+          <xs:documentation>Educational Setting</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Escort/Delivery Service">
+        <xs:annotation>
+          <xs:documentation>Escort/Delivery Service</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Factory">
+        <xs:annotation>
+          <xs:documentation>Factory</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Farm/Ranch">
+        <xs:annotation>
+          <xs:documentation>Farm/Ranch</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Foster Home">
+        <xs:annotation>
+          <xs:documentation>Foster Home</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Healthcare Facility">
+        <xs:annotation>
+          <xs:documentation>Healthcare Facility</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Hotel/Motel-Based">
+        <xs:annotation>
+          <xs:documentation>Hotel/Motel-Based</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Internet/Pornography/Webchat">
+        <xs:annotation>
+          <xs:documentation>Internet/Pornography/Webchat</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Juvenile Detention Facility/Jail/Prison">
+        <xs:annotation>
+          <xs:documentation>Juvenile Detention Facility/Jail/Prison</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Massage Parlor">
+        <xs:annotation>
+          <xs:documentation>Massage Parlor</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Mine/Quarry">
+        <xs:annotation>
+          <xs:documentation>Mine/Quarry</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Natural Disaster">
+        <xs:annotation>
+          <xs:documentation>Natural Disaster</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Non-Relative Home">
+        <xs:annotation>
+          <xs:documentation>Non-Relative Home</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Other">
+        <xs:annotation>
+          <xs:documentation>Other</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Relative Home">
+        <xs:annotation>
+          <xs:documentation>Relative Home</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Residential Brothel">
+        <xs:annotation>
+          <xs:documentation>Residential Brothel</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Residential Group Home">
+        <xs:annotation>
+          <xs:documentation>Residential Group Home</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Residential Placement And Congregate Care">
+        <xs:annotation>
+          <xs:documentation>Residential Placement And Congregate Care</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Retail Sales">
+        <xs:annotation>
+          <xs:documentation>Retail Sales</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Shelter">
+        <xs:annotation>
+          <xs:documentation>Shelter</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Street-Based">
+        <xs:annotation>
+          <xs:documentation>Street-Based (e.g., outdoor solicitation, travelling sales crews, forced peddling or begging ring)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Unknown">
+        <xs:annotation>
+          <xs:documentation>Unknown</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Webchat">
+        <xs:annotation>
+          <xs:documentation>Webchat</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="TraffickedVenueCodeType">
+    <xs:annotation>
+      <xs:documentation>A data type for a venue or kind of facility where a victim of human trafficking can be trafficked.</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="hs:TraffickedVenueCodeSimpleType">
+        <xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
   <xs:complexType name="TraffickingEventType">
     <xs:annotation>
       <xs:documentation>A data type for</xs:documentation>
@@ -5568,10 +6542,10 @@
     <xs:complexContent>
       <xs:extension base="nc:ActivityType">
         <xs:sequence>
-          <xs:element ref="hs:CurrentExploitationIndustryText" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="hs:CurrentTraffickedVenueText" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="hs:PastExploitationIndustryText" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="hs:PastTraffickedVenueText" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="hs:CurrentExploitationIndustryAbstract" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="hs:CurrentTraffickedVenueAbstract" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="hs:PastExploitationIndustryAbstract" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="hs:PastTraffickedVenueAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="hs:TraffickingEventAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
       </xs:extension>
@@ -7443,6 +8417,98 @@
       </xs:extension>
     </xs:simpleContent>
   </xs:complexType>
+  <xs:simpleType name="UnprovidedServiceReasonCategoryCodeSimpleType">
+    <xs:annotation>
+      <xs:documentation>A data type for a kind of reason a service was not provided, e.g organizational barriers.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="Absence of Legal Authority">
+        <xs:annotation>
+          <xs:documentation>Absence of Legal Authority</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Feeling of no support and isolation">
+        <xs:annotation>
+          <xs:documentation>Feeling of no support and isolation</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Ineffective coordination with federal agencies">
+        <xs:annotation>
+          <xs:documentation>Ineffective coordination with federal agencies</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Ineffective coordination with local agencies">
+        <xs:annotation>
+          <xs:documentation>Ineffective coordination with local agencies</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Lack of adequate funding">
+        <xs:annotation>
+          <xs:documentation>Lack of adequate funding</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Lack of adequate resources">
+        <xs:annotation>
+          <xs:documentation>Lack of adequate resources</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Lack of adequate training">
+        <xs:annotation>
+          <xs:documentation>Lack of adequate training</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Lack of formal rules and regulations">
+        <xs:annotation>
+          <xs:documentation>Lack of formal rules and regulations</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Lack of health insurance">
+        <xs:annotation>
+          <xs:documentation>Lack of health insurance</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Lack of in-house procedures">
+        <xs:annotation>
+          <xs:documentation>Lack of in-house procedures</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Lack of knowledge of free health care options">
+        <xs:annotation>
+          <xs:documentation>Lack of knowledge of free health care options</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Lack of knowledge of victims rights">
+        <xs:annotation>
+          <xs:documentation>Lack of knowledge of victims rights</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Language concerns">
+        <xs:annotation>
+          <xs:documentation>Language concerns</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Safety concerns">
+        <xs:annotation>
+          <xs:documentation>Safety concerns</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Victims legal status">
+        <xs:annotation>
+          <xs:documentation>Victims legal status</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="UnprovidedServiceReasonCategoryCodeType">
+    <xs:annotation>
+      <xs:documentation>A data type for a kind of reason a service was not provided, e.g organizational barriers.</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="hs:UnprovidedServiceReasonCategoryCodeSimpleType">
+        <xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
   <xs:complexType name="VictimPerpetratorAllegationAssociationType">
     <xs:annotation>
       <xs:documentation>A data type for a relationship among the victim, a perpetrator (subject), and an allegation (charge).</xs:documentation>
@@ -8368,17 +9434,47 @@
       <xs:documentation>A description of a person's criminal history, pending charges, and other relevant legal status information (for example, eligibility for protection under the Soldiers and Sailors Civil Relief Act).</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="CurrentExploitationIndustryText" type="nc:TextType" nillable="true">
+  <xs:element name="CurrentExploitationIndustryAbstract" abstract="true">
+    <xs:annotation>
+      <xs:documentation>A data concept for an industry in which a victim of human trafficking is currently being exploited.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="CurrentExploitationIndustryCode" type="hs:ExploitationIndustryCodeType" substitutionGroup="hs:CurrentExploitationIndustryAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>An industry in which a victim of human trafficking is currently being exploited.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="CurrentLivingSituationDescriptionText" type="nc:TextType" nillable="true">
+  <xs:element name="CurrentExploitationIndustryText" type="nc:TextType" substitutionGroup="hs:CurrentExploitationIndustryAbstract" nillable="true">
     <xs:annotation>
-      <xs:documentation>A description of a person's current living situtation.</xs:documentation>
+      <xs:documentation>An industry in which a victim of human trafficking is currently being exploited.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="CurrentTraffickedVenueText" type="nc:TextType" nillable="true">
+  <xs:element name="CurrentLivingSituationCategoryAbstract" abstract="true">
+    <xs:annotation>
+      <xs:documentation>A data concept for a kind of current living situtation.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="CurrentLivingSituationCategoryCode" type="hs:LivingSituationCategoryCodeType" substitutionGroup="hs:CurrentLivingSituationCategoryAbstract" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A data concept for a kind of current living situtation.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="CurrentLivingSituationCategoryText" type="nc:TextType" substitutionGroup="hs:CurrentLivingSituationCategoryAbstract" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A kind of current living situtation.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="CurrentTraffickedVenueAbstract" abstract="true">
+    <xs:annotation>
+      <xs:documentation>A data concept for a venue or kind of facility where a victim of human trafficking is currently being trafficked.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="CurrentTraffickedVenueCode" type="hs:TraffickedVenueCodeType" substitutionGroup="hs:CurrentTraffickedVenueAbstract" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A venue or kind of facility where a victim of human trafficking is currently being trafficked.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="CurrentTraffickedVenueText" type="nc:TextType" substitutionGroup="hs:CurrentTraffickedVenueAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A venue or kind of facility where a victim of human trafficking is currently being trafficked.</xs:documentation>
     </xs:annotation>
@@ -9868,12 +10964,32 @@
       <xs:documentation>True if the juvenile's parent is affiliated with a gang; false otherwise.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="PastExploitationIndustryText" type="nc:TextType" nillable="true">
+  <xs:element name="PastExploitationIndustryAbstract" abstract="true">
+    <xs:annotation>
+      <xs:documentation>A data concept for an industry in which a victim of human trafficking was being exploited in the past.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="PastExploitationIndustryCode" type="hs:ExploitationIndustryCodeType" substitutionGroup="hs:PastExploitationIndustryAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>An industry in which a victim of human trafficking was being exploited in the past.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="PastTraffickedVenueText" type="nc:TextType" nillable="true">
+  <xs:element name="PastExploitationIndustryText" type="nc:TextType" substitutionGroup="hs:PastExploitationIndustryAbstract" nillable="true">
+    <xs:annotation>
+      <xs:documentation>An industry in which a victim of human trafficking was being exploited in the past.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="PastTraffickedVenueAbstract" abstract="true">
+    <xs:annotation>
+      <xs:documentation>A data concept for a venue or kind of facility where a victim of human trafficking was trafficked in the past.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="PastTraffickedVenueCode" type="hs:TraffickedVenueCodeType" substitutionGroup="hs:PastTraffickedVenueAbstract" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A venue or kind of facility where a victim of human trafficking was trafficked in the past.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="PastTraffickedVenueText" type="nc:TextType" substitutionGroup="hs:PastTraffickedVenueAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A venue or kind of facility where a victim of human trafficking was trafficked in the past.</xs:documentation>
     </xs:annotation>
@@ -10163,6 +11279,21 @@
       <xs:documentation>A description of the child's placement (for example, with parents, with kin, in foster case).</xs:documentation>
     </xs:annotation>
   </xs:element>
+  <xs:element name="PolyvictimizationCategoryAbstract" abstract="true">
+    <xs:annotation>
+      <xs:documentation>A data concept for a kind of additional victimization.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="PolyvictimizationCategoryCode" type="hs:PolyvictimizationCategoryCodeType" substitutionGroup="hs:PolyvictimizationCategoryAbstract" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A kind of additional victimization.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="PolyvictimizationCategoryText" type="nc:TextType" substitutionGroup="hs:PolyvictimizationCategoryAbstract" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A kind of additional victimization.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
   <xs:element name="PreAdjudicationSupervision" type="nc:SupervisionType" nillable="true">
     <xs:annotation>
       <xs:documentation>A set of details about pre-adjudication information for an individual.</xs:documentation>
@@ -10178,9 +11309,9 @@
       <xs:documentation>An augmentation point for PreScreeningType.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="PreScreeningToolAdministrator" type="nc:PersonType" nillable="true">
+  <xs:element name="PreScreeningToolAdministrator" type="hs:ToolAdministratorType" nillable="true">
     <xs:annotation>
-      <xs:documentation>A person who administers a pre-screening tool.</xs:documentation>
+      <xs:documentation>An entity that administers a pre-screening tool.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="PreScreeningToolText" type="nc:TextType" nillable="true">
@@ -10483,9 +11614,19 @@
       <xs:documentation>A description of recent major life changes, generally in the prior year.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="RecentLivingSituationDescriptionText" type="nc:TextType" nillable="true">
+  <xs:element name="RecentLivingSituationCategoryAbstract" abstract="true">
     <xs:annotation>
-      <xs:documentation>A description of a living situation experienced in the last year.</xs:documentation>
+      <xs:documentation>A data concept for a kind of living situation experienced in the last year.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="RecentLivingSituationCategoryCode" type="hs:LivingSituationCategoryCodeType" substitutionGroup="hs:RecentLivingSituationCategoryAbstract" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A kind of living situation experienced in the last year.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="RecentLivingSituationCategoryText" type="nc:TextType" substitutionGroup="hs:RecentLivingSituationCategoryAbstract" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A kind of living situation experienced in the last year.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="RecentPolyvictimizationIndicator" type="niem-xs:boolean" nillable="true">
@@ -10541,6 +11682,46 @@
   <xs:element name="ReportingEntity" type="nc:EntityType" nillable="true">
     <xs:annotation>
       <xs:documentation>A person or organization reporting medical information about a person.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="ReportingOrganization" type="hs:ReportingOrganizationType" substitutionGroup="nc:EntityRepresentation" nillable="true">
+    <xs:annotation>
+      <xs:documentation>An organization reporting information.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="ReportingOrganizationAugmentationPoint" abstract="true">
+    <xs:annotation>
+      <xs:documentation>An augmentation point for ReportingOrganizationType.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="ReportingOrganizationCategoryAbstract" abstract="true">
+    <xs:annotation>
+      <xs:documentation>A data concept for a kind of an organization reporting information.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="ReportingOrganizationCategoryCode" type="hs:ReportingOrganizationCategoryCodeType" substitutionGroup="hs:ReportingOrganizationCategoryAbstract" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A kind of an organization reporting information.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="ReportingOrganizationCategoryText" type="nc:TextType" substitutionGroup="hs:ReportingOrganizationCategoryAbstract" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A kind of an organization reporting information.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="ReportingOrganizationClassAbstract" abstract="true">
+    <xs:annotation>
+      <xs:documentation>A data concept for a class of an organization reporting information.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="ReportingOrganizationClassCode" type="hs:ReportingOrganizationClassCodeType" substitutionGroup="hs:ReportingOrganizationClassAbstract" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A class of an organization reporting information.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="ReportingOrganizationClassText" type="nc:TextType" substitutionGroup="hs:ReportingOrganizationClassAbstract" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A class of an organization reporting information.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="RepresentationAppointmentCategoryAbstract" abstract="true">
@@ -10813,14 +11994,24 @@
       <xs:documentation>An augmentation point for ServiceType.</xs:documentation>
     </xs:annotation>
   </xs:element>
+  <xs:element name="ServiceCategoryAbstract" abstract="true">
+    <xs:annotation>
+      <xs:documentation>A data concept for a kind of a service that will be provided as part of a case plan.  Categories include:  assessment, treatment, program, benefit, education, transportation, respite care.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="ServiceCategoryCode" type="hs:ServiceCategoryCodeType" substitutionGroup="hs:ServiceCategoryAbstract" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A kind of a service that will be provided as part of a case plan.  Categories include:  assessment, treatment, program, benefit, education, transportation, respite care.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="ServiceCategoryText" type="nc:TextType" substitutionGroup="hs:ServiceCategoryAbstract" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A kind of a service that will be provided as part of a case plan.  Categories include:  assessment, treatment, program, benefit, education, transportation, respite care.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
   <xs:element name="ServiceCostValue" type="nc:NumericType" nillable="true">
     <xs:annotation>
       <xs:documentation>A cost or estimated cost of the service.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="ServiceDescriptionText" type="nc:TextType" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A description of the service that will be provided as part of a case plan.  Categories include:  assessment, treatment, program, benefit, education, transportation, respite care.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="ServiceEvent" type="nc:ActivityType" nillable="true">
@@ -11168,6 +12359,26 @@
       <xs:documentation>True if the type of Adoption Assistance is Title IV E; false otherwise.</xs:documentation>
     </xs:annotation>
   </xs:element>
+  <xs:element name="ToolAdministratorAugmentationPoint" abstract="true">
+    <xs:annotation>
+      <xs:documentation>An augmentation point for type hs:ToolAdministratorType</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="ToolAdministratorCategoryAbstract" abstract="true">
+    <xs:annotation>
+      <xs:documentation>A data concept for a kind of administrator of a tool.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="ToolAdministratorCategoryCode" type="hs:ToolAdministratorCategoryCodeType" substitutionGroup="hs:ToolAdministratorCategoryAbstract" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A kind of administrator of a tool.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="ToolAdministratorCategoryText" type="nc:TextType" substitutionGroup="hs:ToolAdministratorCategoryAbstract" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A kind of administrator of a tool.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
   <xs:element name="TraffickingEvent" type="hs:TraffickingEventType" nillable="true">
     <xs:annotation>
       <xs:documentation>A data concept for details of a human trafficking event.</xs:documentation>
@@ -11263,9 +12474,19 @@
       <xs:documentation>An association between a victim and a service which not provided to them by the reporting organization.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="UnprovidedServiceReasonText" type="nc:TextType" nillable="true">
+  <xs:element name="UnprovidedServiceReasonCategoryAbstract" abstract="true">
     <xs:annotation>
-      <xs:documentation>A reason a service was not provided, e.g organizational barriers.</xs:documentation>
+      <xs:documentation>A data concept for a kind of reason a service was not provided, e.g organizational barriers.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="UnprovidedServiceReasonCategoryCode" type="hs:UnprovidedServiceReasonCategoryCodeType" substitutionGroup="hs:UnprovidedServiceReasonCategoryAbstract" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A kind of reason a service was not provided, e.g organizational barriers.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="UnprovidedServiceReasonCategoryText" type="nc:TextType" substitutionGroup="hs:UnprovidedServiceReasonCategoryAbstract" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A kind of reason a service was not provided, e.g organizational barriers.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="VAMatchRequestIndicator" type="niem-xs:boolean" nillable="true">
