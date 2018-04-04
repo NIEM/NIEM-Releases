@@ -1,13 +1,6 @@
 
 # NIEM 4.1
 
-- [Minor release](#minor-release)
-- [Content changes](#content-changes)
-  - [Domain changes](#domain-changes)
-  - [Core Supplement 4.0.1](#core-supplement-401)
-- [SSGT](#ssgt)
-- [Feedback](#feedback)
-
 This is the NIEM 4.1 beta 1 pre-release.
 
 NIEM 4.1 will be a minor release and is scheduled to be published Summer 2018.
@@ -59,7 +52,7 @@ The following core-related issues from the [issue tracker](https://github.com/NI
 
 ## SSGT
 
-The SSGT is available for testing purposes to search, explore, and build XML Schema subsets with the 4.1 beta1 release.  It is available [here](http://niemstaging.ittl.gtri.org/niemtools/ssgt/index.iepd).
+The SSGT is available for testing purposes to search, explore, and build XML Schema subsets with the 4.1 beta1 release.  It is available [here](https://tools.niem.gov/niemtools-4.1beta1/ssgt/index.iepd).
 
 Please note that this is the development version of the tool and thus may run more slowly than the regular production version.
 
