@@ -30,6 +30,7 @@ The following domain-related issues from the [issue tracker](https://github.com/
 - Remove references to "cyfs" from Human Services definitions ([#4](https://github.com/NIEM/NIEM-Releases/issues/4))
 - Add keyword "GVWR" to nc:VehicleMaximumLoadWeightMeasure ([#10](https://github.com/NIEM/NIEM-Releases/issues/10))
 - Fix type of element mo:MGRSUTM100000MeterCoordinateValue ([#11](https://github.com/NIEM/NIEM-Releases/issues/11))
+- Fix special characters in definitions ([#14](https://github.com/NIEM/NIEM-Releases/issues/14))
 
 ### Core Supplement 4.0.1
 
