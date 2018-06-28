@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="US-ASCII"?>
-<xs:schema targetNamespace="http://release.niem.gov/niem/domains/surfaceTransportation/4.0/" version="1" xsi:schemaLocation="http://release.niem.gov/niem/appinfo/4.0/ ../../../utility/appinfo/4.0/appinfo.xsd http://release.niem.gov/niem/conformanceTargets/3.0/ ../../../utility/conformanceTargets/3.0/conformanceTargets.xsd" ct:conformanceTargets="http://reference.niem.gov/niem/specification/naming-and-design-rules/4.0/#ReferenceSchemaDocument" xmlns:structures="http://release.niem.gov/niem/structures/4.0/" xmlns:st="http://release.niem.gov/niem/domains/surfaceTransportation/4.0/" xmlns:appinfo="http://release.niem.gov/niem/appinfo/4.0/" xmlns:ct="http://release.niem.gov/niem/conformanceTargets/3.0/" xmlns:nc="http://release.niem.gov/niem/niem-core/4.0/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mmucc="http://release.niem.gov/niem/codes/mmucc/4.0/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:niem-xs="http://release.niem.gov/niem/proxy/xsd/4.0/">
+<xs:schema targetNamespace="http://release.niem.gov/niem/domains/surfaceTransportation/4.1/" version="1" xsi:schemaLocation="http://release.niem.gov/niem/appinfo/4.0/ ../../../utility/appinfo/4.0/appinfo.xsd http://release.niem.gov/niem/conformanceTargets/3.0/ ../../../utility/conformanceTargets/3.0/conformanceTargets.xsd" ct:conformanceTargets="http://reference.niem.gov/niem/specification/naming-and-design-rules/4.0/#ReferenceSchemaDocument" xmlns:structures="http://release.niem.gov/niem/structures/4.0/" xmlns:appinfo="http://release.niem.gov/niem/appinfo/4.0/" xmlns:ct="http://release.niem.gov/niem/conformanceTargets/3.0/" xmlns:nc="http://release.niem.gov/niem/niem-core/4.0/" xmlns:mmucc="http://release.niem.gov/niem/codes/mmucc/4.1/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:st="http://release.niem.gov/niem/domains/surfaceTransportation/4.1/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:niem-xs="http://release.niem.gov/niem/proxy/xsd/4.0/">
   <xs:annotation>
     <xs:documentation>Surface Transportation</xs:documentation>
     <xs:appinfo>
@@ -8,8 +8,8 @@
   </xs:annotation>
   <xs:import schemaLocation="../../../niem-core/4.0/niem-core.xsd" namespace="http://release.niem.gov/niem/niem-core/4.0/"/>
   <xs:import schemaLocation="../../../utility/structures/4.0/structures.xsd" namespace="http://release.niem.gov/niem/structures/4.0/"/>
+  <xs:import schemaLocation="../../../codes/mmucc/4.1/mmucc.xsd" namespace="http://release.niem.gov/niem/codes/mmucc/4.1/"/>
   <xs:import schemaLocation="../../../proxy/xsd/4.0/xs.xsd" namespace="http://release.niem.gov/niem/proxy/xsd/4.0/"/>
-  <xs:import schemaLocation="../../../codes/mmucc/4.0/mmucc.xsd" namespace="http://release.niem.gov/niem/codes/mmucc/4.0/"/>
   <xs:simpleType name="CategoryOfGovernmentOwnershipCodeSimpleType">
     <xs:annotation>
       <xs:documentation>A data type describing governmental ownership</xs:documentation>
@@ -1280,17 +1280,17 @@
       </xs:enumeration>
       <xs:enumeration value="3">
         <xs:annotation>
-          <xs:documentation>JPCP &#x2013; Jointed Plain Concrete Pavement</xs:documentation>
+          <xs:documentation>JPCP - Jointed Plain Concrete Pavement</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
       <xs:enumeration value="4">
         <xs:annotation>
-          <xs:documentation>JRCP &#x2013; Jointed Reinforced Concrete Pavement</xs:documentation>
+          <xs:documentation>JRCP - Jointed Reinforced Concrete Pavement</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
       <xs:enumeration value="5">
         <xs:annotation>
-          <xs:documentation>CRCP &#x2013; Continuously Reinforced Concrete Pavement</xs:documentation>
+          <xs:documentation>CRCP - Continuously Reinforced Concrete Pavement</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
       <xs:enumeration value="6">
@@ -1332,7 +1332,7 @@
     <xs:restriction base="xs:token">
       <xs:enumeration value="1">
         <xs:annotation>
-          <xs:documentation>Full access control &#x2013; Preference given to through traffic movements by providing interchanges with selected public roads, and by prohibiting crossing at-grade and direct driveway connections (i.e., limited access to the facility).</xs:documentation>
+          <xs:documentation>Full access control - Preference given to through traffic movements by providing interchanges with selected public roads, and by prohibiting crossing at-grade and direct driveway connections (i.e., limited access to the facility).</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
       <xs:enumeration value="2">
