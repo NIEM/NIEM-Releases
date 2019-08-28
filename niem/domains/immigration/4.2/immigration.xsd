@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="US-ASCII"?>
-<xs:schema targetNamespace="http://release.niem.gov/niem/domains/immigration/4.2/" version="alpha1" xsi:schemaLocation="http://release.niem.gov/niem/appinfo/4.0/ ../../../utility/appinfo/4.0/appinfo.xsd http://release.niem.gov/niem/conformanceTargets/3.0/ ../../../utility/conformanceTargets/3.0/conformanceTargets.xsd" ct:conformanceTargets="http://reference.niem.gov/niem/specification/naming-and-design-rules/4.0/#ReferenceSchemaDocument" xmlns:structures="http://release.niem.gov/niem/structures/4.0/" xmlns:appinfo="http://release.niem.gov/niem/appinfo/4.0/" xmlns:ct="http://release.niem.gov/niem/conformanceTargets/3.0/" xmlns:nc="http://release.niem.gov/niem/niem-core/4.0/" xmlns:hs="http://release.niem.gov/niem/domains/humanServices/4.2/" xmlns:scr="http://release.niem.gov/niem/domains/screening/4.2/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:iso_3166="http://release.niem.gov/niem/codes/iso_3166-1/4.0/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:niem-xs="http://release.niem.gov/niem/proxy/xsd/4.0/" xmlns:j="http://release.niem.gov/niem/domains/jxdm/6.2/" xmlns:im="http://release.niem.gov/niem/domains/immigration/4.2/">
+<xs:schema targetNamespace="http://release.niem.gov/niem/domains/immigration/4.2/" version="beta1" xsi:schemaLocation="http://release.niem.gov/niem/appinfo/4.0/ ../../../utility/appinfo/4.0/appinfo.xsd http://release.niem.gov/niem/conformanceTargets/3.0/ ../../../utility/conformanceTargets/3.0/conformanceTargets.xsd" ct:conformanceTargets="http://reference.niem.gov/niem/specification/naming-and-design-rules/4.0/#ReferenceSchemaDocument" xmlns:structures="http://release.niem.gov/niem/structures/4.0/" xmlns:appinfo="http://release.niem.gov/niem/appinfo/4.0/" xmlns:ct="http://release.niem.gov/niem/conformanceTargets/3.0/" xmlns:nc="http://release.niem.gov/niem/niem-core/4.0/" xmlns:hs="http://release.niem.gov/niem/domains/humanServices/4.2/" xmlns:scr="http://release.niem.gov/niem/domains/screening/4.2/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:iso_3166="http://release.niem.gov/niem/codes/iso_3166-1/4.0/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:niem-xs="http://release.niem.gov/niem/proxy/xsd/4.0/" xmlns:j="http://release.niem.gov/niem/domains/jxdm/6.2/" xmlns:im="http://release.niem.gov/niem/domains/immigration/4.2/">
   <xs:annotation>
     <xs:documentation>Immigration</xs:documentation>
     <xs:appinfo>
@@ -8889,12 +8889,12 @@
   </xs:element>
   <xs:element name="BookInOfficer" type="im:ICEEmployeeType" nillable="true">
     <xs:annotation>
-      <xs:documentation>A date on which the alien was booked in by Department of Homeland Security (DHS) Immigration and Customs Enforcement (ICE) Employee.</xs:documentation>
+      <xs:documentation>A Department of Homeland Security (DHS) Immigration and Customs Enforcement (ICE) Employee who books in an alien.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="BookOutOfficer" type="im:ICEEmployeeType" nillable="true">
     <xs:annotation>
-      <xs:documentation>A date on which the alien was booked out by Department of Homeland Security (DHS) Immigration and Customs Enforcement (ICE) Employee.</xs:documentation>
+      <xs:documentation>A Department of Homeland Security (DHS) Immigration and Customs Enforcement (ICE) Employee who books out an alien.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="CampusEmploymentFundsAmount" type="nc:AmountType" nillable="true">
@@ -10459,7 +10459,7 @@
   </xs:element>
   <xs:element name="SearchOfficer" type="im:ICEEmployeeType" nillable="true">
     <xs:annotation>
-      <xs:documentation>A date on which an alien was searched by Department of Homeland Security (DHS) Immigration and Customs Enforcement (ICE) Employee during booking.</xs:documentation>
+      <xs:documentation>A Department of Homeland Security (DHS) Immigration and Customs Enforcement (ICE) Employee who searches an alien during booking.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="SentenceTimeNumeric" type="nc:NumericType" nillable="true">
