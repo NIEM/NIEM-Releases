@@ -11,7 +11,7 @@ The final NIEM 4.2 release is expected to be published October 2019.
 
 ## Feedback
 
-Please submit feedback by Friday, September 13, 2019.
+Please submit feedback by Wednesday, September 18, 2019.
 
 Feedback may be submitted by either creating a [new issue](https://github.com/NIEM/NIEM-Releases/issues) or by emailing <niem-comments@lists.gatech.edu>.
 
