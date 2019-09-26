@@ -1,19 +1,11 @@
 
-# NIEM 4.2-beta1
+# NIEM 4.2
 
-This is the beta 1 draft of the NIEM 4.2 minor release, available for public review and comment.
+This is the NIEM 4.2 minor release.
 
-As a minor release, domains and non-Core code tables may be updated as needed.  Core, all code tables and other namespaces used by Core, and the NIEM architecture will remain locked until the next major release, NIEM 5.0.
+As a minor release, domains and domain code tables may be updated as needed.  Core, all Core code tables, and the NIEM architecture will remain locked until the next major release, NIEM 5.0.
 
-NIEM 4.2 conforms to the `ReferenceSchemaDocument` (REF) target of the NIEM [Naming and Design Rules (NDR)](https://reference.niem.gov/niem/specification/naming-and-design-rules/4.0/niem-ndr-4.0.html) Specification, version 4.0.
-
-The final NIEM 4.2 release is expected to be published October 2019.
-
-## Feedback
-
-Please submit feedback by Wednesday, September 18, 2019.
-
-Feedback may be submitted by either creating a [new issue](https://github.com/NIEM/NIEM-Releases/issues) or by emailing <niem-comments@lists.gatech.edu>.
+NIEM 4.2 conforms to the [ReferenceSchemaDocument (REF)](https://reference.niem.gov/niem/specification/naming-and-design-rules/4.0/niem-ndr-4.0.html#section_4.1.1) target of the NIEM [Naming and Design Rules (NDR)](https://reference.niem.gov/niem/specification/naming-and-design-rules/4.0/niem-ndr-4.0.html) Specification, version 4.0.
 
 ## Key changes
 
@@ -31,11 +23,10 @@ Content changes have been provided by the following domains:
   - Updated FBI NDEx codes [(#39)](https://github.com/NIEM/NIEM-Releases/issues/39)
   - Updated FBI UCR codes [(#59)](https://github.com/NIEM/NIEM-Releases/issues/59)
   - Updated FBI NCIC codes [(#63)](https://github.com/NIEM/NIEM-Releases/issues/63)
-  - Added FBI NCIC codes for NICS IEPD support [(#64)](https://github.com/NIEM/NIEM-Releases/issues/64)
   - Removed FBI NIBRS namespace [(#60)](https://github.com/NIEM/NIEM-Releases/issues/60)
   - Removed FBI CJIS namespace [(#68)](https://github.com/NIEM/NIEM-Releases/issues/68)
 
-In addition to those listed above, most domains have been updated because of cross-domain dependencies.
+In addition to the changes listed above, most domains have been updated because of cross-domain dependencies.
 
 ### Core Supplement 4.0.2
 
