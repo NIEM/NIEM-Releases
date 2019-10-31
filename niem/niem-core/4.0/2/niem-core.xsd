@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="US-ASCII"?>
+<xs:schema targetNamespace="http://publication.niem.gov/niem/niem-core/4.0/2/" version="1" xsi:schemaLocation="http://release.niem.gov/niem/appinfo/4.0/ ../../../utility/appinfo/4.0/appinfo.xsd http://release.niem.gov/niem/conformanceTargets/3.0/ ../../../utility/conformanceTargets/3.0/conformanceTargets.xsd" ct:conformanceTargets="http://reference.niem.gov/niem/specification/naming-and-design-rules/4.0/#ReferenceSchemaDocument" xmlns:iso_4217-4.0.2="http://publication.niem.gov/niem/codes/iso_4217/4.0/2/" xmlns:commodity-4.0.2="http://publication.niem.gov/niem/codes/census_commodity/4.0/2/" xmlns:structures="http://release.niem.gov/niem/structures/4.0/" xmlns:appinfo="http://release.niem.gov/niem/appinfo/4.0/" xmlns:nc="http://release.niem.gov/niem/niem-core/4.0/" xmlns:dea-4.0.2="http://publication.niem.gov/niem/codes/dea_ctlsub/4.0/2/" xmlns:ct="http://release.niem.gov/niem/conformanceTargets/3.0/" xmlns:occs-4.0.2="http://publication.niem.gov/niem/codes/occs_facility/4.0/2/" xmlns:nc-4.0.2="http://publication.niem.gov/niem/niem-core/4.0/2/" xmlns:fips-4.0.2="http://publication.niem.gov/niem/codes/fips/4.0/2/" xmlns:genc="http://release.niem.gov/niem/codes/genc/4.2/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:hl7-4.0.2="http://publication.niem.gov/niem/codes/hl7/4.0/2/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:dol-4.0.2="http://publication.niem.gov/niem/codes/dol_soc/4.0/2/" xmlns:iso_639-3-4.0.2="http://publication.niem.gov/niem/codes/iso_639-3/4.0/2/" xmlns:hazmat-4.0.2="http://publication.niem.gov/niem/codes/dot_hazmat/4.0/2/">
+  <xs:annotation>
+    <xs:documentation>NIEM Core Supplement 4.0.2</xs:documentation>
+    <xs:appinfo>
+      <appinfo:LocalTerm term="GENC" literal="Geopolitical Entities, Names, and Codes"/>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:import schemaLocation="../../../codes/iso_639-3/4.0/2/iso_639-3.xsd" namespace="http://publication.niem.gov/niem/codes/iso_639-3/4.0/2/"/>
+  <xs:import schemaLocation="../niem-core.xsd" namespace="http://release.niem.gov/niem/niem-core/4.0/"/>
+  <xs:import schemaLocation="../../../codes/occs_facility/4.0/2/occs_facility.xsd" namespace="http://publication.niem.gov/niem/codes/occs_facility/4.0/2/"/>
+  <xs:import schemaLocation="../../../codes/dol_soc/4.0/2/dol_soc.xsd" namespace="http://publication.niem.gov/niem/codes/dol_soc/4.0/2/"/>
+  <xs:import schemaLocation="../../../codes/hl7/4.0/2/hl7.xsd" namespace="http://publication.niem.gov/niem/codes/hl7/4.0/2/"/>
+  <xs:import schemaLocation="../../../codes/fips/4.0/2/fips.xsd" namespace="http://publication.niem.gov/niem/codes/fips/4.0/2/"/>
+  <xs:import schemaLocation="../../../codes/census_commodity/4.0/2/census_commodity.xsd" namespace="http://publication.niem.gov/niem/codes/census_commodity/4.0/2/"/>
+  <xs:import schemaLocation="../../../utility/structures/4.0/structures.xsd" namespace="http://release.niem.gov/niem/structures/4.0/"/>
+  <xs:import schemaLocation="../../../codes/genc/4.2/genc.xsd" namespace="http://release.niem.gov/niem/codes/genc/4.2/"/>
+  <xs:import schemaLocation="../../../codes/dea_ctlsub/4.0/2/dea.xsd" namespace="http://publication.niem.gov/niem/codes/dea_ctlsub/4.0/2/"/>
+  <xs:import schemaLocation="../../../codes/dot_hazmat/4.0/2/dot_hazmat.xsd" namespace="http://publication.niem.gov/niem/codes/dot_hazmat/4.0/2/"/>
+  <xs:import schemaLocation="../../../codes/iso_4217/4.0/2/iso_4217.xsd" namespace="http://publication.niem.gov/niem/codes/iso_4217/4.0/2/"/>
+  <xs:element name="CommodityCategoryCode" type="commodity-4.0.2:CommodityCodeType" substitutionGroup="nc:ItemCategoryAbstract" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A kind of commodity item.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="ConveyanceCategoryCode" type="commodity-4.0.2:ConveyanceCategoryCodeType" substitutionGroup="nc:ItemCategoryAbstract" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A kind of conveyance.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="CurrencyCode" type="iso_4217-4.0.2:CurrencyCodeType" substitutionGroup="nc:CurrencyAbstract" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A unit of money or exchange.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="DocumentLanguageCode" type="iso_639-3-4.0.2:LanguageCodeType" substitutionGroup="nc:DocumentLanguageAbstract" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A language of the content of the resource.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="DrugCode" type="dea-4.0.2:DrugCodeType" substitutionGroup="nc:SubstanceAbstract" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A drug.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="ElectronicEquipmentCategoryCode" type="commodity-4.0.2:ElectronicEquipmentCategoryCodeType" substitutionGroup="nc:ItemCategoryAbstract" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A kind of electronic equipment.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="ElectronicInstrumentCategoryCode" type="commodity-4.0.2:ElectronicInstrumentCategoryCodeType" substitutionGroup="nc:ItemCategoryAbstract" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A kind of electronic instrument.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="EmployeeOccupationCategoryCode" type="dol-4.0.2:OccupationMinorCodeType" substitutionGroup="nc:EmployeeOccupationAbstract" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A category of job of an employee.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="EmployeeOccupationCode" type="dol-4.0.2:OccupationDetailCodeType" substitutionGroup="nc:EmployeeOccupationAbstract" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A job of an employee.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="EmployeeOccupationGeneralCategoryCode" type="dol-4.0.2:OccupationMajorCodeType" substitutionGroup="nc:EmployeeOccupationAbstract" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A general category of job of an employee.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="EmployeeOccupationSubCategoryCode" type="dol-4.0.2:OccupationBroadCodeType" substitutionGroup="nc:EmployeeOccupationAbstract" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A subcategory of job of an employee.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="FacilityCategoryCode" type="occs-4.0.2:FacilityUsageCodeType" substitutionGroup="nc:FacilityCategoryAbstract" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A kind of facility.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="FacilityUsageCode" type="occs-4.0.2:FacilityUsageCodeType" substitutionGroup="nc:FacilityUsageAbstract" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A description of the functional usage of a facility.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="FacilityUsageLevel1Code" type="occs-4.0.2:FacilityUsageLevel1CodeType" substitutionGroup="nc:FacilityUsageAbstract" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A high-level usage category for a facility.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="FacilityUsageLevel2Code" type="occs-4.0.2:FacilityUsageLevel2CodeType" substitutionGroup="nc:FacilityUsageAbstract" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A mid-level usage category for a facility.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="FacilityUsageLevel3Code" type="occs-4.0.2:FacilityUsageLevel3CodeType" substitutionGroup="nc:FacilityUsageAbstract" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A usage category for a facility.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="FacilityUsageLevel4Code" type="occs-4.0.2:FacilityUsageLevel4CodeType" substitutionGroup="nc:FacilityUsageAbstract" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A detailed usage category for a facility.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="HazardousMaterialCode" type="hazmat-4.0.2:HazmatCodeType" substitutionGroup="nc:HazmatAbstract" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A hazardous material.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="LanguageCode" type="iso_639-3-4.0.2:LanguageCodeType" substitutionGroup="nc:LanguageAbstract" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A system of words or symbols used for communication.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="LocationCountryGENCCode" type="genc:CountryAlpha3CodeType" substitutionGroup="nc:CountryRepresentation" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A country, territory, dependency, or other such geopolitical subdivision of a location.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="LocationCountyCode" type="fips-4.0.2:USCountyNumericCodeType" substitutionGroup="nc:LocationCountyAbstract" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A county, parish, vicinage, or other such geopolitical subdivision of a state.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="LocationStateFIPSCode" type="fips-4.0.2:USStateNumericCodeType" substitutionGroup="nc:StateRepresentation" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A state, commonwealth, province, or other such geopolitical subdivision of a country.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="LocationStateGENCCode" type="genc:CountrySubdivisionCodeType" substitutionGroup="nc:StateRepresentation" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A state, commonwealth, province, or other such geopolitical subdivision of a country.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="MachineryCategoryCode" type="commodity-4.0.2:MachineryCategoryCodeType" substitutionGroup="nc:ItemCategoryAbstract" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A kind of machinery.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="PersonReligionCode" type="hl7-4.0.2:ReligionCodeType" substitutionGroup="nc:PersonReligionAbstract" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A religion to which a person subscribes or believes; a categorization of spiritual beliefs.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="PublicServiceLanguageCode" type="iso_639-3-4.0.2:LanguageCodeType" substitutionGroup="nc:PublicServiceLanguageAbstract" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A language in which the service is available.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+</xs:schema>
