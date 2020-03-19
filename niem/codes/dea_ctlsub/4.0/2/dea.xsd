@@ -1,9 +1,15 @@
-<?xml version="1.0" encoding="US-ASCII"?>
-<xs:schema targetNamespace="http://publication.niem.gov/niem/codes/dea_ctlsub/4.0/2/" version="1" xsi:schemaLocation="http://release.niem.gov/niem/appinfo/4.0/ ../../../../utility/appinfo/4.0/appinfo.xsd http://release.niem.gov/niem/conformanceTargets/3.0/ ../../../../utility/conformanceTargets/3.0/conformanceTargets.xsd" ct:conformanceTargets="http://reference.niem.gov/niem/specification/naming-and-design-rules/4.0/#ReferenceSchemaDocument" xmlns:appinfo="http://release.niem.gov/niem/appinfo/4.0/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:dea-4.0.2="http://publication.niem.gov/niem/codes/dea_ctlsub/4.0/2/" xmlns:ct="http://release.niem.gov/niem/conformanceTargets/3.0/" xmlns:structures="http://release.niem.gov/niem/structures/4.0/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema targetNamespace="http://publication.niem.gov/niem/codes/dea_ctlsub/4.0/2/" version="1" xsi:schemaLocation="http://release.niem.gov/niem/appinfo/4.0/ ../../../../utility/appinfo/4.0/appinfo.xsd http://release.niem.gov/niem/conformanceTargets/3.0/ ../../../../utility/conformanceTargets/3.0/conformanceTargets.xsd" ct:conformanceTargets="http://reference.niem.gov/niem/specification/naming-and-design-rules/4.0/#ReferenceSchemaDocument"
+  xmlns:appinfo="http://release.niem.gov/niem/appinfo/4.0/"
+  xmlns:ct="http://release.niem.gov/niem/conformanceTargets/3.0/"
+  xmlns:dea-4.0.2="http://publication.niem.gov/niem/codes/dea_ctlsub/4.0/2/"
+  xmlns:structures="http://release.niem.gov/niem/structures/4.0/"
+  xmlns:xs="http://www.w3.org/2001/XMLSchema"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <xs:annotation>
     <xs:documentation>U.S. Drug Enforcement Administration (DEA) controlled substance codes</xs:documentation>
   </xs:annotation>
-  <xs:import schemaLocation="../../../../utility/structures/4.0/structures.xsd" namespace="http://release.niem.gov/niem/structures/4.0/"/>
+  <xs:import namespace="http://release.niem.gov/niem/structures/4.0/" schemaLocation="../../../../utility/structures/4.0/structures.xsd"/>
   <xs:simpleType name="DrugCodeSimpleType">
     <xs:annotation>
       <xs:documentation>A data type for drug codes.</xs:documentation>
@@ -56,7 +62,7 @@
       </xs:enumeration>
       <xs:enumeration value="1246">
         <xs:annotation>
-          <xs:documentation>Pentedrone (&#x3b1;-methylaminovalerophenone)</xs:documentation>
+          <xs:documentation>Pentedrone (α-methylaminovalerophenone)</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
       <xs:enumeration value="1248">
@@ -171,12 +177,12 @@
       </xs:enumeration>
       <xs:enumeration value="1670">
         <xs:annotation>
-          <xs:documentation>Fenfluramine</xs:documentation>
+          <xs:documentation>Dexfenfluramine</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
       <xs:enumeration value="1670">
         <xs:annotation>
-          <xs:documentation>Dexfenfluramine</xs:documentation>
+          <xs:documentation>Fenfluramine</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
       <xs:enumeration value="1675">
@@ -221,17 +227,7 @@
       </xs:enumeration>
       <xs:enumeration value="2100">
         <xs:annotation>
-          <xs:documentation>Butobarbital (butethal)</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="2100">
-        <xs:annotation>
           <xs:documentation>Aprobarbital</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="2100">
-        <xs:annotation>
-          <xs:documentation>Talbutal</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
       <xs:enumeration value="2100">
@@ -241,17 +237,7 @@
       </xs:enumeration>
       <xs:enumeration value="2100">
         <xs:annotation>
-          <xs:documentation>Vinbarbital</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="2100">
-        <xs:annotation>
           <xs:documentation>Butabarbital (secbutabarbital)</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="2100">
-        <xs:annotation>
-          <xs:documentation>Thiopental</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
       <xs:enumeration value="2100">
@@ -261,7 +247,27 @@
       </xs:enumeration>
       <xs:enumeration value="2100">
         <xs:annotation>
+          <xs:documentation>Butobarbital (butethal)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="2100">
+        <xs:annotation>
+          <xs:documentation>Talbutal</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="2100">
+        <xs:annotation>
           <xs:documentation>Thiamylal</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="2100">
+        <xs:annotation>
+          <xs:documentation>Thiopental</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="2100">
+        <xs:annotation>
+          <xs:documentation>Vinbarbital</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
       <xs:enumeration value="2125">
@@ -316,12 +322,12 @@
       </xs:enumeration>
       <xs:enumeration value="2271">
         <xs:annotation>
-          <xs:documentation>Pentobarbital suppository dosage form</xs:documentation>
+          <xs:documentation>Pentobarbital &amp; noncontrolled active ingred.</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
       <xs:enumeration value="2271">
         <xs:annotation>
-          <xs:documentation>Pentobarbital &amp; noncontrolled active ingred.</xs:documentation>
+          <xs:documentation>Pentobarbital suppository dosage form</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
       <xs:enumeration value="2285">
@@ -336,12 +342,12 @@
       </xs:enumeration>
       <xs:enumeration value="2316">
         <xs:annotation>
-          <xs:documentation>Secobarbital suppository dosage form</xs:documentation>
+          <xs:documentation>Secobarbital &amp; noncontrolled active ingred</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
       <xs:enumeration value="2316">
         <xs:annotation>
-          <xs:documentation>Secobarbital &amp; noncontrolled active ingred</xs:documentation>
+          <xs:documentation>Secobarbital suppository dosage form</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
       <xs:enumeration value="2460">
@@ -646,17 +652,22 @@
       </xs:enumeration>
       <xs:enumeration value="4000">
         <xs:annotation>
-          <xs:documentation>4-chloro-17&#x3b1;-methyl-17&#x3b2;-hydroxy-androst-4-en-3-one</xs:documentation>
+          <xs:documentation>[3,2-c]-furazan-5α-androstan-17β-ol</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
       <xs:enumeration value="4000">
         <xs:annotation>
-          <xs:documentation>[3,2-c]-furazan-5&#x3b1;-androstan-17&#x3b2;-ol</xs:documentation>
+          <xs:documentation>[3,2-c]pyrazole-androst-4-en-17β-ol</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
       <xs:enumeration value="4000">
         <xs:annotation>
-          <xs:documentation>[3,2-c]pyrazole-androst-4-en-17&#x3b2;-ol</xs:documentation>
+          <xs:documentation>1-Androstenediol (3beta,17beta-dihydroxy-5alpha-androst-1-ene; 3alpha,17beta-dihydroxy-5alpha-androst-1-ene)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="4000">
+        <xs:annotation>
+          <xs:documentation>1-Androstenedione (5alpha-androst-1-en-3,17-dione)</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
       <xs:enumeration value="4000">
@@ -691,7 +702,212 @@
       </xs:enumeration>
       <xs:enumeration value="4000">
         <xs:annotation>
-          <xs:documentation>17&#x3b1;-Methyl-5&#x3b1;-androstan-17&#x3b2;-ol</xs:documentation>
+          <xs:documentation>17α-Methyl-5α-androstan-17β-ol</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="4000">
+        <xs:annotation>
+          <xs:documentation>17α-methyl-androst-2-ene-3,17β-diol</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="4000">
+        <xs:annotation>
+          <xs:documentation>17α-methyl-androsta-1,4-diene-3,17β-diol</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="4000">
+        <xs:annotation>
+          <xs:documentation>17α-Methyl-androstan-3-hydroxyimine-17β-ol</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="4000">
+        <xs:annotation>
+          <xs:documentation>17β-Hydroxy-androstano[2,3-d]isoxazole</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="4000">
+        <xs:annotation>
+          <xs:documentation>17β-Hydroxy-androstano[3,2-c]isoxazole</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="4000">
+        <xs:annotation>
+          <xs:documentation>18a-Homo-3-hydroxy-estra-2,5(10)-dien-17-one</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="4000">
+        <xs:annotation>
+          <xs:documentation>19-Nor-4-androstenediol (3beta,17beta-dihydroxyestr-4-ene; 3alpha,17beta-dihydroxyestr-4-ene)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="4000">
+        <xs:annotation>
+          <xs:documentation>19-Nor-4-androstenedione (estr-4-en-3,17-dione)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="4000">
+        <xs:annotation>
+          <xs:documentation>19-Nor-4,9(10)-androstadienedione</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="4000">
+        <xs:annotation>
+          <xs:documentation>19-Nor-5-androstenediol (3beta,17beta-dihydroxyestr-5-ene; 3alpha,17beta-dihydroxyestr-5-ene)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="4000">
+        <xs:annotation>
+          <xs:documentation>19-Nor-5-androstenedione (estr-5-en-3,17-dione)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="4000">
+        <xs:annotation>
+          <xs:documentation>2α,17α-dimethyl-17β-hydroxy-5β-androstan-3-one</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="4000">
+        <xs:annotation>
+          <xs:documentation>2α,3α-epithio-17α-methyl-5α-androstan-17β-ol</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="4000">
+        <xs:annotation>
+          <xs:documentation>3Alpha,17beta-dihydroxy-5alpha-androstane</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="4000">
+        <xs:annotation>
+          <xs:documentation>3Beta,17beta-dihydroxy-5alpha-androstane</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="4000">
+        <xs:annotation>
+          <xs:documentation>3β-hydroxy-estra-4,9,11-trien-17-one</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="4000">
+        <xs:annotation>
+          <xs:documentation>4-Androstenediol (3beta,17beta-dihydroxy-androst-4-ene)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="4000">
+        <xs:annotation>
+          <xs:documentation>4-Androstenedione (androst-4-en-3,17-dione)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="4000">
+        <xs:annotation>
+          <xs:documentation>4-chloro-17α-methyl-17β-hydroxy-androst-4-en-3-one</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="4000">
+        <xs:annotation>
+          <xs:documentation>4-chloro-17α-methyl-17β-hydroxy-androst-4-ene-3,11­dione</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="4000">
+        <xs:annotation>
+          <xs:documentation>4-chloro-17α-methyl-androst-4-ene-3β,17β-diol</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="4000">
+        <xs:annotation>
+          <xs:documentation>4-chloro-17α-methyl-androsta-1,4-diene-3,17β-diol</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="4000">
+        <xs:annotation>
+          <xs:documentation>4-Dihydrotestosterone (17beta-hydroxyandrostan-3one)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="4000">
+        <xs:annotation>
+          <xs:documentation>4-Hydroxy-19-nortestosterone (4,17beta-dihydroxyestr4-en-3-one)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="4000">
+        <xs:annotation>
+          <xs:documentation>4-Hydroxy-androst-4-ene-3,17-dione</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="4000">
+        <xs:annotation>
+          <xs:documentation>4-Hydroxytestosterone (4,17beta-dihydroxyandrost-4en-3-one)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="4000">
+        <xs:annotation>
+          <xs:documentation>5-Androstenediol (3beta,17beta-dihydroxy-androst-5ene)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="4000">
+        <xs:annotation>
+          <xs:documentation>5-Androstenedione (androst-5-en-3,17-dione)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="4000">
+        <xs:annotation>
+          <xs:documentation>5α-Androstan-3,6,17-trione</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="4000">
+        <xs:annotation>
+          <xs:documentation>6-bromo-androsta-1,4-diene-3,17-dione</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="4000">
+        <xs:annotation>
+          <xs:documentation>6-bromo-androstan-3,17-dione</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="4000">
+        <xs:annotation>
+          <xs:documentation>6α-Methyl-androst-4-ene-3,17-dione</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="4000">
+        <xs:annotation>
+          <xs:documentation>Anabolic steroids</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="4000">
+        <xs:annotation>
+          <xs:documentation>Androstanedione (5alpha-androstan-3,17-dione)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="4000">
+        <xs:annotation>
+          <xs:documentation>Bolasterone (7alpha,17alpha-dimethyl-17betahydroxyandrost-4-en-3-one)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="4000">
+        <xs:annotation>
+          <xs:documentation>Boldenone (17beta-hydroxyandrost-1,4-diene-3-one)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="4000">
+        <xs:annotation>
+          <xs:documentation>Boldione</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="4000">
+        <xs:annotation>
+          <xs:documentation>Calusterone (7beta,17alpha-dimethyl-17betahydroxyandrost-4-en-3-one)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="4000">
+        <xs:annotation>
+          <xs:documentation>Clostebol (4-chloro-17beta-hydroxyandrost-4-en-3-one)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="4000">
+        <xs:annotation>
+          <xs:documentation>Dehydrochloromethyltestosterone (4-chloro-17betahydroxy-17alpha-methylandrost-1,4-dien-3-one)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="4000">
+        <xs:annotation>
+          <xs:documentation>Delta1-dihydrotestosterone (17beta-hydroxy-5alphaandrost-1-en-3-one)</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
       <xs:enumeration value="4000">
@@ -741,87 +957,7 @@
       </xs:enumeration>
       <xs:enumeration value="4000">
         <xs:annotation>
-          <xs:documentation>17&#x3b1;-methyl-androst-2-ene-3,17&#x3b2;-diol</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="4000">
-        <xs:annotation>
-          <xs:documentation>17&#x3b1;-methyl-androsta-1,4-diene-3,17&#x3b2;-diol</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="4000">
-        <xs:annotation>
-          <xs:documentation>17&#x3b1;-Methyl-androstan-3-hydroxyimine-17&#x3b2;-ol</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="4000">
-        <xs:annotation>
-          <xs:documentation>17&#x3b2;-Hydroxy-androstano[2,3-d]isoxazole</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="4000">
-        <xs:annotation>
-          <xs:documentation>17&#x3b2;-Hydroxy-androstano[3,2-c]isoxazole</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="4000">
-        <xs:annotation>
-          <xs:documentation>18a-Homo-3-hydroxy-estra-2,5(10)-dien-17-one</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="4000">
-        <xs:annotation>
-          <xs:documentation>19-Nor-4,9(10)-androstadienedione</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="4000">
-        <xs:annotation>
-          <xs:documentation>19-Nor-4-androstenediol (3beta,17beta-dihydroxyestr-4-ene; 3alpha,17beta-dihydroxyestr-4-ene)</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="4000">
-        <xs:annotation>
-          <xs:documentation>19-Nor-4-androstenedione (estr-4-en-3,17-dione)</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="4000">
-        <xs:annotation>
-          <xs:documentation>19-Nor-5-androstenediol (3beta,17beta-dihydroxyestr-5-ene; 3alpha,17beta-dihydroxyestr-5-ene)</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="4000">
-        <xs:annotation>
-          <xs:documentation>19-Nor-5-androstenedione (estr-5-en-3,17-dione)</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="4000">
-        <xs:annotation>
-          <xs:documentation>1-Androstenediol (3beta,17beta-dihydroxy-5alpha-androst-1-ene; 3alpha,17beta-dihydroxy-5alpha-androst-1-ene)</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="4000">
-        <xs:annotation>
-          <xs:documentation>1-Androstenedione (5alpha-androst-1-en-3,17-dione)</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="4000">
-        <xs:annotation>
-          <xs:documentation>2&#x3b1;,17&#x3b1;-dimethyl-17&#x3b2;-hydroxy-5&#x3b2;-androstan-3-one</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="4000">
-        <xs:annotation>
-          <xs:documentation>2&#x3b1;,3&#x3b1;-epithio-17&#x3b1;-methyl-5&#x3b1;-androstan-17&#x3b2;-ol</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="4000">
-        <xs:annotation>
           <xs:documentation>Methandienone (17alpha-methyl-17betahydroxyandrost-1,4-dien-3-one)</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="4000">
-        <xs:annotation>
-          <xs:documentation>3Alpha,17beta-dihydroxy-5alpha-androstane</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
       <xs:enumeration value="4000">
@@ -831,17 +967,7 @@
       </xs:enumeration>
       <xs:enumeration value="4000">
         <xs:annotation>
-          <xs:documentation>3Beta,17beta-dihydroxy-5alpha-androstane</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="4000">
-        <xs:annotation>
           <xs:documentation>Methasterone (2alpha,17alpha-dimethyl-5alphaandrostan-17beta-ol-3-one)</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="4000">
-        <xs:annotation>
-          <xs:documentation>3&#x3b2;-hydroxy-estra-4,9,11-trien-17-one</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
       <xs:enumeration value="4000">
@@ -851,17 +977,7 @@
       </xs:enumeration>
       <xs:enumeration value="4000">
         <xs:annotation>
-          <xs:documentation>4-Androstenediol (3beta,17beta-dihydroxy-androst-4-ene)</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="4000">
-        <xs:annotation>
           <xs:documentation>Methyldienolone (17alpha-methyl-17beta-hydroxyestra4,9(10)-dien-3-one)</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="4000">
-        <xs:annotation>
-          <xs:documentation>4-Androstenedione (androst-4-en-3,17-dione)</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
       <xs:enumeration value="4000">
@@ -876,11 +992,6 @@
       </xs:enumeration>
       <xs:enumeration value="4000">
         <xs:annotation>
-          <xs:documentation>4-chloro-17&#x3b1;-methyl-17&#x3b2;-hydroxy-androst-4-ene-3,11&#xad;dione</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="4000">
-        <xs:annotation>
           <xs:documentation>Mibolerone (7alpha,17alpha-dimethyl-17betahydroxyestr-4-en-3-one)</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
@@ -891,27 +1002,12 @@
       </xs:enumeration>
       <xs:enumeration value="4000">
         <xs:annotation>
-          <xs:documentation>4-chloro-17&#x3b1;-methyl-androst-4-ene-3&#x3b2;,17&#x3b2;-diol</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="4000">
-        <xs:annotation>
           <xs:documentation>Norbolethone (13beta,17alpha-diethyl-17betahydroxygon-4-en-3-one)</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
       <xs:enumeration value="4000">
         <xs:annotation>
-          <xs:documentation>4-chloro-17&#x3b1;-methyl-androsta-1,4-diene-3,17&#x3b2;-diol</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="4000">
-        <xs:annotation>
           <xs:documentation>Norclostebol (4-chloro-17beta-hydroxyestr-4-en-3-one</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="4000">
-        <xs:annotation>
-          <xs:documentation>4-Dihydrotestosterone (17beta-hydroxyandrostan-3one)</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
       <xs:enumeration value="4000">
@@ -926,27 +1022,12 @@
       </xs:enumeration>
       <xs:enumeration value="4000">
         <xs:annotation>
-          <xs:documentation>4-Hydroxy-19-nortestosterone (4,17beta-dihydroxyestr4-en-3-one)</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="4000">
-        <xs:annotation>
           <xs:documentation>Oxandrolone (17alpha-methyl-17beta-hydroxy-2-oxa5alpha-androstan-3-one)</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
       <xs:enumeration value="4000">
         <xs:annotation>
-          <xs:documentation>4-Hydroxy-androst-4-ene-3,17-dione</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="4000">
-        <xs:annotation>
           <xs:documentation>Oxymesterone (17alpha-methyl-4,17betadihydroxyandrost-4-en-3-one)</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="4000">
-        <xs:annotation>
-          <xs:documentation>4-Hydroxytestosterone (4,17beta-dihydroxyandrost-4en-3-one)</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
       <xs:enumeration value="4000">
@@ -961,32 +1042,12 @@
       </xs:enumeration>
       <xs:enumeration value="4000">
         <xs:annotation>
-          <xs:documentation>5-Androstenediol (3beta,17beta-dihydroxy-androst-5ene)</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="4000">
-        <xs:annotation>
-          <xs:documentation>5-Androstenedione (androst-5-en-3,17-dione)</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="4000">
-        <xs:annotation>
           <xs:documentation>Stanozolol (17alpha-methyl-17beta-hydroxy-5alphaandrost-2-eno[3,2-c]-pyrazole)</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
       <xs:enumeration value="4000">
         <xs:annotation>
-          <xs:documentation>5&#x3b1;-Androstan-3,6,17-trione</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="4000">
-        <xs:annotation>
           <xs:documentation>Stenbolone (17beta-hydroxy-2-methyl--5alpha-androst1-en-3-one)</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="4000">
-        <xs:annotation>
-          <xs:documentation>6-bromo-androsta-1,4-diene-3,17-dione</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
       <xs:enumeration value="4000">
@@ -1001,67 +1062,12 @@
       </xs:enumeration>
       <xs:enumeration value="4000">
         <xs:annotation>
-          <xs:documentation>6-bromo-androstan-3,17-dione</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="4000">
-        <xs:annotation>
           <xs:documentation>Tetrahydrogestrinone (13beta,17alpha-diethyl-17betahydroxygon-4,9,11-trien-3-one)</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
       <xs:enumeration value="4000">
         <xs:annotation>
-          <xs:documentation>6&#x3b1;-Methyl-androst-4-ene-3,17-dione</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="4000">
-        <xs:annotation>
           <xs:documentation>Trenbolone (17beta-hydroxyestr-4,9,11-trien-3-one)</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="4000">
-        <xs:annotation>
-          <xs:documentation>Anabolic steroids</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="4000">
-        <xs:annotation>
-          <xs:documentation>Androstanedione (5alpha-androstan-3,17-dione)</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="4000">
-        <xs:annotation>
-          <xs:documentation>Bolasterone (7alpha,17alpha-dimethyl-17betahydroxyandrost-4-en-3-one)</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="4000">
-        <xs:annotation>
-          <xs:documentation>Boldenone (17beta-hydroxyandrost-1,4-diene-3-one)</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="4000">
-        <xs:annotation>
-          <xs:documentation>Boldione</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="4000">
-        <xs:annotation>
-          <xs:documentation>Calusterone (7beta,17alpha-dimethyl-17betahydroxyandrost-4-en-3-one)</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="4000">
-        <xs:annotation>
-          <xs:documentation>Clostebol (4-chloro-17beta-hydroxyandrost-4-en-3-one)</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="4000">
-        <xs:annotation>
-          <xs:documentation>Dehydrochloromethyltestosterone (4-chloro-17betahydroxy-17alpha-methylandrost-1,4-dien-3-one)</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="4000">
-        <xs:annotation>
-          <xs:documentation>Delta1-dihydrotestosterone (17beta-hydroxy-5alphaandrost-1-en-3-one)</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
       <xs:enumeration value="6250">
@@ -1076,7 +1082,7 @@
       </xs:enumeration>
       <xs:enumeration value="7010">
         <xs:annotation>
-          <xs:documentation>ADB&#x2013;FUBINACA (N-(1-amino-3,3-dimethyl-1-oxobutan&#xad;2-yl)-1-(4-fluorobenzyl)-1H-indazole-3-carboxamide)</xs:documentation>
+          <xs:documentation>ADB–FUBINACA (N-(1-amino-3,3-dimethyl-1-oxobutan­2-yl)-1-(4-fluorobenzyl)-1H-indazole-3-carboxamide)</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
       <xs:enumeration value="7011">
@@ -1101,7 +1107,7 @@
       </xs:enumeration>
       <xs:enumeration value="7020">
         <xs:annotation>
-          <xs:documentation>MDMB&#x2013;FUBINACA (Methyl 2-(1-(4-fluorobenzyl)-1H&#xad;indazole-3-carboxamido)-3,3-dimethylbutanoate)</xs:documentation>
+          <xs:documentation>MDMB–FUBINACA (Methyl 2-(1-(4-fluorobenzyl)-1H­indazole-3-carboxamido)-3,3-dimethylbutanoate)</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
       <xs:enumeration value="7021">
@@ -1136,12 +1142,12 @@
       </xs:enumeration>
       <xs:enumeration value="7033">
         <xs:annotation>
-          <xs:documentation>5F&#x2013;AMB (Methyl 2-(1-(5-fluoropentyl)-1H-indazole-3&#xad;carboxamido)-3-methylbutanoate)</xs:documentation>
+          <xs:documentation>5F–AMB (Methyl 2-(1-(5-fluoropentyl)-1H-indazole-3­carboxamido)-3-methylbutanoate)</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
       <xs:enumeration value="7034">
         <xs:annotation>
-          <xs:documentation>5F&#x2013;ADB; 5F&#x2013;MDMB&#x2013;PINACA (Methyl 2-(1-(5&#xad;fluoropentyl)-1H-indazole-3-carboxamido)-3,3dimethylbutanoate)</xs:documentation>
+          <xs:documentation>5F–ADB; 5F–MDMB–PINACA (Methyl 2-(1-(5­fluoropentyl)-1H-indazole-3-carboxamido)-3,3dimethylbutanoate)</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
       <xs:enumeration value="7035">
@@ -1161,7 +1167,7 @@
       </xs:enumeration>
       <xs:enumeration value="7042">
         <xs:annotation>
-          <xs:documentation>MDMB&#x2013;CHMICA, MMB&#x2013;CHMINACA (Methyl 2-(1&#xad;(cyclohexylmethyl)-1H-indole-3-carboxamido)-3,3dimethylbutanoate)</xs:documentation>
+          <xs:documentation>MDMB–CHMICA, MMB–CHMINACA (Methyl 2-(1­(cyclohexylmethyl)-1H-indole-3-carboxamido)-3,3dimethylbutanoate)</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
       <xs:enumeration value="7044">
@@ -1181,7 +1187,7 @@
       </xs:enumeration>
       <xs:enumeration value="7049">
         <xs:annotation>
-          <xs:documentation>5F&#x2013;APINACA, 5F&#x2013;AKB48 (N-(adamantan-1-yl)-1-(5&#xad;fluoropentyl)-1H-indazole-3-carboxamide)</xs:documentation>
+          <xs:documentation>5F–APINACA, 5F–AKB48 (N-(adamantan-1-yl)-1-(5­fluoropentyl)-1H-indazole-3-carboxamide)</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
       <xs:enumeration value="7081">
@@ -1486,7 +1492,7 @@
       </xs:enumeration>
       <xs:enumeration value="7446">
         <xs:annotation>
-          <xs:documentation>4&#xb4;-methyl-alpha-pyrrolidinohexiophenone (MPHP)</xs:documentation>
+          <xs:documentation>4´-methyl-alpha-pyrrolidinohexiophenone (MPHP)</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
       <xs:enumeration value="7455">
@@ -1626,12 +1632,12 @@
       </xs:enumeration>
       <xs:enumeration value="7545">
         <xs:annotation>
-          <xs:documentation>alpha-pyrrolidinopentiophenone (&#x3b1;-PVP)</xs:documentation>
+          <xs:documentation>alpha-pyrrolidinopentiophenone (α-PVP)</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
       <xs:enumeration value="7546">
         <xs:annotation>
-          <xs:documentation>alpha-pyrrolidinobutiophenone (&#x3b1;-PBP)</xs:documentation>
+          <xs:documentation>alpha-pyrrolidinobutiophenone (α-PBP)</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
       <xs:enumeration value="7548">
@@ -2211,12 +2217,12 @@
       </xs:enumeration>
       <xs:enumeration value="9650">
         <xs:annotation>
-          <xs:documentation>Poppy Straw</xs:documentation>
+          <xs:documentation>Opium poppy</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
       <xs:enumeration value="9650">
         <xs:annotation>
-          <xs:documentation>Opium poppy</xs:documentation>
+          <xs:documentation>Poppy Straw</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
       <xs:enumeration value="9652">
