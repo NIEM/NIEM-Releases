@@ -11,6 +11,12 @@ The following is a summary of the content changes made in this release.
 
 Please review the [5.0 issues in the NIEM Releases issue tracker](https://github.com/NIEM/NIEM-Releases/issues?page=1&q=is%3Aissue+label%3A5.0+is%3Aclosed) or the change log spreadsheet in the release package for a detailed list of changes.
 
+### Core
+
+- Merged Core Supplement 4.0.1. (#127)
+  - Replaced nc:PolygonCoordinate (nc:Location2DGeospatialCoordinateType) with new nc:PolygonNodeLocation (nc:LocationType) (#9)
+  - Changed the parent type of nc:LocationHeightMeasureType from nc:MeasureType to nc:LengthMeasureType (#13).
+
 ### Release package updates
 
 - Changed the character encoding of the XML schemas from "US-ASCII" to "UTF-8" for better international support (#125)
