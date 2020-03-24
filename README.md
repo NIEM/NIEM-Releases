@@ -17,6 +17,10 @@ Please review the [5.0 issues in the NIEM Releases issue tracker](https://github
   - Replaced nc:PolygonCoordinate (nc:Location2DGeospatialCoordinateType) with new nc:PolygonNodeLocation (nc:LocationType) (#9)
   - Changed the parent type of nc:LocationHeightMeasureType from nc:MeasureType to nc:LengthMeasureType (#13).
 
+### Code Tables
+
+- Merged FIPS 5-2 state codes and Census county codes into consolidated FIPS namespaces (#52)
+
 ### Release package updates
 
 - Changed the character encoding of the XML schemas from "US-ASCII" to "UTF-8" for better international support (#125)
