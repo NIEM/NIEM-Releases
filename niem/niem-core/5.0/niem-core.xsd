@@ -3474,6 +3474,7 @@
           <xs:element ref="nc:PersonWeightMeasure" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:PersonXRayImage" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:PersonNationalityAbstract" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:PersonContactInformation" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:EmploymentContactInformation" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:PersonEmergencyContactInformation" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:PersonHomeContactInformation" minOccurs="0" maxOccurs="unbounded"/>
@@ -10423,6 +10424,11 @@
   <xs:element name="PersonComprehendsSpokenLanguageIndicator" type="niem-xs:boolean" nillable="true">
     <xs:annotation>
       <xs:documentation>True if a person is able to grasp and understand the meaning of a language being spoken; false otherwise.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="PersonContactInformation" type="nc:ContactInformationType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A means of contacting a person.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="PersonConveyanceAssociation" type="nc:PersonConveyanceAssociationType" nillable="true">
