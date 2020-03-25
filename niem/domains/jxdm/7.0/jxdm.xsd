@@ -13931,6 +13931,11 @@
       <xs:documentation>A staff member responsible to observe, conduct, or lead an activity with a subject.</xs:documentation>
     </xs:annotation>
   </xs:element>
+  <xs:element name="CountryCode" type="ncic:CountryCodeType" substitutionGroup="nc:CountryRepresentation" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A country, territory, dependency, or other such geopolitical subdivision of a location.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
   <xs:element name="Court" type="j:CourtType" nillable="true">
     <xs:annotation>
       <xs:documentation>A court or a unit of a court responsible for trying justice proceedings.</xs:documentation>
@@ -20587,11 +20592,6 @@
       <xs:documentation>A specific building in a facility.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="LocationCanadianProvinceCode" type="ncic:CanadianCodeType" substitutionGroup="nc:StateRepresentation" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A province.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
   <xs:element name="LocationCategoryCode" type="ucr:LocationCategoryCodeType" substitutionGroup="nc:LocationCategoryAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A kind or functional description of a location.</xs:documentation>
@@ -20600,11 +20600,6 @@
   <xs:element name="LocationCategoryNDExCode" type="ndex:LocationCategoryNDExCodeType" substitutionGroup="nc:LocationCategoryAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A kind of location or area.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="LocationCountryCode" type="ncic:CountryCodeType" substitutionGroup="nc:CountryRepresentation" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A country, territory, dependency, or other such geopolitical subdivision of a location.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="LocationGeneralCategoryCode" type="ndex:LocationGeneralCategoryCodeType" substitutionGroup="nc:LocationCategoryAbstract" nillable="true">
@@ -20622,11 +20617,6 @@
       <xs:documentation>An American Indian nation.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="LocationIndianNationNCICCode" type="ncic:IndianCodeType" substitutionGroup="nc:StateRepresentation" nillable="true">
-    <xs:annotation>
-      <xs:documentation>An American Indian nation.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
   <xs:element name="LocationIndianNationText" type="nc:TextType" substitutionGroup="j:LocationIndianNationAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>An American Indian nation.</xs:documentation>
@@ -20635,11 +20625,6 @@
   <xs:element name="LocationLotNumberText" type="nc:TextType" nillable="true">
     <xs:annotation>
       <xs:documentation>A number identifying a tract or parcel (unit) of land owned by an owner.  Also called a plot.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="LocationMexicanStateCode" type="ncic:MexicanCodeType" substitutionGroup="nc:StateRepresentation" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A state in Mexico.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="LocationPoliceDepartmentAssociation" type="nc:OrganizationLocationAssociationType" nillable="true">
@@ -20660,16 +20645,6 @@
   <xs:element name="LocationSecurityLevelText" type="nc:TextType" nillable="true">
     <xs:annotation>
       <xs:documentation>A security level of the location.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="LocationStateUSCode" type="ncic:UnitedStatesCodeType" substitutionGroup="nc:StateRepresentation" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A state in the United States.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="LocationStateUSTerritoriesCode" type="ncic:USTerritoriesCodeType" substitutionGroup="nc:StateRepresentation" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A United States territory.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="LocationSublocationCategoryCode" type="ndex:LocationSublocationCategoryCodeType" substitutionGroup="nc:LocationCategoryAbstract" nillable="true">
@@ -27265,6 +27240,31 @@
   <xs:element name="StateAssignedVINIndicator" type="niem-xs:boolean" nillable="true">
     <xs:annotation>
       <xs:documentation>True if the VIN was state assigned rather than manufacturer or owner assigned; false otherwise.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="StateCanadaCode" type="ncic:CanadianCodeType" substitutionGroup="nc:StateRepresentation" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A province.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="StateIndianNationCode" type="ncic:IndianCodeType" substitutionGroup="nc:StateRepresentation" nillable="true">
+    <xs:annotation>
+      <xs:documentation>An American Indian nation.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="StateMexicoCode" type="ncic:MexicanCodeType" substitutionGroup="nc:StateRepresentation" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A state in Mexico.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="StateUSCode" type="ncic:UnitedStatesCodeType" substitutionGroup="nc:StateRepresentation" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A state in the United States.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="StateUSTerritoriesCode" type="ncic:USTerritoriesCodeType" substitutionGroup="nc:StateRepresentation" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A United States territory.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="Statute" type="j:StatuteType" nillable="true">

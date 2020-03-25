@@ -6306,6 +6306,31 @@
       <xs:documentation>A country, territory, dependency, or other such geopolitical subdivision of a location.</xs:documentation>
     </xs:annotation>
   </xs:element>
+  <xs:element name="CountryGENCCode" type="genc:CountryAlpha3CodeType" substitutionGroup="nc:CountryRepresentation" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A country, territory, dependency, or other such geopolitical subdivision of a location.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="CountryISO3166Alpha2Code" type="iso_3166:CountryAlpha2CodeType" substitutionGroup="nc:CountryRepresentation" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A country, territory, dependency, or other such geopolitical subdivision of a location.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="CountryISO3166Alpha3Code" type="iso_3166:CountryAlpha3CodeType" substitutionGroup="nc:CountryRepresentation" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A country, territory, dependency, or other such geopolitical subdivision of a location.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="CountryISO3166NumericCode" type="iso_3166:CountryNumericCodeType" substitutionGroup="nc:CountryRepresentation" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A country, territory, dependency, or other such geopolitical subdivision of a location.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="CountryName" type="nc:ProperNameTextType" substitutionGroup="nc:CountryRepresentation" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A name of a country, territory, dependency, or other such geopolitical subdivision of a location.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
   <xs:element name="CountryRepresentation" abstract="true">
     <xs:annotation>
       <xs:documentation>A data concept for a representation of a country.</xs:documentation>
@@ -8961,11 +8986,6 @@
       <xs:documentation>An augmentation point for LocationType.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="LocationCanadianProvinceCode" type="can:CanadianProvinceCodeType" substitutionGroup="nc:StateRepresentation" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A province.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
   <xs:element name="LocationCategoryAbstract" abstract="true">
     <xs:annotation>
       <xs:documentation>A data concept for a kind or functional description of a location.</xs:documentation>
@@ -9004,31 +9024,6 @@
   <xs:element name="LocationCountry" type="nc:CountryType" nillable="true">
     <xs:annotation>
       <xs:documentation>A country, territory, dependency, or other such geopolitical subdivision of a location.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="LocationCountryGENCCode" type="genc:CountryAlpha3CodeType" substitutionGroup="nc:CountryRepresentation" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A country, territory, dependency, or other such geopolitical subdivision of a location.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="LocationCountryISO3166Alpha2Code" type="iso_3166:CountryAlpha2CodeType" substitutionGroup="nc:CountryRepresentation" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A country, territory, dependency, or other such geopolitical subdivision of a location.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="LocationCountryISO3166Alpha3Code" type="iso_3166:CountryAlpha3CodeType" substitutionGroup="nc:CountryRepresentation" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A country, territory, dependency, or other such geopolitical subdivision of a location.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="LocationCountryISO3166NumericCode" type="iso_3166:CountryNumericCodeType" substitutionGroup="nc:CountryRepresentation" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A country, territory, dependency, or other such geopolitical subdivision of a location.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="LocationCountryName" type="nc:ProperNameTextType" substitutionGroup="nc:CountryRepresentation" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A name of a country, territory, dependency, or other such geopolitical subdivision of a location.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="LocationCountyAbstract" abstract="true">
@@ -9167,26 +9162,6 @@
     </xs:annotation>
   </xs:element>
   <xs:element name="LocationState" type="nc:StateType" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A state, commonwealth, province, or other such geopolitical subdivision of a country.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="LocationStateFIPS5-2Code" type="fips:USStateNumericCodeType" substitutionGroup="nc:StateRepresentation" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A state, commonwealth, province, or other such geopolitical subdivision of a country.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="LocationStateGENCCode" type="genc:CountrySubdivisionCodeType" substitutionGroup="nc:StateRepresentation" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A state, commonwealth, province, or other such geopolitical subdivision of a country.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="LocationStateName" type="nc:ProperNameTextType" substitutionGroup="nc:StateRepresentation" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A name of a state, commonwealth, province, or other such geopolitical subdivision of a country.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="LocationStateUSPostalServiceCode" type="usps:USStateCodeType" substitutionGroup="nc:StateRepresentation" nillable="true">
     <xs:annotation>
       <xs:documentation>A state, commonwealth, province, or other such geopolitical subdivision of a country.</xs:documentation>
     </xs:annotation>
@@ -12186,7 +12161,22 @@
       <xs:documentation>An augmentation point for type nc:StateType</xs:documentation>
     </xs:annotation>
   </xs:element>
+  <xs:element name="StateCanadaCode" type="can:CanadianProvinceCodeType" substitutionGroup="nc:StateRepresentation" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A province.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
   <xs:element name="StateCode" type="nc:CodeType" substitutionGroup="nc:StateRepresentation" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A state, commonwealth, province, or other such geopolitical subdivision of a country.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="StateFIPSCode" type="fips:USStateNumericCodeType" substitutionGroup="nc:StateRepresentation" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A state, commonwealth, province, or other such geopolitical subdivision of a country.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="StateGENCCode" type="genc:CountrySubdivisionCodeType" substitutionGroup="nc:StateRepresentation" nillable="true">
     <xs:annotation>
       <xs:documentation>A state, commonwealth, province, or other such geopolitical subdivision of a country.</xs:documentation>
     </xs:annotation>
@@ -12196,9 +12186,19 @@
       <xs:documentation>A state, commonwealth, province, or other such geopolitical subdivision of a country.</xs:documentation>
     </xs:annotation>
   </xs:element>
+  <xs:element name="StateName" type="nc:ProperNameTextType" substitutionGroup="nc:StateRepresentation" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A name of a state, commonwealth, province, or other such geopolitical subdivision of a country.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
   <xs:element name="StateRepresentation" abstract="true">
     <xs:annotation>
       <xs:documentation>A data concept for a state, commonwealth, province, or other such geopolitical subdivision of a country.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="StateUSPSCode" type="usps:USStateCodeType" substitutionGroup="nc:StateRepresentation" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A state, commonwealth, province, or other such geopolitical subdivision of a country.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="Status" type="nc:StatusType" nillable="true">

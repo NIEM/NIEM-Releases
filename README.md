@@ -42,6 +42,7 @@ Please review the [5.0 issues in the NIEM Releases issue tracker](https://github
 - Merged scr:PersonNameAugmentation and scr:PersonNameTextAugmentation (#77)
 - Moved nc:PleaCategoryCodeType to the Justice domain (#24)
 - Updated inconsistent code set folder paths, file names, and target namespaces (#58)
+- Updated country and state element class terms (#67)
 
 ### Release package updates
 

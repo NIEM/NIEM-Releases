@@ -22461,6 +22461,11 @@
       <xs:documentation>A conveyance ID issuing jurisdiction type.</xs:documentation>
     </xs:annotation>
   </xs:element>
+  <xs:element name="CountryIdentification" type="nc:IdentificationType" substitutionGroup="nc:CountryRepresentation" nillable="true">
+    <xs:annotation>
+      <xs:documentation>An identification value that represents a country.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
   <xs:element name="CountryNameBeginDate" type="nc:DateType" nillable="true">
     <xs:annotation>
       <xs:documentation>A date on which the COUNTRY NAME came into existence</xs:documentation>
@@ -23354,11 +23359,6 @@
   <xs:element name="LocationCategoryCode" type="scr:LocationCategoryCodeType" substitutionGroup="nc:LocationCategoryAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A kind of or functional description of a location.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="LocationCountryIdentification" type="nc:IdentificationType" substitutionGroup="nc:CountryRepresentation" nillable="true">
-    <xs:annotation>
-      <xs:documentation>An identification value that represents a country.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="LocationElement" type="scr:LocationElementType" nillable="true">
