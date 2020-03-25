@@ -3640,63 +3640,6 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-  <xs:simpleType name="PleaCategoryCodeSimpleType">
-    <xs:annotation>
-      <xs:documentation>A data type for kinds of pleas.</xs:documentation>
-    </xs:annotation>
-    <xs:restriction base="xs:token">
-      <xs:enumeration value="A">
-        <xs:annotation>
-          <xs:documentation>PLEA IN ABEYANCE</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="C">
-        <xs:annotation>
-          <xs:documentation>NO CONTEST</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="G">
-        <xs:annotation>
-          <xs:documentation>GUILTY</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="I">
-        <xs:annotation>
-          <xs:documentation>N GUILTY/INSANITY</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="M">
-        <xs:annotation>
-          <xs:documentation>GUILTY/MENTAL ILL</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="N">
-        <xs:annotation>
-          <xs:documentation>NOT GUILTY</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="U">
-        <xs:annotation>
-          <xs:documentation>UNKNOWN</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="X">
-        <xs:annotation>
-          <xs:documentation>NO PLEA ENTERED</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-    </xs:restriction>
-  </xs:simpleType>
-  <xs:complexType name="PleaCategoryCodeType">
-    <xs:annotation>
-      <xs:documentation>A data type for kinds of pleas.</xs:documentation>
-    </xs:annotation>
-    <xs:simpleContent>
-      <xs:extension base="nc:PleaCategoryCodeSimpleType">
-        <xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
-      </xs:extension>
-    </xs:simpleContent>
-  </xs:complexType>
   <xs:complexType name="PolygonRegionType">
     <xs:annotation>
       <xs:documentation>A data type for a polygon area identified by a set of coordinates.</xs:documentation>

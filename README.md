@@ -35,6 +35,7 @@ Please review the [5.0 issues in the NIEM Releases issue tracker](https://github
 
 ### Harmonization and QA
 
+- Moved nc:PleaCategoryCodeType to the Justice domain (#24)
 - Merged scr:PersonNameAugmentation and scr:PersonNameTextAugmentation (#77)
 - Fixed invalid augmentation names (#78)
 
