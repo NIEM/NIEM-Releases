@@ -361,19 +361,6 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-  <xs:complexType name="AlertAugmentationType">
-    <xs:annotation>
-      <xs:documentation>A data type for additional information about an alert.</xs:documentation>
-    </xs:annotation>
-    <xs:complexContent>
-      <xs:extension base="structures:AugmentationType">
-        <xs:sequence>
-          <xs:element ref="scr:AlertReceivedDate" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="scr:AlertCategoryClassificationAbstract" minOccurs="0" maxOccurs="unbounded"/>
-        </xs:sequence>
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
   <xs:simpleType name="AlertCategoryCodeSimpleType">
     <xs:annotation>
       <xs:documentation>A data type for denoting the type of alert message.</xs:documentation>
@@ -475,6 +462,19 @@
         <xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
       </xs:extension>
     </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="AlertNotificationAugmentationType">
+    <xs:annotation>
+      <xs:documentation>A data type for additional information about an alert.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="structures:AugmentationType">
+        <xs:sequence>
+          <xs:element ref="scr:AlertReceivedDate" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="scr:AlertCategoryClassificationAbstract" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
   </xs:complexType>
   <xs:complexType name="AlienDeportationEscortReasonType">
     <xs:annotation>
@@ -21971,11 +21971,6 @@
       <xs:documentation>An augmentation point for AircraftFlightPlanSummaryAssociationType.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="AlertAugmentation" type="scr:AlertAugmentationType" substitutionGroup="em:AlertNotificationAugmentationPoint" nillable="true">
-    <xs:annotation>
-      <xs:documentation>Additional information about an alert.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
   <xs:element name="AlertCategoryClassificationAbstract" abstract="true">
     <xs:annotation>
       <xs:documentation>A data concept for a kind of alert Category</xs:documentation>
@@ -22004,6 +21999,11 @@
   <xs:element name="AlertMedicalIndicator" type="niem-xs:boolean" nillable="true">
     <xs:annotation>
       <xs:documentation>True if the alert code is for a medical condition; false otherwise.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="AlertNotificationAugmentation" type="scr:AlertNotificationAugmentationType" substitutionGroup="em:AlertNotificationAugmentationPoint" nillable="true">
+    <xs:annotation>
+      <xs:documentation>Additional information about an alert.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="AlertReceivedDate" type="nc:DateType" nillable="true">

@@ -36,6 +36,7 @@ Please review the [5.0 issues in the NIEM Releases issue tracker](https://github
 ### Harmonization and QA
 
 - Merged scr:PersonNameAugmentation and scr:PersonNameTextAugmentation (#77)
+- Fixed invalid augmentation names (#78)
 
 ### Release package updates
 

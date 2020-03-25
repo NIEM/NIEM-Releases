@@ -1040,6 +1040,24 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
+  <xs:complexType name="LocationAugmentationType">
+    <xs:annotation>
+      <xs:documentation>A data type for additional information about a site location.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="structures:AugmentationType">
+        <xs:sequence>
+          <xs:element ref="cbrn:GeographicPoint" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="cbrn:SiteSpecialInfoText" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="cbrn:MapGuideLocation" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="cbrn:SpecialEventName" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="cbrn:SpecialEventStartDateTime" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="cbrn:SpecialEventEndDateTime" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="cbrn:SpecialEventSecurityArea" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
   <xs:complexType name="LocationDescriptionType">
     <xs:annotation>
       <xs:documentation>A data type that provides the description of a Location.</xs:documentation>
@@ -1905,24 +1923,6 @@
           <xs:element ref="cbrn:LayerQuantity" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="cbrn:MeasuredItemID" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="cbrn:ShieldingAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
-        </xs:sequence>
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
-  <xs:complexType name="SiteLocationAugmentationType">
-    <xs:annotation>
-      <xs:documentation>A data type for additional information about a site location.</xs:documentation>
-    </xs:annotation>
-    <xs:complexContent>
-      <xs:extension base="structures:AugmentationType">
-        <xs:sequence>
-          <xs:element ref="cbrn:GeographicPoint" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="cbrn:SiteSpecialInfoText" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="cbrn:MapGuideLocation" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="cbrn:SpecialEventName" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="cbrn:SpecialEventStartDateTime" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="cbrn:SpecialEventEndDateTime" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="cbrn:SpecialEventSecurityArea" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -3730,6 +3730,11 @@ flac or fl32  FLAC</xs:documentation>
       <xs:documentation>A duration during which a detection assembly is sensitive to the input signal. The value of LiveTimeDuration is always less than or equal to the value of RealTimeDuration, because it does not include the time that the radiation detector was unable to re</xs:documentation>
     </xs:annotation>
   </xs:element>
+  <xs:element name="LocationAugmentation" type="cbrn:LocationAugmentationType" substitutionGroup="nc:LocationAugmentationPoint" nillable="true">
+    <xs:annotation>
+      <xs:documentation>Additional information about a site location.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
   <xs:element name="LocationDescriptionText" type="cbrn:LocationDescriptionType" substitutionGroup="cbrn:StateVectorLocationChoiceAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A free-form text description of the location of an object  (e.g., radiation measurement instrument, radiation detector, or measured item) or nuclide source.</xs:documentation>
@@ -4853,11 +4858,6 @@ flac or fl32  FLAC</xs:documentation>
   <xs:element name="ShieldingAugmentationPoint" abstract="true">
     <xs:annotation>
       <xs:documentation>An augmentation point for cbrn:ShieldingType.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="SiteLocationAugmentation" type="cbrn:SiteLocationAugmentationType" substitutionGroup="nc:LocationAugmentationPoint" nillable="true">
-    <xs:annotation>
-      <xs:documentation>Additional information about a site location.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="SiteSpecialInfoText" type="nc:TextType" nillable="true">

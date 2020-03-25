@@ -95,9 +95,9 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-  <xs:complexType name="BiometricAugmentationType">
+  <xs:complexType name="BiometricCaptureAugmentationType">
     <xs:annotation>
-      <xs:documentation>A data type for additional information about a biometric.</xs:documentation>
+      <xs:documentation>A data type for additional information about a biometric capture.</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
       <xs:extension base="structures:AugmentationType">
@@ -143,19 +143,6 @@
           <xs:element ref="intel:IdentificationIssuingStateName" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="intel:IdentificationIssuingLocalityText" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="intel:PersonInIdentification" minOccurs="0" maxOccurs="unbounded"/>
-        </xs:sequence>
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
-  <xs:complexType name="IdentityAssociationAugmentationType">
-    <xs:annotation>
-      <xs:documentation>A data type for additional information about an association relating a set of identities belonging to the same actual person to each other.</xs:documentation>
-    </xs:annotation>
-    <xs:complexContent>
-      <xs:extension base="structures:AugmentationType">
-        <xs:sequence>
-          <xs:element ref="intel:AuthenticatedIdentity" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="intel:PrimaryIdentity" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -220,6 +207,19 @@
           <xs:element ref="nc:PersonEducationLevelText" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="intel:PersonEducationDegreeCodeText" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="intel:PersonEducationDetailsAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="PersonIdentityAssociationAugmentationType">
+    <xs:annotation>
+      <xs:documentation>A data type for additional information about an association relating a set of identities belonging to the same actual person to each other.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="structures:AugmentationType">
+        <xs:sequence>
+          <xs:element ref="intel:AuthenticatedIdentity" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="intel:PrimaryIdentity" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -354,9 +354,9 @@
       <xs:documentation>True if something is of undisputed origin or veracity, genuine; false otherwise.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="BiometricAugmentation" type="intel:BiometricAugmentationType" substitutionGroup="biom:BiometricCaptureAugmentationPoint" nillable="true">
+  <xs:element name="BiometricCaptureAugmentation" type="intel:BiometricCaptureAugmentationType" substitutionGroup="biom:BiometricCaptureAugmentationPoint" nillable="true">
     <xs:annotation>
-      <xs:documentation>Additional information about a biometric.</xs:documentation>
+      <xs:documentation>Additional information about a biometric capture.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="CapabilityAugmentation" type="intel:CapabilityAugmentationType" substitutionGroup="nc:CapabilityAugmentationPoint" nillable="true">
@@ -429,11 +429,6 @@
       <xs:documentation>A name of a major administrative district or division of a country from which this identification was issued.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="IdentityAssociationAugmentation" type="intel:IdentityAssociationAugmentationType" substitutionGroup="nc:PersonIdentityAssociationAugmentationPoint" nillable="true">
-    <xs:annotation>
-      <xs:documentation>Additional information about an IdentityAssociationType.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
   <xs:element name="LocationAugmentation" type="intel:LocationAugmentationType" substitutionGroup="nc:LocationAugmentationPoint" nillable="true">
     <xs:annotation>
       <xs:documentation>Additional information about a location.</xs:documentation>
@@ -502,6 +497,11 @@
   <xs:element name="PersonEyeDescriptionText" type="nc:TextType" nillable="true">
     <xs:annotation>
       <xs:documentation>A text description of the characteristics of a persons eyes.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="PersonIdentityAssociationAugmentation" type="intel:PersonIdentityAssociationAugmentationType" substitutionGroup="nc:PersonIdentityAssociationAugmentationPoint" nillable="true">
+    <xs:annotation>
+      <xs:documentation>Additional information about an IdentityAssociationType.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="PersonInIDAugmentationPoint" abstract="true">
