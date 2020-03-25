@@ -16,6 +16,18 @@ Please review the [5.0 issues in the NIEM Releases issue tracker](https://github
 - Merged Core Supplement 4.0.1. (#127)
   - Replaced nc:PolygonCoordinate (nc:Location2DGeospatialCoordinateType) with new nc:PolygonNodeLocation (nc:LocationType) (#9)
   - Changed the parent type of nc:LocationHeightMeasureType from nc:MeasureType to nc:LengthMeasureType (#13).
+- Merged Core Supplement 4.0.2 (#127)
+  - Updated Census county codes (#45)
+  - Updated Census / DOT commodity codes (#48)
+  - Updated DEA drug codes (#49)
+  - Updated Dept of Labor occupation codes (#50)
+  - Updated Census FIPS state codes (#51)
+  - Updated HazMat codes (#53)
+  - Updated HL7 religion codes (#54)
+  - Updated ISO 4217 currency codes (#55)
+  - Updated ISO 639-3 language codes (#56)
+  - Updated OmniClass facility codes (#57)
+  - Added GENC XML Schema enumerations (#66)
 
 ### Code Tables
 

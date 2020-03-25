@@ -9,6 +9,7 @@
   xmlns:dod_jcs-pub2.0="http://release.niem.gov/niem/codes/dod_jcs-pub2.0/5.0/"
   xmlns:dol="http://release.niem.gov/niem/codes/dol_soc/5.0/"
   xmlns:fips="http://release.niem.gov/niem/codes/fips/5.0/"
+  xmlns:genc="http://release.niem.gov/niem/codes/genc/5.0/"
   xmlns:hazmat="http://release.niem.gov/niem/codes/dot_hazmat/5.0/"
   xmlns:hl7="http://release.niem.gov/niem/codes/hl7/5.0/"
   xmlns:iso_3166="http://release.niem.gov/niem/codes/iso_3166-1/5.0/"
@@ -56,6 +57,7 @@
   <xs:import namespace="http://release.niem.gov/niem/codes/dol_soc/5.0/" schemaLocation="../../codes/dol_soc/5.0/dol_soc.xsd"/>
   <xs:import namespace="http://release.niem.gov/niem/codes/dot_hazmat/5.0/" schemaLocation="../../codes/dot_hazmat/5.0/dot_hazmat.xsd"/>
   <xs:import namespace="http://release.niem.gov/niem/codes/fips/5.0/" schemaLocation="../../codes/fips/5.0/fips.xsd"/>
+  <xs:import namespace="http://release.niem.gov/niem/codes/genc/5.0/" schemaLocation="../../codes/genc/5.0/genc.xsd"/>
   <xs:import namespace="http://release.niem.gov/niem/codes/hl7/5.0/" schemaLocation="../../codes/hl7/5.0/hl7.xsd"/>
   <xs:import namespace="http://release.niem.gov/niem/codes/iso_3166-1/5.0/" schemaLocation="../../codes/iso_3166-1/5.0/iso_3166.xsd"/>
   <xs:import namespace="http://release.niem.gov/niem/codes/iso_4217/5.0/" schemaLocation="../../codes/iso_4217/5.0/iso_4217.xsd"/>
@@ -6075,6 +6077,11 @@
       <xs:documentation>A structure used for business purposes.</xs:documentation>
     </xs:annotation>
   </xs:element>
+  <xs:element name="CommodityCategoryCode" type="commodity:CommodityCodeType" substitutionGroup="nc:ItemCategoryAbstract" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A kind of commodity item.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
   <xs:element name="Computer" type="nc:DeviceType" nillable="true">
     <xs:annotation>
       <xs:documentation>A device that processes information based on a set of instructions.</xs:documentation>
@@ -7395,14 +7402,29 @@
       <xs:documentation>A data concept for a general kind of job of an employee.</xs:documentation>
     </xs:annotation>
   </xs:element>
+  <xs:element name="EmployeeOccupationCategoryCode" type="dol:OccupationMinorCodeType" substitutionGroup="nc:EmployeeOccupationAbstract" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A category of job of an employee.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
   <xs:element name="EmployeeOccupationCategoryText" type="nc:TextType" substitutionGroup="nc:EmployeeOccupationCategoryAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A general kind of job of an employee.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="EmployeeOccupationCode" type="dol:OccupationCodeType" substitutionGroup="nc:EmployeeOccupationAbstract" nillable="true">
+  <xs:element name="EmployeeOccupationCode" type="dol:OccupationDetailCodeType" substitutionGroup="nc:EmployeeOccupationAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A job of an employee.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="EmployeeOccupationGeneralCategoryCode" type="dol:OccupationMajorCodeType" substitutionGroup="nc:EmployeeOccupationAbstract" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A general category of job of an employee.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="EmployeeOccupationSubCategoryCode" type="dol:OccupationBroadCodeType" substitutionGroup="nc:EmployeeOccupationAbstract" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A subcategory of job of an employee.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="EmployeeOccupationText" type="nc:TextType" substitutionGroup="nc:EmployeeOccupationAbstract" nillable="true">
@@ -7740,6 +7762,16 @@
       <xs:documentation>A mid-level usage category for a facility.</xs:documentation>
     </xs:annotation>
   </xs:element>
+  <xs:element name="FacilityUsageLevel3Code" type="occs:FacilityUsageLevel3CodeType" substitutionGroup="nc:FacilityUsageAbstract" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A usage category for a facility.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="FacilityUsageLevel4Code" type="occs:FacilityUsageLevel4CodeType" substitutionGroup="nc:FacilityUsageAbstract" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A detailed usage category for a facility.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
   <xs:element name="FacilityUsageText" type="nc:TextType" substitutionGroup="nc:FacilityUsageAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A description of the functional usage of a facility.</xs:documentation>
@@ -7865,7 +7897,7 @@
       <xs:documentation>A substance which can cause harm.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="HazardousMaterialCode" type="hazmat:HazmatUNCodeType" substitutionGroup="nc:HazmatAbstract" nillable="true">
+  <xs:element name="HazardousMaterialCode" type="hazmat:HazmatCodeType" substitutionGroup="nc:HazmatAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A hazardous material.</xs:documentation>
     </xs:annotation>
@@ -9030,6 +9062,11 @@
       <xs:documentation>A country, territory, dependency, or other such geopolitical subdivision of a location.</xs:documentation>
     </xs:annotation>
   </xs:element>
+  <xs:element name="LocationCountryGENCCode" type="genc:CountryAlpha3CodeType" substitutionGroup="nc:CountryRepresentation" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A country, territory, dependency, or other such geopolitical subdivision of a location.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
   <xs:element name="LocationCountryISO3166Alpha2Code" type="iso_3166:CountryAlpha2CodeType" substitutionGroup="nc:CountryRepresentation" nillable="true">
     <xs:annotation>
       <xs:documentation>A country, territory, dependency, or other such geopolitical subdivision of a location.</xs:documentation>
@@ -9191,6 +9228,11 @@
     </xs:annotation>
   </xs:element>
   <xs:element name="LocationStateFIPS5-2Code" type="fips:USStateNumericCodeType" substitutionGroup="nc:StateRepresentation" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A state, commonwealth, province, or other such geopolitical subdivision of a country.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="LocationStateGENCCode" type="genc:CountrySubdivisionCodeType" substitutionGroup="nc:StateRepresentation" nillable="true">
     <xs:annotation>
       <xs:documentation>A state, commonwealth, province, or other such geopolitical subdivision of a country.</xs:documentation>
     </xs:annotation>
