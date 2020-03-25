@@ -8783,19 +8783,6 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-  <xs:complexType name="StreetAugmentationType">
-    <xs:annotation>
-      <xs:documentation>A data type for additional information about a street.</xs:documentation>
-    </xs:annotation>
-    <xs:complexContent>
-      <xs:extension base="structures:AugmentationType">
-        <xs:sequence>
-          <xs:element ref="j:StreetPostdirectionalCode" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="j:StreetPredirectionalCode" minOccurs="0" maxOccurs="unbounded"/>
-        </xs:sequence>
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
   <xs:complexType name="StructureType">
     <xs:annotation>
       <xs:documentation>A data type for a building or construction (e.g. built environment, non-building structure).</xs:documentation>
@@ -27385,17 +27372,12 @@
       <xs:documentation>A full text of a statute or law.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="StreetAugmentation" type="j:StreetAugmentationType" substitutionGroup="nc:StreetAugmentationPoint" nillable="true">
-    <xs:annotation>
-      <xs:documentation>Additional information about a street.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="StreetPostdirectionalCode" type="ndex:StreetDirectionCodeType" nillable="true">
+  <xs:element name="StreetPostdirectionalCode" type="ndex:StreetDirectionCodeType" substitutionGroup="nc:StreetPostdirectionalAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A direction that appears after a street name.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="StreetPredirectionalCode" type="ndex:StreetDirectionCodeType" nillable="true">
+  <xs:element name="StreetPredirectionalCode" type="ndex:StreetDirectionCodeType" substitutionGroup="nc:StreetPredirectionalAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A direction that appears before a street name.</xs:documentation>
     </xs:annotation>
