@@ -21558,7 +21558,6 @@
           <xs:element ref="scr:WarrantDeportDemandDate" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="scr:WarrantDeportServeDate" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="scr:WarrantDeportSurrenderDate" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="scr:WarrantClassification" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -21594,20 +21593,6 @@
         <xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
       </xs:extension>
     </xs:simpleContent>
-  </xs:complexType>
-  <xs:complexType name="WarrantClassificationType">
-    <xs:annotation>
-      <xs:documentation>A data type for a classification of a warrant.</xs:documentation>
-    </xs:annotation>
-    <xs:complexContent>
-      <xs:extension base="structures:ObjectType">
-        <xs:sequence>
-          <xs:element ref="scr:WarrantCategoryDescriptionText" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="scr:WarrantCategoryAbstract" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="scr:WarrantClassificationAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
-        </xs:sequence>
-      </xs:extension>
-    </xs:complexContent>
   </xs:complexType>
   <xs:simpleType name="WatchlistCategoryCodeSimpleType">
     <xs:annotation>
@@ -24601,29 +24586,9 @@
       <xs:documentation>Additional information about a warrant.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="WarrantCategoryAbstract" abstract="true">
-    <xs:annotation>
-      <xs:documentation>A data concept for a kind of warrant.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="WarrantCategoryCode" type="scr:WarrantCategoryCodeType" substitutionGroup="scr:WarrantCategoryAbstract" nillable="true">
+  <xs:element name="WarrantCategoryCode" type="scr:WarrantCategoryCodeType" substitutionGroup="j:WarrantCategoryAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A kind of warrant.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="WarrantCategoryDescriptionText" type="nc:TextType" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A description of a kind of warrant.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="WarrantClassification" type="scr:WarrantClassificationType" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A classification of a warrant.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="WarrantClassificationAugmentationPoint" abstract="true">
-    <xs:annotation>
-      <xs:documentation>An augmentation point for WarrantClassificationType.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="WarrantDeportDemandDate" type="nc:DateType" nillable="true">

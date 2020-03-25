@@ -38,6 +38,7 @@ Please review the [5.0 issues in the NIEM Releases issue tracker](https://github
 - Moved nc:PleaCategoryCodeType to the Justice domain (#24)
 - Added new nc:PersonContactInformation element to nc:PersonType (#29)
 - Updated inconsistent code set folder paths, file names, and target namespaces (#58)
+- Harmonized warrant components in Justice and Screening (#62)
 - Merged scr:PersonNameAugmentation and scr:PersonNameTextAugmentation (#77)
 - Fixed invalid augmentation names (#78)
 
