@@ -33,6 +33,10 @@ Please review the [5.0 issues in the NIEM Releases issue tracker](https://github
 
 - Merged FIPS 5-2 state codes and Census county codes into consolidated FIPS namespaces (#52)
 
+### Harmonization and QA
+
+- Merged scr:PersonNameAugmentation and scr:PersonNameTextAugmentation (#77)
+
 ### Release package updates
 
 - Changed the character encoding of the XML schemas from "US-ASCII" to "UTF-8" for better international support (#125)
