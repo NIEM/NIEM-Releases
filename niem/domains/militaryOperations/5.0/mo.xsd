@@ -1294,18 +1294,6 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-  <xs:complexType name="PolygonRegionAugmentationType">
-    <xs:annotation>
-      <xs:documentation>A data type for additional information about a polygon.</xs:documentation>
-    </xs:annotation>
-    <xs:complexContent>
-      <xs:extension base="structures:AugmentationType">
-        <xs:sequence>
-          <xs:element ref="mo:PolygonCoordinateLocation" minOccurs="0" maxOccurs="unbounded"/>
-        </xs:sequence>
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
   <xs:complexType name="RangeValueSettingDataType">
     <xs:annotation>
       <xs:documentation>A data type for a setting that is specified by a value or measure within a given range.</xs:documentation>
@@ -3254,16 +3242,6 @@ functions. Installations may be elements of a base.</xs:documentation>
   <xs:element name="PointOfOriginLocation" type="nc:LocationType" nillable="true">
     <xs:annotation>
       <xs:documentation>A geographic location of a beginning point of a deployment where unit or non-unit-related cargo or personnel are located.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="PolygonCoordinateLocation" type="nc:LocationType" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A location of a coordinate that serves as a node of a polygon.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="PolygonRegionAugmentation" type="mo:PolygonRegionAugmentationType" substitutionGroup="nc:PolygonRegionAugmentationPoint" nillable="true">
-    <xs:annotation>
-      <xs:documentation>Additional information about a polygon.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="PortOfDebarkationLocation" type="nc:LocationType" nillable="true">
