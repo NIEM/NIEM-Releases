@@ -721,7 +721,7 @@
   </xs:complexType>
   <xs:complexType name="DoubleType">
     <xs:annotation>
-      <xs:documentation>A data type for a  double precision real value.</xs:documentation>
+      <xs:documentation>A data type for a double precision real value.</xs:documentation>
     </xs:annotation>
     <xs:simpleContent>
       <xs:extension base="xs:double">
@@ -941,7 +941,7 @@
   </xs:complexType>
   <xs:complexType name="GeographicPointType">
     <xs:annotation>
-      <xs:documentation>A data type for geographical coordinates of a point on the surface of the earth. For latitudes, positive values correspond to Northern latitudes, and negative values to Southern; for longitudes, positive values are Eastern longitudes and negative are Western. The units of measure for  elevation and positional accuracy elements is given by the units attribute.</xs:documentation>
+      <xs:documentation>A data type for geographical coordinates of a point on the surface of the earth. For latitudes, positive values correspond to Northern latitudes, and negative values to Southern; for longitudes, positive values are Eastern longitudes and negative are Western. The units of measure for elevation and positional accuracy elements is given by the units attribute.</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
       <xs:extension base="cbrn:RemarksComplexObjectType">
@@ -1468,7 +1468,7 @@
   </xs:complexType>
   <xs:complexType name="PositiveIntegerType">
     <xs:annotation>
-      <xs:documentation>A data type for a  positive integer.</xs:documentation>
+      <xs:documentation>A data type for a positive integer.</xs:documentation>
     </xs:annotation>
     <xs:simpleContent>
       <xs:extension base="xs:positiveInteger">
@@ -2189,7 +2189,7 @@
   </xs:complexType>
   <xs:attribute name="compressionCode" type="cbrncl:CompressionCodeSimpleType">
     <xs:annotation>
-      <xs:documentation>An algorithm, if any, by which the channel data have been compressed.  If this attribute is omitted, the data have not been compressed.  The kinds of data compression are as follows:  - None: the data are not compressed.  The number of values in the ChannelData element is equal to the number of channels of data represented by the element. - CountedZeroes: the data have been compressed by the removal of repeated zero values. When a "0" value appears in the ChannelData contents, the next value is the number of consecutive zero-value channels beginning with the first zero-value in the sequence. For example, the following 18 channels of uncompressed data: 22 5 0 2 1 0 0 3 4 0 0 0 0 0 0 0 0 1 would be represented in compressed form by 22 5 0 1 2 1 0 2 3 4 0 8 1 The italicized values in the list show cases where one, two, and eight zeroes have been compressed.</xs:documentation>
+      <xs:documentation>An algorithm, if any, by which the channel data have been compressed. If this attribute is omitted, the data have not been compressed. The kinds of data compression are as follows: - None: the data are not compressed. The number of values in the ChannelData element is equal to the number of channels of data represented by the element. - CountedZeroes: the data have been compressed by the removal of repeated zero values. When a "0" value appears in the ChannelData contents, the next value is the number of consecutive zero-value channels beginning with the first zero-value in the sequence. For example, the following 18 channels of uncompressed data: 22 5 0 2 1 0 0 3 4 0 0 0 0 0 0 0 0 1 would be represented in compressed form by 22 5 0 1 2 1 0 2 3 4 0 8 1 The italicized values in the list show cases where one, two, and eight zeroes have been compressed.</xs:documentation>
     </xs:annotation>
   </xs:attribute>
   <xs:attribute name="datumText" type="xs:string">
@@ -2559,7 +2559,7 @@
   </xs:element>
   <xs:element name="CaseOfInterestUUID" type="niem-xs:string" nillable="true">
     <xs:annotation>
-      <xs:documentation>A unique identifier of a case of interest  to which another case is related.</xs:documentation>
+      <xs:documentation>A unique identifier of a case of interest to which another case is related.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="CasePriorityCode" type="cbrncl:CasePriorityCodeType" nillable="true">
@@ -2634,7 +2634,7 @@
   </xs:element>
   <xs:element name="CaseThreatLevelCode" type="cbrncl:CaseThreatLevelCodeType" nillable="true">
     <xs:annotation>
-      <xs:documentation>A  threat level represented by the activities or items represented by a case.</xs:documentation>
+      <xs:documentation>A threat level represented by the activities or items represented by a case.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="CaseUUID" type="niem-xs:string" nillable="true">
@@ -2754,7 +2754,7 @@
   </xs:element>
   <xs:element name="ConveyanceConveyanceRelationship" type="cbrn:ConveyanceConveyanceRelationshipType" nillable="true">
     <xs:annotation>
-      <xs:documentation>A description of a relationship  between two conveyances.</xs:documentation>
+      <xs:documentation>A description of a relationship between two conveyances.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="ConveyanceConveyanceRelationshipAugmentationPoint" abstract="true">
@@ -2779,7 +2779,7 @@
   </xs:element>
   <xs:element name="ConveyanceOrganizationRelationship" type="cbrn:ConveyanceOrganizationRelationshipType" nillable="true">
     <xs:annotation>
-      <xs:documentation>A description of a relationship  between a conveyance and an organization.</xs:documentation>
+      <xs:documentation>A description of a relationship between a conveyance and an organization.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="ConveyanceOrganizationRelationshipAugmentationPoint" abstract="true">
@@ -2794,7 +2794,7 @@
   </xs:element>
   <xs:element name="ConveyancePrimaryColorCode" type="cbrncl:ConveyanceColorCodeType" nillable="true">
     <xs:annotation>
-      <xs:documentation>A color that  identifies a single, upper-most, front-most, or majority color of a conveyance.</xs:documentation>
+      <xs:documentation>A color that identifies a single, upper-most, front-most, or majority color of a conveyance.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="ConveyanceRegistration" type="cbrn:ConveyanceRegistrationType" nillable="true">
@@ -2889,12 +2889,12 @@
   </xs:element>
   <xs:element name="DataFileCaptureByDevice" type="cbrn:DeviceIdentificationType" nillable="true">
     <xs:annotation>
-      <xs:documentation>A  device that is is used to create a data file.</xs:documentation>
+      <xs:documentation>A device that is is used to create a data file.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="DataFileCapturedByDevice" type="cbrn:DataFileCaptureType" nillable="true">
     <xs:annotation>
-      <xs:documentation>A data type that  provides information about the recording of a digital data file.</xs:documentation>
+      <xs:documentation>A data type that provides information about the recording of a digital data file.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="DataFileCaptureDeviceID" type="niem-xs:string" nillable="true">
@@ -3069,7 +3069,7 @@
   </xs:element>
   <xs:element name="DataFileSetID" type="niem-xs:string" nillable="true">
     <xs:annotation>
-      <xs:documentation>An identifier of a set of data files to which a data file  belongs.</xs:documentation>
+      <xs:documentation>An identifier of a set of data files to which a data file belongs.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="DataFileSetMember" type="cbrn:DataFileType" nillable="true">
@@ -3134,12 +3134,12 @@
   </xs:element>
   <xs:element name="DetectionEventID" type="niem-xs:string" nillable="true">
     <xs:annotation>
-      <xs:documentation>An identifier for a Detection Event applied by the site that performs the inspection activities of the Detection  Event.</xs:documentation>
+      <xs:documentation>An identifier for a Detection Event applied by the site that performs the inspection activities of the Detection Event.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="DetectionEventInstrumentDataAbstract" abstract="true">
     <xs:annotation>
-      <xs:documentation>A data concept for the set of data output by an instrument for a detection event. This includes the reported measurement and analysis data,  information about the instrument, and information about the item(s) which it is measuring/inspecting.</xs:documentation>
+      <xs:documentation>A data concept for the set of data output by an instrument for a detection event. This includes the reported measurement and analysis data, information about the instrument, and information about the item(s) which it is measuring/inspecting.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="DetectionEventLocationText" type="niem-xs:string" nillable="true">
@@ -3224,7 +3224,7 @@
   </xs:element>
   <xs:element name="DoseRateValue" type="cbrn:DoseRateuSvhType" nillable="true">
     <xs:annotation>
-      <xs:documentation>A  measured ambient radiation dose equivalent rate value, in microsieverts per hour (Sv/h).</xs:documentation>
+      <xs:documentation>A measured ambient radiation dose equivalent rate value, in microsieverts per hour (Sv/h).</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="EfficiencyCalibrationAugmentationPoint" abstract="true">
@@ -3279,7 +3279,7 @@
   </xs:element>
   <xs:element name="EncounterDeviceCategoryLevelCode" type="cbrncl:EncounterDeviceCategoryLevelCodeType" nillable="true">
     <xs:annotation>
-      <xs:documentation>A device  manufacturer's name.</xs:documentation>
+      <xs:documentation>A device manufacturer's name.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="EncounterDeviceID" type="niem-xs:string" nillable="true">
@@ -3314,7 +3314,7 @@
   </xs:element>
   <xs:element name="EncounterRelationship" type="cbrn:EncounterRelationshipType" nillable="true">
     <xs:annotation>
-      <xs:documentation>A description of a relationship  between two objects involved in an encounter.</xs:documentation>
+      <xs:documentation>A description of a relationship between two objects involved in an encounter.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="EncounterRelationshipAugmentationPoint" abstract="true">
@@ -3339,7 +3339,7 @@
   </xs:element>
   <xs:element name="EnergyDeviationValueList" type="cbrn:EnergyDeviationsKeVType" nillable="true">
     <xs:annotation>
-      <xs:documentation>A list of values providing the differences in the energies predicted by an energy calibration coefficients equation and the true energies.   EPredicted = T0 + T1*C + T2*C2 EDeviation = f(EPredicted) EActual = EPredicted + EDeviation  Where Tn are the coefficients from the CoefficientValues element data, C is the channel position (the first channel starts at "0.0"), EPredicted is the predicted energy (in keV) at channel C, EDeviation is the energy deviation value (in keV) from interpolation of the EnergyValues and EnergyDeviationValues data, and EActual is the final corrected energy at channel C.</xs:documentation>
+      <xs:documentation>A list of values providing the differences in the energies predicted by an energy calibration coefficients equation and the true energies. EPredicted = T0 + T1*C + T2*C2 EDeviation = f(EPredicted) EActual = EPredicted + EDeviation Where Tn are the coefficients from the CoefficientValues element data, C is the channel position (the first channel starts at "0.0"), EPredicted is the predicted energy (in keV) at channel C, EDeviation is the energy deviation value (in keV) from interpolation of the EnergyValues and EnergyDeviationValues data, and EActual is the final corrected energy at channel C.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="EnergyValueList" type="cbrn:EnergiesKeVType" nillable="true">
@@ -3724,7 +3724,7 @@
   </xs:element>
   <xs:element name="LayerSequenceNumeric" type="cbrn:PositiveIntegerType" nillable="true">
     <xs:annotation>
-      <xs:documentation>A number  for the sequence of a layer, if there is more than one layer  . The outermost layer is 1.</xs:documentation>
+      <xs:documentation>A number for the sequence of a layer, if there is more than one layer . The outermost layer is 1.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="LiveTimeDuration" type="niem-xs:duration" nillable="true">
@@ -3739,7 +3739,7 @@
   </xs:element>
   <xs:element name="LocationDescriptionText" type="cbrn:LocationDescriptionType" substitutionGroup="cbrn:StateVectorLocationChoiceAbstract" nillable="true">
     <xs:annotation>
-      <xs:documentation>A free-form text description of the location of an object  (e.g., radiation measurement instrument, radiation detector, or measured item) or nuclide source.</xs:documentation>
+      <xs:documentation>A free-form text description of the location of an object (e.g., radiation measurement instrument, radiation detector, or measured item) or nuclide source.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="LongitudeValue" type="cbrn:Angle180Type" nillable="true">
@@ -3839,7 +3839,7 @@
   </xs:element>
   <xs:element name="MeasuredItemKindAbstract" abstract="true">
     <xs:annotation>
-      <xs:documentation>A data concept for a  kind or general category of item that is being inspected.</xs:documentation>
+      <xs:documentation>A data concept for a kind or general category of item that is being inspected.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="MeasuredItemKindCode" type="cbrncl:MeasuredItemKindCodeType" substitutionGroup="cbrn:MeasuredItemKindAbstract" nillable="true">
@@ -3869,7 +3869,7 @@
   </xs:element>
   <xs:element name="MessageContentHeader" type="cbrn:ContentHeaderType" nillable="true">
     <xs:annotation>
-      <xs:documentation>A set of common payload header information for a  N25 message. This is independent of a specific transmission protocol that may be used to wrap the payload.</xs:documentation>
+      <xs:documentation>A set of common payload header information for a N25 message. This is independent of a specific transmission protocol that may be used to wrap the payload.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="MessageCreationDateTime" type="niem-xs:dateTime" nillable="true">
@@ -3894,7 +3894,7 @@
   </xs:element>
   <xs:element name="MessageHandlingError" type="cbrn:MessageErrorType" nillable="true">
     <xs:annotation>
-      <xs:documentation>A description of a  message error encountered by an infrastructure component in the process of message handling and transmission.</xs:documentation>
+      <xs:documentation>A description of a message error encountered by an infrastructure component in the process of message handling and transmission.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="MessageID" type="niem-xs:string" nillable="true">
@@ -4039,7 +4039,7 @@
   </xs:element>
   <xs:element name="NuclideActivityUncertaintyValue" type="cbrn:NuclideActivityUncertaintyType" nillable="true">
     <xs:annotation>
-      <xs:documentation>A 1-sigma absolute uncertainty in the value of  a NuclideActivityValue, expressed in kilobecquerel (kBq) units.</xs:documentation>
+      <xs:documentation>A 1-sigma absolute uncertainty in the value of a NuclideActivityValue, expressed in kilobecquerel (kBq) units.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="NuclideActivityValue" type="cbrn:NuclideActivityType" nillable="true">
@@ -4174,7 +4174,7 @@
   </xs:element>
   <xs:element name="ParentDeviceID" type="niem-xs:string" nillable="true">
     <xs:annotation>
-      <xs:documentation>A unique  identifier of the device that is the parent of the device identified by cbrn:RadEncounterDeviceID.</xs:documentation>
+      <xs:documentation>A unique identifier of the device that is the parent of the device identified by cbrn:RadEncounterDeviceID.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="PhotonData" type="cbrn:PhotonDataType" nillable="true">
@@ -4354,7 +4354,7 @@
   </xs:element>
   <xs:element name="RadInstrumentComponentVersionText" type="cbrn:NonBlankStringType" nillable="true">
     <xs:annotation>
-      <xs:documentation>A  description of the version of a particular radiation measurement instrument component.</xs:documentation>
+      <xs:documentation>A description of the version of a particular radiation measurement instrument component.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="RadInstrumentData" type="cbrn:RadInstrumentDataType" substitutionGroup="cbrn:DetectionEventInstrumentDataAbstract" nillable="true">
@@ -4409,7 +4409,7 @@
   </xs:element>
   <xs:element name="RadInstrumentModelName" type="cbrn:NonBlankStringType" nillable="true">
     <xs:annotation>
-      <xs:documentation>A name of the  manufacturer's model  radiation measurement instrument, number, or other description of the radiation measurement instrument.</xs:documentation>
+      <xs:documentation>A name of the manufacturer's model radiation measurement instrument, number, or other description of the radiation measurement instrument.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="RadInstrumentOperatingModeCode" type="cbrncl:RadInstrumentModeCodeType" nillable="true">
@@ -4514,7 +4514,7 @@
   </xs:element>
   <xs:element name="RadMeasurement" type="cbrn:RadMeasurementType" substitutionGroup="cbrn:RadInstrumentDataChoiceAbstract" nillable="true">
     <xs:annotation>
-      <xs:documentation>A set of data for a radiation measurement at a particular StartDateTime, for a RealTimeDuration, of a particular MeasurementClassCode that consists of readings from any number of one or more of the following:  -  a radiation detector  - an occupancy sensor  - a positioning sensor that captures the location of a radiation measurement instrument, radiation detector, or measured item - the state of a radiation measurement instrument, radiation detector, or measured item</xs:documentation>
+      <xs:documentation>A set of data for a radiation measurement at a particular StartDateTime, for a RealTimeDuration, of a particular MeasurementClassCode that consists of readings from any number of one or more of the following: - a radiation detector - an occupancy sensor - a positioning sensor that captures the location of a radiation measurement instrument, radiation detector, or measured item - the state of a radiation measurement instrument, radiation detector, or measured item</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="RadMeasurementAugmentationPoint" abstract="true">
@@ -4734,7 +4734,7 @@
   </xs:element>
   <xs:element name="ResponseAgencyContactInformation" type="nc:ContactInformationType" nillable="true">
     <xs:annotation>
-      <xs:documentation>An organizations contact information that provides a response report in reply to  a request.</xs:documentation>
+      <xs:documentation>An organizations contact information that provides a response report in reply to a request.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="ResponseReport" type="cbrn:ResponseReportType" nillable="true">
@@ -4844,7 +4844,7 @@
   </xs:element>
   <xs:element name="SecondaryInspectionResolution" type="cbrn:SecondaryInspectionResolutionType" nillable="true">
     <xs:annotation>
-      <xs:documentation>A resolution of a Secondary Inspection  of an item of interest.</xs:documentation>
+      <xs:documentation>A resolution of a Secondary Inspection of an item of interest.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="SecondaryInspectionResolutionAugmentationPoint" abstract="true">
@@ -4854,7 +4854,7 @@
   </xs:element>
   <xs:element name="Shielding" type="cbrn:ShieldingType" nillable="true">
     <xs:annotation>
-      <xs:documentation>A set of data  that describes the shielding observed by an inspector(s) as relevant to the measured item.</xs:documentation>
+      <xs:documentation>A set of data that describes the shielding observed by an inspector(s) as relevant to the measured item.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="ShieldingAugmentationPoint" abstract="true">
@@ -4864,7 +4864,7 @@
   </xs:element>
   <xs:element name="SiteSpecialInfoText" type="nc:TextType" nillable="true">
     <xs:annotation>
-      <xs:documentation>A description of a site that may contain information of importance to a responder; e.g.,  electrified fence, dogs on property, loft apartment, multi-storied building, multiple warehouses on site, hazardous material, etc.</xs:documentation>
+      <xs:documentation>A description of a site that may contain information of importance to a responder; e.g., electrified fence, dogs on property, loft apartment, multi-storied building, multiple warehouses on site, hazardous material, etc.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="SourcePosition" type="cbrn:SourcePositionType" nillable="true">
@@ -5034,7 +5034,7 @@
   </xs:element>
   <xs:element name="ThreatLevelDeterminationCode" type="cbrncl:ThreatLevelDeterminationCodeType" substitutionGroup="cbrn:ThreatLevelDeterminationAbstract" nillable="true">
     <xs:annotation>
-      <xs:documentation>A  code for a threat level based on findings during an inspection.</xs:documentation>
+      <xs:documentation>A code for a threat level based on findings during an inspection.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="ThreatLevelDeterminationText" type="niem-xs:string" substitutionGroup="cbrn:ThreatLevelDeterminationAbstract" nillable="true">
@@ -5069,7 +5069,7 @@
   </xs:element>
   <xs:element name="TotalDoseValue" type="cbrn:TotalDoseuSvType" nillable="true">
     <xs:annotation>
-      <xs:documentation>A value for the  accumulated ambient dose equivalent over all measurements input to AnalysisResults, in microsieverts (Sv).</xs:documentation>
+      <xs:documentation>A value for the accumulated ambient dose equivalent over all measurements input to AnalysisResults, in microsieverts (Sv).</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="TotalEfficiencyCalibration" type="cbrn:EfficiencyCalibrationType" substitutionGroup="cbrn:RadInstrumentDataChoiceAbstract" nillable="true">

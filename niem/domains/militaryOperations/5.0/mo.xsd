@@ -220,7 +220,7 @@
   </xs:complexType>
   <xs:complexType name="ConditionType">
     <xs:annotation>
-      <xs:documentation>A data type for a set of  variables of an operational environment or situation in which a unit, system, or individual is expected to operate and may affect performance. A physical or behavioral state of a system that is required for the achievement of an objective.</xs:documentation>
+      <xs:documentation>A data type for a set of variables of an operational environment or situation in which a unit, system, or individual is expected to operate and may affect performance. A physical or behavioral state of a system that is required for the achievement of an objective.</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
       <xs:extension base="structures:ObjectType">
@@ -499,7 +499,7 @@
   </xs:complexType>
   <xs:simpleType name="ForceManagementIDSimpleType">
     <xs:annotation>
-      <xs:documentation>A data type for a  set of identifiers and indexes used to identify data within the GFM XSD. FMIDs convey no information about the entity they identify, are a fixed size, and are exchanged as a single attribute.</xs:documentation>
+      <xs:documentation>A data type for a set of identifiers and indexes used to identify data within the GFM XSD. FMIDs convey no information about the entity they identify, are a fixed size, and are exchanged as a single attribute.</xs:documentation>
     </xs:annotation>
     <xs:restriction base="xs:unsignedLong">
       <xs:maxInclusive value="18446744073709551615">
@@ -516,7 +516,7 @@
   </xs:simpleType>
   <xs:complexType name="ForceManagementIDType">
     <xs:annotation>
-      <xs:documentation>A data type for a  set of identifiers and indexes used to identify data within the GFM XSD. FMIDs convey no information about the entity they identify, are a fixed size, and are exchanged as a single attribute.</xs:documentation>
+      <xs:documentation>A data type for a set of identifiers and indexes used to identify data within the GFM XSD. FMIDs convey no information about the entity they identify, are a fixed size, and are exchanged as a single attribute.</xs:documentation>
     </xs:annotation>
     <xs:simpleContent>
       <xs:extension base="mo:ForceManagementIDSimpleType">
@@ -1796,7 +1796,7 @@
   </xs:complexType>
   <xs:complexType name="TrackPointType">
     <xs:annotation>
-      <xs:documentation>A data type for a point in a series of related contacts displayed on a  data display console or other display device.</xs:documentation>
+      <xs:documentation>A data type for a point in a series of related contacts displayed on a data display console or other display device.</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
       <xs:extension base="structures:ObjectType">
@@ -2492,7 +2492,7 @@
   </xs:element>
   <xs:element name="Condition" type="mo:ConditionType" nillable="true">
     <xs:annotation>
-      <xs:documentation>A set of  variables of an operational environment or situation in which a unit, system, or individual is expected to operate and may affect performance. A physical or behavioral state of a system that is required for the achievement of an objective.</xs:documentation>
+      <xs:documentation>A set of variables of an operational environment or situation in which a unit, system, or individual is expected to operate and may affect performance. A physical or behavioral state of a system that is required for the achievement of an objective.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="ConditionAugmentationPoint" abstract="true">
@@ -3243,7 +3243,7 @@ functions. Installations may be elements of a base.</xs:documentation>
   </xs:element>
   <xs:element name="PitchValue" type="nc:Degree180PlusMinusType" nillable="true">
     <xs:annotation>
-      <xs:documentation>An angle of rotation of a thing about its longitudinal axis, measured in degrees between the lateral axis and the horizontal plane; negative values indicate the  left side is rotated downward.</xs:documentation>
+      <xs:documentation>An angle of rotation of a thing about its longitudinal axis, measured in degrees between the lateral axis and the horizontal plane; negative values indicate the left side is rotated downward.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="PointOfOriginLocation" type="nc:LocationType" nillable="true">
@@ -3609,7 +3609,7 @@ it is responsible.</xs:documentation>
   </xs:element>
   <xs:element name="TrackPoint" type="mo:TrackPointType" nillable="true">
     <xs:annotation>
-      <xs:documentation>A point in a series of related contacts displayed on a  data display console or other display device.</xs:documentation>
+      <xs:documentation>A point in a series of related contacts displayed on a data display console or other display device.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="TrackPointAugmentationPoint" abstract="true">
@@ -3814,7 +3814,7 @@ it is responsible.</xs:documentation>
   </xs:element>
   <xs:element name="WGS84LocationCylinder" type="mo:WGS84LocationCylinderType" substitutionGroup="nc:LocationGeospatialCoordinateAbstract" nillable="true">
     <xs:annotation>
-      <xs:documentation>A location identified by a cylinder oriented vertically and centered on a point described with WGS84 coordinates. If it is appropriate for the radius and half-height properties to represent an error value  (for example, because the event is a laser-designated target), then the true event location follows a normal distribution such that the cylinder defines the one-sigma (p≈0.67)(almost equal to) deviation.  (A cylinder with  twice the volume would be the two-sigma (p≈0.95)(almost equal to) deviation, etc.)  Otherwise the cylinder encloses the  full physical extent of the event.</xs:documentation>
+      <xs:documentation>A location identified by a cylinder oriented vertically and centered on a point described with WGS84 coordinates. If it is appropriate for the radius and half-height properties to represent an error value (for example, because the event is a laser-designated target), then the true event location follows a normal distribution such that the cylinder defines the one-sigma (p≈0.67)(almost equal to) deviation. (A cylinder with twice the volume would be the two-sigma (p≈0.95)(almost equal to) deviation, etc.) Otherwise the cylinder encloses the full physical extent of the event.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="WGS84LocationCylinderAugmentationPoint" abstract="true">
@@ -3824,7 +3824,7 @@ it is responsible.</xs:documentation>
   </xs:element>
   <xs:element name="WGS84LocationEllipse" type="mo:WGS84EllipseType" substitutionGroup="nc:AreaRegionAbstract" nillable="true">
     <xs:annotation>
-      <xs:documentation>A  area region described by an ellipse specified by a point, major axis, minor axis and rotation, using WGS84, meters, and decimal degrees.</xs:documentation>
+      <xs:documentation>A area region described by an ellipse specified by a point, major axis, minor axis and rotation, using WGS84, meters, and decimal degrees.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="WGS84LocationExternalPolygon" type="mo:WGS84ExternalPolygonType" substitutionGroup="nc:AreaRegionAbstract" nillable="true">
