@@ -13,8 +13,10 @@ Version: 3.0;
 Date: Oct 2013;   
 http://release.niem.gov/niem/3.0/</xs:documentation>
     <xs:appinfo>
+      <appinfo:LocalTerm term="CFR" definition="Code of Federal Regulations"/>
       <appinfo:LocalTerm term="GNDA" literal="Global Nuclear Detection Architecture"/>
       <appinfo:LocalTerm term="MIME" literal="Multipurpose Internet Mail Extensions"/>
+      <appinfo:LocalTerm term="Reachback" definition="A process by which commanders, their staffs and deployed forces may be provided with timely, coordinated and authoritative advice on Chemical, Biological, Radiological and Nuclear issues, drawing upon remote expert sources of information."/>
       <appinfo:LocalTerm term="UNECE" literal="United Nations Economic Commission for Europe"/>
     </xs:appinfo>
   </xs:annotation>
@@ -1085,7 +1087,7 @@ http://release.niem.gov/niem/3.0/</xs:documentation>
       </xs:extension>
     </xs:simpleContent>
   </xs:complexType>
-  <xs:simpleType name="ConveyanceOrgRelationshipKindCodeSimpleType">
+  <xs:simpleType name="ConveyanceOrganizationRelationshipKindCodeSimpleType">
     <xs:annotation>
       <xs:documentation>A data type for the kinds of relationships that may exist between a conveyance and an organization.</xs:documentation>
     </xs:annotation>
@@ -1122,12 +1124,12 @@ http://release.niem.gov/niem/3.0/</xs:documentation>
       </xs:enumeration>
     </xs:restriction>
   </xs:simpleType>
-  <xs:complexType name="ConveyanceOrgRelationshipKindCodeType">
+  <xs:complexType name="ConveyanceOrganizationRelationshipKindCodeType">
     <xs:annotation>
       <xs:documentation>A data type for the kinds of relationships that may exist between a conveyance and an organization.</xs:documentation>
     </xs:annotation>
     <xs:simpleContent>
-      <xs:extension base="cbrncl:ConveyanceOrgRelationshipKindCodeSimpleType">
+      <xs:extension base="cbrncl:ConveyanceOrganizationRelationshipKindCodeSimpleType">
         <xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
       </xs:extension>
     </xs:simpleContent>
@@ -5283,7 +5285,7 @@ http://release.niem.gov/niem/3.0/</xs:documentation>
       </xs:extension>
     </xs:simpleContent>
   </xs:complexType>
-  <xs:simpleType name="GNDAOrgCodeSimpleType">
+  <xs:simpleType name="GNDAOrganizationCodeSimpleType">
     <xs:annotation>
       <xs:documentation>A data type for list of organizations that participate in the Global Nuclear Detection Architecture.</xs:documentation>
     </xs:annotation>
@@ -5450,12 +5452,12 @@ http://release.niem.gov/niem/3.0/</xs:documentation>
       </xs:enumeration>
     </xs:restriction>
   </xs:simpleType>
-  <xs:complexType name="GNDAOrgCodeType">
+  <xs:complexType name="GNDAOrganizationCodeType">
     <xs:annotation>
       <xs:documentation>A data type for a list of organizations that participate in the Global Nuclear Detection Architecture.</xs:documentation>
     </xs:annotation>
     <xs:simpleContent>
-      <xs:extension base="cbrncl:GNDAOrgCodeSimpleType">
+      <xs:extension base="cbrncl:GNDAOrganizationCodeSimpleType">
         <xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
       </xs:extension>
     </xs:simpleContent>
@@ -11979,7 +11981,7 @@ http://release.niem.gov/niem/3.0/</xs:documentation>
   </xs:complexType>
   <xs:simpleType name="ReachbackRecommendationCodeSimpleType">
     <xs:annotation>
-      <xs:documentation>A data type that defines the variuos code values for the various Reachback Recommnedation.</xs:documentation>
+      <xs:documentation>A data type that defines the various code values for the various Reachback Recommendation.</xs:documentation>
     </xs:annotation>
     <xs:restriction base="xs:token">
       <xs:enumeration value="Clear">
@@ -12016,7 +12018,7 @@ http://release.niem.gov/niem/3.0/</xs:documentation>
   </xs:simpleType>
   <xs:complexType name="ReachbackRecommendationCodeType">
     <xs:annotation>
-      <xs:documentation>A data type that defines the various Reachback Recommnedation Code</xs:documentation>
+      <xs:documentation>A data type that defines the various Reachback Recommendation Code</xs:documentation>
     </xs:annotation>
     <xs:simpleContent>
       <xs:extension base="cbrncl:ReachbackRecommendationCodeSimpleType">
@@ -12258,7 +12260,7 @@ http://release.niem.gov/niem/3.0/</xs:documentation>
   </xs:complexType>
   <xs:simpleType name="SecondaryInspectionReferralReasonCodeSimpleType">
     <xs:annotation>
-      <xs:documentation>A data type that defines the variuos code values for Secondary Inspection Referral Reason</xs:documentation>
+      <xs:documentation>A data type that defines the various code values for Secondary Inspection Referral Reason</xs:documentation>
     </xs:annotation>
     <xs:restriction base="xs:token">
       <xs:enumeration value="ATSRecommendation">
@@ -12552,7 +12554,7 @@ http://release.niem.gov/niem/3.0/</xs:documentation>
   </xs:simpleType>
   <xs:complexType name="TraversalOperatingModeCodeType">
     <xs:annotation>
-      <xs:documentation>A data type that defines the various traversal Opearing ModeCode</xs:documentation>
+      <xs:documentation>A data type that defines the various traversal Operating Mode Code.</xs:documentation>
     </xs:annotation>
     <xs:simpleContent>
       <xs:extension base="cbrncl:TraversalOperatingModeCodeSimpleType">

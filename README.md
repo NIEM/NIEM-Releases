@@ -38,6 +38,7 @@ Please review the [5.0 issues in the NIEM Releases issue tracker](https://github
 - Added new nc:PersonContactInformation element to nc:PersonType (#29)
 - Added substitution groups for street direction codes (#65)
 - Fixed invalid augmentation names (#78)
+- Fixed spelling errors and added local terminology (#131)
 - Harmonized warrant components in Justice and Screening (#62)
 - Merged scr:PersonNameAugmentation and scr:PersonNameTextAugmentation (#77)
 - Moved nc:PleaCategoryCodeType to the Justice domain (#24)

@@ -25,6 +25,7 @@
       <appinfo:LocalTerm term="LPR" literal="License Plate Reader"/>
       <appinfo:LocalTerm term="NCIC" literal="National Crime Information Center"/>
       <appinfo:LocalTerm term="TECS" literal="Traveler Encounter Compliance System"/>
+      <appinfo:LocalTerm term="Watchlist" definition="A document which contains a nomination list prepared and approved by the National Center of Counter Terrorism."/>
     </xs:appinfo>
   </xs:annotation>
   <xs:import namespace="http://release.niem.gov/niem/domains/cbrn/5.0/" schemaLocation="../../cbrn/5.0/cbrn.xsd"/>
@@ -21101,7 +21102,7 @@
     <xs:complexContent>
       <xs:extension base="nc:ActivityType">
         <xs:sequence>
-          <xs:element ref="scr:ServiceRequestorMetric" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="scr:ServiceRequesterMetric" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="scr:ServiceProviderMetric" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="scr:TransactionControlNumberIdentification" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="scr:ActivityProcessClassification" minOccurs="0" maxOccurs="unbounded"/>
@@ -22033,7 +22034,7 @@
   </xs:element>
   <xs:element name="AlienDetentionAugmentationPoint" abstract="true">
     <xs:annotation>
-      <xs:documentation>An augmentation point for DetentionType.</xs:documentation>
+      <xs:documentation>An augmentation point for AlienDetentionType.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="AlienEncounterIdentification" type="nc:IdentificationType" nillable="true">
@@ -22143,7 +22144,7 @@
   </xs:element>
   <xs:element name="BeginDocumentUseDate" type="nc:DateType" nillable="true">
     <xs:annotation>
-      <xs:documentation>A date representing the beginning or starting timeframe of using a document.</xs:documentation>
+      <xs:documentation>A date representing the beginning or starting time frame of using a document.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="BeginSalaryAmount" type="nc:AmountType" nillable="true">
@@ -22433,7 +22434,7 @@
   </xs:element>
   <xs:element name="ControlLevelLastUpdateDateTime" type="nc:DateType" nillable="true">
     <xs:annotation>
-      <xs:documentation>A Datetime on which the access control level was last modified</xs:documentation>
+      <xs:documentation>A dateTime on which the access control level was last modified</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="ConveyanceCategoryAbstract" abstract="true">
@@ -22783,7 +22784,7 @@
   </xs:element>
   <xs:element name="EndDocumentUseDate" type="nc:DateType" nillable="true">
     <xs:annotation>
-      <xs:documentation>A date representing the ending timeframe of using a document.</xs:documentation>
+      <xs:documentation>A date representing the ending time frame of using a document.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="EndSalaryAmount" type="nc:AmountType" nillable="true">
@@ -24191,7 +24192,7 @@
       <xs:documentation>A Service provider transaction performance metrics information.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="ServiceRequestorMetric" type="scr:PerformanceMetricsType" nillable="true">
+  <xs:element name="ServiceRequesterMetric" type="scr:PerformanceMetricsType" nillable="true">
     <xs:annotation>
       <xs:documentation>A Service requester transaction performance metrics information.</xs:documentation>
     </xs:annotation>

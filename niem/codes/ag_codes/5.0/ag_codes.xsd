@@ -8,6 +8,13 @@
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <xs:annotation>
     <xs:documentation>Agriculture codes</xs:documentation>
+    <xs:appinfo>
+      <appinfo:LocalTerm term="CLU" literal="Common land unit"/>
+      <appinfo:LocalTerm term="CVT" literal="Crop Validation Table"/>
+      <appinfo:LocalTerm term="FSA" literal="Farm Service Agency"/>
+      <appinfo:LocalTerm term="NRCS" literal="National Resources Conservation Service"/>
+      <appinfo:LocalTerm term="RMA" literal="Risk Management Agency"/>
+    </xs:appinfo>
   </xs:annotation>
   <xs:import namespace="http://release.niem.gov/niem/structures/4.0/" schemaLocation="../../../utility/structures/4.0/structures.xsd"/>
   <xs:simpleType name="CLUIDSimpleType">
@@ -656,7 +663,7 @@
     <xs:annotation>
       <xs:documentation>A data type containing certification codes used for farm acreage in regards to a system/plan of production and handling practice to produce an organic commodity.
   Organic practice that is Certified means a system/plan of production and handling practices to respond to site-specific conditions by integrating cultural, biological, and mechanical practices that foster cycling of resources, promote ecological balance, and conserve biodiversity, is certified by an accredited certifying agent, and used to produce an organic commodity or product according to the Organic Foods Production Act of 1990.
-  Organic practic that is Transitional means a system/plan of production and handling practices to produce an organic commodity or product in accordance with the Organic Foods Production Act of 1990, but has not yet qualified to be designated as certified organic.</xs:documentation>
+  Organic practice that is Transitional means a system/plan of production and handling practices to produce an organic commodity or product in accordance with the Organic Foods Production Act of 1990, but has not yet qualified to be designated as certified organic.</xs:documentation>
     </xs:annotation>
     <xs:restriction base="xs:token">
       <xs:enumeration value="N">
@@ -814,7 +821,7 @@
   </xs:complexType>
   <xs:simpleType name="ProductPlantingCodeSimpleType">
     <xs:annotation>
-      <xs:documentation>A data type for code to identify the planting of a product/crop as either conventional (plannted as normal or no planting required) or unconventional/irregular in a predefined way.</xs:documentation>
+      <xs:documentation>A data type for code to identify the planting of a product/crop as either conventional (planted as normal or no planting required) or unconventional/irregular in a predefined way.</xs:documentation>
     </xs:annotation>
     <xs:restriction base="xs:token">
       <xs:enumeration value="F">
@@ -921,7 +928,7 @@
   </xs:complexType>
   <xs:simpleType name="TaxIdentificationCategoryCodeSimpleType">
     <xs:annotation>
-      <xs:documentation>A data type for identifying the tax identification type assigned to a specific individual, business or other entity and is used to authenticate the individual/entity for matters of taxation and other governement business.</xs:documentation>
+      <xs:documentation>A data type for identifying the tax identification type assigned to a specific individual, business or other entity and is used to authenticate the individual/entity for matters of taxation and other government business.</xs:documentation>
     </xs:annotation>
     <xs:restriction base="xs:integer">
       <xs:enumeration value="1">
@@ -948,7 +955,7 @@
   </xs:complexType>
   <xs:simpleType name="TaxIdentificationIDSimpleType">
     <xs:annotation>
-      <xs:documentation>A data type for tax identification assigned to a specific individual, business or other entity and is used to authenticate the individual/entity for matters of taxation and other federal governement business.</xs:documentation>
+      <xs:documentation>A data type for tax identification assigned to a specific individual, business or other entity and is used to authenticate the individual/entity for matters of taxation and other federal government business.</xs:documentation>
     </xs:annotation>
     <xs:restriction base="xs:string">
       <xs:length value="9"/>

@@ -35,12 +35,15 @@
       <appinfo:LocalTerm term="Amber" literal="America's Missing: Broadcast Emergency Response"/>
       <appinfo:LocalTerm term="ANSID20" literal="The Data Dictionary for Traffic Record Systems, maintained by AAMVA, the American Association of Motor Vehicle Administrators"/>
       <appinfo:LocalTerm term="APCO" literal="Association of Public-Safety Communications Officials (APCO) - International, Inc."/>
+      <appinfo:LocalTerm term="BAC" literal="Blood Alcohol Concentration"/>
       <appinfo:LocalTerm term="BOP" literal="Bureau of Prisons"/>
       <appinfo:LocalTerm term="BPH" literal="Board of Parole Hearings"/>
       <appinfo:LocalTerm term="Brady" literal="Brady Law"/>
       <appinfo:LocalTerm term="CDL" literal="Commercial Driver's License"/>
+      <appinfo:LocalTerm term="CFR" definition="Code of Federal Regulations"/>
       <appinfo:LocalTerm term="CHRI" literal="Criminal History Record Information"/>
       <appinfo:LocalTerm term="CJIS" literal="Criminal Justice Information System"/>
+      <appinfo:LocalTerm term="CLP" literal="Commercial Learners Permit"/>
       <appinfo:LocalTerm term="CMV" literal="Commercial Motor Vehicle"/>
       <appinfo:LocalTerm term="CODIS" literal="Combined DNA Index System"/>
       <appinfo:LocalTerm term="COMPAS" literal="Correctional Offender Management Profiling for Alternative Sanctions"/>
@@ -50,9 +53,10 @@
       <appinfo:LocalTerm term="DNA" literal="Deoxyribonucleic acid"/>
       <appinfo:LocalTerm term="DOT" literal="Department of Transportation"/>
       <appinfo:LocalTerm term="EMS" literal="Emergency Medical Service"/>
+      <appinfo:LocalTerm term="Enhanceable" definition="An enhanceable offense means that specific factors can increase the severity level of the offense."/>
       <appinfo:LocalTerm term="FBI" literal="Federal Bureau of Investigation"/>
       <appinfo:LocalTerm term="FCN" literal="file control number"/>
-      <appinfo:LocalTerm term="FFLID" literal="federal firearms license"/>
+      <appinfo:LocalTerm term="FFL" literal="federal firearms license"/>
       <appinfo:LocalTerm term="FIPS" literal="Federal Information Processing Standards"/>
       <appinfo:LocalTerm term="GDEP" literal="Geographic-Drug Enforcement Program"/>
       <appinfo:LocalTerm term="GVWR" literal="gross vehicle weight rating"/>
@@ -65,6 +69,7 @@
       <appinfo:LocalTerm term="ISBN" literal="International Standard Book Number"/>
       <appinfo:LocalTerm term="ISSN" literal="International Standard Serial Number"/>
       <appinfo:LocalTerm term="JABS" literal="JABS" definition="Joint Automated Booking System"/>
+      <appinfo:LocalTerm term="Keyhea" definition="Under the Keyhea injunction, 'involuntary medication' cannot be administered to a state prisoner for more than three days unless the professional staff of the facility in which the prisoner is incarcerated has analyzed the prisoner's condition and found that the prisoner is, as a result of a mental disorder, 'gravely disabled and incompetent to refuse medication or a danger to others, or a danger to self,' and the prisoner has been 'advised of the need for, but has not been willing to accept medication on a voluntary basis.'"/>
       <appinfo:LocalTerm term="LEOKA" literal="Law Enforcement Officer Killed or Assaulted"/>
       <appinfo:LocalTerm term="LIS" literal="License Plate State"/>
       <appinfo:LocalTerm term="LSTA" definition="State/Country Index"/>
@@ -76,6 +81,7 @@
       <appinfo:LocalTerm term="MHSDS" literal="Mental Health Services Delivery System"/>
       <appinfo:LocalTerm term="MMUCC" literal="Model Minimum Uniform Crash Criteria"/>
       <appinfo:LocalTerm term="MO" literal="Modus Operandi"/>
+      <appinfo:LocalTerm term="ModusOperandi" literal="Mode of operating"/>
       <appinfo:LocalTerm term="Multi" literal="Multiple"/>
       <appinfo:LocalTerm term="NCIC" literal="National Crime Information Center"/>
       <appinfo:LocalTerm term="NCMEC" literal="National Center for Missing &amp; Exploited Children"/>
@@ -87,14 +93,18 @@
       <appinfo:LocalTerm term="OCA" literal="Originating Case Agency"/>
       <appinfo:LocalTerm term="ORI" definition="A nine-character identifier assigned by the FBI Criminal Justice Information Systems (CJIS) staff to an organization, which must have met the established qualifying criteria for ORI assignment to identify the agency in transactions on CJIS Systems."/>
       <appinfo:LocalTerm term="POST" literal="Peace Official Standards and Training"/>
+      <appinfo:LocalTerm term="Postdirectional" definition="A word following a street name that indicates the directional taken by the thoroughfare from an arbitrary starting point or line, or the sector where it is located."/>
+      <appinfo:LocalTerm term="Predirectional" definition="A word preceding a street name that indicates the directional taken by the thoroughfare from an arbitrary starting point or line, or the sector where it is located."/>
       <appinfo:LocalTerm term="PRISM" literal="Performance and Registration Information Systems Management"/>
       <appinfo:LocalTerm term="REALID" definition="Public Law 109–13, 119 Statute 302, enacted May 11, 2005, was an Act of Congress that modified U.S. federal law pertaining to security, authentication, and issuance procedures standards for the state driver's licenses and identification (ID) cards, as well as various immigration issues pertaining to terrorism."/>
       <appinfo:LocalTerm term="RES" literal="Registration State"/>
       <appinfo:LocalTerm term="SAFESTAT" literal="Safety Status Measurement System"/>
+      <appinfo:LocalTerm term="Separatee" literal="A person who must be kept separate from another person."/>
       <appinfo:LocalTerm term="SMT" literal="Scars, Marks, Tattoos, and Other Characteristics"/>
       <appinfo:LocalTerm term="TCD" literal="traffic control device"/>
       <appinfo:LocalTerm term="TCN" literal="Transaction Control Number"/>
       <appinfo:LocalTerm term="TripleI" literal="III - Interstate Identification Index system"/>
+      <appinfo:LocalTerm term="TSA" definition="Transportation Security Administration"/>
       <appinfo:LocalTerm term="TYP" literal="(Firearm) Type"/>
       <appinfo:LocalTerm term="TYPA" literal="(Article) Type"/>
       <appinfo:LocalTerm term="TYPO" literal="(ORI) Type"/>
@@ -1975,7 +1985,7 @@
   </xs:complexType>
   <xs:complexType name="ConvictionType">
     <xs:annotation>
-      <xs:documentation>A data type for a judgement that a defendant is guilty.</xs:documentation>
+      <xs:documentation>A data type for a judgment that a defendant is guilty.</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
       <xs:extension base="nc:ActivityType">
@@ -2101,7 +2111,7 @@
   </xs:complexType>
   <xs:complexType name="CourtOrderType">
     <xs:annotation>
-      <xs:documentation>A data type for a direction of a judge not including a judgement, which determines some point or directs some steps in proceedings.</xs:documentation>
+      <xs:documentation>A data type for a direction of a judge not including a judgment, which determines some point or directs some steps in proceedings.</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
       <xs:extension base="nc:ActivityType">
@@ -2217,7 +2227,7 @@
       <xs:extension base="structures:ObjectType">
         <xs:sequence>
           <xs:element ref="nc:RoleOfPerson" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="j:NonmotoristStrikingVehicle" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="j:NonMotoristStrikingVehicle" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="j:NonMotoristActionBeforeCrashAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="j:NonMotoristCategoryAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="j:NonMotoristContributingCircumstancesAbstract" minOccurs="0" maxOccurs="unbounded"/>
@@ -7817,7 +7827,7 @@
   </xs:complexType>
   <xs:complexType name="PhysicalMailAssociationType">
     <xs:annotation>
-      <xs:documentation>A data type for a relationship between a sender and recipent.</xs:documentation>
+      <xs:documentation>A data type for a relationship between a sender and recipient.</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
       <xs:extension base="nc:AssociationType">
@@ -7925,7 +7935,7 @@
   </xs:complexType>
   <xs:complexType name="PostSentenceActionType">
     <xs:annotation>
-      <xs:documentation>A data type for an optional Post-Sentence Segment in the Criminal History record in order to transmit actions following adjudication and sentencing, such as a pardon, certificate of relief, restoration of rights, retirement, clemency, or commutatio</xs:documentation>
+      <xs:documentation>A data type for an optional Post-Sentence Segment in the Criminal History record in order to transmit actions following adjudication and sentencing, such as a pardon, certificate of relief, restoration of rights, retirement, clemency, or commutation.</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
       <xs:extension base="nc:ActivityType">
@@ -13151,7 +13161,7 @@
       <xs:documentation>A style of an article of clothing.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="CodefendentAssociation" type="nc:PersonAssociationType" nillable="true">
+  <xs:element name="CodefendantAssociation" type="nc:PersonAssociationType" nillable="true">
     <xs:annotation>
       <xs:documentation>A relationship between people who are defendants in the same criminal or civil action.</xs:documentation>
     </xs:annotation>
@@ -13428,7 +13438,7 @@
   </xs:element>
   <xs:element name="ConfidentialityMaterialReceiptDate" type="nc:DateType" nillable="true">
     <xs:annotation>
-      <xs:documentation>A date on which requestor acknowledged receipt of the confidential material.</xs:documentation>
+      <xs:documentation>A date on which requester acknowledged receipt of the confidential material.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="ConfidentialityMaterialReview" type="nc:ActivityType" nillable="true">
@@ -18314,12 +18324,12 @@
   </xs:element>
   <xs:element name="HearingRequestWaiverPeriodAbstract" abstract="true">
     <xs:annotation>
-      <xs:documentation>A data concept for a kind of time period a hearting can be waved by request.</xs:documentation>
+      <xs:documentation>A data concept for a kind of time period a hearing can be waved by request.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="HearingRequestWaiverPeriodText" type="nc:TextType" substitutionGroup="j:HearingRequestWaiverPeriodAbstract" nillable="true">
     <xs:annotation>
-      <xs:documentation>A kind of time period a hearting can be waved by request.</xs:documentation>
+      <xs:documentation>A kind of time period a hearing can be waved by request.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="HearingRequestWaiverSubjectAcknowledgeRightsIndicator" type="niem-xs:boolean" nillable="true">
@@ -20647,7 +20657,7 @@
       <xs:documentation>A security level of the location.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="LocationSublocationCategoryCode" type="ndex:LocationSublocationCategoryCodeType" substitutionGroup="nc:LocationCategoryAbstract" nillable="true">
+  <xs:element name="LocationSubLocationCategoryCode" type="ndex:LocationSubLocationCategoryCodeType" substitutionGroup="nc:LocationCategoryAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A kind of location inside of another location, such as a restroom in a restaurant.</xs:documentation>
     </xs:annotation>
@@ -21827,7 +21837,7 @@
       <xs:documentation>A safety equipment(s) used by the non-motorist.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="NonmotoristStrikingVehicle" type="nc:VehicleType" nillable="true">
+  <xs:element name="NonMotoristStrikingVehicle" type="nc:VehicleType" nillable="true">
     <xs:annotation>
       <xs:documentation>A motor vehicle that was the first motor vehicle to strike the non-motorist.</xs:documentation>
     </xs:annotation>
@@ -23797,7 +23807,7 @@
       <xs:documentation>An outbound transaction where forfeited goods (i.e. goods where the contract has expired) are sold by the Licensee.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="PawnSaleOfSecondHandGoods2Transaction" type="j:PawnTransactionType" substitutionGroup="j:PawnTransaction" nillable="true">
+  <xs:element name="PawnSaleOfSecondHandGoodsTransaction" type="j:PawnTransactionType" substitutionGroup="j:PawnTransaction" nillable="true">
     <xs:annotation>
       <xs:documentation>An outbound transaction where second hand goods are sold.</xs:documentation>
     </xs:annotation>
@@ -27729,7 +27739,7 @@
   </xs:element>
   <xs:element name="SubjectAssessmentRisk" type="j:RiskType" nillable="true">
     <xs:annotation>
-      <xs:documentation>A risk identified by aa subject assessment.</xs:documentation>
+      <xs:documentation>A risk identified by a subject assessment.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="SubjectAssessmentRiskAugmentationPoint" abstract="true">

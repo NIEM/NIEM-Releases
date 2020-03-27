@@ -22,18 +22,31 @@
   <xs:annotation>
     <xs:documentation>Emergency Management</xs:documentation>
     <xs:appinfo>
+      <appinfo:LocalTerm term="CATG" definition="FEMA Category G: Parks, Recreation, &amp; Other"/>
       <appinfo:LocalTerm term="Decon" literal="Decontamination"/>
       <appinfo:LocalTerm term="EMS" literal="Emergency Medical Service"/>
       <appinfo:LocalTerm term="EOC" literal="Emergency Operations Center"/>
+      <appinfo:LocalTerm term="EPM" literal="Emergency Protective Measures"/>
+      <appinfo:LocalTerm term="ESF" literal="Emergency Support Function"/>
+      <appinfo:LocalTerm term="FEMA" literal="Federal Emergency Management Agency"/>
+      <appinfo:LocalTerm term="FIPS201" definition="FIPS 201 is a United States federal government standard that specifies Personal Identity Verification requirements for Federal employees and contractors."/>
       <appinfo:LocalTerm term="Geo" literal="geo-coded"/>
       <appinfo:LocalTerm term="IMS" literal="Incident Management System"/>
+      <appinfo:LocalTerm term="LCR" literal="License, certificate or registration"/>
+      <appinfo:LocalTerm term="MF" literal="Multi-family"/>
+      <appinfo:LocalTerm term="MH" literal="Manufactured home"/>
       <appinfo:LocalTerm term="NIST" literal="National Institute of Standards and Technology"/>
+      <appinfo:LocalTerm term="NISTSP800733" definition="NIST Special Publication 800-73-3 Interfaces for Personal Identity Verification"/>
       <appinfo:LocalTerm term="NPI" literal="National Provider ID"/>
       <appinfo:LocalTerm term="OBGYN" literal="Obstetrics &amp; Gynecology"/>
       <appinfo:LocalTerm term="Passcode" definition="A numeric password."/>
       <appinfo:LocalTerm term="PHEOC" literal="Public Health Emergency Operations Centers"/>
+      <appinfo:LocalTerm term="PIV" literal="Personal Identity Verification"/>
+      <appinfo:LocalTerm term="RGB" literal="Red Green Blue"/>
       <appinfo:LocalTerm term="SOP" literal="Standard Operating Procedures"/>
       <appinfo:LocalTerm term="URN" literal="Uniform Resource Name"/>
+      <appinfo:LocalTerm term="USACE" literal="United States Army Corps of Engineers"/>
+      <appinfo:LocalTerm term="X509" definition="X.509 is a standard defining the format of public key certificates."/>
     </xs:appinfo>
   </xs:annotation>
   <xs:import namespace="http://release.niem.gov/niem/adapters/edxl-cap/5.0/" schemaLocation="../../../adapters/edxl-cap/5.0/edxl-cap.xsd"/>
@@ -225,7 +238,7 @@
           <xs:element ref="em:AlarmEventLocationCategoryAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="em:AlarmAudibleIndicator" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="em:AlarmEventDetailsText" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="em:AlarmEventRequestorReceiveDate" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="em:AlarmEventRequesterReceiveDate" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="em:AlarmEventCallPrivacyBypassCodeText" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="em:AlarmEventCallToPremisesIndicator" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="em:AlarmEventPermit" minOccurs="0" maxOccurs="unbounded"/>
@@ -1163,7 +1176,7 @@
   </xs:complexType>
   <xs:simpleType name="BeachComponentCodeSimpleType">
     <xs:annotation>
-      <xs:documentation>A data type that specifies the common types of facilities eligible under Public Asssistence category C.</xs:documentation>
+      <xs:documentation>A data type that specifies the common types of facilities eligible under Public Assistance category C.</xs:documentation>
     </xs:annotation>
     <xs:restriction base="xs:token">
       <xs:enumeration value="BathHouse">
@@ -1210,7 +1223,7 @@
   </xs:simpleType>
   <xs:complexType name="BeachComponentCodeType">
     <xs:annotation>
-      <xs:documentation>A data type that specifies the common types of facilities eligible under Public Asssistence category C.</xs:documentation>
+      <xs:documentation>A data type that specifies the common types of facilities eligible under Public Assistance category C.</xs:documentation>
     </xs:annotation>
     <xs:simpleContent>
       <xs:extension base="em:BeachComponentCodeSimpleType">
@@ -1809,41 +1822,9 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-  <xs:simpleType name="CommunicationTargetGroupCodeSimpleType">
+  <xs:simpleType name="CommunicationComponentCodeSimpleType">
     <xs:annotation>
-      <xs:documentation>A data type for a kind of group target for a communication.</xs:documentation>
-    </xs:annotation>
-    <xs:restriction base="xs:token">
-      <xs:enumeration value="001">
-        <xs:annotation>
-          <xs:documentation>General population</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="002">
-        <xs:annotation>
-          <xs:documentation>Specific population</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="002.01">
-        <xs:annotation>
-          <xs:documentation>Pregnant women</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-    </xs:restriction>
-  </xs:simpleType>
-  <xs:complexType name="CommunicationTargetGroupCodeType">
-    <xs:annotation>
-      <xs:documentation>A data type for a kind of group target for a communication.</xs:documentation>
-    </xs:annotation>
-    <xs:simpleContent>
-      <xs:extension base="em:CommunicationTargetGroupCodeSimpleType">
-        <xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
-      </xs:extension>
-    </xs:simpleContent>
-  </xs:complexType>
-  <xs:simpleType name="ComunicationComponentCodeSimpleType">
-    <xs:annotation>
-      <xs:documentation>A data type for the Comunication Components</xs:documentation>
+      <xs:documentation>A data type for the Communication Components.</xs:documentation>
     </xs:annotation>
     <xs:restriction base="xs:token">
       <xs:enumeration value="NetworkTower">
@@ -1873,12 +1854,44 @@
       </xs:enumeration>
     </xs:restriction>
   </xs:simpleType>
-  <xs:complexType name="ComunicationComponentCodeType">
+  <xs:complexType name="CommunicationComponentCodeType">
     <xs:annotation>
-      <xs:documentation>A data type for Comunication Components types</xs:documentation>
+      <xs:documentation>A data type for the Communication Components.</xs:documentation>
     </xs:annotation>
     <xs:simpleContent>
-      <xs:extension base="em:ComunicationComponentCodeSimpleType">
+      <xs:extension base="em:CommunicationComponentCodeSimpleType">
+        <xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:simpleType name="CommunicationTargetGroupCodeSimpleType">
+    <xs:annotation>
+      <xs:documentation>A data type for a kind of group target for a communication.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="001">
+        <xs:annotation>
+          <xs:documentation>General population</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="002">
+        <xs:annotation>
+          <xs:documentation>Specific population</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="002.01">
+        <xs:annotation>
+          <xs:documentation>Pregnant women</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="CommunicationTargetGroupCodeType">
+    <xs:annotation>
+      <xs:documentation>A data type for a kind of group target for a communication.</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="em:CommunicationTargetGroupCodeSimpleType">
         <xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
       </xs:extension>
     </xs:simpleContent>
@@ -3010,7 +3023,7 @@
   </xs:complexType>
   <xs:simpleType name="DwellingCategoryCodeSimpleType">
     <xs:annotation>
-      <xs:documentation>A data type code for the types of dwellings assessed for Indivisual Assistence</xs:documentation>
+      <xs:documentation>A data type code for the types of dwellings assessed for Individual Assistance</xs:documentation>
     </xs:annotation>
     <xs:restriction base="xs:token">
       <xs:enumeration value="ManufacturedHome">
@@ -3032,7 +3045,7 @@
   </xs:simpleType>
   <xs:complexType name="DwellingCategoryCodeType">
     <xs:annotation>
-      <xs:documentation>A data type code for the types of dwellings assessed for Indivisual Assistence</xs:documentation>
+      <xs:documentation>A data type code for the types of dwellings assessed for Individual Assistance</xs:documentation>
     </xs:annotation>
     <xs:simpleContent>
       <xs:extension base="em:DwellingCategoryCodeSimpleType">
@@ -3186,7 +3199,7 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-  <xs:simpleType name="EmergencyManagmentIncidentCategoryCodeSimpleType">
+  <xs:simpleType name="EmergencyManagementIncidentCategoryCodeSimpleType">
     <xs:annotation>
       <xs:documentation>A data type for a kind of emergency management (EM) incident, such as chemical, biological, nuclear, explosives, natural disaster, or day-to-day.</xs:documentation>
     </xs:annotation>
@@ -3223,12 +3236,12 @@
       </xs:enumeration>
     </xs:restriction>
   </xs:simpleType>
-  <xs:complexType name="EmergencyManagmentIncidentCategoryCodeType">
+  <xs:complexType name="EmergencyManagementIncidentCategoryCodeType">
     <xs:annotation>
       <xs:documentation>A data type for a kind of emergency management (EM) incident, such as chemical, biological, nuclear, explosives, natural disaster, or day-to-day.</xs:documentation>
     </xs:annotation>
     <xs:simpleContent>
-      <xs:extension base="em:EmergencyManagmentIncidentCategoryCodeSimpleType">
+      <xs:extension base="em:EmergencyManagementIncidentCategoryCodeSimpleType">
         <xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
       </xs:extension>
     </xs:simpleContent>
@@ -3705,7 +3718,7 @@
   </xs:complexType>
   <xs:simpleType name="EPMConcernCodeSimpleType">
     <xs:annotation>
-      <xs:documentation>A data type for the catagories the public assistance work</xs:documentation>
+      <xs:documentation>A data type for the categories the public assistance work</xs:documentation>
     </xs:annotation>
     <xs:restriction base="xs:token">
       <xs:enumeration value="Both">
@@ -3732,7 +3745,7 @@
   </xs:simpleType>
   <xs:complexType name="EPMConcernCodeType">
     <xs:annotation>
-      <xs:documentation>A data type for the Environment or Histrical preservation concerns.</xs:documentation>
+      <xs:documentation>A data type for the Environment or Historical preservation concerns.</xs:documentation>
     </xs:annotation>
     <xs:simpleContent>
       <xs:extension base="em:EPMConcernCodeSimpleType">
@@ -3905,16 +3918,16 @@ National Institutes of Health, National Heart, Lung, and Blood Institute</xs:doc
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-  <xs:complexType name="ExplicitRecepientAddressType">
+  <xs:complexType name="ExplicitRecipientAddressType">
     <xs:annotation>
       <xs:documentation>A data type for an identifier of an explicit recipient</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
       <xs:extension base="structures:ObjectType">
         <xs:sequence>
-          <xs:element ref="em:ExplicitRecepientAddressSchemeText" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="em:ExplicitRecepientAddressValueText" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="em:ExplicitRecepientAddressAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="em:ExplicitRecipientAddressSchemeText" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="em:ExplicitRecipientAddressValueText" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="em:ExplicitRecipientAddressAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -4271,7 +4284,7 @@ National Institutes of Health, National Heart, Lung, and Blood Institute</xs:doc
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-  <xs:simpleType name="IndividualAssistenceFloodWaterLocationCodeSimpleType">
+  <xs:simpleType name="IndividualAssistanceFloodWaterLocationCodeSimpleType">
     <xs:annotation>
       <xs:documentation>A data type code to specify the part of the home was impacted.</xs:documentation>
     </xs:annotation>
@@ -4288,12 +4301,12 @@ National Institutes of Health, National Heart, Lung, and Blood Institute</xs:doc
       </xs:enumeration>
     </xs:restriction>
   </xs:simpleType>
-  <xs:complexType name="IndividualAssistenceFloodWaterLocationCodeType">
+  <xs:complexType name="IndividualAssistanceFloodWaterLocationCodeType">
     <xs:annotation>
       <xs:documentation>A data type code to specify the part of the home was impacted.</xs:documentation>
     </xs:annotation>
     <xs:simpleContent>
-      <xs:extension base="em:IndividualAssistenceFloodWaterLocationCodeSimpleType">
+      <xs:extension base="em:IndividualAssistanceFloodWaterLocationCodeSimpleType">
         <xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
       </xs:extension>
     </xs:simpleContent>
@@ -4830,7 +4843,7 @@ National Institutes of Health, National Heart, Lung, and Blood Institute</xs:doc
           <xs:element ref="em:MessageDescriptionText" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="em:MessageResponseDescriptionText" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="em:MessageRecall" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="em:ExplicitRecepientAddress" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="em:ExplicitRecipientAddress" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="em:MessageHeaderAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
       </xs:extension>
@@ -6000,7 +6013,7 @@ National Institutes of Health, National Heart, Lung, and Blood Institute</xs:doc
   </xs:complexType>
   <xs:complexType name="PreliminaryDamageAssessmentType">
     <xs:annotation>
-      <xs:documentation>A data type for a preliminary damage assessement report</xs:documentation>
+      <xs:documentation>A data type for a preliminary damage assessment report</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
       <xs:extension base="structures:ObjectType">
@@ -6047,7 +6060,7 @@ National Institutes of Health, National Heart, Lung, and Blood Institute</xs:doc
   </xs:simpleType>
   <xs:complexType name="ProgramKindCodeType">
     <xs:annotation>
-      <xs:documentation>A data type for a kind of assessement program</xs:documentation>
+      <xs:documentation>A data type for a kind of assessment program</xs:documentation>
     </xs:annotation>
     <xs:simpleContent>
       <xs:extension base="em:ProgramKindCodeSimpleType">
@@ -6070,7 +6083,7 @@ National Institutes of Health, National Heart, Lung, and Blood Institute</xs:doc
   </xs:complexType>
   <xs:simpleType name="PublicAssistanceCategoryCodeSimpleType">
     <xs:annotation>
-      <xs:documentation>A data type for the catagories the public assistance work</xs:documentation>
+      <xs:documentation>A data type for the categories the public assistance work</xs:documentation>
     </xs:annotation>
     <xs:restriction base="xs:token">
       <xs:enumeration value="CAT-A">
@@ -6112,7 +6125,7 @@ National Institutes of Health, National Heart, Lung, and Blood Institute</xs:doc
   </xs:simpleType>
   <xs:complexType name="PublicAssistanceCategoryCodeType">
     <xs:annotation>
-      <xs:documentation>A data type for the catagories the public assistance work.</xs:documentation>
+      <xs:documentation>A data type for the categories the public assistance work.</xs:documentation>
     </xs:annotation>
     <xs:simpleContent>
       <xs:extension base="em:PublicAssistanceCategoryCodeSimpleType">
@@ -10267,7 +10280,7 @@ National Institutes of Health, National Heart, Lung, and Blood Institute</xs:doc
       <xs:documentation>A permit for the alarm event site</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="AlarmEventRequestorReceiveDate" type="nc:DateType" nillable="true">
+  <xs:element name="AlarmEventRequesterReceiveDate" type="nc:DateType" nillable="true">
     <xs:annotation>
       <xs:documentation>A date the requester received the alarm event</xs:documentation>
     </xs:annotation>
@@ -10484,7 +10497,7 @@ National Institutes of Health, National Heart, Lung, and Blood Institute</xs:doc
   </xs:element>
   <xs:element name="AlertNotificationAugmentationPoint" abstract="true">
     <xs:annotation>
-      <xs:documentation>An augmentation point for AlertType</xs:documentation>
+      <xs:documentation>An augmentation point for AlertNotificationType.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="AlertReasonText" type="nc:TextType" nillable="true">
@@ -10904,7 +10917,7 @@ National Institutes of Health, National Heart, Lung, and Blood Institute</xs:doc
   </xs:element>
   <xs:element name="CDDebrisValue" type="niem-xs:integer" nillable="true">
     <xs:annotation>
-      <xs:documentation>An element for the construction and demolition materials. Debris reulting from destruction of buildings or homes. (cubic yards)</xs:documentation>
+      <xs:documentation>An element for the construction and demolition materials. Debris resulting from destruction of buildings or homes. (cubic yards)</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="Ceiling" type="nc:LengthMeasureType" nillable="true">
@@ -10982,6 +10995,11 @@ National Institutes of Health, National Heart, Lung, and Blood Institute</xs:doc
       <xs:documentation>A kind of Commercial Identifier</xs:documentation>
     </xs:annotation>
   </xs:element>
+  <xs:element name="CommunicationComponentCode" type="em:CommunicationComponentCodeType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>An element for the common communications components</xs:documentation>
+    </xs:annotation>
+  </xs:element>
   <xs:element name="CommunicationTargetGroupAbstract" abstract="true">
     <xs:annotation>
       <xs:documentation>A data concept for a kind of group target for a communication.</xs:documentation>
@@ -11022,11 +11040,6 @@ National Institutes of Health, National Heart, Lung, and Blood Institute</xs:doc
       <xs:documentation>An element that specifies the mechanism by which the work was completed. Could be force account (own staff) or contract, or combination.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="ComunicationComponentCode" type="em:ComunicationComponentCodeType" nillable="true">
-    <xs:annotation>
-      <xs:documentation>An element for the common communications components</xs:documentation>
-    </xs:annotation>
-  </xs:element>
   <xs:element name="ContactPartyID" type="nc:IdentificationType" nillable="true">
     <xs:annotation>
       <xs:documentation>An identifier of a contact party</xs:documentation>
@@ -11049,7 +11062,7 @@ National Institutes of Health, National Heart, Lung, and Blood Institute</xs:doc
   </xs:element>
   <xs:element name="Contributor" type="em:IncidentAuthorType" nillable="true">
     <xs:annotation>
-      <xs:documentation>An element for contributer's information</xs:documentation>
+      <xs:documentation>An element for contributor's information</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="CoordinateDateTime" type="niem-xs:dateTime" nillable="true">
@@ -11424,7 +11437,7 @@ National Institutes of Health, National Heart, Lung, and Blood Institute</xs:doc
   </xs:element>
   <xs:element name="DisasterDeclarationText" type="nc:TextType" nillable="true">
     <xs:annotation>
-      <xs:documentation>An element for a disaster declaration level. eg: Presidential Declared, State Declared, City Declared Declared File</xs:documentation>
+      <xs:documentation>An element for a disaster declaration level. e.g., Presidential Declared, State Declared, City Declared Declared File</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="DiscoveryObject" type="nc:BinaryType" nillable="true">
@@ -11509,7 +11522,7 @@ National Institutes of Health, National Heart, Lung, and Blood Institute</xs:doc
   </xs:element>
   <xs:element name="DwellingCategoryCode" type="em:DwellingCategoryCodeType" nillable="true">
     <xs:annotation>
-      <xs:documentation>An element for the types of dwellings assessed for Indivisual Assistence</xs:documentation>
+      <xs:documentation>An element for the types of dwellings assessed for individual assistance.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="EAssuranceLevelCode" type="em:EAssuranceLevelCodeType" nillable="true">
@@ -11572,7 +11585,7 @@ National Institutes of Health, National Heart, Lung, and Blood Institute</xs:doc
       <xs:documentation>An augmentation point for an EmergencyIncidentType</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="EmergencyManagmentIncidentCategoryCode" type="em:EmergencyManagmentIncidentCategoryCodeType" substitutionGroup="em:PublicHealthEventCategoryAbstract" nillable="true">
+  <xs:element name="EmergencyManagementIncidentCategoryCode" type="em:EmergencyManagementIncidentCategoryCodeType" substitutionGroup="em:PublicHealthEventCategoryAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A kind of emergency management (EM) incident, such as chemical, biological, nuclear, explosives, natural disaster, or day-to-day.</xs:documentation>
     </xs:annotation>
@@ -11719,7 +11732,7 @@ National Institutes of Health, National Heart, Lung, and Blood Institute</xs:doc
   </xs:element>
   <xs:element name="EPMHazardousIndicator" type="niem-xs:boolean" nillable="true">
     <xs:annotation>
-      <xs:documentation>True if work has concering quesions for the disposal of hazardous debris. Requires special permits; false otherwise.</xs:documentation>
+      <xs:documentation>True if work has concerning questions for the disposal of hazardous debris. Requires special permits; false otherwise.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="EPMHistoricIndicator" type="niem-xs:boolean" nillable="true">
@@ -11734,7 +11747,7 @@ National Institutes of Health, National Heart, Lung, and Blood Institute</xs:doc
   </xs:element>
   <xs:element name="EPMNarrativeText" type="nc:TextType" nillable="true">
     <xs:annotation>
-      <xs:documentation>An element for the short narative statement describing the threat that justified the use of Emergency Protective measures.</xs:documentation>
+      <xs:documentation>An element for the short narrative statement describing the threat that justified the use of Emergency Protective measures.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="EPMWaterIndicator" type="niem-xs:boolean" nillable="true">
@@ -11942,22 +11955,22 @@ National Institutes of Health, National Heart, Lung, and Blood Institute</xs:doc
       <xs:documentation>An augmentation point for ExperienceType</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="ExplicitRecepientAddress" type="em:ExplicitRecepientAddressType" nillable="true">
+  <xs:element name="ExplicitRecipientAddress" type="em:ExplicitRecipientAddressType" nillable="true">
     <xs:annotation>
       <xs:documentation>An identifier of an explicit recipient.  Identifies human parties, systems, services, or devices that are all potential recipients of the distribution message</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="ExplicitRecepientAddressAugmentationPoint" abstract="true">
+  <xs:element name="ExplicitRecipientAddressAugmentationPoint" abstract="true">
     <xs:annotation>
-      <xs:documentation>An augmentation point for ExplicitAddressType</xs:documentation>
+      <xs:documentation>An augmentation point for ExplicitRecipientAddressType.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="ExplicitRecepientAddressSchemeText" type="nc:TextType" nillable="true">
+  <xs:element name="ExplicitRecipientAddressSchemeText" type="nc:TextType" nillable="true">
     <xs:annotation>
       <xs:documentation>A distribution addressing scheme used. MUST be a properly formed -escaped if necessary- XML string</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="ExplicitRecepientAddressValueText" type="nc:TextType" nillable="true">
+  <xs:element name="ExplicitRecipientAddressValueText" type="nc:TextType" nillable="true">
     <xs:annotation>
       <xs:documentation>A properly formed -escaped if necessary- XML string denoting the addressees value</xs:documentation>
     </xs:annotation>
@@ -12077,11 +12090,6 @@ National Institutes of Health, National Heart, Lung, and Blood Institute</xs:doc
       <xs:documentation>A data element for the impacted units.  If dwelling type is multi-family then how many units were impacted.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="InaccesibleHomesCountValue" type="niem-xs:integer" nillable="true">
-    <xs:annotation>
-      <xs:documentation>An element for the estimated number of inaccessible homes.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
   <xs:element name="InaccessibleCauseCode" type="em:InaccessibleCauseCodeType" nillable="true">
     <xs:annotation>
       <xs:documentation>An element that specifies if the damaged area/item is assessed as inaccessible, why?</xs:documentation>
@@ -12090,6 +12098,11 @@ National Institutes of Health, National Heart, Lung, and Blood Institute</xs:doc
   <xs:element name="InaccessibleDescriptionText" type="nc:TextType" nillable="true">
     <xs:annotation>
       <xs:documentation>A description of the cause of inaccessibility:</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="InaccessibleHomesCountValue" type="niem-xs:integer" nillable="true">
+    <xs:annotation>
+      <xs:documentation>An element for the estimated number of inaccessible homes.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="IncidentActionCode" type="em:IncidentActionCodeType" nillable="true">
@@ -12227,12 +12240,12 @@ National Institutes of Health, National Heart, Lung, and Blood Institute</xs:doc
       <xs:documentation>An element that specifies if work is not complete then how will it be completed?</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="IndividualAssistenceFloodWaterDepthValue" type="niem-xs:integer" nillable="true">
+  <xs:element name="IndividualAssistanceFloodWaterDepthValue" type="niem-xs:integer" nillable="true">
     <xs:annotation>
       <xs:documentation>An element that specifies the flood water depth(inches). If damage is from flood or similar, how deep was the water?</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="IndividualAssistenceFloodWaterLocationCode" type="em:IndividualAssistenceFloodWaterLocationCodeType" nillable="true">
+  <xs:element name="IndividualAssistanceFloodWaterLocationCode" type="em:IndividualAssistanceFloodWaterLocationCodeType" nillable="true">
     <xs:annotation>
       <xs:documentation>An element that specifies the location of flood waters</xs:documentation>
     </xs:annotation>
@@ -12779,7 +12792,7 @@ National Institutes of Health, National Heart, Lung, and Blood Institute</xs:doc
   </xs:element>
   <xs:element name="NotifierAugmentationPoint" abstract="true">
     <xs:annotation>
-      <xs:documentation>An augmentation point for Notifer</xs:documentation>
+      <xs:documentation>An augmentation point for NotifierType.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="NotifierRoleDescriptionText" type="nc:TextType" nillable="true">
@@ -12804,7 +12817,7 @@ National Institutes of Health, National Heart, Lung, and Blood Institute</xs:doc
   </xs:element>
   <xs:element name="OperationalStatusNotificationAugmentationPoint" abstract="true">
     <xs:annotation>
-      <xs:documentation>An augmentation point for OperationalStatusNotification type</xs:documentation>
+      <xs:documentation>An augmentation point for OperationalStatusNotificationType.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="Organization" type="nc:OrganizationType" nillable="true">
@@ -12907,7 +12920,7 @@ National Institutes of Health, National Heart, Lung, and Blood Institute</xs:doc
       <xs:documentation>An element for the other parks not listed in the Cat-G type list. .</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="OtherCommsComponentText" type="nc:TextType" nillable="true">
+  <xs:element name="OtherCommunicationsComponentText" type="nc:TextType" nillable="true">
     <xs:annotation>
       <xs:documentation>An element for the Other Comms Component not listed in the Utilities.</xs:documentation>
     </xs:annotation>
@@ -12934,7 +12947,7 @@ National Institutes of Health, National Heart, Lung, and Blood Institute</xs:doc
   </xs:element>
   <xs:element name="OtherDebrisText" type="nc:TextType" nillable="true">
     <xs:annotation>
-      <xs:documentation>An element for the other types of debirs that is not listed</xs:documentation>
+      <xs:documentation>An element for the other types of debris that is not listed.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="OtherEPMText" type="nc:TextType" nillable="true">
@@ -12957,7 +12970,7 @@ National Institutes of Health, National Heart, Lung, and Blood Institute</xs:doc
       <xs:documentation>An element for the other bridge types not listed in low water road type codes.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="OtherNavMaterialText" type="nc:TextType" nillable="true">
+  <xs:element name="OtherNavigationMaterialText" type="nc:TextType" nillable="true">
     <xs:annotation>
       <xs:documentation>An element that specifies other Drainage Navigation Material Type that is not listed in the DrainageNavigationMaterialCode codelist</xs:documentation>
     </xs:annotation>
@@ -13119,7 +13132,7 @@ National Institutes of Health, National Heart, Lung, and Blood Institute</xs:doc
   </xs:element>
   <xs:element name="PersonIDCard" type="em:PersonIDCardType" nillable="true">
     <xs:annotation>
-      <xs:documentation>An element contains information about a person  identiification information</xs:documentation>
+      <xs:documentation>An element contains information about a person identification information</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="PersonIDCardAugmentationPoint" abstract="true">
@@ -13267,9 +13280,9 @@ National Institutes of Health, National Heart, Lung, and Blood Institute</xs:doc
       <xs:documentation>An identifier of the preceding message for this message</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="PreliminaryDamageAssessement" type="em:PreliminaryDamageAssessmentType" nillable="true">
+  <xs:element name="PreliminaryDamageAssessment" type="em:PreliminaryDamageAssessmentType" nillable="true">
     <xs:annotation>
-      <xs:documentation>A Preliminary Damage Assessement report</xs:documentation>
+      <xs:documentation>A Preliminary Damage Assessment report</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="PreliminaryDamageAssessmentAugmentationPoint" abstract="true">
@@ -13294,7 +13307,7 @@ National Institutes of Health, National Heart, Lung, and Blood Institute</xs:doc
   </xs:element>
   <xs:element name="ProgramKindCode" type="em:ProgramKindCodeType" nillable="true">
     <xs:annotation>
-      <xs:documentation>A kind of assessement program</xs:documentation>
+      <xs:documentation>A kind of assessment program</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="ProhibitiveDeploymentCondition" type="em:ProhibitiveDeploymentConditionType" nillable="true">
@@ -13314,7 +13327,7 @@ National Institutes of Health, National Heart, Lung, and Blood Institute</xs:doc
   </xs:element>
   <xs:element name="PublicAssistanceCategoryCode" type="em:PublicAssistanceCategoryCodeType" nillable="true">
     <xs:annotation>
-      <xs:documentation>An element to catagories the public assistance work</xs:documentation>
+      <xs:documentation>An element to categories the public assistance work</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="PublicationDate" type="nc:DateType" nillable="true">
@@ -13759,7 +13772,7 @@ National Institutes of Health, National Heart, Lung, and Blood Institute</xs:doc
   </xs:element>
   <xs:element name="SFAffectedQualifierCode" type="em:AffectedQualifierCodeType" nillable="true">
     <xs:annotation>
-      <xs:documentation>An element that classifies the level of damagefor single family structures.</xs:documentation>
+      <xs:documentation>An element that classifies the level of damage for single family structures.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="SFDestroyedQualifierCode" type="em:DestroyedQualifierCodeType" nillable="true">
@@ -13769,12 +13782,12 @@ National Institutes of Health, National Heart, Lung, and Blood Institute</xs:doc
   </xs:element>
   <xs:element name="SFMajorQualifierCode" type="em:MajorDamageQualifierCodeType" nillable="true">
     <xs:annotation>
-      <xs:documentation>An element that classifies the level of damagefor single family structures and choose the option that best describes the major damage:</xs:documentation>
+      <xs:documentation>An element that classifies the level of damage for single family structures and choose the option that best describes the major damage:</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="SFMinorQualifierCode" type="em:MinorDamageQualifierCodeType" nillable="true">
     <xs:annotation>
-      <xs:documentation>An element that classifies the level of damagefor single family structures and choose the option that best describes the minor damage:</xs:documentation>
+      <xs:documentation>An element that classifies the level of damage for single family structures and choose the option that best describes the minor damage:</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="SignatureAuthorityName" type="nc:TextType" nillable="true">
@@ -13909,7 +13922,7 @@ National Institutes of Health, National Heart, Lung, and Blood Institute</xs:doc
   </xs:element>
   <xs:element name="TeamSizeMaximumValue" type="niem-xs:integer" nillable="true">
     <xs:annotation>
-      <xs:documentation>A data element for the maximum size (i.e., number of members) of a eam</xs:documentation>
+      <xs:documentation>A data element for the maximum size (i.e., number of members) of a team.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="TeamSizeMinimumValue" type="niem-xs:integer" nillable="true">

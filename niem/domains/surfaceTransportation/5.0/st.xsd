@@ -13,6 +13,8 @@
     <xs:documentation>Surface Transportation</xs:documentation>
     <xs:appinfo>
       <appinfo:LocalTerm term="AADT" literal="Annual average daily traffic"/>
+      <appinfo:LocalTerm term="AAR" literal="Association of American Railroads"/>
+      <appinfo:LocalTerm term="Trafficway" definition="Any land way open to the public as a matter of right or custom for&#10;moving persons or property from one place to another."/>
     </xs:appinfo>
   </xs:annotation>
   <xs:import namespace="http://release.niem.gov/niem/codes/mmucc/5.0/" schemaLocation="../../../codes/mmucc/5.0/mmucc.xsd"/>
@@ -297,7 +299,7 @@
   </xs:complexType>
   <xs:simpleType name="InterchangeCategoryCodeSimpleType">
     <xs:annotation>
-      <xs:documentation>A data type idicating the interchange category</xs:documentation>
+      <xs:documentation>A data type indicating the interchange category.</xs:documentation>
     </xs:annotation>
     <xs:restriction base="xs:token">
       <xs:enumeration value="1">
@@ -354,7 +356,7 @@
   </xs:simpleType>
   <xs:complexType name="InterchangeCategoryCodeType">
     <xs:annotation>
-      <xs:documentation>A data type idicating the interchange category</xs:documentation>
+      <xs:documentation>A data type indicating the interchange category.</xs:documentation>
     </xs:annotation>
     <xs:simpleContent>
       <xs:extension base="st:InterchangeCategoryCodeSimpleType">
@@ -1000,7 +1002,7 @@
   </xs:complexType>
   <xs:simpleType name="RoadwayNumberLanesCodeSimpleType">
     <xs:annotation>
-      <xs:documentation>A data type for number of through lanes on the side-road approaches at intersection including all lanes with through movement (through and left-turn, or through and rightturn) but not exclusive turn lanes.</xs:documentation>
+      <xs:documentation>A data type for number of through lanes on the side-road approaches at intersection including all lanes with through movement (through and left-turn, or through and right-turn) but not exclusive turn lanes.</xs:documentation>
     </xs:annotation>
     <xs:restriction base="xs:token">
       <xs:enumeration value="1">
@@ -1037,7 +1039,7 @@
   </xs:simpleType>
   <xs:complexType name="RoadwayNumberLanesCodeType">
     <xs:annotation>
-      <xs:documentation>A data type for number of through lanes on the side-road approaches at intersection including all lanes with through movement (through and left-turn, or through and rightturn) but not exclusive turn lanes.</xs:documentation>
+      <xs:documentation>A data type for number of through lanes on the side-road approaches at intersection including all lanes with through movement (through and left-turn, or through and right-turn) but not exclusive turn lanes.</xs:documentation>
     </xs:annotation>
     <xs:simpleContent>
       <xs:extension base="st:RoadwayNumberLanesCodeSimpleType">
@@ -1116,7 +1118,7 @@
   </xs:complexType>
   <xs:simpleType name="RoadwayPavementLongitudinalMarkingLaneLineMarkingsCodeSimpleType">
     <xs:annotation>
-      <xs:documentation>A data Type for Lane Line Markings used on the roadway surface to guide or control the path followed by drivers.</xs:documentation>
+      <xs:documentation>A data type for Lane Line Markings used on the roadway surface to guide or control the path followed by drivers.</xs:documentation>
     </xs:annotation>
     <xs:restriction base="xs:token">
       <xs:enumeration value="0">
@@ -1138,7 +1140,7 @@
   </xs:simpleType>
   <xs:complexType name="RoadwayPavementLongitudinalMarkingLaneLineMarkingsCodeType">
     <xs:annotation>
-      <xs:documentation>A data Type for Lane Line Markings used on the roadway surface to guide or control the path followed by drivers.</xs:documentation>
+      <xs:documentation>A data type for Lane Line Markings used on the roadway surface to guide or control the path followed by drivers.</xs:documentation>
     </xs:annotation>
     <xs:simpleContent>
       <xs:extension base="st:RoadwayPavementLongitudinalMarkingLaneLineMarkingsCodeSimpleType">

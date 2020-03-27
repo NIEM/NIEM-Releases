@@ -18,15 +18,18 @@
     <xs:appinfo>
       <appinfo:LocalTerm term="ChA1" literal="HMRC Charity application form"/>
       <appinfo:LocalTerm term="CHAI" literal="HMRC Charity application form"/>
+      <appinfo:LocalTerm term="Deconsolidator" definition="A receiving party of a consolidated shipment, who divides the latter into its original single consignments and undertakes to make them available to be delivered."/>
       <appinfo:LocalTerm term="EMS" literal="Emergency Medical Service"/>
       <appinfo:LocalTerm term="HTS" literal="Harmonized Tariff Schedule"/>
       <appinfo:LocalTerm term="IATA" literal="International Air Transport Association"/>
       <appinfo:LocalTerm term="IMO" literal="International Maritime Organization"/>
       <appinfo:LocalTerm term="INCOTERMS" literal="International Commercial Terms"/>
       <appinfo:LocalTerm term="ISO" literal="International Organization for Standardization"/>
+      <appinfo:LocalTerm term="ISO6346" definition="ISO 6346 is an international standard covering the coding, identification and marking of intermodal (shipping) containers used within containerized intermodal freight transport."/>
       <appinfo:LocalTerm term="MFA" literal="Multi Fibre Arrangement"/>
       <appinfo:LocalTerm term="NTN" literal="National Training Numbers"/>
       <appinfo:LocalTerm term="SCAC" literal="Standard Carrier Alpha Code"/>
+      <appinfo:LocalTerm term="Transhipment" definition="The shipment of goods or containers to an intermediate destination, then to another destination."/>
       <appinfo:LocalTerm term="UCR" literal="Unique Customs Reference"/>
       <appinfo:LocalTerm term="UNDG" literal="United Nations Development Group"/>
       <appinfo:LocalTerm term="VIR" literal="Vehicle Inspection Report"/>
@@ -1345,8 +1348,8 @@
     <xs:complexContent>
       <xs:extension base="nc:LocationType">
         <xs:sequence>
-          <xs:element ref="it:TransshipmentPlaceName" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="it:TransshipmentPlaceCodeText" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="it:TranshipmentPlaceName" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="it:TranshipmentPlaceCodeText" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="it:TranshipmentLocationAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
       </xs:extension>
@@ -1500,7 +1503,7 @@
   </xs:complexType>
   <xs:complexType name="UNDGNumberCodeTextType">
     <xs:annotation>
-      <xs:documentation>A data type for a textual decription occuring with the UNDG code for a hazardous material type.</xs:documentation>
+      <xs:documentation>A data type for a textual description occurring with the UNDG code for a hazardous material type.</xs:documentation>
     </xs:annotation>
     <xs:simpleContent>
       <xs:extension base="nc:TextType"/>
@@ -2340,7 +2343,7 @@
   </xs:element>
   <xs:element name="DocumentAuthenticationText" type="nc:TextType" nillable="true">
     <xs:annotation>
-      <xs:documentation>An idication or proof that a document has been authenticated indicating where appropriate the authentication party.</xs:documentation>
+      <xs:documentation>An indication or proof that a document has been authenticated indicating where appropriate the authentication party.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="DocumentFreeText" type="nc:TextType" nillable="true">
@@ -2750,7 +2753,7 @@
   </xs:element>
   <xs:element name="GoodsTareWeightMeasure" type="nc:WeightMeasureType" nillable="true">
     <xs:annotation>
-      <xs:documentation>A measure of weight (mass) of the transport means for GoodsItem including the permanent equipment but excluding oods and loose accessories.</xs:documentation>
+      <xs:documentation>A measure of weight (mass) of the transport means for GoodsItem including the permanent equipment but excluding goods and loose accessories.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="GoodsTariffCodeExtensionsText" type="nc:TextType" nillable="true">
@@ -3273,7 +3276,7 @@
       <xs:documentation>An augmentation point for ObligationGuaranteeType.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="OperatingOrgName" type="nc:ProperNameTextType" nillable="true">
+  <xs:element name="OperatingOrganizationName" type="nc:ProperNameTextType" nillable="true">
     <xs:annotation>
       <xs:documentation>A name of the organization that operates a site.</xs:documentation>
     </xs:annotation>
@@ -3329,7 +3332,7 @@
       <xs:documentation>A description of the marks and numbers on a transport unit or package.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="ParentOrgName" type="nc:ProperNameTextType" nillable="true">
+  <xs:element name="ParentOrganizationName" type="nc:ProperNameTextType" nillable="true">
     <xs:annotation>
       <xs:documentation>A name of the organization that is the parent of the organization that operates a site.</xs:documentation>
     </xs:annotation>
@@ -3371,7 +3374,7 @@
   </xs:element>
   <xs:element name="PartyIDCodeDescriptionText" type="nc:TextType" nillable="true">
     <xs:annotation>
-      <xs:documentation>A description of the unique code assigned to a Org., person or Thing.</xs:documentation>
+      <xs:documentation>A description of the unique code assigned to an organization, person or thing.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="PartyIdentification" type="nc:IdentificationType" nillable="true">
@@ -3656,7 +3659,7 @@
   </xs:element>
   <xs:element name="ShippingContainerIdentificationAugmentationPoint" abstract="true">
     <xs:annotation>
-      <xs:documentation>An augmentation point for ContainerIdentificationType.</xs:documentation>
+      <xs:documentation>An augmentation point for ShippingContainerIdentificationType.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="ShippingContainerISO6346Abstract" abstract="true">
@@ -3686,7 +3689,7 @@
   </xs:element>
   <xs:element name="ShippingContainerLastLocationAugmentationPoint" abstract="true">
     <xs:annotation>
-      <xs:documentation>An augmentation point for ContainerLastLocationType.</xs:documentation>
+      <xs:documentation>An augmentation point for ShippingContainerLastLocationType.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="ShippingContainerLegalStatusIndicator" type="niem-xs:boolean" nillable="true">
@@ -3711,7 +3714,7 @@
   </xs:element>
   <xs:element name="ShippingContainerReferenceIDAugmentationPoint" abstract="true">
     <xs:annotation>
-      <xs:documentation>An augmentation point for ContainerReferencedIDType.</xs:documentation>
+      <xs:documentation>An augmentation point for ShippingContainerReferenceIDType.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="ShippingMarksText" type="nc:TextType" nillable="true">
@@ -3812,6 +3815,16 @@
   <xs:element name="TranshipmentLocationAugmentationPoint" abstract="true">
     <xs:annotation>
       <xs:documentation>An augmentation point for TranshipmentLocationType.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="TranshipmentPlaceCodeText" type="nc:TextType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A code to identify a warehouse where a particular goods shipment has been stored.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="TranshipmentPlaceName" type="nc:TextType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A name of the place where goods are to be transferred from one means of transport to another during the course of one transport operation.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="TransitControlText" type="nc:TextType" nillable="true">
@@ -4082,16 +4095,6 @@
   <xs:element name="TransportMeansVesselLengthMeasure" type="nc:LengthMeasureType" nillable="true">
     <xs:annotation>
       <xs:documentation>An expression in meters of the length of a single vehicle.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="TransshipmentPlaceCodeText" type="nc:TextType" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A code to identify a warehouse where a particular goods shipment has been stored.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="TransshipmentPlaceName" type="nc:TextType" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A name of the place where goods are to be transferred from one means of transport to another during the course of one transport operation.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="UCR" type="it:UCRType" nillable="true">

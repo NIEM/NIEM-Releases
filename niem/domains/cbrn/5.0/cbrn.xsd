@@ -16,6 +16,7 @@
     <xs:documentation>Chemical, Biological, Radiological, and Nuclear Domain</xs:documentation>
     <xs:appinfo>
       <appinfo:LocalTerm term="Bio" literal="Biological"/>
+      <appinfo:LocalTerm term="CBP" literal="United States Customs and Border Protection"/>
       <appinfo:LocalTerm term="CBRNE" literal="Chemical, Biological, Radiological, Nuclear and high- yield Explosives"/>
       <appinfo:LocalTerm term="CC" literal="cubic centimeter (cc) units"/>
       <appinfo:LocalTerm term="Chem" literal="Chemical"/>
@@ -23,12 +24,19 @@
       <appinfo:LocalTerm term="CPS" literal="Counts per second"/>
       <appinfo:LocalTerm term="FWHM" literal="Full width at half maximum"/>
       <appinfo:LocalTerm term="Geo" literal="Geographic"/>
+      <appinfo:LocalTerm term="IDREF" literal="Identifier reference"/>
       <appinfo:LocalTerm term="KeV" literal="Kiloelectronvolts"/>
+      <appinfo:LocalTerm term="kilobecquerel" definition="A unit of radioactivity equal to one thousand becquerels."/>
       <appinfo:LocalTerm term="MDA" literal="minimum detectable activity"/>
+      <appinfo:LocalTerm term="microsievert" definition="The sievert is the special name for the SI unit of equivalent dose, effective dose, and operational dose quantities. The unit is joule per kilogram.  1 microsievert = 0.000001 sieverts"/>
+      <appinfo:LocalTerm term="microsieverts" definition="The sievert is the special name for the SI unit of equivalent dose, effective dose, and operational dose quantities. The unit is joule per kilogram.  1 microsievert = 0.000001 sieverts"/>
+      <appinfo:LocalTerm term="milliroentgen" definition="A unit of exposure to ionizing radiation, one thousandth of a roentgen."/>
       <appinfo:LocalTerm term="MIME" literal="Multipurpose Internet Mail Extensions"/>
       <appinfo:LocalTerm term="mR" literal="milliroentgen"/>
       <appinfo:LocalTerm term="mRh" literal="milliroentgen per hour (mR/h)"/>
+      <appinfo:LocalTerm term="N42" definition="The ANSI/IEEE N42.42 standard specifies the XML data format that shall be used for both required and optional data to be made available by radiation measurement instruments."/>
       <appinfo:LocalTerm term="n42Doc" literal="N42 XML document"/>
+      <appinfo:LocalTerm term="Reachback" definition="A process by which commanders, their staffs and deployed forces may be provided with timely, coordinated and authoritative advice on Chemical, Biological, Radiological and Nuclear issues, drawing upon remote expert sources of information."/>
       <appinfo:LocalTerm term="UID" literal="Unique Identifier"/>
       <appinfo:LocalTerm term="uSv" literal="microsieverts"/>
       <appinfo:LocalTerm term="uSvh" literal="microsieverts per hour (uSv/h)"/>
@@ -408,7 +416,7 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-  <xs:complexType name="ConveyanceOrgRelationshipType">
+  <xs:complexType name="ConveyanceOrganizationRelationshipType">
     <xs:annotation>
       <xs:documentation>A data type for a relationship between a conveyance and an organization.</xs:documentation>
     </xs:annotation>
@@ -417,8 +425,8 @@
         <xs:sequence>
           <xs:element ref="nc:OrganizationIdentification" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="cbrn:ConveyanceIdentification" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="cbrn:ConveyanceOrgRelationshipKindCode" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="cbrn:ConveyanceOrgRelationshipAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="cbrn:ConveyanceOrganizationRelationshipKindCode" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="cbrn:ConveyanceOrganizationRelationshipAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -475,7 +483,7 @@
   </xs:complexType>
   <xs:complexType name="DataFileCaptureType">
     <xs:annotation>
-      <xs:documentation>A data type defining the strcuture of how the data file is captured.</xs:documentation>
+      <xs:documentation>A data type defining the structure of how the data file is captured.</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
       <xs:extension base="structures:ObjectType">
@@ -923,7 +931,7 @@
   </xs:complexType>
   <xs:complexType name="FWHMUncertaintiesKeVType">
     <xs:annotation>
-      <xs:documentation>A data type for FWHM uncertaintymeasure whose values are nonnegative and measured in keV.</xs:documentation>
+      <xs:documentation>A data type for FWHM uncertainty measure whose values are nonnegative and measured in keV.</xs:documentation>
     </xs:annotation>
     <xs:simpleContent>
       <xs:extension base="cbrn:NonNegativeDoubleListType">
@@ -1257,7 +1265,7 @@
   </xs:complexType>
   <xs:complexType name="NuclideActivityType">
     <xs:annotation>
-      <xs:documentation>A data type for Nuclide Activity, expressed in kiloBequerel (kBq) units.</xs:documentation>
+      <xs:documentation>A data type for Nuclide Activity, expressed in kiloBecquerel (kBq) units.</xs:documentation>
     </xs:annotation>
     <xs:simpleContent>
       <xs:extension base="cbrn:DoubleType">
@@ -1267,7 +1275,7 @@
   </xs:complexType>
   <xs:complexType name="NuclideActivityUncertaintyType">
     <xs:annotation>
-      <xs:documentation>A data type for the uncertainty in the value of NuclideActivityValue, expressed in kiloBequerel (kBq) units.</xs:documentation>
+      <xs:documentation>A data type for the uncertainty in the value of NuclideActivityValue, expressed in kiloBecquerel (kBq) units.</xs:documentation>
     </xs:annotation>
     <xs:simpleContent>
       <xs:extension base="cbrn:NonNegativeDoubleType">
@@ -1301,7 +1309,7 @@
   </xs:complexType>
   <xs:complexType name="NuclideMDAType">
     <xs:annotation>
-      <xs:documentation>A data type for minimum detectable activity (MDA) of a nuclide, expressed in kiloBequerel (kBq) units.</xs:documentation>
+      <xs:documentation>A data type for minimum detectable activity (MDA) of a nuclide, expressed in kiloBecquerel (kBq) units.</xs:documentation>
     </xs:annotation>
     <xs:simpleContent>
       <xs:extension base="cbrn:PositiveDoubleType">
@@ -1559,8 +1567,8 @@
           <xs:element ref="cbrn:RadInstrumentDataChoiceAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="cbrn:RadInstrumentDataAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
-        <xs:attribute ref="cbrn:n42DocDateTime" use="required"/>
-        <xs:attribute ref="cbrn:n42DocUUID" use="required"/>
+        <xs:attribute ref="cbrn:n42DocumentDateTime" use="required"/>
+        <xs:attribute ref="cbrn:n42DocumentUUID" use="required"/>
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
@@ -1765,7 +1773,7 @@
   </xs:complexType>
   <xs:complexType name="ReportType">
     <xs:annotation>
-      <xs:documentation>A data type for a report provided on an unsolicited basis; ie, not in response to a request message (Pull), but by Push from the entity providing the report.</xs:documentation>
+      <xs:documentation>A data type for a report provided on an unsolicited basis; i.e., not in response to a request message (Pull), but by Push from the entity providing the report.</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
       <xs:extension base="structures:ObjectType">
@@ -2036,7 +2044,7 @@
   </xs:simpleType>
   <xs:complexType name="StringListType">
     <xs:annotation>
-      <xs:documentation>A data type that faciltiates the storage of a list of string values</xs:documentation>
+      <xs:documentation>A data type that facilitates the storage of a list of string values</xs:documentation>
     </xs:annotation>
     <xs:simpleContent>
       <xs:extension base="cbrn:StringListSimpleType">
@@ -2194,12 +2202,12 @@
       <xs:documentation>True if theCharacteristicValue of one or more of the Characteristic in the group, or combinations of the group's Characteristic exceeds a control limit high or low value; false otherwise.</xs:documentation>
     </xs:annotation>
   </xs:attribute>
-  <xs:attribute name="n42DocDateTime" type="xs:dateTime">
+  <xs:attribute name="n42DocumentDateTime" type="xs:dateTime">
     <xs:annotation>
       <xs:documentation>A date and time of creation of a N42 XML document.</xs:documentation>
     </xs:annotation>
   </xs:attribute>
-  <xs:attribute name="n42DocUUID" type="xs:string">
+  <xs:attribute name="n42DocumentUUID" type="xs:string">
     <xs:annotation>
       <xs:documentation>A universally unique identifier for this particular N42 XML document. See ISO/IEC 11578.</xs:documentation>
     </xs:annotation>
@@ -2284,7 +2292,7 @@
       <xs:documentation>An augmentation point for cbrn:AcknowledgingAgencyType.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="AcknowledgingAgencyCode" type="cbrncl:GNDAOrgCodeType" nillable="true">
+  <xs:element name="AcknowledgingAgencyCode" type="cbrncl:GNDAOrganizationCodeType" nillable="true">
     <xs:annotation>
       <xs:documentation>An organization that is responsible for generating an acknowledgement.</xs:documentation>
     </xs:annotation>
@@ -2431,18 +2439,12 @@
   </xs:element>
   <xs:element name="AudioFileCodecCreatorApplicationVersionText" type="niem-xs:string" nillable="true">
     <xs:annotation>
-      <xs:documentation>A verison of a software application that is used to create an audio file.</xs:documentation>
+      <xs:documentation>A version of a software application that is used to create an audio file.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="AudioFileCodecName" type="niem-xs:string" nillable="true">
     <xs:annotation>
-      <xs:documentation>A name of the codec used to create the audio file ex. mpga  MPEG audio (recommended for portability)
-mp3  MPEG Layer 3 audio
-mp4a  MP4 audio
-a52  Dolby Digital (A52 or AC3)
-vorb  Vorbis
-spx  Speex
-flac or fl32  FLAC</xs:documentation>
+      <xs:documentation>A name of the codec used to create the audio file.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="AudioFileCodecNameVersionText" type="niem-xs:string" nillable="true">
@@ -2625,7 +2627,7 @@ flac or fl32  FLAC</xs:documentation>
       <xs:documentation>A dateTime when a status was reported.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="CaseStatusIssuerCode" type="cbrncl:GNDAOrgCodeType" nillable="true">
+  <xs:element name="CaseStatusIssuerCode" type="cbrncl:GNDAOrganizationCodeType" nillable="true">
     <xs:annotation>
       <xs:documentation>An Organization reporting a case status.</xs:documentation>
     </xs:annotation>
@@ -2775,17 +2777,17 @@ flac or fl32  FLAC</xs:documentation>
       <xs:documentation>An identifier of a kind of a conveyance.  For example: Ship, Airplane, Truck, etc.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="ConveyanceOrgRelationship" type="cbrn:ConveyanceOrgRelationshipType" nillable="true">
+  <xs:element name="ConveyanceOrganizationRelationship" type="cbrn:ConveyanceOrganizationRelationshipType" nillable="true">
     <xs:annotation>
       <xs:documentation>A description of a relationship  between a conveyance and an organization.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="ConveyanceOrgRelationshipAugmentationPoint" abstract="true">
+  <xs:element name="ConveyanceOrganizationRelationshipAugmentationPoint" abstract="true">
     <xs:annotation>
       <xs:documentation>An augmentation point for cbrn:ConveyanceOrgRelationshipType.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="ConveyanceOrgRelationshipKindCode" type="cbrncl:ConveyanceOrgRelationshipKindCodeType" nillable="true">
+  <xs:element name="ConveyanceOrganizationRelationshipKindCode" type="cbrncl:ConveyanceOrganizationRelationshipKindCodeType" nillable="true">
     <xs:annotation>
       <xs:documentation>A description of the kind of relationship between a conveyance and organization.  For example, an aircraft may have an owner, operator, leasee, etc.</xs:documentation>
     </xs:annotation>
@@ -2852,7 +2854,7 @@ flac or fl32  FLAC</xs:documentation>
   </xs:element>
   <xs:element name="CredentialsAuthenticatedCode" type="cbrncl:CredentialsAuthenticatedCodeType" nillable="true">
     <xs:annotation>
-      <xs:documentation>A verfication of the authenticating credentials.</xs:documentation>
+      <xs:documentation>A verification of the authenticating credentials.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="CredentialsAuthenticationAbstract" abstract="true">
@@ -2942,7 +2944,7 @@ flac or fl32  FLAC</xs:documentation>
   </xs:element>
   <xs:element name="DataFileCompressedIndicator" type="niem-xs:boolean" nillable="true">
     <xs:annotation>
-      <xs:documentation>True if a data file is compared; false otherwise.  A boolean flag inidicating if the data file is compressed</xs:documentation>
+      <xs:documentation>True if a data file is compared; false otherwise.  A boolean flag indicating if the data file is compressed.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="DataFileCompressionText" type="niem-xs:string" nillable="true">
@@ -2952,7 +2954,7 @@ flac or fl32  FLAC</xs:documentation>
   </xs:element>
   <xs:element name="DataFileCopyrightIndicator" type="niem-xs:boolean" nillable="true">
     <xs:annotation>
-      <xs:documentation>True if a datafile is copyrighted; false otherwise.</xs:documentation>
+      <xs:documentation>True if a data file is copyrighted; false otherwise.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="DataFileCreatedByApplicationText" type="niem-xs:string" nillable="true">
@@ -2992,7 +2994,7 @@ flac or fl32  FLAC</xs:documentation>
   </xs:element>
   <xs:element name="DataFileEncryptedIndicator" type="niem-xs:boolean" nillable="true">
     <xs:annotation>
-      <xs:documentation>True if a data file is encrypted; false otherwise.  A boolean flag inidicating if the data file is encrypted</xs:documentation>
+      <xs:documentation>True if a data file is encrypted; false otherwise.  A boolean flag indicating if the data file is encrypted.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="DataFileEncryptionText" type="niem-xs:string" nillable="true">
@@ -3032,7 +3034,7 @@ flac or fl32  FLAC</xs:documentation>
   </xs:element>
   <xs:element name="DataFileMetadata" type="structures:MetadataType" nillable="true">
     <xs:annotation>
-      <xs:documentation>Metadata about datafile Security classification and marking attributes.</xs:documentation>
+      <xs:documentation>Metadata about data file Security classification and marking attributes.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="DataFileName" type="niem-xs:string" nillable="true">
@@ -3067,7 +3069,7 @@ flac or fl32  FLAC</xs:documentation>
   </xs:element>
   <xs:element name="DataFileSetID" type="niem-xs:string" nillable="true">
     <xs:annotation>
-      <xs:documentation>An identifier of a set of data files to which a datafile  belongs.</xs:documentation>
+      <xs:documentation>An identifier of a set of data files to which a data file  belongs.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="DataFileSetMember" type="cbrn:DataFileType" nillable="true">
@@ -3172,7 +3174,7 @@ flac or fl32  FLAC</xs:documentation>
   </xs:element>
   <xs:element name="DeviceIdentificationAugmentationPoint" abstract="true">
     <xs:annotation>
-      <xs:documentation>An augmentation point for cbrn:DeviceIdentifierType.</xs:documentation>
+      <xs:documentation>An augmentation point for DeviceIdentificationType.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="DeviceInfoDateTime" type="niem-xs:dateTime" nillable="true">
@@ -3282,7 +3284,7 @@ flac or fl32  FLAC</xs:documentation>
   </xs:element>
   <xs:element name="EncounterDeviceID" type="niem-xs:string" nillable="true">
     <xs:annotation>
-      <xs:documentation>A unique identifier of a kind of encounter device; ie, system, device, or component.</xs:documentation>
+      <xs:documentation>A unique identifier of a kind of encounter device; i.e., system, device, or component.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="EncounterDeviceIdentificationData" type="cbrn:DeviceIdentificationType" nillable="true">
@@ -4037,12 +4039,12 @@ flac or fl32  FLAC</xs:documentation>
   </xs:element>
   <xs:element name="NuclideActivityUncertaintyValue" type="cbrn:NuclideActivityUncertaintyType" nillable="true">
     <xs:annotation>
-      <xs:documentation>A 1-sigma absolute uncertainty in the value of  a NuclideActivityValue, expressed in kilobequerel (kBq) units.</xs:documentation>
+      <xs:documentation>A 1-sigma absolute uncertainty in the value of  a NuclideActivityValue, expressed in kilobecquerel (kBq) units.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="NuclideActivityValue" type="cbrn:NuclideActivityType" nillable="true">
     <xs:annotation>
-      <xs:documentation>A calculated activity of a nuclide at the measurement time, expressed in kilobequerel (kBq) units.</xs:documentation>
+      <xs:documentation>A calculated activity of a nuclide at the measurement time, expressed in kilobecquerel (kBq) units.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="NuclideAnalysisReducedChiSquareValue" type="cbrn:NonNegativeDoubleType" nillable="true">
@@ -4097,7 +4099,7 @@ flac or fl32  FLAC</xs:documentation>
   </xs:element>
   <xs:element name="NuclideMinimumDetectableActivityValue" type="cbrn:NuclideMDAType" nillable="true">
     <xs:annotation>
-      <xs:documentation>A value for the minimum detectable activity (MDA) of a nuclide, expressed in kilobequerel (kBq) units.</xs:documentation>
+      <xs:documentation>A value for the minimum detectable activity (MDA) of a nuclide, expressed in kilobecquerel (kBq) units.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="NuclideName" type="cbrn:NonBlankStringType" nillable="true">
@@ -4167,12 +4169,12 @@ flac or fl32  FLAC</xs:documentation>
   </xs:element>
   <xs:element name="ParentDeviceCategoryCodeText" type="nc:TextType" substitutionGroup="scr:EncounterDeviceCategoryAbstract" nillable="true">
     <xs:annotation>
-      <xs:documentation>A code for the category of a device that is the parent of the device identified by rn:RadEncounterDeviceID.</xs:documentation>
+      <xs:documentation>A code for the category of a device that is the parent of the device identified by cbrn:RadEncounterDeviceID.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="ParentDeviceID" type="niem-xs:string" nillable="true">
     <xs:annotation>
-      <xs:documentation>A unqie  identifier of the device that is the parent of the device identified by rn:RadEncounterDeviceID.</xs:documentation>
+      <xs:documentation>A unique  identifier of the device that is the parent of the device identified by cbrn:RadEncounterDeviceID.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="PhotonData" type="cbrn:PhotonDataType" nillable="true">
@@ -4657,7 +4659,7 @@ flac or fl32  FLAC</xs:documentation>
   </xs:element>
   <xs:element name="Report" type="cbrn:ReportType" nillable="true">
     <xs:annotation>
-      <xs:documentation>A report provided on an unsolicited basis; ie, not in response to a request message (Pull), but by Push from the entity providing the report.</xs:documentation>
+      <xs:documentation>A report provided on an unsolicited basis; i.e., not in response to a request message (Pull), but by Push from the entity providing the report.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="ReportAugmentationPoint" abstract="true">
@@ -4680,7 +4682,7 @@ flac or fl32  FLAC</xs:documentation>
       <xs:documentation>An augmentation point for cbrn:RequestAgencyType.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="RequestAgencyCode" type="cbrncl:GNDAOrgCodeType" nillable="true">
+  <xs:element name="RequestAgencyCode" type="cbrncl:GNDAOrganizationCodeType" nillable="true">
     <xs:annotation>
       <xs:documentation>An organization from which a request was initiated.</xs:documentation>
     </xs:annotation>
@@ -4757,7 +4759,7 @@ flac or fl32  FLAC</xs:documentation>
   </xs:element>
   <xs:element name="ScanIdentificationAugmentationPoint" abstract="true">
     <xs:annotation>
-      <xs:documentation>An augmentation point for cbrn:ScanIdentifierDataType.</xs:documentation>
+      <xs:documentation>An augmentation point for ScanIdentificationType.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="ScanIdentificationData" type="cbrn:ScanIdentificationType" nillable="true">
@@ -4832,7 +4834,7 @@ flac or fl32  FLAC</xs:documentation>
   </xs:element>
   <xs:element name="SecondaryInspectionReferralID" type="niem-xs:string" nillable="true">
     <xs:annotation>
-      <xs:documentation>A unqiue identifier of a Secondary Inspection referral.</xs:documentation>
+      <xs:documentation>A unique identifier of a Secondary Inspection referral.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="SecondaryInspectionReferralReasonCode" type="cbrncl:SecondaryInspectionReferralReasonCodeType" nillable="true">
@@ -4877,7 +4879,7 @@ flac or fl32  FLAC</xs:documentation>
   </xs:element>
   <xs:element name="SourcePositionChoiceAbstract" abstract="true">
     <xs:annotation>
-      <xs:documentation>A data concept for the variuos ways a souce position can be represented.</xs:documentation>
+      <xs:documentation>A data concept for the various ways a source position can be represented.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="SourceSystemFindingCategoryText" type="niem-xs:string" nillable="true">
@@ -5112,7 +5114,7 @@ flac or fl32  FLAC</xs:documentation>
   </xs:element>
   <xs:element name="TraversalID" type="niem-xs:string" nillable="true">
     <xs:annotation>
-      <xs:documentation>A unqiue identifier of a traversal.  There is no required format for the ID value.</xs:documentation>
+      <xs:documentation>A unique identifier of a traversal.  There is no required format for the ID value.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="TraversalOperatingModeAbstract" abstract="true">
@@ -5182,7 +5184,7 @@ flac or fl32  FLAC</xs:documentation>
   </xs:element>
   <xs:element name="WednesdayHoursText" type="nc:TextType" nillable="true">
     <xs:annotation>
-      <xs:documentation>A text description of the normal Wensday operating hours.</xs:documentation>
+      <xs:documentation>A text description of the normal Wednesday operating hours.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="WeekDayHoursText" type="nc:TextType" nillable="true">

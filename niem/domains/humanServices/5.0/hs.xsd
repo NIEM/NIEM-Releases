@@ -15,15 +15,21 @@
   <xs:annotation>
     <xs:documentation>Human Services</xs:documentation>
     <xs:appinfo>
+      <appinfo:LocalTerm term="AFCARS" literal="Adoption and Foster Care Analysis and Reporting System (AFCARS)"/>
       <appinfo:LocalTerm term="ASFA" literal="Adoption and Safe Families Act"/>
+      <appinfo:LocalTerm term="CFR" definition="Code of Federal Regulations"/>
       <appinfo:LocalTerm term="Comp" literal="Compensation"/>
       <appinfo:LocalTerm term="EBT" literal="Electronic Benefit Transfer"/>
+      <appinfo:LocalTerm term="FEIN" literal="Federal Employer Identification Number"/>
       <appinfo:LocalTerm term="FS" literal="Food Stamps"/>
       <appinfo:LocalTerm term="ICPC" literal="Interstate Compact on the Placement of Children"/>
       <appinfo:LocalTerm term="ICWA" literal="Indian Child Welfare Act"/>
+      <appinfo:LocalTerm term="IV-E" definition="Title IV-E of the Social Security Act addressing Federal Payments for Foster Care and Adoption Assistance."/>
       <appinfo:LocalTerm term="NCANDS" literal="National Child Abuse and Neglect Data System"/>
       <appinfo:LocalTerm term="NCIC" literal="National Crime Information Center"/>
+      <appinfo:LocalTerm term="NPI" literal="National Provider Identifier"/>
       <appinfo:LocalTerm term="PARIS" literal="Public Assistance Reporting Information System"/>
+      <appinfo:LocalTerm term="Polyvictimization" definition="Multiple victimizations of a person"/>
       <appinfo:LocalTerm term="SSA" literal="Social Security Administration"/>
       <appinfo:LocalTerm term="SSI" literal="Supplemental Security Income"/>
       <appinfo:LocalTerm term="SSN" literal="Social Security Number"/>
@@ -229,7 +235,7 @@
           <xs:element ref="hs:JuvenileReceivesSubsidyIndicator" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="hs:SubsidyMonthlyAmount" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="hs:StateInvolvementIndicator" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="hs:TitleIVEAdoptionIndicator" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="hs:TitleIV-EAdoptionIndicator" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="hs:AdoptiveFamilyAssociationAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
       </xs:extension>
@@ -2040,7 +2046,7 @@
   </xs:complexType>
   <xs:simpleType name="FosterCareFundingSourceCodeSimpleType">
     <xs:annotation>
-      <xs:documentation>A data type for decribing a source for foster care funding.</xs:documentation>
+      <xs:documentation>A data type for describing a source for foster care funding.</xs:documentation>
     </xs:annotation>
     <xs:restriction base="xs:token">
       <xs:enumeration value="MOE">
@@ -2092,7 +2098,7 @@
   </xs:simpleType>
   <xs:complexType name="FosterCareFundingSourceCodeType">
     <xs:annotation>
-      <xs:documentation>A data type for decribing a source for foster care funding.</xs:documentation>
+      <xs:documentation>A data type for describing a source for foster care funding.</xs:documentation>
     </xs:annotation>
     <xs:simpleContent>
       <xs:extension base="hs:FosterCareFundingSourceCodeSimpleType">
@@ -3146,7 +3152,7 @@
   </xs:simpleType>
   <xs:complexType name="LawEnforcementContactVehiclePositionCodeType">
     <xs:annotation>
-      <xs:documentation>A data type for describing the locaton of the contact subject in a vehicle.</xs:documentation>
+      <xs:documentation>A data type for describing the location of the contact subject in a vehicle.</xs:documentation>
     </xs:annotation>
     <xs:simpleContent>
       <xs:extension base="hs:LawEnforcementContactVehiclePositionCodeSimpleType">
@@ -3193,7 +3199,7 @@
   </xs:complexType>
   <xs:simpleType name="LivingSituationCategoryCodeSimpleType">
     <xs:annotation>
-      <xs:documentation>A data type for a kind of living situtation.</xs:documentation>
+      <xs:documentation>A data type for a kind of living situation.</xs:documentation>
     </xs:annotation>
     <xs:restriction base="xs:token">
       <xs:enumeration value="Assisted Living (Temporary)">
@@ -3310,7 +3316,7 @@
   </xs:simpleType>
   <xs:complexType name="LivingSituationCategoryCodeType">
     <xs:annotation>
-      <xs:documentation>A data type for a kind of living situtation.</xs:documentation>
+      <xs:documentation>A data type for a kind of living situation.</xs:documentation>
     </xs:annotation>
     <xs:simpleContent>
       <xs:extension base="hs:LivingSituationCategoryCodeSimpleType">
@@ -4556,9 +4562,9 @@
       </xs:extension>
     </xs:simpleContent>
   </xs:complexType>
-  <xs:simpleType name="PlacementSettingRenumerationCodeSimpleType">
+  <xs:simpleType name="PlacementSettingRemunerationCodeSimpleType">
     <xs:annotation>
-      <xs:documentation>A data type for a placement setting renumeration.</xs:documentation>
+      <xs:documentation>A data type for a placement setting remuneration.</xs:documentation>
     </xs:annotation>
     <xs:restriction base="xs:token">
       <xs:enumeration value="Paid">
@@ -4573,12 +4579,12 @@
       </xs:enumeration>
     </xs:restriction>
   </xs:simpleType>
-  <xs:complexType name="PlacementSettingRenumerationCodeType">
+  <xs:complexType name="PlacementSettingRemunerationCodeType">
     <xs:annotation>
-      <xs:documentation>A data type for a placement setting renumeration.</xs:documentation>
+      <xs:documentation>A data type for a placement setting remuneration.</xs:documentation>
     </xs:annotation>
     <xs:simpleContent>
-      <xs:extension base="hs:PlacementSettingRenumerationCodeSimpleType">
+      <xs:extension base="hs:PlacementSettingRemunerationCodeSimpleType">
         <xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
       </xs:extension>
     </xs:simpleContent>
@@ -6274,7 +6280,7 @@
           <xs:element ref="nc:ActivityPersonAssociation" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:TaskCriteriaForSuccessText" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:TaskCurrentStatus" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="hs:TaskTimeframeDescriptionText" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="hs:TaskTimeFrameDescriptionText" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="hs:Service" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
       </xs:extension>
@@ -9463,17 +9469,17 @@
   </xs:element>
   <xs:element name="CurrentLivingSituationCategoryAbstract" abstract="true">
     <xs:annotation>
-      <xs:documentation>A data concept for a kind of current living situtation.</xs:documentation>
+      <xs:documentation>A data concept for a kind of current living situation.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="CurrentLivingSituationCategoryCode" type="hs:LivingSituationCategoryCodeType" substitutionGroup="hs:CurrentLivingSituationCategoryAbstract" nillable="true">
     <xs:annotation>
-      <xs:documentation>A data concept for a kind of current living situtation.</xs:documentation>
+      <xs:documentation>A kind of current living situation.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="CurrentLivingSituationCategoryText" type="nc:TextType" substitutionGroup="hs:CurrentLivingSituationCategoryAbstract" nillable="true">
     <xs:annotation>
-      <xs:documentation>A kind of current living situtation.</xs:documentation>
+      <xs:documentation>A kind of current living situation.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="CurrentTraffickedVenueAbstract" abstract="true">
@@ -9883,7 +9889,7 @@
   </xs:element>
   <xs:element name="FosterCareLiablePlacementCountyCode" type="fips:USCountyNumericCodeType" nillable="true">
     <xs:annotation>
-      <xs:documentation>A FIPs code of the legal liable county with the current placement setting.</xs:documentation>
+      <xs:documentation>A FIPS code of the legal liable county with the current placement setting.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="FosterCareMonthlyPaymentAmount" type="nc:AmountType" nillable="true">
@@ -10013,7 +10019,7 @@
   </xs:element>
   <xs:element name="HelpSoughtIndicator" type="niem-xs:boolean" nillable="true">
     <xs:annotation>
-      <xs:documentation>True if person has sought help from other resources for current or previous inciden; false otherwise.</xs:documentation>
+      <xs:documentation>True if person has sought help from other resources for current or previous incident; false otherwise.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="HistoricalNarrative" type="hs:HistoricalNarrativeType" nillable="true">
@@ -10088,7 +10094,7 @@
   </xs:element>
   <xs:element name="IdentifiedAsVictimIndicator" type="niem-xs:boolean" nillable="true">
     <xs:annotation>
-      <xs:documentation>True if a person has been identified as a vitim of human trafficking; false otherwise.</xs:documentation>
+      <xs:documentation>True if a person has been identified as a victim of human trafficking; false otherwise.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="IdentifiedAsVictimStatus" type="hs:IdentifiedAsVictimStatusType" nillable="true">
@@ -10283,7 +10289,7 @@
   </xs:element>
   <xs:element name="JuvenileFireSettingCaseAugmentationPoint" abstract="true">
     <xs:annotation>
-      <xs:documentation>An augmentation point for JuvenileFiresettingCaseType.</xs:documentation>
+      <xs:documentation>An augmentation point for JuvenileFireSettingCaseType.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="JuvenileFosterCarePlacementIndicator" type="niem-xs:boolean" nillable="true">
@@ -12341,7 +12347,7 @@
       <xs:documentation>Additional information about a task.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="TaskTimeframeDescriptionText" type="nc:TextType" nillable="true">
+  <xs:element name="TaskTimeFrameDescriptionText" type="nc:TextType" nillable="true">
     <xs:annotation>
       <xs:documentation>A description of the date range for the completion of a task.</xs:documentation>
     </xs:annotation>
@@ -12366,9 +12372,9 @@
       <xs:documentation>An age of a juvenile at the time of adoption.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="TitleIVEAdoptionIndicator" type="niem-xs:boolean" nillable="true">
+  <xs:element name="TitleIV-EAdoptionIndicator" type="niem-xs:boolean" nillable="true">
     <xs:annotation>
-      <xs:documentation>True if the type of Adoption Assistance is Title IV E; false otherwise.</xs:documentation>
+      <xs:documentation>True if the type of Adoption Assistance is Title IV-E; false otherwise.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="ToolAdministratorAugmentationPoint" abstract="true">
@@ -12418,7 +12424,7 @@
   </xs:element>
   <xs:element name="TransmittalRequestCategoryCode" type="nc:TextType" nillable="true">
     <xs:annotation>
-      <xs:documentation>A Category of the request in this trasnmittal</xs:documentation>
+      <xs:documentation>A category of the request in this transmittal.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="TreatmentApproximateLengthText" type="nc:TextType" nillable="true">
@@ -12568,7 +12574,7 @@
   </xs:element>
   <xs:element name="WagesDisbursingDate" type="nc:DateType" nillable="true">
     <xs:annotation>
-      <xs:documentation>A date wages were disbursed to receipient.</xs:documentation>
+      <xs:documentation>A date wages were disbursed to recipient.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="WagesFederalTaxableAmount" type="nc:AmountType" nillable="true">
@@ -12578,7 +12584,7 @@
   </xs:element>
   <xs:element name="WagesFederalTaxWithheldAmount" type="nc:AmountType" nillable="true">
     <xs:annotation>
-      <xs:documentation>An amount of federal tax witheld.</xs:documentation>
+      <xs:documentation>An amount of federal tax withheld.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="WagesGrossPayAmount" type="nc:AmountType" nillable="true">
@@ -12633,7 +12639,7 @@
   </xs:element>
   <xs:element name="WagesStateTaxWithheldAmount" type="nc:AmountType" nillable="true">
     <xs:annotation>
-      <xs:documentation>An amount of state tax witheld.</xs:documentation>
+      <xs:documentation>An amount of state tax withheld.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="WagesTotalBasePayAllDrillsAmount" type="nc:AmountType" nillable="true">

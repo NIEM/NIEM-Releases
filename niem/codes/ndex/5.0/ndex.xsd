@@ -3729,7 +3729,7 @@
   </xs:complexType>
   <xs:simpleType name="CriminalActivityCategoryNDExCodeSimpleType">
     <xs:annotation>
-      <xs:documentation>A data type for a code that identifies additional information on criminal activity of offenders in the offense. N-Dex code list includes all NIBRS codes, plus additional codes.</xs:documentation>
+      <xs:documentation>A data type for a code that identifies additional information on criminal activity of offenders in the offense. NDEx code list includes all NIBRS codes, plus additional codes.</xs:documentation>
     </xs:annotation>
     <xs:restriction base="xs:token">
       <xs:enumeration value="Assisting">
@@ -3871,7 +3871,7 @@
   </xs:simpleType>
   <xs:complexType name="CriminalActivityCategoryNDExCodeType">
     <xs:annotation>
-      <xs:documentation>A data type for a code that identifies additional information on criminal activity of offenders in the offense. N-Dex code list includes all NIBRS codes, plus additional codes.</xs:documentation>
+      <xs:documentation>A data type for a code that identifies additional information on criminal activity of offenders in the offense. NDEx code list includes all NIBRS codes, plus additional codes.</xs:documentation>
     </xs:annotation>
     <xs:simpleContent>
       <xs:extension base="ndex:CriminalActivityCategoryNDExCodeSimpleType">
@@ -10905,7 +10905,7 @@
       </xs:extension>
     </xs:simpleContent>
   </xs:complexType>
-  <xs:simpleType name="LocationSublocationCategoryCodeSimpleType">
+  <xs:simpleType name="LocationSubLocationCategoryCodeSimpleType">
     <xs:annotation>
       <xs:documentation>A data type for a code that identifies a location inside of another location.</xs:documentation>
     </xs:annotation>
@@ -11342,12 +11342,12 @@
       </xs:enumeration>
     </xs:restriction>
   </xs:simpleType>
-  <xs:complexType name="LocationSublocationCategoryCodeType">
+  <xs:complexType name="LocationSubLocationCategoryCodeType">
     <xs:annotation>
       <xs:documentation>A data type for a code that identifies a location inside of another location.</xs:documentation>
     </xs:annotation>
     <xs:simpleContent>
-      <xs:extension base="ndex:LocationSublocationCategoryCodeSimpleType">
+      <xs:extension base="ndex:LocationSubLocationCategoryCodeSimpleType">
         <xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
       </xs:extension>
     </xs:simpleContent>

@@ -36,13 +36,20 @@
       <appinfo:LocalTerm term="CMV" literal="Commercial Motor Vehicle"/>
       <appinfo:LocalTerm term="DEA" literal="Drug Enforcement Administration"/>
       <appinfo:LocalTerm term="ESN" literal="electronic serial number"/>
+      <appinfo:LocalTerm term="FATCA" literal="Foreign Account Tax Compliance Act"/>
       <appinfo:LocalTerm term="FIPS" literal="Federal Information Processing Standards"/>
       <appinfo:LocalTerm term="GENC" literal="Geopolitical Entities, Names, and Codes"/>
       <appinfo:LocalTerm term="GSM" literal="Global System for Mobile communication"/>
       <appinfo:LocalTerm term="IMEI" literal="International Mobile Equipment Identity"/>
+      <appinfo:LocalTerm term="IPv4" literal="Internet Protocol version 4"/>
+      <appinfo:LocalTerm term="IPv6" literal="Internet Protocol version 6"/>
       <appinfo:LocalTerm term="ISO" literal="International Organization for Standardization"/>
+      <appinfo:LocalTerm term="ISO3166" definition="ISO 3166 is a standard published by the International Organization for Standardization (ISO) that defines codes for the names of countries, dependent territories, special areas of geographical interest, and their principal subdivisions (e.g., provinces or states). The official name of the standard is Codes for the representation of names of countries and their subdivisions."/>
       <appinfo:LocalTerm term="MAC" literal="media access control address"/>
+      <appinfo:LocalTerm term="MSRP" literal="Manufacturer's suggested retail price"/>
       <appinfo:LocalTerm term="NANP" literal="North American Numbering Plan"/>
+      <appinfo:LocalTerm term="Postdirectional" definition="A word following a street name that indicates the directional taken by the thoroughfare from an arbitrary starting point or line, or the sector where it is located."/>
+      <appinfo:LocalTerm term="Predirectional" definition="A word preceding a street name that indicates the directional taken by the thoroughfare from an arbitrary starting point or line, or the sector where it is located."/>
       <appinfo:LocalTerm term="SSN" literal="Social Security Number"/>
       <appinfo:LocalTerm term="UMTS" literal="Universal Mobile Telecommunications Service"/>
       <appinfo:LocalTerm term="UTC" literal="Coordinated Universal Time"/>
@@ -1883,7 +1890,7 @@
   </xs:complexType>
   <xs:simpleType name="ImagePoseCodeSimpleType">
     <xs:annotation>
-      <xs:documentation>A data type for angles of an entitys pose in a photograph.</xs:documentation>
+      <xs:documentation>A data type for angles of an entity's pose in a photograph.</xs:documentation>
     </xs:annotation>
     <xs:restriction base="xs:token">
       <xs:enumeration value="Frontal">
@@ -1905,7 +1912,7 @@
   </xs:simpleType>
   <xs:complexType name="ImagePoseCodeType">
     <xs:annotation>
-      <xs:documentation>A data type for angles of an entitys pose in a photograph.</xs:documentation>
+      <xs:documentation>A data type for angles of an entity's pose in a photograph.</xs:documentation>
     </xs:annotation>
     <xs:simpleContent>
       <xs:extension base="nc:ImagePoseCodeSimpleType">
@@ -3449,7 +3456,7 @@
           <xs:element ref="nc:PersonMoodDescriptionText" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:PersonName" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:PersonNationalIdentification" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="nc:PersonOrganDonatorIndicator" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:PersonOrganDonorIndicator" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:PersonOtherIdentification" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:PersonPassportIdentification" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:PersonPhysicalDisabilityText" minOccurs="0" maxOccurs="unbounded"/>
@@ -4961,7 +4968,7 @@
   </xs:complexType>
   <xs:simpleType name="ZuluDateTimeSimpleType">
     <xs:annotation>
-      <xs:documentation>A data type for a datetime constrained to always be ZULU.</xs:documentation>
+      <xs:documentation>A data type for a dateTime constrained to always be ZULU.</xs:documentation>
     </xs:annotation>
     <xs:restriction base="xs:dateTime">
       <xs:pattern value=".*Z">
@@ -4973,7 +4980,7 @@
   </xs:simpleType>
   <xs:complexType name="ZuluDateTimeType">
     <xs:annotation>
-      <xs:documentation>A data type for a datetime constrained to always be ZULU.</xs:documentation>
+      <xs:documentation>A data type for a dateTime constrained to always be ZULU.</xs:documentation>
     </xs:annotation>
     <xs:simpleContent>
       <xs:extension base="nc:ZuluDateTimeSimpleType">
@@ -7208,7 +7215,7 @@
   </xs:element>
   <xs:element name="DocumentStatusDetailsAugmentationPoint" abstract="true">
     <xs:annotation>
-      <xs:documentation>An augmentation point for DocumentStatusClassificationType.</xs:documentation>
+      <xs:documentation>An augmentation point for DocumentStatusDetailsType.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="DocumentSubjectAbstract" abstract="true">
@@ -10688,7 +10695,7 @@
   </xs:element>
   <xs:element name="PersonIdentityAssociationAugmentationPoint" abstract="true">
     <xs:annotation>
-      <xs:documentation>An augmentation point for IdentityAssociationType.</xs:documentation>
+      <xs:documentation>An augmentation point for PersonIdentityAssociationType.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="PersonInjury" type="nc:InjuryType" nillable="true">
@@ -10871,14 +10878,14 @@
       <xs:documentation>A name, out of possibly multiple given names, that a person selects to use as his or her official given name.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="PersonOrganDonatorIndicator" type="niem-xs:boolean" nillable="true">
-    <xs:annotation>
-      <xs:documentation>True if a person has given consent to be used as an organ donor upon death; false otherwise.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
   <xs:element name="PersonOrganDonorAbstract" abstract="true">
     <xs:annotation>
       <xs:documentation>A data concept for an organ a person is willing to donate upon death.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="PersonOrganDonorIndicator" type="niem-xs:boolean" nillable="true">
+    <xs:annotation>
+      <xs:documentation>True if a person has given consent to be used as an organ donor upon death; false otherwise.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="PersonOrganDonorText" type="nc:TextType" substitutionGroup="nc:PersonOrganDonorAbstract" nillable="true">

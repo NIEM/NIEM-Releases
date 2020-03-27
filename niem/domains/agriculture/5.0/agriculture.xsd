@@ -22,6 +22,7 @@
       <appinfo:LocalTerm term="CVT" literal="Commodity Validation Table"/>
       <appinfo:LocalTerm term="FIPS" literal="Federal Information Processing Standards"/>
       <appinfo:LocalTerm term="FSA" literal="Farm Service Agency"/>
+      <appinfo:LocalTerm term="GML" literal="Geography Markup Language"/>
       <appinfo:LocalTerm term="INCITS" literal="InterNational Committee for Information Technology Standards"/>
       <appinfo:LocalTerm term="MICS" literal="Mobile Implement Control System"/>
       <appinfo:LocalTerm term="NRCS" literal="Natural Resources Conservation Service"/>
@@ -294,7 +295,7 @@
   </xs:element>
   <xs:element name="FarmCropAcreageAugmentationPoint" abstract="true">
     <xs:annotation>
-      <xs:documentation>An augmentation point for FarmProductionType.</xs:documentation>
+      <xs:documentation>An augmentation point for FarmCropAcreageType.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="FarmNumberID" type="ag_codes:FarmNumberIDType" nillable="true">
@@ -310,13 +311,13 @@
   </xs:element>
   <xs:element name="FieldCropAcreageAugmentationPoint" abstract="true">
     <xs:annotation>
-      <xs:documentation>An augmentation point for FieldProductionType.</xs:documentation>
+      <xs:documentation>An augmentation point for FieldCropAcreageType.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="FieldNumberID" type="ag_codes:FieldNumberIDType" nillable="true">
     <xs:annotation>
       <xs:documentation>An identifier number assigned to a field of land that is part of a farm tract.
-  Field numbers are assigned by an FSA county office, and are unique within that offics farms. A Field Number is used in conjunction with Tract Number, State FSA Code and County FSA Code for uniqueness.
+  Field numbers are assigned by an FSA county office, and are unique within that office's farms. A Field Number is used in conjunction with Tract Number, State FSA Code and County FSA Code for uniqueness.
   Field number and Tract Number are not necessarily unique based upon State ANSI Code and County ANSI Code in instances where the ANSI codes are not the same as the FSA codes.</xs:documentation>
     </xs:annotation>
   </xs:element>
@@ -526,7 +527,7 @@
   </xs:element>
   <xs:element name="TractCropAcreageAugmentationPoint" abstract="true">
     <xs:annotation>
-      <xs:documentation>An augmentation point for TractProductionType.</xs:documentation>
+      <xs:documentation>An augmentation point for TractCropAcreageType.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="TractNumberID" type="ag_codes:TractNumberIDType" nillable="true">

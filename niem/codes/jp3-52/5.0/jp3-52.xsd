@@ -8,6 +8,9 @@
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <xs:annotation>
     <xs:documentation>JP3-52 Joint Airspace Control Codes</xs:documentation>
+    <xs:appinfo>
+      <appinfo:LocalTerm term="ACM" literal="Airspace Coordinating Measure"/>
+    </xs:appinfo>
   </xs:annotation>
   <xs:import namespace="http://release.niem.gov/niem/structures/4.0/" schemaLocation="../../../utility/structures/4.0/structures.xsd"/>
   <xs:complexType name="AirspaceCoordinatingMeasureTypeAndUsageType">
@@ -645,7 +648,7 @@
   </xs:complexType>
   <xs:element name="AirspaceCoordinatingMeasureTypeAndUsageAugmentationPoint" abstract="true">
     <xs:annotation>
-      <xs:documentation>An augmentation point for type jp3-52:AirspaceCoordinatingMeasureTypeandUsageType</xs:documentation>
+      <xs:documentation>An augmentation point for AirspaceCoordinatingMeasureTypeAndUsageType.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="AirspaceCoordinatingMeasureTypeCode" type="jp3-52:AirspaceCoordinatingMeasureTypeCodeType" nillable="true">
