@@ -5264,7 +5264,7 @@
   </xs:element>
   <xs:element name="Address" type="nc:AddressType" substitutionGroup="nc:LocationAddressAbstract" nillable="true">
     <xs:annotation>
-      <xs:documentation>A postal location to which paper mail can be directed.</xs:documentation>
+      <xs:documentation>A set of location information, often described by postal information.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="AddressAugmentationPoint" abstract="true">
@@ -8967,11 +8967,6 @@
       <xs:documentation>An augmentation point for Location3DGeospatialCoordinateType.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="LocationAddress" type="nc:AddressType" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A set of location information, often described by postal information.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
   <xs:element name="LocationAddressAbstract" abstract="true">
     <xs:annotation>
       <xs:documentation>A data concept for a set of information, such as postal information, used to describe a location.</xs:documentation>
@@ -9225,6 +9220,11 @@
   <xs:element name="MachineryCategoryCode" type="commodity:MachineryCategoryCodeType" substitutionGroup="nc:ItemCategoryAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A kind of machinery.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="MailingAddress" type="nc:AddressType" substitutionGroup="nc:Address" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A mailing address for a location. This may or may not be the same as the location's physical address.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="Manifest" type="nc:ManifestType" nillable="true">
@@ -11200,6 +11200,11 @@
   <xs:element name="PersonXRayImage" type="nc:ImageType" nillable="true">
     <xs:annotation>
       <xs:documentation>An X-Ray image of a person or part of a person.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="PhysicalAddress" type="nc:AddressType" substitutionGroup="nc:Address" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A physical address for a location. This may or may not be the same as the location's mailing address.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="PhysicalFeature" type="nc:PhysicalFeatureType" nillable="true">
