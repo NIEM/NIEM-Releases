@@ -3530,7 +3530,6 @@
           <xs:element ref="hs:AgencyCaseNumberID" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="hs:Child" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="hs:ChildDeceasedIndicator" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="hs:MissingChildRecoveryLocation" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="hs:MissingChildRecoveryMethodText" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="hs:MissingChildReporter" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="j:PersonDeath" minOccurs="0" maxOccurs="unbounded"/>
@@ -10845,11 +10844,6 @@
   <xs:element name="MissingChildRecoveryAugmentationPoint" abstract="true">
     <xs:annotation>
       <xs:documentation>An augmentation point for MissingChildRecoveryType.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="MissingChildRecoveryLocation" type="nc:LocationType" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A location at which a missing child was recovered.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="MissingChildRecoveryMethodText" type="nc:TextType" nillable="true">

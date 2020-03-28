@@ -1045,7 +1045,6 @@
           <xs:element ref="j:ArrestInvolvedOrganization" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="j:ArrestInvolvedItem" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="j:ArrestInvolvedWeapon" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="j:ArrestLocation" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="j:ArrestOfficial" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="j:ArrestProbableCauseText" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="j:ArrestRelease" minOccurs="0" maxOccurs="unbounded"/>
@@ -1701,7 +1700,6 @@
           <xs:element ref="j:CitationDismissalConditionIndicator" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="j:CitationDismissalConditionText" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="j:CitationFineAmount" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="j:CitationIssuedLocation" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="j:CitationIssuingOfficial" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="j:CitationSubject" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="j:CitationViolation" minOccurs="0" maxOccurs="unbounded"/>
@@ -1779,7 +1777,6 @@
           <xs:element ref="j:CommunityLeaveCostAmount" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="j:CommunityLeaveCostCategoryAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="j:CommunityLeaveCostCategoryAmount" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="j:CommunityLeaveDestinationLocation" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="j:CommunityLeaveDoctor" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="j:CommunityLeaveDuration" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="j:CommunityLeaveEscort" minOccurs="0" maxOccurs="unbounded"/>
@@ -2508,7 +2505,6 @@
       <xs:extension base="nc:ActivityType">
         <xs:sequence>
           <xs:element ref="j:CustodyTransferActionText" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="j:CustodyTransferLocation" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="j:CustodyTransferItem" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="j:CustodyTransferReceivingEnforcementAgency" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="j:CustodyTransferReceivingEnforcementFacility" minOccurs="0" maxOccurs="unbounded"/>
@@ -4782,7 +4778,6 @@
     <xs:complexContent>
       <xs:extension base="nc:ActivityType">
         <xs:sequence>
-          <xs:element ref="j:ItemSeizedLocation" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="j:ItemSeizureDisposition" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="j:ItemSeizureMethodText" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="j:ItemSeizureOwningPerson" minOccurs="0" maxOccurs="unbounded"/>
@@ -9461,7 +9456,6 @@
       <xs:extension base="nc:ActivityType">
         <xs:sequence>
           <xs:element ref="j:SupervisionRestrictionBehaviorText" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="j:SupervisionRestrictionLocation" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="j:SupervisionRestrictionPerson" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="j:SupervisionRestriction" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="j:SupervisionRestrictionAbstract" minOccurs="0" maxOccurs="unbounded"/>
@@ -11551,11 +11545,6 @@
       <xs:documentation>A relationship between an arrest and a weapon involved in the arrest.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="ArrestLocation" type="nc:LocationType" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A location where a subject was arrested.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
   <xs:element name="ArrestOfficerAssociation" type="nc:ActivityPersonAssociationType" nillable="true">
     <xs:annotation>
       <xs:documentation>A relationship between an arrest and an officer.</xs:documentation>
@@ -13096,11 +13085,6 @@
       <xs:documentation>An amount of money to be paid by the subject receiving the citation if the subject chooses not to dispute the citation in court.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="CitationIssuedLocation" type="nc:LocationType" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A place where a citation is given to a subject.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
   <xs:element name="CitationIssuingOfficial" type="j:EnforcementOfficialType" nillable="true">
     <xs:annotation>
       <xs:documentation>A peace official who gives a citation to a subject.</xs:documentation>
@@ -13264,11 +13248,6 @@
   <xs:element name="CommunityLeaveCostCategoryText" type="nc:TextType" substitutionGroup="j:CommunityLeaveCostCategoryAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A kind of community lease cost.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="CommunityLeaveDestinationLocation" type="nc:LocationType" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A destination for the subject during temporary community leave.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="CommunityLeaveDoctor" type="nc:PersonType" nillable="true">
@@ -14984,11 +14963,6 @@
   <xs:element name="CustodyTransferItem" type="nc:ItemType" nillable="true">
     <xs:annotation>
       <xs:documentation>A piece of property which is being transferred from one custody to another.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="CustodyTransferLocation" type="nc:LocationType" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A location where transfer of custody occurs.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="CustodyTransferReceivingEnforcementAgency" type="nc:OrganizationType" nillable="true">
@@ -19890,11 +19864,6 @@
   <xs:element name="ItemReplacementTitle" type="j:ItemTitleType" nillable="true">
     <xs:annotation>
       <xs:documentation>A title which is reissued because the original title is lost, stolen, or otherwise unavailable.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="ItemSeizedLocation" type="nc:LocationType" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A location where an item was removed from the possession of the owner for official purposes.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="ItemSeizerAbstract" abstract="true">
@@ -29220,11 +29189,6 @@
   <xs:element name="SupervisionRestrictionCode" type="nc:SupervisionRestrictionCodeType" substitutionGroup="j:SupervisionRestrictionAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A supervision restriction.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="SupervisionRestrictionLocation" type="nc:LocationType" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A location a supervised person is restricted from going to.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="SupervisionRestrictionPerson" type="nc:PersonType" nillable="true">

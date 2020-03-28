@@ -207,6 +207,7 @@
           <xs:element ref="nc:ActivityDisposition" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:ActivityContactEntity" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:ActivityDate" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:ActivityLocation" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:ActivityAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
       </xs:extension>
@@ -1942,7 +1943,6 @@
     <xs:complexContent>
       <xs:extension base="nc:ActivityType">
         <xs:sequence>
-          <xs:element ref="nc:IncidentLocation" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:IncidentEvent" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:IncidentJurisdictionalOrganization" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:IncidentObservationText" minOccurs="0" maxOccurs="unbounded"/>
@@ -3245,7 +3245,6 @@
           <xs:element ref="nc:EncounterClassification" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:EncounterCommentText" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:FingerprintTakenIndicator" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="nc:PersonEncounterLocation" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:PersonEncounterAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
       </xs:extension>
@@ -5176,6 +5175,11 @@
   <xs:element name="ActivityItemAssociationAugmentationPoint" abstract="true">
     <xs:annotation>
       <xs:documentation>An augmentation point for ActivityItemAssociationType.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="ActivityLocation" type="nc:LocationType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A location of an activity.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="ActivityName" type="nc:TextType" nillable="true">
@@ -8068,11 +8072,6 @@
       <xs:documentation>An organization or agency who has jurisdiction over an incident.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="IncidentLocation" type="nc:LocationType" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A location where an incident occurred.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
   <xs:element name="IncidentObservationText" type="nc:TextType" nillable="true">
     <xs:annotation>
       <xs:documentation>A remark about something noticed with regards to an incident.</xs:documentation>
@@ -10546,11 +10545,6 @@
   <xs:element name="PersonEncounterAugmentationPoint" abstract="true">
     <xs:annotation>
       <xs:documentation>An augmentation point for PersonEncounterType.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="PersonEncounterLocation" type="nc:LocationType" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A location of a person encounter.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="PersonEthnicityAbstract" abstract="true">

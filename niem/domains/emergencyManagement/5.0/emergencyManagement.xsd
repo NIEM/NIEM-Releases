@@ -234,7 +234,6 @@
         <xs:sequence>
           <xs:element ref="em:AlarmEventCategoryAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="em:AlarmEventCallBackTelephoneNumber" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="em:AlarmEventLocation" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="em:AlarmEventLocationCategoryAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="em:AlarmAudibleIndicator" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="em:AlarmEventDetailsText" minOccurs="0" maxOccurs="unbounded"/>
@@ -10253,11 +10252,6 @@ National Institutes of Health, National Heart, Lung, and Blood Institute</xs:doc
   <xs:element name="AlarmEventDispatchAgency" type="nc:OrganizationType" nillable="true">
     <xs:annotation>
       <xs:documentation>An agency to which an alarm event is dispatched</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="AlarmEventLocation" type="nc:LocationType" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A location of an alarm event</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="AlarmEventLocationCategoryAbstract" abstract="true">

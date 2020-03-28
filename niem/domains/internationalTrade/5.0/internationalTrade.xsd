@@ -116,7 +116,6 @@
     <xs:complexContent>
       <xs:extension base="nc:ActivityType">
         <xs:sequence>
-          <xs:element ref="it:ArrivalLocation" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="it:EstimatedArrivalDate" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="it:ActualArrivalDate" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="it:NotifyParty" minOccurs="0" maxOccurs="unbounded"/>
@@ -566,7 +565,6 @@
     <xs:complexContent>
       <xs:extension base="nc:ActivityType">
         <xs:sequence>
-          <xs:element ref="it:DepartureLocation" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="it:EstimatedDepartureDate" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="it:ActualDepartureDate" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="it:NotifyParty" minOccurs="0" maxOccurs="unbounded"/>
@@ -1711,11 +1709,6 @@
       <xs:documentation>An augmentation point for ArrivalType.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="ArrivalLocation" type="nc:LocationType" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A location of arrival.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
   <xs:element name="ArrivalTransportMeans" type="it:TransportMeansType" nillable="true">
     <xs:annotation>
       <xs:documentation>A means of transport used in the arrival.</xs:documentation>
@@ -2324,11 +2317,6 @@
   <xs:element name="DepartureAugmentationPoint" abstract="true">
     <xs:annotation>
       <xs:documentation>An augmentation point for DepartureType.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="DepartureLocation" type="nc:LocationType" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A location of departure of the means of transport.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="DepartureTransportMeans" type="it:TransportMeansType" nillable="true">

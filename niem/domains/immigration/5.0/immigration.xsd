@@ -7743,7 +7743,6 @@
       <xs:extension base="nc:ActivityType">
         <xs:sequence>
           <xs:element ref="nc:Person" minOccurs="0" maxOccurs="1"/>
-          <xs:element ref="im:DeportationLocation" minOccurs="0" maxOccurs="1"/>
           <xs:element ref="im:DeportationCompleteIndicator" minOccurs="0" maxOccurs="1"/>
           <xs:element ref="im:DeportationInProgressIndicator" minOccurs="0" maxOccurs="1"/>
           <xs:element ref="im:DepartProofText" minOccurs="0" maxOccurs="1"/>
@@ -9148,11 +9147,6 @@
   <xs:element name="DeportationInProgressIndicator" type="niem-xs:boolean" nillable="true">
     <xs:annotation>
       <xs:documentation>True if the deportation is in progress; false otherwise</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="DeportationLocation" type="nc:LocationType" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A location from which the alien was deported.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="DeportationOrderLocationText" type="nc:TextType" nillable="true">
