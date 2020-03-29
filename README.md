@@ -38,6 +38,7 @@ Please review the [5.0 issues in the NIEM Releases issue tracker](https://github
 
 - Added new nc:PersonContactInformation element to nc:PersonType (#29)
 - Added substitution groups for street direction codes (#65)
+- Added street category codes and updated directionals (#80)
 - Added new nc:ActivityLocation element to nc:ActivityType (#71)
 - Added nc:MailingAddress and nc:PhysicalAddress as substitutions for nc:Address (#72)
 - Fixed invalid augmentation names (#78)

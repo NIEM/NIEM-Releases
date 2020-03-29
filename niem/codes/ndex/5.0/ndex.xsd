@@ -18764,63 +18764,6 @@
       </xs:extension>
     </xs:simpleContent>
   </xs:complexType>
-  <xs:simpleType name="StreetDirectionCodeSimpleType">
-    <xs:annotation>
-      <xs:documentation>A data type for a code that identifies a direction that appears before a street name.</xs:documentation>
-    </xs:annotation>
-    <xs:restriction base="xs:token">
-      <xs:enumeration value="EAST">
-        <xs:annotation>
-          <xs:documentation>East</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="NORTH">
-        <xs:annotation>
-          <xs:documentation>North</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="NORTHEAST">
-        <xs:annotation>
-          <xs:documentation>Northeast</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="NORTHWEST">
-        <xs:annotation>
-          <xs:documentation>Northwest</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="SOUTH">
-        <xs:annotation>
-          <xs:documentation>South</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="SOUTHEAST">
-        <xs:annotation>
-          <xs:documentation>Southeast</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="SOUTHWEST">
-        <xs:annotation>
-          <xs:documentation>Southwest</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="WEST">
-        <xs:annotation>
-          <xs:documentation>West</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-    </xs:restriction>
-  </xs:simpleType>
-  <xs:complexType name="StreetDirectionCodeType">
-    <xs:annotation>
-      <xs:documentation>A data type for a code that identifies a direction that appears before a street name.</xs:documentation>
-    </xs:annotation>
-    <xs:simpleContent>
-      <xs:extension base="ndex:StreetDirectionCodeSimpleType">
-        <xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
-      </xs:extension>
-    </xs:simpleContent>
-  </xs:complexType>
   <xs:simpleType name="StructureCategoryCodeSimpleType">
     <xs:annotation>
       <xs:documentation>A data type for a code that identifies a type of structure.</xs:documentation>
