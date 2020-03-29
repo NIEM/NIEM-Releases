@@ -114,6 +114,7 @@
       <appinfo:LocalTerm term="VICAP" literal="Violent Criminal Apprehension Program"/>
       <appinfo:LocalTerm term="VIN" literal="Vehicle Identification Number"/>
       <appinfo:LocalTerm term="VINA" literal="Vehicle Identification Number Analysis"/>
+      <appinfo:LocalTerm term="WHTI" literal="Western Hemisphere Travel Initiative"/>
       <appinfo:LocalTerm term="XRay" literal="X-Ray"/>
       <appinfo:LocalTerm term="XRays" literal="X-Rays"/>
     </xs:appinfo>
@@ -14418,6 +14419,11 @@
       <xs:documentation>A country, territory, dependency, or other such geopolitical subdivision of a location.</xs:documentation>
     </xs:annotation>
   </xs:element>
+  <xs:element name="CountryWHTICode" type="aamva_d20:CountryCodeType" substitutionGroup="nc:CountryRepresentation" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A country specified by DHS as part of the DHS Western Hemisphere Travel Initiative.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
   <xs:element name="Court" type="j:CourtType" nillable="true">
     <xs:annotation>
       <xs:documentation>A court or a unit of a court responsible for trying justice proceedings.</xs:documentation>
@@ -25212,11 +25218,6 @@
   <xs:element name="PersonNameSoundexText" type="nc:TextType" nillable="true">
     <xs:annotation>
       <xs:documentation>A name encoding such that similar sounding names with different spellings appear the same.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="PersonNationalityANSID20Code" type="aamva_d20:CountryCodeType" substitutionGroup="nc:PersonNationalityAbstract" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A country of a person's citizenship or a country in which a person is deemed a national.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="PersonNCICIdentification" type="nc:IdentificationType" nillable="true">

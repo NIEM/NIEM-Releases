@@ -3021,7 +3021,7 @@
           <xs:element ref="nc:PassportBookIdentification" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:PassportCategoryAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:PersonDigitalImage" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="nc:PersonCitizenshipAbstract" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:PersonCitizenshipCountry" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:PassportElectronicIndicator" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:PassportIssuingOrganization" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:PersonSexAbstract" minOccurs="0" maxOccurs="unbounded"/>
@@ -3379,7 +3379,7 @@
           <xs:element ref="nc:PersonBuildAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:PersonCapability" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:PersonCircumcisionIndicator" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="nc:PersonCitizenshipAbstract" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:PersonCitizenshipCountry" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:PersonComplexionText" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:PersonDeathDate" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:PersonDependentQuantity" minOccurs="0" maxOccurs="unbounded"/>
@@ -3442,7 +3442,7 @@
           <xs:element ref="nc:PersonWeightDescriptionText" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:PersonWeightMeasure" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:PersonXRayImage" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="nc:PersonNationalityAbstract" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:PersonNationalityCountry" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:PersonContactInformation" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:EmploymentContactInformation" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:PersonEmergencyContactInformation" minOccurs="0" maxOccurs="unbounded"/>
@@ -9889,17 +9889,7 @@
       <xs:documentation>True if a person is circumcised; false otherwise.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="PersonCitizenshipAbstract" abstract="true">
-    <xs:annotation>
-      <xs:documentation>A data concept for a country that assigns rights, duties, and privileges to a person because of the birth or naturalization of the person in that country.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="PersonCitizenshipISO3166Alpha2Code" type="iso_3166:CountryAlpha2CodeType" substitutionGroup="nc:PersonCitizenshipAbstract" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A country that assigns rights, duties, and privileges to a person because of the birth or naturalization of the person in that country.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="PersonCitizenshipText" type="nc:TextType" substitutionGroup="nc:PersonCitizenshipAbstract" nillable="true">
+  <xs:element name="PersonCitizenshipCountry" type="nc:CountryType" nillable="true">
     <xs:annotation>
       <xs:documentation>A country that assigns rights, duties, and privileges to a person because of the birth or naturalization of the person in that country.</xs:documentation>
     </xs:annotation>
@@ -10359,17 +10349,7 @@
       <xs:documentation>An identification that references a person within a country but is not based on fingerprint.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="PersonNationalityAbstract" abstract="true">
-    <xs:annotation>
-      <xs:documentation>A data concept for a country of a person's citizenship or a country in which a person is deemed a national.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="PersonNationalityISO3166Alpha2Code" type="iso_3166:CountryAlpha2CodeType" substitutionGroup="nc:PersonNationalityAbstract" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A country of a person's citizenship or a country in which a person is deemed a national.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="PersonNationalityText" type="nc:TextType" substitutionGroup="nc:PersonNationalityAbstract" nillable="true">
+  <xs:element name="PersonNationalityCountry" type="nc:CountryType" nillable="true">
     <xs:annotation>
       <xs:documentation>A country of a person's citizenship or a country in which a person is deemed a national.</xs:documentation>
     </xs:annotation>
