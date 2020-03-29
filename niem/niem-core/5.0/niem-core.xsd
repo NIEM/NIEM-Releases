@@ -4080,10 +4080,10 @@
         <xs:sequence>
           <xs:element ref="nc:StreetFullText" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:StreetNumberText" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="nc:StreetPredirectionalText" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:StreetPredirectionalAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:StreetName" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:StreetCategoryText" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="nc:StreetPostdirectionalText" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:StreetPostdirectionalAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:StreetExtensionText" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:StreetAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
@@ -11799,7 +11799,7 @@
       <xs:documentation>A data concept for a direction that appears after a street name.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="StreetPostdirectionalText" type="nc:TextType" nillable="true">
+  <xs:element name="StreetPostdirectionalText" type="nc:TextType" substitutionGroup="nc:StreetPostdirectionalAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A direction that appears after a street name.</xs:documentation>
     </xs:annotation>
@@ -11809,7 +11809,7 @@
       <xs:documentation>A data concept for a direction that appears before a street name.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="StreetPredirectionalText" type="nc:TextType" nillable="true">
+  <xs:element name="StreetPredirectionalText" type="nc:TextType" substitutionGroup="nc:StreetPredirectionalAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A direction that appears before a street name.</xs:documentation>
     </xs:annotation>
