@@ -78,19 +78,6 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-  <xs:complexType name="AddressAugmentationType">
-    <xs:annotation>
-      <xs:documentation>A data type for additional information about an address.</xs:documentation>
-    </xs:annotation>
-    <xs:complexContent>
-      <xs:extension base="structures:AugmentationType">
-        <xs:sequence>
-          <xs:element ref="it:LocationCountrySubEntityName" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="it:LocationCountrySubEntityIdentification" minOccurs="0" maxOccurs="unbounded"/>
-        </xs:sequence>
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
   <xs:complexType name="AgentType">
     <xs:annotation>
       <xs:documentation>A data type for a party authorized to act on behalf of another person, organization or thing.</xs:documentation>
@@ -1309,13 +1296,13 @@
           <xs:element ref="it:NTNPassportNumberID" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:InternationalTelephoneNumber" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:AddressDeliveryPointText" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="nc:LocationCityName" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:AddressCityName" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="it:CHAINumberText" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="it:WarehouseLicenseNumberText" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="it:CollectorateText" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:OrganizationName" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="nc:LocationCountry" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="nc:LocationState" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:AddressCountry" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:AddressState" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="cbrn:RemarkText" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="it:TradePartyAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
@@ -1377,8 +1364,8 @@
           <xs:element ref="it:TransportActivityLocation" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:LocationName" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="it:LocationActivityAbstract" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="nc:LocationCountry" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="nc:LocationState" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:AddressCountry" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:AddressState" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="it:TransportActivityLocationAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
       </xs:extension>
@@ -1652,11 +1639,6 @@
   <xs:element name="AdditionalStatementDescriptionText" type="nc:TextType" nillable="true">
     <xs:annotation>
       <xs:documentation>A TextType description of the Additional statement</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="AddressAugmentation" type="it:AddressAugmentationType" substitutionGroup="nc:AddressAugmentationPoint" nillable="true">
-    <xs:annotation>
-      <xs:documentation>Additional information about an address.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="Agent" type="it:AgentType" nillable="true">
@@ -3094,16 +3076,6 @@
       <xs:documentation>A category of operation performed at a given Location</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="LocationCountrySubEntityIdentification" type="nc:IdentificationType" nillable="true">
-    <xs:annotation>
-      <xs:documentation>An identification of a country subdivision.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="LocationCountrySubEntityName" type="nc:TextType" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A name of a country subdivision.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
   <xs:element name="LocationFunction" type="it:LocationFunctionType" nillable="true">
     <xs:annotation>
       <xs:documentation>A category of location in the context of the activity under consideration(ex. Export port, import port..)</xs:documentation>
@@ -3708,6 +3680,11 @@
   <xs:element name="ShippingMarksText" type="nc:TextType" nillable="true">
     <xs:annotation>
       <xs:documentation>A free form description of the marks and numbers on a transport unit or package.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="StateIdentification" type="nc:IdentificationType" substitutionGroup="nc:StateRepresentation" nillable="true">
+    <xs:annotation>
+      <xs:documentation>An identification of a country subdivision.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="Stevedore" type="it:StevedoreType" nillable="true">

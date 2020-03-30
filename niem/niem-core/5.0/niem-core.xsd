@@ -281,12 +281,12 @@
           <xs:element ref="nc:AddressSecondaryUnitText" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:AddressDeliveryPointAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:AddressRecipientName" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="nc:LocationCityName" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="nc:LocationCountyAbstract" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="nc:LocationState" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="nc:LocationCountry" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="nc:LocationPostalCode" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="nc:LocationPostalExtensionCode" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:AddressCityName" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:AddressCountyAbstract" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:AddressState" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:AddressCountry" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:AddressPostalCode" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:AddressPostalExtensionCode" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:AddressUrbanizationName" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:AddressCategoryAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:AddressAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
@@ -922,7 +922,7 @@
         <xs:sequence>
           <xs:element ref="nc:CrossStreetDescriptionText" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:CrossStreetRelativeLocation" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="nc:LocationStreet" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:AddressStreet" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:CrossStreetAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
       </xs:extension>
@@ -2259,10 +2259,10 @@
       <xs:extension base="structures:ObjectType">
         <xs:sequence>
           <xs:element ref="nc:JurisdictionAbstract" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="nc:LocationCityName" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="nc:LocationCountry" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="nc:LocationCountyAbstract" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="nc:LocationState" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:AddressCityName" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:AddressCountry" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:AddressCountyAbstract" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:AddressState" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:JurisdictionIdentification" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:JurisdictionAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
@@ -4801,6 +4801,21 @@
       <xs:documentation>A kind of address.</xs:documentation>
     </xs:annotation>
   </xs:element>
+  <xs:element name="AddressCityName" type="nc:ProperNameTextType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A name of a city or town.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="AddressCountry" type="nc:CountryType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A country, territory, dependency, or other such geopolitical subdivision of a location.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="AddressCountyAbstract" abstract="true">
+    <xs:annotation>
+      <xs:documentation>A data concept for a county, parish, vicinage, or other such geopolitical subdivision of a state.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
   <xs:element name="AddressCrossStreet" type="nc:CrossStreetType" substitutionGroup="nc:LocationAddressAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A location identified by two or more streets which intersect.</xs:documentation>
@@ -4851,6 +4866,16 @@
       <xs:documentation>A major public road.</xs:documentation>
     </xs:annotation>
   </xs:element>
+  <xs:element name="AddressPostalCode" type="niem-xs:string" nillable="true">
+    <xs:annotation>
+      <xs:documentation>An identifier of a post office-assigned zone for an address.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="AddressPostalExtensionCode" type="niem-xs:string" nillable="true">
+    <xs:annotation>
+      <xs:documentation>An identifier of a smaller area within a post office-assigned zone for an address.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
   <xs:element name="AddressPrivateMailboxText" type="nc:TextType" nillable="true">
     <xs:annotation>
       <xs:documentation>A private mailbox within a company.</xs:documentation>
@@ -4861,9 +4886,24 @@
       <xs:documentation>A name of a person, organization, or other recipient to whom physical mail may be sent.</xs:documentation>
     </xs:annotation>
   </xs:element>
+  <xs:element name="AddressRouteName" type="nc:TextType" substitutionGroup="nc:AddressDeliveryPointAbstract" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A name and number of a postal route.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
   <xs:element name="AddressSecondaryUnitText" type="nc:TextType" nillable="true">
     <xs:annotation>
       <xs:documentation>A particular unit within a larger unit or grouping at a location.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="AddressState" type="nc:StateType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A state, commonwealth, province, or other such geopolitical subdivision of a country.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="AddressStreet" type="nc:StreetType" substitutionGroup="nc:AddressDeliveryPointAbstract" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A road, thoroughfare or highway.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="AddressUrbanizationName" type="nc:TextType" nillable="true">
@@ -8521,11 +8561,6 @@
       <xs:documentation>A kind or functional description of a location.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="LocationCityName" type="nc:ProperNameTextType" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A name of a city or town.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
   <xs:element name="LocationContactInformation" type="nc:ContactInformationType" nillable="true">
     <xs:annotation>
       <xs:documentation>A set of contact information for a location.</xs:documentation>
@@ -8546,22 +8581,12 @@
       <xs:documentation>An association between a location and an organization at that location.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="LocationCountry" type="nc:CountryType" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A country, territory, dependency, or other such geopolitical subdivision of a location.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="LocationCountyAbstract" abstract="true">
-    <xs:annotation>
-      <xs:documentation>A data concept for a county, parish, vicinage, or other such geopolitical subdivision of a state.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="LocationCountyCode" type="fips:USCountyNumericCodeType" substitutionGroup="nc:LocationCountyAbstract" nillable="true">
+  <xs:element name="LocationCountyCode" type="fips:USCountyNumericCodeType" substitutionGroup="nc:AddressCountyAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A county, parish, vicinage, or other such geopolitical subdivision of a state.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="LocationCountyName" type="nc:ProperNameTextType" substitutionGroup="nc:LocationCountyAbstract" nillable="true">
+  <xs:element name="LocationCountyName" type="nc:ProperNameTextType" substitutionGroup="nc:AddressCountyAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A name of a county, parish, vicinage, or other such geopolitical subdivision of a state.</xs:documentation>
     </xs:annotation>
@@ -8661,16 +8686,6 @@
       <xs:documentation>An association between a location and an organization.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="LocationPostalCode" type="niem-xs:string" nillable="true">
-    <xs:annotation>
-      <xs:documentation>An identifier of a post office-assigned zone for an address.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="LocationPostalExtensionCode" type="niem-xs:string" nillable="true">
-    <xs:annotation>
-      <xs:documentation>An identifier of a smaller area within a post office-assigned zone for an address.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
   <xs:element name="LocationRangeDescriptionText" type="nc:TextType" nillable="true">
     <xs:annotation>
       <xs:documentation>A description of the boundary or range of a location.</xs:documentation>
@@ -8679,21 +8694,6 @@
   <xs:element name="LocationRelativeLocation" type="nc:RelativeLocationType" nillable="true">
     <xs:annotation>
       <xs:documentation>A location identified by its proximity to another location.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="LocationRouteName" type="nc:TextType" substitutionGroup="nc:AddressDeliveryPointAbstract" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A name and number of a postal route.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="LocationState" type="nc:StateType" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A state, commonwealth, province, or other such geopolitical subdivision of a country.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="LocationStreet" type="nc:StreetType" substitutionGroup="nc:AddressDeliveryPointAbstract" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A road, thoroughfare or highway.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="LocationSurroundingAreaDescriptionText" type="nc:TextType" nillable="true">

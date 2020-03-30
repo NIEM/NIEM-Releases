@@ -58,6 +58,7 @@ Please review the [5.0 issues in the NIEM Releases issue tracker](https://github
 - Updated inconsistent code set folder paths, file names, and target namespaces (#58)
 - Updated country and state element class terms (#67)
 - Updated location elements (#100)
+- Updated address elements (#111)
 - Used nc:CountryType instead of custom substitution groups for citizenship and nationality elements (#93)
 
 ### Release package updates
