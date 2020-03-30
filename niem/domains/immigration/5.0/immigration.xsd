@@ -7843,8 +7843,6 @@
       <xs:extension base="structures:AugmentationType">
         <xs:sequence>
           <xs:element ref="im:LocationNearestLargeCityName" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="im:LocationAssociationBeginDate" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="im:LocationAssociationEndDate" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -9852,16 +9850,6 @@
   <xs:element name="LocalGovernmentSponsorIndicator" type="niem-xs:boolean" nillable="true">
     <xs:annotation>
       <xs:documentation>True if the Local Government is the sponsor of the Program; false otherwise</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="LocationAssociationBeginDate" type="nc:DateType" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A date on which the association with the location began.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="LocationAssociationEndDate" type="nc:DateType" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A date on which the association with the location ended.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="LocationAugmentation" type="im:LocationAugmentationType" substitutionGroup="nc:LocationAugmentationPoint" nillable="true">

@@ -18447,9 +18447,8 @@
     <xs:complexContent>
       <xs:extension base="structures:AugmentationType">
         <xs:sequence>
-          <xs:element ref="scr:BorderCodeText" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="scr:LocationCategoryClassificationAbstract" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="scr:PortOfEntryCodeText" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="scr:LocationBorderCodeText" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="scr:LocationPortOfEntryCodeText" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -18788,7 +18787,7 @@
           <xs:element ref="scr:LPRCanadianProvinceCode" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:Image" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="j:ConveyanceRegistration" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="scr:BorderCodeText" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="scr:LocationBorderCodeText" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:Location2DGeospatialCoordinate" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="scr:LPRMessageCategoryCode" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="cbrn:SystemEventDateTime" minOccurs="0" maxOccurs="unbounded"/>
@@ -20802,7 +20801,7 @@
           <xs:element ref="nc:PersonReligionText" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="scr:PersonArrivalDate" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="scr:ArrivalReasonText" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="scr:PortOfEntryCodeText" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="scr:LocationPortOfEntryCodeText" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:PersonCitizenshipCountry" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="im:FileControlOfficeText" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:LocationState" minOccurs="0" maxOccurs="unbounded"/>
@@ -22311,11 +22310,6 @@
       <xs:documentation>A name indicating the city where the alien boarded a conveyance for ARRIVAL to the United States</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="BorderCodeText" type="nc:TextType" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A text representing a code for a DHS Border location on the Northern and Southern borders of the US.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
   <xs:element name="CaptureDuration" type="niem-xs:duration" nillable="true">
     <xs:annotation>
       <xs:documentation>A duration for the specific range of capture time.</xs:documentation>
@@ -23331,6 +23325,11 @@
       <xs:documentation>A real estate subdivision of the GEOPHYSICAL ADDRESS.</xs:documentation>
     </xs:annotation>
   </xs:element>
+  <xs:element name="LocationBorderCodeText" type="nc:TextType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A text representing a code for a DHS Border location on the Northern and Southern borders of the US.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
   <xs:element name="LocationBuildingUnitName" type="nc:TextType" nillable="true">
     <xs:annotation>
       <xs:documentation>A name of the part (room) of the physical structure specified for a GEOPHYSICAL ADDRESS.</xs:documentation>
@@ -23344,16 +23343,6 @@
   <xs:element name="LocationCarrierRouteText" type="nc:TextType" nillable="true">
     <xs:annotation>
       <xs:documentation>A postal carrier route serving the GEOPHYSICAL ADDRESS.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="LocationCategoryClassificationAbstract" abstract="true">
-    <xs:annotation>
-      <xs:documentation>A data concept for a classification of locations based on general similarities</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="LocationCategoryClassificationCode" type="scr:LocationCategoryCodeType" substitutionGroup="scr:LocationCategoryClassificationAbstract" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A classification of locations based on general similarities</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="LocationCategoryCode" type="scr:LocationCategoryCodeType" substitutionGroup="nc:LocationCategoryAbstract" nillable="true">
@@ -23399,6 +23388,11 @@
   <xs:element name="LocationElementIdentification" type="nc:IdentificationType" nillable="true">
     <xs:annotation>
       <xs:documentation>An identification value that represents a LOCATION ELEMENT</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="LocationPortOfEntryCodeText" type="nc:TextType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A text representing a code for a DHS organization location where a traveler or alien entered or departed the US.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="LocationTractText" type="nc:TextType" nillable="true">
@@ -24019,11 +24013,6 @@
   <xs:element name="PhysicalEncounterAgentAssociationAugmentationPoint" abstract="true">
     <xs:annotation>
       <xs:documentation>An augmentation point for PhysicalEncounterAgentAssociationType.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="PortOfEntryCodeText" type="nc:TextType" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A text representing a code for a DHS organization location where a traveler or alien entered or departed the US.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="PrimaryDispositionText" type="nc:TextType" nillable="true">

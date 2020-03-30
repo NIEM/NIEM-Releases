@@ -156,8 +156,8 @@
     <xs:complexContent>
       <xs:extension base="structures:AugmentationType">
         <xs:sequence>
-          <xs:element ref="intel:GlobalRegionCodeText" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="intel:PersonLocationUsageCodeText" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="intel:LocationGlobalRegionCodeText" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="intel:LocationUsageText" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -401,11 +401,6 @@
       <xs:documentation>A VGTOF Group Member Capability Criteria for Entry</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="GlobalRegionCodeText" type="nc:TextType" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A National Intelligence Priorities Framework area.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
   <xs:element name="IdentificationAugmentation" type="intel:IdentificationAugmentationType" substitutionGroup="nc:IdentificationAugmentationPoint" nillable="true">
     <xs:annotation>
       <xs:documentation>Additional information about an identification.</xs:documentation>
@@ -439,6 +434,16 @@
   <xs:element name="LocationAugmentation" type="intel:LocationAugmentationType" substitutionGroup="nc:LocationAugmentationPoint" nillable="true">
     <xs:annotation>
       <xs:documentation>Additional information about a location.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="LocationGlobalRegionCodeText" type="nc:TextType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A National Intelligence Priorities Framework area.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="LocationUsageText" type="nc:TextType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A context within which a location is used.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="OccupationName" type="nc:TextType" nillable="true">
@@ -514,11 +519,6 @@
   <xs:element name="PersonInIdentification" type="nc:IdentificationType" nillable="true">
     <xs:annotation>
       <xs:documentation>An identification of the human being referenced in the context of an identification.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="PersonLocationUsageCodeText" type="nc:TextType" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A context within which a location is used.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="PersonMultimediaIDBinary" type="nc:BinaryType" nillable="true">

@@ -1173,7 +1173,7 @@
     <xs:complexContent>
       <xs:extension base="structures:AugmentationType">
         <xs:sequence>
-          <xs:element ref="m:COTPZoneRegionAbstract" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="m:LocationCOTPZone" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="m:LocationPointAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="m:LocationPort" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="m:LocationUNLOCODEAbstract" minOccurs="0" maxOccurs="unbounded"/>
@@ -2176,6 +2176,11 @@
   <xs:element name="LocationAugmentation" type="m:LocationAugmentationType" substitutionGroup="nc:LocationAugmentationPoint" nillable="true">
     <xs:annotation>
       <xs:documentation>Additional information about a location.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="LocationCOTPZone" type="m:CaptainOfThePortZoneType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A Captain of the Port (COTP) zone associated with a location.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="LocationCurve" type="geo:CurveType" substitutionGroup="m:LocationPointAbstract" nillable="true">
