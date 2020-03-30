@@ -34,6 +34,7 @@ Please review the [5.0 issues in the NIEM Releases issue tracker](https://github
 - Merged FIPS 5-2 state codes and Census county codes into consolidated FIPS namespaces (#52)
 - Replaced non-breaking spaces in OmniClass facility codes (#133)
 - Added GENC alpha-2 and numeric country codes (#94)
+- Updated the definition of deprecated aamva:DriverLicenseClassCodeSimpleType code "M" (#108)
 
 ### Harmonization and QA
 
