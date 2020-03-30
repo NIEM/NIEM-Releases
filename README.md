@@ -54,6 +54,7 @@ Please review the [5.0 issues in the NIEM Releases issue tracker](https://github
 - Moved additional Justice-specific types from Core to Justice (#79)
 - Moved j:ItemMakeAbstract to Core (#95)
 - Moved nc:EffectiveDate from screening augmentation to nc:PersonNameType (#96)
+- Refactored scr:AddressAugmentationType (#110)
 - Updated inconsistent code set folder paths, file names, and target namespaces (#58)
 - Updated country and state element class terms (#67)
 - Updated location elements (#100)

@@ -255,24 +255,6 @@
       <xs:extension base="structures:AugmentationType">
         <xs:sequence>
           <xs:element ref="scr:AddressIdentification" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="scr:AddressClassification" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="scr:INSLookoutIndicator" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="scr:CountryNameID" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="scr:CountryNameBeginDate" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="scr:CountryNameEndDate" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="scr:CountrySubdivisionID" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="scr:CountrySubdivisionNameID" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="scr:CountrySubdivisionNameBeginDate" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="scr:CountrySubdivisionNameEndDate" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="scr:CountrySubdivisionName" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="scr:CountrySubdivisionCategoryDescriptionText" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="scr:LocationBlockGroupText" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="scr:LocationCarrierRouteText" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="scr:LocationTractText" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="scr:LocationBuildingUnitName" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="scr:LocationBuildingUnitNumberText" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="scr:CountrySubdivisionCategoryAbstract" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="scr:LocationElement" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -318,20 +300,6 @@
         <xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
       </xs:extension>
     </xs:simpleContent>
-  </xs:complexType>
-  <xs:complexType name="AddressClassificationType">
-    <xs:annotation>
-      <xs:documentation>A data type for classification of an ADDRESS</xs:documentation>
-    </xs:annotation>
-    <xs:complexContent>
-      <xs:extension base="structures:ObjectType">
-        <xs:sequence>
-          <xs:element ref="scr:AddressClassificationCategoryDescriptionText" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="scr:AddressClassificationCategoryAbstract" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="scr:AddressClassificationAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
-        </xs:sequence>
-      </xs:extension>
-    </xs:complexContent>
   </xs:complexType>
   <xs:complexType name="AgentAssociationType">
     <xs:annotation>
@@ -15941,6 +15909,21 @@
       </xs:extension>
     </xs:simpleContent>
   </xs:complexType>
+  <xs:complexType name="CountryAugmentationType">
+    <xs:annotation>
+      <xs:documentation>A data type for additional information about a country.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="structures:AugmentationType">
+        <xs:sequence>
+          <xs:element ref="scr:CountryINSLookoutIndicator" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="scr:CountryNameID" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="scr:CountryNameBeginDate" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="scr:CountryNameEndDate" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
   <xs:simpleType name="CountrySubdivisionCategoryCodeSimpleType">
     <xs:annotation>
       <xs:documentation>A data type for a COUNTRY SUBDIVISION TYPE.</xs:documentation>
@@ -18447,8 +18430,14 @@
     <xs:complexContent>
       <xs:extension base="structures:AugmentationType">
         <xs:sequence>
+          <xs:element ref="scr:LocationBlockGroupText" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="scr:LocationBorderCodeText" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="scr:LocationBuildingUnitName" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="scr:LocationBuildingUnitNumberText" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="scr:LocationCarrierRouteText" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="scr:LocationElement" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="scr:LocationPortOfEntryCodeText" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="scr:LocationTractText" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -21161,7 +21150,7 @@
           <xs:element ref="nc:PersonSexAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:PersonNationalityCountry" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:LocationCountry" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="scr:CountrySubdivisionID" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="scr:StateID" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:PersonCitizenshipCountry" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="scr:ScreeningTravelDocumentAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
@@ -21178,6 +21167,23 @@
           <xs:element ref="scr:SoftwareVendorNameText" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="scr:SoftwareVersionNumberID" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="scr:SoftwareDetailAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="StateAugmentationType">
+    <xs:annotation>
+      <xs:documentation>A data type for additional information about a state.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="structures:AugmentationType">
+        <xs:sequence>
+          <xs:element ref="scr:StateID" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="scr:StateNameID" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="scr:StateNameBeginDate" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="scr:StateNameEndDate" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="scr:StateCategoryDescriptionText" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="scr:StateCategoryAbstract" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -21351,7 +21357,7 @@
           <xs:element ref="scr:TravelDocumentRequestedDate" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="scr:TravelDocumentRefusedDate" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="scr:CountryNameID" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="scr:CountrySubdivisionNameID" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="scr:StateNameID" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="scr:TravelDocumentCodeAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="scr:TravelDocumentAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
@@ -21865,29 +21871,9 @@
       <xs:documentation>Additional information about an address.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="AddressClassification" type="scr:AddressClassificationType" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A classification of an ADDRESS</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="AddressClassificationAugmentationPoint" abstract="true">
-    <xs:annotation>
-      <xs:documentation>An augmentation point for AddressClassificationType.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="AddressClassificationCategoryAbstract" abstract="true">
-    <xs:annotation>
-      <xs:documentation>A data concept for a kind of address.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="AddressClassificationCategoryCode" type="scr:AddressCategoryCodeType" substitutionGroup="scr:AddressClassificationCategoryAbstract" nillable="true">
+  <xs:element name="AddressClassificationCategoryCode" type="scr:AddressCategoryCodeType" substitutionGroup="nc:AddressCategoryAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A kind of address.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="AddressClassificationCategoryDescriptionText" type="nc:TextType" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A description of a kind of address.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="AddressIdentification" type="nc:IdentificationType" nillable="true">
@@ -22455,9 +22441,19 @@
       <xs:documentation>A conveyance ID issuing jurisdiction type.</xs:documentation>
     </xs:annotation>
   </xs:element>
+  <xs:element name="CountryAugmentation" type="scr:CountryAugmentationType" substitutionGroup="nc:CountryAugmentationPoint" nillable="true">
+    <xs:annotation>
+      <xs:documentation>Additional information about a country.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
   <xs:element name="CountryIdentification" type="nc:IdentificationType" substitutionGroup="nc:CountryRepresentation" nillable="true">
     <xs:annotation>
       <xs:documentation>An identification value that represents a country.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="CountryINSLookoutIndicator" type="niem-xs:boolean" nillable="true">
+    <xs:annotation>
+      <xs:documentation>True if the COUNTRY is on the DHS list as a potential threat to the United States; false otherwise.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="CountryNameBeginDate" type="nc:DateType" nillable="true">
@@ -22473,46 +22469,6 @@
   <xs:element name="CountryNameID" type="niem-xs:string" nillable="true">
     <xs:annotation>
       <xs:documentation>An identifier for a COUNTRY NAME.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="CountrySubdivisionCategoryAbstract" abstract="true">
-    <xs:annotation>
-      <xs:documentation>A data concept for a COUNTRY SUBDIVISION TYPE.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="CountrySubdivisionCategoryCode" type="scr:CountrySubdivisionCategoryCodeType" substitutionGroup="scr:CountrySubdivisionCategoryAbstract" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A COUNTRY SUBDIVISION TYPE.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="CountrySubdivisionCategoryDescriptionText" type="nc:TextType" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A description of the values used for a COUNTRY SUBDIVISION TYPE.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="CountrySubdivisionID" type="niem-xs:string" nillable="true">
-    <xs:annotation>
-      <xs:documentation>An identifier that represents a COUNTRY SUBDIVISION.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="CountrySubdivisionName" type="nc:TextType" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A name of the COUNTRY SUBDIVISION.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="CountrySubdivisionNameBeginDate" type="nc:DateType" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A date on which the COUNTRY SUBDIVISION NAME came into existence.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="CountrySubdivisionNameEndDate" type="nc:DateType" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A date on which the COUNTRY SUBDIVISION NAME ended.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="CountrySubdivisionNameID" type="niem-xs:string" nillable="true">
-    <xs:annotation>
-      <xs:documentation>An identifier that represents a COUNTRY SUBDIVISION NAME.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="CreditCardIndicator" type="niem-xs:boolean" nillable="true">
@@ -23168,11 +23124,6 @@
   <xs:element name="InmateNumberID" type="niem-xs:string" nillable="true">
     <xs:annotation>
       <xs:documentation>An identifier assigned to the detainee by the detention facility.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="INSLookoutIndicator" type="niem-xs:boolean" nillable="true">
-    <xs:annotation>
-      <xs:documentation>True if the COUNTRY is on the DHS list as a potential threat to the United States; false otherwise.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="InternationalNumberIndicator" type="niem-xs:boolean" nillable="true">
@@ -24220,6 +24171,31 @@
       <xs:documentation>An identifier that represents a COUNTRY.</xs:documentation>
     </xs:annotation>
   </xs:element>
+  <xs:element name="StateAugmentation" type="scr:StateAugmentationType" substitutionGroup="nc:StateAugmentationPoint" nillable="true">
+    <xs:annotation>
+      <xs:documentation>Additional information about a state.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="StateCategoryAbstract" abstract="true">
+    <xs:annotation>
+      <xs:documentation>A data concept for a COUNTRY SUBDIVISION TYPE.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="StateCategoryCode" type="scr:CountrySubdivisionCategoryCodeType" substitutionGroup="scr:StateCategoryAbstract" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A COUNTRY SUBDIVISION TYPE.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="StateCategoryDescriptionText" type="nc:TextType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A description of the values used for a COUNTRY SUBDIVISION TYPE.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="StateID" type="niem-xs:string" nillable="true">
+    <xs:annotation>
+      <xs:documentation>An identifier that represents a COUNTRY SUBDIVISION.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
   <xs:element name="StatementIndicator" type="niem-xs:boolean" nillable="true">
     <xs:annotation>
       <xs:documentation>True if a sworn statement was taken; false otherwise.</xs:documentation>
@@ -24238,6 +24214,21 @@
   <xs:element name="StatementText" type="nc:TextType" nillable="true">
     <xs:annotation>
       <xs:documentation>A text of the interview.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="StateNameBeginDate" type="nc:DateType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A date on which the COUNTRY SUBDIVISION NAME came into existence.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="StateNameEndDate" type="nc:DateType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A date on which the COUNTRY SUBDIVISION NAME ended.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="StateNameID" type="niem-xs:string" nillable="true">
+    <xs:annotation>
+      <xs:documentation>An identifier that represents a COUNTRY SUBDIVISION NAME.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="StayActionText" type="nc:TextType" nillable="true">
