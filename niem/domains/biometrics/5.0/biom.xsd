@@ -1173,7 +1173,7 @@
       <xs:documentation>A data type for a CBEFF record</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
-      <xs:extension base="biom:ImageType">
+      <xs:extension base="nc:ImageType">
         <xs:sequence>
           <xs:element ref="biom:CBEFFFormatOwnerID" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="biom:CBEFFFormatCategoryID" minOccurs="0" maxOccurs="unbounded"/>
@@ -4041,7 +4041,7 @@
       <xs:documentation>A data type for an image of a human face</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
-      <xs:extension base="biom:ImageType">
+      <xs:extension base="nc:ImageType">
         <xs:sequence>
           <xs:element ref="biom:FaceImage3DPoseAngle" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="biom:FaceImageAcquisitionProfileAbstract" minOccurs="0" maxOccurs="unbounded"/>
@@ -4115,7 +4115,7 @@
       <xs:documentation>A data type for the details about a fingerprint image</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
-      <xs:extension base="biom:ImageType">
+      <xs:extension base="nc:ImageType">
         <xs:sequence>
           <xs:element ref="biom:FrictionRidgeImageImpressionCaptureCategoryAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="biom:FrictionRidgeCaptureTechnologyCode" minOccurs="0" maxOccurs="unbounded"/>
@@ -4620,7 +4620,7 @@
       <xs:documentation>A data type for a fingerprint image</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
-      <xs:extension base="biom:ImageType">
+      <xs:extension base="nc:ImageType">
         <xs:sequence>
           <xs:element ref="biom:FingerprintImagePosition" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="biom:FrictionRidgeImageImpressionCaptureCategoryAbstract" minOccurs="0" maxOccurs="unbounded"/>
@@ -5186,7 +5186,7 @@
       <xs:documentation>A data type for the details about a friction ridge image</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
-      <xs:extension base="biom:ImageType">
+      <xs:extension base="nc:ImageType">
         <xs:sequence>
           <xs:element ref="biom:FrictionRidgeImageImpressionCaptureCategoryAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="biom:FrictionRidgeCaptureTechnologyCode" minOccurs="0" maxOccurs="unbounded"/>
@@ -5710,7 +5710,25 @@
       <xs:extension base="structures:AugmentationType">
         <xs:sequence>
           <xs:element ref="nc:EffectiveDate" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="biom:ImageBitsPerPixelQuantity" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="biom:ImageCaptureDetail" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="biom:ImageCategoryCode" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="biom:ImageColorSpaceAbstract" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="biom:ImageCommentText" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="biom:ImageCompressionAlgorithmAbstract" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="biom:ImageDistortion" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="biom:ImageHashValue" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="biom:ImageHorizontalLineLengthPixelQuantity" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="biom:ImageHorizontalPixelDensityValue" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="biom:ImageNativeScanningResolutionValue" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="biom:ImageNominalScanningResolutionValue" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="biom:ImageNominalTransmittingResolutionValue" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="biom:ImageQuality" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="biom:ImageScaleUnitsCode" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="biom:ImageScanningResolutionCategoryCode" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="biom:ImageVerticalLineLengthPixelQuantity" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="biom:ImageVerticalPixelDensityValue" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="biom:SourceExternalReferenceAbstract" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -6067,8 +6085,8 @@
     <xs:complexContent>
       <xs:extension base="structures:ObjectType">
         <xs:sequence>
-          <xs:element ref="biom:NativeScanningResolutionValue" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="biom:NominalTransmittingResolutionValue" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="biom:ImageNativeScanningResolutionValue" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="biom:ImageNominalTransmittingResolutionValue" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="biom:ImageResolutionAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
       </xs:extension>
@@ -6263,36 +6281,6 @@
         <xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
       </xs:extension>
     </xs:simpleContent>
-  </xs:complexType>
-  <xs:complexType name="ImageType">
-    <xs:annotation>
-      <xs:documentation>A data type for a biometric image</xs:documentation>
-    </xs:annotation>
-    <xs:complexContent>
-      <xs:extension base="nc:BinaryType">
-        <xs:sequence>
-          <xs:element ref="biom:ImageBitsPerPixelQuantity" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="biom:ImageCaptureDetail" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="biom:ImageColorSpaceAbstract" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="biom:ImageCommentText" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="biom:ImageCompressionAlgorithmAbstract" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="biom:HorizontalLineLengthPixelQuantity" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="biom:ImageHorizontalPixelDensityValue" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="biom:ImageQuality" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="biom:ImageScaleUnitsCode" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="biom:ImageCategoryCode" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="biom:VerticalLineLengthPixelQuantity" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="biom:ImageVerticalPixelDensityValue" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="biom:ImageDistortion" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="biom:NativeScanningResolutionValue" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="biom:NominalScanningResolutionValue" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="biom:NominalTransmittingResolutionValue" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="biom:ScanningResolutionCategoryCode" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="biom:SourceExternalReferenceAbstract" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="biom:ImageAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
-        </xs:sequence>
-      </xs:extension>
-    </xs:complexContent>
   </xs:complexType>
   <xs:simpleType name="ImpressionCaptureCategoryCodeSimpleType">
     <xs:annotation>
@@ -6595,8 +6583,8 @@
           <xs:element ref="biom:CBEFFProductID" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="biom:DeviceCertificationCode" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="biom:DeviceID" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="biom:HorizontalLineLengthPixelQuantity" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="biom:VerticalLineLengthPixelQuantity" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="biom:ImageHorizontalLineLengthPixelQuantity" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="biom:ImageVerticalLineLengthPixelQuantity" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="biom:ImageScaleUnitsCode" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="biom:ImageHorizontalPixelDensityValue" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="biom:ImageVerticalPixelDensityValue" minOccurs="0" maxOccurs="unbounded"/>
@@ -6988,7 +6976,7 @@
       <xs:documentation>A data type for details about a Type-17 iris image record</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
-      <xs:extension base="biom:ImageType">
+      <xs:extension base="nc:ImageType">
         <xs:sequence>
           <xs:element ref="biom:IrisEyePositionAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="biom:IrisImageMissingAbstract" minOccurs="0" maxOccurs="unbounded"/>
@@ -10158,7 +10146,7 @@
       <xs:documentation>A data type for the details about an image of a palm print</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
-      <xs:extension base="biom:ImageType">
+      <xs:extension base="nc:ImageType">
         <xs:sequence>
           <xs:element ref="biom:FrictionRidgeImageImpressionCaptureCategoryAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="biom:FrictionRidgeCaptureTechnologyCode" minOccurs="0" maxOccurs="unbounded"/>
@@ -10758,7 +10746,7 @@
       <xs:documentation>A data type for an image of a physical feature</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
-      <xs:extension base="biom:ImageType">
+      <xs:extension base="nc:ImageType">
         <xs:sequence>
           <xs:element ref="biom:PhysicalFeatureSize" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="biom:Type10CrossReferenceID" minOccurs="0" maxOccurs="unbounded"/>
@@ -11216,7 +11204,7 @@
       <xs:documentation>A data type for a set of details about an image of a plantar (footprint)</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
-      <xs:extension base="biom:ImageType">
+      <xs:extension base="nc:ImageType">
         <xs:sequence>
           <xs:element ref="biom:FrictionRidgeImageImpressionCaptureCategoryAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="biom:FrictionRidgeCaptureTechnologyCode" minOccurs="0" maxOccurs="unbounded"/>
@@ -11984,7 +11972,7 @@
       <xs:documentation>A data type for an image representation that contains image segments</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
-      <xs:extension base="biom:ImageType">
+      <xs:extension base="nc:ImageType">
         <xs:sequence>
           <xs:element ref="biom:ImageSegment" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="biom:SegmentedImageAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
@@ -12234,7 +12222,7 @@
       <xs:documentation>A data type for the details of a biometric source media file</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
-      <xs:extension base="biom:ImageType">
+      <xs:extension base="nc:ImageType">
         <xs:sequence>
           <xs:element ref="biom:ImageSegment" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="biom:TimeSegment" minOccurs="0" maxOccurs="unbounded"/>
@@ -14370,7 +14358,7 @@
       <xs:documentation>A unique identifier for a DNA electropherogram ladder image</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="DNAElectropherogramScreenshotImage" type="biom:ImageType" substitutionGroup="biom:BiometricImageAbstract" nillable="true">
+  <xs:element name="DNAElectropherogramScreenshotImage" type="nc:ImageType" substitutionGroup="biom:BiometricImageAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>An image of screenshot of a DNA electropherogram</xs:documentation>
     </xs:annotation>
@@ -15480,19 +15468,9 @@
       <xs:documentation>A comment noting any observable health issues impacting the data subject during the recording time segment.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="HorizontalLineLengthPixelQuantity" type="biom:LargeLineLengthPixelQuantityType" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A number of pixels on a single horizontal line of a variable-resolution image</xs:documentation>
-    </xs:annotation>
-  </xs:element>
   <xs:element name="ImageAugmentation" type="biom:ImageAugmentationType" substitutionGroup="nc:ImageAugmentationPoint" nillable="true">
     <xs:annotation>
       <xs:documentation>Additional information about supplements Biometric Image and specifies the additional Image</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="ImageAugmentationPoint" abstract="true">
-    <xs:annotation>
-      <xs:documentation>An augmentation point for an image type</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="ImageBitsPerPixelQuantity" type="biom:Integer1To99Type" nillable="true">
@@ -15590,14 +15568,19 @@
       <xs:documentation>A pattern for a hash value computed from a binary object like Image.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="ImageHorizontalLineLengthPixelQuantity" type="biom:SmallLineLengthPixelQuantityType" nillable="true">
+  <xs:element name="ImageHorizontalLineLengthPixelQuantity" type="biom:LargeLineLengthPixelQuantityType" nillable="true">
     <xs:annotation>
-      <xs:documentation>A number of pixels on a single horizontal line of a fixed resolution 500ppi image</xs:documentation>
+      <xs:documentation>A number of pixels on a single horizontal line of a variable-resolution image</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="ImageHorizontalPixelDensityValue" type="niem-xs:positiveInteger" nillable="true">
     <xs:annotation>
       <xs:documentation>A transmitted pixel density in horizontal direction</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="ImageHorizontalSmallLineLengthPixelQuantity" type="biom:SmallLineLengthPixelQuantityType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A number of pixels on a single horizontal line of a fixed resolution 500ppi image</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="ImageLocationHorizontalCoordinateMeasure" type="niem-xs:integer" nillable="true">
@@ -15618,6 +15601,21 @@
   <xs:element name="ImageLocationVerticalCoordinateMeasure" type="niem-xs:integer" nillable="true">
     <xs:annotation>
       <xs:documentation>A distance in 10 micrometer units (0.01mm) from the top edge of a region of interest in an image</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="ImageNativeScanningResolutionValue" type="biom:Decimal2DigitPrecisionType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A scanning resolution used by a specific biometric image capture device. Valid values between 19.29 and 99.99 OR equal to 00.00 (corresponds to 500ppi positive and negative 2% up to maximum allowed value.). Should only allow two decimal places</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="ImageNominalScanningResolutionValue" type="niem-xs:decimal" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A nominal number of pixels per unit distance (ppmm or ppi) of a transmitted biometric image.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="ImageNominalTransmittingResolutionValue" type="biom:Decimal2DigitPrecisionType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A transaction's transmitting resolution, in pixels per mm. Valid value between 19.29 and 20.08 OR equal to 00.00 (corresponds to 500ppi positive and negative 2% ) OR between 38.58 and 40.16 (corresponds to 1000ppi positive and negative 2%.) Shoul</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="ImageQuality" type="biom:ImageQualityType" nillable="true">
@@ -15653,6 +15651,11 @@
   <xs:element name="ImageScaleUnitsCode" type="biom:ScaleUnitsCodeType" nillable="true">
     <xs:annotation>
       <xs:documentation>A sampling frequency unit designator, pixels per inch, or pixels per centimeter</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="ImageScanningResolutionCategoryCode" type="biom:ScanningResolutionCategoryCodeType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>An indication of whether minimal (nominal) or native scanning resolution applies to a biometric image.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="ImageSegment" type="biom:ImageSegmentType" nillable="true">
@@ -15725,14 +15728,19 @@
       <xs:documentation>A kind of transformation of an image</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="ImageVerticalLineLengthPixelQuantity" type="biom:SmallLineLengthPixelQuantityType" nillable="true">
+  <xs:element name="ImageVerticalLineLengthPixelQuantity" type="biom:LargeLineLengthPixelQuantityType" nillable="true">
     <xs:annotation>
-      <xs:documentation>A number of horizontal lines in an image</xs:documentation>
+      <xs:documentation>A number of pixels on a single vertical line of an image</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="ImageVerticalPixelDensityValue" type="niem-xs:positiveInteger" nillable="true">
     <xs:annotation>
       <xs:documentation>A transmitted pixel density in the vertical direction</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="ImageVerticalSmallLineLengthPixelQuantity" type="biom:SmallLineLengthPixelQuantityType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A number of horizontal lines of a fixed resolution 500ppi image.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="ImpairmentValue" type="biom:Integer0To5Type" nillable="true">
@@ -16920,24 +16928,9 @@
       <xs:documentation>A kind of date of recording estimated accuracy range for mouth data</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="NativeScanningResolutionValue" type="biom:Decimal2DigitPrecisionType" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A scanning resolution used by a specific biometric image capture device. Valid values between 19.29 and 99.99 OR equal to 00.00 (corresponds to 500ppi positive and negative 2% up to maximum allowed value.). Should only allow two decimal places</xs:documentation>
-    </xs:annotation>
-  </xs:element>
   <xs:element name="NISTQualityMeasure" type="biom:NISTQualityMeasureType" nillable="true">
     <xs:annotation>
       <xs:documentation>A value of a NIST Fingerprint Image Quality score, predicted matcher accuracy</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="NominalScanningResolutionValue" type="niem-xs:decimal" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A nominal number of pixels per unit distance (ppmm or ppi) of a transmitted biometric image.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="NominalTransmittingResolutionValue" type="biom:Decimal2DigitPrecisionType" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A transaction's transmitting resolution, in pixels per mm. Valid value between 19.29 and 20.08 OR equal to 00.00 (corresponds to 500ppi positive and negative 2% ) OR between 38.58 and 40.16 (corresponds to 1000ppi positive and negative 2%.) Shoul</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="NonPhotographicImageCategoryCode" type="biom:NonPhotographicImageCategoryCodeType" substitutionGroup="biom:NonPhotographicImageCategoryCodeAbstract" nillable="true">
@@ -17800,11 +17793,6 @@
       <xs:documentation>A ratio of digital samples per second of analog data upon conversion to an acoustic signal</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="ScanningResolutionCategoryCode" type="biom:ScanningResolutionCategoryCodeType" nillable="true">
-    <xs:annotation>
-      <xs:documentation>An indication of whether minimal (nominal) or native scanning resolution applies to a biometric image.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
   <xs:element name="ScriptText" type="nc:TextType" nillable="true">
     <xs:annotation>
       <xs:documentation>A script used for read, prompted or repeated speech.</xs:documentation>
@@ -18200,7 +18188,7 @@
       <xs:documentation>A start date/time tagged on the original, contemporaneous capture of the voice recording in the segment identified.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="TestImageDetail" type="biom:ImageType" substitutionGroup="biom:BiometricImageAbstract" nillable="true">
+  <xs:element name="TestImageDetail" type="nc:ImageType" substitutionGroup="biom:BiometricImageAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A set of details about an image of a biometric subject used for testing</xs:documentation>
     </xs:annotation>
@@ -18403,11 +18391,6 @@
   <xs:element name="VertexAugmentationPoint" abstract="true">
     <xs:annotation>
       <xs:documentation>An augmentation point for Vertex</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="VerticalLineLengthPixelQuantity" type="biom:LargeLineLengthPixelQuantityType" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A number of pixels on a single vertical line of an image</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="VideoAugmentationPoint" abstract="true">
