@@ -43,6 +43,7 @@ Please review the [5.0 issues in the NIEM Releases issue tracker](https://github
 - Added new nc:ActivityLocation element to nc:ActivityType (#71)
 - Added nc:MailingAddress and nc:PhysicalAddress as substitutions for nc:Address (#72)
 - Fixed invalid augmentation names (#78)
+- Fixed definition of j:PersonSignature (#92)
 - Fixed spelling errors and added local terminology (#131) - *in progress*
 - Fixed definition formatting (#132) - *in progress*
 - Harmonized warrant components in Justice and Screening (#62)
