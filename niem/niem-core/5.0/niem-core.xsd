@@ -2218,7 +2218,7 @@
           <xs:element ref="nc:ItemImage" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:ItemLeaseIndicator" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:ItemLengthMeasure" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="nc:ItemMakeName" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:ItemMakeAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:ItemModelName" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:ItemModelYearDate" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:ItemOwnershipCategoryText" minOccurs="0" maxOccurs="unbounded"/>
@@ -8049,7 +8049,12 @@
       <xs:documentation>An augmentation point for ItemLocationAssociationType.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="ItemMakeName" type="nc:ProperNameTextType" nillable="true">
+  <xs:element name="ItemMakeAbstract" abstract="true">
+    <xs:annotation>
+      <xs:documentation>A data concept for a manufacturer that produced an item.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="ItemMakeName" type="nc:ProperNameTextType" substitutionGroup="nc:ItemMakeAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A name of the manufacturer that produced an item.</xs:documentation>
     </xs:annotation>

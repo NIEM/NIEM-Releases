@@ -4671,7 +4671,6 @@
           <xs:element ref="j:ItemSeizure" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="j:ItemPartialLotAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="j:LivestockSexAbstract" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="j:ItemMakeAbstract" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -20275,12 +20274,7 @@
       <xs:documentation>A scheduled and ad-hoc inspections of the physical condition of, and a record of the work performed on, armory items (firearms, restraints etc.) to increase their useful lifespan, ensure they are ready for use, and that they will perform a</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="ItemMakeAbstract" abstract="true">
-    <xs:annotation>
-      <xs:documentation>A data concept for a manufacturer that produced an item.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="ItemMakeCode" type="ncic:ABRACodeType" substitutionGroup="j:ItemMakeAbstract" nillable="true">
+  <xs:element name="ItemMakeCode" type="ncic:ABRACodeType" substitutionGroup="nc:ItemMakeAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A manufacturer that produced an item.</xs:documentation>
     </xs:annotation>
