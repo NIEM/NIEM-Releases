@@ -237,6 +237,26 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
+  <xs:element name="AreaCurve" type="geo:CurveType" substitutionGroup="nc:AreaRegionAbstract" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A geospatial curve.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="AreaEnvelope" type="geo:EnvelopeType" substitutionGroup="nc:AreaRegionAbstract" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A rectangular geospatial area.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="AreaPoint" type="geo:PointType" substitutionGroup="nc:AreaRegionAbstract" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A location specified by a 2D or 3D geometric point.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="AreaPolygon" type="geo:PolygonType" substitutionGroup="nc:AreaRegionAbstract" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A geospatial polygon.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
   <xs:element name="AreaRegionGeometry" type="geo:GeometryType" substitutionGroup="nc:AreaRegionAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A GML geometry that describes a region.</xs:documentation>

@@ -2,7 +2,6 @@
 <xs:schema targetNamespace="http://release.niem.gov/niem/domains/maritime/5.0/" version="alpha1" xsi:schemaLocation="http://release.niem.gov/niem/appinfo/4.0/ ../../../utility/appinfo/4.0/appinfo.xsd http://release.niem.gov/niem/conformanceTargets/3.0/ ../../../utility/conformanceTargets/3.0/conformanceTargets.xsd" ct:conformanceTargets="http://reference.niem.gov/niem/specification/naming-and-design-rules/4.0/#ReferenceSchemaDocument"
   xmlns:appinfo="http://release.niem.gov/niem/appinfo/4.0/"
   xmlns:ct="http://release.niem.gov/niem/conformanceTargets/3.0/"
-  xmlns:geo="http://release.niem.gov/niem/adapters/geospatial/5.0/"
   xmlns:hazmat="http://release.niem.gov/niem/codes/hazmat/5.0/"
   xmlns:iso_3166="http://release.niem.gov/niem/codes/iso_3166-1/5.0/"
   xmlns:m="http://release.niem.gov/niem/domains/maritime/5.0/"
@@ -47,7 +46,6 @@
       <appinfo:LocalTerm term="USMTF" literal="United States Message Text Format"/>
     </xs:appinfo>
   </xs:annotation>
-  <xs:import namespace="http://release.niem.gov/niem/adapters/geospatial/5.0/" schemaLocation="../../../adapters/geospatial/5.0/geospatial.xsd"/>
   <xs:import namespace="http://release.niem.gov/niem/codes/hazmat/5.0/" schemaLocation="../../../codes/hazmat/5.0/hazmat.xsd"/>
   <xs:import namespace="http://release.niem.gov/niem/codes/iso_3166-1/5.0/" schemaLocation="../../../codes/iso_3166-1/5.0/iso_3166.xsd"/>
   <xs:import namespace="http://release.niem.gov/niem/codes/ncic/5.0/" schemaLocation="../../../codes/ncic/5.0/ncic.xsd"/>
@@ -1174,7 +1172,6 @@
       <xs:extension base="structures:AugmentationType">
         <xs:sequence>
           <xs:element ref="m:LocationCOTPZone" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="m:LocationPointAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="m:LocationPort" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="m:LocationUNLOCODEAbstract" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
@@ -1391,7 +1388,6 @@
     <xs:complexContent>
       <xs:extension base="structures:ObjectType">
         <xs:sequence>
-          <xs:element ref="m:LocationPointAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="m:PositionSpeedMeasure" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="m:PositionCourseMeasure" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="m:PositionHeadingMeasure" minOccurs="0" maxOccurs="unbounded"/>
@@ -2183,21 +2179,6 @@
       <xs:documentation>A Captain of the Port (COTP) zone associated with a location.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="LocationCurve" type="geo:CurveType" substitutionGroup="m:LocationPointAbstract" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A geospatial curve.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="LocationEllipse" type="geo:EllipseType" substitutionGroup="m:LocationPointAbstract" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A location specified by an ellipse centered at a 2D or 3D geometric point.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="LocationEnvelope" type="geo:EnvelopeType" substitutionGroup="m:LocationPointAbstract" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A rectangular geospatial area.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
   <xs:element name="LocationOnVessel" type="m:LocationOnVesselType" nillable="true">
     <xs:annotation>
       <xs:documentation>A location on a vessel.</xs:documentation>
@@ -2241,21 +2222,6 @@
   <xs:element name="LocationOnVesselElevationMeasure" type="nc:LengthMeasureType" nillable="true">
     <xs:annotation>
       <xs:documentation>A measure of the elevation above or below the waterline of a vessel. A positive value implies a location above the waterline and a negative value implies a location below the waterline.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="LocationPoint" type="geo:PointType" substitutionGroup="m:LocationPointAbstract" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A location specified by a 2D or 3D geometric point.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="LocationPointAbstract" abstract="true">
-    <xs:annotation>
-      <xs:documentation>A data concept for a location specified by a 2D or 3D point.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="LocationPolygon" type="geo:PolygonType" substitutionGroup="m:LocationPointAbstract" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A geospatial polygon.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="LocationPort" type="m:PortType" nillable="true">
