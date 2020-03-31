@@ -12186,11 +12186,6 @@
       <xs:documentation>A number indicating the year of a training term.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="ApprovalStatusCode" type="ndex:ApprovalStatusCodeType" substitutionGroup="nc:StatusAbstract" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A code that identifies the status of a request.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
   <xs:element name="Arrest" type="j:ArrestType" nillable="true">
     <xs:annotation>
       <xs:documentation>An apprehension of a subject by a peace official based on an observed or a reported violation of a law or ordinance, an outstanding arrest warrant, or probable cause information.</xs:documentation>
@@ -13521,11 +13516,6 @@
       <xs:documentation>A data concept for a kind of charge.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="ChargeCategoryCode" type="ndex:ChargeCategoryCodeType" substitutionGroup="j:ChargeCategoryAbstract" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A kind of charge.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
   <xs:element name="ChargeCategoryDescriptionText" type="nc:TextType" nillable="true">
     <xs:annotation>
       <xs:documentation>A description of a crime category.</xs:documentation>
@@ -14319,11 +14309,6 @@
   <xs:element name="ConveyanceFuelCategoryCode" type="aamva_d20:VehicleFuelCategoryCodeType" substitutionGroup="nc:ConveyanceFuelCategoryAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A kind of fuel or motive power used to propel a conveyance.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="ConveyanceFuelCategoryFBICode" type="ndex:ConveyanceFuelCategoryCodeType" substitutionGroup="nc:ConveyanceFuelCategoryAbstract" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A kind of fuel or motive power used to propel an aircraft.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="ConveyanceJointlyRegisteredIndicator" type="niem-xs:boolean" nillable="true">
@@ -15466,11 +15451,6 @@
       <xs:documentation>A kind of criminal activity.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="CriminalActivityNDExCategoryCode" type="ndex:CriminalActivityCategoryNDExCodeType" substitutionGroup="j:CriminalActivityCategoryAbstract" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A kind of criminal activity.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
   <xs:element name="CriminalAssociateAssociation" type="nc:PersonAssociationType" nillable="true">
     <xs:annotation>
       <xs:documentation>A relationship between people who are known criminals.</xs:documentation>
@@ -16341,11 +16321,6 @@
       <xs:documentation>A data concept for a factor contributing to subject's domestic violence history.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="DomesticViolenceSocialHistoryCode" type="ndex:DomesticViolenceSocialHistoryCodeType" substitutionGroup="j:DomesticViolenceSocialHistoryAbstract" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A factor contributing to subject's domestic violence history.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
   <xs:element name="DomesticViolenceSocialHistoryText" type="nc:TextType" nillable="true">
     <xs:annotation>
       <xs:documentation>A factor contributing to subject's domestic violence history.</xs:documentation>
@@ -16356,11 +16331,6 @@
       <xs:documentation>A data concept for a subject's attitude toward his or her domestic violence actions.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="DomesticViolenceSubjectAttitudeCode" type="ndex:SubjectAttitudeCodeType" substitutionGroup="j:DomesticViolenceSubjectAttitudeAbstract" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A subject's attitude toward his or her domestic violence actions.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
   <xs:element name="DomesticViolenceSubjectAttitudeText" type="nc:TextType" nillable="true">
     <xs:annotation>
       <xs:documentation>A subject's attitude toward his or her domestic violence actions.</xs:documentation>
@@ -16369,11 +16339,6 @@
   <xs:element name="DomesticViolenceVictimPerceptionAbstract" abstract="true">
     <xs:annotation>
       <xs:documentation>A data concept for a victim's perception of a subject or actions of a subject.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="DomesticViolenceVictimPerceptionCode" type="ndex:VictimPerceptionCodeType" substitutionGroup="j:DomesticViolenceVictimPerceptionAbstract" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A victim's perception of a subject or actions of a subject.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="DomesticViolenceVictimPerceptionText" type="nc:TextType" nillable="true">
@@ -17557,11 +17522,6 @@
       <xs:documentation>A kind of activity or circumstance in which an enforcement official was engaged.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="EnforcementOfficialActivityNDExCategoryCode" type="ndex:LEOKAActivityCategoryNDExCodeType" substitutionGroup="j:EnforcementOfficialActivityCategoryAbstract" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A kind of activity or circumstance in which an enforcement official was engaged.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
   <xs:element name="EnforcementOfficialAssignmentCategoryAbstract" abstract="true">
     <xs:annotation>
       <xs:documentation>A data concept for a kind of assignment of an enforcement official.</xs:documentation>
@@ -18102,12 +18062,7 @@
       <xs:documentation>A data concept for a size of the inside diameter of a firearm barrel or bore.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="FirearmBoreSizeNCICCode" type="ncic:CALCodeType" substitutionGroup="j:FirearmBoreSizeAbstract" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A size of the inside diameter of a firearm barrel or bore.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="FirearmBoreSizeNDEXCode" type="ndex:CALCodeType" substitutionGroup="j:FirearmBoreSizeAbstract" nillable="true">
+  <xs:element name="FirearmBoreSizeCode" type="ncic:CALCodeType" substitutionGroup="j:FirearmBoreSizeAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A size of the inside diameter of a firearm barrel or bore.</xs:documentation>
     </xs:annotation>
@@ -18440,11 +18395,6 @@
   <xs:element name="GoalNotation" type="nc:CommentType" nillable="true">
     <xs:annotation>
       <xs:documentation>A note(s) that documents how an individual addresses a Goal.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="GrainCategoryCode" type="ndex:GrainCategoryCodeType" substitutionGroup="nc:ItemCategoryAbstract" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A kind of grain.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="HashValueBase64BinaryObject" type="niem-xs:base64Binary" nillable="true">
@@ -20472,11 +20422,6 @@
       <xs:documentation>A data concept for a gender for which the item is intended, such as a girl's bicycle or a man's jacket.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="ItemGenderUseCode" type="ndex:ItemGenderUseCodeType" substitutionGroup="j:ItemGenderUseAbstract" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A gender for which the item is intended, such as a girl's bicycle or a man's jacket.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
   <xs:element name="ItemHazardousMaterialsContainerText" type="nc:TextType" nillable="true">
     <xs:annotation>
       <xs:documentation>A stolen chemical container.</xs:documentation>
@@ -20770,11 +20715,6 @@
   <xs:element name="ItemTotalDamageValue" type="nc:ItemValueType" nillable="true">
     <xs:annotation>
       <xs:documentation>A monetary value or worth of damage that occurred to a property item.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="ItemValueCategoryCode" type="ndex:ItemValueCategoryCodeType" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A method used to assign the value of the property item(s).</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="Jewelry" type="j:JewelryType" nillable="true">
@@ -21157,11 +21097,6 @@
       <xs:documentation>True if the legal status of a person is a juvenile; false otherwise.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="KeepsakeCategoryCode" type="ndex:KeepsakeCategoryCodeType" substitutionGroup="nc:ItemCategoryAbstract" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A kind of item collected as a hobby or given in friendship.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
   <xs:element name="KnifeCategoryCode" type="ndex:KnifeCategoryCodeType" substitutionGroup="nc:ItemCategoryAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A kind of knife.</xs:documentation>
@@ -21317,7 +21252,7 @@
       <xs:documentation>A kind or functional description of a location.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="LocationCategoryNDExCode" type="ndex:LocationCategoryNDExCodeType" substitutionGroup="nc:LocationCategoryAbstract" nillable="true">
+  <xs:element name="LocationCategoryNDExCode" type="ndex:LocationCategoryCodeType" substitutionGroup="nc:LocationCategoryAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A kind of location or area.</xs:documentation>
     </xs:annotation>
@@ -22852,7 +22787,7 @@
       <xs:documentation>A kind of identity theft offense.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="OffenseCategoryNDExCode" type="ndex:OffenseCategoryNDExCodeType" substitutionGroup="j:OffenseCategoryAbstract" nillable="true">
+  <xs:element name="OffenseCategoryNDExCode" type="ndex:OffenseCategoryCodeType" substitutionGroup="j:OffenseCategoryAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A kind of offense.</xs:documentation>
     </xs:annotation>
@@ -22895,11 +22830,6 @@
   <xs:element name="OffenseDispositionAssociationAugmentationPoint" abstract="true">
     <xs:annotation>
       <xs:documentation>An augmentation point for OffenseDispositionAssociationType.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="OffenseDispositionCode" type="ndex:DispositionCodeType" substitutionGroup="nc:DispositionCategoryAbstract" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A disposition of an offense or prohibited act.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="OffenseDomesticViolenceIndicator" type="niem-xs:boolean" nillable="true">
@@ -22955,11 +22885,6 @@
   <xs:element name="OffenseFactorBiasMotivationCauseText" type="nc:TextType" substitutionGroup="j:OffenseFactorBiasMotivationCauseAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>An indication that the offender was motivated to commit the offense, in whole/part, because of bias.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="OffenseFactorBiasMotivationCode" type="ndex:BiasMotivationCodeType" substitutionGroup="j:OffenseFactorBiasMotivationAbstract" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A kind of bias that motivated an offense, if any.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="OffenseFactorBiasMotivationDescriptionText" type="nc:TextType" nillable="true">
@@ -24352,11 +24277,6 @@
       <xs:documentation>A kind of entry or exit point to a location or structure.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="PassagePointCode" type="ndex:PassagePointCodeType" substitutionGroup="j:PassagePointAbstract" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A point of entry to a location or structure.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
   <xs:element name="PassagePointDescriptionText" type="nc:TextType" nillable="true">
     <xs:annotation>
       <xs:documentation>A description of an entry or exit point.</xs:documentation>
@@ -24392,11 +24312,6 @@
       <xs:documentation>A data concept for a kind of security present at a passage point.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="PassagePointSecurityCategoryCode" type="ndex:PremiseSecurityCategoryCodeType" substitutionGroup="j:PassagePointSecurityCategoryAbstract" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A kind of security present at a passage point.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
   <xs:element name="PassagePointSecurityCategoryText" type="nc:TextType" substitutionGroup="j:PassagePointSecurityCategoryAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A kind of security present at a passage point.</xs:documentation>
@@ -24405,11 +24320,6 @@
   <xs:element name="PassagePointSecurityStatusAbstract" abstract="true">
     <xs:annotation>
       <xs:documentation>A data concept for a status of the security system at a passage point.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="PassagePointSecurityStatusCode" type="ndex:SecuritySystemStatusCodeType" substitutionGroup="j:PassagePointSecurityStatusAbstract" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A status of the security system at a passage point.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="PassagePointSecurityStatusText" type="nc:TextType" substitutionGroup="j:PassagePointSecurityStatusAbstract" nillable="true">
@@ -25547,12 +25457,7 @@
       <xs:documentation>True if a person has been evaluated or treated for psychological/psychiatric concerns, e.g., anger management; behavioral concerns; cognitive concerns, including concerns related to suicide; false otherwise.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="PersonRaceCode" type="ndex:RACCodeType" substitutionGroup="nc:PersonRaceAbstract" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A classification of a person based on factors such as geographical locations and genetics.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="PersonRaceRapSheetCode" type="j:PersonRaceCodeType" substitutionGroup="nc:PersonRaceAbstract" nillable="true">
+  <xs:element name="PersonRaceCode" type="j:PersonRaceCodeType" substitutionGroup="nc:PersonRaceAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A code set identifying a race of a person.</xs:documentation>
     </xs:annotation>
@@ -25620,11 +25525,6 @@
   <xs:element name="PersonSexCode" type="j:PersonSexCodeType" substitutionGroup="nc:PersonSexAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A code set identifying a gender or sex of a person.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="PersonSexNDExCode" type="ndex:SEXCodeType" substitutionGroup="nc:PersonSexAbstract" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A code that identifies the gender or sex of the person.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="PersonSexualOrientationAbstract" abstract="true">
@@ -25945,11 +25845,6 @@
   <xs:element name="PretrialReleaseStatusAbstract" abstract="true">
     <xs:annotation>
       <xs:documentation>A data concept for a release status of a subject of pre-trial investigation.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="PretrialReleaseStatusCode" type="ndex:PretrialReleaseStatusCodeType" substitutionGroup="j:PretrialReleaseStatusAbstract" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A release status of a subject of pre-trial investigation.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="PreviousSentence" type="j:SentenceType" nillable="true">
@@ -27627,11 +27522,6 @@
       <xs:documentation>A person providing a service.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="ServiceUtilityCategoryCode" type="ndex:ServiceUtilityCategoryCodeType" substitutionGroup="nc:ItemCategoryAbstract" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A kind of public utility service.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
   <xs:element name="SeverityLevel" type="j:SeverityLevelType" nillable="true">
     <xs:annotation>
       <xs:documentation>A sentencing guideline severity level assigned to a charge by a judge or supervising agency.</xs:documentation>
@@ -28672,11 +28562,6 @@
       <xs:documentation>A data concept for a risk level corresponding to the assessment score estimating the likelihood that the offender will recidivate during his or her term of supervision.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="SubjectClassificationAssessmentRiskLevelCode" type="ndex:RiskLevelCodeType" substitutionGroup="j:SubjectClassificationAssessmentRiskLevelAbstract" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A risk level corresponding to the assessment score estimating the likelihood that the offender will recidivate during his or her term of supervision.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
   <xs:element name="SubjectComprehensionLevelCategoryAbstract" abstract="true">
     <xs:annotation>
       <xs:documentation>A data concept for a kind of comprehension level.</xs:documentation>
@@ -28872,11 +28757,6 @@
       <xs:documentation>A data concept for an action of the subject at the crime scene to perpetrate the crime and/or avoid apprehension.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="SubjectMOActionCode" type="ndex:SubjectMOActionCodeType" substitutionGroup="j:SubjectMOActionAbstract" nillable="true">
-    <xs:annotation>
-      <xs:documentation>An action of the subject at the crime scene to perpetrate the crime and/or avoid apprehension.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
   <xs:element name="SubjectMOActionFeature" type="biom:PhysicalFeatureDescriptionType" nillable="true">
     <xs:annotation>
       <xs:documentation>A crime scene feature (i.e., object, picture, written word, sound, or particular mark that represents something else by association, resemblance, or convention), e.g., brand, tattoo, tag, graffiti, left behind by the subject, which the subject adopts as his signature or trademark behavior, gaining feeling such as satisfaction, remorse, or pride that allows him to justify his crime and fuel future acts..</xs:documentation>
@@ -28907,11 +28787,6 @@
       <xs:documentation>A data concept for an observation of the subject.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="SubjectMOObservationCode" type="ndex:SubjectMOObservationCodeType" substitutionGroup="j:SubjectMOObservationAbstract" nillable="true">
-    <xs:annotation>
-      <xs:documentation>An observation of the subject.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
   <xs:element name="SubjectMOObservationText" type="nc:TextType" nillable="true">
     <xs:annotation>
       <xs:documentation>An observation of the subject.</xs:documentation>
@@ -28920,11 +28795,6 @@
   <xs:element name="SubjectMOSexualPracticesAbstract" abstract="true">
     <xs:annotation>
       <xs:documentation>A data concept for a characteristic sexual practice or preference of the subject.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="SubjectMOSexualPracticesCode" type="ndex:SubjectMOSexualPracticesCodeType" substitutionGroup="j:SubjectMOSexualPracticesAbstract" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A characteristic sexual practice or preference of the subject.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="SubjectMOSexualPracticesText" type="nc:TextType" nillable="true">
@@ -31067,7 +30937,7 @@
       <xs:documentation>A data concept for a circumstance of either an aggravated assault or homicide.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="VictimAggravatedAssaultHomicideFactorNDExCode" type="ndex:AggravatedAssaultCircumstanceNDExCodeType" substitutionGroup="j:VictimAggravatedAssaultHomicideFactorNDExAbstract" nillable="true">
+  <xs:element name="VictimAggravatedAssaultHomicideFactorNDExCode" type="ndex:AggravatedAssaultCircumstanceCodeType" substitutionGroup="j:VictimAggravatedAssaultHomicideFactorNDExAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A circumstance of either an aggravated assault or homicide.</xs:documentation>
     </xs:annotation>
@@ -31152,11 +31022,6 @@
       <xs:documentation>A data concept for an action of the victim at time of incident.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="VictimMOActionCode" type="ndex:VictimMOWasCodeType" substitutionGroup="j:VictimMOActionAbstract" nillable="true">
-    <xs:annotation>
-      <xs:documentation>An action of the victim at time of incident.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
   <xs:element name="VictimMOActionText" type="nc:TextType" substitutionGroup="j:VictimMOActionAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>An action of the victim at time of incident.</xs:documentation>
@@ -31165,11 +31030,6 @@
   <xs:element name="VictimMOApproachedAbstract" abstract="true">
     <xs:annotation>
       <xs:documentation>A data concept for an approach taken toward the victim by the subject.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="VictimMOApproachedCode" type="ndex:VictimMOApproachedCodeType" substitutionGroup="j:VictimMOApproachedAbstract" nillable="true">
-    <xs:annotation>
-      <xs:documentation>An approach taken toward the victim by the subject.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="VictimMOApproachedText" type="nc:TextType" substitutionGroup="j:VictimMOApproachedAbstract" nillable="true">
@@ -31187,11 +31047,6 @@
       <xs:documentation>A data concept for a type of article used by the subject at the crime scene to bind a victim.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="VictimMOBindingsCode" type="ndex:VictimMOBindingsCodeType" substitutionGroup="j:VictimMOBindingsAbstract" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A type of article used by the subject at the crime scene to bind a victim.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
   <xs:element name="VictimMOBindingsText" type="nc:TextType" substitutionGroup="j:VictimMOBindingsAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A type of article used by the subject at the crime scene to bind a victim.</xs:documentation>
@@ -31200,11 +31055,6 @@
   <xs:element name="VictimMOFoundClothedAbstract" abstract="true">
     <xs:annotation>
       <xs:documentation>A data concept for a clothed condition of the victim.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="VictimMOFoundClothedCode" type="ndex:VictimMOFoundClothedCodeType" substitutionGroup="j:VictimMOFoundClothedAbstract" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A clothed condition of the victim.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="VictimMOFoundClothedDescriptionText" type="nc:TextType" nillable="true">
@@ -31222,11 +31072,6 @@
       <xs:documentation>A data concept for a lifestyle characteristic for a victim.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="VictimMOGeneralLifestyleCode" type="ndex:VictimMOGeneralLifestyleCodeType" substitutionGroup="j:VictimMOGeneralLifestyleAbstract" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A lifestyle characteristic for a victim.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
   <xs:element name="VictimMOGeneralLifestyleText" type="nc:TextType" substitutionGroup="j:VictimMOGeneralLifestyleAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A lifestyle characteristic for a victim.</xs:documentation>
@@ -31235,11 +31080,6 @@
   <xs:element name="VictimMORecoveryAbstract" abstract="true">
     <xs:annotation>
       <xs:documentation>A data concept for a condition of the victim upon recovery.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="VictimMORecoveryCode" type="ndex:VictimMORecoveryCodeType" substitutionGroup="j:VictimMORecoveryAbstract" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A condition of the victim upon recovery.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="VictimMORecoveryDescriptionText" type="nc:TextType" nillable="true">
@@ -31257,11 +31097,6 @@
       <xs:documentation>A data concept for a manner of disposal of the body of the victim.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="VictimMOReleaseDisposalCode" type="ndex:VictimMODisposalCodeType" substitutionGroup="j:VictimMOReleaseDisposalAbstract" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A manner of disposal of the body of the victim.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
   <xs:element name="VictimMOReleaseDisposalText" type="nc:TextType" substitutionGroup="j:VictimMOReleaseDisposalAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A manner of disposal of the body of the victim.</xs:documentation>
@@ -31270,11 +31105,6 @@
   <xs:element name="VictimMOSubjectContactConclusionAbstract" abstract="true">
     <xs:annotation>
       <xs:documentation>A data concept for an indication of how the victim to subject contact ended.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="VictimMOSubjectContactConclusionCode" type="ndex:VictimMOSubjectContactConclusionCodeType" substitutionGroup="j:VictimMOSubjectContactConclusionAbstract" nillable="true">
-    <xs:annotation>
-      <xs:documentation>An indication of how the victim to subject contact ended.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="VictimMOSubjectContactConclusionText" type="nc:TextType" substitutionGroup="j:VictimMOSubjectContactConclusionAbstract" nillable="true">
@@ -31337,12 +31167,7 @@
       <xs:documentation>A data concept for a code that identifies the victim's relationship to subject who perpetrated a crime against them, depicting who the victim was to the offender.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="VictimToSubjectRelationshipCode" type="ndex:VictimToSubjectRelationshipCodeType" substitutionGroup="j:VictimToSubjectRelationshipAbstract" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A code that identifies the victim's relationship to subject who perpetrated a crime against them, depicting who the victim was to the offender.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="VictimToSubjectRelationshipUCRCode" type="ucr:VictimToSubjectRelationshipCodeType" substitutionGroup="j:VictimToSubjectRelationshipAbstract" nillable="true">
+  <xs:element name="VictimToSubjectRelationshipCode" type="ucr:VictimToSubjectRelationshipCodeType" substitutionGroup="j:VictimToSubjectRelationshipAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A victim's relationship to the subject who perpetrated a crime against them, depicting who the victim was to the offender.</xs:documentation>
     </xs:annotation>

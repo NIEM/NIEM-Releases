@@ -5,7 +5,6 @@
   xmlns:geo="http://release.niem.gov/niem/adapters/geospatial/5.0/"
   xmlns:gml="http://www.opengis.net/gml/3.2"
   xmlns:iso_3166="http://release.niem.gov/niem/codes/iso_3166-1/5.0/"
-  xmlns:j="http://release.niem.gov/niem/domains/jxdm/7.0/"
   xmlns:mo="http://release.niem.gov/niem/domains/militaryOperations/5.0/"
   xmlns:nc="http://release.niem.gov/niem/niem-core/5.0/"
   xmlns:nga="http://release.niem.gov/niem/codes/nga_datum/5.0/"
@@ -42,7 +41,6 @@
   <xs:import namespace="http://release.niem.gov/niem/adapters/geospatial/5.0/" schemaLocation="../../../adapters/geospatial/5.0/geospatial.xsd"/>
   <xs:import namespace="http://release.niem.gov/niem/codes/iso_3166-1/5.0/" schemaLocation="../../../codes/iso_3166-1/5.0/iso_3166.xsd"/>
   <xs:import namespace="http://release.niem.gov/niem/codes/nga_datum/5.0/" schemaLocation="../../../codes/nga_datum/5.0/nga_datum.xsd"/>
-  <xs:import namespace="http://release.niem.gov/niem/domains/jxdm/7.0/" schemaLocation="../../jxdm/7.0/jxdm.xsd"/>
   <xs:import namespace="http://release.niem.gov/niem/external/ogc/xls/1.1.0/dhs-gmo/2.1.0" schemaLocation="../../../external/ogc/ols/1.1.0/dhs-gmo/2.1.0/ols.xsd" appinfo:externalImportIndicator="true">
     <xs:annotation>
       <xs:documentation>A profile of OpenGeospatialConsortium (OpenGIS, OGC) OpenLS (Location Services) version 1.1 schemas. A profile of OpenGeospatialConsortium (OpenGIS, OGC) OpenLS (Location Services) version 1.1 schemas that have been edited to use GML version 3.2.1 schemas instead of the GML version 3.0 schemas that were current when OpenLS version 1.1 was promulgated.  See http://www.opengeospatial.org for documentation, http://schemas.opengis.net/ols/ for schemas.</xs:documentation>
@@ -189,7 +187,6 @@
           <xs:element ref="mo:ApprovalAuthorityName" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="mo:ApprovalStatusText" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="mo:ApprovalDate" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="j:ApprovalStatusCode" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="mo:ApprovalAuthorityAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
       </xs:extension>
