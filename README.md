@@ -31,6 +31,7 @@ Please review the [5.0 issues in the NIEM Releases issue tracker](https://github
 
 ### Code Tables
 
+- Simplified namespace definitions (#139)
 - Merged FIPS 5-2 state codes and Census county codes into consolidated FIPS namespaces (#52)
 - Replaced non-breaking spaces in OmniClass facility codes (#133)
 - Added GENC alpha-2 and numeric country codes (#94)
