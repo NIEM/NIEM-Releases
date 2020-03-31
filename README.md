@@ -37,6 +37,7 @@ Please review the [5.0 issues in the NIEM Releases issue tracker](https://github
 - Updated the definition of deprecated aamva:DriverLicenseClassCodeSimpleType code "M" (#108)
 - Updated FBI NCIC codes (#134)
 - Updated FBI NDEx codes (#135)
+- Updated FBI UCR codes (#136)
 - Updated FBI Justice domain codes (#137)
 
 ### Harmonization and QA

@@ -15556,11 +15556,6 @@
       <xs:documentation>A data concept for an ethnic or cultural background associated with a criminal organization.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="CriminalTraitEthnicityCode" type="ucr:EthnicityCodeType" substitutionGroup="j:CriminalTraitEthnicityAbstract" nillable="true">
-    <xs:annotation>
-      <xs:documentation>An ethnic or cultural background associated with a criminal organization.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
   <xs:element name="CriminalTraitEthnicityText" type="nc:TextType" substitutionGroup="j:CriminalTraitEthnicityAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>An ethnic or cultural background associated with a criminal organization.</xs:documentation>
@@ -19522,11 +19517,6 @@
       <xs:documentation>True if a factor in an incident is known to be true; false if it is suspected, estimated, or otherwise.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="IncidentFactorNIBRSAggravatedAssaultHomicideCode" type="ucr:AggravatedAssaultHomicideFactorsCodeType" substitutionGroup="j:IncidentFactorAbstract" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A circumstance of factor in an incident.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
   <xs:element name="IncidentFactorNIBRSBiasMotivationCode" type="ucr:IncidentBiasMotivationCodeType" substitutionGroup="j:IncidentFactorAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A circumstance of factor in an incident.</xs:documentation>
@@ -21247,12 +21237,7 @@
       <xs:documentation>A specific building in a facility.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="LocationCategoryCode" type="ucr:LocationCategoryCodeType" substitutionGroup="nc:LocationCategoryAbstract" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A kind or functional description of a location.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="LocationCategoryNDExCode" type="ndex:LocationCategoryCodeType" substitutionGroup="nc:LocationCategoryAbstract" nillable="true">
+  <xs:element name="LocationCategoryCode" type="ndex:LocationCategoryCodeType" substitutionGroup="nc:LocationCategoryAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A kind of location or area.</xs:documentation>
     </xs:annotation>
@@ -22920,11 +22905,6 @@
   <xs:element name="OffenseFactorKnownIndicator" type="niem-xs:boolean" nillable="true">
     <xs:annotation>
       <xs:documentation>True if a factor for an offense is known to be true; false if it is suspected, estimated, or otherwise.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="OffenseFactorNIBRSAggravatedAssaultHomicideCode" type="ucr:AggravatedAssaultHomicideFactorsCodeType" substitutionGroup="j:OffenseFactorDesignationAbstract" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A designation for an aggravated assault or homicide offense factor.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="OffenseFactorText" type="nc:TextType" substitutionGroup="j:OffenseFactorDesignationAbstract" nillable="true">
@@ -25077,12 +25057,7 @@
       <xs:documentation>A kind of unemployment.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="PersonEthnicityCode" type="ucr:EthnicityCodeType" substitutionGroup="nc:PersonEthnicityAbstract" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A cultural lineage of a person.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="PersonEthnicityRapSheetCode" type="j:PersonEthnicityCodeType" substitutionGroup="nc:PersonEthnicityAbstract" nillable="true">
+  <xs:element name="PersonEthnicityCode" type="j:PersonEthnicityCodeType" substitutionGroup="nc:PersonEthnicityAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A code set identifying a cultural lineage of a person.</xs:documentation>
     </xs:annotation>
@@ -29312,11 +29287,6 @@
       <xs:documentation>A test administered to identify/quantify substances, e.g., drug, alcohol, etc., in a person's system/body.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="SubstanceUnitCode" type="ucr:DrugMeasurementCodeType" substitutionGroup="nc:SubstanceUnitAbstract" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A unit of measure for a quantity of a substance.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
   <xs:element name="Summons" type="j:CourtOrderType" nillable="true">
     <xs:annotation>
       <xs:documentation>A written notification warning a person to appear in court at a specific date and time.</xs:documentation>
@@ -30927,7 +30897,7 @@
       <xs:documentation>A data concept for a circumstance of either an aggravated assault or homicide.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="VictimAggravatedAssaultHomicideFactorCode" type="ucr:AggravatedAssaultHomicideFactorsCodeType" substitutionGroup="j:VictimAggravatedAssaultHomicideFactorAbstract" nillable="true">
+  <xs:element name="VictimAggravatedAssaultHomicideFactorCode" type="ndex:AggravatedAssaultCircumstanceCodeType" substitutionGroup="j:VictimAggravatedAssaultHomicideFactorNDExAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A circumstance of either an aggravated assault or homicide.</xs:documentation>
     </xs:annotation>
@@ -30935,11 +30905,6 @@
   <xs:element name="VictimAggravatedAssaultHomicideFactorNDExAbstract" abstract="true">
     <xs:annotation>
       <xs:documentation>A data concept for a circumstance of either an aggravated assault or homicide.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="VictimAggravatedAssaultHomicideFactorNDExCode" type="ndex:AggravatedAssaultCircumstanceCodeType" substitutionGroup="j:VictimAggravatedAssaultHomicideFactorNDExAbstract" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A circumstance of either an aggravated assault or homicide.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="VictimAggravatedAssaultHomicideFactorText" type="nc:TextType" nillable="true">
@@ -31165,11 +31130,6 @@
   <xs:element name="VictimToSubjectRelationshipAbstract" abstract="true">
     <xs:annotation>
       <xs:documentation>A data concept for a code that identifies the victim's relationship to subject who perpetrated a crime against them, depicting who the victim was to the offender.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="VictimToSubjectRelationshipCode" type="ucr:VictimToSubjectRelationshipCodeType" substitutionGroup="j:VictimToSubjectRelationshipAbstract" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A victim's relationship to the subject who perpetrated a crime against them, depicting who the victim was to the offender.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="VictimVICAPCaseNumberText" type="nc:TextType" nillable="true">
