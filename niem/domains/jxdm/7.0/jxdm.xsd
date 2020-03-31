@@ -12846,11 +12846,6 @@
       <xs:documentation>A registration for a government certificate of live birth.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="BoatEngineDisplacementUnitCode" type="ncic:BoatEPDCodeType" substitutionGroup="nc:VolumeUnitAbstract" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A kind of measurement unit used to quantify power/displacement of a boat.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
   <xs:element name="Booking" type="j:BookingType" nillable="true">
     <xs:annotation>
       <xs:documentation>An administrative step taken after an arrested subject is brought to a police station or detention facility, which involves entry of the subject's name and other relevant facts on the police blotter, and which may also include photographing,</xs:documentation>
@@ -14699,11 +14694,6 @@
   <xs:element name="Counselor" type="nc:PersonType" nillable="true">
     <xs:annotation>
       <xs:documentation>A staff member responsible to observe, conduct, or lead an activity with a subject.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="CountryCode" type="ncic:CountryCodeType" substitutionGroup="nc:CountryRepresentation" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A country, territory, dependency, or other such geopolitical subdivision of a location.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="CountryWHTICode" type="aamva_d20:CountryCodeType" substitutionGroup="nc:CountryRepresentation" nillable="true">
@@ -17670,11 +17660,6 @@
   <xs:element name="EngineDisplacementMeasure" type="nc:VolumeMeasureType" nillable="true">
     <xs:annotation>
       <xs:documentation>A measure of the displacement of a conveyance engine.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="EngineDisplacementUnitNCICCode" type="ncic:VehicleEPDCodeType" substitutionGroup="nc:VolumeUnitAbstract" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A kind of measurement unit used to quantify power/displacement.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="EngineHorsepowerQuantity" type="nc:QuantityType" nillable="true">
@@ -20862,11 +20847,6 @@
       <xs:documentation>A data concept for a gender of a person a piece of jewelry is designed for, e.g., a man's ring vs a woman's ring.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="JewelryGenderCode" type="ncic:SEXCodeType" substitutionGroup="j:JewelryGenderAbstract" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A gender of a person a piece of jewelry is designed for, e.g., a man's ring vs a woman's ring.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
   <xs:element name="JewelryGenderText" type="nc:TextType" substitutionGroup="j:JewelryGenderAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A gender of a person a piece of jewelry is designed for, e.g., a man's ring vs a woman's ring.</xs:documentation>
@@ -21305,11 +21285,6 @@
   <xs:element name="LivestockSexAbstract" abstract="true">
     <xs:annotation>
       <xs:documentation>A data concept for a gender or sex of an animal.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="LivestockSexCode" type="ncic:SEXCodeType" substitutionGroup="j:LivestockSexAbstract" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A gender or sex of an animal.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="LivestockTagText" type="nc:TextType" nillable="true">
@@ -24637,11 +24612,6 @@
       <xs:documentation>A data concept for a state or country of a person's birth.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="PersonBirthplaceCode" type="ncic:CountryCodeType" substitutionGroup="j:PersonBirthplaceAbstract" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A country of a person's birth.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
   <xs:element name="PersonBloodAlcoholContentAssociation" type="j:PersonBloodAlcoholContentAssociationType" nillable="true">
     <xs:annotation>
       <xs:documentation>An association that links a person to a Blood Alcohol Content (BAC) Test reading, measured due to a related activity such as an arrest or a driving incident.</xs:documentation>
@@ -24657,12 +24627,7 @@
       <xs:documentation>A blood-alcohol percentage reading from a Blood Alcohol Test (BAC Test).</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="PersonBloodTypeCode" type="ncic:BLTCodeType" substitutionGroup="nc:PersonBloodTypeAbstract" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A blood group and RH factor of a person.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="PersonBloodTypeRapSheetCode" type="j:PersonBloodTypeCodeType" substitutionGroup="nc:PersonBloodTypeAbstract" nillable="true">
+  <xs:element name="PersonBloodTypeCode" type="j:PersonBloodTypeCodeType" substitutionGroup="nc:PersonBloodTypeAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A code set identifying a blood group and RH factor of a person.</xs:documentation>
     </xs:annotation>
@@ -25207,22 +25172,12 @@
       <xs:documentation>A cultural lineage of a person.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="PersonEthnicityNCICCode" type="ncic:ETNCodeType" substitutionGroup="nc:PersonEthnicityAbstract" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A cultural lineage of a person.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
   <xs:element name="PersonEthnicityRapSheetCode" type="j:PersonEthnicityCodeType" substitutionGroup="nc:PersonEthnicityAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A code set identifying a cultural lineage of a person.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="PersonEyeColorCode" type="ncic:EYECodeType" substitutionGroup="nc:PersonEyeColorAbstract" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A color of the eyes of a person.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="PersonEyeColorRapSheetCode" type="j:PersonEyeColorCodeType" substitutionGroup="nc:PersonEyeColorAbstract" nillable="true">
+  <xs:element name="PersonEyeColorCode" type="j:PersonEyeColorCodeType" substitutionGroup="nc:PersonEyeColorAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A code set identifying an eye color of a person.</xs:documentation>
     </xs:annotation>
@@ -25297,12 +25252,7 @@
       <xs:documentation>A general-ledger account identification number associated with a person.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="PersonHairColorCode" type="ncic:HAIRCodeType" substitutionGroup="nc:PersonHairColorAbstract" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A color of the hair of a person.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="PersonHairColorRapSheetCode" type="j:PersonHairColorCodeType" substitutionGroup="nc:PersonHairColorAbstract" nillable="true">
+  <xs:element name="PersonHairColorCode" type="j:PersonHairColorCodeType" substitutionGroup="nc:PersonHairColorAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A code set identifying a hair color of a person.</xs:documentation>
     </xs:annotation>
@@ -25597,12 +25547,7 @@
       <xs:documentation>True if a person has been evaluated or treated for psychological/psychiatric concerns, e.g., anger management; behavioral concerns; cognitive concerns, including concerns related to suicide; false otherwise.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="PersonRaceCode" type="ncic:RACECodeType" substitutionGroup="nc:PersonRaceAbstract" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A classification of a person based on factors such as geographical locations and genetics.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="PersonRaceNDExCode" type="ndex:RACCodeType" substitutionGroup="nc:PersonRaceAbstract" nillable="true">
+  <xs:element name="PersonRaceCode" type="ndex:RACCodeType" substitutionGroup="nc:PersonRaceAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A classification of a person based on factors such as geographical locations and genetics.</xs:documentation>
     </xs:annotation>
@@ -25672,19 +25617,14 @@
       <xs:documentation>True if a person has physically abused his or her self; false otherwise.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="PersonSexCode" type="ncic:SEXCodeType" substitutionGroup="nc:PersonSexAbstract" nillable="true">
+  <xs:element name="PersonSexCode" type="j:PersonSexCodeType" substitutionGroup="nc:PersonSexAbstract" nillable="true">
     <xs:annotation>
-      <xs:documentation>A gender or sex of a person.</xs:documentation>
+      <xs:documentation>A code set identifying a gender or sex of a person.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="PersonSexNDExCode" type="ndex:SEXCodeType" substitutionGroup="nc:PersonSexAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A code that identifies the gender or sex of the person.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="PersonSexRapSheetCode" type="j:PersonSexCodeType" substitutionGroup="nc:PersonSexAbstract" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A code set identifying a gender or sex of a person.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="PersonSexualOrientationAbstract" abstract="true">
@@ -25712,12 +25652,7 @@
       <xs:documentation>True if the subject has been employed a full six months or longer; false otherwise.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="PersonSkinToneCode" type="ncic:SKINCodeType" substitutionGroup="nc:PersonSkinToneAbstract" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A color or tone of the skin of a person.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="PersonSkinToneRapSheetCode" type="j:PersonSkinToneCodeType" substitutionGroup="nc:PersonSkinToneAbstract" nillable="true">
+  <xs:element name="PersonSkinToneCode" type="j:PersonSkinToneCodeType" substitutionGroup="nc:PersonSkinToneAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A code set identifying the skin color or tone of a person.</xs:documentation>
     </xs:annotation>
@@ -27972,11 +27907,6 @@
       <xs:documentation>True if the VIN was state assigned rather than manufacturer or owner assigned; false otherwise.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="StateCanadaCode" type="ncic:CanadianCodeType" substitutionGroup="nc:StateRepresentation" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A province.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
   <xs:element name="StateIndianNationCode" type="ncic:IndianCodeType" substitutionGroup="nc:StateRepresentation" nillable="true">
     <xs:annotation>
       <xs:documentation>An American Indian nation.</xs:documentation>
@@ -27985,16 +27915,6 @@
   <xs:element name="StateMexicoCode" type="ncic:MexicanCodeType" substitutionGroup="nc:StateRepresentation" nillable="true">
     <xs:annotation>
       <xs:documentation>A state in Mexico.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="StateUSCode" type="ncic:UnitedStatesCodeType" substitutionGroup="nc:StateRepresentation" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A state in the United States.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="StateUSTerritoriesCode" type="ncic:USTerritoriesCodeType" substitutionGroup="nc:StateRepresentation" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A United States territory.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="Statute" type="j:StatuteType" nillable="true">
@@ -31412,22 +31332,12 @@
       <xs:documentation>A statement made by a victim.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="VictimToPersonRelationshipCode" type="ncic:VictimToPersonRelationshipCodeType" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A relationship of the defendant to the victim of a misdemeanor crime of domestic violence.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
   <xs:element name="VictimToSubjectRelationshipAbstract" abstract="true">
     <xs:annotation>
       <xs:documentation>A data concept for a code that identifies the victim's relationship to subject who perpetrated a crime against them, depicting who the victim was to the offender.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="VictimToSubjectRelationshipCode" type="ndex:VictimToSubjectRelationshipCodeType" substitutionGroup="j:VictimToSubjectRelationshipAbstract" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A code that identifies the victim's relationship to subject who perpetrated a crime against them, depicting who the victim was to the offender.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="VictimToSubjectRelationshipNCICCode" type="ncic:ROVCodeType" substitutionGroup="j:VictimToSubjectRelationshipAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A code that identifies the victim's relationship to subject who perpetrated a crime against them, depicting who the victim was to the offender.</xs:documentation>
     </xs:annotation>
