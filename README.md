@@ -49,6 +49,7 @@ Please review the [5.0 issues in the NIEM Releases issue tracker](https://github
 - Fixed definition formatting (#132) - *in progress*
 - Harmonized warrant components in Justice and Screening (#62)
 - Harmonized biom:ImageType (#99)
+- Harmonized education components (#113)
 - Merged scr:PersonNameAugmentation and scr:PersonNameTextAugmentation (#77)
 - Moved nc:PleaCategoryCodeType to the Justice domain (#24)
 - Moved additional Justice-specific types from Core to Justice (#79)

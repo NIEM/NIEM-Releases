@@ -220,7 +220,6 @@
           <xs:element ref="im:AlienStudentDisciplinaryAction" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="im:AcademicTermLengthQuantity" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="im:CampusEmploymentFundsAmount" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="im:EducationLevelCommentText" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="im:EnglishRequirementMetIndicator" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="im:IsNewIndicator" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="im:NextSessionStartDate" minOccurs="0" maxOccurs="unbounded"/>
@@ -244,15 +243,13 @@
           <xs:element ref="im:TermTuitionFeeTotalAmount" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="im:TerminationReasonText" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="im:TerminationAbstract" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="im:EducationLevelText" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="im:AuthorizationToDropBelowFullTime" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="im:StudentEmployment" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="im:ProgramExtensionRequest" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:Request" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="im:Transfer" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="im:EducationLevelClassification" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="im:AlienStudentEducation" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="im:StudentTerminationClassification" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="im:EducationLevelCode" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="im:SEVISPersonDependentAssociation" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="im:AlienStudentAdmissionAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
@@ -2246,6 +2243,18 @@
           <xs:element ref="im:ReleaseReasonCode" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="im:ReleaseReasonDescriptionText" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="im:DetentionReleaseReasonAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="EducationAugmentationType">
+    <xs:annotation>
+      <xs:documentation>A data type for additional information about education.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="structures:AugmentationType">
+        <xs:sequence>
+          <xs:element ref="im:EducationLevelCommentText" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -8209,20 +8218,6 @@
       </xs:extension>
     </xs:simpleContent>
   </xs:complexType>
-  <xs:complexType name="StudentEducationLevelType">
-    <xs:annotation>
-      <xs:documentation>A data type for the highest level of education an alien student intends to achieve.</xs:documentation>
-    </xs:annotation>
-    <xs:complexContent>
-      <xs:extension base="structures:ObjectType">
-        <xs:sequence>
-          <xs:element ref="im:StudentEducationLevelCode" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="im:StudentEducationLevelDescriptionText" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="im:StudentEducationLevelAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
-        </xs:sequence>
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
   <xs:simpleType name="StudentTerminationCodeSimpleType">
     <xs:annotation>
       <xs:documentation>A data type for the classification of the reason for the premature ending of the participation of a non-immigrant student in an education program in the United States.</xs:documentation>
@@ -8691,6 +8686,11 @@
   <xs:element name="AlienStudentDisciplinaryActionAugmentationPoint" abstract="true">
     <xs:annotation>
       <xs:documentation>An augmentation point for AlienStudentDisciplinaryActionType.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="AlienStudentEducation" type="nc:EducationType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>An alien student's educational background and plans.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="AlienStudentEmployment" type="im:AlienStudentEmploymentType" nillable="true">
@@ -9223,12 +9223,12 @@
       <xs:documentation>A date the Immigration Document was submitted</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="EducationLevelClassification" type="im:StudentEducationLevelType" nillable="true">
+  <xs:element name="EducationAugmentation" type="im:EducationAugmentationType" substitutionGroup="nc:EducationAugmentationPoint" nillable="true">
     <xs:annotation>
-      <xs:documentation>A classification of the highest level of education an alien STUDENT intends to achieve.</xs:documentation>
+      <xs:documentation>Additional information about education.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="EducationLevelCode" type="im:StudentEducationLevelCodeType" nillable="true">
+  <xs:element name="EducationLevelCode" type="im:StudentEducationLevelCodeType" substitutionGroup="nc:EducationLevelRepresentation" nillable="true">
     <xs:annotation>
       <xs:documentation>A student education level category a student is pursuing.</xs:documentation>
     </xs:annotation>
@@ -9236,11 +9236,6 @@
   <xs:element name="EducationLevelCommentText" type="nc:TextType" nillable="true">
     <xs:annotation>
       <xs:documentation>A field detailing the alien students level of education</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="EducationLevelText" type="nc:TextType" nillable="true">
-    <xs:annotation>
-      <xs:documentation>An education level of the alien student.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="EmploymentAuthorizationEndDate" type="nc:DateType" nillable="true">
@@ -10466,21 +10461,6 @@
   <xs:element name="StayRequestDate" type="nc:DateType" nillable="true">
     <xs:annotation>
       <xs:documentation>A date on which the ALIEN filed for stay of deportation.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="StudentEducationLevelAugmentationPoint" abstract="true">
-    <xs:annotation>
-      <xs:documentation>An augmentation point for StudentEducationLevelType.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="StudentEducationLevelCode" type="im:StudentEducationLevelCodeType" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A kind of educational level the alien STUDENT wishes to achieve.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="StudentEducationLevelDescriptionText" type="nc:TextType" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A field indicating the description for the associated EDUCATION LEVEL CODE.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="StudentEmployment" type="im:AlienStudentEmploymentType" nillable="true">

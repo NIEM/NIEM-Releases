@@ -1739,7 +1739,7 @@
       </xs:extension>
     </xs:simpleContent>
   </xs:complexType>
-  <xs:complexType name="EducationType">
+  <xs:complexType name="EducationalIssuesType">
     <xs:annotation>
       <xs:documentation>A data type for describing the educational issues related to the court report and service plan of any participant in the case.</xs:documentation>
     </xs:annotation>
@@ -1748,7 +1748,7 @@
         <xs:sequence>
           <xs:element ref="hs:EducationalGoalText" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="hs:EducationalNeedText" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="hs:EducationAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="hs:EducationalIssuesAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -3932,7 +3932,7 @@
           <xs:element ref="hs:StudentSpecialEducationEligibleIndicator" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="hs:StudentCurrentEducationEnrollmentEndDate" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="hs:StudentIdentification" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="hs:Education" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="hs:EducationalIssues" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="hs:HistoricalNarrative" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="hs:ICWAEligibilityIndicator" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="hs:SeriousHabitualOffenderIndicator" minOccurs="0" maxOccurs="unbounded"/>
@@ -6223,7 +6223,7 @@
           <xs:element ref="hs:StudentCurrentEducationEnrollmentIndicator" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="hs:StudentCurrentEducationEnrollmentEndDate" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="hs:StudentCurrentEducationTruancyIndicator" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="hs:Education" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="hs:EducationalIssues" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="hs:EducationalAdjustmentAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="hs:StudentSpecialEducationEligibleIndicator" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="hs:StudentSpecialEducationDetails" minOccurs="0" maxOccurs="unbounded"/>
@@ -9686,11 +9686,6 @@
       <xs:documentation>A date something is due, not necessarily the date that something actually starts or ends.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="Education" type="hs:EducationType" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A description of the educational issues related to the court report and service plan of any participant in the case.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
   <xs:element name="EducationalAdjustmentAbstract" abstract="true">
     <xs:annotation>
       <xs:documentation>A data concept for describing the adjustment of a student in a school setting.</xs:documentation>
@@ -9711,14 +9706,19 @@
       <xs:documentation>A kind of educational level the child and or court wishes to achieve.</xs:documentation>
     </xs:annotation>
   </xs:element>
+  <xs:element name="EducationalIssues" type="hs:EducationalIssuesType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A description of the educational issues related to the court report and service plan of any participant in the case.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="EducationalIssuesAugmentationPoint" abstract="true">
+    <xs:annotation>
+      <xs:documentation>An augmentation point for EducationalIssuesType.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
   <xs:element name="EducationalNeedText" type="nc:TextType" nillable="true">
     <xs:annotation>
       <xs:documentation>A specific educational need that the child may have.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="EducationAugmentationPoint" abstract="true">
-    <xs:annotation>
-      <xs:documentation>An augmentation point for EducationType.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="EducationOrganization" type="nc:OrganizationType" nillable="true">

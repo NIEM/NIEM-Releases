@@ -11,7 +11,6 @@
   xmlns:em="http://release.niem.gov/niem/domains/emergencyManagement/5.0/"
   xmlns:hs="http://release.niem.gov/niem/domains/humanServices/5.0/"
   xmlns:im="http://release.niem.gov/niem/domains/immigration/5.0/"
-  xmlns:intel="http://release.niem.gov/niem/domains/intelligence/5.0/"
   xmlns:j="http://release.niem.gov/niem/domains/jxdm/7.0/"
   xmlns:mmucc="http://release.niem.gov/niem/codes/mmucc/5.0/"
   xmlns:nc="http://release.niem.gov/niem/niem-core/5.0/"
@@ -134,7 +133,6 @@
   <xs:import namespace="http://release.niem.gov/niem/domains/emergencyManagement/5.0/" schemaLocation="../../emergencyManagement/5.0/emergencyManagement.xsd"/>
   <xs:import namespace="http://release.niem.gov/niem/domains/humanServices/5.0/" schemaLocation="../../humanServices/5.0/hs.xsd"/>
   <xs:import namespace="http://release.niem.gov/niem/domains/immigration/5.0/" schemaLocation="../../immigration/5.0/immigration.xsd"/>
-  <xs:import namespace="http://release.niem.gov/niem/domains/intelligence/5.0/" schemaLocation="../../intelligence/5.0/intelligence.xsd"/>
   <xs:import namespace="http://release.niem.gov/niem/domains/surfaceTransportation/5.0/" schemaLocation="../../surfaceTransportation/5.0/st.xsd"/>
   <xs:import namespace="http://release.niem.gov/niem/niem-core/5.0/" schemaLocation="../../../niem-core/5.0/niem-core.xsd"/>
   <xs:import namespace="http://release.niem.gov/niem/proxy/xsd/5.0/" schemaLocation="../../../proxy/xsd/5.0/xs.xsd"/>
@@ -3297,8 +3295,7 @@
         <xs:sequence>
           <xs:element ref="j:EducationalActivity" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="j:EducationCourse" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="j:EducationDegreeYearDate" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="j:EducationStatus" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="j:EducationTotalYearsText" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -6719,7 +6716,7 @@
     <xs:complexContent>
       <xs:extension base="j:ServiceAssociationType">
         <xs:sequence>
-          <xs:element ref="intel:PersonEducationDegreeCodeText" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:EducationQualificationAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="j:ProgramAttendanceText" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="j:ProgramBehaviorText" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="j:ProgramResultantCertificationExpirationDate" minOccurs="0" maxOccurs="unbounded"/>
@@ -6810,7 +6807,6 @@
           <xs:element ref="j:PersonDrugAlcoholUseDateRange" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="j:PersonDrugAlcoholUseFrequencyText" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="j:PersonDrugAlcoholUseIndicator" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="j:PersonEducationTotalYearsText" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="j:PersonEmploymentIndicator" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="j:PersonForeignBornIndicator" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="j:PersonForeignNationalIndicator" minOccurs="0" maxOccurs="unbounded"/>
@@ -10617,7 +10613,7 @@
       <xs:documentation>An augmentation point for type j:AcademicAssessmentType</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="AcademicAssessmentEducation" type="hs:EducationType" nillable="true">
+  <xs:element name="AcademicAssessmentEducation" type="nc:EducationType" nillable="true">
     <xs:annotation>
       <xs:documentation>An assessment history of education and academic achievement of a subject.</xs:documentation>
     </xs:annotation>
@@ -17093,7 +17089,7 @@
       <xs:documentation>True if an individual is enrolled in education activity as a full-time student or not; false otherwise; false otherwise.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="EducationAugmentation" type="j:EducationAugmentationType" substitutionGroup="hs:EducationAugmentationPoint" nillable="true">
+  <xs:element name="EducationAugmentation" type="j:EducationAugmentationType" substitutionGroup="nc:EducationAugmentationPoint" nillable="true">
     <xs:annotation>
       <xs:documentation>Additional information about an education.</xs:documentation>
     </xs:annotation>
@@ -17198,14 +17194,9 @@
       <xs:documentation>A total number of educational course units completed by a subject.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="EducationDegreeYearDate" type="niem-xs:gYear" nillable="true">
+  <xs:element name="EducationTotalYearsText" type="nc:TextType" nillable="true">
     <xs:annotation>
-      <xs:documentation>A year in which a subject received an educational degree.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="EducationStatus" type="nc:StatusType" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A description of the current status of a subject's educational goals.</xs:documentation>
+      <xs:documentation>A total number of years a person has been involved in attaining their education.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="EmailMessageAssociation" type="j:EmailMessageAssociationType" nillable="true">
@@ -24826,11 +24817,6 @@
   <xs:element name="PersonDrugAlcoholUseIndicator" type="niem-xs:boolean" nillable="true">
     <xs:annotation>
       <xs:documentation>True if a person admits to having used or abused drugs or alcohol; false otherwise.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="PersonEducationTotalYearsText" type="nc:TextType" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A total number of years a person has been involved in attaining their education.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="PersonEmancipationDate" type="nc:DateType" nillable="true">

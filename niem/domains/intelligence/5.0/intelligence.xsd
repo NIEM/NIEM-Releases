@@ -172,7 +172,6 @@
           <xs:element ref="intel:AgencySubjectInterest" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="intel:PersonCitizenshipDetails" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="intel:PersonContactDetails" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="intel:PersonEducationDetails" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:Location" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="intel:PersonMultimediaIDBinary" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="intel:PersonSystemIdentification" minOccurs="0" maxOccurs="unbounded"/>
@@ -195,20 +194,6 @@
           <xs:element ref="nc:PersonCitizenshipCountry" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="intel:PersonCitizenshipStatusCodeText" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="intel:PersonCitizenshipDetailsAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
-        </xs:sequence>
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
-  <xs:complexType name="PersonEducationDetailsType">
-    <xs:annotation>
-      <xs:documentation>A data type for a relationship between a person and an organization in which the organization is providing a service as an educational institution.</xs:documentation>
-    </xs:annotation>
-    <xs:complexContent>
-      <xs:extension base="structures:ObjectType">
-        <xs:sequence>
-          <xs:element ref="nc:PersonEducationLevelText" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="intel:PersonEducationDegreeCodeText" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="intel:PersonEducationDetailsAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -484,21 +469,6 @@
   <xs:element name="PersonContactDetails" type="nc:ContactInformationType" nillable="true">
     <xs:annotation>
       <xs:documentation>A structure that describes details about how to contact a person.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="PersonEducationDegreeCodeText" type="nc:TextType" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A document awarded by an educational institution conferring a degree on a person or certifying his satisfactory completion of a course of study.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="PersonEducationDetails" type="intel:PersonEducationDetailsType" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A relationship between a person and an organization in which the organization is providing a service as an educational institution.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="PersonEducationDetailsAugmentationPoint" abstract="true">
-    <xs:annotation>
-      <xs:documentation>An augmentation point for PersonEducationDetailsType.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="PersonEyeDescriptionText" type="nc:TextType" nillable="true">

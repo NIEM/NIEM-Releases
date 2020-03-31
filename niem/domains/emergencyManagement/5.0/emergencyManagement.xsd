@@ -3089,20 +3089,15 @@
       </xs:extension>
     </xs:simpleContent>
   </xs:complexType>
-  <xs:complexType name="EducationType">
+  <xs:complexType name="EducationAugmentationType">
     <xs:annotation>
-      <xs:documentation>A data type for a credential class that represents the type of education credentials held by a person</xs:documentation>
+      <xs:documentation>A data type for additional information about a person's education.</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
-      <xs:extension base="structures:ObjectType">
+      <xs:extension base="structures:AugmentationType">
         <xs:sequence>
           <xs:element ref="em:EducationMajorText" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="em:EducationMinorText" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="em:EducationInstitutionText" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="em:DegreeIssuingDate" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="nc:EffectiveDate" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="nc:EndDate" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="em:EducationAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -4029,7 +4024,6 @@ National Institutes of Health, National Heart, Lung, and Blood Institute</xs:doc
           <xs:element ref="em:Experience" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="em:OwnerInformation" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="em:Access" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="em:Education" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="em:ResourceID" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="em:Badge" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:Insurance" minOccurs="0" maxOccurs="unbounded"/>
@@ -11323,11 +11317,6 @@ National Institutes of Health, National Heart, Lung, and Blood Institute</xs:doc
       <xs:documentation>A data concept for a declined Request, Response, Unsolicited Offer, or a Request Return</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="DegreeIssuingDate" type="nc:DateType" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A date on which the degree was awarded</xs:documentation>
-    </xs:annotation>
-  </xs:element>
   <xs:element name="DeliveryMethodText" type="nc:TextType" nillable="true">
     <xs:annotation>
       <xs:documentation>An element for the resource delivery method</xs:documentation>
@@ -11523,19 +11512,9 @@ National Institutes of Health, National Heart, Lung, and Blood Institute</xs:doc
       <xs:documentation>A data element for an assurance level code, defined by OMB M-04-04 E-Authentication Guidance</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="Education" type="em:EducationType" nillable="true">
+  <xs:element name="EducationAugmentation" type="em:EducationAugmentationType" substitutionGroup="nc:EducationAugmentationPoint" nillable="true">
     <xs:annotation>
-      <xs:documentation>A credential class that represents the type of education credentials held by a Person</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="EducationAugmentationPoint" abstract="true">
-    <xs:annotation>
-      <xs:documentation>An augmentation point for EducationType</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="EducationInstitutionText" type="nc:TextType" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A textual representation of the Educational Institution that awarded the degree</xs:documentation>
+      <xs:documentation>Additional information about a person's education.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="EducationMajorText" type="nc:TextType" nillable="true">

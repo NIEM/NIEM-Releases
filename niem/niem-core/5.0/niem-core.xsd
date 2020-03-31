@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xs:schema targetNamespace="http://release.niem.gov/niem/niem-core/5.0/" version="alpha1" xsi:schemaLocation="http://release.niem.gov/niem/appinfo/4.0/ ../../utility/appinfo/4.0/appinfo.xsd http://release.niem.gov/niem/conformanceTargets/3.0/ ../../utility/conformanceTargets/3.0/conformanceTargets.xsd" ct:conformanceTargets="http://reference.niem.gov/niem/specification/naming-and-design-rules/4.0/#ReferenceSchemaDocument"
   xmlns:appinfo="http://release.niem.gov/niem/appinfo/4.0/"
+  xmlns:bls="http://release.niem.gov/niem/codes/bls/5.0/"
   xmlns:can="http://release.niem.gov/niem/codes/canada_post/5.0/"
   xmlns:cli="http://reference.niem.gov/niem/specification/code-lists/4.0/code-lists-instance/"
   xmlns:commodity="http://release.niem.gov/niem/codes/commodity/5.0/"
@@ -16,9 +17,11 @@
   xmlns:iso_4217="http://release.niem.gov/niem/codes/iso_4217/5.0/"
   xmlns:iso_639-3="http://release.niem.gov/niem/codes/iso_639-3/5.0/"
   xmlns:nc="http://release.niem.gov/niem/niem-core/5.0/"
+  xmlns:nces="http://release.niem.gov/niem/codes/nces/5.0/"
   xmlns:nga="http://release.niem.gov/niem/codes/nga_datum/5.0/"
   xmlns:niem-xs="http://release.niem.gov/niem/proxy/xsd/5.0/"
   xmlns:occs="http://release.niem.gov/niem/codes/occs_facility/5.0/"
+  xmlns:opm="http://release.niem.gov/niem/codes/opm/5.0/"
   xmlns:structures="http://release.niem.gov/niem/structures/4.0/"
   xmlns:unece="http://release.niem.gov/niem/codes/unece_rec20/5.0/"
   xmlns:usps="http://release.niem.gov/niem/codes/usps_states/5.0/"
@@ -57,6 +60,7 @@
     </xs:appinfo>
   </xs:annotation>
   <xs:import namespace="http://reference.niem.gov/niem/specification/code-lists/4.0/code-lists-instance/" schemaLocation="../../utility/code-lists-spec/4.0/code-lists-instance.xsd"/>
+  <xs:import namespace="http://release.niem.gov/niem/codes/bls/5.0/" schemaLocation="../../codes/bls/5.0/bls.xsd"/>
   <xs:import namespace="http://release.niem.gov/niem/codes/canada_post/5.0/" schemaLocation="../../codes/canada_post/5.0/canada_post.xsd"/>
   <xs:import namespace="http://release.niem.gov/niem/codes/commodity/5.0/" schemaLocation="../../codes/commodity/5.0/commodity.xsd"/>
   <xs:import namespace="http://release.niem.gov/niem/codes/dea_ctlsub/5.0/" schemaLocation="../../codes/dea_ctlsub/5.0/dea.xsd"/>
@@ -69,8 +73,10 @@
   <xs:import namespace="http://release.niem.gov/niem/codes/iso_3166-1/5.0/" schemaLocation="../../codes/iso_3166-1/5.0/iso_3166.xsd"/>
   <xs:import namespace="http://release.niem.gov/niem/codes/iso_4217/5.0/" schemaLocation="../../codes/iso_4217/5.0/iso_4217.xsd"/>
   <xs:import namespace="http://release.niem.gov/niem/codes/iso_639-3/5.0/" schemaLocation="../../codes/iso_639-3/5.0/iso_639-3.xsd"/>
+  <xs:import namespace="http://release.niem.gov/niem/codes/nces/5.0/" schemaLocation="../../codes/nces/5.0/nces.xsd"/>
   <xs:import namespace="http://release.niem.gov/niem/codes/nga_datum/5.0/" schemaLocation="../../codes/nga_datum/5.0/nga_datum.xsd"/>
   <xs:import namespace="http://release.niem.gov/niem/codes/occs_facility/5.0/" schemaLocation="../../codes/occs_facility/5.0/occs_facility.xsd"/>
+  <xs:import namespace="http://release.niem.gov/niem/codes/opm/5.0/" schemaLocation="../../codes/opm/5.0/opm.xsd"/>
   <xs:import namespace="http://release.niem.gov/niem/codes/unece_rec20/5.0/" schemaLocation="../../codes/unece_rec20/5.0/unece_rec20-misc.xsd"/>
   <xs:import namespace="http://release.niem.gov/niem/codes/usps_states/5.0/" schemaLocation="../../codes/usps_states/5.0/usps_states.xsd"/>
   <xs:import namespace="http://release.niem.gov/niem/codes/xCard/5.0/" schemaLocation="../../codes/xCard/5.0/xCard.xsd"/>
@@ -1517,6 +1523,54 @@
           <xs:element ref="nc:DEAClassScheduleAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:DrugCoverageExceptionReasonText" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:DrugAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="EducationLevelType">
+    <xs:annotation>
+      <xs:documentation>A data type for a level of education reached by a person.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="structures:ObjectType">
+        <xs:sequence>
+          <xs:element ref="nc:EducationLevelRepresentation" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:EducationLevelAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="EducationQualificationType">
+    <xs:annotation>
+      <xs:documentation>A data type for a degree, certificate, credit, or other educational qualification obtained by a person.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="structures:ObjectType">
+        <xs:sequence>
+          <xs:element ref="nc:EducationQualificationAbstract" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:EducationQualificationIssuedDate" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:EducationQualificationExpirationDate" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:EducationQualificationInstitutionText" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:EducationQualificationDescriptionText" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:EducationQualificationLevel" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:EducationQualificationAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="EducationType">
+    <xs:annotation>
+      <xs:documentation>A data type for a person's educational background.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="structures:ObjectType">
+        <xs:sequence>
+          <xs:element ref="nc:EducationDescriptionText" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:EducationInProgressIndicator" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:EducationLevel" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:EducationQualification" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:EducationStatus" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:EducationAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -3390,7 +3444,7 @@
           <xs:element ref="nc:PersonDigitizedSignatureImage" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:PersonDisguiseDescriptionText" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:PersonOrganDonorAbstract" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="nc:PersonEducationLevelText" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:PersonEducation" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:PersonEthnicityAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:PersonEyeColorAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:PersonEyewearAbstract" minOccurs="0" maxOccurs="unbounded"/>
@@ -6866,6 +6920,106 @@
       <xs:documentation>A level of potency of a drug.</xs:documentation>
     </xs:annotation>
   </xs:element>
+  <xs:element name="EducationAugmentationPoint" abstract="true">
+    <xs:annotation>
+      <xs:documentation>An augmentation point for type nc:EducationType</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="EducationDescriptionText" type="nc:TextType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A description of a person's educational background.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="EducationInProgressIndicator" type="niem-xs:boolean" nillable="true">
+    <xs:annotation>
+      <xs:documentation>True if a person's formal education is still in progress; false otherwise.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="EducationLevel" type="nc:EducationLevelType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A highest level of education reached by a person.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="EducationLevelAugmentationPoint" abstract="true">
+    <xs:annotation>
+      <xs:documentation>An augmentation point for type nc:EducationLevelType</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="EducationLevelBLSCode" type="bls:EducationLevelCodeType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A level of education reached by a person.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="EducationLevelOPMCode" type="opm:EducationLevelCodeType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A level of education reached by a person.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="EducationLevelRepresentation" abstract="true">
+    <xs:annotation>
+      <xs:documentation>A data concept for a representation of a level of education reached by a person.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="EducationLevelText" type="nc:TextType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A level of education reached by a person.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="EducationQualification" type="nc:EducationQualificationType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A degree, certificate, credit, or other educational qualification obtained by a person.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="EducationQualificationAbstract" abstract="true">
+    <xs:annotation>
+      <xs:documentation>A data concept for a degree, certificate, credit, or other educational qualification obtained by a person.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="EducationQualificationAugmentationPoint" abstract="true">
+    <xs:annotation>
+      <xs:documentation>An augmentation point for type nc:EducationQualificationType</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="EducationQualificationCode" type="nces:CIP2DigitCodeType" substitutionGroup="nc:EducationQualificationAbstract" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A degree, certificate, credit, or other educational qualification obtained by a person.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="EducationQualificationDescriptionText" type="nc:TextType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A description of an educational qualification.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="EducationQualificationExpirationDate" type="nc:DateType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A date on which an educational qualification becomes no longer valid.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="EducationQualificationInstitutionText" type="nc:TextType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>An organization such as a college, school, or certification body which issues a qualification to a person.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="EducationQualificationIssuedDate" type="nc:DateType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A date on which an educational qualification was issued.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="EducationQualificationLevel" type="nc:EducationLevelType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A level of education for the given qualification.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="EducationQualificationText" type="nc:TextType" substitutionGroup="nc:EducationQualificationAbstract" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A degree, certificate, credit, or other educational qualification obtained by a person.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="EducationStatus" type="nc:StatusType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A status of a person's education.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
   <xs:element name="EffectiveDate" type="nc:DateType" nillable="true">
     <xs:annotation>
       <xs:documentation>A date that information take effect.</xs:documentation>
@@ -10031,9 +10185,9 @@
       <xs:documentation>An augmentation point for PersonDocumentAssociationType.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="PersonEducationLevelText" type="nc:TextType" nillable="true">
+  <xs:element name="PersonEducation" type="nc:EducationType" nillable="true">
     <xs:annotation>
-      <xs:documentation>A highest level of education a person has obtained.</xs:documentation>
+      <xs:documentation>A person's educational background.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="PersonEmergencyContactInformation" type="nc:ContactInformationType" nillable="true">
