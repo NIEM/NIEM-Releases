@@ -4,7 +4,6 @@
   xmlns:ct="http://release.niem.gov/niem/conformanceTargets/3.0/"
   xmlns:hs="http://release.niem.gov/niem/domains/humanServices/5.0/"
   xmlns:im="http://release.niem.gov/niem/domains/immigration/5.0/"
-  xmlns:iso_3166="http://release.niem.gov/niem/codes/iso_3166-1/5.0/"
   xmlns:j="http://release.niem.gov/niem/domains/jxdm/7.0/"
   xmlns:nc="http://release.niem.gov/niem/niem-core/5.0/"
   xmlns:niem-xs="http://release.niem.gov/niem/proxy/xsd/5.0/"
@@ -32,7 +31,6 @@
       <appinfo:LocalTerm term="USCIS" literal="United States Citizenship and Immigration Services"/>
     </xs:appinfo>
   </xs:annotation>
-  <xs:import namespace="http://release.niem.gov/niem/codes/iso_3166-1/5.0/" schemaLocation="../../../codes/iso_3166-1/5.0/iso_3166.xsd"/>
   <xs:import namespace="http://release.niem.gov/niem/domains/humanServices/5.0/" schemaLocation="../../humanServices/5.0/hs.xsd"/>
   <xs:import namespace="http://release.niem.gov/niem/domains/jxdm/7.0/" schemaLocation="../../jxdm/7.0/jxdm.xsd"/>
   <xs:import namespace="http://release.niem.gov/niem/domains/screening/5.0/" schemaLocation="../../screening/5.0/screening.xsd"/>
@@ -1960,27 +1958,25 @@
       </xs:extension>
     </xs:simpleContent>
   </xs:complexType>
-  <xs:complexType name="CountryType">
+  <xs:complexType name="CountryAugmentationType">
     <xs:annotation>
-      <xs:documentation>A data type for a nation with its own government, occupying a particular territory.</xs:documentation>
+      <xs:documentation>A data type for additional information about a country.</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
-      <xs:extension base="structures:ObjectType">
+      <xs:extension base="structures:AugmentationType">
         <xs:sequence>
           <xs:element ref="im:CountryCapitalCityName" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="im:CountryChargeabilityCountry" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="im:CountryDocumentIssuingAuthorityIndicator" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="im:CountryFormerAllegianceCountry" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="im:CountryHagueAdoptionConventionCountryIndicator" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="im:CountryIndigenousPeoplesIndicator" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="im:CountryMotherCountry" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="im:CountryLongFormName" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="im:CountryOfChargeabilityAbstract" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="im:CountryOfFormerAllegianceAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="im:CountryShortFormName" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="im:CountrySovereigntyStatusCode" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="im:CountryValidFromDate" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="im:CountryValidToDate" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="im:DocumentIssuingAuthorityIndicator" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="im:HagueAdoptionConventionCountryIndicator" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="im:IndigenousPeoplesIndicator" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="im:LocationMotherCountryAbstract" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="im:SovereigntyStatusCode" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="nc:AddressCountry" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="im:CountryAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -2660,7 +2656,7 @@
     <xs:complexContent>
       <xs:extension base="im:ImmigrationBenefitDeclarationType">
         <xs:sequence>
-          <xs:element ref="im:Country" minOccurs="0" maxOccurs="1"/>
+          <xs:element ref="nc:Country" minOccurs="0" maxOccurs="1"/>
           <xs:element ref="im:TargetOrganizationName" minOccurs="0" maxOccurs="1"/>
           <xs:element ref="im:ImmigrationBenefitMisconductDeclarationAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
@@ -2728,7 +2724,7 @@
           <xs:element ref="im:ImmigrationBenefitRepresentative" minOccurs="0" maxOccurs="1"/>
           <xs:element ref="im:PersonCountryRole" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:Organization" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="im:Country" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:Country" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="im:ImmigrationBenefitEvidence" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="im:ImmigrationBenefitSignature" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="hs:ParentChildAssociation" minOccurs="0" maxOccurs="unbounded"/>
@@ -7967,7 +7963,7 @@
     <xs:complexContent>
       <xs:extension base="nc:AssociationType">
         <xs:sequence>
-          <xs:element ref="im:Country" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:Country" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="im:PersonCountryRole" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="im:PersonCountryAssociationAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
@@ -8977,14 +8973,9 @@
       <xs:documentation>A description of why contact was required</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="Country" type="im:CountryType" nillable="true">
+  <xs:element name="CountryAugmentation" type="im:CountryAugmentationType" substitutionGroup="nc:CountryAugmentationPoint" nillable="true">
     <xs:annotation>
-      <xs:documentation>A nation with its own government, occupying a particular territory.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="CountryAugmentationPoint" abstract="true">
-    <xs:annotation>
-      <xs:documentation>An augmentation point for CountryType.</xs:documentation>
+      <xs:documentation>Additional information about a country.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="CountryCapitalCityName" type="nc:ProperNameTextType" nillable="true">
@@ -8992,34 +8983,49 @@
       <xs:documentation>A name of the capital city of a country.</xs:documentation>
     </xs:annotation>
   </xs:element>
+  <xs:element name="CountryChargeabilityCountry" type="nc:CountryType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A country to which an immigrant, in a numerically limited classification, can be charged by the U.S. Department of State for purposes of numerical control.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="CountryDocumentIssuingAuthorityIndicator" type="niem-xs:boolean" nillable="true">
+    <xs:annotation>
+      <xs:documentation>True if a country has the authority to issue documents (e.g. passports); false otherwise.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="CountryFormerAllegianceCountry" type="nc:CountryType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A country to which allegiance was held in the past but does not currently hold.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="CountryHagueAdoptionConventionCountryIndicator" type="niem-xs:boolean" nillable="true">
+    <xs:annotation>
+      <xs:documentation>True if a country is a party to the Hague Adoption Convention; false otherwise</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="CountryIndigenousPeoplesIndicator" type="niem-xs:boolean" nillable="true">
+    <xs:annotation>
+      <xs:documentation>True if a country has a population of indigenous peoples; false otherwise</xs:documentation>
+    </xs:annotation>
+  </xs:element>
   <xs:element name="CountryLongFormName" type="nc:ProperNameTextType" nillable="true">
     <xs:annotation>
       <xs:documentation>A conventional long form of the country's name as approved by the US Board on Geographic Names. (List of valid values)</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="CountryOfChargeabilityAbstract" abstract="true">
+  <xs:element name="CountryMotherCountry" type="nc:CountryType" nillable="true">
     <xs:annotation>
-      <xs:documentation>A data concept for a country to which an immigrant, in a numerically limited classification, can be charged by the U.S. Department of State for purposes of numerical control.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="CountryOfChargeabilityCode" type="iso_3166:CountryAlpha2CodeType" substitutionGroup="im:CountryOfChargeabilityAbstract" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A country to which an immigrant, in a numerically limited classification, can be charged by the U.S. Department of State for purposes of numerical control.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="CountryOfFormerAllegianceAbstract" abstract="true">
-    <xs:annotation>
-      <xs:documentation>A data concept for a country to which allegiance was held in the past but does not currently hold.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="CountryOfFormerAllegianceCode" type="iso_3166:CountryAlpha2CodeType" substitutionGroup="im:CountryOfFormerAllegianceAbstract" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A country to which allegiance was held in the past but does not currently hold.</xs:documentation>
+      <xs:documentation>A governing mother country of a dependent country.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="CountryShortFormName" type="nc:ProperNameTextType" nillable="true">
     <xs:annotation>
       <xs:documentation>A conventional short form of the country's name as approved by the US Board on Geographic Names.  (List of valid values)</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="CountrySovereigntyStatusCode" type="im:SovereigntyStatusCodeType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A status of the authority over a geographic area by a nation with its own government.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="CountryValidFromDate" type="nc:DateType" nillable="true">
@@ -9210,11 +9216,6 @@
   <xs:element name="DistanceFromLandmarkMeasure" type="nc:LengthMeasureType" nillable="true">
     <xs:annotation>
       <xs:documentation>A number indicating the distance in miles from a landmark to where the alien's ARREST occurred.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="DocumentIssuingAuthorityIndicator" type="niem-xs:boolean" nillable="true">
-    <xs:annotation>
-      <xs:documentation>True if a country has the authority to issue documents (e.g. passports); false otherwise.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="DocumentSubmittedDate" type="nc:DateType" nillable="true">
@@ -9485,11 +9486,6 @@
   <xs:element name="GenericBenefitDate" type="nc:DateType" nillable="true">
     <xs:annotation>
       <xs:documentation>A date used for the purpose of specifying another date that is related to this Benefit Request that has been agreed between the parties.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="HagueAdoptionConventionCountryIndicator" type="niem-xs:boolean" nillable="true">
-    <xs:annotation>
-      <xs:documentation>True if a country is a party to the Hague Adoption Convention; false otherwise</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="HearingRightsIndicator" type="niem-xs:boolean" nillable="true">
@@ -9807,11 +9803,6 @@
       <xs:documentation>An augmentation point for IndicatorDescriptionPairType.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="IndigenousPeoplesIndicator" type="niem-xs:boolean" nillable="true">
-    <xs:annotation>
-      <xs:documentation>True if a country has a population of indigenous peoples; false otherwise</xs:documentation>
-    </xs:annotation>
-  </xs:element>
   <xs:element name="IsNewIndicator" type="niem-xs:boolean" nillable="true">
     <xs:annotation>
       <xs:documentation>True if the alien student is new; false otherwise.</xs:documentation>
@@ -9855,16 +9846,6 @@
   <xs:element name="LocationAugmentation" type="im:LocationAugmentationType" substitutionGroup="nc:LocationAugmentationPoint" nillable="true">
     <xs:annotation>
       <xs:documentation>Additional information about a location.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="LocationMotherCountryAbstract" abstract="true">
-    <xs:annotation>
-      <xs:documentation>A data concept for the governing mother country of a dependent country.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="LocationMotherCountryCode" type="iso_3166:CountryAlpha2CodeType" substitutionGroup="im:LocationMotherCountryAbstract" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A governing mother country of a dependent country.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="LocationNearestLargeCityName" type="nc:TextType" nillable="true">
@@ -10460,11 +10441,6 @@
   <xs:element name="SEVISStatusChangedDate" type="nc:DateType" nillable="true">
     <xs:annotation>
       <xs:documentation>A date on which the Exchange Visitors SEVIS status changed.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="SovereigntyStatusCode" type="im:SovereigntyStatusCodeType" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A status of the authority over a geographic area by a nation with its own government.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="SponsorReceivedUSGovernmentFundIndicator" type="niem-xs:boolean" nillable="true">
