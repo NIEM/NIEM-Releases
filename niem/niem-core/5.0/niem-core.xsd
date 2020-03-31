@@ -3178,6 +3178,21 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
+  <xs:complexType name="PersonCitizenshipType">
+    <xs:annotation>
+      <xs:documentation>A data type for a person's position or status with a country that assigns rights, duties, and privileges because of the birth or naturalization of the person in that country.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="structures:ObjectType">
+        <xs:sequence>
+          <xs:element ref="nc:PersonCitizenshipCountry" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:PersonCitizenshipCategoryAbstract" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:PersonCitizenshipStatus" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:PersonCitizenshipAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
   <xs:complexType name="PersonConveyanceAssociationType">
     <xs:annotation>
       <xs:documentation>A data type for an association between a person and a conveyance.</xs:documentation>
@@ -3388,6 +3403,21 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
+  <xs:complexType name="PersonNationalityType">
+    <xs:annotation>
+      <xs:documentation>A data type for a person's position or status with a country that grants a person citizenship or a country in which a person is deemed a national.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="structures:ObjectType">
+        <xs:sequence>
+          <xs:element ref="nc:PersonNationalityCountry" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:PersonNationalityCategoryAbstract" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:PersonNationalityStatus" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:PersonNationalityAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
   <xs:complexType name="PersonOrganizationAssociationType">
     <xs:annotation>
       <xs:documentation>A data type for an association between a person and an organization.</xs:documentation>
@@ -3435,7 +3465,7 @@
           <xs:element ref="nc:PersonBuildAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:PersonCapability" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:PersonCircumcisionIndicator" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="nc:PersonCitizenshipCountry" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:PersonCitizenship" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:PersonComplexionText" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:PersonDeathDate" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:PersonDependentQuantity" minOccurs="0" maxOccurs="unbounded"/>
@@ -3498,7 +3528,7 @@
           <xs:element ref="nc:PersonWeightDescriptionText" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:PersonWeightMeasure" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:PersonXRayImage" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="nc:PersonNationalityCountry" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:PersonNationality" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:PersonContactInformation" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:EmploymentContactInformation" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:PersonEmergencyContactInformation" minOccurs="0" maxOccurs="unbounded"/>
@@ -10065,9 +10095,34 @@
       <xs:documentation>True if a person is circumcised; false otherwise.</xs:documentation>
     </xs:annotation>
   </xs:element>
+  <xs:element name="PersonCitizenship" type="nc:PersonCitizenshipType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A person's position or status with a country that assigns rights, duties, and privileges because of the birth or naturalization of the person in that country.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="PersonCitizenshipAugmentationPoint" abstract="true">
+    <xs:annotation>
+      <xs:documentation>An augmentation point for type nc:PersonCitizenshipType</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="PersonCitizenshipCategoryAbstract" abstract="true">
+    <xs:annotation>
+      <xs:documentation>A data concept for a kind of citizenship granted to a person by a country.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="PersonCitizenshipCategoryText" type="nc:TextType" substitutionGroup="nc:PersonCitizenshipCategoryAbstract" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A kind of citizenship granted to a person by a country.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
   <xs:element name="PersonCitizenshipCountry" type="nc:CountryType" nillable="true">
     <xs:annotation>
       <xs:documentation>A country that assigns rights, duties, and privileges to a person because of the birth or naturalization of the person in that country.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="PersonCitizenshipStatus" type="nc:StatusType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A status of a person's citizenship in a country.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="PersonComplexionText" type="nc:TextType" nillable="true">
@@ -10525,9 +10580,34 @@
       <xs:documentation>An identification that references a person within a country but is not based on fingerprint.</xs:documentation>
     </xs:annotation>
   </xs:element>
+  <xs:element name="PersonNationality" type="nc:PersonNationalityType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A person's position or status with a country that grants a person citizenship or a country in which a person is deemed a national.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="PersonNationalityAugmentationPoint" abstract="true">
+    <xs:annotation>
+      <xs:documentation>An augmentation point for type nc:PersonNationalityType</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="PersonNationalityCategoryAbstract" abstract="true">
+    <xs:annotation>
+      <xs:documentation>A data concept for a kind of nationality granted to a person by a country.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="PersonNationalityCategoryText" type="nc:TextType" substitutionGroup="nc:PersonNationalityCategoryAbstract" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A kind of nationality granted to a person by a country.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
   <xs:element name="PersonNationalityCountry" type="nc:CountryType" nillable="true">
     <xs:annotation>
       <xs:documentation>A country of a person's citizenship or a country in which a person is deemed a national.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="PersonNationalityStatus" type="nc:StatusType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A status of a person's nationality in a country.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="PersonOfficialGivenName" type="nc:PersonNameTextType" nillable="true">
