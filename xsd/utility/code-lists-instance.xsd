@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="US-ASCII"?>
+<xs:schema
+    ct:conformanceTargets="http://reference.niem.gov/niem/specification/naming-and-design-rules/4.0/#ReferenceSchemaDocument http://reference.niem.gov/niem/specification/naming-and-design-rules/3.0/#ReferenceSchemaDocument"
+    targetNamespace="http://reference.niem.gov/niem/specification/code-lists/4.0/code-lists-instance/"
+    version="4.0"
+    xmlns:ct="http://release.niem.gov/niem/conformanceTargets/3.0/"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <xs:annotation>
+    <xs:documentation>Definitions for the use of the NIEM Code Lists Specification, version 4.0, in XML message instances.</xs:documentation>
+  </xs:annotation>
+
+  <xs:attribute name="codeListURI" type="xs:anyURI">
+    <xs:annotation>
+      <xs:documentation>A universal identifier for a code list.</xs:documentation>
+    </xs:annotation>
+  </xs:attribute>
+
+  <xs:attribute name="codeListColumnName" type="xs:string">
+    <xs:annotation>
+      <xs:documentation>A local name for a code list column within a code list.</xs:documentation>
+    </xs:annotation>
+  </xs:attribute>
+
+  <xs:attribute name="codeListConstrainingIndicator" type="xs:boolean">
+    <xs:annotation>
+      <xs:documentation>True when a code list binding constrains the validity of a code list value, false otherwise.</xs:documentation>
+    </xs:annotation>
+  </xs:attribute>
+
+</xs:schema>

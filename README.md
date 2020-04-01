@@ -73,6 +73,7 @@ Please review the [5.0 issues in the NIEM Releases issue tracker](https://github
 
 ### Release package updates
 
+- Simplified folder layout (#140)
 - Changed the character encoding of the XML schemas from "US-ASCII" to "UTF-8" for better international support (#125)
 - Normalized schema sort orders:
   - Sorted namespace prefix declarations by prefix
