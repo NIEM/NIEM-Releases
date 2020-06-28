@@ -42,7 +42,7 @@ Note that schema updates have been committed per issue, so issue-specific file d
 - Replaced non-breaking spaces in OmniClass facility codes [(#133)](https://github.com/NIEM/NIEM-Releases/issues/133)
 - Added GENC alpha-2 and numeric country codes [(#94)](https://github.com/NIEM/NIEM-Releases/issues/94)
 - Updated the definition of deprecated aamva:DriverLicenseClassCodeSimpleType code "M" [(#108)](https://github.com/NIEM/NIEM-Releases/issues/108)
-- Updated FBI NCIC codes [(#134)](https://github.com/NIEM/NIEM-Releases/issues/134)
+- Updated FBI NCIC codes [(#134)](https://github.com/NIEM/NIEM-Releases/issues/134) and replaced the VMO code set with unique code values
 - Updated FBI NDEx codes [(#135)](https://github.com/NIEM/NIEM-Releases/issues/135)
 - Updated FBI UCR codes [(#136)](https://github.com/NIEM/NIEM-Releases/issues/136)
 - Updated FBI Justice domain codes [(#137)](https://github.com/NIEM/NIEM-Releases/issues/137)
