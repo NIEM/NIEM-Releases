@@ -47,6 +47,10 @@ Note that schema updates have been committed per issue, so issue-specific file d
 - Updated FBI UCR codes [(#136)](https://github.com/NIEM/NIEM-Releases/issues/136)
 - Updated FBI Justice domain codes [(#137)](https://github.com/NIEM/NIEM-Releases/issues/137)
 
+### Auxiliary content
+
+- Added content from the Generic Statistical Information Model (GSIM) content as a precursor to the new Statistics domain (#155)
+
 ### Harmonization and QA
 
 - Added new nc:PersonContactInformation element to nc:PersonType [(#29)](https://github.com/NIEM/NIEM-Releases/issues/29)
@@ -97,7 +101,6 @@ Additional updates are being considered or are expected for the beta draft, incl
 
 - Addition of Controlled Unclassified Information (CUI) metadata
 - Addition of cyber-related content in the MilOps domain
-- Addition of Generic Statistic Information Model (GSIM) content in the new Statistics domain
 - Additional content from the Public Health Emergency Operations Center (PH-EOC) Minimum Data Set added to the Emergency Management domain
 - Biometrics domain content updates
 - Code table updates, including AAMVA and GENC edition 3.0 update 11
