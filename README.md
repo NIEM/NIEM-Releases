@@ -50,6 +50,7 @@ Note that schema updates have been committed per issue, so issue-specific file d
 ### Auxiliary content
 
 - Added content from the Generic Statistical Information Model (GSIM) content as a precursor to the new Statistics domain (#155)
+- Added Controlled Unclassified Information (CUI) metadata (#156)
 
 ### Harmonization and QA
 
@@ -99,10 +100,7 @@ Note that schema updates have been committed per issue, so issue-specific file d
 
 Additional updates are being considered or are expected for the beta draft, including:
 
-- Addition of Controlled Unclassified Information (CUI) metadata
-- Addition of cyber-related content in the MilOps domain
 - Additional content from the Public Health Emergency Operations Center (PH-EOC) Minimum Data Set added to the Emergency Management domain
-- Biometrics domain content updates
 - Code table updates, including AAMVA and GENC edition 3.0 update 11
 - Continued harmonization and QA fixes across the model
 - Harmonization of updated Model Minimum Uniform Crash Criteria (MMUCC) content with the Justice domain
