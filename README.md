@@ -107,6 +107,7 @@ Note that schema updates have been committed per issue, so issue-specific file d
 
 - Simplified folder layout [(#140)](https://github.com/NIEM/NIEM-Releases/issues/140)
 - Changed the character encoding of the XML schemas from "US-ASCII" to "UTF-8" for better international support [(#125)](https://github.com/NIEM/NIEM-Releases/issues/125)
+- Added attribute xml:lang to reference schemas [(#153)](https://github.com/NIEM/NIEM-Releases/issues/153)
 - Updated structures and appinfo utility schemas to version 5.0 based on NDR updates [(#157)](https://github.com/NIEM/NIEM-Releases/issues/157)
 - Normalized schema sort orders:
   - Sorted namespace prefix declarations by prefix
