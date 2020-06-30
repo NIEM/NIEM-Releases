@@ -1135,24 +1135,6 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-  <xs:complexType name="AssignmentLocationDetailType">
-    <xs:annotation>
-      <xs:documentation>A data type for a specific location into which a person is placed, such as an office, dormitory, barracks, etc.</xs:documentation>
-    </xs:annotation>
-    <xs:complexContent>
-      <xs:extension base="structures:ObjectType">
-        <xs:sequence>
-          <xs:element ref="j:LocationBedText" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="j:LocationBuildingText" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="j:LocationRoomText" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="j:LocationSectionText" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="j:LocationSuiteText" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="j:LocationText" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="j:AssignmentLocationDetailAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
-        </xs:sequence>
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
   <xs:complexType name="AssignmentType">
     <xs:annotation>
       <xs:documentation>A data type for a location and environment into which a person is placed, such as an office, dormitory, barracks, etc.</xs:documentation>
@@ -1160,7 +1142,6 @@
     <xs:complexContent>
       <xs:extension base="nc:ActivityType">
         <xs:sequence>
-          <xs:element ref="j:AssignmentLocationDetail" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="j:AssignmentReasonText" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="j:AssignmentSecurityClassificationDescriptionText" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="j:Remark" minOccurs="0" maxOccurs="unbounded"/>
@@ -12547,16 +12528,6 @@
       <xs:documentation>An augmentation point for AssignmentType.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="AssignmentLocationDetail" type="j:AssignmentLocationDetailType" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A specific location into which a person is placed, such as an office, dormitory, barracks, etc.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="AssignmentLocationDetailAugmentationPoint" abstract="true">
-    <xs:annotation>
-      <xs:documentation>An augmentation point for AssignmentLocationDetailType.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
   <xs:element name="AssignmentReasonText" type="nc:TextType" nillable="true">
     <xs:annotation>
       <xs:documentation>A reason for an assignment.</xs:documentation>
@@ -21188,19 +21159,9 @@
       <xs:documentation>Additional information about a location.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="LocationBedText" type="nc:TextType" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A specific bed to which a person has been assigned.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
   <xs:element name="LocationBlockNumberText" type="nc:TextType" nillable="true">
     <xs:annotation>
       <xs:documentation>A number identifying a section of a city enclosed by intersecting streets.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="LocationBuildingText" type="nc:TextType" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A specific building in a facility.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="LocationCategoryCode" type="ndex:LocationCategoryCodeType" substitutionGroup="nc:LocationCategoryAbstract" nillable="true">
@@ -21238,16 +21199,6 @@
       <xs:documentation>An association between a location and its police department.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="LocationRoomText" type="nc:TextType" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A specific room in which a person is housed.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="LocationSectionText" type="nc:TextType" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A specific section or wing or block for a building in a facility.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
   <xs:element name="LocationSecurityLevelText" type="nc:TextType" nillable="true">
     <xs:annotation>
       <xs:documentation>A security level of the location.</xs:documentation>
@@ -21256,16 +21207,6 @@
   <xs:element name="LocationSubLocationCategoryCode" type="ndex:LocationSubLocationCategoryCodeType" substitutionGroup="nc:LocationCategoryAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A kind of location inside of another location, such as a restroom in a restaurant.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="LocationSuiteText" type="nc:TextType" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A specific suite in which a person is housed.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="LocationText" type="nc:TextType" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A location in a facility when the location cannot be broken down into separate components such as building and section and cell or bed.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="ManeuverAbstract" abstract="true">

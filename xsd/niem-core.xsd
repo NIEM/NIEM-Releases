@@ -1679,7 +1679,7 @@
   </xs:complexType>
   <xs:complexType name="FacilityType">
     <xs:annotation>
-      <xs:documentation>A data type for a building, place, or structure that provides a particular service.</xs:documentation>
+      <xs:documentation>A data type for one or more buildings, places, or structures that together provide a particular service.</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
       <xs:extension base="structures:ObjectType">
@@ -2451,6 +2451,25 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
+  <xs:complexType name="LocationPartType">
+    <xs:annotation>
+      <xs:documentation>A data type for a unit within a facility, building, or structure at a location.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="structures:ObjectType">
+        <xs:sequence>
+          <xs:element ref="nc:LocationBedText" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:LocationBuildingText" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:LocationPartText" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:LocationRoomText" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:LocationSectionText" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:LocationSuiteText" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:LocationFloorText" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:LocationPartAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
   <xs:complexType name="LocationType">
     <xs:annotation>
       <xs:documentation>A data type for geospatial location.</xs:documentation>
@@ -2471,10 +2490,10 @@
           <xs:element ref="nc:LocationLocale" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:LocationMapLocation" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:LocationName" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:LocationPart" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:LocationRangeDescriptionText" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:LocationRelativeLocation" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:LocationSurroundingAreaDescriptionText" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="nc:LocationFloorNumberText" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:LocationAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
       </xs:extension>
@@ -7256,7 +7275,7 @@
   </xs:element>
   <xs:element name="Facility" type="nc:FacilityType" nillable="true">
     <xs:annotation>
-      <xs:documentation>A building, place, or structure that provides a particular service.</xs:documentation>
+      <xs:documentation>A single or set of buildings, places, or structures that together provide a particular service.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="FacilityAssociation" type="nc:FacilityAssociationType" nillable="true">
@@ -8664,6 +8683,16 @@
       <xs:documentation>An augmentation point for LocationType.</xs:documentation>
     </xs:annotation>
   </xs:element>
+  <xs:element name="LocationBedText" type="nc:TextType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A bed at a location.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="LocationBuildingText" type="nc:TextType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A building at a location.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
   <xs:element name="LocationCategoryAbstract" abstract="true">
     <xs:annotation>
       <xs:documentation>A data concept for a kind or functional description of a location.</xs:documentation>
@@ -8724,9 +8753,9 @@
       <xs:documentation>An association between a location and its emergency services.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="LocationFloorNumberText" type="nc:TextType" nillable="true">
+  <xs:element name="LocationFloorText" type="nc:TextType" nillable="true">
     <xs:annotation>
-      <xs:documentation>A floor number of a location.</xs:documentation>
+      <xs:documentation>A floor at a location.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="LocationGeospatialCoordinateAbstract" abstract="true">
@@ -8789,6 +8818,21 @@
       <xs:documentation>An association between a location and an organization.</xs:documentation>
     </xs:annotation>
   </xs:element>
+  <xs:element name="LocationPart" type="nc:LocationPartType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A unit within a facility, building, or structure at a location.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="LocationPartAugmentationPoint" abstract="true">
+    <xs:annotation>
+      <xs:documentation>An augmentation point for LocationPartType.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="LocationPartText" type="nc:TextType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A name, number, or other information about a unit within a facility, building, or structure at a location.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
   <xs:element name="LocationRangeDescriptionText" type="nc:TextType" nillable="true">
     <xs:annotation>
       <xs:documentation>A description of the boundary or range of a location.</xs:documentation>
@@ -8797,6 +8841,21 @@
   <xs:element name="LocationRelativeLocation" type="nc:RelativeLocationType" nillable="true">
     <xs:annotation>
       <xs:documentation>A location identified by its proximity to another location.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="LocationRoomText" type="nc:TextType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A room at a location.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="LocationSectionText" type="nc:TextType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A section, wing, or block at a location.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="LocationSuiteText" type="nc:TextType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A suite at a location.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="LocationSurroundingAreaDescriptionText" type="nc:TextType" nillable="true">
