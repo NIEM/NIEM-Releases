@@ -5,7 +5,6 @@
   xmlns:cbrncl="http://release.niem.gov/niem/codes/cbrncl/5.0/"
   xmlns:ct="http://release.niem.gov/niem/conformanceTargets/3.0/"
   xmlns:geo="http://release.niem.gov/niem/adapters/geospatial/5.0/"
-  xmlns:j="http://release.niem.gov/niem/domains/jxdm/7.0/"
   xmlns:nc="http://release.niem.gov/niem/niem-core/5.0/"
   xmlns:niem-xs="http://release.niem.gov/niem/proxy/xsd/5.0/"
   xmlns:scr="http://release.niem.gov/niem/domains/screening/5.0/"
@@ -48,7 +47,6 @@
   </xs:annotation>
   <xs:import namespace="http://release.niem.gov/niem/adapters/geospatial/5.0/" schemaLocation="../adapters/geospatial.xsd"/>
   <xs:import namespace="http://release.niem.gov/niem/codes/cbrncl/5.0/" schemaLocation="../codes/cbrncl.xsd"/>
-  <xs:import namespace="http://release.niem.gov/niem/domains/jxdm/7.0/" schemaLocation="jxdm.xsd"/>
   <xs:import namespace="http://release.niem.gov/niem/domains/screening/5.0/" schemaLocation="screening.xsd"/>
   <xs:import namespace="http://release.niem.gov/niem/niem-core/5.0/" schemaLocation="../niem-core.xsd"/>
   <xs:import namespace="http://release.niem.gov/niem/proxy/xsd/5.0/" schemaLocation="../adapters/xml-schema-proxy.xsd"/>
@@ -387,86 +385,33 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-  <xs:complexType name="ConveyanceAugmentationType">
-    <xs:annotation>
-      <xs:documentation>A data type for additional information about a conveyance.</xs:documentation>
-    </xs:annotation>
-    <xs:complexContent>
-      <xs:extension base="structures:AugmentationType">
-        <xs:sequence>
-          <xs:element ref="cbrn:ConveyanceKindCode" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="cbrn:ConveyanceWeightDescriptionText" minOccurs="0" maxOccurs="unbounded"/>
-        </xs:sequence>
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
-  <xs:complexType name="ConveyanceConveyanceRelationshipType">
+  <xs:complexType name="ConveyanceAssociationType">
     <xs:annotation>
       <xs:documentation>A data type for a relationship between two conveyances; for example, a trailer towed by a truck, or a container on a trailer or railcar. A set of relationships in the same time period define a set of conveyances that are connected together, such as a truck towing three trailers.</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
-      <xs:extension base="cbrn:EncounterRelationshipType">
+      <xs:extension base="nc:AssociationType">
         <xs:sequence>
-          <xs:element ref="cbrn:ConveyanceRelationshipOriginID" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="cbrn:ConveyanceRelationshipTargetID" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="cbrn:ConveyanceRelationshipKindCode" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="cbrn:Conveyee" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="cbrn:Conveyor" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="cbrn:ConveyanceAssociationCategoryCode" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="cbrn:ConveyanceSequenceNumeric" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="cbrn:ConveyanceConveyanceRelationshipAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="cbrn:ConveyanceAssociationAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-  <xs:complexType name="ConveyanceOrganizationRelationshipType">
+  <xs:complexType name="ConveyanceOrganizationAssociationType">
     <xs:annotation>
       <xs:documentation>A data type for a relationship between a conveyance and an organization.</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
-      <xs:extension base="cbrn:EncounterRelationshipType">
+      <xs:extension base="nc:AssociationType">
         <xs:sequence>
-          <xs:element ref="nc:OrganizationIdentification" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="cbrn:ConveyanceIdentification" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="cbrn:ConveyanceOrganizationRelationshipKindCode" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="cbrn:ConveyanceOrganizationRelationshipAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
-        </xs:sequence>
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
-  <xs:complexType name="ConveyanceRegistrationAugmentationType">
-    <xs:annotation>
-      <xs:documentation>A data type for additional information about a conveyance registration.</xs:documentation>
-    </xs:annotation>
-    <xs:complexContent>
-      <xs:extension base="structures:AugmentationType">
-        <xs:sequence>
-          <xs:element ref="cbrn:ConveyancePrimaryColorCode" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="cbrn:ConveyanceSecondaryColorCode" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="scr:ConveyanceIdentificationCategoryCode" minOccurs="0" maxOccurs="unbounded"/>
-        </xs:sequence>
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
-  <xs:complexType name="ConveyanceRegistrationType">
-    <xs:annotation>
-      <xs:documentation>A data type for an applied augmentation for type nc:ConveyanceRegistrationType.</xs:documentation>
-    </xs:annotation>
-    <xs:complexContent>
-      <xs:extension base="j:ConveyanceRegistrationType">
-        <xs:sequence>
-          <xs:element ref="cbrn:ConveyanceRegistrationAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
-        </xs:sequence>
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
-  <xs:complexType name="ConveyanceRelatorType">
-    <xs:annotation>
-      <xs:documentation>A data type for an identifier that can be used to identify a conveyance.</xs:documentation>
-    </xs:annotation>
-    <xs:complexContent>
-      <xs:extension base="structures:ObjectType">
-        <xs:sequence>
-          <xs:element ref="nc:IdentificationID" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="nc:ItemSerialIdentification" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="cbrn:ConveyanceRelatorAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:Organization" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:Conveyance" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="cbrn:ConveyanceOrganizationAssociationCategoryCode" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="cbrn:ConveyanceOrganizationAssociationAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -755,20 +700,6 @@
           <xs:element ref="cbrn:DeviceOperatorCommentsText" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="cbrn:DeviceOperatorID" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="cbrn:EncounterDeviceOperatorCommentsAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
-        </xs:sequence>
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
-  <xs:complexType name="EncounterRelationshipType">
-    <xs:annotation>
-      <xs:documentation>A data type that provides a means to define a relationship between two objects involved in an encounter.</xs:documentation>
-    </xs:annotation>
-    <xs:complexContent>
-      <xs:extension base="structures:ObjectType">
-        <xs:sequence>
-          <xs:element ref="cbrn:RelationshipBeginDateTime" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="cbrn:RelationshipEndDateTime" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="cbrn:EncounterRelationshipAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -2145,7 +2076,7 @@
     <xs:complexContent>
       <xs:extension base="cbrn:RemarksComplexObjectType">
         <xs:sequence>
-          <xs:element ref="cbrn:ConveyanceID" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:Conveyance" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="cbrn:TraversalID" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="cbrn:TraversalBeginDateTime" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="cbrn:TraversalEndDateTime" minOccurs="0" maxOccurs="unbounded"/>
@@ -2742,9 +2673,19 @@
       <xs:documentation>An augmentation point for cbrn:ContentHeaderType.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="ConveyanceAugmentation" type="cbrn:ConveyanceAugmentationType" substitutionGroup="nc:ConveyanceAugmentationPoint" nillable="true">
+  <xs:element name="ConveyanceAssociation" type="cbrn:ConveyanceAssociationType" nillable="true">
     <xs:annotation>
-      <xs:documentation>Additional information about a tangible item that is used to transport goods and/or persons from one location to another location; e.g., ship, airplane, vehicle, train, pipeline.</xs:documentation>
+      <xs:documentation>A description of a relationship between two conveyances.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="ConveyanceAssociationAugmentationPoint" abstract="true">
+    <xs:annotation>
+      <xs:documentation>An augmentation point for cbrn:ConveyanceAssociationType.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="ConveyanceAssociationCategoryCode" type="cbrncl:ConveyanceRelationshipKindCodeType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A kind of conveyance relationship; for example, contained in/on, or connected to.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="ConveyanceBoundForCode" type="cbrncl:ConveyanceBoundForCodeType" nillable="true">
@@ -2752,89 +2693,34 @@
       <xs:documentation>A description of where a conveyance is bound for when it completes a traversal.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="ConveyanceConveyanceRelationship" type="cbrn:ConveyanceConveyanceRelationshipType" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A description of a relationship between two conveyances.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="ConveyanceConveyanceRelationshipAugmentationPoint" abstract="true">
-    <xs:annotation>
-      <xs:documentation>An augmentation point for cbrn:ConveyanceConveyanceRelationshipType.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="ConveyanceID" type="cbrn:ConveyanceRelatorType" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A unique identifier for a conveyance processed through a traversal.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="ConveyanceIdentification" type="cbrn:ConveyanceRelatorType" nillable="true">
-    <xs:annotation>
-      <xs:documentation>An Identification of the conveyance that is associated with an organization.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="ConveyanceKindCode" type="cbrncl:ConveyanceKindCodeType" nillable="true">
+  <xs:element name="ConveyanceCategoryCode" type="cbrncl:ConveyanceKindCodeType" substitutionGroup="nc:ConveyanceCategoryAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>An identifier of a kind of a conveyance.  For example: Ship, Airplane, Truck, etc.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="ConveyanceOrganizationRelationship" type="cbrn:ConveyanceOrganizationRelationshipType" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A description of a relationship between a conveyance and an organization.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="ConveyanceOrganizationRelationshipAugmentationPoint" abstract="true">
-    <xs:annotation>
-      <xs:documentation>An augmentation point for cbrn:ConveyanceOrgRelationshipType.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="ConveyanceOrganizationRelationshipKindCode" type="cbrncl:ConveyanceOrganizationRelationshipKindCodeType" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A description of the kind of relationship between a conveyance and organization.  For example, an aircraft may have an owner, operator, leasee, etc.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="ConveyancePrimaryColorCode" type="cbrncl:ConveyanceColorCodeType" nillable="true">
+  <xs:element name="ConveyanceColorPrimaryCode" type="cbrncl:ConveyanceColorCodeType" substitutionGroup="nc:ItemColorPrimaryAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A color that identifies a single, upper-most, front-most, or majority color of a conveyance.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="ConveyanceRegistration" type="cbrn:ConveyanceRegistrationType" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A conveyance's registration information.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="ConveyanceRegistrationAugmentation" type="cbrn:ConveyanceRegistrationAugmentationType" substitutionGroup="j:ConveyanceRegistrationAugmentationPoint" nillable="true">
-    <xs:annotation>
-      <xs:documentation>Additional information about the official registration of a conveyance with an authority.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="ConveyanceRegistrationAugmentationPoint" abstract="true">
-    <xs:annotation>
-      <xs:documentation>An augmentation point for cbrn:ConveyanceRegistrationType.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="ConveyanceRelationshipKindCode" type="cbrncl:ConveyanceRelationshipKindCodeType" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A kind of conveyance relationship; for example, contained in/on, or connected to.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="ConveyanceRelationshipOriginID" type="cbrn:ConveyanceRelatorType" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A unique identifier of the conveyance that is the start/origin of the relationship.  By convention, the start of the relationship is the conveyee and the end of the relationship is the conveyor; for example a trailer is conveyed by a tractor, or a container is conveyed by a vessel or a trailer.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="ConveyanceRelationshipTargetID" type="cbrn:ConveyanceRelatorType" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A unique identifier of the conveyance that is the end/target of the relationship.  By convention, the end of the relationship is the conveyor and the start of the relationship is the conveyee.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="ConveyanceRelatorAugmentationPoint" abstract="true">
-    <xs:annotation>
-      <xs:documentation>An augmentation point for cbrn:ConveyanceRelatorType.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="ConveyanceSecondaryColorCode" type="cbrncl:ConveyanceColorCodeType" nillable="true">
+  <xs:element name="ConveyanceColorSecondaryCode" type="cbrncl:ConveyanceColorCodeType" substitutionGroup="nc:ItemColorSecondaryAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A color that identifies a lower-most or rear-most color of a two-tone conveyance or a lesser color of a multi-colored conveyance.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="ConveyanceOrganizationAssociation" type="cbrn:ConveyanceOrganizationAssociationType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A description of a relationship between a conveyance and an organization.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="ConveyanceOrganizationAssociationAugmentationPoint" abstract="true">
+    <xs:annotation>
+      <xs:documentation>An augmentation point for cbrn:ConveyanceOrganizationAssociationType.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="ConveyanceOrganizationAssociationCategoryCode" type="cbrncl:ConveyanceOrganizationRelationshipKindCodeType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A description of the kind of relationship between a conveyance and organization.  For example, an aircraft may have an owner, operator, leasee, etc.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="ConveyanceSequenceNumeric" type="niem-xs:nonNegativeInteger" nillable="true">
@@ -2842,9 +2728,14 @@
       <xs:documentation>A number identifying the position of the conveyee if there is more than one associated with the same conveyor during the same period of time. For example, for a truck consisting of a tractor with two trailers, the first trailer would have a sequence number of one.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="ConveyanceWeightDescriptionText" type="nc:TextType" nillable="true">
+  <xs:element name="Conveyee" type="nc:ConveyanceType" nillable="true">
     <xs:annotation>
-      <xs:documentation>A description of conveyance weight, such as gross weight, axle weight, etc., this element is used to provide the description that is applicable to the value provided by the Conveyance weight measure.</xs:documentation>
+      <xs:documentation>A unique identifier of the conveyance that is the start/origin of the relationship.  By convention, the start of the relationship is the conveyee and the end of the relationship is the conveyor; for example a trailer is conveyed by a tractor, or a container is conveyed by a vessel or a trailer.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="Conveyor" type="nc:ConveyanceType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A unique identifier of the conveyance that is the end/target of the relationship.  By convention, the end of the relationship is the conveyor and the start of the relationship is the conveyee.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="CountDataValueList" type="cbrn:NonNegativeDoubleListType" nillable="true">
@@ -3310,16 +3201,6 @@
   <xs:element name="EncounterDeviceVersionText" type="niem-xs:string" nillable="true">
     <xs:annotation>
       <xs:documentation>An encounter device's version information.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="EncounterRelationship" type="cbrn:EncounterRelationshipType" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A description of a relationship between two objects involved in an encounter.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="EncounterRelationshipAugmentationPoint" abstract="true">
-    <xs:annotation>
-      <xs:documentation>An augmentation point for cbrn:EncounterRelationshipType.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="EnergyBoundaryValueList" type="cbrn:EnergiesKeVType" substitutionGroup="cbrn:CoefficientOrBoundaryValuesChoiceAbstract" nillable="true">

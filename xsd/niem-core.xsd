@@ -837,6 +837,7 @@
     <xs:complexContent>
       <xs:extension base="nc:ItemType">
         <xs:sequence>
+          <xs:element ref="nc:ConveyanceCategoryAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:ConveyanceCargoText" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:ConveyanceEngineQuantity" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:ConveyanceMotorizedIndicator" minOccurs="0" maxOccurs="unbounded"/>
@@ -2238,7 +2239,9 @@
           <xs:element ref="nc:ItemBinary" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:ItemBrandName" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:ItemCategoryAbstract" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="nc:ItemColorAbstract" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:ItemColorDescriptionText" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:ItemColorPrimaryAbstract" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:ItemColorSecondaryAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:ItemCurrentResaleValue" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:ItemFirstSoldYearDate" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:ItemHeightMeasure" minOccurs="0" maxOccurs="unbounded"/>
@@ -2565,6 +2568,7 @@
           <xs:element ref="nc:MeasureValueAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:MeasureCommentText" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:MeasureDate" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:MeasureDescriptionText" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:MeasureErrorAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:Measurer" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:MeasureUnitAbstract" minOccurs="0" maxOccurs="unbounded"/>
@@ -5859,12 +5863,17 @@
       <xs:documentation>A cargo or set of goods transported by a conveyance.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="ConveyanceColorPrimaryText" type="nc:TextType" substitutionGroup="nc:ItemColorAbstract" nillable="true">
+  <xs:element name="ConveyanceCategoryAbstract" abstract="true">
+    <xs:annotation>
+      <xs:documentation>A data concept for a kind of conveyance.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="ConveyanceColorPrimaryText" type="nc:TextType" substitutionGroup="nc:ItemColorPrimaryAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A single, upper-most, front-most, or majority color of a conveyance.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="ConveyanceColorSecondaryText" type="nc:TextType" substitutionGroup="nc:ItemColorAbstract" nillable="true">
+  <xs:element name="ConveyanceColorSecondaryText" type="nc:TextType" substitutionGroup="nc:ItemColorSecondaryAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A lower-most or rear-most color of a two-tone conveyance or a lesser color of a multi-colored conveyance.</xs:documentation>
     </xs:annotation>
@@ -8004,14 +8013,19 @@
       <xs:documentation>A kind of property item.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="ItemColorAbstract" abstract="true">
-    <xs:annotation>
-      <xs:documentation>A data concept for a color of an item.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="ItemColorDescriptionText" type="nc:TextType" substitutionGroup="nc:ItemColorAbstract" nillable="true">
+  <xs:element name="ItemColorDescriptionText" type="nc:TextType" nillable="true">
     <xs:annotation>
       <xs:documentation>A description of the overall color of an item.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="ItemColorPrimaryAbstract" abstract="true">
+    <xs:annotation>
+      <xs:documentation>A data concept for a primary color of an item.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="ItemColorSecondaryAbstract" abstract="true">
+    <xs:annotation>
+      <xs:documentation>A data concept for a secondary color of an item.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="ItemConditionText" type="nc:TextType" nillable="true">
@@ -8902,6 +8916,11 @@
   <xs:element name="MeasureDecimalValueList" type="nc:DecimalListType" substitutionGroup="nc:MeasureValueListAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A list of decimal measurement values, all using the same measurement method/device and of the same units.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="MeasureDescriptionText" type="nc:TextType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A description of a measure.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="MeasureDoubleRange" type="nc:DoubleRangeType" substitutionGroup="nc:MeasureRangeAbstract" nillable="true">

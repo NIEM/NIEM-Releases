@@ -49,8 +49,8 @@ Note that schema updates have been committed per issue, so issue-specific file d
 
 ### Auxiliary content
 
-- Added content from the Generic Statistical Information Model (GSIM) content as a precursor to the new Statistics domain (#155)
-- Added Controlled Unclassified Information (CUI) metadata (#156)
+- Added content from the Generic Statistical Information Model (GSIM) content as a precursor to the new Statistics domain [(#155)](https://github.com/NIEM/NIEM-Releases/issues/155)
+- Added Controlled Unclassified Information (CUI) metadata [(#156)](https://github.com/NIEM/NIEM-Releases/issues/156)
 
 ### Harmonization and QA
 
@@ -67,6 +67,7 @@ Note that schema updates have been committed per issue, so issue-specific file d
 - Harmonized biom:ImageType [(#99)](https://github.com/NIEM/NIEM-Releases/issues/99)
 - Harmonized location area elements and GML adapters [(#101)](https://github.com/NIEM/NIEM-Releases/issues/101) - *in progress*
 - Harmonized education components [(#113)](https://github.com/NIEM/NIEM-Releases/issues/113)
+- Harmonized conveyance components [(#119)](https://github.com/NIEM/NIEM-Releases/issues/119)
 - Merged scr:PersonNameAugmentation and scr:PersonNameTextAugmentation [(#77)](https://github.com/NIEM/NIEM-Releases/issues/77)
 - Moved nc:PleaCategoryCodeType to the Justice domain [(#24)](https://github.com/NIEM/NIEM-Releases/issues/24)
 - Moved additional Justice-specific types from Core to Justice [(#79)](https://github.com/NIEM/NIEM-Releases/issues/79)

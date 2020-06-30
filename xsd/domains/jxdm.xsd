@@ -1890,7 +1890,7 @@
       <xs:extension base="structures:AugmentationType">
         <xs:sequence>
           <xs:element ref="j:ConveyanceJointlyRegisteredIndicator" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="j:StateAssignedVINIndicator" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="j:ConveyanceStateAssignedVINIndicator" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -14249,12 +14249,12 @@
       <xs:documentation>Additional information about a conveyance.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="ConveyanceColorPrimaryCode" type="ncic:VCOCodeType" substitutionGroup="nc:ItemColorAbstract" nillable="true">
+  <xs:element name="ConveyanceColorPrimaryCode" type="ncic:VCOCodeType" substitutionGroup="nc:ItemColorPrimaryAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A single, upper-most, front-most, or majority color of a vehicle.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="ConveyanceColorSecondaryCode" type="ncic:VCOCodeType" substitutionGroup="nc:ItemColorAbstract" nillable="true">
+  <xs:element name="ConveyanceColorSecondaryCode" type="ncic:VCOCodeType" substitutionGroup="nc:ItemColorSecondaryAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A lower-most or rear-most color of a two-tone vehicle or a lesser color of a multi-colored vehicle.</xs:documentation>
     </xs:annotation>
@@ -14467,6 +14467,11 @@
   <xs:element name="ConveyanceRegistrationStatusDetailText" type="nc:TextType" substitutionGroup="j:ConveyanceRegistrationStatusDetailAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>An additional detail about a registration status.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="ConveyanceStateAssignedVINIndicator" type="niem-xs:boolean" nillable="true">
+    <xs:annotation>
+      <xs:documentation>True if the VIN was state assigned rather than manufacturer or owner assigned; false otherwise.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="Conviction" type="j:ConvictionType" nillable="true">
@@ -27725,11 +27730,6 @@
       <xs:documentation>A status of the staff member.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="StateAssignedVINIndicator" type="niem-xs:boolean" nillable="true">
-    <xs:annotation>
-      <xs:documentation>True if the VIN was state assigned rather than manufacturer or owner assigned; false otherwise.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
   <xs:element name="StateIndianNationCode" type="ncic:IndianCodeType" substitutionGroup="nc:StateRepresentation" nillable="true">
     <xs:annotation>
       <xs:documentation>An American Indian nation.</xs:documentation>
@@ -30795,12 +30795,12 @@
       <xs:documentation>A kind of vessel.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="VesselColorPrimaryCode" type="ncic:BCOCodeType" substitutionGroup="nc:ItemColorAbstract" nillable="true">
+  <xs:element name="VesselColorPrimaryCode" type="ncic:BCOCodeType" substitutionGroup="nc:ItemColorPrimaryAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A color of the majority of a vessel.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="VesselColorSecondaryCode" type="ncic:BCOCodeType" substitutionGroup="nc:ItemColorAbstract" nillable="true">
+  <xs:element name="VesselColorSecondaryCode" type="ncic:BCOCodeType" substitutionGroup="nc:ItemColorPrimaryAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A minor color of a vessel.</xs:documentation>
     </xs:annotation>
