@@ -35,6 +35,12 @@ Note that schema updates have been committed per issue, so issue-specific file d
   - Updated OmniClass facility codes [(#57)](https://github.com/NIEM/NIEM-Releases/issues/57)
   - Added GENC XML Schema enumerations [(#66)](https://github.com/NIEM/NIEM-Releases/issues/66)
 
+### Domains and auxiliary content
+
+- Added additional content from the Public Health Emergency Operations Center (PH-EOC) Minimum Data Set to the Emergency Management domain [(#138)](https://github.com/NIEM/NIEM-Releases/issues/138)
+- Added content from the Generic Statistical Information Model (GSIM) content as a precursor to the new Statistics domain [(#155)](https://github.com/NIEM/NIEM-Releases/issues/155)
+- Added Controlled Unclassified Information (CUI) metadata [(#156)](https://github.com/NIEM/NIEM-Releases/issues/156)
+
 ### Code Tables
 
 - Simplified namespace definitions [(#139)](https://github.com/NIEM/NIEM-Releases/issues/139)
@@ -46,11 +52,6 @@ Note that schema updates have been committed per issue, so issue-specific file d
 - Updated FBI NDEx codes [(#135)](https://github.com/NIEM/NIEM-Releases/issues/135)
 - Updated FBI UCR codes [(#136)](https://github.com/NIEM/NIEM-Releases/issues/136)
 - Updated FBI Justice domain codes [(#137)](https://github.com/NIEM/NIEM-Releases/issues/137)
-
-### Auxiliary content
-
-- Added content from the Generic Statistical Information Model (GSIM) content as a precursor to the new Statistics domain [(#155)](https://github.com/NIEM/NIEM-Releases/issues/155)
-- Added Controlled Unclassified Information (CUI) metadata [(#156)](https://github.com/NIEM/NIEM-Releases/issues/156)
 
 ### Harmonization and QA
 
@@ -108,7 +109,6 @@ Note that schema updates have been committed per issue, so issue-specific file d
 
 Additional updates are being considered or are expected for the beta draft, including:
 
-- Additional content from the Public Health Emergency Operations Center (PH-EOC) Minimum Data Set added to the Emergency Management domain
 - Code table updates, including AAMVA and GENC edition 3.0 update 11
 - Continued harmonization and QA fixes across the model
 - Harmonization of updated Model Minimum Uniform Crash Criteria (MMUCC) content with the Justice domain
