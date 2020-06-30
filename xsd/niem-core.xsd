@@ -1411,7 +1411,7 @@
           <xs:element ref="nc:DocumentRightsText" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:DocumentSensitivityAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:DocumentSequenceID" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="nc:DocumentSoftwareName" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:DocumentSoftware" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:DocumentSource" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:DocumentSourceText" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:DocumentStatus" minOccurs="0" maxOccurs="unbounded"/>
@@ -4191,15 +4191,34 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-  <xs:complexType name="SoftwareNameType">
+  <xs:complexType name="SoftwareComponentType">
     <xs:annotation>
-      <xs:documentation>A data type for a name of a computer application used to process data.</xs:documentation>
+      <xs:documentation>A data type for a component of software.</xs:documentation>
     </xs:annotation>
-    <xs:simpleContent>
-      <xs:extension base="nc:TextType">
-        <xs:attribute ref="nc:softwareVersionText" use="optional"/>
+    <xs:complexContent>
+      <xs:extension base="nc:ItemType">
+        <xs:sequence>
+          <xs:element ref="nc:SoftwareComponentVersionID" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:SoftwareComponentAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
       </xs:extension>
-    </xs:simpleContent>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="SoftwareType">
+    <xs:annotation>
+      <xs:documentation>A data type for a computer application used to process data.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="nc:ItemType">
+        <xs:sequence>
+          <xs:element ref="nc:SoftwareName" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:SoftwareDescriptionText" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:SoftwareVendorName" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:SoftwareComponent" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:SoftwareAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
   </xs:complexType>
   <xs:complexType name="SpeedMeasureType">
     <xs:annotation>
@@ -4714,11 +4733,6 @@
   <xs:attribute name="sigmaErrorValue" type="xs:decimal">
     <xs:annotation>
       <xs:documentation>A magnitude of a one-sigma deviation of a normal (Gaussian) distribution followed by the true value of the quantity.</xs:documentation>
-    </xs:annotation>
-  </xs:attribute>
-  <xs:attribute name="softwareVersionText" type="xs:string">
-    <xs:annotation>
-      <xs:documentation>A version of a computer application.</xs:documentation>
     </xs:annotation>
   </xs:attribute>
   <xs:attribute name="toleranceNumeric" type="xs:decimal">
@@ -6851,7 +6865,7 @@
       <xs:documentation>An identifier that determines the document order in a set of related documents.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="DocumentSoftwareName" type="nc:SoftwareNameType" nillable="true">
+  <xs:element name="DocumentSoftware" type="nc:SoftwareType" nillable="true">
     <xs:annotation>
       <xs:documentation>A name of a computer application used to process a document.</xs:documentation>
     </xs:annotation>
@@ -11956,9 +11970,49 @@
       <xs:documentation>A comment or other information about a site that may be of importance to a responder.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="SoftwareName" type="nc:SoftwareNameType" nillable="true">
+  <xs:element name="Software" type="nc:SoftwareType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A computer application used to process data.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="SoftwareAugmentationPoint" abstract="true">
+    <xs:annotation>
+      <xs:documentation>An augmentation point for type nc:SoftwareType</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="SoftwareComponent" type="nc:SoftwareComponentType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A component of software.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="SoftwareComponentAugmentationPoint" abstract="true">
+    <xs:annotation>
+      <xs:documentation>An augmentation point for type nc:SoftwareComponentType</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="SoftwareComponentVersionID" type="niem-xs:string" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A version identifier for a software component.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="SoftwareDescriptionText" type="nc:TextType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A description of software.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="SoftwareName" type="nc:TextType" nillable="true">
     <xs:annotation>
       <xs:documentation>A name of a computer application used to process data.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="SoftwareVendorName" type="nc:TextType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A name of an organization that makes and sells software.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="SoftwareVersionText" type="nc:TextType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A version of a computer application.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="SourceContactPersonText" type="nc:TextType" nillable="true">

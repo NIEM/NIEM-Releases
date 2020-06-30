@@ -72,6 +72,7 @@ Note that schema updates have been committed per issue, so issue-specific file d
 - Harmonized location area elements and GML adapters [(#101)](https://github.com/NIEM/NIEM-Releases/issues/101) - *in progress*
 - Harmonized education components [(#113)](https://github.com/NIEM/NIEM-Releases/issues/113)
 - Harmonized item components [(#115)](https://github.com/NIEM/NIEM-Releases/issues/115)
+- Refactored software components [(#118)](https://github.com/NIEM/NIEM-Releases/issues/118)
 - Harmonized conveyance components [(#119)](https://github.com/NIEM/NIEM-Releases/issues/119)
 - Harmonized vehicle components [(#122)](https://github.com/NIEM/NIEM-Releases/issues/122)
 - Harmonized document components and added a new ReportType [(#129)](https://github.com/NIEM/NIEM-Releases/issues/129)

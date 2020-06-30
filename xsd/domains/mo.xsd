@@ -286,7 +286,7 @@
           <xs:element ref="mo:DeviceHardwareVersionID" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="mo:DeviceLocatedSectorName" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="mo:DeviceConfiguration" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="mo:DeviceSoftwareName" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="mo:DeviceSoftware" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="mo:DevicePresetConfiguration" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
       </xs:extension>
@@ -2647,7 +2647,7 @@
       <xs:documentation>A set of information about the original configuration of a device.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="DeviceSoftwareName" type="nc:SoftwareNameType" nillable="true">
+  <xs:element name="DeviceSoftware" type="nc:SoftwareType" nillable="true">
     <xs:annotation>
       <xs:documentation>A name of a piece of software on a device.</xs:documentation>
     </xs:annotation>

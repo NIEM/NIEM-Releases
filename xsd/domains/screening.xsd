@@ -21154,20 +21154,6 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-  <xs:complexType name="SoftwareDetailType">
-    <xs:annotation>
-      <xs:documentation>A data type that specifies the details of capture software</xs:documentation>
-    </xs:annotation>
-    <xs:complexContent>
-      <xs:extension base="structures:ObjectType">
-        <xs:sequence>
-          <xs:element ref="scr:SoftwareVendorNameText" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="scr:SoftwareVersionNumberID" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="scr:SoftwareDetailAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
-        </xs:sequence>
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
   <xs:complexType name="StateAugmentationType">
     <xs:annotation>
       <xs:documentation>A data type for additional information about a state.</xs:documentation>
@@ -22293,7 +22279,7 @@
       <xs:documentation>A duration for the specific range of capture time.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="CaptureSoftwareDetails" type="scr:SoftwareDetailType" nillable="true">
+  <xs:element name="CaptureSoftware" type="nc:SoftwareType" nillable="true">
     <xs:annotation>
       <xs:documentation>A text that describes the details of Capture Software</xs:documentation>
     </xs:annotation>
@@ -22358,7 +22344,7 @@
       <xs:documentation>A kind of authorized stay duration basis specified in the CLASS OF ADMISSION DURATION BASIS TYPE.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="ClientApplicationSoftware" type="scr:SoftwareDetailType" nillable="true">
+  <xs:element name="ClientApplicationSoftware" type="nc:SoftwareType" nillable="true">
     <xs:annotation>
       <xs:documentation>A data type that specifies client application software information</xs:documentation>
     </xs:annotation>
@@ -22918,7 +22904,7 @@
       <xs:documentation>True if a legal hard copy of the BIOMETRIC IMAGE containing the patterns or ridges on the pad of a human finger exists; false otherwise.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="FingerprintCompressionSoftware" type="scr:SoftwareDetailType" nillable="true">
+  <xs:element name="FingerprintCompressionSoftware" type="nc:SoftwareType" nillable="true">
     <xs:annotation>
       <xs:documentation>A data type that specifies fingerprint compression software information</xs:documentation>
     </xs:annotation>
@@ -23063,12 +23049,12 @@
       <xs:documentation>An augmentation point for ImageFeatureExtractionType.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="ImageFeatureExtractionSoftware" type="scr:SoftwareDetailType" nillable="true">
+  <xs:element name="ImageFeatureExtractionSoftware" type="nc:SoftwareType" nillable="true">
     <xs:annotation>
       <xs:documentation>An Image feature extraction information</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="ImageQualitySoftware" type="scr:SoftwareDetailType" nillable="true">
+  <xs:element name="ImageQualitySoftware" type="nc:SoftwareType" nillable="true">
     <xs:annotation>
       <xs:documentation>An Image Capture Software information</xs:documentation>
     </xs:annotation>
@@ -23078,7 +23064,7 @@
       <xs:documentation>True if biometric images are concatenated; false otherwise.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="ImageSegmentationSoftware" type="scr:SoftwareDetailType" nillable="true">
+  <xs:element name="ImageSegmentationSoftware" type="nc:SoftwareType" nillable="true">
     <xs:annotation>
       <xs:documentation>A data type that specifies image segmentation software information</xs:documentation>
     </xs:annotation>
@@ -24116,21 +24102,6 @@
   <xs:element name="SmuggledMethodCategoryText" type="nc:TextType" nillable="true">
     <xs:annotation>
       <xs:documentation>A kind of method used to smuggle the alien into the United States.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="SoftwareDetailAugmentationPoint" abstract="true">
-    <xs:annotation>
-      <xs:documentation>An augmentation point for SoftwareDetailType.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="SoftwareVendorNameText" type="nc:TextType" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A text that specifies the software code vendor name</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="SoftwareVersionNumberID" type="niem-xs:string" nillable="true">
-    <xs:annotation>
-      <xs:documentation>An identifier for the software vendor code version number.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="SoundexIndexValueText" type="niem-xs:string" nillable="true">
