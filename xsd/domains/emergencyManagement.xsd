@@ -2840,102 +2840,6 @@
       </xs:extension>
     </xs:simpleContent>
   </xs:complexType>
-  <xs:complexType name="DocumentAugmentationType">
-    <xs:annotation>
-      <xs:documentation>A data type for additional information about a document.</xs:documentation>
-    </xs:annotation>
-    <xs:complexContent>
-      <xs:extension base="structures:AugmentationType">
-        <xs:sequence>
-          <xs:element ref="em:DocumentTemplateCategoryAbstract" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="em:DocumentText" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="em:DocumentAssignee" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="em:DocumentCoverageDateRange" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="em:DocumentNextDueDate" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="em:DocumentReportFrequencyAbstract" minOccurs="0" maxOccurs="unbounded"/>
-        </xs:sequence>
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
-  <xs:simpleType name="DocumentReportFrequencyCodeSimpleType">
-    <xs:annotation>
-      <xs:documentation>A data type for a frequency or period for which a recurring document is published.</xs:documentation>
-    </xs:annotation>
-    <xs:restriction base="xs:token">
-      <xs:enumeration value="1">
-        <xs:annotation>
-          <xs:documentation>Adhoc</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="2">
-        <xs:annotation>
-          <xs:documentation>Daily</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="3">
-        <xs:annotation>
-          <xs:documentation>Weekly</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="4">
-        <xs:annotation>
-          <xs:documentation>Monthly</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-    </xs:restriction>
-  </xs:simpleType>
-  <xs:complexType name="DocumentReportFrequencyCodeType">
-    <xs:annotation>
-      <xs:documentation>A data type for a frequency or period for which a recurring document is published.</xs:documentation>
-    </xs:annotation>
-    <xs:simpleContent>
-      <xs:extension base="em:DocumentReportFrequencyCodeSimpleType">
-        <xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
-      </xs:extension>
-    </xs:simpleContent>
-  </xs:complexType>
-  <xs:simpleType name="DocumentTemplateCategoryCodeSimpleType">
-    <xs:annotation>
-      <xs:documentation>A data type for a kind of template for a document.</xs:documentation>
-    </xs:annotation>
-    <xs:restriction base="xs:token">
-      <xs:enumeration value="1">
-        <xs:annotation>
-          <xs:documentation>First 48 Hours Checklist</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="2">
-        <xs:annotation>
-          <xs:documentation>Immediate Response Checklist</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="3">
-        <xs:annotation>
-          <xs:documentation>CERC Message Template</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="4">
-        <xs:annotation>
-          <xs:documentation>CERC Plan Checklist</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="5">
-        <xs:annotation>
-          <xs:documentation>New Release Template</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-    </xs:restriction>
-  </xs:simpleType>
-  <xs:complexType name="DocumentTemplateCategoryCodeType">
-    <xs:annotation>
-      <xs:documentation>A data type for a kind of template for a document.</xs:documentation>
-    </xs:annotation>
-    <xs:simpleContent>
-      <xs:extension base="em:DocumentTemplateCategoryCodeSimpleType">
-        <xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
-      </xs:extension>
-    </xs:simpleContent>
-  </xs:complexType>
   <xs:simpleType name="DrainageNavigationMaterialCodeSimpleType">
     <xs:annotation>
       <xs:documentation>A data type for the common types of material used to construct drainage basins or navigable waterways</xs:documentation>
@@ -6234,6 +6138,85 @@ National Institutes of Health, National Heart, Lung, and Blood Institute</xs:doc
     </xs:annotation>
     <xs:simpleContent>
       <xs:extension base="em:RecoveryProgramCategoryCodeSimpleType">
+        <xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:simpleType name="ReportFrequencyCodeSimpleType">
+    <xs:annotation>
+      <xs:documentation>A data type for a frequency or period for which a recurring report is published.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="1">
+        <xs:annotation>
+          <xs:documentation>Adhoc</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="2">
+        <xs:annotation>
+          <xs:documentation>Daily</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="3">
+        <xs:annotation>
+          <xs:documentation>Weekly</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="4">
+        <xs:annotation>
+          <xs:documentation>Monthly</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="ReportFrequencyCodeType">
+    <xs:annotation>
+      <xs:documentation>A data type for a frequency or period for which a recurring report is published.</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="em:ReportFrequencyCodeSimpleType">
+        <xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:simpleType name="ReportTemplateCategoryCodeSimpleType">
+    <xs:annotation>
+      <xs:documentation>A data type for a kind of template for a report.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="1">
+        <xs:annotation>
+          <xs:documentation>First 48 Hours Checklist</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="2">
+        <xs:annotation>
+          <xs:documentation>Immediate Response Checklist</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="3">
+        <xs:annotation>
+          <xs:documentation>CERC Message Template</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="4">
+        <xs:annotation>
+          <xs:documentation>CERC Plan Checklist</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="5">
+        <xs:annotation>
+          <xs:documentation>New Release Template</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="ReportTemplateCategoryCodeType">
+    <xs:annotation>
+      <xs:documentation>A data type for a kind of template for a report.</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="em:ReportTemplateCategoryCodeSimpleType">
         <xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
       </xs:extension>
     </xs:simpleContent>
@@ -11423,61 +11406,6 @@ National Institutes of Health, National Heart, Lung, and Blood Institute</xs:doc
       <xs:documentation>An element for the name of the facility debris will be disposed of at. Local landfill, etc.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="DocumentAssignee" type="nc:PersonType" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A person responsible for generating or developing a document.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="DocumentAugmentation" type="em:DocumentAugmentationType" substitutionGroup="nc:DocumentAugmentationPoint" nillable="true">
-    <xs:annotation>
-      <xs:documentation>Additional information about a document.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="DocumentCoverageDateRange" type="nc:DateRangeType" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A period of time covered by a document.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="DocumentNextDueDate" type="nc:DateType" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A due date for the next report.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="DocumentReportFrequencyAbstract" abstract="true">
-    <xs:annotation>
-      <xs:documentation>A data concept for a frequency or period for which a recurring document is published.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="DocumentReportFrequencyCode" type="em:DocumentReportFrequencyCodeType" substitutionGroup="em:DocumentReportFrequencyAbstract" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A frequency or period for which a recurring document is published.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="DocumentReportFrequencyText" type="nc:TextType" substitutionGroup="em:DocumentReportFrequencyAbstract" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A frequency or period for which a recurring document is published.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="DocumentTemplateCategoryAbstract" abstract="true">
-    <xs:annotation>
-      <xs:documentation>A data concept for a kind of template for a document.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="DocumentTemplateCategoryCode" type="em:DocumentTemplateCategoryCodeType" substitutionGroup="em:DocumentTemplateCategoryAbstract" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A kind of template for a document.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="DocumentTemplateCategoryText" type="nc:TextType" substitutionGroup="em:DocumentTemplateCategoryAbstract" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A kind of template for a document.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="DocumentText" type="nc:TextType" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A text or contents of a document.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
   <xs:element name="DrainageNavigationMaterialCode" type="em:DrainageNavigationMaterialCodeType" nillable="true">
     <xs:annotation>
       <xs:documentation>An element for the common types of material used to construct drainage basins or navigable waterways</xs:documentation>
@@ -13103,7 +13031,7 @@ National Institutes of Health, National Heart, Lung, and Blood Institute</xs:doc
       <xs:documentation>A kind of identification type of a person</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="PersonPublication" type="j:PublicationType" nillable="true">
+  <xs:element name="PersonPublication" type="nc:PublicationType" nillable="true">
     <xs:annotation>
       <xs:documentation>A data element for the publication done by a person</xs:documentation>
     </xs:annotation>
@@ -13393,6 +13321,11 @@ National Institutes of Health, National Heart, Lung, and Blood Institute</xs:doc
       <xs:documentation>A name or identity of the report creator</xs:documentation>
     </xs:annotation>
   </xs:element>
+  <xs:element name="ReportFrequencyCode" type="em:ReportFrequencyCodeType" substitutionGroup="nc:ReportFrequencyAbstract" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A frequency or period for which a recurring report is published.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
   <xs:element name="ReportID" type="em:OtherTextType" nillable="true">
     <xs:annotation>
       <xs:documentation>An identifier for this report</xs:documentation>
@@ -13401,6 +13334,11 @@ National Institutes of Health, National Heart, Lung, and Blood Institute</xs:doc
   <xs:element name="ReportingInstructionsText" type="nc:TextType" nillable="true">
     <xs:annotation>
       <xs:documentation>A name of the party that the requested item is to report to when they arrive at the incident</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="ReportTemplateCategoryCode" type="em:ReportTemplateCategoryCodeType" substitutionGroup="nc:ReportTemplateCategoryAbstract" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A kind of template for a report.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="ReportToLocation" type="nc:LocationType" nillable="true">

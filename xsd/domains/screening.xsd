@@ -21142,7 +21142,6 @@
     <xs:complexContent>
       <xs:extension base="scr:TravelDocumentType">
         <xs:sequence>
-          <xs:element ref="nc:DocumentIssueDate" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="scr:ScreeningTECSRecordInformation" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:Image" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:PersonSexAbstract" minOccurs="0" maxOccurs="unbounded"/>
@@ -21350,7 +21349,6 @@
     <xs:complexContent>
       <xs:extension base="nc:DocumentType">
         <xs:sequence>
-          <xs:element ref="scr:RoleOfDocument" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="scr:TravelDocumentReceivedDate" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="scr:TravelDocumentRequestedDate" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="scr:TravelDocumentRefusedDate" minOccurs="0" maxOccurs="unbounded"/>
@@ -23998,11 +23996,6 @@
   <xs:element name="RemovalOrderDate" type="nc:DateType" nillable="true">
     <xs:annotation>
       <xs:documentation>A date on which the order of deportation, exclusion or removal was entered.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="RoleOfDocument" type="nc:DocumentType" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A role of a document.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="ScreenedAlien" type="scr:ScreenedAlienType" nillable="true">

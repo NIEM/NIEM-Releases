@@ -28,6 +28,7 @@
       <appinfo:LocalTerm term="IPv6" literal="Internet Protocol version 6"/>
       <appinfo:LocalTerm term="ISO" literal="International Organization for Standardization"/>
       <appinfo:LocalTerm term="ISO3166" definition="ISO 3166 is a standard published by the International Organization for Standardization (ISO) that defines codes for the names of countries, dependent territories, special areas of geographical interest, and their principal subdivisions (e.g., provinces or states). The official name of the standard is Codes for the representation of names of countries and their subdivisions."/>
+      <appinfo:LocalTerm term="ISSN" literal="International Standard Serial Number"/>
       <appinfo:LocalTerm term="MAC" literal="media access control address"/>
       <appinfo:LocalTerm term="MSRP" literal="Manufacturer's suggested retail price"/>
       <appinfo:LocalTerm term="NANP" literal="North American Numbering Plan"/>
@@ -1351,20 +1352,6 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-  <xs:complexType name="DocumentStatusDetailsType">
-    <xs:annotation>
-      <xs:documentation>A data type for the classification of status of a document.</xs:documentation>
-    </xs:annotation>
-    <xs:complexContent>
-      <xs:extension base="structures:ObjectType">
-        <xs:sequence>
-          <xs:element ref="nc:DocumentStatusCategoryAbstract" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="nc:DocumentStatusDescriptionText" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="nc:DocumentStatusDetailsAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
-        </xs:sequence>
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
   <xs:complexType name="DocumentType">
     <xs:annotation>
       <xs:documentation>A data type for a paper or electronic document.</xs:documentation>
@@ -1372,17 +1359,16 @@
     <xs:complexContent>
       <xs:extension base="structures:ObjectType">
         <xs:sequence>
-          <xs:element ref="nc:DocumentCategoryAbstract" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="nc:DocumentSensitivityAbstract" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="nc:CaveatText" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="nc:DocumentAlternativeTitleText" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="nc:DocumentSoftwareName" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:DocumentApprovedIndicator" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="nc:DocumentBinary" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:DocumentAuthor" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:DocumentCategoryAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:DocumentCategoryDescriptionText" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:DocumentContentAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:DocumentContentListText" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:DocumentContributor" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:DocumentCopyrightIndicator" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:DocumentCountry" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:DocumentCoverageAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:DocumentCreationDate" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:DocumentDescriptionText" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:DocumentDispositionAuthorityName" minOccurs="0" maxOccurs="unbounded"/>
@@ -1391,17 +1377,22 @@
           <xs:element ref="nc:DocumentDisputedReasonText" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:DocumentEffectiveDate" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:DocumentEntrySubmitter" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:DocumentEUDataPrivacyIndicator" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:DocumentExpirationDate" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:DocumentFileControlID" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:DocumentFiledDate" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:DocumentFileExtensionText" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:DocumentFileName" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:DocumentFormatCategoryText" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:DocumentFormatText" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:DocumentGroupID" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:DocumentIdentification" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:DocumentInformationCutOffDate" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:DocumentIntelligenceCategoryAbstract" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:DocumentIssuanceLocation" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:DocumentIssueDate" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:DocumentKeywordText" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:DocumentLanguageAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:DocumentLastModifiedDate" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:DocumentLocation" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:DocumentLocationURI" minOccurs="0" maxOccurs="unbounded"/>
@@ -1417,26 +1408,21 @@
           <xs:element ref="nc:DocumentRecipient" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:DocumentRelatedResourceText" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:DocumentRightsText" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:DocumentSensitivityAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:DocumentSequenceID" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:DocumentSoftwareName" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:DocumentSource" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:DocumentSourceText" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:DocumentStatus" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:DocumentStatusCategoryAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:DocumentSubjectAbstract" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="nc:DocumentSummaryText" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="nc:DocumentSupplementalMarkingText" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="nc:DocumentTitleText" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="nc:DocumentVitalIndicator" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="nc:DocumentAuthor" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="nc:DocumentContributor" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="nc:DocumentCoverageAbstract" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="nc:DocumentFormatCategoryText" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="nc:DocumentLanguageAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:DocumentSubmissionAmount" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:DocumentSubmitter" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="nc:DocumentIssuanceDate" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="nc:DocumentStatusDetails" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="nc:DocumentIssuanceLocation" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="nc:DocumentEUDataPrivacyIndicator" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:DocumentSummaryText" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:DocumentSupplementalMarkingText" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:DocumentTitleAlternativeText" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:DocumentTitleText" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:DocumentVitalIndicator" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:DocumentAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
       </xs:extension>
@@ -3850,6 +3836,26 @@
       <xs:extension base="nc:TextType"/>
     </xs:simpleContent>
   </xs:complexType>
+  <xs:complexType name="PublicationType">
+    <xs:annotation>
+      <xs:documentation>A data type for a collection of written, printed, illustrated, or blank sheets, made of paper, parchment, or other material, usually fastened together to hinge at one side.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="structures:ObjectType">
+        <xs:sequence>
+          <xs:element ref="nc:RoleOfDocument" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:PublicationAuthorText" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:PublicationISBNID" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:PublicationISSNID" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:PublicationLibraryClassificationIdentification" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:PublicationPublisherText" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:PublicationSubjectText" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:PublicationTitleText" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:PublicationAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
   <xs:complexType name="PublicServiceType">
     <xs:annotation>
       <xs:documentation>A data type for a set of deeds and acts performed by or on behalf of a public agency for the benefit of a citizen, a business or another public agency.</xs:documentation>
@@ -4039,6 +4045,24 @@
           <xs:element ref="nc:ReleaseToLocation" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:ReleaseSupervisor" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:ReleaseAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="ReportType">
+    <xs:annotation>
+      <xs:documentation>A data type for an account given of a particular matter, especially in the form of an official document, after thorough investigation or consideration by an appointed person or body.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="structures:ObjectType">
+        <xs:sequence>
+          <xs:element ref="nc:RoleOfDocument" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:ReportAssignee" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:ReportCoverageDateRange" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:ReportDueDate" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:ReportFrequencyAbstract" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:ReportTemplateCategoryAbstract" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:ReportAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -6506,11 +6530,6 @@
       <xs:documentation>A paper or electronic document.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="DocumentAlternativeTitleText" type="nc:TextType" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A title used as a substitute or alternative to the formal title of a document.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
   <xs:element name="DocumentApprovedIndicator" type="niem-xs:boolean" nillable="true">
     <xs:annotation>
       <xs:documentation>True if a document has been approved; false otherwise.</xs:documentation>
@@ -6536,7 +6555,7 @@
       <xs:documentation>An entity primarily responsible for creating the intellectual content of the resource.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="DocumentBinary" type="nc:BinaryType" nillable="true">
+  <xs:element name="DocumentBinary" type="nc:BinaryType" substitutionGroup="nc:DocumentContentAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A binary encoding of the content of a document.</xs:documentation>
     </xs:annotation>
@@ -6564,6 +6583,11 @@
   <xs:element name="DocumentCategoryText" type="nc:TextType" substitutionGroup="nc:DocumentCategoryAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A kind of document; a nature or genre of the content.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="DocumentContentAbstract" abstract="true">
+    <xs:annotation>
+      <xs:documentation>A data concept for the content of a document.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="DocumentContentListText" type="nc:TextType" nillable="true">
@@ -6704,11 +6728,6 @@
   <xs:element name="DocumentIntelligenceCategoryAbstract" abstract="true">
     <xs:annotation>
       <xs:documentation>A data concept for a nature or genre of the resource.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="DocumentIssuanceDate" type="nc:DateType" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A date a document was issued.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="DocumentIssuanceLocation" type="nc:LocationType" nillable="true">
@@ -6856,21 +6875,6 @@
       <xs:documentation>A data concept for a kind of status of a document.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="DocumentStatusDescriptionText" type="nc:TextType" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A description of the document status.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="DocumentStatusDetails" type="nc:DocumentStatusDetailsType" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A classification of status of a document.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="DocumentStatusDetailsAugmentationPoint" abstract="true">
-    <xs:annotation>
-      <xs:documentation>An augmentation point for DocumentStatusDetailsType.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
   <xs:element name="DocumentSubjectAbstract" abstract="true">
     <xs:annotation>
       <xs:documentation>A data concept for a subject code systems used and the appropriate subject code assigned to the document.</xs:documentation>
@@ -6899,6 +6903,16 @@
   <xs:element name="DocumentSupplementalMarkingText" type="nc:TextType" nillable="true">
     <xs:annotation>
       <xs:documentation>A marking made on a document that is not part of the original content and that was added after a document was finalized.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="DocumentText" type="nc:TextType" substitutionGroup="nc:DocumentContentAbstract" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A text or contents of a document.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="DocumentTitleAlternativeText" type="nc:TextType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A title used as a substitute or alternative to the formal title of a document.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="DocumentTitleText" type="nc:TextType" nillable="true">
@@ -11111,6 +11125,66 @@
       <xs:documentation>A quantity of time spent towards completion of a requirement.</xs:documentation>
     </xs:annotation>
   </xs:element>
+  <xs:element name="Publication" type="nc:PublicationType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A collection of written, printed, illustrated, or blank sheets, made of paper, parchment, or other material, usually fastened together to hinge at one side.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="PublicationAugmentationPoint" abstract="true">
+    <xs:annotation>
+      <xs:documentation>An augmentation point for PublicationType.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="PublicationAuthorText" type="nc:TextType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A person who originates or gives existence to a publication.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="PublicationDate" type="nc:DateType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A date of a publication</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="PublicationISBNID" type="niem-xs:string" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A unique, numerical, commercial book identifier.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="PublicationISSNID" type="niem-xs:string" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A unique, numerical, commercial periodical publication identifier.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="PublicationLibraryClassificationIdentification" type="nc:IdentificationType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A unique identification of a publication assigned by a library to classify, organize, and track publications, e.g. Dewey Decimal System Number.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="PublicationPageText" type="nc:TextType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A data element for page or page numbers on which a publication is appeared in a periodical</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="PublicationPublisherText" type="nc:TextType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>An owner of the copyright for the publication.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="PublicationSubjectText" type="nc:TextType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>An area of knowledge.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="PublicationSubscriberPersonAssociation" type="nc:ItemEntityAssociationType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A relationship between a person and a publication they subscribe to, or have read or are reading.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="PublicationTitleText" type="nc:TextType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A name given to a publication.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
   <xs:element name="PublicService" type="nc:PublicServiceType" nillable="true">
     <xs:annotation>
       <xs:documentation>A set of deeds and acts performed by or on behalf of a public agency for the benefit of a citizen, a business or another public agency.</xs:documentation>
@@ -11481,9 +11555,44 @@
       <xs:documentation>A location to which someone or something is released.</xs:documentation>
     </xs:annotation>
   </xs:element>
+  <xs:element name="Report" type="nc:ReportType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>An account given of a particular matter, especially in the form of an official document, after thorough investigation or consideration by an appointed person or body.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="ReportAssignee" type="nc:PersonType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A person responsible for generating or developing a document.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="ReportAugmentationPoint" abstract="true">
+    <xs:annotation>
+      <xs:documentation>An augmentation point for ReportType.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="ReportCoverageDateRange" type="nc:DateRangeType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A period of time covered by a document.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="ReportDueDate" type="nc:DateType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A due date for the next report.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
   <xs:element name="ReportedDate" type="nc:DateType" nillable="true">
     <xs:annotation>
       <xs:documentation>A date information was observed, measured, identified, or became known.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="ReportFrequencyAbstract" abstract="true">
+    <xs:annotation>
+      <xs:documentation>A data concept for a frequency or period for which a recurring report is published.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="ReportFrequencyText" type="nc:TextType" substitutionGroup="nc:ReportFrequencyAbstract" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A frequency or period for which a recurring report is published.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="ReportingOrganizationText" type="nc:TextType" nillable="true">
@@ -11499,6 +11608,16 @@
   <xs:element name="ReportingPersonText" type="nc:TextType" nillable="true">
     <xs:annotation>
       <xs:documentation>A name, identifier, or reference of a person who provided the information.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="ReportTemplateCategoryAbstract" abstract="true">
+    <xs:annotation>
+      <xs:documentation>A data concept for a kind of template for a report.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="ReportTemplateCategoryText" type="nc:TextType" substitutionGroup="nc:ReportTemplateCategoryAbstract" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A kind of template for a report.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="RepositoryID" type="niem-xs:string" nillable="true">
@@ -11604,6 +11723,11 @@
   <xs:element name="RoleOfAbstract" abstract="true">
     <xs:annotation>
       <xs:documentation>A data concept for a property of a role object. This specifies the base object, of which the role object is a function.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="RoleOfDocument" type="nc:DocumentType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A document of whom the role object is a function.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="RoleOfItem" type="nc:ItemType" substitutionGroup="nc:RoleOfAbstract" nillable="true">

@@ -65,7 +65,6 @@
       <appinfo:LocalTerm term="IBIS" literal="Integrated Ballistic Identification System"/>
       <appinfo:LocalTerm term="ICC" literal="Interstate Commerce Commission"/>
       <appinfo:LocalTerm term="ISBN" literal="International Standard Book Number"/>
-      <appinfo:LocalTerm term="ISSN" literal="International Standard Serial Number"/>
       <appinfo:LocalTerm term="JABS" literal="JABS" definition="Joint Automated Booking System"/>
       <appinfo:LocalTerm term="Keyhea" definition="Under the Keyhea injunction, 'involuntary medication' cannot be administered to a state prisoner for more than three days unless the professional staff of the facility in which the prisoner is incarcerated has analyzed the prisoner's condition and found that the prisoner is, as a result of a mental disorder, 'gravely disabled and incompetent to refuse medication or a danger to others, or a danger to self,' and the prisoner has been 'advised of the need for, but has not been willing to accept medication on a voluntary basis.'"/>
       <appinfo:LocalTerm term="LEOKA" literal="Law Enforcement Officer Killed or Assaulted"/>
@@ -2922,12 +2921,12 @@
     <xs:complexContent>
       <xs:extension base="structures:AugmentationType">
         <xs:sequence>
-          <xs:element ref="j:ParoleIndicator" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="j:ProbationIndicator" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="j:CorrectionalInstituteIndicator" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="j:DocumentAmendedIndicator" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="j:DocumentApprovedDate" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="j:DocumentComment" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="j:DocumentCorrectionalInstituteIndicator" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="j:DocumentParoleIndicator" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="j:DocumentProbationIndicator" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="j:DocumentReviewDate" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="j:DocumentSignature" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
@@ -8826,25 +8825,6 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-  <xs:complexType name="PublicationType">
-    <xs:annotation>
-      <xs:documentation>A data type for a collection of written, printed, illustrated, or blank sheets, made of paper, parchment, or other material, usually fastened together to hinge at one side.</xs:documentation>
-    </xs:annotation>
-    <xs:complexContent>
-      <xs:extension base="nc:ItemType">
-        <xs:sequence>
-          <xs:element ref="j:PublicationAuthorText" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="j:PublicationISBNID" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="j:PublicationISSNID" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="j:PublicationLibraryClassificationIdentification" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="j:PublicationPublisherText" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="j:PublicationSubjectText" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="j:PublicationTitleText" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="j:PublicationAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
-        </xs:sequence>
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
   <xs:complexType name="RapSheetCycleType">
     <xs:annotation>
       <xs:documentation>A data type for a criminal history cycle, based upon a fingerprint submission that either establishes the subject record or positively identifies the current submission to the existing subject record.</xs:documentation>
@@ -14540,11 +14520,6 @@
       <xs:documentation>An augmentation point for CorrectionalFacilityType.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="CorrectionalInstituteIndicator" type="niem-xs:boolean" nillable="true">
-    <xs:annotation>
-      <xs:documentation>True if a the document is associated with a Correctional Institute; false otherwise.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
   <xs:element name="Corrections" type="nc:SupervisionType" nillable="true">
     <xs:annotation>
       <xs:documentation>An involvement of an agency or facility with the custody, confinement, supervision, or treatment of alleged or adjudicated offenders.</xs:documentation>
@@ -16140,6 +16115,11 @@
       <xs:documentation>A comment about or a description of the allocation.</xs:documentation>
     </xs:annotation>
   </xs:element>
+  <xs:element name="DocumentCorrectionalInstituteIndicator" type="niem-xs:boolean" nillable="true">
+    <xs:annotation>
+      <xs:documentation>True if a the document is associated with a Correctional Institute; false otherwise.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
   <xs:element name="DocumentCourtAssociation" type="j:DocumentCourtAssociationType" nillable="true">
     <xs:annotation>
       <xs:documentation>An association between a document and a court.</xs:documentation>
@@ -16178,6 +16158,16 @@
   <xs:element name="DocumentLocationAssociationAugmentationPoint" abstract="true">
     <xs:annotation>
       <xs:documentation>An augmentation point for DocumentLocationAssociationType.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="DocumentParoleIndicator" type="niem-xs:boolean" nillable="true">
+    <xs:annotation>
+      <xs:documentation>True if a the document is associated with a Parole; false otherwise.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="DocumentProbationIndicator" type="niem-xs:boolean" nillable="true">
+    <xs:annotation>
+      <xs:documentation>True if a the document is associated with a Probation; false otherwise.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="DocumentReviewDate" type="nc:DateType" nillable="true">
@@ -16517,7 +16507,7 @@
   </xs:element>
   <xs:element name="DriverLicenseHMEThreatText" type="nc:TextType" substitutionGroup="j:DriverLicenseHMEThreatAbstract" nillable="true">
     <xs:annotation>
-      <xs:documentation>A determination if a driver should be issued a HAZMAT Endorsement, as determined by the TSA adjudication process. 
+      <xs:documentation>A determination if a driver should be issued a HAZMAT Endorsement, as determined by the TSA adjudication process.
 </xs:documentation>
     </xs:annotation>
   </xs:element>
@@ -23811,11 +23801,6 @@
       <xs:documentation>A kind of reason that parole hold was retained for the parolee.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="ParoleIndicator" type="niem-xs:boolean" nillable="true">
-    <xs:annotation>
-      <xs:documentation>True if a the document is associated with a Parole; false otherwise.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
   <xs:element name="ParoleOfficer" type="nc:PersonType" nillable="true">
     <xs:annotation>
       <xs:documentation>A staff member responsible for the supervision of a subject's parole.</xs:documentation>
@@ -25701,11 +25686,6 @@
       <xs:documentation>A judicial requirement that a person fulfill certain conditions of behavior in lieu of jail time.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="ProbationIndicator" type="niem-xs:boolean" nillable="true">
-    <xs:annotation>
-      <xs:documentation>True if a the document is associated with a Probation; false otherwise.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
   <xs:element name="ProgramActivity" type="nc:ActivityType" nillable="true">
     <xs:annotation>
       <xs:documentation>A set of details about the actions and events within a specific program.</xs:documentation>
@@ -26104,66 +26084,6 @@
   <xs:element name="PsychologicalDisorderIndicator" type="niem-xs:boolean" nillable="true">
     <xs:annotation>
       <xs:documentation>True if a Person has been diagnosed with a Psychological Disorder; false otherwise.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="Publication" type="j:PublicationType" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A collection of written, printed, illustrated, or blank sheets, made of paper, parchment, or other material, usually fastened together to hinge at one side.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="PublicationAugmentationPoint" abstract="true">
-    <xs:annotation>
-      <xs:documentation>An augmentation point for PublicationType.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="PublicationAuthorText" type="nc:TextType" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A person who originates or gives existence to a publication.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="PublicationDate" type="nc:DateType" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A date of a publication</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="PublicationISBNID" type="niem-xs:string" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A unique, numerical, commercial book identifier.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="PublicationISSNID" type="niem-xs:string" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A unique, numerical, commercial periodical publication identifier.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="PublicationLibraryClassificationIdentification" type="nc:IdentificationType" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A unique identification of a publication assigned by a library to classify, organize, and track publications, e.g. Dewey Decimal System Number.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="PublicationPageText" type="nc:TextType" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A data element for page or page numbers on which a publication is appeared in a periodical</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="PublicationPublisherText" type="nc:TextType" nillable="true">
-    <xs:annotation>
-      <xs:documentation>An owner of the copyright for the publication.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="PublicationSubjectText" type="nc:TextType" nillable="true">
-    <xs:annotation>
-      <xs:documentation>An area of knowledge.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="PublicationSubscriberPersonAssociation" type="nc:ItemEntityAssociationType" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A relationship between a person and a publication they subscribe to, or have read or are reading.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="PublicationTitleText" type="nc:TextType" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A name given to a publication.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="RansomMoneyCode" type="ncic:RMICodeType" nillable="true">
