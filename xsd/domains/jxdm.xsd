@@ -5200,22 +5200,6 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-  <xs:complexType name="JurisdictionAugmentationType">
-    <xs:annotation>
-      <xs:documentation>A data type for additional information about a jurisdiction.</xs:documentation>
-    </xs:annotation>
-    <xs:complexContent>
-      <xs:extension base="structures:AugmentationType">
-        <xs:sequence>
-          <xs:element ref="j:JurisdictionDescriptionText" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="j:JurisdictionDistrictText" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="j:JurisdictionRestrictionText" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="j:JurisdictionDistrictIdentification" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="j:JurisdictionTitle" minOccurs="0" maxOccurs="unbounded"/>
-        </xs:sequence>
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
   <xs:complexType name="JurorType">
     <xs:annotation>
       <xs:documentation>A data type for a person who serves on a jury and listens to a case to determine the guilt or innocence of a person accused of a crime.</xs:documentation>
@@ -20872,36 +20856,6 @@
   <xs:element name="JurisdictionANSID20AuthorityCode" type="aamva_d20:JurisdictionAuthorityCodeType" substitutionGroup="nc:JurisdictionAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>An area, state, region, or other geographic unit over which some kind of authority exists.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="JurisdictionAugmentation" type="j:JurisdictionAugmentationType" substitutionGroup="nc:JurisdictionAugmentationPoint" nillable="true">
-    <xs:annotation>
-      <xs:documentation>Additional information about a jurisdiction.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="JurisdictionDescriptionText" type="nc:TextType" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A description of an area an organization or person has some kind of authoritative capacity or responsibility over.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="JurisdictionDistrictIdentification" type="nc:IdentificationType" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A name or identification of a district in a jurisdiction.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="JurisdictionDistrictText" type="nc:TextType" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A district in a jurisdiction.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="JurisdictionRestrictionText" type="nc:TextType" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A restriction or limitation of a jurisdiction.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="JurisdictionTitle" type="j:TitleType" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A title issued by a jurisdiction.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="Juror" type="j:JurorType" nillable="true">

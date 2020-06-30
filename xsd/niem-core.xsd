@@ -2276,11 +2276,10 @@
       <xs:extension base="structures:ObjectType">
         <xs:sequence>
           <xs:element ref="nc:JurisdictionAbstract" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="nc:AddressCityName" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="nc:AddressCountry" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="nc:AddressCountyAbstract" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="nc:AddressState" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:JurisdictionDescriptionText" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:JurisdictionIdentification" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:JurisdictionLocation" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:JurisdictionRestrictionText" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:JurisdictionAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
       </xs:extension>
@@ -2365,6 +2364,7 @@
           <xs:element ref="nc:LocaleCensusTractID" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:LocaleCommunityName" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:LocaleDescriptionText" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:LocaleDistrictIdentification" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:LocaleDistrictName" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:LocaleEmergencyServicesName" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:LocaleFireJurisdictionID" minOccurs="0" maxOccurs="unbounded"/>
@@ -8492,9 +8492,24 @@
       <xs:documentation>An augmentation point for JurisdictionType.</xs:documentation>
     </xs:annotation>
   </xs:element>
+  <xs:element name="JurisdictionDescriptionText" type="nc:TextType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A description of an area an organization or person has some kind of authoritative capacity or responsibility over.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
   <xs:element name="JurisdictionIdentification" type="nc:IdentificationType" nillable="true">
     <xs:annotation>
       <xs:documentation>An identification of a jurisdiction.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="JurisdictionLocation" type="nc:LocationType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A location of a jurisdiction.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="JurisdictionRestrictionText" type="nc:TextType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A restriction or limitation of a jurisdiction.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="JurisdictionText" type="nc:TextType" substitutionGroup="nc:JurisdictionAbstract" nillable="true">
@@ -8605,6 +8620,11 @@
   <xs:element name="LocaleDescriptionText" type="nc:TextType" nillable="true">
     <xs:annotation>
       <xs:documentation>A description of a geopolitical area.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="LocaleDistrictIdentification" type="nc:IdentificationType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>An identification for a district in a locale.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="LocaleDistrictName" type="nc:TextType" nillable="true">

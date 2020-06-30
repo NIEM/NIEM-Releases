@@ -77,6 +77,7 @@ Note that schema updates have been committed per issue, so issue-specific file d
 - Harmonized aircraft components [(#120)](https://github.com/NIEM/NIEM-Releases/issues/120)
 - Harmonized vehicle components [(#122)](https://github.com/NIEM/NIEM-Releases/issues/122)
 - Harmonized document components and added a new ReportType [(#129)](https://github.com/NIEM/NIEM-Releases/issues/129)
+- Harmonized jurisdiction components [(#141)](https://github.com/NIEM/NIEM-Releases/issues/141)
 - Merged scr:PersonNameAugmentation and scr:PersonNameTextAugmentation [(#77)](https://github.com/NIEM/NIEM-Releases/issues/77)
 - Moved nc:PleaCategoryCodeType to the Justice domain [(#24)](https://github.com/NIEM/NIEM-Releases/issues/24)
 - Moved additional Justice-specific types from Core to Justice [(#79)](https://github.com/NIEM/NIEM-Releases/issues/79)
