@@ -21417,10 +21417,7 @@
     <xs:complexContent>
       <xs:extension base="structures:AugmentationType">
         <xs:sequence>
-          <xs:element ref="scr:VehicleCategoryCodeText" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="scr:ConveyanceCategoryAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="scr:VehicleSubjectCategoryCodeText" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="scr:ConveyanceIDIssuingJurisdictionAbstract" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -22415,12 +22412,7 @@
       <xs:documentation>A dateTime on which the access control level was last modified</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="ConveyanceCategoryAbstract" abstract="true">
-    <xs:annotation>
-      <xs:documentation>A data concept for a kind of conveyance.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="ConveyanceCategoryCode" type="scr:ConveyanceCategoryCodeType" substitutionGroup="scr:ConveyanceCategoryAbstract" nillable="true">
+  <xs:element name="ConveyanceCategoryCode" type="scr:ConveyanceCategoryCodeType" substitutionGroup="nc:ConveyanceCategoryAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A kind of conveyance.</xs:documentation>
     </xs:annotation>
@@ -22430,7 +22422,7 @@
       <xs:documentation>A kind of conveyance identification.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="ConveyanceIDIssuingJurisdictionAbstract" abstract="true">
+  <xs:element name="ConveyanceIDIssuingJurisdictionAbstract" substitutionGroup="nc:JurisdictionAbstract" abstract="true">
     <xs:annotation>
       <xs:documentation>A data concept for a conveyance ID issuing jurisdiction type.</xs:documentation>
     </xs:annotation>
@@ -24433,11 +24425,6 @@
   <xs:element name="VehicleAugmentation" type="scr:VehicleAugmentationType" substitutionGroup="nc:VehicleAugmentationPoint" nillable="true">
     <xs:annotation>
       <xs:documentation>Additional information about a conveyance.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="VehicleCategoryCodeText" type="niem-xs:token" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A class of conveyance being used.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="VehicleSubjectCategoryCodeText" type="niem-xs:token" nillable="true">

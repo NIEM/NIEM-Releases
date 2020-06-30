@@ -1755,7 +1755,7 @@
           <xs:element ref="j:CommercialVehiclePreviouslyTargetedIndicator" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="j:CommercialVehicleCurrentlyTargetedIndicator" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="j:CommercialVehiclePRISMAdditionDate" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="j:MotorCarrier" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="j:CommercialVehicleMotorCarrier" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="j:CommercialVehicleCargoBodyCategoryAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="j:CommercialVehicleConfigurationAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="j:CommercialVehicleAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
@@ -10496,8 +10496,6 @@
     <xs:complexContent>
       <xs:extension base="structures:AugmentationType">
         <xs:sequence>
-          <xs:element ref="j:Lessee" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="j:Lessor" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="j:VehicleGarage" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="j:VehicleGarageIndicator" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="j:VehicleGrossAxleWeightRatingMeasure" minOccurs="0" maxOccurs="unbounded"/>
@@ -13917,6 +13915,11 @@
   <xs:element name="CommercialVehicleCurrentlyTargetedIndicator" type="niem-xs:boolean" nillable="true">
     <xs:annotation>
       <xs:documentation>True if the Performance and Registration Information Systems Management (PRISM) Carrier Target/History Indicator reveals the carrier is currently Targeted for increased enforcement action record; false otherwise.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="CommercialVehicleMotorCarrier" type="j:MotorCarrierType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>An organization providing commercial motor vehicle transportation for compensation.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="CommercialVehiclePreviouslyTargetedIndicator" type="niem-xs:boolean" nillable="true">
@@ -22168,11 +22171,6 @@
   <xs:element name="MostDamagedAreaCode" type="mmucc:VehicleDamageCodeType" substitutionGroup="j:MostDamagedAreaAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>An area of the motor vehicle that was most damaged in a crash.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="MotorCarrier" type="j:MotorCarrierType" nillable="true">
-    <xs:annotation>
-      <xs:documentation>An organization providing commercial motor vehicle transportation for compensation.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="MotorCarrierActiveIndicator" type="niem-xs:boolean" nillable="true">
