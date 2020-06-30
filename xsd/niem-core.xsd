@@ -2650,6 +2650,53 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
+  <xs:simpleType name="MetadataEmptyReasonCodeSimpleType">
+    <xs:annotation>
+      <xs:documentation>A data type for a reason why a data value was not provided.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="inapplicable">
+        <xs:annotation>
+          <xs:documentation>There is no value.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="missing">
+        <xs:annotation>
+          <xs:documentation>The correct value is not readily available to the sender of this data. Furthermore, a correct value may not exist.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="other">
+        <xs:annotation>
+          <xs:documentation>Other reason.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="template">
+        <xs:annotation>
+          <xs:documentation>The value will be available later (pending).</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="unknown">
+        <xs:annotation>
+          <xs:documentation>The correct value is not known to, and not computable by, the sender of this data. However, a correct value probably exists.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="withheld">
+        <xs:annotation>
+          <xs:documentation>The value is not divulged.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="MetadataEmptyReasonCodeType">
+    <xs:annotation>
+      <xs:documentation>A data type for a reason why a data value was not provided.</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="nc:MetadataEmptyReasonCodeSimpleType">
+        <xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
   <xs:complexType name="MetadataType">
     <xs:annotation>
       <xs:documentation>A data type for information that further qualifies primary data; data about data.</xs:documentation>
@@ -2682,6 +2729,8 @@
           <xs:element ref="nc:SourceText" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:Language" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:Comment" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:MetadataEmptyReasonAbstract" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:MetadataEmptyReasonDescriptionText" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -9203,6 +9252,26 @@
   <xs:element name="Metadata" type="nc:MetadataType" nillable="true" appinfo:appliesToTypes="structures:AssociationType structures:ObjectType">
     <xs:annotation>
       <xs:documentation>Information that further qualifies primary data; data about data.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="MetadataEmptyReasonAbstract" abstract="true">
+    <xs:annotation>
+      <xs:documentation>A data concept for a reason why a data value was not provided.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="MetadataEmptyReasonCode" type="nc:MetadataEmptyReasonCodeType" substitutionGroup="nc:MetadataEmptyReasonAbstract" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A reason why a data value was not provided.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="MetadataEmptyReasonDescriptionText" type="nc:TextType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A description for why a data value was not provided.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="MetadataEmptyReasonText" type="nc:TextType" substitutionGroup="nc:MetadataEmptyReasonAbstract" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A reason why a data value was not provided.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="MilitaryBranchName" type="nc:TextType" nillable="true">
