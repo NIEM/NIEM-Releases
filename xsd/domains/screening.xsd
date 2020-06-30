@@ -20612,8 +20612,8 @@
     <xs:complexContent>
       <xs:extension base="structures:MetadataType">
         <xs:sequence>
-          <xs:element ref="scr:ConfidenceLevel" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="scr:PersonConfidenceLevelPercent" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="scr:MetadataConfidenceLevel" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="scr:MetadataConfidenceLevelPercent" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -22359,11 +22359,6 @@
       <xs:documentation>A kind of complexion.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="ConfidenceLevel" type="scr:ConfidenceLevelType" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A classification of the reliability of the PERSON ALERT.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
   <xs:element name="ConfidenceLevelAugmentationPoint" abstract="true">
     <xs:annotation>
       <xs:documentation>An augmentation point for ConfidenceLevelType.</xs:documentation>
@@ -23374,6 +23369,16 @@
       <xs:documentation>A text that describes the medication that needs to be provided during DETENTION.</xs:documentation>
     </xs:annotation>
   </xs:element>
+  <xs:element name="MetadataConfidenceLevel" type="scr:ConfidenceLevelType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A classification of the reliability of the PERSON ALERT.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="MetadataConfidenceLevelPercent" type="nc:PercentType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A Quantitative based on the number of encounters. Measured as an overall percentage.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
   <xs:element name="MilesFromPortOfEntryQuantity" type="nc:QuantityType" nillable="true">
     <xs:annotation>
       <xs:documentation>A number indicating the distance in miles from the port of entry to where the alien last entered.</xs:documentation>
@@ -23602,11 +23607,6 @@
   <xs:element name="PersonCategoryDescriptionText" type="nc:TextType" nillable="true">
     <xs:annotation>
       <xs:documentation>A description of the values used for Person type.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="PersonConfidenceLevelPercent" type="nc:PercentType" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A Quantitative based on the number of encounters. Measured as an overall percentage.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="PersonCrossingAugmentationPoint" abstract="true">

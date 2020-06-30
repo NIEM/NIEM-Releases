@@ -1476,21 +1476,6 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-  <xs:complexType name="CaveatType">
-    <xs:annotation>
-      <xs:documentation>A data type for warning or caution information.</xs:documentation>
-    </xs:annotation>
-    <xs:complexContent>
-      <xs:extension base="structures:ObjectType">
-        <xs:sequence>
-          <xs:element ref="nc:CaveatText" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="j:CaveatReferenceDate" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="j:CaveatIssuingAuthorityText" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="j:CaveatAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
-        </xs:sequence>
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
   <xs:simpleType name="CDLHolderCodeSimpleType">
     <xs:annotation>
       <xs:documentation>A data type for a code set indicating at the time of the citation, whether the individual holds a Commercial Driver License (CDL) or, in the case of an unlicensed driver, whether the individual's last held license was a CDL.</xs:documentation>
@@ -5220,19 +5205,6 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-  <xs:complexType name="JusticeMetadataType">
-    <xs:annotation>
-      <xs:documentation>A data type for information that further qualifies the kind of data represented.</xs:documentation>
-    </xs:annotation>
-    <xs:complexContent>
-      <xs:extension base="structures:MetadataType">
-        <xs:sequence>
-          <xs:element ref="j:CriminalInformationIndicator" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="j:IntelligenceInformationIndicator" minOccurs="0" maxOccurs="unbounded"/>
-        </xs:sequence>
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
   <xs:complexType name="JuvenileActivityAgencyAssociationType">
     <xs:annotation>
       <xs:documentation>A data type for an association between an agency and a juvenile activity (e.g., a referral)</xs:documentation>
@@ -5752,6 +5724,19 @@
         <xs:sequence>
           <xs:element ref="j:MentalHealthTreatmentProgramPlacementAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="j:MentalHealthTreatmentProgramDetailsAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="MetadataType">
+    <xs:annotation>
+      <xs:documentation>A data type for information that further qualifies the kind of data represented.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="structures:MetadataType">
+        <xs:sequence>
+          <xs:element ref="j:MetadataCriminalInformationIndicator" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="j:MetadataIntelligenceInformationIndicator" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -13293,21 +13278,6 @@
       <xs:documentation>A description of the cause of death.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="CaveatAugmentationPoint" abstract="true">
-    <xs:annotation>
-      <xs:documentation>An augmentation point for CaveatType.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="CaveatIssuingAuthorityText" type="nc:TextType" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A source of the caveat information</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="CaveatReferenceDate" type="nc:DateType" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A date of the caveat information.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
   <xs:element name="CDLHolderAbstract" abstract="true">
     <xs:annotation>
       <xs:documentation>A data concept for a code indicating whether or not the driver held a CDL/CLP at the time of the citation.</xs:documentation>
@@ -15356,11 +15326,6 @@
   <xs:element name="CriminalHistorySummaryClassificationCategoryText" type="nc:TextType" nillable="true">
     <xs:annotation>
       <xs:documentation>A kind of classification given to a person as a result of criminal history summary evaluation.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="CriminalInformationIndicator" type="niem-xs:boolean" nillable="true">
-    <xs:annotation>
-      <xs:documentation>True if the information specified is classified as criminal information; false if it is not classified as criminal information.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="CriminalOrganization" type="j:CriminalOrganizationType" nillable="true">
@@ -20093,11 +20058,6 @@
       <xs:documentation>A kind of subject matter protected by intellectual property rights.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="IntelligenceInformationIndicator" type="niem-xs:boolean" nillable="true">
-    <xs:annotation>
-      <xs:documentation>True if the information specified is intelligence information; false otherwise.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
   <xs:element name="IntimacyAssociation" type="nc:PersonAssociationType" nillable="true">
     <xs:annotation>
       <xs:documentation>A relationship between people based on the presence of sexual/sexually romantic activity.</xs:documentation>
@@ -20901,11 +20861,6 @@
   <xs:element name="JurorPrimaryIndicator" type="niem-xs:boolean" nillable="true">
     <xs:annotation>
       <xs:documentation>True if a person is a primary indicator; false if a person in an alternate juror.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="JusticeMetadata" type="j:JusticeMetadataType" nillable="true" appinfo:appliesToTypes="structures:AssociationType structures:ObjectType">
-    <xs:annotation>
-      <xs:documentation>Information that further qualifies the kind of data represented.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="JuvenileActivity" type="j:ArrestType" nillable="true">
@@ -21741,6 +21696,21 @@
   <xs:element name="MentalHeathAssessmentIndependentEvaluationRequestedIndicator" type="niem-xs:boolean" nillable="true">
     <xs:annotation>
       <xs:documentation>True if the parolee requests independent evaluations to determine if the parolee meets the requirements of the Mentally Disordered Offender law; false otherwise.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="Metadata" type="j:MetadataType" nillable="true" appinfo:appliesToTypes="structures:AssociationType structures:ObjectType">
+    <xs:annotation>
+      <xs:documentation>Information that further qualifies the kind of data represented.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="MetadataCriminalInformationIndicator" type="niem-xs:boolean" nillable="true">
+    <xs:annotation>
+      <xs:documentation>True if the information specified is classified as criminal information; false if it is not classified as criminal information.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="MetadataIntelligenceInformationIndicator" type="niem-xs:boolean" nillable="true">
+    <xs:annotation>
+      <xs:documentation>True if the information specified is intelligence information; false otherwise.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="Metal" type="nc:SubstanceType" nillable="true">
@@ -26058,7 +26028,7 @@
       <xs:documentation>An augmentation point for RapSheetType.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="RapSheetCaveat" type="j:CaveatType" nillable="true">
+  <xs:element name="RapSheetCaveat" type="nc:CaveatType" nillable="true">
     <xs:annotation>
       <xs:documentation>A set of caveat information relating to the production or use of the Rap Sheet.</xs:documentation>
     </xs:annotation>
@@ -26073,7 +26043,7 @@
       <xs:documentation>An augmentation point for RapSheetCycleType.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="RapSheetCycleCaveat" type="j:CaveatType" nillable="true">
+  <xs:element name="RapSheetCycleCaveat" type="nc:CaveatType" nillable="true">
     <xs:annotation>
       <xs:documentation>A set of caveat information related to an entire cycle, e.g., a Certificate of Good Conduct or Restoration of Rights.</xs:documentation>
     </xs:annotation>
