@@ -3507,18 +3507,6 @@
       </xs:extension>
     </xs:simpleContent>
   </xs:complexType>
-  <xs:complexType name="MilitarySummaryAugmentationType">
-    <xs:annotation>
-      <xs:documentation>A data type for additional information about a person's military service.</xs:documentation>
-    </xs:annotation>
-    <xs:complexContent>
-      <xs:extension base="structures:AugmentationType">
-        <xs:sequence>
-          <xs:element ref="hs:MilitaryInductionDate" minOccurs="0" maxOccurs="unbounded"/>
-        </xs:sequence>
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
   <xs:complexType name="MissingChildRecoveryType">
     <xs:annotation>
       <xs:documentation>A data type for a recovery of a missing child.</xs:documentation>
@@ -10819,16 +10807,6 @@
   <xs:element name="MethodOfPaymentText" type="nc:TextType" substitutionGroup="hs:MethodOfPaymentAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A method of payment.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="MilitaryInductionDate" type="nc:DateType" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A date a person was inducted (or will be inducted) into active service in a military.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="MilitarySummaryAugmentation" type="hs:MilitarySummaryAugmentationType" substitutionGroup="nc:MilitarySummaryAugmentationPoint" nillable="true">
-    <xs:annotation>
-      <xs:documentation>Additional information about a person's military service.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="MissingChildAbductor" type="hs:MissingChildRelatedPersonType" nillable="true">

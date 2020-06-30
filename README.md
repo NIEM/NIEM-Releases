@@ -67,6 +67,7 @@ Note that schema updates have been committed per issue, so issue-specific file d
 - Fixed spelling errors and added local terminology [(#131)](https://github.com/NIEM/NIEM-Releases/issues/131) - *in progress*
 - Fixed definition formatting [(#132)](https://github.com/NIEM/NIEM-Releases/issues/132) - *in progress*
 - Harmonized warrant components in Justice and Screening [(#62)](https://github.com/NIEM/NIEM-Releases/issues/62)
+- Harmonized military summary components [(#86)](https://github.com/NIEM/NIEM-Releases/issues/86)
 - Harmonized building components [(#98)](https://github.com/NIEM/NIEM-Releases/issues/98)
 - Harmonized biom:ImageType [(#99)](https://github.com/NIEM/NIEM-Releases/issues/99)
 - Harmonized location area elements and GML adapters [(#101)](https://github.com/NIEM/NIEM-Releases/issues/101) - *in progress*

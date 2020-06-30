@@ -5741,24 +5741,6 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-  <xs:complexType name="MilitarySummaryAugmentationType">
-    <xs:annotation>
-      <xs:documentation>A data type for additional information about a military summary.</xs:documentation>
-    </xs:annotation>
-    <xs:complexContent>
-      <xs:extension base="structures:AugmentationType">
-        <xs:sequence>
-          <xs:element ref="nc:MilitaryCountry" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="j:MilitaryDischargeRankText" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="j:MilitaryDisciplinaryAction" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="j:MilitaryDutiesText" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="j:MilitaryEnlistmentDate" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="j:MilitaryHighRankText" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="j:MilitaryWorkSkillText" minOccurs="0" maxOccurs="unbounded"/>
-        </xs:sequence>
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
   <xs:complexType name="MissingPersonOccurrenceType">
     <xs:annotation>
       <xs:documentation>A data type for a set of details surrounding the activity perpetuated by a person's whereabouts being unknown.</xs:documentation>
@@ -21721,41 +21703,6 @@
   <xs:element name="MetalCode" type="ndex:MetalCodeType" substitutionGroup="nc:SubstanceAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A code that identifies a metal.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="MilitaryDischargeRankText" type="nc:TextType" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A rank at time of a person was discharged from military service.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="MilitaryDisciplinaryAction" type="nc:DisciplinaryActionType" nillable="true">
-    <xs:annotation>
-      <xs:documentation>An activity assigned to a person by the military for the purpose of self-improvement, punishment, or restitution.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="MilitaryDutiesText" type="nc:TextType" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A description of the duties and duty stations (locations) encompassed within period of military service.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="MilitaryEnlistmentDate" type="nc:DateType" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A date a person enlisted in the military.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="MilitaryHighRankText" type="nc:TextType" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A highest rank achieved by a person in military service.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="MilitarySummaryAugmentation" type="j:MilitarySummaryAugmentationType" substitutionGroup="nc:MilitarySummaryAugmentationPoint" nillable="true">
-    <xs:annotation>
-      <xs:documentation>Additional information about a military summary.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="MilitaryWorkSkillText" type="nc:TextType" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A military occupational specialty of a person.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="MinimumRangeIdentification" type="nc:IdentificationType" nillable="true">

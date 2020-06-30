@@ -2826,16 +2826,23 @@
       <xs:extension base="structures:ObjectType">
         <xs:sequence>
           <xs:element ref="nc:MilitaryBranchName" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="nc:MilitaryDischargeDate" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:MilitaryCountry" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:MilitaryDischargeCategoryAbstract" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:MilitaryDischargeDate" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:MilitaryDischargeRankText" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:MilitaryDisciplinaryAction" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:MilitaryDutiesText" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:MilitaryEnlistmentDate" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:MilitaryExemptionDescriptionText" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:MilitaryExperienceIndicator" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="nc:MilitaryReleaseDate" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:MilitaryHighRankText" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:MilitaryInductionDate" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:MilitaryReleaseCategoryText" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:MilitaryReleaseDate" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:MilitaryServiceActiveIndicator" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:MilitaryServiceTimeMeasure" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:MilitaryStatus" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="nc:MilitaryCountry" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:MilitaryWorkSkillText" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:MilitarySummaryAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
       </xs:extension>
@@ -9547,6 +9554,26 @@
       <xs:documentation>A date a person was released from further military obligations.</xs:documentation>
     </xs:annotation>
   </xs:element>
+  <xs:element name="MilitaryDischargeRankText" type="nc:TextType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A rank at time of a person was discharged from military service.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="MilitaryDisciplinaryAction" type="nc:DisciplinaryActionType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>An activity assigned to a person by the military for the purpose of self-improvement, punishment, or restitution.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="MilitaryDutiesText" type="nc:TextType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A description of the duties and duty stations (locations) encompassed within period of military service.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="MilitaryEnlistmentDate" type="nc:DateType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A date a person enlisted in the military.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
   <xs:element name="MilitaryExemptionDescriptionText" type="nc:TextType" nillable="true">
     <xs:annotation>
       <xs:documentation>A description of why a person was excused from military service.</xs:documentation>
@@ -9555,6 +9582,16 @@
   <xs:element name="MilitaryExperienceIndicator" type="niem-xs:boolean" nillable="true">
     <xs:annotation>
       <xs:documentation>True if a person has some form of military experience; false otherwise.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="MilitaryHighRankText" type="nc:TextType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A highest rank achieved by a person in military service.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="MilitaryInductionDate" type="nc:DateType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A date a person was inducted (or will be inducted) into active service in a military.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="MilitaryReleaseCategoryText" type="nc:TextType" nillable="true">
@@ -9590,6 +9627,11 @@
   <xs:element name="MilitarySummaryAugmentationPoint" abstract="true">
     <xs:annotation>
       <xs:documentation>An augmentation point for MilitarySummaryType.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="MilitaryWorkSkillText" type="nc:TextType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A military occupational specialty of a person.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="Mission" type="nc:MissionType" nillable="true">
