@@ -259,9 +259,9 @@
     <xs:complexContent>
       <xs:extension base="m:CargoType">
         <xs:sequence>
-          <xs:element ref="m:MaximumAcceptableTemperatureMeasure" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="m:MinimumAcceptableTemperatureMeasure" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="m:RequiresTemperatureControlledStorageIndicator" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="m:ItemMaximumAcceptableTemperatureMeasure" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="m:ItemMinimumAcceptableTemperatureMeasure" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="m:ItemRequiresTemperatureControlledStorageIndicator" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="m:CargoItemAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
       </xs:extension>
@@ -2164,6 +2164,21 @@
       <xs:documentation>A kind of International Ship Security Certificate (ISSC).</xs:documentation>
     </xs:annotation>
   </xs:element>
+  <xs:element name="ItemMaximumAcceptableTemperatureMeasure" type="nc:TemperatureMeasureType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A measure of the maximum acceptable storage temperature for something.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="ItemMinimumAcceptableTemperatureMeasure" type="nc:TemperatureMeasureType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A measure of the minimum acceptable temperature.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="ItemRequiresTemperatureControlledStorageIndicator" type="niem-xs:boolean" nillable="true">
+    <xs:annotation>
+      <xs:documentation>True if temperature controlled storage is required; false otherwise.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
   <xs:element name="LastPortOfCall" type="m:PortVisitType" nillable="true">
     <xs:annotation>
       <xs:documentation>A last port of call for a vessel.</xs:documentation>
@@ -2239,11 +2254,6 @@
       <xs:documentation>A location identified by a United Nations Location Code, also known as a UN/LOCODE (United Nations Code for Trade and Transport Locations).</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="MaximumAcceptableTemperatureMeasure" type="nc:TemperatureMeasureType" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A measure of the maximum acceptable storage temperature for something.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
   <xs:element name="MerchantMarinerDocument" type="m:MerchantMarinerDocumentType" nillable="true">
     <xs:annotation>
       <xs:documentation>A Merchant Mariner Document (MMD) issued to a merchant mariner.</xs:documentation>
@@ -2282,11 +2292,6 @@
   <xs:element name="MerchantMarinerDocumentRatingText" type="nc:TextType" substitutionGroup="m:MerchantMarinerDocumentRatingAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A rating on a merchant mariner document which authorizes the performance of certain shipboard duties or actions.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="MinimumAcceptableTemperatureMeasure" type="nc:TemperatureMeasureType" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A measure of the minimum acceptable temperature.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="NextPortOfCall" type="m:PortVisitType" nillable="true">
@@ -2642,11 +2647,6 @@
   <xs:element name="RecordLocatorIdentification" type="nc:IdentificationType" nillable="true">
     <xs:annotation>
       <xs:documentation>An identification of a passenger name record (PNR).</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="RequiresTemperatureControlledStorageIndicator" type="niem-xs:boolean" nillable="true">
-    <xs:annotation>
-      <xs:documentation>True if temperature controlled storage is required; false otherwise.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="SeamanLicense" type="m:SeamanLicenseType" nillable="true">

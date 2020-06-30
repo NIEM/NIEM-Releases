@@ -4776,31 +4776,30 @@
           <xs:element ref="j:ItemDetailAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="j:ItemDetailDescriptionText" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="j:ItemFederalIdentification" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="j:ItemGenderUseAbstract" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="j:ItemHazardousMaterialsContainerText" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="j:ItemLotIdentification" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="j:ItemLotNumberText" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="j:ItemMaintenanceActivity" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="j:ItemMaintenanceSchedule" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="j:ItemMerchandiseIndicator" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="j:ItemMissingValue" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="j:ItemNCICIdentification" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="j:ItemPartialLotAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="j:ItemPendingInventoryIndicator" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="j:ItemPreviousYearValue" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="j:ItemSightedIndicator" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="j:ItemTotalDamageValue" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="j:Lessee" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="j:Lessor" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="j:LivestockIndicator" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="j:LivestockTagText" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="j:MerchandiseIndicator" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="j:ToolPowerIndicator" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="nc:ItemRecoveredValue" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="j:ItemLotIdentification" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="j:ItemSerialIdentificationRange" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="j:ItemHazardousMaterialsContainerText" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="j:ItemRecoveredAdditionalValue" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="j:ItemRecoveredContrabandValue" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="j:ItemGenderUseAbstract" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="j:ItemRecoveredValue" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="j:ItemSeizure" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="j:ItemPartialLotAbstract" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="j:LivestockSexAbstract" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="j:ItemSerialIdentificationRange" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="j:ItemSightedIndicator" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="j:ItemToolPowerIndicator" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="j:ItemTotalDamageValue" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="j:ItemWeaponIndicator" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="j:ItemWeaponUsageIndicator" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="j:Lessee" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="j:Lessor" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -4883,18 +4882,16 @@
     <xs:complexContent>
       <xs:extension base="structures:ObjectType">
         <xs:sequence>
-          <xs:element ref="j:RegistrationIdentification" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="nc:AddressCountry" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="nc:AddressCountyAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="j:RegistrationAuthorityName" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="j:RegistrationDuplicateQuantity" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="j:RegistrationEffectiveDate" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="j:RegistrationExpirationDate" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="j:RegistrationFee" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="nc:JurisdictionAbstract" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="j:RegistrationOutsideJurisdictionIndicator" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="j:RegistrationItem" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="j:RegistrationHolder" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="j:RegistrationIdentification" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="j:RegistrationItem" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="j:RegistrationJurisdiction" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="j:RegistrationOutsideJurisdictionIndicator" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="j:RegistrationStatus" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="j:ItemRegistrationAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
@@ -5094,38 +5091,9 @@
     <xs:complexContent>
       <xs:extension base="nc:AssociationType">
         <xs:sequence>
-          <xs:element ref="j:ItemTitle" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="j:Title" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="j:ItemReplacementTitle" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="j:ItemTitleReplacementAssociationAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
-        </xs:sequence>
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
-  <xs:complexType name="ItemTitleType">
-    <xs:annotation>
-      <xs:documentation>A data type for a deed or other official document showing the legal ownership of a property item.</xs:documentation>
-    </xs:annotation>
-    <xs:complexContent>
-      <xs:extension base="structures:ObjectType">
-        <xs:sequence>
-          <xs:element ref="j:TitleIdentification" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="j:TitleDuplicateQuantity" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="j:TitleIssueDate" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="j:TitleIssuingAuthorityName" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="j:TitleLienIndicator" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="j:TitleItem" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="j:TitleStatus" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="j:TitleHolder" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="j:TitleCategoryText" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="j:Lien" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="j:ItemTitleDocumentCategoryAbstract" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="j:ItemTitlePurchaseDate" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="j:ItemTitlePurchasePriceAmount" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="j:ItemTitleSalesTaxAmount" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="j:ItemTitleSalesTaxPercent" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="j:ItemTitleTaxableValue" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="j:TitleIssuingJurisdiction" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="j:ItemTitleAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -10390,6 +10358,35 @@
         <xs:sequence>
           <xs:element ref="j:TitleStatusAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="j:TitleStatusAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="TitleType">
+    <xs:annotation>
+      <xs:documentation>A data type for a deed or other official document showing the legal ownership of a property item.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="structures:ObjectType">
+        <xs:sequence>
+          <xs:element ref="j:Lien" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="j:TitleCategoryText" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="j:TitleDocumentCategoryAbstract" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="j:TitleDuplicateQuantity" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="j:TitleHolder" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="j:TitleIdentification" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="j:TitleIssueDate" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="j:TitleIssuingAuthorityName" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="j:TitleIssuingJurisdiction" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="j:TitleItem" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="j:TitleLienIndicator" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="j:TitlePurchaseDate" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="j:TitlePurchasePriceAmount" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="j:TitleSalesTaxAmount" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="j:TitleSalesTaxPercent" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="j:TitleStatus" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="j:TitleTaxableValue" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="j:TitleAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -20409,6 +20406,11 @@
       <xs:documentation>A manufacturer that produced an item.</xs:documentation>
     </xs:annotation>
   </xs:element>
+  <xs:element name="ItemMerchandiseIndicator" type="niem-xs:boolean" nillable="true">
+    <xs:annotation>
+      <xs:documentation>True if the item held for sale; false otherwise.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
   <xs:element name="ItemMissingValue" type="nc:ItemValueType" nillable="true">
     <xs:annotation>
       <xs:documentation>A monetary value or worth of a property item that is lost, stolen, being held, or is otherwise missing.</xs:documentation>
@@ -20459,6 +20461,11 @@
       <xs:documentation>A fair market value in whole dollars of any contraband recovered as a result of recovering the property of record</xs:documentation>
     </xs:annotation>
   </xs:element>
+  <xs:element name="ItemRecoveredValue" type="nc:ItemValueType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>An amount of money a previously missing item is worth after having been found.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
   <xs:element name="ItemRegistration" type="j:ItemRegistrationType" nillable="true">
     <xs:annotation>
       <xs:documentation>A registration of an item with an authority.</xs:documentation>
@@ -20484,7 +20491,7 @@
       <xs:documentation>An entity to whom a registration is issued for a property item.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="ItemReplacementTitle" type="j:ItemTitleType" nillable="true">
+  <xs:element name="ItemReplacementTitle" type="j:TitleType" nillable="true">
     <xs:annotation>
       <xs:documentation>A title which is reissued because the original title is lost, stolen, or otherwise unavailable.</xs:documentation>
     </xs:annotation>
@@ -20494,14 +20501,14 @@
       <xs:documentation>A data concept for an entity which removes an item from the possession of the owner for official purposes.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="ItemSeizerEntity" type="nc:EntityType" substitutionGroup="j:ItemSeizerAbstract" nillable="true">
-    <xs:annotation>
-      <xs:documentation>An entity which removes an item from the possession of the owner for official purposes.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
   <xs:element name="ItemSeizingEnforcementOfficial" type="j:EnforcementOfficialType" substitutionGroup="j:ItemSeizerAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A peace official that seized a property item.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="ItemSeizingEntity" type="nc:EntityType" substitutionGroup="j:ItemSeizerAbstract" nillable="true">
+    <xs:annotation>
+      <xs:documentation>An entity which removes an item from the possession of the owner for official purposes.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="ItemSeizure" type="j:ItemSeizureType" nillable="true">
@@ -20574,7 +20581,7 @@
       <xs:documentation>An augmentation point for ItemTelephoneNumberAssociationType.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="ItemTitle" type="j:ItemTitleType" nillable="true">
+  <xs:element name="ItemTitle" type="j:TitleType" nillable="true">
     <xs:annotation>
       <xs:documentation>A deed or other official document showing the legal ownership of a property item.</xs:documentation>
     </xs:annotation>
@@ -20589,29 +20596,9 @@
       <xs:documentation>An augmentation point for ItemTitleAssociationType.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="ItemTitleAugmentationPoint" abstract="true">
-    <xs:annotation>
-      <xs:documentation>An augmentation point for ItemTitleType.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="ItemTitleDocumentCategoryAbstract" abstract="true">
-    <xs:annotation>
-      <xs:documentation>A data concept for a kind of individual title document.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="ItemTitleDocumentCategoryCode" type="aamva_d20:VehicleTitleDocumentCategoryCodeType" substitutionGroup="j:ItemTitleDocumentCategoryAbstract" nillable="true">
+  <xs:element name="ItemTitleDocumentCategoryCode" type="aamva_d20:VehicleTitleDocumentCategoryCodeType" substitutionGroup="j:TitleDocumentCategoryAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A kind of individual title document.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="ItemTitlePurchaseDate" type="nc:DateType" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A date a current owner purchased a vehicle.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="ItemTitlePurchasePriceAmount" type="nc:AmountType" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A price a current owner paid to purchase a vehicle.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="ItemTitleReplacementAssociation" type="j:ItemTitleReplacementAssociationType" nillable="true">
@@ -20624,24 +20611,24 @@
       <xs:documentation>An augmentation point for ItemTitleReplacementAssociationType.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="ItemTitleSalesTaxAmount" type="nc:AmountType" nillable="true">
+  <xs:element name="ItemToolPowerIndicator" type="niem-xs:boolean" nillable="true">
     <xs:annotation>
-      <xs:documentation>A sales tax charged on a purchase of a vehicle.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="ItemTitleSalesTaxPercent" type="nc:PercentType" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A tax rate used for computing sales tax on a vehicle.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="ItemTitleTaxableValue" type="nc:ItemValueType" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A dollar value used to compute the taxes on a vehicle.</xs:documentation>
+      <xs:documentation>True if the tool is operated by a procedure in which manual effort is supplemented or replaced by hydraulic, mechanical or electrical means; false otherwise.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="ItemTotalDamageValue" type="nc:ItemValueType" nillable="true">
     <xs:annotation>
       <xs:documentation>A monetary value or worth of damage that occurred to a property item.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="ItemWeaponIndicator" type="niem-xs:boolean" nillable="true">
+    <xs:annotation>
+      <xs:documentation>True if an item is traditionally considered to be a weapon; false otherwise.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="ItemWeaponUsageIndicator" type="niem-xs:boolean" nillable="true">
+    <xs:annotation>
+      <xs:documentation>True if an item not traditionally considered to be a weapon is used as such; false otherwise.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="Jewelry" type="j:JewelryType" nillable="true">
@@ -20924,7 +20911,7 @@
       <xs:documentation>A restriction or limitation of a jurisdiction.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="JurisdictionTitle" type="j:ItemTitleType" nillable="true">
+  <xs:element name="JurisdictionTitle" type="j:TitleType" nillable="true">
     <xs:annotation>
       <xs:documentation>A title issued by a jurisdiction.</xs:documentation>
     </xs:annotation>
@@ -21046,7 +21033,7 @@
   </xs:element>
   <xs:element name="Lessee" type="j:LesseeType" nillable="true">
     <xs:annotation>
-      <xs:documentation>An entity which has a contract or lease to use a vehicle.</xs:documentation>
+      <xs:documentation>An entity which has a contract or lease to use an item.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="LesseeAugmentationPoint" abstract="true">
@@ -21071,7 +21058,7 @@
   </xs:element>
   <xs:element name="Lessor" type="j:LessorType" nillable="true">
     <xs:annotation>
-      <xs:documentation>An entity which conveys vehicles by way of a lease.</xs:documentation>
+      <xs:documentation>An entity which conveys items by way of a lease.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="LessorAugmentationPoint" abstract="true">
@@ -21137,21 +21124,6 @@
   <xs:element name="LivestockCategoryCode" type="ndex:LivestockCategoryCodeType" substitutionGroup="nc:ItemCategoryAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A kind of livestock/pet.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="LivestockIndicator" type="niem-xs:boolean" nillable="true">
-    <xs:annotation>
-      <xs:documentation>True if the animal is livestock; false otherwise.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="LivestockSexAbstract" abstract="true">
-    <xs:annotation>
-      <xs:documentation>A data concept for a gender or sex of an animal.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="LivestockTagText" type="nc:TextType" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A brand, tattoo or tag number placed on livestock and its location.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="LocationAugmentation" type="j:LocationAugmentationType" substitutionGroup="nc:LocationAugmentationPoint" nillable="true">
@@ -21827,11 +21799,6 @@
   <xs:element name="MentalHeathAssessmentIndependentEvaluationRequestedIndicator" type="niem-xs:boolean" nillable="true">
     <xs:annotation>
       <xs:documentation>True if the parolee requests independent evaluations to determine if the parolee meets the requirements of the Mentally Disordered Offender law; false otherwise.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="MerchandiseIndicator" type="niem-xs:boolean" nillable="true">
-    <xs:annotation>
-      <xs:documentation>True if the item held for sale; false otherwise.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="Metal" type="nc:SubstanceType" nillable="true">
@@ -25124,12 +25091,12 @@
       <xs:documentation>An association between a person and a court order issued to that person.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="PersonIssuedItemRegistrationTitle" type="j:ItemTitleType" substitutionGroup="j:PersonIssuedItemTitleAbstract" nillable="true">
+  <xs:element name="PersonIssuedItemRegistrationTitle" type="j:TitleType" substitutionGroup="j:PersonIssuedItemTitleAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A registration title which has been issued to a person.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="PersonIssuedItemTitle" type="j:ItemTitleType" substitutionGroup="j:PersonIssuedItemTitleAbstract" nillable="true">
+  <xs:element name="PersonIssuedItemTitle" type="j:TitleType" substitutionGroup="j:PersonIssuedItemTitleAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A title which has been issued to a person.</xs:documentation>
     </xs:annotation>
@@ -26154,6 +26121,11 @@
       <xs:documentation>A person who originates or gives existence to a publication.</xs:documentation>
     </xs:annotation>
   </xs:element>
+  <xs:element name="PublicationDate" type="nc:DateType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A date of a publication</xs:documentation>
+    </xs:annotation>
+  </xs:element>
   <xs:element name="PublicationISBNID" type="niem-xs:string" nillable="true">
     <xs:annotation>
       <xs:documentation>A unique, numerical, commercial book identifier.</xs:documentation>
@@ -26167,6 +26139,11 @@
   <xs:element name="PublicationLibraryClassificationIdentification" type="nc:IdentificationType" nillable="true">
     <xs:annotation>
       <xs:documentation>A unique identification of a publication assigned by a library to classify, organize, and track publications, e.g. Dewey Decimal System Number.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="PublicationPageText" type="nc:TextType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A data element for page or page numbers on which a publication is appeared in a periodical</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="PublicationPublisherText" type="nc:TextType" nillable="true">
@@ -26557,6 +26534,11 @@
   <xs:element name="RegistrationItem" type="nc:ItemType" nillable="true">
     <xs:annotation>
       <xs:documentation>A property item that is registered.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="RegistrationJurisdiction" type="nc:JurisdictionType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A jurisdiction in which an item is registered.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="RegistrationOutsideJurisdictionIndicator" type="niem-xs:boolean" nillable="true">
@@ -30029,14 +30011,24 @@
       <xs:documentation>An augmentation point for TipTaxonomyType.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="Title" type="j:ItemTitleType" nillable="true">
+  <xs:element name="Title" type="j:TitleType" nillable="true">
     <xs:annotation>
       <xs:documentation>A deed or other official document showing the legal ownership of a property item.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="TitleAugmentationPoint" abstract="true">
+    <xs:annotation>
+      <xs:documentation>An augmentation point for TitleType.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="TitleCategoryText" type="nc:TextType" nillable="true">
     <xs:annotation>
       <xs:documentation>A kind of title issued.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="TitleDocumentCategoryAbstract" abstract="true">
+    <xs:annotation>
+      <xs:documentation>A data concept for a kind of individual title document.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="TitleDuplicateQuantity" type="niem-xs:nonNegativeInteger" nillable="true">
@@ -30084,6 +30076,26 @@
       <xs:documentation>A title of the officer responsible for certification of the PROGRAM</xs:documentation>
     </xs:annotation>
   </xs:element>
+  <xs:element name="TitlePurchaseDate" type="nc:DateType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A date a current owner purchased a vehicle.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="TitlePurchasePriceAmount" type="nc:AmountType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A price a current owner paid to purchase a vehicle.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="TitleSalesTaxAmount" type="nc:AmountType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A sales tax charged on a purchase of a vehicle.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="TitleSalesTaxPercent" type="nc:PercentType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A tax rate used for computing sales tax on a vehicle.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
   <xs:element name="TitleStatus" type="j:TitleStatusType" nillable="true">
     <xs:annotation>
       <xs:documentation>A status of a property title.</xs:documentation>
@@ -30104,6 +30116,11 @@
       <xs:documentation>A status of a title.</xs:documentation>
     </xs:annotation>
   </xs:element>
+  <xs:element name="TitleTaxableValue" type="nc:ItemValueType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A dollar value used to compute the taxes on a vehicle.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
   <xs:element name="Tool" type="j:ToolType" nillable="true">
     <xs:annotation>
       <xs:documentation>A role of an item used to facilitate commission of a crime.</xs:documentation>
@@ -30117,11 +30134,6 @@
   <xs:element name="ToolDeviceCategoryCode" type="ndex:ToolDeviceCategoryCodeType" substitutionGroup="nc:ItemCategoryAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A kind of tool.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="ToolPowerIndicator" type="niem-xs:boolean" nillable="true">
-    <xs:annotation>
-      <xs:documentation>True if the tool is operated by a procedure in which manual effort is supplemented or replaced by hydraulic, mechanical or electrical means; false otherwise.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="ToolUsageText" type="nc:TextType" nillable="true">
@@ -30609,7 +30621,7 @@
       <xs:documentation>A monetary amount used as the tax basis for a vehicle.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="VehicleTitle" type="j:ItemTitleType" nillable="true">
+  <xs:element name="VehicleTitle" type="j:TitleType" nillable="true">
     <xs:annotation>
       <xs:documentation>A deed or other official document showing the legal ownership of a vehicle.</xs:documentation>
     </xs:annotation>

@@ -70,6 +70,7 @@ Note that schema updates have been committed per issue, so issue-specific file d
 - Harmonized biom:ImageType [(#99)](https://github.com/NIEM/NIEM-Releases/issues/99)
 - Harmonized location area elements and GML adapters [(#101)](https://github.com/NIEM/NIEM-Releases/issues/101) - *in progress*
 - Harmonized education components [(#113)](https://github.com/NIEM/NIEM-Releases/issues/113)
+- Harmonized item components [(#115)](https://github.com/NIEM/NIEM-Releases/issues/115)
 - Harmonized conveyance components [(#119)](https://github.com/NIEM/NIEM-Releases/issues/119)
 - Harmonized vehicle components [(#122)](https://github.com/NIEM/NIEM-Releases/issues/122)
 - Merged scr:PersonNameAugmentation and scr:PersonNameTextAugmentation [(#77)](https://github.com/NIEM/NIEM-Releases/issues/77)

@@ -1015,7 +1015,7 @@
           <xs:element ref="it:PackageCategoryText" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="it:PackageItemQuantity" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="it:PackageShippingMarksDescriptionText" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="it:ConsignmentTotalPackageQuantity" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="it:PackageTotalQuantity" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="it:PackageItemCategoryAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="it:PackageAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
@@ -1986,11 +1986,6 @@
   <xs:element name="ConsignmentRoutingCountryText" type="nc:TextType" nillable="true">
     <xs:annotation>
       <xs:documentation>A country through which goods or passengers are routed between the country of original departure and final destination.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="ConsignmentTotalPackageQuantity" type="nc:QuantityType" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A count of the total number of packages of the entire declaration/ consignment.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="ConsignmentValue" type="nc:ItemValueType" nillable="true">
@@ -3292,6 +3287,11 @@
   <xs:element name="PackageShippingMarksDescriptionText" type="nc:TextType" nillable="true">
     <xs:annotation>
       <xs:documentation>A description of the marks and numbers on a transport unit or package.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="PackageTotalQuantity" type="nc:QuantityType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A count of the total number of packages of the entire declaration/ consignment.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="ParentOrganizationName" type="nc:ProperNameTextType" nillable="true">
