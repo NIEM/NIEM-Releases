@@ -2837,6 +2837,7 @@
           <xs:element ref="nc:MilitaryExperienceIndicator" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:MilitaryHighRankText" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:MilitaryInductionDate" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:MilitaryPersonIdentification" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:MilitaryReleaseCategoryText" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:MilitaryReleaseDate" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:MilitaryServiceActiveIndicator" minOccurs="0" maxOccurs="unbounded"/>
@@ -9592,6 +9593,11 @@
   <xs:element name="MilitaryInductionDate" type="nc:DateType" nillable="true">
     <xs:annotation>
       <xs:documentation>A date a person was inducted (or will be inducted) into active service in a military.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="MilitaryPersonIdentification" type="nc:IdentificationType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>An identification number for a person in the military.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="MilitaryReleaseCategoryText" type="nc:TextType" nillable="true">
