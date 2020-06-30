@@ -2848,7 +2848,6 @@
     </xs:annotation>
     <xs:simpleContent>
       <xs:extension base="niem-xs:decimal">
-        <xs:attribute ref="nc:confidencePercent" use="optional"/>
         <xs:attribute ref="nc:toleranceNumeric" use="optional"/>
       </xs:extension>
     </xs:simpleContent>
@@ -3137,6 +3136,14 @@
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="PercentType">
+    <xs:annotation>
+      <xs:documentation>A data type for a ratio, proper fraction, or percentage, with 100% represented as the value 100.</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="niem-xs:decimal"/>
+    </xs:simpleContent>
   </xs:complexType>
   <xs:complexType name="PermitType">
     <xs:annotation>
@@ -4583,11 +4590,6 @@
       </xs:extension>
     </xs:simpleContent>
   </xs:complexType>
-  <xs:attribute name="confidencePercent" type="xs:decimal">
-    <xs:annotation>
-      <xs:documentation>A value that indicates belief that content is accurate or trustworthy.</xs:documentation>
-    </xs:annotation>
-  </xs:attribute>
   <xs:attribute name="fiscalYearStartDate" type="xs:date">
     <xs:annotation>
       <xs:documentation>A date on which a fiscal year begins.</xs:documentation>
@@ -5718,7 +5720,7 @@
       <xs:documentation>A violation of a condition.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="ConfidencePercent" type="niem-xs:decimal" nillable="true">
+  <xs:element name="ConfidencePercent" type="nc:PercentType" nillable="true">
     <xs:annotation>
       <xs:documentation>A value that indicates belief that content is accurate or trustworthy.</xs:documentation>
     </xs:annotation>
@@ -5908,7 +5910,7 @@
       <xs:documentation>A number of people in a conveyance excluding the driver.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="ConveyanceSalesTaxPercent" type="niem-xs:decimal" nillable="true">
+  <xs:element name="ConveyanceSalesTaxPercent" type="nc:PercentType" nillable="true">
     <xs:annotation>
       <xs:documentation>A tax rate as a percentage used for computing the sales tax on the purchase of a conveyance.</xs:documentation>
     </xs:annotation>
@@ -9808,7 +9810,7 @@
       <xs:documentation>A specific method of payment.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="Percent" type="niem-xs:decimal" nillable="true">
+  <xs:element name="Percent" type="nc:PercentType" nillable="true">
     <xs:annotation>
       <xs:documentation>A ratio, proper fraction, or percentage, with 100% represented as the value 100.</xs:documentation>
     </xs:annotation>
@@ -10878,7 +10880,7 @@
       <xs:documentation>A main or primary document.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="ProbabilityPercent" type="niem-xs:decimal" nillable="true">
+  <xs:element name="ProbabilityPercent" type="nc:PercentType" nillable="true">
     <xs:annotation>
       <xs:documentation>A decimal value that indicates computed likelihood that what the content is true or accurate. This value is based on a calculation of probability of occurrence or truth.</xs:documentation>
     </xs:annotation>

@@ -54,6 +54,7 @@ Note that schema updates have been committed per issue, so issue-specific file d
 
 ### Harmonization and QA
 
+- Added nc:PercentType to clearly define the expected value range for percentage elements [(#7)](https://github.com/NIEM/NIEM-Releases/issues/7)
 - Added new nc:PersonContactInformation element to nc:PersonType [(#29)](https://github.com/NIEM/NIEM-Releases/issues/29)
 - Added substitution groups for street direction codes [(#65)](https://github.com/NIEM/NIEM-Releases/issues/65)
 - Added street category codes and updated directionals [(#80)](https://github.com/NIEM/NIEM-Releases/issues/80)
