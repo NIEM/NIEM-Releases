@@ -3,6 +3,7 @@
   xmlns:appinfo="http://release.niem.gov/niem/appinfo/4.0/"
   xmlns:ct="http://release.niem.gov/niem/conformanceTargets/3.0/"
   xmlns:iso_3166="http://release.niem.gov/niem/codes/iso_3166-1/5.0/"
+  xmlns:nc="http://release.niem.gov/niem/niem-core/5.0/"
   xmlns:structures="http://release.niem.gov/niem/structures/4.0/"
   xmlns:xs="http://www.w3.org/2001/XMLSchema"
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
@@ -13,6 +14,7 @@
       <appinfo:LocalTerm term="Alpha3" definition="Three-letter"/>
     </xs:appinfo>
   </xs:annotation>
+  <xs:import namespace="http://release.niem.gov/niem/niem-core/5.0/" schemaLocation="../niem-core.xsd"/>
   <xs:import namespace="http://release.niem.gov/niem/structures/4.0/" schemaLocation="../utility/structures.xsd"/>
   <xs:simpleType name="CountryAlpha2CodeSimpleType">
     <xs:annotation>
@@ -28572,4 +28574,24 @@
       </xs:extension>
     </xs:simpleContent>
   </xs:complexType>
+  <xs:element name="CountryAlpha2Code" type="iso_3166:CountryAlpha2CodeType" substitutionGroup="nc:CountryRepresentation" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A country, territory, dependency, or other such geopolitical subdivision of a location.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="CountryAlpha3Code" type="iso_3166:CountryAlpha3CodeType" substitutionGroup="nc:CountryRepresentation" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A country, territory, dependency, or other such geopolitical subdivision of a location.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="CountryNumericCode" type="iso_3166:CountryNumericCodeType" substitutionGroup="nc:CountryRepresentation" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A country, territory, dependency, or other such geopolitical subdivision of a location.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="StateCode" type="iso_3166:CountrySubdivisionCodeType" substitutionGroup="nc:StateRepresentation" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A state, commonwealth, province, or other such geopolitical subdivision of a country.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
 </xs:schema>

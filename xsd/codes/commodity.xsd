@@ -3,6 +3,7 @@
   xmlns:appinfo="http://release.niem.gov/niem/appinfo/4.0/"
   xmlns:commodity="http://release.niem.gov/niem/codes/commodity/5.0/"
   xmlns:ct="http://release.niem.gov/niem/conformanceTargets/3.0/"
+  xmlns:nc="http://release.niem.gov/niem/niem-core/5.0/"
   xmlns:structures="http://release.niem.gov/niem/structures/4.0/"
   xmlns:xs="http://www.w3.org/2001/XMLSchema"
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
@@ -13,6 +14,7 @@
       <appinfo:LocalTerm term="SCTG" literal="Standard Classification of Transported Goods"/>
     </xs:appinfo>
   </xs:annotation>
+  <xs:import namespace="http://release.niem.gov/niem/niem-core/5.0/" schemaLocation="../niem-core.xsd"/>
   <xs:import namespace="http://release.niem.gov/niem/structures/4.0/" schemaLocation="../utility/structures.xsd"/>
   <xs:simpleType name="CommodityCodeSimpleType">
     <xs:annotation>
@@ -3169,4 +3171,29 @@
       </xs:extension>
     </xs:simpleContent>
   </xs:complexType>
+  <xs:element name="CommodityCategoryCode" type="commodity:CommodityCodeType" substitutionGroup="nc:ItemCategoryAbstract" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A kind of commodity item.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="ConveyanceCategoryCode" type="commodity:ConveyanceCategoryCodeType" substitutionGroup="nc:ItemCategoryAbstract" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A kind of conveyance.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="ElectronicEquipmentCategoryCode" type="commodity:ElectronicEquipmentCategoryCodeType" substitutionGroup="nc:ItemCategoryAbstract" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A kind of electronic equipment.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="ElectronicInstrumentCategoryCode" type="commodity:ElectronicInstrumentCategoryCodeType" substitutionGroup="nc:ItemCategoryAbstract" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A kind of electronic instrument.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="MachineryCategoryCode" type="commodity:MachineryCategoryCodeType" substitutionGroup="nc:ItemCategoryAbstract" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A kind of machinery.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
 </xs:schema>

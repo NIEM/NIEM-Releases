@@ -3,6 +3,7 @@
   xmlns:appinfo="http://release.niem.gov/niem/appinfo/4.0/"
   xmlns:ct="http://release.niem.gov/niem/conformanceTargets/3.0/"
   xmlns:hazmat="http://release.niem.gov/niem/codes/hazmat/5.0/"
+  xmlns:nc="http://release.niem.gov/niem/niem-core/5.0/"
   xmlns:structures="http://release.niem.gov/niem/structures/4.0/"
   xmlns:xs="http://www.w3.org/2001/XMLSchema"
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
@@ -12,6 +13,7 @@
       <appinfo:LocalTerm term="UN" literal="United Nations"/>
     </xs:appinfo>
   </xs:annotation>
+  <xs:import namespace="http://release.niem.gov/niem/niem-core/5.0/" schemaLocation="../niem-core.xsd"/>
   <xs:import namespace="http://release.niem.gov/niem/structures/4.0/" schemaLocation="../utility/structures.xsd"/>
   <xs:simpleType name="HazmatCodeSimpleType">
     <xs:annotation>
@@ -12345,4 +12347,9 @@
       </xs:extension>
     </xs:simpleContent>
   </xs:complexType>
+  <xs:element name="HazardousMaterialCode" type="hazmat:HazmatCodeType" substitutionGroup="nc:HazmatAbstract" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A hazardous material.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
 </xs:schema>

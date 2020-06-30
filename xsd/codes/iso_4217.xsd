@@ -3,12 +3,14 @@
   xmlns:appinfo="http://release.niem.gov/niem/appinfo/4.0/"
   xmlns:ct="http://release.niem.gov/niem/conformanceTargets/3.0/"
   xmlns:iso_4217="http://release.niem.gov/niem/codes/iso_4217/5.0/"
+  xmlns:nc="http://release.niem.gov/niem/niem-core/5.0/"
   xmlns:structures="http://release.niem.gov/niem/structures/4.0/"
   xmlns:xs="http://www.w3.org/2001/XMLSchema"
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <xs:annotation>
     <xs:documentation>ISO 4217 - Codes for the representation of currencies and funds</xs:documentation>
   </xs:annotation>
+  <xs:import namespace="http://release.niem.gov/niem/niem-core/5.0/" schemaLocation="../niem-core.xsd"/>
   <xs:import namespace="http://release.niem.gov/niem/structures/4.0/" schemaLocation="../utility/structures.xsd"/>
   <xs:simpleType name="CurrencyCodeSimpleType">
     <xs:annotation>
@@ -922,4 +924,9 @@
       </xs:extension>
     </xs:simpleContent>
   </xs:complexType>
+  <xs:element name="CurrencyCode" type="iso_4217:CurrencyCodeType" substitutionGroup="nc:CurrencyAbstract" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A unit of money or exchange.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
 </xs:schema>

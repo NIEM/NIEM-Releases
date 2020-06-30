@@ -3,12 +3,14 @@
   xmlns:appinfo="http://release.niem.gov/niem/appinfo/4.0/"
   xmlns:ct="http://release.niem.gov/niem/conformanceTargets/3.0/"
   xmlns:hl7="http://release.niem.gov/niem/codes/hl7/5.0/"
+  xmlns:nc="http://release.niem.gov/niem/niem-core/5.0/"
   xmlns:structures="http://release.niem.gov/niem/structures/4.0/"
   xmlns:xs="http://www.w3.org/2001/XMLSchema"
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <xs:annotation>
     <xs:documentation>Health Level Seven (HL-7) Fast Healthcare Interoperability Resources (FHIR)</xs:documentation>
   </xs:annotation>
+  <xs:import namespace="http://release.niem.gov/niem/niem-core/5.0/" schemaLocation="../niem-core.xsd"/>
   <xs:import namespace="http://release.niem.gov/niem/structures/4.0/" schemaLocation="../utility/structures.xsd"/>
   <xs:simpleType name="ReligionCodeSimpleType">
     <xs:annotation>
@@ -437,4 +439,9 @@
       </xs:extension>
     </xs:simpleContent>
   </xs:complexType>
+  <xs:element name="ReligionCode" type="hl7:ReligionCodeType" substitutionGroup="nc:PersonReligionAbstract" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A religion to which a person subscribes or believes; a categorization of spiritual beliefs.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
 </xs:schema>

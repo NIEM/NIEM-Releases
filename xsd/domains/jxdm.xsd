@@ -7,7 +7,6 @@
   xmlns:biom="http://release.niem.gov/niem/domains/biometrics/5.0/"
   xmlns:cbrn="http://release.niem.gov/niem/domains/cbrn/5.0/"
   xmlns:ct="http://release.niem.gov/niem/conformanceTargets/3.0/"
-  xmlns:dea="http://release.niem.gov/niem/codes/dea_ctlsub/5.0/"
   xmlns:em="http://release.niem.gov/niem/domains/emergencyManagement/5.0/"
   xmlns:hs="http://release.niem.gov/niem/domains/humanServices/5.0/"
   xmlns:im="http://release.niem.gov/niem/domains/immigration/5.0/"
@@ -121,7 +120,6 @@
   <xs:import namespace="http://release.niem.gov/niem/codes/aamva_d20/5.0/" schemaLocation="../codes/aamva_d20.xsd"/>
   <xs:import namespace="http://release.niem.gov/niem/codes/apco_event/5.0/" schemaLocation="../codes/apco_event.xsd"/>
   <xs:import namespace="http://release.niem.gov/niem/codes/atf/5.0/" schemaLocation="../codes/atf.xsd"/>
-  <xs:import namespace="http://release.niem.gov/niem/codes/dea_ctlsub/5.0/" schemaLocation="../codes/dea.xsd"/>
   <xs:import namespace="http://release.niem.gov/niem/codes/mmucc/5.0/" schemaLocation="../codes/mmucc.xsd"/>
   <xs:import namespace="http://release.niem.gov/niem/codes/ncic/5.0/" schemaLocation="../codes/ncic.xsd"/>
   <xs:import namespace="http://release.niem.gov/niem/codes/ndex/5.0/" schemaLocation="../codes/ndex.xsd"/>
@@ -17095,11 +17093,6 @@
   <xs:element name="DrugCategoryCode" type="ucr:DrugCategoryCodeType" substitutionGroup="nc:SubstanceCategoryAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A kind of drug.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="DrugCategoryDEACode" type="dea:DrugCategoryCodeType" substitutionGroup="nc:SubstanceCategoryAbstract" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A drug.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="DrugInvolvementSuspicionAbstract" abstract="true">

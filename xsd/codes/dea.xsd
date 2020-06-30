@@ -3,12 +3,14 @@
   xmlns:appinfo="http://release.niem.gov/niem/appinfo/4.0/"
   xmlns:ct="http://release.niem.gov/niem/conformanceTargets/3.0/"
   xmlns:dea="http://release.niem.gov/niem/codes/dea_ctlsub/5.0/"
+  xmlns:nc="http://release.niem.gov/niem/niem-core/5.0/"
   xmlns:structures="http://release.niem.gov/niem/structures/4.0/"
   xmlns:xs="http://www.w3.org/2001/XMLSchema"
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <xs:annotation>
     <xs:documentation>Drug Enforcement Administration (DEA) Controlled Substances</xs:documentation>
   </xs:annotation>
+  <xs:import namespace="http://release.niem.gov/niem/niem-core/5.0/" schemaLocation="../niem-core.xsd"/>
   <xs:import namespace="http://release.niem.gov/niem/structures/4.0/" schemaLocation="../utility/structures.xsd"/>
   <xs:simpleType name="DEAClassScheduleCodeCodeSimpleType">
     <xs:annotation>
@@ -2826,4 +2828,19 @@
       </xs:extension>
     </xs:simpleContent>
   </xs:complexType>
+  <xs:element name="DrugCategoryCode" type="dea:DrugCategoryCodeType" substitutionGroup="nc:SubstanceCategoryAbstract" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A drug.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="DrugClassScheduleCode" type="dea:DEAClassScheduleCodeCodeType" substitutionGroup="nc:DrugClassScheduleAbstract" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A class to which the Drug Enforcement Agency (DEA) has assigned the product under the Controlled Substances Act of 1970.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="DrugCode" type="dea:DrugCodeType" substitutionGroup="nc:SubstanceAbstract" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A drug.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
 </xs:schema>

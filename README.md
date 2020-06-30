@@ -70,6 +70,7 @@ Note that schema updates have been committed per issue, so issue-specific file d
 - Merged scr:PersonNameAugmentation and scr:PersonNameTextAugmentation [(#77)](https://github.com/NIEM/NIEM-Releases/issues/77)
 - Moved nc:PleaCategoryCodeType to the Justice domain [(#24)](https://github.com/NIEM/NIEM-Releases/issues/24)
 - Moved additional Justice-specific types from Core to Justice [(#79)](https://github.com/NIEM/NIEM-Releases/issues/79)
+- Moved Core code elements to code namespaces to enable easier code set updates during minor releases (#90)
 - Moved j:ItemMakeAbstract to Core [(#95)](https://github.com/NIEM/NIEM-Releases/issues/95)
 - Moved nc:EffectiveDate from screening augmentation to nc:PersonNameType [(#96)](https://github.com/NIEM/NIEM-Releases/issues/96)
 - Refactored scr:AddressAugmentationType [(#110)](https://github.com/NIEM/NIEM-Releases/issues/110)

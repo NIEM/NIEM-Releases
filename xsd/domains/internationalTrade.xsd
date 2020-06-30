@@ -4,6 +4,7 @@
   xmlns:cbrn="http://release.niem.gov/niem/domains/cbrn/5.0/"
   xmlns:ct="http://release.niem.gov/niem/conformanceTargets/3.0/"
   xmlns:iso_3166="http://release.niem.gov/niem/codes/iso_3166-1/5.0/"
+  xmlns:iso_4217="http://release.niem.gov/niem/codes/iso_4217/5.0/"
   xmlns:it="http://release.niem.gov/niem/domains/internationalTrade/5.0/"
   xmlns:itcodes="http://release.niem.gov/niem/codes/it_codes/5.0/"
   xmlns:j="http://release.niem.gov/niem/domains/jxdm/7.0/"
@@ -37,6 +38,7 @@
     </xs:appinfo>
   </xs:annotation>
   <xs:import namespace="http://release.niem.gov/niem/codes/iso_3166-1/5.0/" schemaLocation="../codes/iso_3166.xsd"/>
+  <xs:import namespace="http://release.niem.gov/niem/codes/iso_4217/5.0/" schemaLocation="../codes/iso_4217.xsd"/>
   <xs:import namespace="http://release.niem.gov/niem/codes/it_codes/5.0/" schemaLocation="../codes/it_codes.xsd"/>
   <xs:import namespace="http://release.niem.gov/niem/domains/cbrn/5.0/" schemaLocation="cbrn.xsd"/>
   <xs:import namespace="http://release.niem.gov/niem/domains/jxdm/7.0/" schemaLocation="jxdm.xsd"/>
@@ -395,7 +397,7 @@
       <xs:extension base="structures:ObjectType">
         <xs:sequence>
           <xs:element ref="it:RateOfExchangePercent" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="nc:CurrencyCode" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="iso_4217:CurrencyCode" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="it:CurrencyExchangeAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
       </xs:extension>

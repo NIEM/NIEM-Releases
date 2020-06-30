@@ -4,6 +4,7 @@
   xmlns:ag_codes="http://release.niem.gov/niem/codes/ag_codes/5.0/"
   xmlns:appinfo="http://release.niem.gov/niem/appinfo/4.0/"
   xmlns:ct="http://release.niem.gov/niem/conformanceTargets/3.0/"
+  xmlns:fips="http://release.niem.gov/niem/codes/fips/5.0/"
   xmlns:geo="http://release.niem.gov/niem/adapters/geospatial/5.0/"
   xmlns:nc="http://release.niem.gov/niem/niem-core/5.0/"
   xmlns:niem-xs="http://release.niem.gov/niem/proxy/xsd/5.0/"
@@ -33,6 +34,7 @@
   </xs:annotation>
   <xs:import namespace="http://release.niem.gov/niem/adapters/geospatial/5.0/" schemaLocation="../adapters/geospatial.xsd"/>
   <xs:import namespace="http://release.niem.gov/niem/codes/ag_codes/5.0/" schemaLocation="../codes/ag_codes.xsd"/>
+  <xs:import namespace="http://release.niem.gov/niem/codes/fips/5.0/" schemaLocation="../codes/fips.xsd"/>
   <xs:import namespace="http://release.niem.gov/niem/codes/usda_fsa/5.0/" schemaLocation="../codes/usda_fsa.xsd"/>
   <xs:import namespace="http://release.niem.gov/niem/niem-core/5.0/" schemaLocation="../niem-core.xsd"/>
   <xs:import namespace="http://release.niem.gov/niem/proxy/xsd/5.0/" schemaLocation="../adapters/xml-schema-proxy.xsd"/>
@@ -61,8 +63,8 @@
     <xs:complexContent>
       <xs:extension base="structures:ObjectType">
         <xs:sequence>
-          <xs:element ref="nc:StateFIPSCode" minOccurs="1" maxOccurs="1"/>
-          <xs:element ref="nc:LocationCountyCode" minOccurs="1" maxOccurs="1"/>
+          <xs:element ref="fips:StateCode" minOccurs="1" maxOccurs="1"/>
+          <xs:element ref="fips:LocationCountyCode" minOccurs="1" maxOccurs="1"/>
           <xs:element ref="ag:SubfieldNumberID" minOccurs="0" maxOccurs="1"/>
           <xs:element ref="ag:CoreProductCode" minOccurs="1" maxOccurs="1"/>
           <xs:element ref="ag:CoreProductCategoryCode" minOccurs="0" maxOccurs="1"/>

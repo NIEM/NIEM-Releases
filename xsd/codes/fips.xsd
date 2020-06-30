@@ -3,12 +3,14 @@
   xmlns:appinfo="http://release.niem.gov/niem/appinfo/4.0/"
   xmlns:ct="http://release.niem.gov/niem/conformanceTargets/3.0/"
   xmlns:fips="http://release.niem.gov/niem/codes/fips/5.0/"
+  xmlns:nc="http://release.niem.gov/niem/niem-core/5.0/"
   xmlns:structures="http://release.niem.gov/niem/structures/4.0/"
   xmlns:xs="http://www.w3.org/2001/XMLSchema"
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <xs:annotation>
     <xs:documentation>U.S. Census Bureau Federal Information Processing System (FIPS) codes for U.S. states and counties</xs:documentation>
   </xs:annotation>
+  <xs:import namespace="http://release.niem.gov/niem/niem-core/5.0/" schemaLocation="../niem-core.xsd"/>
   <xs:import namespace="http://release.niem.gov/niem/structures/4.0/" schemaLocation="../utility/structures.xsd"/>
   <xs:simpleType name="USCountyNumericCodeSimpleType">
     <xs:annotation>
@@ -16399,4 +16401,14 @@
       </xs:extension>
     </xs:simpleContent>
   </xs:complexType>
+  <xs:element name="LocationCountyCode" type="fips:USCountyNumericCodeType" substitutionGroup="nc:AddressCountyAbstract" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A county, parish, vicinage, or other such geopolitical subdivision of a state.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="StateCode" type="fips:USStateNumericCodeType" substitutionGroup="nc:StateRepresentation" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A state, commonwealth, province, or other such geopolitical subdivision of a country.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
 </xs:schema>

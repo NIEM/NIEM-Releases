@@ -2,6 +2,7 @@
 <xs:schema targetNamespace="http://release.niem.gov/niem/codes/usps_states/5.0/" version="beta1" xsi:schemaLocation="http://release.niem.gov/niem/appinfo/4.0/ ../../../utility/appinfo/4.0/appinfo.xsd http://release.niem.gov/niem/conformanceTargets/3.0/ ../../../utility/conformanceTargets/3.0/conformanceTargets.xsd" ct:conformanceTargets="http://reference.niem.gov/niem/specification/naming-and-design-rules/4.0/#ReferenceSchemaDocument"
   xmlns:appinfo="http://release.niem.gov/niem/appinfo/4.0/"
   xmlns:ct="http://release.niem.gov/niem/conformanceTargets/3.0/"
+  xmlns:nc="http://release.niem.gov/niem/niem-core/5.0/"
   xmlns:structures="http://release.niem.gov/niem/structures/4.0/"
   xmlns:usps="http://release.niem.gov/niem/codes/usps_states/5.0/"
   xmlns:xs="http://www.w3.org/2001/XMLSchema"
@@ -9,6 +10,7 @@
   <xs:annotation>
     <xs:documentation>United States Postal Service (USPS) Publication 28 - Postal Addressing Standards</xs:documentation>
   </xs:annotation>
+  <xs:import namespace="http://release.niem.gov/niem/niem-core/5.0/" schemaLocation="../niem-core.xsd"/>
   <xs:import namespace="http://release.niem.gov/niem/structures/4.0/" schemaLocation="../utility/structures.xsd"/>
   <xs:simpleType name="StreetDirectionalCodeSimpleType">
     <xs:annotation>
@@ -1441,4 +1443,19 @@
       </xs:extension>
     </xs:simpleContent>
   </xs:complexType>
+  <xs:element name="StateCode" type="usps:USStateCodeType" substitutionGroup="nc:StateRepresentation" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A state, commonwealth, province, or other such geopolitical subdivision of a country.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="StreetCategoryCode" type="usps:StreetSuffixCodeType" substitutionGroup="nc:StreetCategoryAbstract" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A kind of street.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="StreetDirectionalCode" type="usps:StreetDirectionalCodeType" substitutionGroup="nc:StreetDirectionalAbstract" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A direction that appears before a street name.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
 </xs:schema>

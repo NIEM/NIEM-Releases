@@ -3,12 +3,14 @@
   xmlns:appinfo="http://release.niem.gov/niem/appinfo/4.0/"
   xmlns:ct="http://release.niem.gov/niem/conformanceTargets/3.0/"
   xmlns:dol="http://release.niem.gov/niem/codes/dol_soc/5.0/"
+  xmlns:nc="http://release.niem.gov/niem/niem-core/5.0/"
   xmlns:structures="http://release.niem.gov/niem/structures/4.0/"
   xmlns:xs="http://www.w3.org/2001/XMLSchema"
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <xs:annotation>
     <xs:documentation>US Department of Labor (DOL) Standard Occupational Classification (SC) occupation codes</xs:documentation>
   </xs:annotation>
+  <xs:import namespace="http://release.niem.gov/niem/niem-core/5.0/" schemaLocation="../niem-core.xsd"/>
   <xs:import namespace="http://release.niem.gov/niem/structures/4.0/" schemaLocation="../utility/structures.xsd"/>
   <xs:simpleType name="OccupationBroadCodeSimpleType">
     <xs:annotation>
@@ -7313,4 +7315,24 @@
       </xs:extension>
     </xs:simpleContent>
   </xs:complexType>
+  <xs:element name="EmployeeOccupationCategoryCode" type="dol:OccupationMinorCodeType" substitutionGroup="nc:EmployeeOccupationAbstract" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A category of job of an employee.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="EmployeeOccupationCode" type="dol:OccupationDetailCodeType" substitutionGroup="nc:EmployeeOccupationAbstract" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A job of an employee.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="EmployeeOccupationGeneralCategoryCode" type="dol:OccupationMajorCodeType" substitutionGroup="nc:EmployeeOccupationAbstract" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A general category of job of an employee.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="EmployeeOccupationSubCategoryCode" type="dol:OccupationBroadCodeType" substitutionGroup="nc:EmployeeOccupationAbstract" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A subcategory of job of an employee.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
 </xs:schema>

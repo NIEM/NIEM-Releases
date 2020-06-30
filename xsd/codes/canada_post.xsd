@@ -3,12 +3,14 @@
   xmlns:appinfo="http://release.niem.gov/niem/appinfo/4.0/"
   xmlns:can="http://release.niem.gov/niem/codes/canada_post/5.0/"
   xmlns:ct="http://release.niem.gov/niem/conformanceTargets/3.0/"
+  xmlns:nc="http://release.niem.gov/niem/niem-core/5.0/"
   xmlns:structures="http://release.niem.gov/niem/structures/4.0/"
   xmlns:xs="http://www.w3.org/2001/XMLSchema"
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <xs:annotation>
     <xs:documentation>Canada Post Addressing Guidelines</xs:documentation>
   </xs:annotation>
+  <xs:import namespace="http://release.niem.gov/niem/niem-core/5.0/" schemaLocation="../niem-core.xsd"/>
   <xs:import namespace="http://release.niem.gov/niem/structures/4.0/" schemaLocation="../utility/structures.xsd"/>
   <xs:simpleType name="CanadianProvinceCodeSimpleType">
     <xs:annotation>
@@ -891,4 +893,19 @@
       </xs:extension>
     </xs:simpleContent>
   </xs:complexType>
+  <xs:element name="ProvinceCode" type="can:CanadianProvinceCodeType" substitutionGroup="nc:StateRepresentation" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A province or territory in Canada.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="StreetCategoryCode" type="can:StreetCategoryCodeType" substitutionGroup="nc:StreetCategoryAbstract" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A kind of street.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="StreetDirectionalCode" type="can:StreetDirectionCodeType" substitutionGroup="nc:StreetDirectionalAbstract" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A direction that appears before a street name.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
 </xs:schema>
