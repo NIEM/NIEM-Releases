@@ -268,13 +268,15 @@
     <xs:complexContent>
       <xs:extension base="nc:ConveyanceType">
         <xs:sequence>
-          <xs:element ref="nc:AircraftTailIdentification" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:AircraftBaseAirport" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:AircraftCallSignIdentification" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:AircraftCategoryAbstract" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:AircraftFuselageColorAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:AircraftMakeAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:AircraftModelAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:AircraftStyleAbstract" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="nc:AircraftFuselageColorAbstract" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:AircraftTailIdentification" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:AircraftWingColorAbstract" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="nc:AircraftBaseAirport" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:AircraftAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
       </xs:extension>
@@ -5128,6 +5130,16 @@
   <xs:element name="AircraftBaseAirport" type="nc:AirportType" nillable="true">
     <xs:annotation>
       <xs:documentation>A facility at which an aircraft is usually kept.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="AircraftCallSignIdentification" type="nc:IdentificationType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>An identification of any combination of characters or pronounceable words, which identifies a communication facility, a command, an authority, an activity, or a unit; used primarily for establishing and maintaining communications.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="AircraftCategoryAbstract" abstract="true">
+    <xs:annotation>
+      <xs:documentation>A data concept for categorizing aircraft based upon intended use or operating limitations.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="AircraftFuselageColorAbstract" abstract="true">

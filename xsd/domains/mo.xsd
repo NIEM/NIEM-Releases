@@ -108,19 +108,6 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-  <xs:complexType name="AircraftAugmentationType">
-    <xs:annotation>
-      <xs:documentation>A data type for additional information about an nc:Aircraft.</xs:documentation>
-    </xs:annotation>
-    <xs:complexContent>
-      <xs:extension base="structures:AugmentationType">
-        <xs:sequence>
-          <xs:element ref="mo:CallSignIdentification" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="mo:AircraftCategoryAbstract" minOccurs="0" maxOccurs="unbounded"/>
-        </xs:sequence>
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
   <xs:complexType name="AircraftTargetAssociationType">
     <xs:annotation>
       <xs:documentation>A data type for a relationship between an aircraft and a target.</xs:documentation>
@@ -2372,16 +2359,6 @@
       <xs:documentation>A relationship between an aircraft and a target.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="AircraftAugmentation" type="mo:AircraftAugmentationType" substitutionGroup="nc:AircraftAugmentationPoint" nillable="true">
-    <xs:annotation>
-      <xs:documentation>Additional information about an nc:Aircraft.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="AircraftCategoryAbstract" abstract="true">
-    <xs:annotation>
-      <xs:documentation>A data concept for categorizing aircraft based upon intended use or operating limitations.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
   <xs:element name="AircraftTargetAssociationAugmentationPoint" abstract="true">
     <xs:annotation>
       <xs:documentation>An augmentation point for type mo:AircraftTargetAssociationType</xs:documentation>
@@ -2470,11 +2447,6 @@
   <xs:element name="AuthorityURI" type="niem-xs:anyURI" substitutionGroup="nc:JurisdictionAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A URI for an organization or other authority that assigns identifiers to things identified.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="CallSignIdentification" type="nc:IdentificationType" nillable="true">
-    <xs:annotation>
-      <xs:documentation>An identification of any combination of characters or pronounceable words, which identifies a communication facility, a command, an authority, an activity, or a unit; used primarily for establishing and maintaining communications.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="CommentDestinationText" type="niem-xs:string" substitutionGroup="nc:CommentAugmentationPoint" nillable="true">
