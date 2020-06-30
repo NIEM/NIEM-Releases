@@ -1,7 +1,7 @@
 
-# NIEM 5.0-alpha1
+# NIEM 5.0-beta1
 
-This is the alpha 1 draft of the NIEM 5.0 major release.
+This is the beta 1 draft of the NIEM 5.0 major release.
 
 In a major release, content may be updated in any namespace, including Core.  Changes may also be made to the NIEM architecture, which may be reflected in the structure and layout of the NIEM schemas.
 
@@ -9,7 +9,11 @@ The final NIEM 5.0 release is targeted for Fall 2020.
 
 ## Feedback
 
-Please submit feedback by Friday, April 17.  Feedback can be posted directly to the [NIEM Releases issue tracker](https://github.com/NIEM/NIEM-Releases/issues) or emailed to niem-comments@lists.gatech.edu .
+Please submit feedback by Friday, July 18.  Feedback can be posted directly to the [NIEM Releases issue tracker](https://github.com/NIEM/NIEM-Releases/issues) or emailed to niem-comments@lists.gatech.edu.
+
+## Note
+
+Updates to the Naming and Design Rules (NDR) Specification are in progress.  There are conformance validation issues in this beta due to updates to the structures and appinfo schemas that will be resolved once the new NDR 5.0 conformance targets and validation rules become available.
 
 ## Key changes
 
@@ -103,6 +107,7 @@ Note that schema updates have been committed per issue, so issue-specific file d
 
 - Simplified folder layout [(#140)](https://github.com/NIEM/NIEM-Releases/issues/140)
 - Changed the character encoding of the XML schemas from "US-ASCII" to "UTF-8" for better international support [(#125)](https://github.com/NIEM/NIEM-Releases/issues/125)
+- Updated structures and appinfo utility schemas to version 5.0 based on NDR updates [(#157)](https://github.com/NIEM/NIEM-Releases/issues/157)
 - Normalized schema sort orders:
   - Sorted namespace prefix declarations by prefix
   - Sorted import statements by target namespace
@@ -112,11 +117,3 @@ Note that schema updates have been committed per issue, so issue-specific file d
   - Sorted components using case-insensitive order, with spaces sorting above other characters
   - Sorted facets by style (alphabetically with the exception of sorting min facets before max facets), value, and definition
 - Updated target namespaces and dependencies for 5.0.
-
-## Expected updates for beta
-
-Additional updates are being considered or are expected for the beta draft, including:
-
-- Code table updates, including AAMVA and GENC edition 3.0 update 11
-- Continued harmonization and QA fixes across the model
-- Harmonization of updated Model Minimum Uniform Crash Criteria (MMUCC) content with the Justice domain
