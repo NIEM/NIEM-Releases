@@ -22,10 +22,12 @@
       <appinfo:LocalTerm term="FBI" literal="Federal Bureau of Investigation"/>
       <appinfo:LocalTerm term="FIPS" literal="Federal Information Processing Standards"/>
       <appinfo:LocalTerm term="FIPS10-4" definition="The FIPS 10-4 standard, Countries, Dependencies, Areas of Special Sovereignty, and Their Principal Administrative Divisions, was a list of two-letter country codes that were used by the U.S. Government for geographical data processing in many publications."/>
+      <appinfo:LocalTerm term="ICMWG" literal="Intelligence Community Metadata Working Group"/>
       <appinfo:LocalTerm term="INA" literal="Immigration and Nationality Act"/>
       <appinfo:LocalTerm term="ISO" literal="International Organization for Standardization"/>
       <appinfo:LocalTerm term="ISO3166" definition="ISO 3166 is a standard published by the International Organization for Standardization (ISO) that defines codes for the names of countries, dependent territories, special areas of geographical interest, and their principal subdivisions (e.g., provinces or states). The official name of the standard is Codes for the representation of names of countries and their subdivisions."/>
       <appinfo:LocalTerm term="NCTC" literal="National Counterterrorism Center"/>
+      <appinfo:LocalTerm term="VGTOF" literal="Violent Gang and Terrorist Organizations File"/>
     </xs:appinfo>
   </xs:annotation>
   <xs:import namespace="http://release.niem.gov/niem/codes/iso_3166-1/5.0/" schemaLocation="../codes/iso_3166.xsd"/>
@@ -428,7 +430,7 @@
   </xs:element>
   <xs:element name="PersonIdentityAssociationAugmentation" type="intel:PersonIdentityAssociationAugmentationType" substitutionGroup="nc:PersonIdentityAssociationAugmentationPoint" nillable="true">
     <xs:annotation>
-      <xs:documentation>Additional information about an IdentityAssociationType.</xs:documentation>
+      <xs:documentation>Additional information about an identity association.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="PersonInIDAugmentationPoint" abstract="true">

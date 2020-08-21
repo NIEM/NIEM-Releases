@@ -19,12 +19,16 @@
     <xs:documentation>The People Screening domain provides harmonized information sharing content within the Screening Portfolio of DHS.  The Screening namespace is initially being populated with person screening information for immigrant and non-immigrant person types who have been encountered and identified by the Screening Portfolio Components.  Screening expands on encounter-related NIEM elements currently included in the Immigration and Intelligence domains.</xs:documentation>
     <xs:appinfo>
       <appinfo:LocalTerm term="ASA" literal="Army Security Agency"/>
+      <appinfo:LocalTerm term="CBP" literal="United States Customs and Border Protection"/>
+      <appinfo:LocalTerm term="DoJ" literal="Department of Justice"/>
       <appinfo:LocalTerm term="EFTS" literal="Electronic Fingerprint Transmission Specification"/>
       <appinfo:LocalTerm term="IATA" literal="International Air Transport Association"/>
+      <appinfo:LocalTerm term="IDENT" literal="Automated Biometric Identification System"/>
       <appinfo:LocalTerm term="INS" literal="Immigration and Naturalization Service"/>
       <appinfo:LocalTerm term="LPR" literal="License Plate Reader"/>
       <appinfo:LocalTerm term="NCIC" literal="National Crime Information Center"/>
       <appinfo:LocalTerm term="TECS" literal="Traveler Encounter Compliance System"/>
+      <appinfo:LocalTerm term="USCIS" literal="United States Citizenship and Immigration Services"/>
       <appinfo:LocalTerm term="Watchlist" definition="A document which contains a nomination list prepared and approved by the National Center of Counter Terrorism."/>
     </xs:appinfo>
   </xs:annotation>
@@ -23131,7 +23135,7 @@
   </xs:element>
   <xs:element name="LastUpdateTECSUserID" type="niem-xs:string" nillable="true">
     <xs:annotation>
-      <xs:documentation>An identifier for the UserID of the individual who last updated the record</xs:documentation>
+      <xs:documentation>An identifier for the user ID of the individual who last updated the record</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="LastUpdateTerminalID" type="niem-xs:string" nillable="true">
@@ -23511,7 +23515,7 @@
   </xs:element>
   <xs:element name="OwnerTECSUserID" type="niem-xs:string" nillable="true">
     <xs:annotation>
-      <xs:documentation>An identifier for the UserID of the current owner of the record</xs:documentation>
+      <xs:documentation>An identifier for the user ID of the current owner of the record</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="PayRateAmount" type="nc:AmountType" nillable="true">
@@ -24531,7 +24535,7 @@
   </xs:element>
   <xs:element name="WarrantOffenseOccurredDate" type="nc:DateType" nillable="true">
     <xs:annotation>
-      <xs:documentation>A date that the warrant offense occurred. Format is MMDDYY.</xs:documentation>
+      <xs:documentation>A date that the warrant offense occurred.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="Watchlist" type="scr:WatchlistType" nillable="true">

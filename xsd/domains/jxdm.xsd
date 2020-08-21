@@ -28,6 +28,7 @@
     <xs:appinfo>
       <appinfo:LocalTerm term="AAMVA" literal="The American Association of Motor Vehicle Administrators"/>
       <appinfo:LocalTerm term="ACD" literal="AAMVA Code Dictionary"/>
+      <appinfo:LocalTerm term="ADA" literal="Americans with Disabilities Act"/>
       <appinfo:LocalTerm term="AFIS" literal="Automated Fingerprint Identification System"/>
       <appinfo:LocalTerm term="Alpha" definition="Letter(s)"/>
       <appinfo:LocalTerm term="Amber" literal="America's Missing: Broadcast Emergency Response"/>
@@ -69,6 +70,7 @@
       <appinfo:LocalTerm term="Keyhea" definition="Under the Keyhea injunction, 'involuntary medication' cannot be administered to a state prisoner for more than three days unless the professional staff of the facility in which the prisoner is incarcerated has analyzed the prisoner's condition and found that the prisoner is, as a result of a mental disorder, 'gravely disabled and incompetent to refuse medication or a danger to others, or a danger to self,' and the prisoner has been 'advised of the need for, but has not been willing to accept medication on a voluntary basis.'"/>
       <appinfo:LocalTerm term="LEOKA" literal="Law Enforcement Officer Killed or Assaulted"/>
       <appinfo:LocalTerm term="LIS" literal="License Plate State"/>
+      <appinfo:LocalTerm term="Livescan" definition="An inkless, electronic means of capturing fingerprints in a digitized format and then transmitting them to a state repository and/or the FBI"/>
       <appinfo:LocalTerm term="LSTA" definition="State/Country Index"/>
       <appinfo:LocalTerm term="MACR" literal="Monthly Arrest and Citation Register"/>
       <appinfo:LocalTerm term="MCMIS" literal="Motor Carrier Management Information System"/>
@@ -86,6 +88,7 @@
       <appinfo:LocalTerm term="NDEX" literal="National Data Exchange"/>
       <appinfo:LocalTerm term="NIBRS" literal="National Incident Based Reporting System"/>
       <appinfo:LocalTerm term="NICB" literal="National Insurance Crime Bureau"/>
+      <appinfo:LocalTerm term="NICS" literal="National Instant Criminal Background Check System"/>
       <appinfo:LocalTerm term="NLETS" literal="National Law Enforcement Telecommunication Systems"/>
       <appinfo:LocalTerm term="OCA" literal="Originating Case Agency"/>
       <appinfo:LocalTerm term="ORI" definition="A nine-character identifier assigned by the FBI Criminal Justice Information Systems (CJIS) staff to an organization, which must have met the established qualifying criteria for ORI assignment to identify the agency in transactions on CJIS Systems."/>
@@ -95,9 +98,12 @@
       <appinfo:LocalTerm term="PRISM" literal="Performance and Registration Information Systems Management"/>
       <appinfo:LocalTerm term="REALID" definition="Public Law 109–13, 119 Statute 302, enacted May 11, 2005, was an Act of Congress that modified U.S. federal law pertaining to security, authentication, and issuance procedures standards for the state driver's licenses and identification (ID) cards, as well as various immigration issues pertaining to terrorism."/>
       <appinfo:LocalTerm term="RES" literal="Registration State"/>
+      <appinfo:LocalTerm term="RH" definition="Rhesus (Rh) factor is an inherited protein found on the surface of red blood cells."/>
+      <appinfo:LocalTerm term="RICO" literal="Racketeer Influenced and Corrupt Organizations"/>
       <appinfo:LocalTerm term="SAFESTAT" literal="Safety Status Measurement System"/>
       <appinfo:LocalTerm term="Separatee" literal="A person who must be kept separate from another person."/>
       <appinfo:LocalTerm term="SMT" literal="Scars, Marks, Tattoos, and Other Characteristics"/>
+      <appinfo:LocalTerm term="SSN" literal="Social Security Number"/>
       <appinfo:LocalTerm term="TCD" literal="traffic control device"/>
       <appinfo:LocalTerm term="TCN" literal="Transaction Control Number"/>
       <appinfo:LocalTerm term="TripleI" literal="III - Interstate Identification Index system"/>
@@ -5245,7 +5251,7 @@
   </xs:complexType>
   <xs:complexType name="JuvenileActivityType">
     <xs:annotation>
-      <xs:documentation>A data type for an optional Juvenile Segment in the rapsheet.  The treatment of juveniles in the criminal justice system varies from state to state; these activities may not considered to be an arrest, so the use of the arrest segment would not be</xs:documentation>
+      <xs:documentation>A data type for an optional Juvenile Segment in the rap sheet.  The treatment of juveniles in the criminal justice system varies from state to state; these activities may not considered to be an arrest, so the use of the arrest segment would not be ...</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
       <xs:extension base="nc:ActivityType">
@@ -8816,7 +8822,7 @@
   </xs:complexType>
   <xs:complexType name="RapSheetPersonDNAType">
     <xs:annotation>
-      <xs:documentation>A data type for an element in the rapsheet used solely to report that a DNA sample has been taken from the subject and is available from a specific agency.</xs:documentation>
+      <xs:documentation>A data type for an element in the rap sheet used solely to report that a DNA sample has been taken from the subject and is available from a specific agency.</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
       <xs:extension base="structures:ObjectType">
@@ -25522,7 +25528,7 @@
   </xs:element>
   <xs:element name="PresentenceInvestigation" type="j:PresentenceInvestigationType" nillable="true">
     <xs:annotation>
-      <xs:documentation>An investigation occurring post conviction, but prior to sentence, that assesses a subject's probability of risk to the community in the form of future criminal behavior, the harm the offense caused and the need for restitution or cost.  Also assesse</xs:documentation>
+      <xs:documentation>An investigation occurring post conviction, but prior to sentence, that assesses a subject's probability of risk to the community in the form of future criminal behavior, the harm the offense caused and the need for restitution or cost.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="PresentenceInvestigationAugmentationPoint" abstract="true">

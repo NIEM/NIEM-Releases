@@ -34,7 +34,10 @@
       <appinfo:LocalTerm term="NANP" literal="North American Numbering Plan"/>
       <appinfo:LocalTerm term="Postdirectional" definition="A word following a street name that indicates the directional taken by the thoroughfare from an arbitrary starting point or line, or the sector where it is located."/>
       <appinfo:LocalTerm term="Predirectional" definition="A word preceding a street name that indicates the directional taken by the thoroughfare from an arbitrary starting point or line, or the sector where it is located."/>
+      <appinfo:LocalTerm term="RFID" literal="Radio-frequency identification"/>
+      <appinfo:LocalTerm term="RH" definition="Rhesus (Rh) factor is an inherited protein found on the surface of red blood cells."/>
       <appinfo:LocalTerm term="SSN" literal="Social Security Number"/>
+      <appinfo:LocalTerm term="TCP" literal="Transmission Control Protocol"/>
       <appinfo:LocalTerm term="UMTS" literal="Universal Mobile Telecommunications Service"/>
       <appinfo:LocalTerm term="UTC" literal="Coordinated Universal Time"/>
       <appinfo:LocalTerm term="UTM" literal="Universal Transverse Mercator"/>
@@ -2932,7 +2935,7 @@
   </xs:complexType>
   <xs:complexType name="ObligationExemptionType">
     <xs:annotation>
-      <xs:documentation>A data type for a waival or dismissal of an obligation.</xs:documentation>
+      <xs:documentation>A data type for a waiving or a dismissal of an obligation.</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
       <xs:extension base="structures:ObjectType">
@@ -4704,7 +4707,7 @@
   </xs:complexType>
   <xs:simpleType name="ZuluDateTimeSimpleType">
     <xs:annotation>
-      <xs:documentation>A data type for a dateTime constrained to always be ZULU.</xs:documentation>
+      <xs:documentation>A data type for a dateTime constrained to always be Zulu time, time at the Zero Meridian.</xs:documentation>
     </xs:annotation>
     <xs:restriction base="xs:dateTime">
       <xs:pattern value=".*Z">
@@ -4716,7 +4719,7 @@
   </xs:simpleType>
   <xs:complexType name="ZuluDateTimeType">
     <xs:annotation>
-      <xs:documentation>A data type for a dateTime constrained to always be ZULU.</xs:documentation>
+      <xs:documentation>A data type for a dateTime constrained to always be Zulu time, time at the Zero Meridian.</xs:documentation>
     </xs:annotation>
     <xs:simpleContent>
       <xs:extension base="nc:ZuluDateTimeSimpleType">

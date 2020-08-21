@@ -111,7 +111,7 @@
   </xs:complexType>
   <xs:complexType name="LineStringType" appinfo:externalAdapterTypeIndicator="true">
     <xs:annotation>
-      <xs:documentation>A data type for a geometric curve that consists of a single segment with linear interpolation.  A gml:LineString is a special curve that consists of a single segment with linear interpolation. It is defined by two or more coordinate tuples, with linear interpolation betw</xs:documentation>
+      <xs:documentation>A data type for a geometric curve that consists of a single segment with linear interpolation.  A gml:LineString is a special curve that consists of a single segment with linear interpolation. It is defined by two or more coordinate tuples, with linear interpolation between them. The number of direct positions in the list shall be at least two.</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
       <xs:extension base="structures:ObjectType">
@@ -127,7 +127,7 @@
   </xs:complexType>
   <xs:complexType name="MultiCurveType" appinfo:externalAdapterTypeIndicator="true">
     <xs:annotation>
-      <xs:documentation>A data type for a geometry collection that includes one or more curves or line strings. A gml:MultiCurve is defined by one or more gml:AbstractCurves. The members of the geometric aggregate may be specified either using the "standard" property (gml:curveMember) or the ar</xs:documentation>
+      <xs:documentation>A data type for a geometry collection that includes one or more curves or line strings. A gml:MultiCurve is defined by one or more gml:AbstractCurve elements. The members of the geometric aggregate may be specified either using the "standard" property (gml:curveMember) or the array property (gml:curveMembers). It is also valid to use both the "standard" and the array properties in the same collection.</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
       <xs:extension base="structures:ObjectType">
@@ -159,7 +159,7 @@
   </xs:complexType>
   <xs:complexType name="MultiPointType" appinfo:externalAdapterTypeIndicator="true">
     <xs:annotation>
-      <xs:documentation>A data type for a geometry collection that includes one or more points. A gml:MultiPoint consists of one or more gml:Points. The members of the geometric aggregate may be specified either using the "standard" property (gml:pointMember) or the array property (gml:pointMem</xs:documentation>
+      <xs:documentation>A data type for a geometry collection that includes one or more points. A gml:MultiPoint consists of one or more gml:Points. The members of the geometric aggregate may be specified either using the "standard" property (gml:pointMember) or the array property (gml:pointMembers). It is also valid to use both the "standard" and the array properties in the same collection.</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
       <xs:extension base="structures:ObjectType">
@@ -207,7 +207,7 @@
   </xs:complexType>
   <xs:complexType name="PolygonType" appinfo:externalAdapterTypeIndicator="true">
     <xs:annotation>
-      <xs:documentation>A data type for a polygon; a geometric surface defined by a single surface patch whose boundary is coplanar.  A gml:Polygon is a special surface that is defined by a single surface patch (see D.3.6). The boundary of this patch is coplanar and the polygon uses planar inte</xs:documentation>
+      <xs:documentation>A data type for a polygon; a geometric surface defined by a single surface patch whose boundary is coplanar.  A gml:Polygon is a special surface that is defined by a single surface patch (see D.3.6). The boundary of this patch is coplanar and the polygon uses planar interpolation in its interior. The elements exterior and interior describe the surface boundary of the polygon.</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
       <xs:extension base="structures:ObjectType">

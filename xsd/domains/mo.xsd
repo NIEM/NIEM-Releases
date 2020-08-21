@@ -17,16 +17,25 @@
     <xs:documentation>MilOps - Distribution A</xs:documentation>
     <xs:appinfo>
       <appinfo:LocalTerm term="Aimpoint" definition="A point associated with a target and assigned for a specific weapon impact."/>
+      <appinfo:LocalTerm term="AMETL" literal="Agency Mission Essential Task List"/>
       <appinfo:LocalTerm term="codespace" definition="A controlled vocabulary"/>
+      <appinfo:LocalTerm term="DNS" literal="Domain Name System"/>
+      <appinfo:LocalTerm term="DoD" literal="Department of Defense"/>
       <appinfo:LocalTerm term="DSN" literal="Defense Switched Network"/>
+      <appinfo:LocalTerm term="FMID" literal="Force Management Identifier"/>
+      <appinfo:LocalTerm term="GFM" literal="Global Force Management"/>
+      <appinfo:LocalTerm term="JS" literal="Joint Staff"/>
       <appinfo:LocalTerm term="MGRS" literal="Military Grid Reference System"/>
       <appinfo:LocalTerm term="MilOps" literal="Military Operations"/>
+      <appinfo:LocalTerm term="MILSTD" literal="Military Standard"/>
       <appinfo:LocalTerm term="MILSTD2525-B" literal="Military Standard 2525 B (MIL-STD-2525B)"/>
       <appinfo:LocalTerm term="MILSTD2525-C" literal="Military Standard 2525 C (MIL-STD-2525C)"/>
       <appinfo:LocalTerm term="MILSTD2525-D" literal="Military Standard 2525 D (MIL-STD-2525D)"/>
       <appinfo:LocalTerm term="NIST" literal="National Institute of Standards and Technology"/>
       <appinfo:LocalTerm term="OPEX" literal="Operation Exercise"/>
+      <appinfo:LocalTerm term="POC" literal="Point of Contact"/>
       <appinfo:LocalTerm term="SIDC" literal="Symbol Identification Code"/>
+      <appinfo:LocalTerm term="SP" literal="Special Publication"/>
       <appinfo:LocalTerm term="STANAG" literal="Standardization Agreement"/>
       <appinfo:LocalTerm term="UIC" literal="Unit Identification Code"/>
       <appinfo:LocalTerm term="ULN" literal="Unit Line Number"/>
@@ -726,7 +735,7 @@
   </xs:complexType>
   <xs:simpleType name="MGRSCoordinateStringSimpleType">
     <xs:annotation>
-      <xs:documentation>A data type for a complete coordinate string from the Military Grid Reference System (MGRS) which represents a location with a Universal Transverse Mercator (UTM) or Universal Polar Steriographic (UPS) coordinate and a unique military grid square.</xs:documentation>
+      <xs:documentation>A data type for a complete coordinate string from the Military Grid Reference System (MGRS) which represents a location with a Universal Transverse Mercator (UTM) or Universal Polar Stereographic (UPS) coordinate and a unique military grid square.</xs:documentation>
     </xs:annotation>
     <xs:restriction base="xs:string">
       <xs:pattern value="(((0[1-9]|[1-5][0-9]|60)[C-HJ-NP-X][A-HJ-NP-Z][A-HJ-NP-V])|([ABYZ][A-CF-HJ-LP-UX-Z][A-HJ-NP-Z]))([0-9][0-9]){0,5}">
@@ -738,7 +747,7 @@
   </xs:simpleType>
   <xs:complexType name="MGRSCoordinateStringType">
     <xs:annotation>
-      <xs:documentation>A data type for a complete coordinate string from the Military Grid Reference System (MGRS) which represents a location with a Universal Transverse Mercator (UTM) or Universal Polar Steriographic (UPS) coordinate and a unique military grid square.</xs:documentation>
+      <xs:documentation>A data type for a complete coordinate string from the Military Grid Reference System (MGRS) which represents a location with a Universal Transverse Mercator (UTM) or Universal Polar Stereographic (UPS) coordinate and a unique military grid square.</xs:documentation>
     </xs:annotation>
     <xs:simpleContent>
       <xs:extension base="mo:MGRSCoordinateStringSimpleType">
@@ -2931,7 +2940,7 @@
   </xs:element>
   <xs:element name="MGRSCoordinateStringText" type="mo:MGRSCoordinateStringType" substitutionGroup="mo:MGRSCoordinateAbstract" nillable="true">
     <xs:annotation>
-      <xs:documentation>A complete coordinate string from the Military Grid Reference System (MGRS) which represents a location with a Universal Transverse Mercator (UTM) or Universal Polar Steriographic (UPS) coordinate and a unique military grid square.</xs:documentation>
+      <xs:documentation>A complete coordinate string from the Military Grid Reference System (MGRS) which represents a location with a Universal Transverse Mercator (UTM) or Universal Polar Stereographic (UPS) coordinate and a unique military grid square.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="MGRSUPS1MeterCoordinateValue" type="mo:MGRSUPS1MeterCoordinateType" substitutionGroup="mo:MGRSCoordinateAbstract" nillable="true">

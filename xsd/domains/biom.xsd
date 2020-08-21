@@ -17,6 +17,7 @@
       <appinfo:LocalTerm term="3D" literal="Three-dimensional"/>
       <appinfo:LocalTerm term="ADA" literal="American Dental Association"/>
       <appinfo:LocalTerm term="ANSI" literal="American National Standards Institute"/>
+      <appinfo:LocalTerm term="autosomal" definition="Pertaining to a chromosome that is not a sex chromosome."/>
       <appinfo:LocalTerm term="AVI" literal="Audio Video Interleaved"/>
       <appinfo:LocalTerm term="CBEFF" literal="Common Biometric Exchange Formats Framework"/>
       <appinfo:LocalTerm term="Cheiloscopic" definition="Cheiloscopy is a forensic investigation technique that deals with identification of humans based on lips traces."/>
@@ -30,6 +31,7 @@
       <appinfo:LocalTerm term="Electropherogram" definition="A record or chart produced when electrophoresis is used in an analytical technique, primarily in the fields of molecular biology or biochemistry."/>
       <appinfo:LocalTerm term="FTF" literal="free text field"/>
       <appinfo:LocalTerm term="GENC" literal="Geopolitical Entities, Names, and Codes (GENC) Standard"/>
+      <appinfo:LocalTerm term="HV" literal="Hypervariable"/>
       <appinfo:LocalTerm term="IEC" literal="International Electrotechnical Commission"/>
       <appinfo:LocalTerm term="INCITS" literal="InterNational Committee for Information Technology Standards"/>
       <appinfo:LocalTerm term="ISO" literal="International Organization for Standardization"/>
@@ -7901,7 +7903,7 @@
   </xs:complexType>
   <xs:simpleType name="LocusGenotypeProbabilityValueSimpleType">
     <xs:annotation>
-      <xs:documentation>A data type for an expression of the probability of an individual having these alleles at a single locus. This probability can be calculated by various formulas that consider if the locus is homozygous or heterozygous. The frequency of the individua</xs:documentation>
+      <xs:documentation>A data type for an expression of the probability of an individual having these alleles at a single locus. This probability can be calculated by various formulas that consider if the locus is homozygous or heterozygous.</xs:documentation>
     </xs:annotation>
     <xs:restriction base="xs:decimal">
       <xs:minInclusive value="0"/>
@@ -7910,7 +7912,7 @@
   </xs:simpleType>
   <xs:complexType name="LocusGenotypeProbabilityValueType">
     <xs:annotation>
-      <xs:documentation>A data type for an expression of the probability of an individual having these alleles at a single locus. This probability can be calculated by various formulas that consider if the locus is homozygous or heterozygous. The frequency of the individua</xs:documentation>
+      <xs:documentation>A data type for an expression of the probability of an individual having these alleles at a single locus. This probability can be calculated by various formulas that consider if the locus is homozygous or heterozygous.</xs:documentation>
     </xs:annotation>
     <xs:simpleContent>
       <xs:extension base="biom:LocusGenotypeProbabilityValueSimpleType">
@@ -12473,7 +12475,7 @@
   </xs:complexType>
   <xs:complexType name="SubjectExistentialDetailsType">
     <xs:annotation>
-      <xs:documentation>A data type for an optional field that is particularly useful if the image contained in this record is of an injury or latent image on a person. However, its use is not limited to such circumstances. Note that Field 10.041: SMT size or size of injur</xs:documentation>
+      <xs:documentation>A data type for an optional field that is particularly useful if the image contained in this record is of an injury or latent image on a person. However, its use is not limited to such circumstances.</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
       <xs:extension base="structures:ObjectType">
@@ -13670,7 +13672,7 @@
   </xs:element>
   <xs:element name="BiometricCoordinate" type="biom:BiometricCoordinateType" nillable="true">
     <xs:annotation>
-      <xs:documentation>A service used to determine the BiometricCoordinate.</xs:documentation>
+      <xs:documentation>A service used to determine the biometric coordinate.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="BiometricCoordinateAugmentationPoint" abstract="true">
@@ -13680,7 +13682,7 @@
   </xs:element>
   <xs:element name="BiometricCoordinateIdentification" type="nc:IdentificationType" nillable="true">
     <xs:annotation>
-      <xs:documentation>An identification for representing the BiometricCoordinate.</xs:documentation>
+      <xs:documentation>An identification for representing the biometric coordinate.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="BiometricDataAugmentationPoint" abstract="true">
@@ -14680,7 +14682,7 @@
   </xs:element>
   <xs:element name="EFSTemporaryLine" type="biom:EFSTemporaryLineType" nillable="true">
     <xs:annotation>
-      <xs:documentation>A latent examiner to annotate a friction ridge image with temporary lines, generally for use as reference points in making a comparison. These lines are solely for the individual examiner's use and reference _ there is no implied semantics thro</xs:documentation>
+      <xs:documentation>A latent examiner to annotate a friction ridge image with temporary lines, generally for use as reference points in making a comparison. These lines are solely for the individual examiner's use and reference _ there is no implied semantics</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="EFSTemporaryLineAugmentationPoint" abstract="true">
@@ -15485,7 +15487,7 @@
   </xs:element>
   <xs:element name="ImageCaptureDateEstimateRangeDuration" type="niem-xs:duration" nillable="true">
     <xs:annotation>
-      <xs:documentation>An optional field. It is entered in the format as YyyyyMmmDdd. It is possible to enter only a year, month and/or day range, such as P5D, meaning that the actual date of collection is estimated to be 5 days plus or minus that specified in Field 10.00</xs:documentation>
+      <xs:documentation>An optional field. It is entered in the format as YyyyMmmDdd. It is possible to enter only a year, month and/or day range, such as P5D, meaning that the actual date of collection is estimated to be 5 days plus or minus that specified in Field 10.00</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="ImageCaptureDetail" type="biom:ImageCaptureType" nillable="true">
@@ -15615,7 +15617,7 @@
   </xs:element>
   <xs:element name="ImageNominalTransmittingResolutionValue" type="biom:Decimal2DigitPrecisionType" nillable="true">
     <xs:annotation>
-      <xs:documentation>A transaction's transmitting resolution, in pixels per mm. Valid value between 19.29 and 20.08 OR equal to 00.00 (corresponds to 500ppi positive and negative 2% ) OR between 38.58 and 40.16 (corresponds to 1000ppi positive and negative 2%.) Shoul</xs:documentation>
+      <xs:documentation>A transaction's transmitting resolution, in pixels per mm. Valid value between 19.29 and 20.08 OR equal to 00.00 (corresponds to 500ppi positive and negative 2% ) OR between 38.58 and 40.16 (corresponds to 1000ppi positive and negative 2%.)</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="ImageQuality" type="biom:ImageQualityType" nillable="true">
@@ -18135,7 +18137,7 @@
   </xs:element>
   <xs:element name="SubjectExistentialDetails" type="biom:SubjectExistentialDetailsType" nillable="true">
     <xs:annotation>
-      <xs:documentation>An optional field. This field is particularly useful if the image contained in this record is of an injury or latent image on a person. However, its use is not limited to such circumstances. Note that Field 10.041: SMT size or size of injury or iden</xs:documentation>
+      <xs:documentation>An optional field. This field is particularly useful if the image contained in this record is of an injury or latent image on a person. However, its use is not limited to such circumstances. Note that Field 10.041: SMT size or size of injury</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="SubjectExistentialDetailsAugmentationPoint" abstract="true">
@@ -18425,7 +18427,7 @@
   </xs:element>
   <xs:element name="VocalSegmentQualityValue" type="biom:VocalSegmentQualityValueType" nillable="true">
     <xs:annotation>
-      <xs:documentation>A kind of field if Vocal content / VOC is present, then this field shall only be present if DII = 1. This field shall only be present if Vocal content diary / VCD is present. If segments have multiple quality values based on different types of quali</xs:documentation>
+      <xs:documentation>A kind of field if Vocal content / VOC is present, then this field shall only be present if DII = 1. This field shall only be present if Vocal content diary / VCD is present.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="VocalSegmentQualityValueAugmentationPoint" abstract="true">

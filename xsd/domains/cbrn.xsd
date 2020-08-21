@@ -24,9 +24,11 @@
       <appinfo:LocalTerm term="FWHM" literal="Full width at half maximum"/>
       <appinfo:LocalTerm term="Geo" literal="Geographic"/>
       <appinfo:LocalTerm term="IDREF" literal="Identifier reference"/>
+      <appinfo:LocalTerm term="IEC" literal="International Electrotechnical Commission"/>
       <appinfo:LocalTerm term="KeV" literal="Kiloelectronvolts"/>
       <appinfo:LocalTerm term="kilobecquerel" definition="A unit of radioactivity equal to one thousand becquerels."/>
       <appinfo:LocalTerm term="MDA" literal="minimum detectable activity"/>
+      <appinfo:LocalTerm term="MeV" literal="Megaelectron-volt"/>
       <appinfo:LocalTerm term="microsievert" definition="The sievert is the special name for the SI unit of equivalent dose, effective dose, and operational dose quantities. The unit is joule per kilogram.  1 microsievert = 0.000001 sieverts"/>
       <appinfo:LocalTerm term="microsieverts" definition="The sievert is the special name for the SI unit of equivalent dose, effective dose, and operational dose quantities. The unit is joule per kilogram.  1 microsievert = 0.000001 sieverts"/>
       <appinfo:LocalTerm term="milliroentgen" definition="A unit of exposure to ionizing radiation, one thousandth of a roentgen."/>
@@ -41,6 +43,7 @@
       <appinfo:LocalTerm term="uSvh" literal="microsieverts per hour (uSv/h)"/>
       <appinfo:LocalTerm term="UTF8" literal="UCS Transformation Format—8-bit"/>
       <appinfo:LocalTerm term="UUID" literal="Universally Unique Identifier"/>
+      <appinfo:LocalTerm term="WGS-84" definition="The standard U.S. Department of Defense definition of a global reference system for geospatial information and the reference system for the Global Positioning System (GPS)."/>
       <appinfo:LocalTerm term="X" literal="The first dimension"/>
       <appinfo:LocalTerm term="XY" literal="A two dimensional array or pair of values for a data point"/>
     </xs:appinfo>
@@ -756,7 +759,7 @@
   </xs:complexType>
   <xs:complexType name="EquationType">
     <xs:annotation>
-      <xs:documentation>A data type that describes a mathematical equation and its coefficients.  The type of the equation is given by the equationKind attribute.  The coefficients of the equation are supplied by the EquationCoefficients element; the values of the covariance matrix may be supplied by the EquationCovarianceMatrix.  It is recommended that the data from which the equation coefficients were derived be made available as an ArrayXY type so that the coefficients for a different model could be derived.</xs:documentation>
+      <xs:documentation>A data type that describes a mathematical equation and its coefficients.  The type of the equation is given by the EquationKindCode element.  The coefficients of the equation are supplied by the EquationCoefficientValueList element; the values of the covariance matrix may be supplied by the EquationCovarianceMatrixValueList.  It is recommended that the data from which the equation coefficients were derived be made available as an ArrayXY type so that the coefficients for a different model could be derived.</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
       <xs:extension base="cbrn:RemarksComplexObjectType">
@@ -1617,7 +1620,7 @@
   </xs:complexType>
   <xs:complexType name="RadMeasurementGroupType">
     <xs:annotation>
-      <xs:documentation>A data type for identifying associated groups of RadMeasurements.</xs:documentation>
+      <xs:documentation>A data type for identifying associated groups of RadMeasurement elements.</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
       <xs:extension base="cbrn:RemarksComplexObjectType">
@@ -1868,7 +1871,7 @@
   </xs:complexType>
   <xs:complexType name="SourcePositionType">
     <xs:annotation>
-      <xs:documentation>A data type for identifying the location of a nuclide source by actual georef coordinates or by relation to another object.</xs:documentation>
+      <xs:documentation>A data type for identifying the location of a nuclide source by actual geographical coordinates or by relation to another object.</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
       <xs:extension base="cbrn:RemarksComplexObjectType">
@@ -2009,7 +2012,7 @@
   </xs:simpleType>
   <xs:complexType name="TotalDoseMetadataType">
     <xs:annotation>
-      <xs:documentation>A data type for metadata about TotalDose data.</xs:documentation>
+      <xs:documentation>A data type for metadata about Total Dose data.</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
       <xs:extension base="structures:MetadataType">
@@ -2022,7 +2025,7 @@
   </xs:complexType>
   <xs:complexType name="TotalDoseType">
     <xs:annotation>
-      <xs:documentation>A data type for TotalDose data.</xs:documentation>
+      <xs:documentation>A data type for Total Dose data.</xs:documentation>
     </xs:annotation>
     <xs:simpleContent>
       <xs:extension base="cbrn:TotalDoseuSvType"/>
@@ -2040,7 +2043,7 @@
   </xs:complexType>
   <xs:complexType name="TotalExposureMetadataType">
     <xs:annotation>
-      <xs:documentation>A data type for metadata about TotalExposure data.</xs:documentation>
+      <xs:documentation>A data type for metadata about Total Exposure data.</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
       <xs:extension base="structures:MetadataType">
@@ -2063,7 +2066,7 @@
   </xs:complexType>
   <xs:complexType name="TotalExposureType">
     <xs:annotation>
-      <xs:documentation>A data type for TotalExposure data.</xs:documentation>
+      <xs:documentation>A data type for Total Exposure data.</xs:documentation>
     </xs:annotation>
     <xs:simpleContent>
       <xs:extension base="cbrn:TotalExposuremRType"/>
@@ -2120,7 +2123,7 @@
   </xs:complexType>
   <xs:attribute name="compressionCode" type="cbrncl:CompressionCodeSimpleType">
     <xs:annotation>
-      <xs:documentation>An algorithm, if any, by which the channel data have been compressed. If this attribute is omitted, the data have not been compressed. The kinds of data compression are as follows: - None: the data are not compressed. The number of values in the ChannelData element is equal to the number of channels of data represented by the element. - CountedZeroes: the data have been compressed by the removal of repeated zero values. When a "0" value appears in the ChannelData contents, the next value is the number of consecutive zero-value channels beginning with the first zero-value in the sequence. For example, the following 18 channels of uncompressed data: 22 5 0 2 1 0 0 3 4 0 0 0 0 0 0 0 0 1 would be represented in compressed form by 22 5 0 1 2 1 0 2 3 4 0 8 1 The italicized values in the list show cases where one, two, and eight zeroes have been compressed.</xs:documentation>
+      <xs:documentation>An algorithm, if any, by which the channel data have been compressed. If this attribute is omitted, the data have not been compressed. The kinds of data compression are as follows: - None: the data are not compressed. The number of values in the Channel Data element is equal to the number of channels of data represented by the element. - Counted Zeroes: the data have been compressed by the removal of repeated zero values. When a "0" value appears in the Channel Data contents, the next value is the number of consecutive zero-value channels beginning with the first zero-value in the sequence. For example, the following 18 channels of uncompressed data: 22 5 0 2 1 0 0 3 4 0 0 0 0 0 0 0 0 1 would be represented in compressed form by 22 5 0 1 2 1 0 2 3 4 0 8 1 The italicized values in the list show cases where one, two, and eight zeroes have been compressed.</xs:documentation>
     </xs:annotation>
   </xs:attribute>
   <xs:attribute name="datumText" type="xs:string">
@@ -2130,7 +2133,7 @@
   </xs:attribute>
   <xs:attribute name="groupOutOfLimitsIndicator" type="xs:boolean">
     <xs:annotation>
-      <xs:documentation>True if theCharacteristicValue of one or more of the Characteristic in the group, or combinations of the group's Characteristic exceeds a control limit high or low value; false otherwise.</xs:documentation>
+      <xs:documentation>True if the Characteristic Value of one or more of the Characteristic in the group, or combinations of the group's Characteristic exceeds a control limit high or low value; false otherwise.</xs:documentation>
     </xs:annotation>
   </xs:attribute>
   <xs:attribute name="n42DocumentDateTime" type="xs:dateTime">
@@ -2155,7 +2158,7 @@
   </xs:attribute>
   <xs:attribute name="subEquationNumeric" type="xs:positiveInteger">
     <xs:annotation>
-      <xs:documentation>An index of the subequation to which a set of coefficients apply.</xs:documentation>
+      <xs:documentation>An index of the sub-equation to which a set of coefficients apply.</xs:documentation>
     </xs:annotation>
   </xs:attribute>
   <xs:attribute name="systemSimulatedIndicator" type="xs:boolean">
@@ -2720,7 +2723,7 @@
   </xs:element>
   <xs:element name="ConveyanceOrganizationAssociationCategoryCode" type="cbrncl:ConveyanceOrganizationRelationshipKindCodeType" nillable="true">
     <xs:annotation>
-      <xs:documentation>A description of the kind of relationship between a conveyance and organization.  For example, an aircraft may have an owner, operator, leasee, etc.</xs:documentation>
+      <xs:documentation>A description of the kind of relationship between a conveyance and organization.  For example, an aircraft may have an owner, operator, lessee, etc.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="ConveyanceSequenceNumeric" type="niem-xs:nonNegativeInteger" nillable="true">
@@ -2980,7 +2983,7 @@
   </xs:element>
   <xs:element name="DataFileSetUUID" type="niem-xs:string" nillable="true">
     <xs:annotation>
-      <xs:documentation>A Unique identifier of a file set.  Also serves as the DataFileUUID of a file containing the identifiers of the members of the file set.</xs:documentation>
+      <xs:documentation>A Unique identifier of a file set.  Also serves as the Data File UUID of a file containing the identifiers of the members of the file set.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="DataFileSizeValue" type="niem-xs:nonNegativeInteger" nillable="true">
@@ -3125,7 +3128,7 @@
   </xs:element>
   <xs:element name="EfficiencyUncertaintyValueList" type="cbrn:NonNegativeDoubleListType" nillable="true">
     <xs:annotation>
-      <xs:documentation>A list of the 1-sigma absolute uncertainties in a set of EfficiencyValues.</xs:documentation>
+      <xs:documentation>A list of the 1-sigma absolute uncertainties in a set of EfficiencyValueList.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="EfficiencyValueList" type="cbrn:NonNegativeDoubleListType" nillable="true">
@@ -3210,7 +3213,7 @@
   </xs:element>
   <xs:element name="EnergyCalibration" type="cbrn:EnergyCalibrationType" substitutionGroup="cbrn:RadInstrumentDataChoiceAbstract" nillable="true">
     <xs:annotation>
-      <xs:documentation>An EnergyCalibration that spectrum measurements can reference as applicable to a particular spectrum.</xs:documentation>
+      <xs:documentation>An energy calibration that spectrum measurements can reference as applicable to a particular spectrum.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="EnergyCalibrationAugmentationPoint" abstract="true">
@@ -3220,12 +3223,12 @@
   </xs:element>
   <xs:element name="EnergyDeviationValueList" type="cbrn:EnergyDeviationsKeVType" nillable="true">
     <xs:annotation>
-      <xs:documentation>A list of values providing the differences in the energies predicted by an energy calibration coefficients equation and the true energies. EPredicted = T0 + T1*C + T2*C2 EDeviation = f(EPredicted) EActual = EPredicted + EDeviation Where Tn are the coefficients from the CoefficientValues element data, C is the channel position (the first channel starts at "0.0"), EPredicted is the predicted energy (in keV) at channel C, EDeviation is the energy deviation value (in keV) from interpolation of the EnergyValues and EnergyDeviationValues data, and EActual is the final corrected energy at channel C.</xs:documentation>
+      <xs:documentation>A list of values providing the differences in the energies predicted by an energy calibration coefficients equation and the true energies. EPredicted = T0 + T1*C + T2*C2 EDeviation = f(EPredicted) EActual = EPredicted + EDeviation Where Tn are the coefficients from the CoefficientValueList element data, C is the channel position (the first channel starts at "0.0"), EPredicted is the predicted energy (in keV) at channel C, EDeviation is the energy deviation value (in keV) from interpolation of the EnergyValueList and EnergyDeviationValueList data, and EActual is the final corrected energy at channel C.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="EnergyValueList" type="cbrn:EnergiesKeVType" nillable="true">
     <xs:annotation>
-      <xs:documentation>A list of energy values, in units of keV; the energies shall appear in the list in strictly increasing order.  This element appears paired with an element that provides a corresponding list of other values, such as the EnergyDeviationValues, FWHMValues, or EfficiencyValues elements. The number and order of corresponding values in the pair of lists must match.</xs:documentation>
+      <xs:documentation>A list of energy values, in units of keV; the energies shall appear in the list in strictly increasing order.  This element appears paired with an element that provides a corresponding list of other values, such as the EnergyDeviationValueList, FWHMValueList, or EfficiencyValueList elements. The number and order of corresponding values in the pair of lists must match.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="EnergyWindows" type="cbrn:EnergyWindowsType" substitutionGroup="cbrn:RadInstrumentDataChoiceAbstract" nillable="true">
@@ -3380,12 +3383,12 @@
   </xs:element>
   <xs:element name="FWHMUncertaintyValueList" type="cbrn:FWHMUncertaintiesKeVType" nillable="true">
     <xs:annotation>
-      <xs:documentation>A list of the 1-sigma absolute uncertainties in units of keV, in the FWHM values contained in the FWHMValues element list.  The number and order of corresponding values in the FWHMValues and FWHMUncertaintyValues lists must match.</xs:documentation>
+      <xs:documentation>A list of the 1-sigma absolute uncertainties in units of keV, in the FWHM values contained in the FWHMValueList element list.  The number and order of corresponding values in the FWHMValueList and FWHMUncertaintyValueList lists must match.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="FWHMValueList" type="cbrn:FWHMKeVType" nillable="true">
     <xs:annotation>
-      <xs:documentation>A list of FWHM values, in units of keV.  The number and order of corresponding values in the EnergyValues and FWHMValues lists must match.</xs:documentation>
+      <xs:documentation>A list of FWHM values, in units of keV.  The number and order of corresponding values in the EnergyValueList and FWHMValueList lists must match.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="GeographicPoint" type="cbrn:GeographicPointType" nillable="true">
@@ -4050,12 +4053,12 @@
   </xs:element>
   <xs:element name="ParentDeviceCategoryCodeText" type="nc:TextType" substitutionGroup="scr:EncounterDeviceCategoryAbstract" nillable="true">
     <xs:annotation>
-      <xs:documentation>A code for the category of a device that is the parent of the device identified by cbrn:RadEncounterDeviceID.</xs:documentation>
+      <xs:documentation>A code for the category of a device that is the parent of the device identified by the Rad Encounter Device ID element.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="ParentDeviceID" type="niem-xs:string" nillable="true">
     <xs:annotation>
-      <xs:documentation>A unique identifier of the device that is the parent of the device identified by cbrn:RadEncounterDeviceID.</xs:documentation>
+      <xs:documentation>A unique identifier of the device that is the parent of the device identified by the Rad Encounter Device ID element.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="PhotonData" type="cbrn:PhotonDataType" nillable="true">
@@ -4125,7 +4128,7 @@
   </xs:element>
   <xs:element name="RadAlarmEnergyWindowIndexValueList" type="nc:PositiveIntegerListType" nillable="true">
     <xs:annotation>
-      <xs:documentation>A list of one or more indices (If applicable) that indicate the position(s) of the value(s) in the WindowStartEnergyValues and WindowEndEnergyValues that triggered an alarm(s).</xs:documentation>
+      <xs:documentation>A list of one or more indices (If applicable) that indicate the position(s) of the value(s) in the WindowStartEnergyValueList and WindowEndEnergyValueList that triggered an alarm(s).</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="RadAlarmLightColorText" type="niem-xs:token" nillable="true">
@@ -4285,7 +4288,7 @@
   </xs:element>
   <xs:element name="RadInstrumentModeDescriptionText" type="niem-xs:string" nillable="true">
     <xs:annotation>
-      <xs:documentation>A description of the operating mode of the radiation measurement instrument.  This element shall be used if RadInstrumentModeCode is Other.</xs:documentation>
+      <xs:documentation>A description of the operating mode of the radiation measurement instrument.  This element shall be used if RadInstrumentOperatingModeCode is Other.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="RadInstrumentModelName" type="cbrn:NonBlankStringType" nillable="true">
@@ -4405,7 +4408,7 @@
   </xs:element>
   <xs:element name="RadMeasurementGroup" type="cbrn:RadMeasurementGroupType" substitutionGroup="cbrn:RadInstrumentDataChoiceAbstract" nillable="true">
     <xs:annotation>
-      <xs:documentation>A group of RadMeasurements.</xs:documentation>
+      <xs:documentation>A group of RadMeasurement elements.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="RadMeasurementGroupAugmentationPoint" abstract="true">
@@ -4440,12 +4443,12 @@
   </xs:element>
   <xs:element name="RadRawTotalDoseValue" type="cbrn:TotalDoseType" nillable="true">
     <xs:annotation>
-      <xs:documentation>A TotalDose measurement data element(s) used to produce derived data. There shall be no duplicate IDREF values in the list. This is required whenever the element is used within a DerivedData block and prohibited otherwise.</xs:documentation>
+      <xs:documentation>A Total Dose measurement data element(s) used to produce derived data. There shall be no duplicate IDREF values in the list. This is required whenever the element is used within a Derived Data block and prohibited otherwise.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="RadRawTotalExposureValue" type="cbrn:TotalExposureType" nillable="true">
     <xs:annotation>
-      <xs:documentation>A TotalExposure measurement data element(s) used to produce derived data. There shall be no duplicate IDREF values in the list. This is required whenever the element is used within a DerivedData block, and prohibited otherwise.</xs:documentation>
+      <xs:documentation>A Total Exposure measurement data element(s) used to produce derived data. There shall be no duplicate IDREF values in the list. This is required whenever the element is used within a DerivedData block, and prohibited otherwise.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="ReachbackData" type="cbrn:ReachbackDataType" nillable="true">
@@ -4575,7 +4578,7 @@
   </xs:element>
   <xs:element name="RequestCancelIndicator" type="niem-xs:boolean" nillable="true">
     <xs:annotation>
-      <xs:documentation>True if the request is a cancellation of the request identified by &lt;RequestIdentifier&gt;; false if omitted, the request is not a cancellation.</xs:documentation>
+      <xs:documentation>True if the request is a cancellation of the request identified by RequestID; false if omitted, the request is not a cancellation.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="RequestData" type="cbrn:RequestDataType" nillable="true">
@@ -4605,7 +4608,7 @@
   </xs:element>
   <xs:element name="RequestUpdateIndicator" type="niem-xs:boolean" nillable="true">
     <xs:annotation>
-      <xs:documentation>True if the request is an update to the request identified by RequestIdentifier; false if the request is new.</xs:documentation>
+      <xs:documentation>True if the request is an update to the request identified by RequestID; false if the request is new.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="ResendRequestIndicator" type="niem-xs:boolean" nillable="true">

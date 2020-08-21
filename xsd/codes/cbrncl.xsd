@@ -9,11 +9,13 @@
   <xs:annotation>
     <xs:documentation>NIEM CBRN domain Radiological and Nuclear Code List</xs:documentation>
     <xs:appinfo>
+      <appinfo:LocalTerm term="CBRN" literal="Chemical, Biological, Radiological and Nuclear"/>
       <appinfo:LocalTerm term="CFR" definition="Code of Federal Regulations"/>
       <appinfo:LocalTerm term="GNDA" literal="Global Nuclear Detection Architecture"/>
       <appinfo:LocalTerm term="MIME" literal="Multipurpose Internet Mail Extensions"/>
       <appinfo:LocalTerm term="Reachback" definition="A process by which commanders, their staffs and deployed forces may be provided with timely, coordinated and authoritative advice on Chemical, Biological, Radiological and Nuclear issues, drawing upon remote expert sources of information."/>
       <appinfo:LocalTerm term="UNECE" literal="United Nations Economic Commission for Europe"/>
+      <appinfo:LocalTerm term="W3C" literal="World Wide Web Consortium"/>
     </xs:appinfo>
   </xs:annotation>
   <xs:import namespace="http://release.niem.gov/niem/structures/5.0/" schemaLocation="../utility/structures.xsd"/>
@@ -1270,7 +1272,7 @@
   </xs:complexType>
   <xs:simpleType name="FacilityCategoryCodeSimpleType">
     <xs:annotation>
-      <xs:documentation>A data type that defines the FacilityCategoryCodes</xs:documentation>
+      <xs:documentation>A data type that defines the facility category codes</xs:documentation>
     </xs:annotation>
     <xs:restriction base="xs:token">
       <xs:enumeration value="Airport">
@@ -6165,7 +6167,7 @@
   </xs:complexType>
   <xs:simpleType name="MeasureUnitCategoryCodeSimpleType">
     <xs:annotation>
-      <xs:documentation>A data type that defines the measureUnitCategoryCodes</xs:documentation>
+      <xs:documentation>A data type that defines the measure unit category codes</xs:documentation>
     </xs:annotation>
     <xs:restriction base="xs:token">
       <xs:enumeration value="Area">
@@ -6192,7 +6194,7 @@
   </xs:simpleType>
   <xs:complexType name="MeasureUnitCategoryCodeType">
     <xs:annotation>
-      <xs:documentation>A data type that defines the various MeasureUnitCategoryCodes</xs:documentation>
+      <xs:documentation>A data type that defines the measure unit category codes</xs:documentation>
     </xs:annotation>
     <xs:simpleContent>
       <xs:extension base="cbrncl:MeasureUnitCategoryCodeSimpleType">
@@ -6202,7 +6204,7 @@
   </xs:complexType>
   <xs:simpleType name="MeasureUnitCodeSimpleType">
     <xs:annotation>
-      <xs:documentation>A data type that defines the various MeasureUnitCodes</xs:documentation>
+      <xs:documentation>A data type that defines the various measure unit codes</xs:documentation>
     </xs:annotation>
     <xs:restriction base="xs:token">
       <xs:enumeration value="Area">
@@ -6229,7 +6231,7 @@
   </xs:simpleType>
   <xs:complexType name="MeasureUnitCodeType">
     <xs:annotation>
-      <xs:documentation>A data type that defines the various MeasureUnitCodes</xs:documentation>
+      <xs:documentation>A data type that defines the various measure unit codes</xs:documentation>
     </xs:annotation>
     <xs:simpleContent>
       <xs:extension base="cbrncl:MeasureUnitCodeSimpleType">
@@ -7486,7 +7488,7 @@
   </xs:complexType>
   <xs:simpleType name="PackagingFormCodeSimpleType">
     <xs:annotation>
-      <xs:documentation>A data type that defines the various PackagingFormCodes</xs:documentation>
+      <xs:documentation>A data type that defines the various packaging form codes</xs:documentation>
     </xs:annotation>
     <xs:restriction base="xs:token">
       <xs:enumeration value="AmmoPack">
@@ -7723,7 +7725,7 @@
   </xs:simpleType>
   <xs:complexType name="PackagingFormCodeType">
     <xs:annotation>
-      <xs:documentation>A data type that defines the various PackagingFormCodes</xs:documentation>
+      <xs:documentation>A data type that defines the various packaging form codes</xs:documentation>
     </xs:annotation>
     <xs:simpleContent>
       <xs:extension base="cbrncl:PackagingFormCodeSimpleType">
@@ -12160,7 +12162,7 @@
   </xs:complexType>
   <xs:simpleType name="SealIntactStatusCodeSimpleType">
     <xs:annotation>
-      <xs:documentation>A data type that defines the various SealIntactStatusCodes</xs:documentation>
+      <xs:documentation>A data type that defines the various seal intact status codes</xs:documentation>
     </xs:annotation>
     <xs:restriction base="xs:token">
       <xs:enumeration value="Absent">
@@ -12192,7 +12194,7 @@
   </xs:complexType>
   <xs:simpleType name="SealVerificationStatusCodeSimpleType">
     <xs:annotation>
-      <xs:documentation>A data type that defines the various sealVerificationStatusCodes</xs:documentation>
+      <xs:documentation>A data type that defines the various seal verification status codes</xs:documentation>
     </xs:annotation>
     <xs:restriction base="xs:token">
       <xs:enumeration value="unknown">
@@ -12560,7 +12562,7 @@
   </xs:complexType>
   <xs:simpleType name="ValueDataClassCodeSimpleType">
     <xs:annotation>
-      <xs:documentation>A data type that defines the various code values for the atomic data classes available for defining the underlying data class for data elements that may be represented by string values. The data classes are a subset of the W3c data types and the derived atomic data types.</xs:documentation>
+      <xs:documentation>A data type that defines the various code values for the atomic data classes available for defining the underlying data class for data elements that may be represented by string values. The data classes are a subset of the W3C data types and the derived atomic data types.</xs:documentation>
     </xs:annotation>
     <xs:restriction base="xs:token">
       <xs:enumeration value="anyURI">
@@ -12777,7 +12779,7 @@
   </xs:simpleType>
   <xs:complexType name="ValueDataClassCodeType">
     <xs:annotation>
-      <xs:documentation>A data type for the atomic data classes available for defining the underlying data class for data elements that may be represented by string values. The data classes are a subset of the W3c data types and the derived atomic data types.</xs:documentation>
+      <xs:documentation>A data type for the atomic data classes available for defining the underlying data class for data elements that may be represented by string values. The data classes are a subset of the W3C data types and the derived atomic data types.</xs:documentation>
     </xs:annotation>
     <xs:simpleContent>
       <xs:extension base="cbrncl:ValueDataClassCodeSimpleType">
@@ -12829,7 +12831,7 @@
   </xs:complexType>
   <xs:simpleType name="VolumeMeasureUnitCodeSimpleType">
     <xs:annotation>
-      <xs:documentation>A data type that defines the various volumeMeasureUnitCodes</xs:documentation>
+      <xs:documentation>A data type that defines the various volume measure unit codes</xs:documentation>
     </xs:annotation>
     <xs:restriction base="xs:token">
       <xs:enumeration value="acre foot">

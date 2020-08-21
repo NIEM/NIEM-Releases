@@ -21,6 +21,7 @@
       <appinfo:LocalTerm term="CHAI" literal="HMRC Charity application form"/>
       <appinfo:LocalTerm term="Deconsolidator" definition="A receiving party of a consolidated shipment, who divides the latter into its original single consignments and undertakes to make them available to be delivered."/>
       <appinfo:LocalTerm term="EMS" literal="Emergency Medical Service"/>
+      <appinfo:LocalTerm term="FTZ" literal="Foreign Trade Zone"/>
       <appinfo:LocalTerm term="HTS" literal="Harmonized Tariff Schedule"/>
       <appinfo:LocalTerm term="IATA" literal="International Air Transport Association"/>
       <appinfo:LocalTerm term="IMO" literal="International Maritime Organization"/>
@@ -760,7 +761,7 @@
   </xs:complexType>
   <xs:complexType name="ImporterType">
     <xs:annotation>
-      <xs:documentation>A data type providing the name [and address] of party who makes-or on whose behalf a Customs clearing agent or other authorized person makes- an import declaration. This may include a person who has possession of the goods or to whom the goods are consi</xs:documentation>
+      <xs:documentation>A data type providing the name [and address] of party who makes-or on whose behalf a Customs clearing agent or other authorized person makes- an import declaration. This may include a person who has possession of the goods or to whom the goods are consigned.</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
       <xs:extension base="structures:ObjectType">
@@ -1614,7 +1615,7 @@
   </xs:element>
   <xs:element name="AdditionalDocumentName" type="nc:TextType" nillable="true">
     <xs:annotation>
-      <xs:documentation>A TextType name for the Additional Document</xs:documentation>
+      <xs:documentation>A name for the Additional Document</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="AdditionalDocumentRefNumberID" type="niem-xs:string" nillable="true">
@@ -1639,7 +1640,7 @@
   </xs:element>
   <xs:element name="AdditionalStatementDescriptionText" type="nc:TextType" nillable="true">
     <xs:annotation>
-      <xs:documentation>A TextType description of the Additional statement</xs:documentation>
+      <xs:documentation>A description of the Additional statement</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="Agent" type="it:AgentType" nillable="true">
@@ -2109,7 +2110,7 @@
   </xs:element>
   <xs:element name="CountryOfOrigin" type="it:GoodsOriginType" nillable="true">
     <xs:annotation>
-      <xs:documentation>A country of origin of goods shall be defined as the country where the goods were manufactured wholly (Article 31) or subjected to sufficient processing (Article 32) in accordance with the criteria laid down by this Customs Code or in accordance with th</xs:documentation>
+      <xs:documentation>A country of origin of goods shall be defined as the country where the goods were manufactured wholly (Article 31) or subjected to sufficient processing (Article 32) in accordance with the criteria laid down by this Customs Code or in accordance with ...</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="CountryRelationshipCategoryCodeText" type="nc:TextType" nillable="true">
@@ -2509,7 +2510,7 @@
   </xs:element>
   <xs:element name="FreightCostAmount" type="nc:AmountType" nillable="true">
     <xs:annotation>
-      <xs:documentation>An amount of costs incurred by the shipper in moving goods, by whatever means, from one place to another under the terms of the contract of carriage. In addition to transport costs, this may include such elements as packing, documentation, loading, unloading, and insu</xs:documentation>
+      <xs:documentation>An amount of costs incurred by the shipper in moving goods, by whatever means, from one place to another under the terms of the contract of carriage. In addition to transport costs, this may include such elements as packing, documentation, loading, unloading, and ...</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="FreightPaymentCodeText" type="nc:TextType" nillable="true">

@@ -14,6 +14,8 @@
   <xs:annotation>
     <xs:documentation>Immigration</xs:documentation>
     <xs:appinfo>
+      <appinfo:LocalTerm term="CIS" literal="Citizenship and Immigration Service"/>
+      <appinfo:LocalTerm term="DS" literal="Department of State"/>
       <appinfo:LocalTerm term="EV" literal="Exchange Visitor"/>
       <appinfo:LocalTerm term="F1" literal="F-1 visa"/>
       <appinfo:LocalTerm term="F2" literal="F-2 visa"/>
@@ -8440,7 +8442,7 @@
   </xs:element>
   <xs:element name="AlertGeneratingOfficerBadgeIdentification" type="nc:IdentificationType" nillable="true">
     <xs:annotation>
-      <xs:documentation>A field indicating the badge identification of the DHS Immigrations Customs Enforcement (ICE) person generating the alien alert transaction.</xs:documentation>
+      <xs:documentation>A field indicating the badge identification of the DHS Immigration and Customs Enforcement (ICE) person generating the alien alert transaction.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="AlertWarningIndicator" type="niem-xs:boolean" nillable="true">
@@ -8925,7 +8927,7 @@
   </xs:element>
   <xs:element name="ChainOfCustodyItemReceivedDate" type="nc:DateType" nillable="true">
     <xs:annotation>
-      <xs:documentation>A date on which the DHS Immigrations Customs Enforcement (ICE) officer assumed responsibility for an item (exhibit).</xs:documentation>
+      <xs:documentation>A date on which the DHS Immigration and Customs Enforcement (ICE) officer assumed responsibility for an item (exhibit).</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="ChainOfCustodySequenceID" type="niem-xs:string" nillable="true">
@@ -8955,7 +8957,7 @@
   </xs:element>
   <xs:element name="ConsulateNotifiedDate" type="nc:DateType" nillable="true">
     <xs:annotation>
-      <xs:documentation>A date on which the consulate was notified of the D58alien's detention.</xs:documentation>
+      <xs:documentation>A date on which the consulate was notified of the D58 alien's detention.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="ConsulateRightsIndicator" type="niem-xs:boolean" nillable="true">
@@ -9165,7 +9167,7 @@
   </xs:element>
   <xs:element name="DetainerLiftReason" type="im:DetentionDetainerLiftType" nillable="true">
     <xs:annotation>
-      <xs:documentation>A classification of the condition under which a detention related to a Detainer (alien detention by anoAr agency) can be lifted.</xs:documentation>
+      <xs:documentation>A classification of the condition under which a detention related to a Detainer (alien detention by another agency) can be lifted.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="DetentionDetainerLiftAugmentationPoint" abstract="true">
@@ -9815,7 +9817,7 @@
   </xs:element>
   <xs:element name="LawfulPermanentResidentReasonDescriptionText" type="nc:TextType" nillable="true">
     <xs:annotation>
-      <xs:documentation>A description of the reason why a Person is considered a LawfulPermanentResident.</xs:documentation>
+      <xs:documentation>A description of the reason why a Person is considered a lawful permanent resident.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="LawfulPermanentResidentRole" type="im:LawfulPermanentResidentRoleType" substitutionGroup="im:ImmigrantRole" nillable="true">
@@ -10625,7 +10627,7 @@
   </xs:element>
   <xs:element name="TwoYearGovernmentFinancialSupportIndicator" type="niem-xs:boolean" nillable="true">
     <xs:annotation>
-      <xs:documentation>True if the Exchange Visitor (EV) is subject to a two year residence requirement due to receiving financial support from either the U.S. or EVs Government; false otherwise.</xs:documentation>
+      <xs:documentation>True if the Exchange Visitor (EV) is subject to a two year residence requirement due to receiving financial support from either the U.S. or EV's Government; false otherwise.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="TwoYearRequirementIndicator" type="niem-xs:boolean" nillable="true">
@@ -10635,7 +10637,7 @@
   </xs:element>
   <xs:element name="TwoYearSkillsIndicator" type="niem-xs:boolean" nillable="true">
     <xs:annotation>
-      <xs:documentation>True if the Exchange Visitor (EV) is subject to a two year home-country physical presence requirement due to EVs position being on the short supply skill-list within EVs home country; false otherwise.</xs:documentation>
+      <xs:documentation>True if the Exchange Visitor (EV) is subject to a two year home-country physical presence requirement due to EV's position being on the short supply skill-list within EV's home country; false otherwise.</xs:documentation>
     </xs:annotation>
   </xs:element>
 </xs:schema>

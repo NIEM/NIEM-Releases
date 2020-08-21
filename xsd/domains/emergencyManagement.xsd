@@ -22,16 +22,23 @@
   <xs:annotation>
     <xs:documentation>Emergency Management</xs:documentation>
     <xs:appinfo>
-      <appinfo:LocalTerm term="CATG" definition="FEMA Category G: Parks, Recreation, &amp; Other"/>
+      <appinfo:LocalTerm term="Cat-C" definition="FEMA Category C: Roads and Bridges"/>
+      <appinfo:LocalTerm term="Cat-D" definition="FEMA Category D: Water Control Facilities"/>
+      <appinfo:LocalTerm term="Cat-E" definition="FEMA Category E: Buildings and Equipment"/>
+      <appinfo:LocalTerm term="Cat-F" definition="FEMA Category F: Utilities"/>
+      <appinfo:LocalTerm term="Cat-G" definition="FEMA Category G: Parks, Recreation, and Other"/>
+      <appinfo:LocalTerm term="CATG" definition="FEMA Category G: Parks, Recreation, and Other"/>
       <appinfo:LocalTerm term="Decon" literal="Decontamination"/>
       <appinfo:LocalTerm term="EMS" literal="Emergency Medical Service"/>
       <appinfo:LocalTerm term="EOC" literal="Emergency Operations Center"/>
       <appinfo:LocalTerm term="EPM" literal="Emergency Protective Measures"/>
       <appinfo:LocalTerm term="ESF" literal="Emergency Support Function"/>
       <appinfo:LocalTerm term="FEMA" literal="Federal Emergency Management Agency"/>
+      <appinfo:LocalTerm term="FIPS" literal="Federal Information Processing Standards"/>
       <appinfo:LocalTerm term="FIPS201" definition="FIPS 201 is a United States federal government standard that specifies Personal Identity Verification requirements for Federal employees and contractors."/>
       <appinfo:LocalTerm term="Geo" literal="geo-coded"/>
       <appinfo:LocalTerm term="ICD" literal="International Classification of Diseases"/>
+      <appinfo:LocalTerm term="IEC" literal="International Electrotechnical Commission"/>
       <appinfo:LocalTerm term="IMS" literal="Incident Management System"/>
       <appinfo:LocalTerm term="LCR" literal="License, certificate or registration"/>
       <appinfo:LocalTerm term="MF" literal="Multi-family"/>
@@ -39,12 +46,15 @@
       <appinfo:LocalTerm term="NIST" literal="National Institute of Standards and Technology"/>
       <appinfo:LocalTerm term="NISTSP800733" definition="NIST Special Publication 800-73-3 Interfaces for Personal Identity Verification"/>
       <appinfo:LocalTerm term="NPI" literal="National Provider ID"/>
+      <appinfo:LocalTerm term="NRCS" literal="Natural Resources Conservation Service"/>
       <appinfo:LocalTerm term="OBGYN" literal="Obstetrics &amp; Gynecology"/>
       <appinfo:LocalTerm term="Passcode" definition="A numeric password."/>
       <appinfo:LocalTerm term="PHEOC" literal="Public Health Emergency Operations Centers"/>
       <appinfo:LocalTerm term="PIV" literal="Personal Identity Verification"/>
+      <appinfo:LocalTerm term="PSAP" literal="Public Safety Answering Point"/>
       <appinfo:LocalTerm term="RGB" literal="Red Green Blue"/>
       <appinfo:LocalTerm term="SOP" literal="Standard Operating Procedures"/>
+      <appinfo:LocalTerm term="SP" literal="Special Publication"/>
       <appinfo:LocalTerm term="URN" literal="Uniform Resource Name"/>
       <appinfo:LocalTerm term="USACE" literal="United States Army Corps of Engineers"/>
       <appinfo:LocalTerm term="X509" definition="X.509 is a standard defining the format of public key certificates."/>
@@ -3833,7 +3843,7 @@
   </xs:complexType>
   <xs:complexType name="EventStatusType">
     <xs:annotation>
-      <xs:documentation>A data type for a set of situational awareness information for an incident or event that caused a Public Health Emergency Operations Center (PH EOC) activation.</xs:documentation>
+      <xs:documentation>A data type for a set of situational awareness information for an incident or event that caused a Public Health Emergency Operations Center (PHEOC) activation.</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
       <xs:extension base="nc:StatusType">
@@ -6753,7 +6763,7 @@ National Institutes of Health, National Heart, Lung, and Blood Institute</xs:doc
   </xs:complexType>
   <xs:complexType name="ResponseOperationType">
     <xs:annotation>
-      <xs:documentation>A data type for a set of information about a Public Health Emergency Operations Center (PH EOC) response operation, such as the number of cases, fatalities, infrastructure status, and risk assessment.</xs:documentation>
+      <xs:documentation>A data type for a set of information about a Public Health Emergency Operations Center (PHEOC) response operation, such as the number of cases, fatalities, infrastructure status, and risk assessment.</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
       <xs:extension base="structures:ObjectType">
@@ -7272,7 +7282,7 @@ National Institutes of Health, National Heart, Lung, and Blood Institute</xs:doc
   </xs:complexType>
   <xs:simpleType name="TransitCategoryCodeSimpleType">
     <xs:annotation>
-      <xs:documentation>A data type for the TransitType.</xs:documentation>
+      <xs:documentation>A data type for the Transit Type.</xs:documentation>
     </xs:annotation>
     <xs:restriction base="xs:token">
       <xs:enumeration value="Beaches">
@@ -7299,7 +7309,7 @@ National Institutes of Health, National Heart, Lung, and Blood Institute</xs:doc
   </xs:simpleType>
   <xs:complexType name="TransitCategoryCodeType">
     <xs:annotation>
-      <xs:documentation>A data type for TransitType.</xs:documentation>
+      <xs:documentation>A data type for Transit Type.</xs:documentation>
     </xs:annotation>
     <xs:simpleContent>
       <xs:extension base="em:TransitCategoryCodeSimpleType">
@@ -7309,7 +7319,7 @@ National Institutes of Health, National Heart, Lung, and Blood Institute</xs:doc
   </xs:complexType>
   <xs:simpleType name="TransitComponentCodeSimpleType">
     <xs:annotation>
-      <xs:documentation>A data type for the TransitType.</xs:documentation>
+      <xs:documentation>A data type for the Transit Type.</xs:documentation>
     </xs:annotation>
     <xs:restriction base="xs:token">
       <xs:enumeration value="Buildings">
@@ -7366,7 +7376,7 @@ National Institutes of Health, National Heart, Lung, and Blood Institute</xs:doc
   </xs:simpleType>
   <xs:complexType name="TransitComponentCodeType">
     <xs:annotation>
-      <xs:documentation>A data type for TransitType.</xs:documentation>
+      <xs:documentation>A data type for Transit Type.</xs:documentation>
     </xs:annotation>
     <xs:simpleContent>
       <xs:extension base="em:TransitComponentCodeSimpleType">
@@ -11483,7 +11493,7 @@ National Institutes of Health, National Heart, Lung, and Blood Institute</xs:doc
   </xs:element>
   <xs:element name="Cat-GCategoryCode" type="em:Cat-GCategoryCodeType" nillable="true">
     <xs:annotation>
-      <xs:documentation>An element for the Cat-GTypeCode.</xs:documentation>
+      <xs:documentation>A FEMA Category G code.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="CategoryInformation" type="em:ValueType" nillable="true">
@@ -12038,7 +12048,7 @@ National Institutes of Health, National Heart, Lung, and Blood Institute</xs:doc
   </xs:element>
   <xs:element name="DiscoveryObject" type="nc:BinaryType" nillable="true">
     <xs:annotation>
-      <xs:documentation>A data element for interindustry ISO/IEC 7816 template that nests interindustry data objects</xs:documentation>
+      <xs:documentation>A data element for inter-industry ISO/IEC 7816 template that nests inter-industry data objects</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="DisposalCommonName" type="nc:TextType" nillable="true">
@@ -12463,7 +12473,7 @@ National Institutes of Health, National Heart, Lung, and Blood Institute</xs:doc
   </xs:element>
   <xs:element name="EventStatus" type="em:EventStatusType" nillable="true">
     <xs:annotation>
-      <xs:documentation>A status or situational awareness information for an incident or event that caused a Public Health Emergency Operations Center (PH EOC) activation.</xs:documentation>
+      <xs:documentation>A status or situational awareness information for an incident or event that caused a Public Health Emergency Operations Center (PHEOC) activation.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="EventStatusAugmentationPoint" abstract="true">
@@ -13688,7 +13698,7 @@ National Institutes of Health, National Heart, Lung, and Blood Institute</xs:doc
   </xs:element>
   <xs:element name="OriginatingMessageID" type="nc:IdentificationType" nillable="true">
     <xs:annotation>
-      <xs:documentation>An identifier that uniquely identifies each resource message. This element identifies the ResourceMessageID of the original message to which this message refers</xs:documentation>
+      <xs:documentation>An identifier that uniquely identifies each resource message. This element identifies the Resource Message ID of the original message to which this message refers</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="OtherBeachComponentText" type="nc:TextType" nillable="true">
@@ -13723,7 +13733,7 @@ National Institutes of Health, National Heart, Lung, and Blood Institute</xs:doc
   </xs:element>
   <xs:element name="OtherCategoryRetentionDetentionText" type="nc:TextType" nillable="true">
     <xs:annotation>
-      <xs:documentation>An element that specifies other Retention Detention Type that is not listed in the RetentionDetentionCode codelist</xs:documentation>
+      <xs:documentation>An element that specifies other Retention Detention Type that is not listed in the RetentionDetentionCode code list</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="OtherCatGText" type="nc:TextType" nillable="true">
@@ -13733,7 +13743,7 @@ National Institutes of Health, National Heart, Lung, and Blood Institute</xs:doc
   </xs:element>
   <xs:element name="OtherCommunicationsComponentText" type="nc:TextType" nillable="true">
     <xs:annotation>
-      <xs:documentation>An element for the Other Comms Component not listed in the Utilities.</xs:documentation>
+      <xs:documentation>An element for the Other Communications Component not listed in the Utilities.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="OtherCulvertMaterialText" type="nc:TextType" nillable="true">
@@ -13773,7 +13783,7 @@ National Institutes of Health, National Heart, Lung, and Blood Institute</xs:doc
   </xs:element>
   <xs:element name="OtherLeveeMaterialText" type="nc:TextType" nillable="true">
     <xs:annotation>
-      <xs:documentation>An element that specifies other Levee Material Type that is not listed in theLeveeMaterialCode list</xs:documentation>
+      <xs:documentation>An element that specifies other Levee Material Type that is not listed in the LeveeMaterialCode list</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="OtherLowWaterRoadText" type="nc:TextType" nillable="true">
@@ -13783,7 +13793,7 @@ National Institutes of Health, National Heart, Lung, and Blood Institute</xs:doc
   </xs:element>
   <xs:element name="OtherNavigationMaterialText" type="nc:TextType" nillable="true">
     <xs:annotation>
-      <xs:documentation>An element that specifies other Drainage Navigation Material Type that is not listed in the DrainageNavigationMaterialCode codelist</xs:documentation>
+      <xs:documentation>An element that specifies other Drainage Navigation Material Type that is not listed in the DrainageNavigationMaterialCode code list</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="OtherParksText" type="nc:TextType" nillable="true">
@@ -14453,7 +14463,7 @@ National Institutes of Health, National Heart, Lung, and Blood Institute</xs:doc
   </xs:element>
   <xs:element name="ResourceAnticipatedReturnDateTime" type="niem-xs:dateTime" nillable="true">
     <xs:annotation>
-      <xs:documentation>A date when the resource is expected to be returned or DEMOBed.  Completed for a Request Resource.  This element with the Requested Arrival Date / Time provides the estimated duration of resource deployment</xs:documentation>
+      <xs:documentation>A date when the resource is expected to be returned or demobilized.  Completed for a Request Resource.  This element with the Requested Arrival Date / Time provides the estimated duration of resource deployment</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="ResourceAvailableDate" type="nc:DateType" nillable="true">
@@ -14588,7 +14598,7 @@ National Institutes of Health, National Heart, Lung, and Blood Institute</xs:doc
   </xs:element>
   <xs:element name="ResourceStatusKeywordValue" type="em:ValueType" nillable="true">
     <xs:annotation>
-      <xs:documentation>A value from a discrete managed list, used to specify the general state of a resource if known.  where the content of valueListUrn is the Uniform Resource Name of a published list of values and definitions, and the content of value is a string denoting</xs:documentation>
+      <xs:documentation>A value from a discrete managed list, used to specify the general state of a resource if known.  where the content of value List Urn is the Uniform Resource Name of a published list of values and definitions, and the content of value is a string</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="Responder" type="em:ResponderType" nillable="true">
@@ -14633,7 +14643,7 @@ National Institutes of Health, National Heart, Lung, and Blood Institute</xs:doc
   </xs:element>
   <xs:element name="ResponseOperation" type="em:ResponseOperationType" nillable="true">
     <xs:annotation>
-      <xs:documentation>A set of information about a Public Health Emergency Operations Center (PH EOC) response operation, such as the number of cases, fatalities, infrastructure status, and risk assessment.</xs:documentation>
+      <xs:documentation>A set of information about a Public Health Emergency Operations Center (PHEOC) response operation, such as the number of cases, fatalities, infrastructure status, and risk assessment.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="ResponseOperationAugmentationPoint" abstract="true">
@@ -15023,7 +15033,7 @@ National Institutes of Health, National Heart, Lung, and Blood Institute</xs:doc
   </xs:element>
   <xs:element name="TestCollectionMethodText" type="nc:TextType" nillable="true">
     <xs:annotation>
-      <xs:documentation>A means of collecting a speciman for a laboratory test.</xs:documentation>
+      <xs:documentation>A means of collecting a specimen for a laboratory test.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="TestLaboratory" type="nc:OrganizationType" nillable="true">
