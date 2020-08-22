@@ -1560,6 +1560,53 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
+  <xs:simpleType name="EmptyReasonCodeSimpleType">
+    <xs:annotation>
+      <xs:documentation>A data type for a reason why a data value was not provided.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="inapplicable">
+        <xs:annotation>
+          <xs:documentation>There is no value.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="missing">
+        <xs:annotation>
+          <xs:documentation>The correct value is not readily available to the sender of this data. Furthermore, a correct value may not exist.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="other">
+        <xs:annotation>
+          <xs:documentation>Other reason.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="template">
+        <xs:annotation>
+          <xs:documentation>The value will be available later (pending).</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="unknown">
+        <xs:annotation>
+          <xs:documentation>The correct value is not known to, and not computable by, the sender of this data. However, a correct value probably exists.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="withheld">
+        <xs:annotation>
+          <xs:documentation>The value is not divulged.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="EmptyReasonCodeType">
+    <xs:annotation>
+      <xs:documentation>A data type for a reason why a data value was not provided.</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="nc:EmptyReasonCodeSimpleType">
+        <xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
   <xs:complexType name="EncounterClassificationType">
     <xs:annotation>
       <xs:documentation>A data type for a kind of encounter between a person or item of interest and a governmental element, such as an organization, official or surveillance system.</xs:documentation>
@@ -2674,53 +2721,6 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-  <xs:simpleType name="MetadataEmptyReasonCodeSimpleType">
-    <xs:annotation>
-      <xs:documentation>A data type for a reason why a data value was not provided.</xs:documentation>
-    </xs:annotation>
-    <xs:restriction base="xs:token">
-      <xs:enumeration value="inapplicable">
-        <xs:annotation>
-          <xs:documentation>There is no value.</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="missing">
-        <xs:annotation>
-          <xs:documentation>The correct value is not readily available to the sender of this data. Furthermore, a correct value may not exist.</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="other">
-        <xs:annotation>
-          <xs:documentation>Other reason.</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="template">
-        <xs:annotation>
-          <xs:documentation>The value will be available later (pending).</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="unknown">
-        <xs:annotation>
-          <xs:documentation>The correct value is not known to, and not computable by, the sender of this data. However, a correct value probably exists.</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="withheld">
-        <xs:annotation>
-          <xs:documentation>The value is not divulged.</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-    </xs:restriction>
-  </xs:simpleType>
-  <xs:complexType name="MetadataEmptyReasonCodeType">
-    <xs:annotation>
-      <xs:documentation>A data type for a reason why a data value was not provided.</xs:documentation>
-    </xs:annotation>
-    <xs:simpleContent>
-      <xs:extension base="nc:MetadataEmptyReasonCodeSimpleType">
-        <xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
-      </xs:extension>
-    </xs:simpleContent>
-  </xs:complexType>
   <xs:complexType name="MetadataType">
     <xs:annotation>
       <xs:documentation>A data type for information that further qualifies primary data; data about data.</xs:documentation>
@@ -2728,33 +2728,33 @@
     <xs:complexContent>
       <xs:extension base="structures:MetadataType">
         <xs:sequence>
-          <xs:element ref="nc:MetadataAdministrativeID" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="nc:MetadataCaveat" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="nc:MetadataComment" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="nc:MetadataConfidencePercent" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="nc:MetadataCreatorName" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="nc:MetadataDescriptionText" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="nc:MetadataDistributionText" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="nc:MetadataEffectiveDate" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="nc:MetadataEmptyReasonAbstract" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="nc:MetadataEmptyReasonDescriptionText" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="nc:MetadataExpirationDate" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="nc:MetadataLanguage" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="nc:MetadataLastUpdatedDate" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="nc:MetadataLastVerifiedDate" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="nc:MetadataProbabilityPercent" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="nc:MetadataPublisherName" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="nc:MetadataQualityComment" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="nc:MetadataReleaseDate" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="nc:MetadataReportedDate" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="nc:MetadataReportingOrganizationText" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="nc:MetadataReportingPersonRoleText" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="nc:MetadataReportingPersonText" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="nc:MetadataRepositoryID" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="nc:MetadataSensitivityText" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="nc:MetadataSourceContactPersonText" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="nc:MetadataSourceIDText" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="nc:MetadataSourceText" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:AdministrativeID" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:CaveatText" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:Comment" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:ConfidencePercent" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:CreatorName" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:DescriptionText" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:DistributionText" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:EffectiveDate" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:EmptyReasonAbstract" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:EmptyReasonDescriptionText" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:ExpirationDate" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:Language" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:LastUpdatedDate" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:LastVerifiedDate" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:ProbabilityPercent" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:PublisherName" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:QualityComment" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:ReleaseDate" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:ReportedDate" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:ReportingOrganizationText" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:ReportingPersonRoleText" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:ReportingPersonText" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:RepositoryID" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:SensitivityText" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:SourceContactPersonText" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:SourceIDText" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:SourceText" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -5135,6 +5135,11 @@
       <xs:documentation>An urbanization denotes an area, sector, or residential development within a geographic area. Commonly used in Puerto Rican urban areas, it is an important part of the addressing format, as it describes the location of a specific street whose name may occur multiple times within the same ZIP Code.</xs:documentation>
     </xs:annotation>
   </xs:element>
+  <xs:element name="AdministrativeID" type="niem-xs:string" nillable="true">
+    <xs:annotation>
+      <xs:documentation>An identifier generated locally within a processing system used to identify sub-records within an entity of interest record.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
   <xs:element name="Agency" type="nc:OrganizationType" nillable="true">
     <xs:annotation>
       <xs:documentation>A division of a governmental or international body.</xs:documentation>
@@ -5875,6 +5880,11 @@
       <xs:documentation>A violation of a condition.</xs:documentation>
     </xs:annotation>
   </xs:element>
+  <xs:element name="ConfidencePercent" type="nc:PercentType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A value that indicates belief that content is accurate or trustworthy.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
   <xs:element name="ConsumptionRateMeasure" type="nc:ConsumptionRateMeasureType" nillable="true">
     <xs:annotation>
       <xs:documentation>A measure of a rate of consumption.</xs:documentation>
@@ -6118,6 +6128,11 @@
   <xs:element name="CoworkerAssociation" type="nc:PersonAssociationType" nillable="true">
     <xs:annotation>
       <xs:documentation>An association between people who work together.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="CreatorName" type="nc:TextType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A name of an entity primarily responsible for generating or producing the information.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="Crisis" type="nc:CrisisType" nillable="true">
@@ -6573,6 +6588,11 @@
   <xs:element name="DispositionText" type="nc:TextType" nillable="true">
     <xs:annotation>
       <xs:documentation>A result or outcome of a disposition.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="DistributionText" type="nc:TextType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A set of allowable recipients of information; dissemination statement or instructions.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="Document" type="nc:DocumentType" nillable="true">
@@ -7223,6 +7243,26 @@
   <xs:element name="EmploymentStatus" type="nc:StatusType" nillable="true">
     <xs:annotation>
       <xs:documentation>A status of employment for a person.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="EmptyReasonAbstract" abstract="true">
+    <xs:annotation>
+      <xs:documentation>A data concept for a reason why a data value was not provided.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="EmptyReasonCode" type="nc:EmptyReasonCodeType" substitutionGroup="nc:EmptyReasonAbstract" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A reason why a data value was not provided.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="EmptyReasonDescriptionText" type="nc:TextType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A description for why a data value was not provided.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="EmptyReasonText" type="nc:TextType" substitutionGroup="nc:EmptyReasonAbstract" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A reason why a data value was not provided.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="EncounterCategoryAbstract" abstract="true">
@@ -8570,6 +8610,11 @@
       <xs:documentation>A date information was last modified.</xs:documentation>
     </xs:annotation>
   </xs:element>
+  <xs:element name="LastVerifiedDate" type="nc:DateType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A date information was last checked for accuracy.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
   <xs:element name="LatitudeCoordinate" type="nc:LatitudeCoordinateType" nillable="true">
     <xs:annotation>
       <xs:documentation>A measurement of the angular distance between a point on the Earth and the Equator.</xs:documentation>
@@ -9378,151 +9423,6 @@
   <xs:element name="Metadata" type="nc:MetadataType" nillable="true" appinfo:appliesToTypes="structures:AssociationType structures:ObjectType">
     <xs:annotation>
       <xs:documentation>Information that further qualifies primary data; data about data.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="MetadataAdministrativeID" type="niem-xs:string" nillable="true">
-    <xs:annotation>
-      <xs:documentation>An identifier generated locally within a processing system used to identify sub-records within an entity of interest record.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="MetadataCaveat" type="nc:CaveatType" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A warning or notice of specific stipulations, conditions, or limitations about data.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="MetadataComment" type="nc:CommentType" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A comment regarding the information.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="MetadataConfidencePercent" type="nc:PercentType" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A value that indicates belief that content is accurate or trustworthy.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="MetadataCreatorName" type="nc:TextType" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A name of an entity primarily responsible for generating or producing the information.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="MetadataDescriptionText" type="nc:TextType" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A description of the information.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="MetadataDistributionText" type="nc:TextType" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A set of allowable recipients of information; dissemination statement or instructions.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="MetadataEffectiveDate" type="nc:DateType" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A date that information take effect.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="MetadataEmptyReasonAbstract" abstract="true">
-    <xs:annotation>
-      <xs:documentation>A data concept for a reason why a data value was not provided.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="MetadataEmptyReasonCode" type="nc:MetadataEmptyReasonCodeType" substitutionGroup="nc:MetadataEmptyReasonAbstract" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A reason why a data value was not provided.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="MetadataEmptyReasonDescriptionText" type="nc:TextType" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A description for why a data value was not provided.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="MetadataEmptyReasonText" type="nc:TextType" substitutionGroup="nc:MetadataEmptyReasonAbstract" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A reason why a data value was not provided.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="MetadataExpirationDate" type="nc:DateType" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A date after which information is no longer valid.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="MetadataLanguage" type="nc:LanguageType" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A language of the information.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="MetadataLastUpdatedDate" type="nc:DateType" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A date information was last modified.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="MetadataLastVerifiedDate" type="nc:DateType" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A date information was last checked for accuracy.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="MetadataProbabilityPercent" type="nc:PercentType" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A decimal value that indicates computed likelihood that what the content is true or accurate. This value is based on a calculation of probability of occurrence or truth.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="MetadataPublisherName" type="nc:TextType" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A name of an entity responsible for the publication of the information.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="MetadataQualityComment" type="nc:CommentType" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A remark, explanation, or observation regarding the accuracy or trustworthiness of the information.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="MetadataReleaseDate" type="nc:DateType" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A date the information was first released for dissemination.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="MetadataReportedDate" type="nc:DateType" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A date information was observed, measured, identified, or became known.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="MetadataReportingOrganizationText" type="nc:TextType" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A name, identifier, or reference of an organization that provided the information.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="MetadataReportingPersonRoleText" type="nc:TextType" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A type, responsibility, or role of a person who provided the information.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="MetadataReportingPersonText" type="nc:TextType" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A name, identifier, or reference of a person who provided the information.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="MetadataRepositoryID" type="niem-xs:string" nillable="true">
-    <xs:annotation>
-      <xs:documentation>An identifier assigned to the repository from which the information originated.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="MetadataSensitivityText" type="nc:TextType" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A sensitivity level of the information.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="MetadataSourceContactPersonText" type="nc:TextType" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A person who can answer questions about the information.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="MetadataSourceIDText" type="nc:TextType" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A number or string set by a data provider so that information that is sent can be retraced back to its source.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="MetadataSourceText" type="nc:TextType" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A name, identifier, or reference of a resource from which the information was taken.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="MilitaryBranchName" type="nc:TextType" nillable="true">
@@ -11240,6 +11140,11 @@
       <xs:documentation>A main or primary document.</xs:documentation>
     </xs:annotation>
   </xs:element>
+  <xs:element name="ProbabilityPercent" type="nc:PercentType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A decimal value that indicates computed likelihood that what the content is true or accurate. This value is based on a calculation of probability of occurrence or truth.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
   <xs:element name="Program" type="nc:ProgramType" nillable="true">
     <xs:annotation>
       <xs:documentation>A set of projects, activities, or services intended to meet a need.</xs:documentation>
@@ -11485,6 +11390,16 @@
       <xs:documentation>A web page through which a public service may be available.</xs:documentation>
     </xs:annotation>
   </xs:element>
+  <xs:element name="PublisherName" type="nc:TextType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A name of an entity responsible for the publication of the information.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="QualityComment" type="nc:CommentType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A remark, explanation, or observation regarding the accuracy or trustworthiness of the information.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
   <xs:element name="QuarterID" type="nc:QuarterIDType" substitutionGroup="nc:DateRepresentation" nillable="true">
     <xs:annotation>
       <xs:documentation>An identifier of a three-month period in a calendar or fiscal year.</xs:documentation>
@@ -11725,6 +11640,11 @@
       <xs:documentation>An augmentation point for ReleaseType.</xs:documentation>
     </xs:annotation>
   </xs:element>
+  <xs:element name="ReleaseDate" type="nc:DateType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A date the information was first released for dissemination.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
   <xs:element name="ReleaseFromLocation" type="nc:LocationType" nillable="true">
     <xs:annotation>
       <xs:documentation>A location from which someone or something is released.</xs:documentation>
@@ -11785,6 +11705,11 @@
       <xs:documentation>A due date for the next report.</xs:documentation>
     </xs:annotation>
   </xs:element>
+  <xs:element name="ReportedDate" type="nc:DateType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A date information was observed, measured, identified, or became known.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
   <xs:element name="ReportFrequencyAbstract" abstract="true">
     <xs:annotation>
       <xs:documentation>A data concept for a frequency or period for which a recurring report is published.</xs:documentation>
@@ -11795,6 +11720,21 @@
       <xs:documentation>A frequency or period for which a recurring report is published.</xs:documentation>
     </xs:annotation>
   </xs:element>
+  <xs:element name="ReportingOrganizationText" type="nc:TextType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A name, identifier, or reference of an organization that provided the information.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="ReportingPersonRoleText" type="nc:TextType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A type, responsibility, or role of a person who provided the information.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="ReportingPersonText" type="nc:TextType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A name, identifier, or reference of a person who provided the information.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
   <xs:element name="ReportTemplateCategoryAbstract" abstract="true">
     <xs:annotation>
       <xs:documentation>A data concept for a kind of template for a report.</xs:documentation>
@@ -11803,6 +11743,11 @@
   <xs:element name="ReportTemplateCategoryText" type="nc:TextType" substitutionGroup="nc:ReportTemplateCategoryAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A kind of template for a report.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="RepositoryID" type="niem-xs:string" nillable="true">
+    <xs:annotation>
+      <xs:documentation>An identifier assigned to the repository from which the information originated.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="Request" type="nc:RequestType" nillable="true">
@@ -12065,6 +12010,11 @@
       <xs:documentation>An entity which issued a security to a person.</xs:documentation>
     </xs:annotation>
   </xs:element>
+  <xs:element name="SensitivityText" type="nc:TextType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A sensitivity level of the information.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
   <xs:element name="SeparationCategoryAbstract" abstract="true">
     <xs:annotation>
       <xs:documentation>A data concept for a description of the separation of the parties in a Person Union began.</xs:documentation>
@@ -12173,6 +12123,11 @@
   <xs:element name="SoftwareVersionText" type="nc:TextType" nillable="true">
     <xs:annotation>
       <xs:documentation>A version of a computer application.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="SourceContactPersonText" type="nc:TextType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A person who can answer questions about the information.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="SourceIDText" type="nc:TextType" nillable="true">

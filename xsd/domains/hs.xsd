@@ -3448,10 +3448,10 @@
     <xs:complexContent>
       <xs:extension base="structures:MetadataType">
         <xs:sequence>
-          <xs:element ref="hs:MetadataCreationDate" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="hs:MetadataLastUpdatedTrackingID" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="hs:MetadataProtectedHealthInformationIndicator" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="hs:MetadataSubmissionDateTime" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="hs:CreationDate" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="hs:LastUpdatedTrackingID" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="hs:ProtectedHealthInformationIndicator" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="hs:SubmissionDateTime" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -9435,6 +9435,11 @@
       <xs:documentation>A date the judge verbally issued the order.</xs:documentation>
     </xs:annotation>
   </xs:element>
+  <xs:element name="CreationDate" type="nc:DateType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A date a record was created.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
   <xs:element name="CriminalHistoryPendingChargesText" type="nc:TextType" nillable="true">
     <xs:annotation>
       <xs:documentation>A description of a person's criminal history, pending charges, and other relevant legal status information (for example, eligibility for protection under the Soldiers and Sailors Civil Relief Act).</xs:documentation>
@@ -10540,6 +10545,11 @@
       <xs:documentation>True if friends get into trouble; false otherwise.</xs:documentation>
     </xs:annotation>
   </xs:element>
+  <xs:element name="LastUpdatedTrackingID" type="niem-xs:string" nillable="true">
+    <xs:annotation>
+      <xs:documentation>An identifier of the person or program which made the most recent update.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
   <xs:element name="LawEnforcementContactActivity" type="hs:LawEnforcementContactActivityType" nillable="true">
     <xs:annotation>
       <xs:documentation>A law enforcement contact with an individual.</xs:documentation>
@@ -10778,26 +10788,6 @@
   <xs:element name="Metadata" type="hs:MetadataType" nillable="true">
     <xs:annotation>
       <xs:documentation>Information that further qualifies primary juvenile data; data about data. A typical use is internal tracking IDs.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="MetadataCreationDate" type="nc:DateType" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A date a record was created.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="MetadataLastUpdatedTrackingID" type="niem-xs:string" nillable="true">
-    <xs:annotation>
-      <xs:documentation>An identifier of the person or program which made the most recent update.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="MetadataProtectedHealthInformationIndicator" type="niem-xs:boolean" nillable="true">
-    <xs:annotation>
-      <xs:documentation>True if a piece of information is Protected Health Information (PHI); false otherwise.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="MetadataSubmissionDateTime" type="nc:DateType" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A date/time of an activity that occurs at a singular point in time or a start date/time of an activity that occurs over a period of time.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="MethodOfPaymentAbstract" abstract="true">
@@ -11570,6 +11560,11 @@
       <xs:documentation>An augmentation point for ProspectiveVictimStatusType.</xs:documentation>
     </xs:annotation>
   </xs:element>
+  <xs:element name="ProtectedHealthInformationIndicator" type="niem-xs:boolean" nillable="true">
+    <xs:annotation>
+      <xs:documentation>True if a piece of information is Protected Health Information (PHI); false otherwise.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
   <xs:element name="ProvidedDirectServiceVictimAssociation" type="hs:ServiceVictimAssociationType" nillable="true">
     <xs:annotation>
       <xs:documentation>An association between a victim and a service which was provided to them by the reporting organization.</xs:documentation>
@@ -12253,6 +12248,11 @@
   <xs:element name="SubjectChildAssociationAugmentationPoint" abstract="true">
     <xs:annotation>
       <xs:documentation>An augmentation point for SubjectChildAssociationType.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="SubmissionDateTime" type="nc:DateType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A date/time of an activity that occurs at a singular point in time or a start date/time of an activity that occurs over a period of time.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="SubmittedDateTime" type="nc:DateType" nillable="true">

@@ -5741,8 +5741,8 @@
     <xs:complexContent>
       <xs:extension base="structures:MetadataType">
         <xs:sequence>
-          <xs:element ref="j:MetadataCriminalInformationIndicator" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="j:MetadataIntelligenceInformationIndicator" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="j:CriminalInformationIndicator" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="j:IntelligenceInformationIndicator" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -15316,6 +15316,11 @@
       <xs:documentation>A kind of classification given to a person as a result of criminal history summary evaluation.</xs:documentation>
     </xs:annotation>
   </xs:element>
+  <xs:element name="CriminalInformationIndicator" type="niem-xs:boolean" nillable="true">
+    <xs:annotation>
+      <xs:documentation>True if the information specified is classified as criminal information; false if it is not classified as criminal information.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
   <xs:element name="CriminalOrganization" type="j:CriminalOrganizationType" nillable="true">
     <xs:annotation>
       <xs:documentation>An organization that is formed to or intentionally conducts illegal activities.</xs:documentation>
@@ -20046,6 +20051,11 @@
       <xs:documentation>A kind of subject matter protected by intellectual property rights.</xs:documentation>
     </xs:annotation>
   </xs:element>
+  <xs:element name="IntelligenceInformationIndicator" type="niem-xs:boolean" nillable="true">
+    <xs:annotation>
+      <xs:documentation>True if the information specified is intelligence information; false otherwise.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
   <xs:element name="IntimacyAssociation" type="nc:PersonAssociationType" nillable="true">
     <xs:annotation>
       <xs:documentation>A relationship between people based on the presence of sexual/sexually romantic activity.</xs:documentation>
@@ -21689,16 +21699,6 @@
   <xs:element name="Metadata" type="j:MetadataType" nillable="true" appinfo:appliesToTypes="structures:AssociationType structures:ObjectType">
     <xs:annotation>
       <xs:documentation>Information that further qualifies the kind of data represented.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="MetadataCriminalInformationIndicator" type="niem-xs:boolean" nillable="true">
-    <xs:annotation>
-      <xs:documentation>True if the information specified is classified as criminal information; false if it is not classified as criminal information.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="MetadataIntelligenceInformationIndicator" type="niem-xs:boolean" nillable="true">
-    <xs:annotation>
-      <xs:documentation>True if the information specified is intelligence information; false otherwise.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="Metal" type="nc:SubstanceType" nillable="true">
