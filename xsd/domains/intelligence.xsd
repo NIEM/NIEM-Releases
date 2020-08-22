@@ -182,7 +182,7 @@
   </xs:complexType>
   <xs:complexType name="PersonIdentityAssociationAugmentationType">
     <xs:annotation>
-      <xs:documentation>A data type for additional information about an association relating a set of identities belonging to the same actual person to each other.</xs:documentation>
+      <xs:documentation>A data type for additional information about a person identity association.</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
       <xs:extension base="structures:AugmentationType">
@@ -430,7 +430,7 @@
   </xs:element>
   <xs:element name="PersonIdentityAssociationAugmentation" type="intel:PersonIdentityAssociationAugmentationType" substitutionGroup="nc:PersonIdentityAssociationAugmentationPoint" nillable="true">
     <xs:annotation>
-      <xs:documentation>Additional information about an identity association.</xs:documentation>
+      <xs:documentation>Additional information about a person identity association.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="PersonInIDAugmentationPoint" abstract="true">

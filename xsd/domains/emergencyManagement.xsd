@@ -3098,7 +3098,7 @@
   </xs:complexType>
   <xs:complexType name="EducationAugmentationType">
     <xs:annotation>
-      <xs:documentation>A data type for additional information about a person's education.</xs:documentation>
+      <xs:documentation>A data type for additional information about an education.</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
       <xs:extension base="structures:AugmentationType">
@@ -6921,7 +6921,7 @@ National Institutes of Health, National Heart, Lung, and Blood Institute</xs:doc
   </xs:complexType>
   <xs:complexType name="ServiceCallAugmentationType">
     <xs:annotation>
-      <xs:documentation>A data type for additional information about a call for service</xs:documentation>
+      <xs:documentation>A data type for additional information about a service call.</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
       <xs:extension base="structures:AugmentationType">
@@ -10893,7 +10893,7 @@ National Institutes of Health, National Heart, Lung, and Blood Institute</xs:doc
   </xs:element>
   <xs:element name="AlarmNotificationAugmentationPoint" abstract="true">
     <xs:annotation>
-      <xs:documentation>An augmentation point for Alarm</xs:documentation>
+      <xs:documentation>An augmentation point for AlarmNotificationType</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="AlarmPermit" type="em:AlarmPermitType" nillable="true">
@@ -12098,7 +12098,7 @@ National Institutes of Health, National Heart, Lung, and Blood Institute</xs:doc
   </xs:element>
   <xs:element name="EducationAugmentation" type="em:EducationAugmentationType" substitutionGroup="nc:EducationAugmentationPoint" nillable="true">
     <xs:annotation>
-      <xs:documentation>Additional information about a person's education.</xs:documentation>
+      <xs:documentation>Additional information about an education.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="EducationMajorText" type="nc:TextType" nillable="true">
@@ -12148,7 +12148,7 @@ National Institutes of Health, National Heart, Lung, and Blood Institute</xs:doc
   </xs:element>
   <xs:element name="EmergencyIncidentAugmentationPoint" abstract="true">
     <xs:annotation>
-      <xs:documentation>An augmentation point for an EmergencyIncidentType</xs:documentation>
+      <xs:documentation>An augmentation point for EmergencyIncidentType</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="EmergencyManagementIncidentCategoryCode" type="em:EmergencyManagementIncidentCategoryCodeType" substitutionGroup="em:PublicHealthEventCategoryAbstract" nillable="true">
@@ -12178,7 +12178,7 @@ National Institutes of Health, National Heart, Lung, and Blood Institute</xs:doc
   </xs:element>
   <xs:element name="EMMessageAugmentationPoint" abstract="true">
     <xs:annotation>
-      <xs:documentation>An augmentation point for Emergency Management Information</xs:documentation>
+      <xs:documentation>An augmentation point for EMMessageType.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="EMMessageCategoryCode" type="em:EMMessageCategoryCodeType" nillable="true">
@@ -12843,7 +12843,7 @@ National Institutes of Health, National Heart, Lung, and Blood Institute</xs:doc
   </xs:element>
   <xs:element name="IncidentNotificationAugmentationPoint" abstract="true">
     <xs:annotation>
-      <xs:documentation>An augmentation point for an IncidentNotificationType</xs:documentation>
+      <xs:documentation>An augmentation point for IncidentNotificationType</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="IncidentProbabilityText" type="nc:TextType" nillable="true">
@@ -13288,7 +13288,7 @@ National Institutes of Health, National Heart, Lung, and Blood Institute</xs:doc
   </xs:element>
   <xs:element name="LocationAugmentation" type="em:LocationAugmentationType" substitutionGroup="nc:LocationAugmentationPoint" nillable="true">
     <xs:annotation>
-      <xs:documentation>Additional information about the location of the alarm</xs:documentation>
+      <xs:documentation>Additional information about a location.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="LocationInformationText" type="nc:TextType" nillable="true">
@@ -14023,7 +14023,7 @@ National Institutes of Health, National Heart, Lung, and Blood Institute</xs:doc
   </xs:element>
   <xs:element name="PersonIDCardAugmentationPoint" abstract="true">
     <xs:annotation>
-      <xs:documentation>An augmentation point for person's Identification information</xs:documentation>
+      <xs:documentation>An augmentation point for PersonIDCardType</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="PersonIDCategoryText" type="nc:TextType" substitutionGroup="em:IDCategoryCodeAbstract" nillable="true">
@@ -14768,7 +14768,7 @@ National Institutes of Health, National Heart, Lung, and Blood Institute</xs:doc
   </xs:element>
   <xs:element name="ServiceCallAssignedUnitAugmentationPoint" abstract="true">
     <xs:annotation>
-      <xs:documentation>An augmentation point for a service call.</xs:documentation>
+      <xs:documentation>An augmentation point for ServiceCallAssignedUnitType</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="ServiceCallAugmentation" type="em:ServiceCallAugmentationType" substitutionGroup="j:ServiceCallAugmentationPoint" nillable="true">

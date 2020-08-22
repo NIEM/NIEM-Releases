@@ -438,7 +438,7 @@
   </xs:complexType>
   <xs:complexType name="AlertNotificationAugmentationType">
     <xs:annotation>
-      <xs:documentation>A data type for additional information about an alert.</xs:documentation>
+      <xs:documentation>A data type for additional information about an alert notification.</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
       <xs:extension base="structures:AugmentationType">
@@ -17988,7 +17988,7 @@
   </xs:complexType>
   <xs:complexType name="IdentificationAugmentationType">
     <xs:annotation>
-      <xs:documentation>A data type that supplements Identification and is used by Screening for augmenting the Identification Type</xs:documentation>
+      <xs:documentation>A data type for additional information about an identification.</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
       <xs:extension base="structures:AugmentationType">
@@ -18429,7 +18429,7 @@
   </xs:complexType>
   <xs:complexType name="LocationAugmentationType">
     <xs:annotation>
-      <xs:documentation>A data type that supplements Location and specifies additional information about a Screening location.</xs:documentation>
+      <xs:documentation>A data type for additional information about a location.</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
       <xs:extension base="structures:AugmentationType">
@@ -20624,7 +20624,7 @@
   </xs:complexType>
   <xs:complexType name="PersonNameAugmentationType">
     <xs:annotation>
-      <xs:documentation>A data type that supplements PersonName and specifies the additional name information used for Screening.</xs:documentation>
+      <xs:documentation>A data type for additional information about a person name.</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
       <xs:extension base="structures:AugmentationType">
@@ -21398,7 +21398,7 @@
   </xs:complexType>
   <xs:complexType name="VehicleAugmentationType">
     <xs:annotation>
-      <xs:documentation>A data type for additional information about a conveyance.</xs:documentation>
+      <xs:documentation>A data type for additional information about a vehicle.</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
       <xs:extension base="structures:AugmentationType">
@@ -21955,7 +21955,7 @@
   </xs:element>
   <xs:element name="AlertNotificationAugmentation" type="scr:AlertNotificationAugmentationType" substitutionGroup="em:AlertNotificationAugmentationPoint" nillable="true">
     <xs:annotation>
-      <xs:documentation>Additional information about an alert.</xs:documentation>
+      <xs:documentation>Additional information about an alert notification.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="AlertReceivedDate" type="nc:DateType" nillable="true">
@@ -23700,7 +23700,7 @@
   </xs:element>
   <xs:element name="PersonEmploymentAssociationAugmentation" type="scr:PersonEmploymentAssociationAugmentationType" substitutionGroup="nc:PersonEmploymentAssociationAugmentationPoint" nillable="true">
     <xs:annotation>
-      <xs:documentation>Additional information about a person employment.</xs:documentation>
+      <xs:documentation>Additional information about a person employment association.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="PersonEncounterAssociation" type="scr:PersonEncounterAssociationType" nillable="true">
@@ -24020,7 +24020,7 @@
   </xs:element>
   <xs:element name="ScreeningDepartureAugmentationPoint" abstract="true">
     <xs:annotation>
-      <xs:documentation>An augmentation point for DepartureType.</xs:documentation>
+      <xs:documentation>An augmentation point for ScreeningDepartureType.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="ScreeningDocumentStatus" type="scr:DocumentStatusType" nillable="true">
@@ -24380,7 +24380,7 @@
   </xs:element>
   <xs:element name="VehicleAugmentation" type="scr:VehicleAugmentationType" substitutionGroup="nc:VehicleAugmentationPoint" nillable="true">
     <xs:annotation>
-      <xs:documentation>Additional information about a conveyance.</xs:documentation>
+      <xs:documentation>Additional information about a vehicle.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="VehicleSubjectCategoryCodeText" type="niem-xs:token" nillable="true">

@@ -227,7 +227,7 @@
   </xs:complexType>
   <xs:complexType name="ContactInformationAugmentationType">
     <xs:annotation>
-      <xs:documentation>A data type for additional information about a nc:Contact.</xs:documentation>
+      <xs:documentation>A data type for additional information about contact information.</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
       <xs:extension base="structures:AugmentationType">
@@ -480,7 +480,7 @@
   </xs:complexType>
   <xs:complexType name="FacilityAugmentationType">
     <xs:annotation>
-      <xs:documentation>A data type for additional information about a nc:Facility.</xs:documentation>
+      <xs:documentation>A data type for additional information about a facility.</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
       <xs:extension base="structures:AugmentationType">
@@ -1078,7 +1078,7 @@
   </xs:complexType>
   <xs:complexType name="MissionAugmentationType">
     <xs:annotation>
-      <xs:documentation>A data type for additional information about an nc:Mission.</xs:documentation>
+      <xs:documentation>A data type for additional information about a mission.</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
       <xs:extension base="structures:AugmentationType">
@@ -1469,7 +1469,7 @@
   </xs:complexType>
   <xs:complexType name="SpeedMeasureAugmentationType">
     <xs:annotation>
-      <xs:documentation>A data type for additional information about an nc:SpeedMeasure.</xs:documentation>
+      <xs:documentation>A data type for additional information about a speed measure.</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
       <xs:extension base="structures:AugmentationType">
@@ -2500,7 +2500,7 @@
   </xs:element>
   <xs:element name="ContactInformationAugmentation" type="mo:ContactInformationAugmentationType" substitutionGroup="nc:ContactInformationAugmentationPoint" nillable="true">
     <xs:annotation>
-      <xs:documentation>Additional information about a nc:Contact.</xs:documentation>
+      <xs:documentation>Additional information about contact information.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="ContactInformationComment" type="nc:CommentType" nillable="true">
@@ -2690,7 +2690,7 @@
   </xs:element>
   <xs:element name="EquipmentSetAugmentationPoint" abstract="true">
     <xs:annotation>
-      <xs:documentation>An augmentation point for type mo:EquipmentType</xs:documentation>
+      <xs:documentation>An augmentation point for mo:EquipmentSetType</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="Event" type="mo:EventType" nillable="true">
@@ -2780,7 +2780,7 @@
   </xs:element>
   <xs:element name="FacilityAugmentation" type="mo:FacilityAugmentationType" substitutionGroup="nc:FacilityAugmentationPoint" nillable="true">
     <xs:annotation>
-      <xs:documentation>Additional information about a nc:Facility.</xs:documentation>
+      <xs:documentation>Additional information about a facility.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="FrequencyMeasure" type="mo:FrequencyMeasureType" nillable="true">
@@ -3021,7 +3021,7 @@ functions. Installations may be elements of a base.</xs:documentation>
   </xs:element>
   <xs:element name="MissionAugmentation" type="mo:MissionAugmentationType" substitutionGroup="nc:MissionAugmentationPoint" nillable="true">
     <xs:annotation>
-      <xs:documentation>Additional information about a nc:Mission.</xs:documentation>
+      <xs:documentation>Additional information about a mission.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="MissionEssentialTask" type="mo:MissionEssentialTaskType" nillable="true">
@@ -3176,7 +3176,7 @@ functions. Installations may be elements of a base.</xs:documentation>
   </xs:element>
   <xs:element name="OperationPlanTaskOrganizationAugmentationPoint" abstract="true">
     <xs:annotation>
-      <xs:documentation>An augmentation point for type OperationPlanTaskOrganizationType</xs:documentation>
+      <xs:documentation>An augmentation point for mo:OperationPlanTaskOrganizationType</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="OperationPlanTitleText" type="niem-xs:string" nillable="true">
@@ -3497,7 +3497,7 @@ it is responsible.</xs:documentation>
   </xs:element>
   <xs:element name="SpeedMeasureAugmentation" type="mo:SpeedMeasureAugmentationType" substitutionGroup="nc:SpeedMeasureAugmentationPoint" nillable="true">
     <xs:annotation>
-      <xs:documentation>Additional information about an nc:SpeedMeasure.</xs:documentation>
+      <xs:documentation>Additional information about a speed measure.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="SupportingMissionEssentialTask" type="mo:MissionEssentialTaskType" nillable="true">
