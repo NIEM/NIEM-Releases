@@ -185,10 +185,48 @@
           <xs:element ref="mo:ApprovalAuthorityName" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="mo:ApprovalStatusText" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="mo:ApprovalDate" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="mo:ApprovalStatusCode" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="mo:ApprovalAuthorityAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
+  </xs:complexType>
+  <xs:simpleType name="ApprovalStatusCodeSimpleType">
+    <xs:annotation>
+      <xs:documentation>A data type for a status of an approval.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="APPROVED">
+        <xs:annotation>
+          <xs:documentation>Approved</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="DENIED">
+        <xs:annotation>
+          <xs:documentation>Denied</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="PENDING">
+        <xs:annotation>
+          <xs:documentation>Pending</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="REVOKED">
+        <xs:annotation>
+          <xs:documentation>Revoked</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="ApprovalStatusCodeType">
+    <xs:annotation>
+      <xs:documentation>A data type for a status of an approval.</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="mo:ApprovalStatusCodeSimpleType">
+        <xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
+      </xs:extension>
+    </xs:simpleContent>
   </xs:complexType>
   <xs:complexType name="AreaOfInterestType">
     <xs:annotation>
@@ -2433,6 +2471,11 @@
   <xs:element name="ApprovalDate" type="nc:DateType" nillable="true">
     <xs:annotation>
       <xs:documentation>A date of the approval.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="ApprovalStatusCode" type="mo:ApprovalStatusCodeType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A status of an approval.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="ApprovalStatusText" type="nc:TextType" nillable="true">

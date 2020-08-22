@@ -67,6 +67,7 @@ Note that schema updates have been committed per issue, so issue-specific file d
 - Added new nc:ActivityLocation element to nc:ActivityType [(#71)](https://github.com/NIEM/NIEM-Releases/issues/71)
 - Added nc:MailingAddress and nc:PhysicalAddress as substitutions for nc:Address [(#72)](https://github.com/NIEM/NIEM-Releases/issues/72)
 - Added metadata for empty values [(#76)](https://github.com/NIEM/NIEM-Releases/issues/76)
+- Added approval status codes to MilOps to replace the corresponding set removed from NDEx [(#173)](https://github.com/NIEM/NIEM-Releases/issues/173)
 - Fixed invalid augmentation names [(#78)](https://github.com/NIEM/NIEM-Releases/issues/78)
 - Fixed definition of j:PersonSignature [(#92)](https://github.com/NIEM/NIEM-Releases/issues/92)
 - Fixed spelling errors and added local terminology [(#131)](https://github.com/NIEM/NIEM-Releases/issues/131) - *in progress*
