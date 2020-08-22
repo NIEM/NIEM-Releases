@@ -129,7 +129,6 @@
           <xs:element ref="em:ActivityLeadOrganization" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="em:ActivityReport" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="em:ActivityTerminationConditionText" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="em:ActivityLocation" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -10619,11 +10618,6 @@ National Institutes of Health, National Heart, Lung, and Blood Institute</xs:doc
   <xs:element name="ActivityLeadOrganization" type="nc:OrganizationType" nillable="true">
     <xs:annotation>
       <xs:documentation>A department, agency or other organization that is leading or overseeing a project, event, incident or other type of activity.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="ActivityLocation" type="nc:LocationType" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A location of an activity</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="ActivityReport" type="nc:ReportType" nillable="true">
