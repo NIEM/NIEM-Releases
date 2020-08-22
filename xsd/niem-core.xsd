@@ -5032,6 +5032,11 @@
       <xs:documentation>A data concept for a county, parish, vicinage, or other such geopolitical subdivision of a state.</xs:documentation>
     </xs:annotation>
   </xs:element>
+  <xs:element name="AddressCountyName" type="nc:ProperNameTextType" substitutionGroup="nc:AddressCountyAbstract" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A name of a county, parish, vicinage, or other such geopolitical subdivision of a state.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
   <xs:element name="AddressCrossStreet" type="nc:CrossStreetType" substitutionGroup="nc:LocationAddressAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A location identified by two or more streets which intersect.</xs:documentation>
@@ -8785,11 +8790,6 @@
   <xs:element name="LocationContainsOrganizationAssociation" type="nc:OrganizationLocationAssociationType" nillable="true">
     <xs:annotation>
       <xs:documentation>An association between a location and an organization at that location.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="LocationCountyName" type="nc:ProperNameTextType" substitutionGroup="nc:AddressCountyAbstract" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A name of a county, parish, vicinage, or other such geopolitical subdivision of a state.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="LocationDepth" type="nc:LocationHeightMeasureType" substitutionGroup="nc:LocationHeightAbstract" nillable="true">
