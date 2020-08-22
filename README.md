@@ -102,6 +102,7 @@ Note that schema updates have been committed per issue, so issue-specific file d
 - Updated location elements [(#100)](https://github.com/NIEM/NIEM-Releases/issues/100)
 - Updated address elements [(#111)](https://github.com/NIEM/NIEM-Releases/issues/111)
 - Updated definitions for consistency and to fix invalid component references [(#171)](https://github.com/NIEM/NIEM-Releases/issues/171)
+- Updated mo:TelephoneNumberCategoryCodeSimpleType to be a union of xCard and MilOps code types [(#172)](https://github.com/NIEM/NIEM-Releases/issues/172)
 - Used nc:CountryType instead of custom substitution groups for citizenship and nationality elements [(#93)](https://github.com/NIEM/NIEM-Releases/issues/93)
 
 ### Release package updates
