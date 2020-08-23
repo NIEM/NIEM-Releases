@@ -786,8 +786,6 @@
           <xs:element ref="j:AlcoholUseAssessmentAlcoholAbuseMaximumDurationAbstainedNumeric" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="j:AlcoholUseAssessmentAlcoholConsumptionFrequencyText" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="j:AlcoholUseAssessmentAlcoholUseConsumptionQuantity" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="j:AlcoholUseAssessmentComment" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="j:AlcoholUseAssessmentSummaryText" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="j:AlcoholUseAssessmentAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
       </xs:extension>
@@ -1050,20 +1048,6 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-  <xs:complexType name="AssessmentAugmentationType">
-    <xs:annotation>
-      <xs:documentation>A data type for additional information about an assessment.</xs:documentation>
-    </xs:annotation>
-    <xs:complexContent>
-      <xs:extension base="structures:AugmentationType">
-        <xs:sequence>
-          <xs:element ref="j:AssessmentToolDescriptionText" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="j:AssessmentRecommendation" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="j:AssessmentToolName" minOccurs="0" maxOccurs="unbounded"/>
-        </xs:sequence>
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
   <xs:complexType name="AssignmentAssessmentAssignmentRequestType">
     <xs:annotation>
       <xs:documentation>A data type for an initial request for assignment.</xs:documentation>
@@ -1100,10 +1084,9 @@
       <xs:documentation>A data type for a process of determining whether a subject is fit for a particular assignment (program or service).</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
-      <xs:extension base="structures:ObjectType">
+      <xs:extension base="nc:AssessmentType">
         <xs:sequence>
           <xs:element ref="j:AssignmentAssessmentAssignmentRequest" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="j:AssignmentAssessmentComment" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="j:AssignmentAssessmentDecision" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="j:AssignmentAssessmentDevelopmentalDisability" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="j:AssignmentAssessmentDisabilityProgramComment" minOccurs="0" maxOccurs="unbounded"/>
@@ -11594,16 +11577,6 @@
       <xs:documentation>An augmentation point for type j:AlcoholUseAssessmentType</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="AlcoholUseAssessmentComment" type="nc:CommentType" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A comment about the subject's use of alcohol.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="AlcoholUseAssessmentSummaryText" type="nc:TextType" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A summary on the alcohol use of a subject.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
   <xs:element name="AlertComment" type="nc:CommentType" nillable="true">
     <xs:annotation>
       <xs:documentation>A comment about an alert.</xs:documentation>
@@ -12189,26 +12162,6 @@
       <xs:documentation>A kind of art object.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="AssessmentAugmentation" type="j:AssessmentAugmentationType" substitutionGroup="nc:AssessmentAugmentationPoint" nillable="true">
-    <xs:annotation>
-      <xs:documentation>Additional information about an assessment.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="AssessmentRecommendation" type="nc:CommentType" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A recommendation or result of an assessment.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="AssessmentToolDescriptionText" type="nc:TextType" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A description of the assessment tool.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="AssessmentToolName" type="nc:TextType" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A name of the administered assessment tool.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
   <xs:element name="Assignment" type="j:AssignmentType" nillable="true">
     <xs:annotation>
       <xs:documentation>A location and environment into which a person is placed, such as an office, dormitory, barracks, etc.</xs:documentation>
@@ -12237,11 +12190,6 @@
   <xs:element name="AssignmentAssessmentAugmentationPoint" abstract="true">
     <xs:annotation>
       <xs:documentation>An augmentation point for type j:AssignmentAssessmentType</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="AssignmentAssessmentComment" type="nc:CommentType" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A comment about the assignment assessment.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="AssignmentAssessmentDecision" type="nc:ActivityType" nillable="true">

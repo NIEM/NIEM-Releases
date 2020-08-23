@@ -99,6 +99,7 @@ Note that schema updates have been committed per issue, so issue-specific file d
 - Refactored im:CountryType [(#112)](https://github.com/NIEM/NIEM-Releases/issues/112)
 - Refactored intel:PersonAugmentationType [(#114)](https://github.com/NIEM/NIEM-Releases/issues/114)
 - Refactored citizenship and nationality into separate types [(#124)](https://github.com/NIEM/NIEM-Releases/issues/124)
+- Refactored assessment components [(#148)](https://github.com/NIEM/NIEM-Releases/issues/148)
 - Updated inconsistent code set folder paths, file names, and target namespaces [(#58)](https://github.com/NIEM/NIEM-Releases/issues/58)
 - Updated country and state element class terms [(#67)](https://github.com/NIEM/NIEM-Releases/issues/67)
 - Updated location elements [(#100)](https://github.com/NIEM/NIEM-Releases/issues/100)

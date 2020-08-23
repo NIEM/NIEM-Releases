@@ -322,7 +322,7 @@
     <xs:complexContent>
       <xs:extension base="nc:ActivityType">
         <xs:sequence>
-          <xs:element ref="hs:AssessmentOutcomeScoreAbstract" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:AssessmentScoreAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="hs:AssessmentOutcomeAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
       </xs:extension>
@@ -8783,16 +8783,6 @@
   <xs:element name="AssessmentOutcomeAugmentationPoint" abstract="true">
     <xs:annotation>
       <xs:documentation>An augmentation point for AssessmentOutcomeType.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="AssessmentOutcomeScoreAbstract" abstract="true">
-    <xs:annotation>
-      <xs:documentation>A data concept for expressing a score as the outcome of an assessment.  This element is a placeholder for the concept of a score; it is intended to be replaced by a structure representing an assessment instrument's actual scoring mechanism.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="AssessmentOutcomeScoreText" type="nc:TextType" substitutionGroup="hs:AssessmentOutcomeScoreAbstract" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A simple score as the outcome of an assessment.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="AssessmentRecommendation" type="hs:AssessmentRecommendationType" nillable="true">

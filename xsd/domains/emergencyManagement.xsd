@@ -3,7 +3,6 @@
   xmlns:apco="http://release.niem.gov/niem/codes/apco_event/5.0/"
   xmlns:appinfo="http://release.niem.gov/niem/appinfo/5.0/"
   xmlns:biom="http://release.niem.gov/niem/domains/biometrics/5.0/"
-  xmlns:cbrn="http://release.niem.gov/niem/domains/cbrn/5.0/"
   xmlns:ct="http://release.niem.gov/niem/conformanceTargets/3.0/"
   xmlns:edxl_rm="http://release.niem.gov/niem/codes/edxl_rm/5.0/"
   xmlns:edxl-cap="http://release.niem.gov/niem/adapters/edxl-cap/5.0/"
@@ -66,7 +65,6 @@
   <xs:import namespace="http://release.niem.gov/niem/codes/edxl_rm/5.0/" schemaLocation="../codes/edxl_rm.xsd"/>
   <xs:import namespace="http://release.niem.gov/niem/codes/iso_639-3/5.0/" schemaLocation="../codes/iso_639-3.xsd"/>
   <xs:import namespace="http://release.niem.gov/niem/domains/biometrics/5.0/" schemaLocation="biom.xsd"/>
-  <xs:import namespace="http://release.niem.gov/niem/domains/cbrn/5.0/" schemaLocation="cbrn.xsd"/>
   <xs:import namespace="http://release.niem.gov/niem/domains/internationalTrade/5.0/" schemaLocation="internationalTrade.xsd"/>
   <xs:import namespace="http://release.niem.gov/niem/domains/jxdm/7.0/" schemaLocation="jxdm.xsd"/>
   <xs:import namespace="http://release.niem.gov/niem/domains/militaryOperations/5.0/" schemaLocation="mo.xsd"/>
@@ -800,20 +798,6 @@
         <xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
       </xs:extension>
     </xs:simpleContent>
-  </xs:complexType>
-  <xs:complexType name="AssessmentAugmentationType">
-    <xs:annotation>
-      <xs:documentation>A data type for additional information about an assessment.</xs:documentation>
-    </xs:annotation>
-    <xs:complexContent>
-      <xs:extension base="structures:AugmentationType">
-        <xs:sequence>
-          <xs:element ref="em:AssessmentOutcomeText" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="em:AssessmentReport" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="em:AssessmentReportText" minOccurs="0" maxOccurs="unbounded"/>
-        </xs:sequence>
-      </xs:extension>
-    </xs:complexContent>
   </xs:complexType>
   <xs:simpleType name="AvailabilityStatusCodeSimpleType">
     <xs:annotation>
@@ -6343,12 +6327,8 @@ National Institutes of Health, National Heart, Lung, and Blood Institute</xs:doc
       <xs:documentation>A data type for a preliminary damage assessment report</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
-      <xs:extension base="structures:ObjectType">
+      <xs:extension base="nc:AssessmentType">
         <xs:sequence>
-          <xs:element ref="em:ReportID" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="em:ReportAuthorName" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="cbrn:ReportDateTime" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="em:AssessmentDate" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="em:IncidentID" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="em:IncidentStartDate" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="em:ProgramKindCode" minOccurs="0" maxOccurs="unbounded"/>
@@ -6359,10 +6339,8 @@ National Institutes of Health, National Heart, Lung, and Blood Institute</xs:doc
           <xs:element ref="em:IncidentKindOtherText" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="em:ImmediateNeedsTernaryIndicatorCode" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="em:ImmediateNeedsText" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="em:AssessmentKindAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="mo:DamageLocation" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="em:DeviceURI" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="em:AssessmentImage" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="em:PreliminaryDamageAssessmentAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
       </xs:extension>
@@ -11127,41 +11105,6 @@ National Institutes of Health, National Heart, Lung, and Blood Institute</xs:doc
       <xs:documentation>A textual description of the location where the specified resource has arrived at dateTime of the resource message when transported to or from an Incident</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="AssessmentAugmentation" type="em:AssessmentAugmentationType" substitutionGroup="nc:AssessmentAugmentationPoint" nillable="true">
-    <xs:annotation>
-      <xs:documentation>Additional information about an assessment.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="AssessmentDate" type="niem-xs:dateTime" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A date of this assessment</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="AssessmentImage" type="nc:ImageType" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A picture of the assessment</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="AssessmentKindAbstract" abstract="true">
-    <xs:annotation>
-      <xs:documentation>A data concept for assessment information</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="AssessmentOutcomeText" type="nc:TextType" nillable="true">
-    <xs:annotation>
-      <xs:documentation>An outcome of an assessment. Examples of outcomes include a plan of action developed or certain tasks performed.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="AssessmentReport" type="nc:DocumentType" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A report that documents an assessment.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="AssessmentReportText" type="nc:TextType" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A set of results from an assessment.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
   <xs:element name="AssistanceInNeedQuantity" type="nc:QuantityType" nillable="true">
     <xs:annotation>
       <xs:documentation>A number of people or households in need of assistance.</xs:documentation>
@@ -14457,19 +14400,9 @@ National Institutes of Health, National Heart, Lung, and Blood Institute</xs:doc
       <xs:documentation>Additional information about a report.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="ReportAuthorName" type="em:OtherTextType" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A name or identity of the report creator</xs:documentation>
-    </xs:annotation>
-  </xs:element>
   <xs:element name="ReportFrequencyCode" type="em:ReportFrequencyCodeType" substitutionGroup="nc:ReportFrequencyAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A frequency or period for which a recurring report is published.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="ReportID" type="em:OtherTextType" nillable="true">
-    <xs:annotation>
-      <xs:documentation>An identifier for this report</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="ReportingInstructionsText" type="nc:TextType" nillable="true">

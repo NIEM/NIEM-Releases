@@ -479,11 +479,20 @@
       <xs:extension base="nc:ActivityType">
         <xs:sequence>
           <xs:element ref="nc:AssessmentAssessor" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="nc:AssessmentScoreText" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:AssessmentCategoryAbstract" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:AssessmentComment" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:AssessmentFee" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="nc:AssessmentProgram" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="nc:AssessmentReferral" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:AssessmentImage" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:AssessmentOutcomeText" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:AssessmentPerson" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:AssessmentProgram" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:AssessmentRecommendation" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:AssessmentReferral" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:AssessmentReport" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:AssessmentScoreAbstract" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:AssessmentSummaryText" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:AssessmentToolDescriptionText" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:AssessmentToolName" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:AssessmentAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
       </xs:extension>
@@ -4109,6 +4118,7 @@
           <xs:element ref="nc:ReportCoverageDateRange" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:ReportDueDate" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:ReportFrequencyAbstract" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:ReportID" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:ReportTemplateCategoryAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:ReportAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
@@ -5513,9 +5523,29 @@
       <xs:documentation>An augmentation point for AssessmentType.</xs:documentation>
     </xs:annotation>
   </xs:element>
+  <xs:element name="AssessmentCategoryAbstract" abstract="true">
+    <xs:annotation>
+      <xs:documentation>A data concept for a kind of assessment.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="AssessmentComment" type="nc:CommentType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A comment about the assessment.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
   <xs:element name="AssessmentFee" type="nc:ObligationType" nillable="true">
     <xs:annotation>
       <xs:documentation>An amount of money charged to perform an assessment.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="AssessmentImage" type="nc:ImageType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A picture of the assessment</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="AssessmentOutcomeText" type="nc:TextType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>An outcome of an assessment. Examples of outcomes include a plan of action developed or certain tasks performed.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="AssessmentPerson" type="nc:PersonType" nillable="true">
@@ -5528,14 +5558,44 @@
       <xs:documentation>A program a person attends or undergoes in which an assessment is made.</xs:documentation>
     </xs:annotation>
   </xs:element>
+  <xs:element name="AssessmentRecommendation" type="nc:CommentType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A recommendation or result of an assessment.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
   <xs:element name="AssessmentReferral" type="nc:ReferralType" nillable="true">
     <xs:annotation>
       <xs:documentation>An order or direction for an assessment to be performed.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="AssessmentScoreText" type="nc:TextType" nillable="true">
+  <xs:element name="AssessmentReport" type="nc:DocumentType" nillable="true">
     <xs:annotation>
-      <xs:documentation>An evaluation score of an assessment.</xs:documentation>
+      <xs:documentation>A report that documents an assessment.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="AssessmentScoreAbstract" abstract="true">
+    <xs:annotation>
+      <xs:documentation>A data concept for an outcome or evaluation score of an assessment.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="AssessmentScoreText" type="nc:TextType" substitutionGroup="nc:AssessmentScoreAbstract" nillable="true">
+    <xs:annotation>
+      <xs:documentation>An outcome or evaluation score of an assessment.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="AssessmentSummaryText" type="nc:TextType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A summary about the assessment.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="AssessmentToolDescriptionText" type="nc:TextType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A description of the assessment tool.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="AssessmentToolName" type="nc:TextType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A name of the administered assessment tool.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="Association" type="nc:AssociationType" nillable="true">
@@ -11826,6 +11886,11 @@
   <xs:element name="ReportFrequencyText" type="nc:TextType" substitutionGroup="nc:ReportFrequencyAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A frequency or period for which a recurring report is published.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="ReportID" type="niem-xs:string" nillable="true">
+    <xs:annotation>
+      <xs:documentation>An identifier for a report.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="ReportingOrganizationText" type="nc:TextType" nillable="true">
