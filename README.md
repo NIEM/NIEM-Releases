@@ -94,6 +94,7 @@ Note that schema updates have been committed per issue, so issue-specific file d
 - Moved j:ItemMakeAbstract to Core [(#95)](https://github.com/NIEM/NIEM-Releases/issues/95)
 - Moved nc:EffectiveDate from screening augmentation to nc:PersonNameType [(#96)](https://github.com/NIEM/NIEM-Releases/issues/96)
 - Moved nc:ConveyanceFuelCategoryAbstract from j:EngineType to nc:ConveyanceType [(#116)](https://github.com/NIEM/NIEM-Releases/issues/116)
+- Moved elements from the Justice activity augmentation to nc:ActivityType [(#147)](https://github.com/NIEM/NIEM-Releases/issues/147)
 - Refactored scr:AddressAugmentationType [(#110)](https://github.com/NIEM/NIEM-Releases/issues/110)
 - Refactored im:CountryType [(#112)](https://github.com/NIEM/NIEM-Releases/issues/112)
 - Refactored intel:PersonAugmentationType [(#114)](https://github.com/NIEM/NIEM-Releases/issues/114)

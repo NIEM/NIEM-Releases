@@ -213,27 +213,10 @@
     <xs:complexContent>
       <xs:extension base="structures:AugmentationType">
         <xs:sequence>
-          <xs:element ref="j:ActivityActualDuration" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="j:ActivityApprovedIndicator" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="j:ActivityAssignedDate" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="j:ActivityCapacityQuantity" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="j:ActivityComment" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="j:ActivityCompletedIndicator" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="j:ActivityDocumentServer" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="j:ActivityDueDate" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="j:ActivityEffectiveDate" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="j:ActivityEstimatedDuration" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="j:ActivityFrequencyText" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="j:ActivityPrescribedDuration" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="j:ActivityReportedDate" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="j:ActivityRequestedDate" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="j:ActivityScheduledDate" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="j:ActivitySequenceNumeric" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="j:ActivitySignature" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="j:ActivityVerifiedDate" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="j:CaseLinkage" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="j:CaseNumberText" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="j:Narrative" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="j:ActivityDocumentValidator" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="j:ActivityOfficial" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
@@ -10881,16 +10864,6 @@
       <xs:documentation>An association between an accomplice and a subject.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="ActivityActualDuration" type="niem-xs:duration" nillable="true">
-    <xs:annotation>
-      <xs:documentation>An actual duration of an activity.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="ActivityApprovedIndicator" type="niem-xs:boolean" nillable="true">
-    <xs:annotation>
-      <xs:documentation>True if the activity request was approved; false otherwise.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
   <xs:element name="ActivityArrestAssociation" type="j:ActivityArrestAssociationType" nillable="true">
     <xs:annotation>
       <xs:documentation>An association between an activity and an arrest.</xs:documentation>
@@ -10901,11 +10874,6 @@
       <xs:documentation>An augmentation point for ActivityArrestAssociationType.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="ActivityAssignedDate" type="nc:DateType" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A date on which an activity was assigned.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
   <xs:element name="ActivityAssistingPersonAssociation" type="nc:ActivityPersonAssociationType" nillable="true">
     <xs:annotation>
       <xs:documentation>An association between an activity and someone who assists with that activity.</xs:documentation>
@@ -10914,11 +10882,6 @@
   <xs:element name="ActivityAugmentation" type="j:ActivityAugmentationType" substitutionGroup="nc:ActivityAugmentationPoint" nillable="true">
     <xs:annotation>
       <xs:documentation>Additional information about an activity.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="ActivityCapacityQuantity" type="nc:QuantityType" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A number for the specified maximum enrollment capacity of an activity.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="ActivityCaseAssociation" type="j:ActivityCaseAssociationType" nillable="true">
@@ -10946,11 +10909,6 @@
       <xs:documentation>An association between an activity and a person who cleared information for that activity.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="ActivityComment" type="nc:CommentType" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A comment about the activity.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
   <xs:element name="ActivityCommunityServiceAssociation" type="j:ActivityCommunityServiceAssociationType" nillable="true">
     <xs:annotation>
       <xs:documentation>An association between an activity and an assignment of community service.</xs:documentation>
@@ -10959,11 +10917,6 @@
   <xs:element name="ActivityCommunityServiceAssociationAugmentationPoint" abstract="true">
     <xs:annotation>
       <xs:documentation>An augmentation point for ActivityCommunityServiceAssociationType.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="ActivityCompletedIndicator" type="niem-xs:boolean" nillable="true">
-    <xs:annotation>
-      <xs:documentation>True if an activity event has ended; false otherwise.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="ActivityContactInformationAssociation" type="j:ActivityContactInformationAssociationType" nillable="true">
@@ -11051,16 +11004,6 @@
       <xs:documentation>An augmentation point for ActivityDriverLicenseAssociationType.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="ActivityDueDate" type="nc:DateType" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A date when an activity is expected to be completed.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="ActivityEffectiveDate" type="nc:DateType" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A date when an activity is ready for service or action.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
   <xs:element name="ActivityEmailAddressAssociation" type="j:ActivityEmailAddressAssociationType" nillable="true">
     <xs:annotation>
       <xs:documentation>A relationship between an activity and an email address.</xs:documentation>
@@ -11084,11 +11027,6 @@
   <xs:element name="ActivityEnforcementOfficialAssociation" type="nc:ActivityPersonAssociationType" nillable="true">
     <xs:annotation>
       <xs:documentation>An association between an activity and an enforcement official.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="ActivityEstimatedDuration" type="niem-xs:duration" nillable="true">
-    <xs:annotation>
-      <xs:documentation>An expected amount of time an activity should last.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="ActivityEvidenceAssociation" type="j:ActivityEvidenceAssociationType" nillable="true">
@@ -11124,11 +11062,6 @@
   <xs:element name="ActivityForceAssociationAugmentationPoint" abstract="true">
     <xs:annotation>
       <xs:documentation>An augmentation point for ActivityForceAssociationType.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="ActivityFrequencyText" type="nc:TextType" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A description of the number of occurrences of an activity over a period of time.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="ActivityIncidentAssociation" type="j:ActivityIncidentAssociationType" nillable="true">
@@ -11266,11 +11199,6 @@
       <xs:documentation>A kind of relationship between an activity and a person.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="ActivityPrescribedDuration" type="niem-xs:duration" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A prescribed period of time allowed or required for an activity.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
   <xs:element name="ActivityPrimaryPersonAssociation" type="nc:ActivityPersonAssociationType" nillable="true">
     <xs:annotation>
       <xs:documentation>A relationship between an activity and a primary person involved in that activity.</xs:documentation>
@@ -11306,19 +11234,9 @@
       <xs:documentation>An augmentation point for ActivityReleaseAssociationType.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="ActivityReportedDate" type="nc:DateType" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A date an activity was reported to some entity.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
   <xs:element name="ActivityReportingSupervisorOrganizationAssociation" type="nc:ActivityOrganizationAssociationType" nillable="true">
     <xs:annotation>
       <xs:documentation>A relationship between an activity and a supervisor organization.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="ActivityRequestedDate" type="nc:DateType" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A date an activity was requested by an entity.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="ActivityResponsiblePersonAssociation" type="nc:ActivityPersonAssociationType" nillable="true">
@@ -11336,11 +11254,6 @@
       <xs:documentation>An augmentation point for ActivitySanctionAssociationType.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="ActivityScheduledDate" type="nc:DateType" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A date when an activity is scheduled.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
   <xs:element name="ActivitySentenceComputationAssociation" type="j:ActivitySentenceComputationAssociationType" nillable="true">
     <xs:annotation>
       <xs:documentation>A relationship between an activity and a sentence computation.</xs:documentation>
@@ -11349,11 +11262,6 @@
   <xs:element name="ActivitySentenceComputationAssociationAugmentationPoint" abstract="true">
     <xs:annotation>
       <xs:documentation>An augmentation point for ActivitySentenceComputationAssociationType.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="ActivitySequenceNumeric" type="nc:NumericType" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A numerical identifier across multiple activities to define the order that they should be scheduled and undertaken.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="ActivityServiceCallAssociation" type="j:ActivityServiceCallAssociationType" nillable="true">
@@ -11414,11 +11322,6 @@
   <xs:element name="ActivityUnknownAffiliateAssociation" type="nc:ActivityPersonAssociationType" nillable="true">
     <xs:annotation>
       <xs:documentation>An association between an activity and a person of unknown involvement.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="ActivityVerifiedDate" type="nc:DateType" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A date when an activity is verified.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="ActivityVictimAssociation" type="j:ActivityVictimAssociationType" nillable="true">
