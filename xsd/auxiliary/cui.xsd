@@ -3,7 +3,7 @@
   xmlns:appinfo="http://release.niem.gov/niem/appinfo/5.0/"
   xmlns:ct="http://release.niem.gov/niem/conformanceTargets/3.0/"
   xmlns:cui="http://release.niem.gov/niem/auxiliary/cui/5.0/"
-  xmlns:iso_3166="http://release.niem.gov/niem/codes/iso_3166-1/5.0/"
+  xmlns:genc="http://release.niem.gov/niem/codes/genc/5.0/"
   xmlns:nc="http://release.niem.gov/niem/niem-core/5.0/"
   xmlns:niem-xs="http://release.niem.gov/niem/proxy/xsd/5.0/"
   xmlns:structures="http://release.niem.gov/niem/structures/5.0/"
@@ -17,15 +17,15 @@
       <appinfo:LocalTerm term="RELTO" literal="Releasable To"/>
     </xs:appinfo>
   </xs:annotation>
-  <xs:import namespace="http://release.niem.gov/niem/codes/iso_3166-1/5.0/" schemaLocation="../codes/iso_3166.xsd"/>
+  <xs:import namespace="http://release.niem.gov/niem/codes/genc/5.0/" schemaLocation="../codes/genc/genc.xsd"/>
   <xs:import namespace="http://release.niem.gov/niem/niem-core/5.0/" schemaLocation="../niem-core.xsd"/>
   <xs:import namespace="http://release.niem.gov/niem/proxy/xsd/5.0/" schemaLocation="../adapters/xml-schema-proxy.xsd"/>
   <xs:import namespace="http://release.niem.gov/niem/structures/5.0/" schemaLocation="../utility/structures.xsd"/>
-  <xs:simpleType name="CUICategoryCodeSimpleType">
+  <xs:simpleType name="CUIBasicCategoryMarkingCodeSimpleType">
     <xs:annotation>
-      <xs:documentation>A data type for a Controlled Unclassified Information (CUI) category in which the authorizing law, regulation, or Government-wide policy does not set out specific handling or dissemination controls.</xs:documentation>
+      <xs:documentation>A data type for a Controlled Unclassified Information (CUI) Basic category marking.</xs:documentation>
     </xs:annotation>
-    <xs:restriction base="xs:string">
+    <xs:restriction base="xs:token">
       <xs:enumeration value="ADJ">
         <xs:annotation>
           <xs:documentation>Status Adjustment. Related to applications for the adjustment of immigration status.</xs:documentation>
@@ -41,19 +41,9 @@
           <xs:documentation>Agriculture. Information related to the agricultural operation, farming or conservation practices, or the actual land of an agricultural producer or landowner.</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
-      <xs:enumeration value="AIV">
-        <xs:annotation>
-          <xs:documentation>Accident Investigation. Related to information obtained during the course of an accident or incident investigation.  Including but not limited to information related to wreckage, records, mail, or cargo.</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
       <xs:enumeration value="APP">
         <xs:annotation>
           <xs:documentation>Patent Applications. Application for patent filed under 35 U.S.C. 111(a) that includes all types of patent applications (i.e., utility, design, plant, and reissue) except provisional applications. The nonprovisional application establishes the filing date and initiates the examination process. A nonprovisional utility patent application must include a specification, including a claim or claims; drawings, when necessary; an oath or declaration; and the prescribed filing fee.</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="ARCHR">
-        <xs:annotation>
-          <xs:documentation>Archaeological Resources. Related to information about the nature and location of any archaeological resource for which the excavation or removal requires a permit or other permission.</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
       <xs:enumeration value="ASYL">
@@ -71,36 +61,6 @@
           <xs:documentation>Battered Spouse or Child. Related to information within applications and associated hearings provided by, or that could identify, a battered spouse or child of a US citizen or US permanent resident seeking independent protected status within the United States.</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
-      <xs:enumeration value="BUDG">
-        <xs:annotation>
-          <xs:documentation>Budget. Related to information concerning the federal budget, including authorizations and estimates of income and expenditures.</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="CCI">
-        <xs:annotation>
-          <xs:documentation>Consumer Complaint Information. Related to information concerning consumer complaints or inquiries concerning financial institutions or consumer financial products and services, and responses to them.</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="CEII">
-        <xs:annotation>
-          <xs:documentation>Critical Energy Infrastructure Information. Critical energy infrastructure information means specific engineering, vulnerability, or detailed design information about proposed or existing critical infrastructure that: (i) Relates details about the production, generation, transportation, transmission, or distribution of energy; (ii) Could be useful to a person in planning an attack on critical infrastructure;... and (iii) Does not simply give the general location of the critical infrastructure.</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="CENS">
-        <xs:annotation>
-          <xs:documentation>US Census. Related to information gathered by the Bureau of the Census during the process of collecting, compiling, evaluating, analyzing of demographic, economic, and social data pertaining at a specified time to any or all persons in the United States and dissemination is limited to those with special sworn status, who may only use the data for statistical purposes and only for those statistical purposes for which the data was supplied.</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="CHLD">
-        <xs:annotation>
-          <xs:documentation>Child Pornography. From 18 USC 2256(8) "child pornography" means any visual depiction, including any photograph, film, video, picture, or computer or computer-generated image or picture, whether made or produced by electronic, mechanical, or other means, of sexually explicit conduct, where— (A) the production of such visual depiction involves the use of a minor engaging in sexually explicit conduct; (B) such visual depiction is a digital image, computer image, or computer-generated image that is, or is indistinguishable from, that of a minor engaging in sexually explicit conduct; or (C) such visual depiction has been created, adapted, or modified to appear that an identifiable minor is engaging in sexually explicit conduct</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="CHRI">
-        <xs:annotation>
-          <xs:documentation>Criminal History Records Information. Related to information collected by criminal justice agencies on individuals consisting of identifiable descriptions and notations of arrests, detentions, indictments, informations, or other formal criminal charges, and any disposition arising therefrom, including acquittal, sentencing, correctional supervision, and release.</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
       <xs:enumeration value="CMPRS">
         <xs:annotation>
           <xs:documentation>Committed Person. Related to information concerning the mental condition of a person committed to a psychiatric facility.</xs:documentation>
@@ -113,12 +73,7 @@
       </xs:enumeration>
       <xs:enumeration value="CONREG">
         <xs:annotation>
-          <xs:documentation>Entity Registration Information.  Relating to non-public information collected during entity registration in the System for Award Management (SAM), the common source of vendor data for the United States Government.</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="CONTRACT">
-        <xs:annotation>
-          <xs:documentation>Contract Use. Stipulations for a contractor to meet before material may be used in performance of certain contracts.</xs:documentation>
+          <xs:documentation>Entity Registration Information. Relating to non-public information collected during entity registration in the System for Award Management (SAM), the common source of vendor data for the United States Government.</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
       <xs:enumeration value="CONV">
@@ -129,21 +84,6 @@
       <xs:enumeration value="CRIT">
         <xs:annotation>
           <xs:documentation>General Critical Infrastructure Information. Systems and assets, whether physical or virtual, so vital that the incapacity or destruction of such may have a debilitating impact on the security, economy, public health or safety, environment, or any combination of these matters, across any Federal, State, regional, territorial, or local jurisdiction.</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="CRITAN">
-        <xs:annotation>
-          <xs:documentation>Ammonium Nitrate. Related to registration information of those who own and operate ammonium nitrate facilities, purchasers of ammonium nitrate, and the regulation of sales and transfers of ammonium nitrate.</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="CTI">
-        <xs:annotation>
-          <xs:documentation>Controlled Technical Information. Controlled Technical Information means technical information with military or space application that is subject to controls on the access, use, reproduction, modification, performance, display, release, disclosure, or dissemination. Controlled technical information is to be marked with one of the distribution statements B through F, in accordance with Department of Defense Instruction 5230.24, "Distribution Statements of Technical Documents." The term does not include information that is lawfully publicly available without restrictions. "Technical Information" means technical data or computer software, as those terms are defined in Defense Federal Acquisition Regulation Supplement clause 252.227-7013, "Rights in Technical Data - Noncommercial Items" (48 CFR 252.227-7013). Examples of technical information include research and engineering data, engineering drawings, and associated lists, specifications, standards, process sheets, manuals, technical reports, technical orders, catalog-item identifications, data sets, studies and analyses and related information, and computer software executable code and source code.</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="CUI">
-        <xs:annotation>
-          <xs:documentation>Information the Government creates or possesses, or that an entity creates or possesses for or on behalf of the Government, that a law, regulation, or Government-wide policy requires or permits an agency to handle using safeguarding or dissemination controls.</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
       <xs:enumeration value="CVI">
@@ -196,16 +136,6 @@
           <xs:documentation>International Financial Institutions. Relating to entities that provide financial services for its clients or members, and were established (or chartered) by more than one country, and hence are subjects of international law.</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
-      <xs:enumeration value="FISA">
-        <xs:annotation>
-          <xs:documentation>Foreign Intelligence Surveillance Act. Related to unclassified and declassified information that is collected from unconsenting individuals under the authority of the Foreign Intelligence Surveillance Act (FISA).</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="FISAB">
-        <xs:annotation>
-          <xs:documentation>Foreign Intelligence Surveillance Act Business Records. Related to books, records, papers, documents, and other items produced for an investigation to obtain foreign intelligence information.</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
       <xs:enumeration value="FNC">
         <xs:annotation>
           <xs:documentation>General Financial Information. Related to the duties, transactions, or otherwise falling under the purview of financial institutions or United States Government fiscal functions. Uses may include, but are not limited to, customer information held by a financial institution.</xs:documentation>
@@ -213,7 +143,7 @@
       </xs:enumeration>
       <xs:enumeration value="FSEC">
         <xs:annotation>
-          <xs:documentation>Bank Secrecy. Information that is provided to the government pursuant to the Bank Secrecy Act, including but not limited to, suspicious activity reports (SAR), currency transaction reports (CTR), reports of international transportation of currency or monetary instruments (CMIR), reports of cash payment over $10,000 received in trade or business, and reports of foreign bank and financial accounts (FBAR). Reports filed under the Bank Secrecy Act (BSA), codified in relevant part at 31 U.S.C. § 5311 et seq, are specifically exempt from disclosure under the Freedom of Information Act, codified at 5 U.S.C. § 552, and also may not be disclosed under any State, local, tribal, or territorial “freedom of information,” “open government,” or similar law.  See 31 U.S.C. § 5319; 5 U.S.C. § 552(b)(3).  These reports (BSA Reports), are maintained in a system of records containing information compiled for law enforcement investigative purposes that has been exempted from the access provisions of the Privacy Act in accordance with 5 U.S.C. §§ 552a(j)(2) and (k)(2). BSA Reports may only be re-disseminated in strict accordance with guidelines established by the Financial Crimes Enforcement Network (FinCEN), the Treasury bureau that administers the BSA.  Suspicious Activity Reports, one of the types of required reports filed under the BSA, are required to be kept confidential in accordance with 31 U.S.C. § 5318(g)(2) and implementing regulations. To the extent information falling under the purview of the BSA is collected, accessed, or used for any Federal tax administration purpose, it is also subject to the confidentiality provisions of the Internal Revenue Code, codified at 26 U.S.C. § 6103.</xs:documentation>
+          <xs:documentation>Bank Secrecy. Information that is provided to the government pursuant to the Bank Secrecy Act, including but not limited to, suspicious activity reports (SAR), currency transaction reports (CTR), reports of international transportation of currency or monetary instruments (CMIR), reports of cash payment over $10,000 received in trade or business, and reports of foreign bank and financial accounts (FBAR). Reports filed under the Bank Secrecy Act (BSA), codified in relevant part at 31 U.S.C. § 5311 et seq, are specifically exempt from disclosure under the Freedom of Information Act, codified at 5 U.S.C. § 552, and also may not be disclosed under any State, local, tribal, or territorial “freedom of information,” “open government,” or similar law. See 31 U.S.C. § 5319; 5 U.S.C. § 552(b)(3). These reports (BSA Reports), are maintained in a system of records containing information compiled for law enforcement investigative purposes that has been exempted from the access provisions of the Privacy Act in accordance with 5 U.S.C. §§ 552a(j)(2) and (k)(2). BSA Reports may only be re-disseminated in strict accordance with guidelines established by the Financial Crimes Enforcement Network (FinCEN), the Treasury bureau that administers the BSA. Suspicious Activity Reports, one of the types of required reports filed under the BSA, are required to be kept confidential in accordance with 31 U.S.C. § 5318(g)(2) and implementing regulations. To the extent information falling under the purview of the BSA is collected, accessed, or used for any Federal tax administration purpose, it is also subject to the confidentiality provisions of the Internal Revenue Code, codified at 26 U.S.C. § 6103.</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
       <xs:enumeration value="FSI">
@@ -221,24 +151,9 @@
           <xs:documentation>Financial Supervision Information. Related to information connected to an agency's responsibilities to supervise, examine, and evaluate a financial institution.</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
-      <xs:enumeration value="FUND">
-        <xs:annotation>
-          <xs:documentation>Campaign Funds. Related to information obtained in connection to an investigation into campaign finance and disclosure laws. Usage may include but is not limited to notification or investigation pertaining to financial support of a candidate for election.</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
       <xs:enumeration value="GENETIC">
         <xs:annotation>
           <xs:documentation>Genetic Information. The term "genetic information" means, with respect to any individual, information about-- (i) such individual's genetic tests, (ii) the genetic tests of family members of such individual, and (iii) the manifestation of a disease or disorder in family members of such individual.</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="GEO">
-        <xs:annotation>
-          <xs:documentation>Geodetic Product Information. Related to imagery, imagery intelligence, or geospatial information.</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="HISTP">
-        <xs:annotation>
-          <xs:documentation>Historic Properties. Related to the location, character, or ownership of historic property.</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
       <xs:enumeration value="HLTH">
@@ -251,11 +166,6 @@
           <xs:documentation>Internal Data. Refers to a category of information that is not intended to be disseminated beyond CIA channels that involves intelligence activities, sources, or methods. This information may also relate to the CIA's organization, functions, names, official titles, salaries, or numbers of personnel.</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
-      <xs:enumeration value="IFNC">
-        <xs:annotation>
-          <xs:documentation>Intelligence Financial Records. Related to financial records obtained for intelligence or counterintelligence activity, investigation, or analysis.</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
       <xs:enumeration value="INF">
         <xs:annotation>
           <xs:documentation>Informant. Related to the identity of a human source.</xs:documentation>
@@ -264,11 +174,6 @@
       <xs:enumeration value="INTEL">
         <xs:annotation>
           <xs:documentation>General Intelligence. Related to intelligence activities, sources, or methods.</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="INTL">
-        <xs:annotation>
-          <xs:documentation>International Agreement Information. Information provided by, otherwise made available by, or produced in cooperation with, a foreign government or international organization that requires protection pursuant to an existing treaty, agreement, bilateral exchange or other obligation under the requirements stipulated in 10 USC 130c(b), when not subject to classification under Executive Order 13526. Title 10 USC 130c(b) may exempt this class of foreign government information from the safeguard provisions otherwise required by Executive Order 13526. Per Title 10 USC 130c(h) the following national security officials are the only ones defined by statute as able to determine such information requires control: (A) The Secretary of Defense, with respect to information of concern to the Department of Defense. (B) The Secretary of Homeland Security, with respect to information of concern to the Coast Guard, as determined by the Secretary, but only while the Coast Guard is not operating as a service in the Navy. (C) The Secretary of Energy, with respect to information concerning the national security programs of the Department of Energy, as determined by the Secretary.</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
       <xs:enumeration value="INV">
@@ -306,19 +211,9 @@
           <xs:documentation>Communications. Related to the contents of any wire, oral, or electronic communication.</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
-      <xs:enumeration value="LDNA">
-        <xs:annotation>
-          <xs:documentation>DNA. Related to hereditary material in humans that is used for law enforcement purposes.</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
       <xs:enumeration value="LEI">
         <xs:annotation>
           <xs:documentation>General Law Enforcement. Related to techniques and procedures for law enforcement operations, investigations, prosecutions, or enforcement actions.</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="LFNC">
-        <xs:annotation>
-          <xs:documentation>Law Enforcement Financial Records. Related to financial records obtained for law enforcement purposes.</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
       <xs:enumeration value="LMI">
@@ -351,11 +246,6 @@
           <xs:documentation>Mergers. Relating to methods by which corporations legally unify ownership of assets formerly subject to separate controls.</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
-      <xs:enumeration value="MFC">
-        <xs:annotation>
-          <xs:documentation>Proprietary Manufacturer. Relating to the production of a consumer product to include that of a private labeler.</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
       <xs:enumeration value="MIL">
         <xs:annotation>
           <xs:documentation>Military Personnel Records. Any member or former member of the armed forces or affiliated organization of the Department of Defense.</xs:documentation>
@@ -371,19 +261,9 @@
           <xs:documentation>Per the United States Security Authority for NATO, Instruction 1-07, this is information classified as ""NATO Unclassified"", which may only be used for official NATO purposes and may carry administrative or dissemination limitation markings.</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
-      <xs:enumeration value="NETW">
-        <xs:annotation>
-          <xs:documentation>Net Worth. Related to the net worth of an individual and/or their affiliates in certain administrative proceedings.</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
       <xs:enumeration value="NNPI">
         <xs:annotation>
           <xs:documentation>Naval Nuclear Propulsion Information. Related to the safety of reactors and associated naval nuclear propulsion plants, and control of radiation and radioactivity associated with naval nuclear propulsion activities, including prescribing and enforcing standards and regulations for these areas as they affect the environment and the safety and health of workers, operators, and the general public.</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="NPSR">
-        <xs:annotation>
-          <xs:documentation>National Park System Resources. Related to information concerning the nature and specific location of a National Park System resource that is endangered, threatened, rare, or commercially valuable, of mineral or paleontological objects within System units, or of objects of cultural patrimony within System units.</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
       <xs:enumeration value="NUC">
@@ -399,11 +279,6 @@
       <xs:enumeration value="OPSEC">
         <xs:annotation>
           <xs:documentation>Operations Security. Critical information determined to give evidence of the planning and execution of sensitive (frequently classified) government activities after going through a formal systematic vetting process in accordance with National Security Decision Directive Number 298. This process identifies unclassified information that must be protected. It almost always results from an agency’s official OPSEC program, or is otherwise commonly approved for use by the CUI Senior Agency Official.</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="PCII">
-        <xs:annotation>
-          <xs:documentation>Protected Critical Infrastructure Information. As defined by 6 USC 131-134, and 6 CFR 29, PCII relates to threats, vulnerabilities, or operational experience related to the national infrastructure. PCII offers protection to private sector infrastructure information voluntarily shared with government entities for purposes of homeland security.</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
       <xs:enumeration value="PERS">
@@ -444,11 +319,6 @@
       <xs:enumeration value="PRIVILEGE">
         <xs:annotation>
           <xs:documentation>Legal Privilege. Per 12 USC 78x: The term "privilege" includes any work-product privilege, attorney-client privilege, governmental privilege, or other privilege recognized under Federal, State, or foreign law. Per 502(g): (1) "attorney-client privilege" means the protection that applicable law provides for confidential attorney-client communications; and (2) "work-product protection" means the protection that applicable law provides for tangible material (or its intangible equivalent) prepared in anticipation of litigation or for trial.</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="PROCURE">
-        <xs:annotation>
-          <xs:documentation>General Procurement and Acquisition. Material and information relating to, or associated with, the acquisition and procurement of goods and services, including but not limited to, cost or pricing data, contract information, indirect costs and direct labor rates.</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
       <xs:enumeration value="PROPIN">
@@ -516,11 +386,6 @@
           <xs:documentation>Ocean Common Carrier Service Contracts. Relating to an agreement for the provision of services filed with the Federal Maritime Commission as referenced in 46 USC 40502(b), 46 CFR 530.4, and/or 46 CFR 531.4(a).</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
-      <xs:enumeration value="SGI">
-        <xs:annotation>
-          <xs:documentation>Safeguards Information. Pursuant to 42 USC 2011, et seq., and as defined in 10 CFR 73.2, SGI relates to security related information concerning the physical protection of source, byproduct or special nuclear material and the detailed security measures for facilities and information contained within security plans.</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
       <xs:enumeration value="SRI">
         <xs:annotation>
           <xs:documentation>Nuclear Security-Related Information. Related to information that could be useful, or could reasonably be expected to be useful, to a terrorist in a potential attack that does not qualify as Safeguards or classified information, including the exact location and quantities of radioactive material, certain detailed design drawings, information on nearby facilities, emergency planning information, and certain assessments of vulnerability and safety analyses.</xs:documentation>
@@ -529,11 +394,6 @@
       <xs:enumeration value="SSEL">
         <xs:annotation>
           <xs:documentation>Source Selection. Per FAR 2.101: any of the following information that is prepared for use by an agency for the purpose of evaluating a bid or proposal to enter into an agency procurement contract, if that information has not been previously made available to the public or disclosed publicly: (Items 1-10).</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="SSI">
-        <xs:annotation>
-          <xs:documentation>Sensitive Security Information. As defined in 49 C.F.R. Part 15.5, Sensitive Security Information is information obtained or developed in the conduct of security activities, including research and development, the disclosure of which DOT has determined would constitute an unwarranted invasion of privacy, reveal trade secrets or privileged or confidential information, or be detrimental to transportation safety. As defined in 49 C.F.R. Part 1520.5, Sensitive Security Information is information obtained or developed in the conduct of security activities, including research and development, the disclosure of which DHS/TSA has determined would, among other things, be detrimental to the security of transportation.</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
       <xs:enumeration value="STAT">
@@ -546,11 +406,6 @@
           <xs:documentation>Student Records. As per 20 USC 1232g, the Family Educational Rights and Privacy Act of 1974, an education record which is comprised of those records which are directly related to a student.</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
-      <xs:enumeration value="SUB">
-        <xs:annotation>
-          <xs:documentation>Controlled Substances. Information obtained by the Drug Enforcement Administration (DEA) or in DEA investigative reports related to controlled substances.</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
       <xs:enumeration value="SURV">
         <xs:annotation>
           <xs:documentation>Investment Survey. Information reported to Treasury, the Federal Reserve Board of Governors, or the Federal Reserve Banks as part of the Treasury International Capital (TIC) data reporting system.</xs:documentation>
@@ -558,23 +413,12 @@
       </xs:enumeration>
       <xs:enumeration value="TAI">
         <xs:annotation>
-          <xs:documentation>Taxpayer Advocate Information. A local taxpayer advocate (LTA) has the discretion to not disclose to the IRS contact with, or information provided by, a taxpayer.  Such discretion may result in declinations of requests for information by IRS personnel including cases involving criminal tax investigations or those where the failure to provide information to the IRS would be beneficial to the taxpayer but to the detriment of the IRS.  Such discretion does not extend to cases where the LTA believes a taxpayer is using the Taxpayer Advocate’s office to perpetuate a fraud on the government or in cases where the information is sought in litigation.</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="TAX">
-        <xs:annotation>
-          <xs:documentation>Federal Taxpayer Information. Related to returns and return information which are submitted, gathered or generated in conjunction with taxpayers’ responsibilities to comply with federal tax provisions in the United States Code.  
-“Returns” includes information that is provided to the government pursuant to Title 26, including tax or information returns, declarations of estimated tax or claims for refund.  “Return information” includes a taxpayer’s identity, the nature, source or amount of income or any information received by, recorded by, prepared by or furnished to Internal Revenue Service relevant to the determination of tax liability including whether the taxpayer is the subject of investigation.  This protection extends to such items as medical, financial and other personal information submitted to the IRS by taxpayers.  Standards (typically tolerances, audit criteria and law enforcement techniques) related to the selection of returns for examination should only be disclosed to the extent their disclosure would not impair assessment, collection or enforcement under the internal revenue laws.  Tax data originating with the IRS generally retains its confidential status even when it resides with agencies other than the IRS.</xs:documentation>
+          <xs:documentation>Taxpayer Advocate Information. A local taxpayer advocate (LTA) has the discretion to not disclose to the IRS contact with, or information provided by, a taxpayer. Such discretion may result in declinations of requests for information by IRS personnel including cases involving criminal tax investigations or those where the failure to provide information to the IRS would be beneficial to the taxpayer but to the detriment of the IRS. Such discretion does not extend to cases where the LTA believes a taxpayer is using the Taxpayer Advocate’s office to perpetuate a fraud on the government or in cases where the information is sought in litigation.</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
       <xs:enumeration value="TRACE">
         <xs:annotation>
           <xs:documentation>Pen Register/Trap &amp; Trace. Related to devices used to identify incoming and outgoing telephone numbers.</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="TSCA">
-        <xs:annotation>
-          <xs:documentation>Toxic Substances. Health, safety, and exposure information related to chemical substances, chemical mixtures, and articles as defined under the Toxic Substances Control Act (TSCA).</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
       <xs:enumeration value="UCNI">
@@ -590,11 +434,6 @@
       <xs:enumeration value="WATER">
         <xs:annotation>
           <xs:documentation>Water Assessments. Vulnerability Assessments on the risks and security of public drinking water systems, to include, but not be limited to, a review of pipes and constructed conveyances, physical barriers, water collection, pretreatment, treatment, storage and distribution facilities, electronic, computer or other automated systems which are utilized by the public water system, the use, storage, or handling of various chemicals, and the operation and maintenance of such system.</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="WDT">
-        <xs:annotation>
-          <xs:documentation>Written Determinations. Rulings, determination letters, technical advice memoranda or Chief Counsel Advice, as those terms are defined in Treasury Regulation 301.6110-2, which are made available for public inspection subject to the withholding of certain types of data as enumerated in Treasury Regulation 301-6110.</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
       <xs:enumeration value="WHSTL">
@@ -614,29 +453,15 @@
       </xs:enumeration>
     </xs:restriction>
   </xs:simpleType>
-  <xs:complexType name="CUICategoryCodeType">
+  <xs:complexType name="CUIBasicCategoryMarkingCodeType">
     <xs:annotation>
-      <xs:documentation>A data type for a Controlled Unclassified Information (CUI) category in which the authorizing law, regulation, or Government-wide policy does not set out specific handling or dissemination controls.</xs:documentation>
+      <xs:documentation>A data type for a Controlled Unclassified Information (CUI) Basic category marking.</xs:documentation>
     </xs:annotation>
     <xs:simpleContent>
-      <xs:extension base="cui:CUICategoryCodeSimpleType">
+      <xs:extension base="cui:CUIBasicCategoryMarkingCodeSimpleType">
         <xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
       </xs:extension>
     </xs:simpleContent>
-  </xs:complexType>
-  <xs:complexType name="CUICategoryType">
-    <xs:annotation>
-      <xs:documentation>A data type for those types of information for which laws, regulations, or Government-wide policies require or permit agencies to exercise safeguarding or dissemination controls, and which the CUI Executive Agent has approved and listed in the CUI Registry.</xs:documentation>
-    </xs:annotation>
-    <xs:complexContent>
-      <xs:extension base="structures:ObjectType">
-        <xs:sequence>
-          <xs:element ref="cui:CUISpecifiedCategoryCode" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="cui:CUIBasicCategoryCode" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="cui:CUICategoryAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
-        </xs:sequence>
-      </xs:extension>
-    </xs:complexContent>
   </xs:complexType>
   <xs:complexType name="CUIDecontrolScheduleType">
     <xs:annotation>
@@ -660,7 +485,8 @@
     <xs:complexContent>
       <xs:extension base="structures:MetadataType">
         <xs:sequence>
-          <xs:element ref="cui:CUICategoryMarking" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="cui:CUIBasicCategoryCode" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="cui:CUISpecifiedCategoryCode" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="cui:CUILimitedDisseminationControlMarking" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="cui:CUIDesignatingEntityText" minOccurs="1" maxOccurs="unbounded"/>
           <xs:element ref="cui:CUIDecontrolSchedule" minOccurs="0" maxOccurs="1"/>
@@ -719,38 +545,32 @@
     <xs:restriction base="xs:string">
       <xs:enumeration value="AC">
         <xs:annotation>
-          <xs:documentation>Portion marking abbreviation for Attorney Client. Dissemination of information protected by the attorney client privilege beyond the attorney, the attorney’s agents, or the client can result in the loss of the privilege and is prohibited by this marking, unless the agency's executive decision makers decide to disclose the information outside the bounds of its protection.
-Note: the Legal Privilege Category marking “PRIVILEGE” must be applied in order to use this limited dissemination control marking.</xs:documentation>
+          <xs:documentation>Portion marking abbreviation for Attorney Client. Dissemination of information protected by the attorney client privilege beyond the attorney, the attorney’s agents, or the client can result in the loss of the privilege and is prohibited by this marking, unless the agency's executive decision makers decide to disclose the information outside the bounds of its protection. Note: the Legal Privilege Category marking “PRIVILEGE” must be applied in order to use this limited dissemination control marking.</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
       <xs:enumeration value="Attorney-Client">
         <xs:annotation>
-          <xs:documentation>Attorney Client. Dissemination of information protected by the attorney client privilege beyond the attorney, the attorney’s agents, or the client can result in the loss of the privilege and is prohibited by this marking, unless the agency's executive decision makers decide to disclose the information outside the bounds of its protection.
-Note: the Legal Privilege Category marking “PRIVILEGE” must be applied in order to use this limited dissemination control marking.</xs:documentation>
+          <xs:documentation>Attorney Client. Dissemination of information protected by the attorney client privilege beyond the attorney, the attorney’s agents, or the client can result in the loss of the privilege and is prohibited by this marking, unless the agency's executive decision makers decide to disclose the information outside the bounds of its protection. Note: the Legal Privilege Category marking “PRIVILEGE” must be applied in order to use this limited dissemination control marking.</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
       <xs:enumeration value="Attorney-WP">
         <xs:annotation>
-          <xs:documentation>Dissemination of information protected by the Attorney Work Product Privilege beyond the attorney, the attorney’s agents, or the client can result in the loss of the privilege and is prohibited by this marking,  unless specifically permitted by the overseeing attorney who originated the work product or their successor.
-Note: the Legal Privilege Category marking “PRIVILEGE” must be applied in order to use this limited dissemination control marking.</xs:documentation>
+          <xs:documentation>Dissemination of information protected by the Attorney Work Product Privilege beyond the attorney, the attorney’s agents, or the client can result in the loss of the privilege and is prohibited by this marking, unless specifically permitted by the overseeing attorney who originated the work product or their successor. Note: the Legal Privilege Category marking “PRIVILEGE” must be applied in order to use this limited dissemination control marking.</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
       <xs:enumeration value="AWP">
         <xs:annotation>
-          <xs:documentation>Portion marking abbreviation for Attorney Work Product. Dissemination of information protected by the Attorney Work Product Privilege beyond the attorney, the attorney’s agents, or the client can result in the loss of the privilege and is prohibited by this marking,  unless specifically permitted by the overseeing attorney who originated the work product or their successor.
-Note: the Legal Privilege Category marking “PRIVILEGE” must be applied in order to use this limited dissemination control marking.</xs:documentation>
+          <xs:documentation>Portion marking abbreviation for Attorney Work Product. Dissemination of information protected by the Attorney Work Product Privilege beyond the attorney, the attorney’s agents, or the client can result in the loss of the privilege and is prohibited by this marking, unless specifically permitted by the overseeing attorney who originated the work product or their successor. Note: the Legal Privilege Category marking “PRIVILEGE” must be applied in order to use this limited dissemination control marking.</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
       <xs:enumeration value="DELIB">
         <xs:annotation>
-          <xs:documentation>Portion marking abbreviation for Deliberative Process. Dissemination of information protected by the deliberative process privilege beyond the department, agency, or U.S. Government decision maker who is part of the policy deliberation can result in the loss of the privilege  and is prohibited by this marking,  unless the executive decision makers at the agency decide to disclose the information outside the bounds of its protection.
-Note: the Legal Privilege Category marking “PRIVILEGE” must be applied in order to use this limited dissemination control marking.</xs:documentation>
+          <xs:documentation>Portion marking abbreviation for Deliberative Process. Dissemination of information protected by the deliberative process privilege beyond the department, agency, or U.S. Government decision maker who is part of the policy deliberation can result in the loss of the privilege and is prohibited by this marking, unless the executive decision makers at the agency decide to disclose the information outside the bounds of its protection. Note: the Legal Privilege Category marking “PRIVILEGE” must be applied in order to use this limited dissemination control marking.</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
       <xs:enumeration value="Deliberative">
         <xs:annotation>
-          <xs:documentation>Dissemination of information protected by the deliberative process privilege beyond the department, agency, or U.S. Government decision maker who is part of the policy deliberation can result in the loss of the privilege  and is prohibited by this marking,  unless the executive decision makers at the agency decide to disclose the information outside the bounds of its protection.
-Note: the Legal Privilege Category marking “PRIVILEGE” must be applied in order to use this limited dissemination control marking.</xs:documentation>
+          <xs:documentation>Dissemination of information protected by the deliberative process privilege beyond the department, agency, or U.S. Government decision maker who is part of the policy deliberation can result in the loss of the privilege and is prohibited by this marking, unless the executive decision makers at the agency decide to disclose the information outside the bounds of its protection. Note: the Legal Privilege Category marking “PRIVILEGE” must be applied in order to use this limited dissemination control marking.</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
       <xs:enumeration value="DISPLAY ONLY">
@@ -827,25 +647,333 @@ Note: the Legal Privilege Category marking “PRIVILEGE” must be applied in or
     <xs:complexContent>
       <xs:extension base="structures:MetadataType">
         <xs:sequence>
-          <xs:element ref="cui:CUICategoryMarking" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="cui:CUIBasicCategoryCode" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="cui:CUISpecifiedCategoryCode" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="cui:CUILimitedDisseminationControlMarking" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-  <xs:element name="CUIBasicCategoryCode" type="cui:CUICategoryCodeType" nillable="true">
+  <xs:simpleType name="CUISpecifiedCategoryMarkingCodeSimpleType">
+    <xs:annotation>
+      <xs:documentation>A data type for a Controlled Unclassified Information (CUI) Specified category marking.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="ADPO">
+        <xs:annotation>
+          <xs:documentation>Administrative Proceedings. Adjudication of agency-related matters including, but not limited to, dispute resolution, settlements, and issuances of orders.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AIV">
+        <xs:annotation>
+          <xs:documentation>Accident Investigation. Related to information obtained during the course of an accident or incident investigation.  Including but not limited to information related to wreckage, records, mail, or cargo.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="APP">
+        <xs:annotation>
+          <xs:documentation>Patent Applications. Application for patent filed under 35 U.S.C. 111(a) that includes all types of patent applications (i.e., utility, design, plant, and reissue) except provisional applications. The nonprovisional application establishes the filing date and initiates the examination process. A nonprovisional utility patent application must include a specification, including a claim or claims; drawings, when necessary; an oath or declaration; and the prescribed filing fee.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ARCHR">
+        <xs:annotation>
+          <xs:documentation>Archaeological Resources. Related to information about the nature and location of any archaeological resource for which the excavation or removal requires a permit or other permission.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="BUDG">
+        <xs:annotation>
+          <xs:documentation>Budget. Related to information concerning the federal budget, including authorizations and estimates of income and expenditures.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CCI">
+        <xs:annotation>
+          <xs:documentation>Consumer Complaint Information. Related to information concerning consumer complaints or inquiries concerning financial institutions or consumer financial products and services, and responses to them.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CEII">
+        <xs:annotation>
+          <xs:documentation>Critical Energy Infrastructure Information. Critical energy infrastructure information means specific engineering, vulnerability, or detailed design information about proposed or existing critical infrastructure that: (i) Relates details about the production, generation, transportation, transmission, or distribution of energy; (ii) Could be useful to a person in planning an attack on critical infrastructure;... and (iii) Does not simply give the general location of the critical infrastructure.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CENS">
+        <xs:annotation>
+          <xs:documentation>US Census. Related to information gathered by the Bureau of the Census during the process of collecting, compiling, evaluating, analyzing of demographic, economic, and social data pertaining at a specified time to any or all persons in the United States and dissemination is limited to those with special sworn status, who may only use the data for statistical purposes and only for those statistical purposes for which the data was supplied.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CHLD">
+        <xs:annotation>
+          <xs:documentation>Child Pornography. From 18 USC 2256(8) "child pornography" means any visual depiction, including any photograph, film, video, picture, or computer or computer-generated image or picture, whether made or produced by electronic, mechanical, or other means, of sexually explicit conduct, where— (A) the production of such visual depiction involves the use of a minor engaging in sexually explicit conduct; (B) such visual depiction is a digital image, computer image, or computer-generated image that is, or is indistinguishable from, that of a minor engaging in sexually explicit conduct; or (C) such visual depiction has been created, adapted, or modified to appear that an identifiable minor is engaging in sexually explicit conduct</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CHRI">
+        <xs:annotation>
+          <xs:documentation>Criminal History Records Information. Related to information collected by criminal justice agencies on individuals consisting of identifiable descriptions and notations of arrests, detentions, indictments, informations, or other formal criminal charges, and any disposition arising therefrom, including acquittal, sentencing, correctional supervision, and release.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CONTRACT">
+        <xs:annotation>
+          <xs:documentation>Contract Use. Stipulations for a contractor to meet before material may be used in performance of certain contracts.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CRITAN">
+        <xs:annotation>
+          <xs:documentation>Ammonium Nitrate. Related to registration information of those who own and operate ammonium nitrate facilities, purchasers of ammonium nitrate, and the regulation of sales and transfers of ammonium nitrate.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CTI">
+        <xs:annotation>
+          <xs:documentation>Controlled Technical Information. Controlled Technical Information means technical information with military or space application that is subject to controls on the access, use, reproduction, modification, performance, display, release, disclosure, or dissemination. Controlled technical information is to be marked with one of the distribution statements B through F, in accordance with Department of Defense Instruction 5230.24, "Distribution Statements of Technical Documents." The term does not include information that is lawfully publicly available without restrictions. "Technical Information" means technical data or computer software, as those terms are defined in Defense Federal Acquisition Regulation Supplement clause 252.227-7013, "Rights in Technical Data - Noncommercial Items" (48 CFR 252.227-7013). Examples of technical information include research and engineering data, engineering drawings, and associated lists, specifications, standards, process sheets, manuals, technical reports, technical orders, catalog-item identifications, data sets, studies and analyses and related information, and computer software executable code and source code.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CVI">
+        <xs:annotation>
+          <xs:documentation>Chemical-terrorism Vulnerability Information. In accordance with Section 550(c) of the Department of Homeland Security Appropriations Act of 2007, the following information, whether transmitted verbally, electronically, or in written form, shall constitute CVI, see (1) - (9).</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="DCNI">
+        <xs:annotation>
+          <xs:documentation>Unclassified Controlled Nuclear Information - Defense. Relating to Department of Defense special nuclear material (SNM), equipment, and facilities, as defined by 32 CFR 223.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="EXPT">
+        <xs:annotation>
+          <xs:documentation>Export Controlled. Unclassified information concerning certain items, commodities, technology, software, or other information whose export could reasonably be expected to adversely affect the United States national security and nonproliferation objectives. To include dual use items; items identified in export administration regulations, international traffic in arms regulations and the munitions list; license applications; and sensitive nuclear technology information.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="FISA">
+        <xs:annotation>
+          <xs:documentation>Foreign Intelligence Surveillance Act. Related to unclassified and declassified information that is collected from unconsenting individuals under the authority of the Foreign Intelligence Surveillance Act (FISA).</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="FISAB">
+        <xs:annotation>
+          <xs:documentation>Foreign Intelligence Surveillance Act Business Records. Related to books, records, papers, documents, and other items produced for an investigation to obtain foreign intelligence information.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="FNC">
+        <xs:annotation>
+          <xs:documentation>General Financial Information. Related to the duties, transactions, or otherwise falling under the purview of financial institutions or United States Government fiscal functions. Uses may include, but are not limited to, customer information held by a financial institution.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="FSEC">
+        <xs:annotation>
+          <xs:documentation>Bank Secrecy. Information that is provided to the government pursuant to the Bank Secrecy Act, including but not limited to, suspicious activity reports (SAR), currency transaction reports (CTR), reports of international transportation of currency or monetary instruments (CMIR), reports of cash payment over $10,000 received in trade or business, and reports of foreign bank and financial accounts (FBAR). Reports filed under the Bank Secrecy Act (BSA), codified in relevant part at 31 U.S.C. § 5311 et seq, are specifically exempt from disclosure under the Freedom of Information Act, codified at 5 U.S.C. § 552, and also may not be disclosed under any State, local, tribal, or territorial “freedom of information,” “open government,” or similar law. See 31 U.S.C. § 5319; 5 U.S.C. § 552(b)(3). These reports (BSA Reports), are maintained in a system of records containing information compiled for law enforcement investigative purposes that has been exempted from the access provisions of the Privacy Act in accordance with 5 U.S.C. §§ 552a(j)(2) and (k)(2). BSA Reports may only be re-disseminated in strict accordance with guidelines established by the Financial Crimes Enforcement Network (FinCEN), the Treasury bureau that administers the BSA. Suspicious Activity Reports, one of the types of required reports filed under the BSA, are required to be kept confidential in accordance with 31 U.S.C. § 5318(g)(2) and implementing regulations. To the extent information falling under the purview of the BSA is collected, accessed, or used for any Federal tax administration purpose, it is also subject to the confidentiality provisions of the Internal Revenue Code, codified at 26 U.S.C. § 6103.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="FUND">
+        <xs:annotation>
+          <xs:documentation>Campaign Funds. Related to information obtained in connection to an investigation into campaign finance and disclosure laws. Usage may include but is not limited to notification or investigation pertaining to financial support of a candidate for election.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="GENETIC">
+        <xs:annotation>
+          <xs:documentation>Genetic Information. The term "genetic information" means, with respect to any individual, information about-- (i) such individual's genetic tests, (ii) the genetic tests of family members of such individual, and (iii) the manifestation of a disease or disorder in family members of such individual.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="GEO">
+        <xs:annotation>
+          <xs:documentation>Geodetic Product Information. Related to imagery, imagery intelligence, or geospatial information.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="HISTP">
+        <xs:annotation>
+          <xs:documentation>Historic Properties. Related to the location, character, or ownership of historic property.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="HLTH">
+        <xs:annotation>
+          <xs:documentation>Health Information. As per 42 USC 1320d(4), "health information" means any information, whether oral or recorded in any form or medium, that (A) is created or received by a health care provider, health plan, public health authority, employer, life insurer, school or university, or health care clearinghouse; and (B) relates to the past, present, or future physical or mental health or condition of an individual, the provision of health care to an individual, or the past, present, or future payment for the provision of health care to an individual.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ID">
+        <xs:annotation>
+          <xs:documentation>Internal Data. Refers to a category of information that is not intended to be disseminated beyond CIA channels that involves intelligence activities, sources, or methods. This information may also relate to the CIA's organization, functions, names, official titles, salaries, or numbers of personnel.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="IFNC">
+        <xs:annotation>
+          <xs:documentation>Intelligence Financial Records. Related to financial records obtained for intelligence or counterintelligence activity, investigation, or analysis.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="INF">
+        <xs:annotation>
+          <xs:documentation>Informant. Related to the identity of a human source.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="INTEL">
+        <xs:annotation>
+          <xs:documentation>General Intelligence. Related to intelligence activities, sources, or methods.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="INTL">
+        <xs:annotation>
+          <xs:documentation>International Agreement Information. Information provided by, otherwise made available by, or produced in cooperation with, a foreign government or international organization that requires protection pursuant to an existing treaty, agreement, bilateral exchange or other obligation under the requirements stipulated in 10 USC 130c(b), when not subject to classification under Executive Order 13526. Title 10 USC 130c(b) may exempt this class of foreign government information from the safeguard provisions otherwise required by Executive Order 13526. Per Title 10 USC 130c(h) the following national security officials are the only ones defined by statute as able to determine such information requires control: (A) The Secretary of Defense, with respect to information of concern to the Department of Defense. (B) The Secretary of Homeland Security, with respect to information of concern to the Coast Guard, as determined by the Secretary, but only while the Coast Guard is not operating as a service in the Navy. (C) The Secretary of Energy, with respect to information concerning the national security programs of the Department of Energy, as determined by the Secretary.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="INV">
+        <xs:annotation>
+          <xs:documentation>Investigation. Related to information obtained during the course of a law enforcement investigation or action, civil or criminal.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="JURY">
+        <xs:annotation>
+          <xs:documentation>Federal Grand Jury. Material obtained pursuant to a federal grand jury subpoena, which includes (1) any reference to a specific sitting grand jury; (2) any documentation or data obtained by a grand jury subpoena if disclosure of such material tends to reveal what transpired before or at the direction of the federal grand jury; (3) documentation prepared specifically for the federal grand jury; and (4) transcripts or other recordings of testimony presented to the federal grand jury.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="LDNA">
+        <xs:annotation>
+          <xs:documentation>DNA. Related to hereditary material in humans that is used for law enforcement purposes.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="LFNC">
+        <xs:annotation>
+          <xs:documentation>Law Enforcement Financial Records. Related to financial records obtained for law enforcement purposes.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="LPROT">
+        <xs:annotation>
+          <xs:documentation>Protective Order. Stipulation that certain information that would normally fall under discovery rules will not be disclosed for specifically stated reason.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="MFC">
+        <xs:annotation>
+          <xs:documentation>Proprietary Manufacturer. Relating to the production of a consumer product to include that of a private labeler.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="NETW">
+        <xs:annotation>
+          <xs:documentation>Net Worth. Related to the net worth of an individual and/or their affiliates in certain administrative proceedings.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="NNPI">
+        <xs:annotation>
+          <xs:documentation>Naval Nuclear Propulsion Information. Related to the safety of reactors and associated naval nuclear propulsion plants, and control of radiation and radioactivity associated with naval nuclear propulsion activities, including prescribing and enforcing standards and regulations for these areas as they affect the environment and the safety and health of workers, operators, and the general public.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="NPSR">
+        <xs:annotation>
+          <xs:documentation>National Park System Resources. Related to information concerning the nature and specific location of a National Park System resource that is endangered, threatened, rare, or commercially valuable, of mineral or paleontological objects within System units, or of objects of cultural patrimony within System units.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="NUC">
+        <xs:annotation>
+          <xs:documentation>General Nuclear. Related to protection of information concerning nuclear reactors, materials, or security.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="PCII">
+        <xs:annotation>
+          <xs:documentation>Protected Critical Infrastructure Information. As defined by 6 USC 131-134, and 6 CFR 29, PCII relates to threats, vulnerabilities, or operational experience related to the national infrastructure. PCII offers protection to private sector infrastructure information voluntarily shared with government entities for purposes of homeland security.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="PERS">
+        <xs:annotation>
+          <xs:documentation>Personnel Records. Related to the employees of federal agencies.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="PHYS">
+        <xs:annotation>
+          <xs:documentation>Physical Security. Related to protection of federal buildings, grounds or property.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="PRIIG">
+        <xs:annotation>
+          <xs:documentation>Inspector General Protected. Related to the identity of a person making a report to the Inspector General of any Executive agency.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="PROCURE">
+        <xs:annotation>
+          <xs:documentation>General Procurement and Acquisition. Material and information relating to, or associated with, the acquisition and procurement of goods and services, including but not limited to, cost or pricing data, contract information, indirect costs and direct labor rates.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="PROPIN">
+        <xs:annotation>
+          <xs:documentation>General Proprietary Business Information. Material and information relating to, or associated with, a company's products, business, or activities, including but not limited to financial information; data or statements; trade secrets; product research and development; existing and future product designs and performance specifications.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="PRVCY">
+        <xs:annotation>
+          <xs:documentation>General Privacy. Refers to personal information, or, in some cases, "personally identifiable information," as defined in OMB M-17-12, or "means of identification" as defined in 18 USC 1028(d)(7).</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="SGI">
+        <xs:annotation>
+          <xs:documentation>Safeguards Information. Pursuant to 42 USC 2011, et seq., and as defined in 10 CFR 73.2, SGI relates to security related information concerning the physical protection of source, byproduct or special nuclear material and the detailed security measures for facilities and information contained within security plans.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="SRI">
+        <xs:annotation>
+          <xs:documentation>Nuclear Security-Related Information. Related to information that could be useful, or could reasonably be expected to be useful, to a terrorist in a potential attack that does not qualify as Safeguards or classified information, including the exact location and quantities of radioactive material, certain detailed design drawings, information on nearby facilities, emergency planning information, and certain assessments of vulnerability and safety analyses.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="SSEL">
+        <xs:annotation>
+          <xs:documentation>Source Selection. Per FAR 2.101: any of the following information that is prepared for use by an agency for the purpose of evaluating a bid or proposal to enter into an agency procurement contract, if that information has not been previously made available to the public or disclosed publicly: (Items 1-10).</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="SSI">
+        <xs:annotation>
+          <xs:documentation>Sensitive Security Information. As defined in 49 C.F.R. Part 15.5, Sensitive Security Information is information obtained or developed in the conduct of security activities, including research and development, the disclosure of which DOT has determined would constitute an unwarranted invasion of privacy, reveal trade secrets or privileged or confidential information, or be detrimental to transportation safety. As defined in 49 C.F.R. Part 1520.5, Sensitive Security Information is information obtained or developed in the conduct of security activities, including research and development, the disclosure of which DHS/TSA has determined would, among other things, be detrimental to the security of transportation.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="STAT">
+        <xs:annotation>
+          <xs:documentation>Statistical Information. Refers to information collected by a Federal statistical agency, unit, or program for statistical purposes or used for statistical activities; under law, regulation, or Government-wide policy such 'Statistical' CUI requires: (1) protection from unauthorized disclosure; (2) special handling safeguards; and/or (3) prescribed limits on access or dissemination.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="STUD">
+        <xs:annotation>
+          <xs:documentation>Student Records. As per 20 USC 1232g, the Family Educational Rights and Privacy Act of 1974, an education record which is comprised of those records which are directly related to a student.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="SUB">
+        <xs:annotation>
+          <xs:documentation>Controlled Substances. Information obtained by the Drug Enforcement Administration (DEA) or in DEA investigative reports related to controlled substances.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="TAX">
+        <xs:annotation>
+          <xs:documentation>Federal Taxpayer Information. Related to returns and return information which are submitted, gathered or generated in conjunction with taxpayers’ responsibilities to comply with federal tax provisions in the United States Code.  “Returns” includes information that is provided to the government pursuant to Title 26, including tax or information returns, declarations of estimated tax or claims for refund. “Return information” includes a taxpayer’s identity, the nature, source or amount of income or any information received by, recorded by, prepared by or furnished to Internal Revenue Service relevant to the determination of tax liability including whether the taxpayer is the subject of investigation. This protection extends to such items as medical, financial and other personal information submitted to the IRS by taxpayers. Standards (typically tolerances, audit criteria and law enforcement techniques) related to the selection of returns for examination should only be disclosed to the extent their disclosure would not impair assessment, collection or enforcement under the internal revenue laws. Tax data originating with the IRS generally retains its confidential status even when it resides with agencies other than the IRS.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="TSCA">
+        <xs:annotation>
+          <xs:documentation>Toxic Substances. Health, safety, and exposure information related to chemical substances, chemical mixtures, and articles as defined under the Toxic Substances Control Act (TSCA).</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="UCNI">
+        <xs:annotation>
+          <xs:documentation>Unclassified Controlled Nuclear Information - Energy. Relating to certain design and security information concerning nuclear facilities, materials, and weapons, specific to the Department of Energy.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="WDT">
+        <xs:annotation>
+          <xs:documentation>Written Determinations. Rulings, determination letters, technical advice memoranda or Chief Counsel Advice, as those terms are defined in Treasury Regulation 301.6110-2, which are made available for public inspection subject to the withholding of certain types of data as enumerated in Treasury Regulation 301-6110.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="WHSTL">
+        <xs:annotation>
+          <xs:documentation>Whistleblower Identity. Identity of anyone providing information relating to a legal violation or illicit or unsafe activity, including information provided by a whistleblower which could reasonably be expected to reveal the identity of a whistleblower.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="WIT">
+        <xs:annotation>
+          <xs:documentation>Witness Protection. Information related to the secretive details associated with one who has testified or may testify under circumstances that require secrecy of that individual and details pertaining to that person.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="CUISpecifiedCategoryMarkingCodeType">
+    <xs:annotation>
+      <xs:documentation>A data type for a Controlled Unclassified Information (CUI) Specified category marking.</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="cui:CUISpecifiedCategoryMarkingCodeSimpleType">
+        <xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:element name="CUIBasicCategoryCode" type="cui:CUIBasicCategoryMarkingCodeType" nillable="true">
     <xs:annotation>
       <xs:documentation>A Controlled Unclassified Information (CUI) category for which the authorizing law, regulation, or Government-wide policy does not set out specific handling or dissemination controls.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="CUICategoryAugmentationPoint" abstract="true">
-    <xs:annotation>
-      <xs:documentation>An augmentation point for type cui:CUICategoryType</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="CUICategoryMarking" type="cui:CUICategoryType" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A marking approved by the Controlled Unclassified Information (CUI) Executive Agent for the categories listed in the CUI Registry.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="CUIDecontrolContactInformation" type="nc:ContactInformationType" nillable="true">
@@ -918,7 +1046,7 @@ Note: the Legal Privilege Category marking “PRIVILEGE” must be applied in or
       <xs:documentation>A marking for a Controlled Unclassified Information (CUI) Executive Agent-approved control that agencies may use to limit or specify CUI dissemination.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="CUILimitedDisseminationControlRELTOCountryCode" type="iso_3166:CountryAlpha3CodeType" nillable="true">
+  <xs:element name="CUILimitedDisseminationControlRELTOCountryCode" type="genc:CountryAlpha3CodeType" nillable="true">
     <xs:annotation>
       <xs:documentation>A trigraph country code for use with REL TO (Authorized for release to certain nationals only) Limited Dissemination Control for Controlled Unclassified Information (CUI).</xs:documentation>
     </xs:annotation>
@@ -933,7 +1061,7 @@ Note: the Legal Privilege Category marking “PRIVILEGE” must be applied in or
       <xs:documentation>A required indicator – including, informational, warning, or dissemination statements – as mandated by the law, Federal regulation, or Government-wide policy that makes a specific item of information CUI.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="CUISpecifiedCategoryCode" type="cui:CUICategoryCodeType" nillable="true">
+  <xs:element name="CUISpecifiedCategoryCode" type="cui:CUISpecifiedCategoryMarkingCodeType" nillable="true">
     <xs:annotation>
       <xs:documentation>A Controlled Unclassified Information (CUI) category in which the authorizing law, regulation, or Government-wide policy contains specific handling controls that it requires or permits agencies to use that differ from those of CUI Basic.</xs:documentation>
     </xs:annotation>
