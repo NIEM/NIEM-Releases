@@ -113,7 +113,7 @@
       </xs:enumeration>
       <xs:enumeration value="CONREG">
         <xs:annotation>
-          <xs:documentation>Relating to non-public information collected during entity registration in the System for Award Management (SAM), the common source of vendor data for the United States Government.</xs:documentation>
+          <xs:documentation>Entity Registration Information.  Relating to non-public information collected during entity registration in the System for Award Management (SAM), the common source of vendor data for the United States Government.</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
       <xs:enumeration value="CONTRACT">
@@ -394,6 +394,11 @@
       <xs:enumeration value="OCCMTO">
         <xs:annotation>
           <xs:documentation>Ocean Common Carrier and Marine Terminal Operator. Relating to agreements between or among ocean common carriers and marine terminal operators as referenced in 46 USC 40301 and 40306.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="OPSEC">
+        <xs:annotation>
+          <xs:documentation>Operations Security. Critical information determined to give evidence of the planning and execution of sensitive (frequently classified) government activities after going through a formal systematic vetting process in accordance with National Security Decision Directive Number 298. This process identifies unclassified information that must be protected. It almost always results from an agency’s official OPSEC program, or is otherwise commonly approved for use by the CUI Senior Agency Official.</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
       <xs:enumeration value="PCII">
@@ -712,12 +717,6 @@
       <xs:documentation>A data type for a Controlled Unclassified Information (CUI) Executive Agent-approved control that agencies may use to limit or specify CUI dissemination.</xs:documentation>
     </xs:annotation>
     <xs:restriction base="xs:string">
-      <xs:enumeration value="&#10;DELIB">
-        <xs:annotation>
-          <xs:documentation>Portion marking abbreviation for Deliberative Process. Dissemination of information protected by the deliberative process privilege beyond the department, agency, or U.S. Government decision maker who is part of the policy deliberation can result in the loss of the privilege  and is prohibited by this marking,  unless the executive decision makers at the agency decide to disclose the information outside the bounds of its protection.
-Note: the Legal Privilege Category marking “PRIVILEGE” must be applied in order to use this limited dissemination control marking.</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
       <xs:enumeration value="AC">
         <xs:annotation>
           <xs:documentation>Portion marking abbreviation for Attorney Client. Dissemination of information protected by the attorney client privilege beyond the attorney, the attorney’s agents, or the client can result in the loss of the privilege and is prohibited by this marking, unless the agency's executive decision makers decide to disclose the information outside the bounds of its protection.
@@ -739,6 +738,12 @@ Note: the Legal Privilege Category marking “PRIVILEGE” must be applied in or
       <xs:enumeration value="AWP">
         <xs:annotation>
           <xs:documentation>Portion marking abbreviation for Attorney Work Product. Dissemination of information protected by the Attorney Work Product Privilege beyond the attorney, the attorney’s agents, or the client can result in the loss of the privilege and is prohibited by this marking,  unless specifically permitted by the overseeing attorney who originated the work product or their successor.
+Note: the Legal Privilege Category marking “PRIVILEGE” must be applied in order to use this limited dissemination control marking.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="DELIB">
+        <xs:annotation>
+          <xs:documentation>Portion marking abbreviation for Deliberative Process. Dissemination of information protected by the deliberative process privilege beyond the department, agency, or U.S. Government decision maker who is part of the policy deliberation can result in the loss of the privilege  and is prohibited by this marking,  unless the executive decision makers at the agency decide to disclose the information outside the bounds of its protection.
 Note: the Legal Privilege Category marking “PRIVILEGE” must be applied in order to use this limited dissemination control marking.</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
@@ -785,7 +790,7 @@ Note: the Legal Privilege Category marking “PRIVILEGE” must be applied in or
       </xs:enumeration>
       <xs:enumeration value="REL TO">
         <xs:annotation>
-          <xs:documentation>Authorized for release to certain nationals only. Information has been predetermined by the designating agency to be releasable or has been released only to the foreign country(ies)/international organization(s) indicated, through established foreign disclosure procedures and channels. It is NOFORN to all foreign country(ies)/international organization(s) not indicated in the REL TO marking. Note: See list of approved country codes for use with REL TO here. USA must always appear first when using REL TO followed by additional permitted trigraph country codes in alphabetical order.</xs:documentation>
+          <xs:documentation>Authorized for release to certain nationals only. Information has been predetermined by the designating agency to be releasable or has been released only to the foreign country(ies)/international organization(s) indicated, through established foreign disclosure procedures and channels. It is NOFORN to all foreign country(ies)/international organization(s) not indicated in the REL TO marking. USA must always appear first when using REL TO followed by additional permitted trigraph country codes in alphabetical order.</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
     </xs:restriction>
