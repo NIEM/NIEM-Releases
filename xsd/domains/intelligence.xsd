@@ -111,18 +111,6 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-  <xs:complexType name="CapabilityAugmentationType">
-    <xs:annotation>
-      <xs:documentation>A data type for additional information about a capability.</xs:documentation>
-    </xs:annotation>
-    <xs:complexContent>
-      <xs:extension base="structures:AugmentationType">
-        <xs:sequence>
-          <xs:element ref="intel:CapabilityProficiencyText" minOccurs="0" maxOccurs="unbounded"/>
-        </xs:sequence>
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
   <xs:complexType name="ContactInformationAugmentationType">
     <xs:annotation>
       <xs:documentation>A data type for additional information about a contact information.</xs:documentation>
@@ -321,16 +309,6 @@
   <xs:element name="BiometricCaptureAugmentation" type="intel:BiometricCaptureAugmentationType" substitutionGroup="biom:BiometricCaptureAugmentationPoint" nillable="true">
     <xs:annotation>
       <xs:documentation>Additional information about a biometric capture.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="CapabilityAugmentation" type="intel:CapabilityAugmentationType" substitutionGroup="nc:CapabilityAugmentationPoint" nillable="true">
-    <xs:annotation>
-      <xs:documentation>Additional information about a capability.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="CapabilityProficiencyText" type="nc:TextType" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A skillfulness in the command of fundamentals deriving from practice and familiarity.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="CBEFFText" type="nc:TextType" nillable="true">

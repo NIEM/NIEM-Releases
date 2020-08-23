@@ -645,14 +645,15 @@
     <xs:complexContent>
       <xs:extension base="structures:ObjectType">
         <xs:sequence>
+          <xs:element ref="nc:CapabilityCategoryText" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:CapabilityDescriptionText" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:CapabilityEndDate" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:CapabilityGeneralCategoryText" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:CapabilityIdentification" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="nc:CapabilityName" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="nc:CapabilityStartDate" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="nc:CapabilityCategoryText" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="nc:CapabilityDescriptionText" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:CapabilityIsLimitationIndicator" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:CapabilityName" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:CapabilityProficiencyText" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:CapabilityStartDate" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:CapabilityAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
       </xs:extension>
@@ -5816,6 +5817,11 @@
   <xs:element name="CapabilityName" type="nc:TextType" nillable="true">
     <xs:annotation>
       <xs:documentation>A name for a capability.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="CapabilityProficiencyText" type="nc:TextType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A skillfulness in the command of fundamentals deriving from practice and familiarity.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="CapabilityStartDate" type="nc:DateType" nillable="true">
