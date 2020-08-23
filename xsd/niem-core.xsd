@@ -1622,12 +1622,13 @@
   </xs:complexType>
   <xs:complexType name="EntityType">
     <xs:annotation>
-      <xs:documentation>A data type for a person, organization, or thing capable of bearing legal rights and responsibilities.</xs:documentation>
+      <xs:documentation>A data type for a person, organization, or item.</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
       <xs:extension base="structures:ObjectType">
         <xs:sequence>
           <xs:element ref="nc:EntityRepresentation" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:EntityLegalIndicator" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:EntityAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
       </xs:extension>
@@ -7302,7 +7303,7 @@
   </xs:element>
   <xs:element name="Entity" type="nc:EntityType" nillable="true">
     <xs:annotation>
-      <xs:documentation>A person, organization, or thing capable of bearing legal rights and responsibilities.</xs:documentation>
+      <xs:documentation>A person, organization, or item.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="EntityAugmentationPoint" abstract="true">
@@ -7323,6 +7324,11 @@
   <xs:element name="EntityItem" type="nc:ItemType" substitutionGroup="nc:EntityRepresentation" nillable="true">
     <xs:annotation>
       <xs:documentation>An item capable of bearing legal rights and responsibilities.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="EntityLegalIndicator" type="niem-xs:boolean" nillable="true">
+    <xs:annotation>
+      <xs:documentation>True if an entity is capable of bearing legal rights and responsibilities; false otherwise.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="EntityName" type="nc:TextType" nillable="true">

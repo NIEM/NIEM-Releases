@@ -70,7 +70,7 @@ Note that schema updates have been committed per issue, so issue-specific file d
 - Added approval status codes to MilOps to replace the corresponding set removed from NDEx [(#173)](https://github.com/NIEM/NIEM-Releases/issues/173)
 - Fixed invalid augmentation names [(#78)](https://github.com/NIEM/NIEM-Releases/issues/78)
 - Fixed definition of j:PersonSignature [(#92)](https://github.com/NIEM/NIEM-Releases/issues/92)
-- Fixed spelling errors and added local terminology [(#131)](https://github.com/NIEM/NIEM-Releases/issues/131) - *in progress*
+- Fixed spelling errors and added local terminology [(#131)](https://github.com/NIEM/NIEM-Releases/issues/131)
 - Fixed definition formatting [(#132)](https://github.com/NIEM/NIEM-Releases/issues/132) - *in progress*
 - Harmonized warrant components in Justice and Screening [(#62)](https://github.com/NIEM/NIEM-Releases/issues/62)
 - Harmonized military summary components [(#86)](https://github.com/NIEM/NIEM-Releases/issues/86)
@@ -104,6 +104,7 @@ Note that schema updates have been committed per issue, so issue-specific file d
 - Updated address elements [(#111)](https://github.com/NIEM/NIEM-Releases/issues/111)
 - Updated definitions for consistency and to fix invalid component references [(#171)](https://github.com/NIEM/NIEM-Releases/issues/171)
 - Updated mo:TelephoneNumberCategoryCodeSimpleType to be a union of xCard and MilOps code types [(#172)](https://github.com/NIEM/NIEM-Releases/issues/172)
+- Updated nc:EntityType to remove requirement that it represents a legal entity; added a new legal entity indicator [(#17)](https://github.com/NIEM/NIEM-Releases/issues/17)
 - Used nc:CountryType instead of custom substitution groups for citizenship and nationality elements [(#93)](https://github.com/NIEM/NIEM-Releases/issues/93)
 
 ### Release package updates
