@@ -3988,6 +3988,7 @@ National Institutes of Health, National Heart, Lung, and Blood Institute</xs:doc
         <xs:sequence>
           <xs:element ref="em:FacilityEquipmentCategoryText" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="em:FacilityEquipmentQuantity" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="em:FacilityEquipmentItem" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="em:FacilityEquipmentInventoryAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
       </xs:extension>
@@ -4415,15 +4416,13 @@ National Institutes of Health, National Heart, Lung, and Blood Institute</xs:doc
       <xs:documentation>A data type for a team involved in a response to an incident.</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
-      <xs:extension base="structures:ObjectType">
+      <xs:extension base="nc:OrganizationType">
         <xs:sequence>
           <xs:element ref="em:PublicHealthEvent" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="em:IncidentResponseTeamParticipationStatusAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="em:IncidentResponseTeamLeader" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="em:IncidentResponseTeamMember" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="em:IncidentResponseResponsibilitiesText" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="em:TeamName" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="em:TeamCategoryText" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="em:IncidentResponseTeamAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
       </xs:extension>
@@ -4655,7 +4654,7 @@ National Institutes of Health, National Heart, Lung, and Blood Institute</xs:doc
       <xs:documentation>A data type for a communications data exchange across agencies.</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
-      <xs:extension base="nc:DocumentType">
+      <xs:extension base="nc:ReportType">
         <xs:sequence>
           <xs:element ref="em:PublicHealthEvent" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="em:InteragencyCommunicationAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
@@ -4668,7 +4667,7 @@ National Institutes of Health, National Heart, Lung, and Blood Institute</xs:doc
       <xs:documentation>A data type for a communications data exchange within an agency.</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
-      <xs:extension base="nc:DocumentType">
+      <xs:extension base="nc:ReportType">
         <xs:sequence>
           <xs:element ref="em:LeadershipReport" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="em:StandardOperatingProcedures" minOccurs="0" maxOccurs="unbounded"/>
@@ -4753,6 +4752,7 @@ National Institutes of Health, National Heart, Lung, and Blood Institute</xs:doc
           <xs:element ref="em:EventPopulationConfirmedPositiveDiagnosisQuantity" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="em:EventPopulationPreliminaryPositiveDiagnosisQuantity" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="em:EventPopulationConfirmedNegativeDiagnosisQuantity" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="em:LaboratoryTest" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="em:LaboratoryOperationsReportAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
       </xs:extension>
@@ -4795,7 +4795,7 @@ National Institutes of Health, National Heart, Lung, and Blood Institute</xs:doc
       <xs:documentation>A data type for a report to leadership.</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
-      <xs:extension base="nc:DocumentType">
+      <xs:extension base="nc:ReportType">
         <xs:sequence>
           <xs:element ref="em:ResponseLeadOrganization" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="em:ResponseColeadOrganization" minOccurs="0" maxOccurs="unbounded"/>
@@ -5695,6 +5695,7 @@ National Institutes of Health, National Heart, Lung, and Blood Institute</xs:doc
         <xs:sequence>
           <xs:element ref="em:OrganizationCapabilityText" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="em:OrganizationNPIID" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="em:OrganizationStaffMember" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="em:ScheduledTask" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
       </xs:extension>
@@ -5942,6 +5943,7 @@ National Institutes of Health, National Heart, Lung, and Blood Institute</xs:doc
           <xs:element ref="em:PersonJobTitleText" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="em:PersonQualificationText" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="em:PersonEmploymentExperienceText" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="em:PersonSpecialtyText" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:EmployeeSupervisor" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
       </xs:extension>
@@ -6021,6 +6023,7 @@ National Institutes of Health, National Heart, Lung, and Blood Institute</xs:doc
           <xs:element ref="em:ResponseOperation" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="em:Logistics" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="em:FinanceAdministration" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="em:PublicHealthEvent" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="em:PHEOCMinimumDataSetAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
       </xs:extension>
@@ -6223,7 +6226,8 @@ National Institutes of Health, National Heart, Lung, and Blood Institute</xs:doc
           <xs:element ref="em:PlanEstimatedFulfillmentDate" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="em:PlanApprovalEntity" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="em:PlanTask" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="em:PlanDocument" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="em:PlanReport" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="em:PlanReleaseDate" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="em:PlanRevisionReleaseDate" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
       </xs:extension>
@@ -6503,7 +6507,7 @@ National Institutes of Health, National Heart, Lung, and Blood Institute</xs:doc
       <xs:documentation>A data type for a set of information about communication releasable to the public.</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
-      <xs:extension base="nc:DocumentType">
+      <xs:extension base="nc:ReportType">
         <xs:sequence>
           <xs:element ref="em:PublicHealthEvent" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="em:CommunicationTargetGroupAbstract" minOccurs="0" maxOccurs="unbounded"/>
@@ -6582,6 +6586,18 @@ National Institutes of Health, National Heart, Lung, and Blood Institute</xs:doc
         <xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
       </xs:extension>
     </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="ReportAugmentationType">
+    <xs:annotation>
+      <xs:documentation>A data type for additional information about a report.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="structures:AugmentationType">
+        <xs:sequence>
+          <xs:element ref="em:ReportActionLevelAbstract" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
   </xs:complexType>
   <xs:simpleType name="ReportFrequencyCodeSimpleType">
     <xs:annotation>
@@ -6754,7 +6770,6 @@ National Institutes of Health, National Heart, Lung, and Blood Institute</xs:doc
           <xs:element ref="nc:RoleOfPerson" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="em:ResponderIdentification" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="em:ResponderOrganization" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="em:PersonSpecialtyText" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="em:ResponderAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
       </xs:extension>
@@ -7258,6 +7273,18 @@ National Institutes of Health, National Heart, Lung, and Blood Institute</xs:doc
         <xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
       </xs:extension>
     </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="TestAugmentationType">
+    <xs:annotation>
+      <xs:documentation>A data type for additional information about a test.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="structures:AugmentationType">
+        <xs:sequence>
+          <xs:element ref="em:TestCodingSystemText" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
   </xs:complexType>
   <xs:complexType name="TrainingType">
     <xs:annotation>
@@ -12585,6 +12612,11 @@ National Institutes of Health, National Heart, Lung, and Blood Institute</xs:doc
       <xs:documentation>An augmentation point for type em:FacilityEquipmentInventoryType</xs:documentation>
     </xs:annotation>
   </xs:element>
+  <xs:element name="FacilityEquipmentItem" type="nc:ItemType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A piece of equipment at a facility.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
   <xs:element name="FacilityEquipmentQuantity" type="nc:QuantityType" nillable="true">
     <xs:annotation>
       <xs:documentation>A number of a kind of device at a facility.</xs:documentation>
@@ -13195,6 +13227,11 @@ National Institutes of Health, National Heart, Lung, and Blood Institute</xs:doc
       <xs:documentation>An augmentation point for type em:LaboratoryOperationsReportType</xs:documentation>
     </xs:annotation>
   </xs:element>
+  <xs:element name="LaboratoryTest" type="j:TestType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A lab test.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
   <xs:element name="LaborDeliveryServiceCoverageStatusCode" type="have-codes:AvailabilityStatusCodeType" nillable="true">
     <xs:annotation>
       <xs:documentation>A status code describing the Sub-type element of the OBGYN services</xs:documentation>
@@ -13690,6 +13727,11 @@ National Institutes of Health, National Heart, Lung, and Blood Institute</xs:doc
       <xs:documentation>An element for the relationship between a person and an organization</xs:documentation>
     </xs:annotation>
   </xs:element>
+  <xs:element name="OrganizationStaffMember" type="nc:PersonType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A person who works at an organization.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
   <xs:element name="OriginatingMessageID" type="nc:IdentificationType" nillable="true">
     <xs:annotation>
       <xs:documentation>An identifier that uniquely identifies each resource message. This element identifies the Resource Message ID of the original message to which this message refers</xs:documentation>
@@ -14150,11 +14192,6 @@ National Institutes of Health, National Heart, Lung, and Blood Institute</xs:doc
       <xs:documentation>A date range for a planning period. For example, a plan could cover planning activities for 01/01/2019-12/31/2019 for a potential activation caused by hurricanes.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="PlanDocument" type="nc:DocumentType" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A document that represents a plan.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
   <xs:element name="PlanEstimatedFulfillmentDate" type="nc:DateType" nillable="true">
     <xs:annotation>
       <xs:documentation>A date on which the actions of a plan are estimated to be completed.</xs:documentation>
@@ -14188,6 +14225,16 @@ National Institutes of Health, National Heart, Lung, and Blood Institute</xs:doc
   <xs:element name="PlanPurposeText" type="nc:TextType" nillable="true">
     <xs:annotation>
       <xs:documentation>A purpose for a plan.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="PlanReleaseDate" type="nc:DateType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A release date for a plan.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="PlanReport" type="nc:ReportType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A report that represents or shares information about a plan.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="PlanRevisionReleaseDate" type="nc:DateType" nillable="true">
@@ -14393,6 +14440,21 @@ National Institutes of Health, National Heart, Lung, and Blood Institute</xs:doc
   <xs:element name="RepairCostValue" type="niem-xs:integer" nillable="true">
     <xs:annotation>
       <xs:documentation>An element that specifies the cost of all emergency protective measures.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="ReportActionLevelAbstract" abstract="true">
+    <xs:annotation>
+      <xs:documentation>A data concept for a level of action that should be taken based on the report.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="ReportActionLevelText" type="nc:TextType" substitutionGroup="em:ReportActionLevelAbstract" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A level of action that should be taken based on the report.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="ReportAugmentation" type="em:ReportAugmentationType" substitutionGroup="nc:ReportAugmentationPoint" nillable="true">
+    <xs:annotation>
+      <xs:documentation>Additional information about a report.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="ReportAuthorName" type="em:OtherTextType" nillable="true">
@@ -14945,6 +15007,11 @@ National Institutes of Health, National Heart, Lung, and Blood Institute</xs:doc
       <xs:documentation>A percent status of the completion of a task.</xs:documentation>
     </xs:annotation>
   </xs:element>
+  <xs:element name="TaskDueDate" type="nc:DateType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A date on which a task is due to be completed.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
   <xs:element name="TaskFunctionAbstract" abstract="true">
     <xs:annotation>
       <xs:documentation>A data concept for a function, assignment, or task that is part of a plan.</xs:documentation>
@@ -14960,11 +15027,6 @@ National Institutes of Health, National Heart, Lung, and Blood Institute</xs:doc
       <xs:documentation>An augmentation point for TeamType</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="TeamCategoryText" type="nc:TextType" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A kind of team.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
   <xs:element name="TeamDescriptionText" type="nc:TextType" nillable="true">
     <xs:annotation>
       <xs:documentation>A data element for the textual description of a team</xs:documentation>
@@ -14973,11 +15035,6 @@ National Institutes of Health, National Heart, Lung, and Blood Institute</xs:doc
   <xs:element name="TeamLeadIndicator" type="niem-xs:boolean" nillable="true">
     <xs:annotation>
       <xs:documentation>True if a team leader; false otherwise</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="TeamName" type="nc:TextType" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A name of a team.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="TeamSizeMaximumValue" type="niem-xs:integer" nillable="true">
@@ -15023,6 +15080,16 @@ National Institutes of Health, National Heart, Lung, and Blood Institute</xs:doc
   <xs:element name="TemporaryIDIndicator" type="niem-xs:boolean" substitutionGroup="nc:IdentificationCategoryAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>True if a badge is temporary; false otherwise</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="TestAugmentation" type="em:TestAugmentationType" substitutionGroup="j:TestAugmentationPoint" nillable="true">
+    <xs:annotation>
+      <xs:documentation>Additional information about a test.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="TestCodingSystemText" type="nc:TextType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A code system associated with a laboratory test.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="TestCollectionMethodText" type="nc:TextType" nillable="true">
@@ -15250,12 +15317,12 @@ National Institutes of Health, National Heart, Lung, and Blood Institute</xs:doc
       <xs:documentation>A data concept for a way or means in which something is communicated, such as via text, phone or E-mail.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="WatchCommunicationModeCode" type="em:WatchCommunicationModeCodeType" nillable="true">
+  <xs:element name="WatchCommunicationModeCode" type="em:WatchCommunicationModeCodeType" substitutionGroup="em:WatchCommunicationModeAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A way or means in which something is communicated, such as via text, phone or E-mail.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="WatchCommunicationModeText" type="nc:TextType" nillable="true">
+  <xs:element name="WatchCommunicationModeText" type="nc:TextType" substitutionGroup="em:WatchCommunicationModeAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A way or means in which something is communicated, such as via text, phone or E-mail.</xs:documentation>
     </xs:annotation>
