@@ -57,6 +57,7 @@ Note that schema updates have been committed per issue, so issue-specific file d
 - Updated FBI NDEx codes [(#135)](https://github.com/NIEM/NIEM-Releases/issues/135)
 - Updated FBI UCR codes [(#136)](https://github.com/NIEM/NIEM-Releases/issues/136)
 - Updated FBI Justice domain codes [(#137)](https://github.com/NIEM/NIEM-Releases/issues/137)
+- Updated Hazmat codes [(#175)](https://github.com/NIEM/NIEM-Releases/issues/175)
 
 ### Harmonization and QA
 
