@@ -21,7 +21,7 @@
   <xs:import namespace="http://release.niem.gov/niem/niem-core/5.0/" schemaLocation="../niem-core.xsd"/>
   <xs:import namespace="http://release.niem.gov/niem/proxy/xsd/5.0/" schemaLocation="../adapters/xml-schema-proxy.xsd"/>
   <xs:import namespace="http://release.niem.gov/niem/structures/5.0/" schemaLocation="../utility/structures.xsd"/>
-  <xs:simpleType name="CUIBasicCategoryMarkingCodeSimpleType">
+  <xs:simpleType name="BasicCategoryMarkingCodeSimpleType">
     <xs:annotation>
       <xs:documentation>A data type for a Controlled Unclassified Information (CUI) Basic category marking.</xs:documentation>
     </xs:annotation>
@@ -453,50 +453,50 @@
       </xs:enumeration>
     </xs:restriction>
   </xs:simpleType>
-  <xs:complexType name="CUIBasicCategoryMarkingCodeType">
+  <xs:complexType name="BasicCategoryMarkingCodeType">
     <xs:annotation>
       <xs:documentation>A data type for a Controlled Unclassified Information (CUI) Basic category marking.</xs:documentation>
     </xs:annotation>
     <xs:simpleContent>
-      <xs:extension base="cui:CUIBasicCategoryMarkingCodeSimpleType">
+      <xs:extension base="cui:BasicCategoryMarkingCodeSimpleType">
         <xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
       </xs:extension>
     </xs:simpleContent>
   </xs:complexType>
-  <xs:complexType name="CUIDecontrolScheduleType">
+  <xs:complexType name="DecontrolScheduleType">
     <xs:annotation>
       <xs:documentation>A data type for a specific date or event when Controlled Unclassified Information (CUI) no longer requires safeguarding or dissemination controls.</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
       <xs:extension base="structures:ObjectType">
         <xs:sequence>
-          <xs:element ref="cui:CUIDecontrolDate" minOccurs="0" maxOccurs="1"/>
-          <xs:element ref="cui:CUIDecontrolEvent" minOccurs="0" maxOccurs="1"/>
-          <xs:element ref="cui:CUIDecontrolContactInformation" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="cui:CUIDecontrolScheduleAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="cui:DecontrolDate" minOccurs="0" maxOccurs="1"/>
+          <xs:element ref="cui:DecontrolEvent" minOccurs="0" maxOccurs="1"/>
+          <xs:element ref="cui:DecontrolContactInformation" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="cui:DecontrolScheduleAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-  <xs:complexType name="CUIDocumentMarkingMetadataType">
+  <xs:complexType name="DocumentMarkingMetadataType">
     <xs:annotation>
       <xs:documentation>A data type for metadata about the Controlled Unclassified Information (CUI) marking of a document.</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
       <xs:extension base="structures:MetadataType">
         <xs:sequence>
-          <xs:element ref="cui:CUISpecifiedCategoryMarkingCode" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="cui:CUIBasicCategoryMarkingCode" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="cui:CUILimitedDisseminationControlMarking" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="cui:CUIDesignatingEntityText" minOccurs="1" maxOccurs="unbounded"/>
-          <xs:element ref="cui:CUIDecontrolSchedule" minOccurs="0" maxOccurs="1"/>
-          <xs:element ref="cui:CUIRequiredIndicatorsPerAuthoritiesText" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="cui:CUIDocumentSupplementalAdministrativeMarkingAbstract" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="cui:SpecifiedCategoryMarkingCode" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="cui:BasicCategoryMarkingCode" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="cui:LimitedDisseminationControlMarking" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="cui:DesignatingEntityText" minOccurs="1" maxOccurs="unbounded"/>
+          <xs:element ref="cui:DecontrolSchedule" minOccurs="0" maxOccurs="1"/>
+          <xs:element ref="cui:RequiredIndicatorsPerAuthoritiesText" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="cui:DocumentSupplementalAdministrativeMarkingAbstract" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-  <xs:simpleType name="CUIDocumentSupplementalAdministrativeMarkingCodeSimpleType">
+  <xs:simpleType name="DocumentSupplementalAdministrativeMarkingCodeSimpleType">
     <xs:annotation>
       <xs:documentation>A data type for a supplemental administrative marking code to inform recipient(s) of the non-final status of a document.</xs:documentation>
     </xs:annotation>
@@ -528,17 +528,17 @@
       </xs:enumeration>
     </xs:restriction>
   </xs:simpleType>
-  <xs:complexType name="CUIDocumentSupplementalAdministrativeMarkingCodeType">
+  <xs:complexType name="DocumentSupplementalAdministrativeMarkingCodeType">
     <xs:annotation>
       <xs:documentation>A data type for a supplemental administrative marking code to inform recipient(s) of the non-final status of a document.</xs:documentation>
     </xs:annotation>
     <xs:simpleContent>
-      <xs:extension base="cui:CUIDocumentSupplementalAdministrativeMarkingCodeSimpleType">
+      <xs:extension base="cui:DocumentSupplementalAdministrativeMarkingCodeSimpleType">
         <xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
       </xs:extension>
     </xs:simpleContent>
   </xs:complexType>
-  <xs:simpleType name="CUILimitedDisseminationControlCodeSimpleType">
+  <xs:simpleType name="LimitedDisseminationControlCodeSimpleType">
     <xs:annotation>
       <xs:documentation>A data type for a Controlled Unclassified Information (CUI) Executive Agent-approved control that agencies may use to limit or specify CUI dissemination.</xs:documentation>
     </xs:annotation>
@@ -615,46 +615,46 @@
       </xs:enumeration>
     </xs:restriction>
   </xs:simpleType>
-  <xs:complexType name="CUILimitedDisseminationControlCodeType">
+  <xs:complexType name="LimitedDisseminationControlCodeType">
     <xs:annotation>
       <xs:documentation>A data type for a Controlled Unclassified Information (CUI) Executive Agent-approved control that agencies may use to limit or specify CUI dissemination.</xs:documentation>
     </xs:annotation>
     <xs:simpleContent>
-      <xs:extension base="cui:CUILimitedDisseminationControlCodeSimpleType">
+      <xs:extension base="cui:LimitedDisseminationControlCodeSimpleType">
         <xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
       </xs:extension>
     </xs:simpleContent>
   </xs:complexType>
-  <xs:complexType name="CUILimitedDisseminationControlType">
+  <xs:complexType name="LimitedDisseminationControlType">
     <xs:annotation>
       <xs:documentation>A data type for any CUI Executive Agent-approved control that agencies may use to limit or specify CUI dissemination.</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
       <xs:extension base="structures:ObjectType">
         <xs:sequence>
-          <xs:element ref="cui:CUILimitedDisseminationControlCode" minOccurs="1" maxOccurs="unbounded"/>
-          <xs:element ref="cui:CUILimitedDisseminationControlRELTOCountryCode" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="cui:CUILimitedDisseminationControlDLONLYText" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="cui:CUILimitedDisseminationControlAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="cui:LimitedDisseminationControlCode" minOccurs="1" maxOccurs="unbounded"/>
+          <xs:element ref="cui:LimitedDisseminationControlRELTOCountryCode" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="cui:LimitedDisseminationControlDLONLYText" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="cui:LimitedDisseminationControlAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-  <xs:complexType name="CUIPortionMarkingMetadataType">
+  <xs:complexType name="PortionMarkingMetadataType">
     <xs:annotation>
       <xs:documentation>A data type for metadata about the Controlled Unclassified Information (CUI) portion marking of a document.</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
       <xs:extension base="structures:MetadataType">
         <xs:sequence>
-          <xs:element ref="cui:CUISpecifiedCategoryMarkingCode" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="cui:CUIBasicCategoryMarkingCode" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="cui:CUILimitedDisseminationControlMarking" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="cui:SpecifiedCategoryMarkingCode" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="cui:BasicCategoryMarkingCode" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="cui:LimitedDisseminationControlMarking" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-  <xs:simpleType name="CUISpecifiedCategoryMarkingCodeSimpleType">
+  <xs:simpleType name="SpecifiedCategoryMarkingCodeSimpleType">
     <xs:annotation>
       <xs:documentation>A data type for a Controlled Unclassified Information (CUI) Specified category marking.</xs:documentation>
     </xs:annotation>
@@ -961,107 +961,107 @@
       </xs:enumeration>
     </xs:restriction>
   </xs:simpleType>
-  <xs:complexType name="CUISpecifiedCategoryMarkingCodeType">
+  <xs:complexType name="SpecifiedCategoryMarkingCodeType">
     <xs:annotation>
       <xs:documentation>A data type for a Controlled Unclassified Information (CUI) Specified category marking.</xs:documentation>
     </xs:annotation>
     <xs:simpleContent>
-      <xs:extension base="cui:CUISpecifiedCategoryMarkingCodeSimpleType">
+      <xs:extension base="cui:SpecifiedCategoryMarkingCodeSimpleType">
         <xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
       </xs:extension>
     </xs:simpleContent>
   </xs:complexType>
-  <xs:element name="CUIBasicCategoryMarkingCode" type="cui:CUIBasicCategoryMarkingCodeType" nillable="true">
+  <xs:element name="BasicCategoryMarkingCode" type="cui:BasicCategoryMarkingCodeType" nillable="true">
     <xs:annotation>
       <xs:documentation>A Controlled Unclassified Information (CUI) category for which the authorizing law, regulation, or Government-wide policy does not set out specific handling or dissemination controls.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="CUIDecontrolContactInformation" type="nc:ContactInformationType" nillable="true">
+  <xs:element name="DecontrolContactInformation" type="nc:ContactInformationType" nillable="true">
     <xs:annotation>
       <xs:documentation>A point of contact and preferred method of contact information for a Controlled Unclassified Information (CUI) decontrolling event, to allow authorized holders to verify that a specified event has occurred.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="CUIDecontrolDate" type="niem-xs:date" nillable="true">
+  <xs:element name="DecontrolDate" type="niem-xs:date" nillable="true">
     <xs:annotation>
       <xs:documentation>A specific date when Controlled Unclassified Information (CUI) no longer requires safeguarding or dissemination controls.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="CUIDecontrolEvent" type="nc:ActivityType" nillable="true">
+  <xs:element name="DecontrolEvent" type="nc:ActivityType" nillable="true">
     <xs:annotation>
       <xs:documentation>A specific event when Controlled Unclassified Information (CUI) no longer requires safeguarding or dissemination controls.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="CUIDecontrolSchedule" type="cui:CUIDecontrolScheduleType" nillable="true">
+  <xs:element name="DecontrolSchedule" type="cui:DecontrolScheduleType" nillable="true">
     <xs:annotation>
       <xs:documentation>A specific date or event when Controlled Unclassified Information (CUI) no longer requires safeguarding or dissemination controls.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="CUIDecontrolScheduleAugmentationPoint" abstract="true">
+  <xs:element name="DecontrolScheduleAugmentationPoint" abstract="true">
     <xs:annotation>
-      <xs:documentation>An augmentation point for type cui:CUIDecontrolScheduleType</xs:documentation>
+      <xs:documentation>An augmentation point for type cui:DecontrolScheduleType</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="CUIDesignatingEntityText" type="nc:TextType" nillable="true">
+  <xs:element name="DesignatingEntityText" type="nc:TextType" nillable="true">
     <xs:annotation>
       <xs:documentation>A CUI Designation Indicator. Must include the designator's agency and may take any form that identifies the designating agency.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="CUIDocumentMarkingMetadata" type="cui:CUIDocumentMarkingMetadataType" nillable="true">
+  <xs:element name="DocumentMarkingMetadata" type="cui:DocumentMarkingMetadataType" nillable="true">
     <xs:annotation>
       <xs:documentation>Metadata about Controlled Unclassified Information (CUI) marking of a document.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="CUIDocumentSupplementalAdministrativeMarkingAbstract" abstract="true">
+  <xs:element name="DocumentSupplementalAdministrativeMarkingAbstract" abstract="true">
     <xs:annotation>
       <xs:documentation>A data concept for a supplemental administrative marking (e.g., Draft, Deliberate, Predecisional, Provision) to inform recipient(s) of the non-final status of a document.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="CUIDocumentSupplementalAdministrativeMarkingCode" type="cui:CUIDocumentSupplementalAdministrativeMarkingCodeType" substitutionGroup="cui:CUIDocumentSupplementalAdministrativeMarkingAbstract" nillable="true">
+  <xs:element name="DocumentSupplementalAdministrativeMarkingCode" type="cui:DocumentSupplementalAdministrativeMarkingCodeType" substitutionGroup="cui:DocumentSupplementalAdministrativeMarkingAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A supplemental administrative marking code to inform recipient(s) of the non-final status of a document.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="CUIDocumentSupplementalAdministrativeMarkingText" type="nc:TextType" substitutionGroup="cui:CUIDocumentSupplementalAdministrativeMarkingAbstract" nillable="true">
+  <xs:element name="DocumentSupplementalAdministrativeMarkingText" type="nc:TextType" substitutionGroup="cui:DocumentSupplementalAdministrativeMarkingAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A supplemental administrative marking text to inform recipient(s) of the non-final status of a document.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="CUILimitedDisseminationControlAugmentationPoint" abstract="true">
+  <xs:element name="LimitedDisseminationControlAugmentationPoint" abstract="true">
     <xs:annotation>
-      <xs:documentation>An augmentation point for type cui:CUILimitedDisseminationControlType</xs:documentation>
+      <xs:documentation>An augmentation point for type cui:LimitedDisseminationControlType</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="CUILimitedDisseminationControlCode" type="cui:CUILimitedDisseminationControlCodeType" nillable="true">
+  <xs:element name="LimitedDisseminationControlCode" type="cui:LimitedDisseminationControlCodeType" nillable="true">
     <xs:annotation>
       <xs:documentation>A Controlled Unclassified Information (CUI) Executive Agent-approved control that agencies may use to limit or specify CUI dissemination.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="CUILimitedDisseminationControlDLONLYText" type="nc:TextType" nillable="true">
+  <xs:element name="LimitedDisseminationControlDLONLYText" type="nc:TextType" nillable="true">
     <xs:annotation>
       <xs:documentation>A list of individuals, organizations, or entities for which dissemination is authorized.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="CUILimitedDisseminationControlMarking" type="cui:CUILimitedDisseminationControlType" nillable="true">
+  <xs:element name="LimitedDisseminationControlMarking" type="cui:LimitedDisseminationControlType" nillable="true">
     <xs:annotation>
       <xs:documentation>A marking for a Controlled Unclassified Information (CUI) Executive Agent-approved control that agencies may use to limit or specify CUI dissemination.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="CUILimitedDisseminationControlRELTOCountryCode" type="genc:CountryAlpha3CodeType" nillable="true">
+  <xs:element name="LimitedDisseminationControlRELTOCountryCode" type="genc:CountryAlpha3CodeType" nillable="true">
     <xs:annotation>
       <xs:documentation>A trigraph country code for use with REL TO (Authorized for release to certain nationals only) Limited Dissemination Control for Controlled Unclassified Information (CUI).</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="CUIPortionMarkingMetadata" type="cui:CUIPortionMarkingMetadataType" nillable="true">
+  <xs:element name="PortionMarkingMetadata" type="cui:PortionMarkingMetadataType" nillable="true">
     <xs:annotation>
       <xs:documentation>Metadata about the Controlled Unclassified Information (CUI) portion marking of a document.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="CUIRequiredIndicatorsPerAuthoritiesText" type="nc:TextType" nillable="true">
+  <xs:element name="RequiredIndicatorsPerAuthoritiesText" type="nc:TextType" nillable="true">
     <xs:annotation>
       <xs:documentation>A required indicator – including, informational, warning, or dissemination statements – as mandated by the law, Federal regulation, or Government-wide policy that makes a specific item of information CUI.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="CUISpecifiedCategoryMarkingCode" type="cui:CUISpecifiedCategoryMarkingCodeType" nillable="true">
+  <xs:element name="SpecifiedCategoryMarkingCode" type="cui:SpecifiedCategoryMarkingCodeType" nillable="true">
     <xs:annotation>
       <xs:documentation>A Controlled Unclassified Information (CUI) category in which the authorizing law, regulation, or Government-wide policy contains specific handling controls that it requires or permits agencies to use that differ from those of CUI Basic.</xs:documentation>
     </xs:annotation>
