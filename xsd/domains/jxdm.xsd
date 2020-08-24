@@ -13179,7 +13179,7 @@
   </xs:element>
   <xs:element name="ChargeAccidentRelatedIndicator" type="niem-xs:boolean" nillable="true">
     <xs:annotation>
-      <xs:documentation>True if a charge is related to a traffic accident; false otherwise.</xs:documentation>
+      <xs:documentation>True if a charge is related to a traffic accident or crash; false otherwise.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="ChargeAgencyAssociation" type="j:ChargeAgencyAssociationType" nillable="true">
@@ -16134,7 +16134,7 @@
   </xs:element>
   <xs:element name="DriverHistoryAccidentQuantity" type="niem-xs:nonNegativeInteger" nillable="true">
     <xs:annotation>
-      <xs:documentation>A number of accidents in which a driver has been involved.</xs:documentation>
+      <xs:documentation>A number of accidents or crashes in which a driver has been involved.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="DriverHistoryConvictionQuantity" type="niem-xs:nonNegativeInteger" nillable="true">
@@ -16664,17 +16664,17 @@
   </xs:element>
   <xs:element name="DrivingAccidentSeverityAbstract" abstract="true">
     <xs:annotation>
-      <xs:documentation>A data concept for a severity level of an accident, based on the most intense injury to any person or, if none were injured, so designating.</xs:documentation>
+      <xs:documentation>A data concept for a severity level of an accident or crash, based on the most intense injury to any person or, if none were injured, so designating.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="DrivingAccidentSeverityCode" type="aamva_d20:AccidentSeverityCodeType" substitutionGroup="j:DrivingAccidentSeverityAbstract" nillable="true">
     <xs:annotation>
-      <xs:documentation>A severity level of an accident, based on the most intense injury to any person or, if none were injured, so designating.</xs:documentation>
+      <xs:documentation>A severity level of an accident or crash, based on the most intense injury to any person or, if none were injured, so designating.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="DrivingAccidentSeverityText" type="nc:TextType" substitutionGroup="j:DrivingAccidentSeverityAbstract" nillable="true">
     <xs:annotation>
-      <xs:documentation>A severity level of an accident, based on the most intense injury to any person or, if none were injured, so designating.</xs:documentation>
+      <xs:documentation>A severity level of an accident or crash, based on the most intense injury to any person or, if none were injured, so designating.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="DrivingIncident" type="j:DrivingIncidentType" nillable="true">
@@ -19554,7 +19554,7 @@
   </xs:element>
   <xs:element name="IncidentTrafficAccidentInvolvedIndicator" type="niem-xs:boolean" nillable="true">
     <xs:annotation>
-      <xs:documentation>True if an incident involved a traffic accident; false otherwise.</xs:documentation>
+      <xs:documentation>True if an incident involved a traffic accident or crash; false otherwise.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="IncidentUnknownAssociationPersonAssociation" type="nc:ActivityPersonAssociationType" nillable="true">
@@ -19784,7 +19784,7 @@
   </xs:element>
   <xs:element name="InjurySeverityCode" type="aamva_d20:AccidentSeverityCodeType" substitutionGroup="nc:InjurySeverityAbstract" nillable="true">
     <xs:annotation>
-      <xs:documentation>A severity of an injury received by a person involved into a Traffic Accident.</xs:documentation>
+      <xs:documentation>A severity of an injury received by a person, such as in a traffic accident or crash.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="InjuryWitness" type="j:WitnessType" nillable="true">
@@ -24489,7 +24489,7 @@
   </xs:element>
   <xs:element name="PersonDrivingIncident" type="j:DrivingIncidentType" nillable="true">
     <xs:annotation>
-      <xs:documentation>A driving accident in which a person is involved.</xs:documentation>
+      <xs:documentation>A driving accident or crash in which a person is involved.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="PersonDrivingInsuranceCoverageCategoryText" type="nc:TextType" nillable="true">

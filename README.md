@@ -44,6 +44,7 @@ Note that schema updates have been committed per issue, so issue-specific file d
 - Added additional content from the Public Health Emergency Operations Center (PH-EOC) Minimum Data Set to the Emergency Management domain [(#138)](https://github.com/NIEM/NIEM-Releases/issues/138)
 - Added content from the Generic Statistical Information Model (GSIM) content as a precursor to the new Statistics domain [(#155)](https://github.com/NIEM/NIEM-Releases/issues/155)
 - Added Controlled Unclassified Information (CUI) metadata [(#156)](https://github.com/NIEM/NIEM-Releases/issues/156)
+- Updated accident-related definitions in the Justice domain to add the term 'crash' for better search and discovery [(#107)](https://github.com/NIEM/NIEM-Releases/issues/107)
 
 ### Code Tables
 
