@@ -485,8 +485,8 @@
     <xs:complexContent>
       <xs:extension base="structures:MetadataType">
         <xs:sequence>
-          <xs:element ref="cui:CUIBasicCategoryCode" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="cui:CUISpecifiedCategoryCode" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="cui:CUISpecifiedCategoryMarkingCode" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="cui:CUIBasicCategoryMarkingCode" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="cui:CUILimitedDisseminationControlMarking" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="cui:CUIDesignatingEntityText" minOccurs="1" maxOccurs="unbounded"/>
           <xs:element ref="cui:CUIDecontrolSchedule" minOccurs="0" maxOccurs="1"/>
@@ -500,7 +500,7 @@
     <xs:annotation>
       <xs:documentation>A data type for a supplemental administrative marking code to inform recipient(s) of the non-final status of a document.</xs:documentation>
     </xs:annotation>
-    <xs:restriction base="xs:string">
+    <xs:restriction base="xs:token">
       <xs:enumeration value="DELIBERATIVE">
         <xs:annotation>
           <xs:documentation>The document is in a deliberative status.</xs:documentation>
@@ -542,7 +542,7 @@
     <xs:annotation>
       <xs:documentation>A data type for a Controlled Unclassified Information (CUI) Executive Agent-approved control that agencies may use to limit or specify CUI dissemination.</xs:documentation>
     </xs:annotation>
-    <xs:restriction base="xs:string">
+    <xs:restriction base="xs:token">
       <xs:enumeration value="AC">
         <xs:annotation>
           <xs:documentation>Portion marking abbreviation for Attorney Client. Dissemination of information protected by the attorney client privilege beyond the attorney, the attorney’s agents, or the client can result in the loss of the privilege and is prohibited by this marking, unless the agency's executive decision makers decide to disclose the information outside the bounds of its protection. Note: the Legal Privilege Category marking “PRIVILEGE” must be applied in order to use this limited dissemination control marking.</xs:documentation>
@@ -647,8 +647,8 @@
     <xs:complexContent>
       <xs:extension base="structures:MetadataType">
         <xs:sequence>
-          <xs:element ref="cui:CUIBasicCategoryCode" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="cui:CUISpecifiedCategoryCode" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="cui:CUISpecifiedCategoryMarkingCode" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="cui:CUIBasicCategoryMarkingCode" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="cui:CUILimitedDisseminationControlMarking" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
       </xs:extension>
@@ -971,7 +971,7 @@
       </xs:extension>
     </xs:simpleContent>
   </xs:complexType>
-  <xs:element name="CUIBasicCategoryCode" type="cui:CUIBasicCategoryMarkingCodeType" nillable="true">
+  <xs:element name="CUIBasicCategoryMarkingCode" type="cui:CUIBasicCategoryMarkingCodeType" nillable="true">
     <xs:annotation>
       <xs:documentation>A Controlled Unclassified Information (CUI) category for which the authorizing law, regulation, or Government-wide policy does not set out specific handling or dissemination controls.</xs:documentation>
     </xs:annotation>
@@ -1061,7 +1061,7 @@
       <xs:documentation>A required indicator – including, informational, warning, or dissemination statements – as mandated by the law, Federal regulation, or Government-wide policy that makes a specific item of information CUI.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="CUISpecifiedCategoryCode" type="cui:CUISpecifiedCategoryMarkingCodeType" nillable="true">
+  <xs:element name="CUISpecifiedCategoryMarkingCode" type="cui:CUISpecifiedCategoryMarkingCodeType" nillable="true">
     <xs:annotation>
       <xs:documentation>A Controlled Unclassified Information (CUI) category in which the authorizing law, regulation, or Government-wide policy contains specific handling controls that it requires or permits agencies to use that differ from those of CUI Basic.</xs:documentation>
     </xs:annotation>
