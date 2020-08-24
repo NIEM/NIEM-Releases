@@ -2077,6 +2077,7 @@
           <xs:element ref="nc:InjuryCauserAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:InjurySustainer" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:InjurySeverityAbstract" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:InjuryTreatment" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:InjuryAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
       </xs:extension>
@@ -6064,17 +6065,12 @@
       <xs:documentation>A data concept for a unit of measure of a rate of consumption value.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="ContactAbstract" abstract="true">
-    <xs:annotation>
-      <xs:documentation>A data concept for a person or organization to contact.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
   <xs:element name="ContactEmailID" type="niem-xs:string" substitutionGroup="nc:ContactMeansAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>An electronic mailing address by which a person or organization may be contacted.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="ContactEntity" type="nc:EntityType" substitutionGroup="nc:ContactAbstract" nillable="true">
+  <xs:element name="ContactEntity" type="nc:EntityType" nillable="true">
     <xs:annotation>
       <xs:documentation>An entity that may be contacted by using the given contact information.</xs:documentation>
     </xs:annotation>
@@ -8784,11 +8780,6 @@
       <xs:documentation>A date information was last checked for accuracy.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="LatitudeCoordinate" type="nc:LatitudeCoordinateType" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A measurement of the angular distance between a point on the Earth and the Equator.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
   <xs:element name="LatitudeCoordinateAugmentationPoint" abstract="true">
     <xs:annotation>
       <xs:documentation>An augmentation point for LatitudeCoordinateType.</xs:documentation>
@@ -9147,11 +9138,6 @@
   <xs:element name="LocationUTMCoordinateValue" type="nc:UTMCoordinateType" substitutionGroup="nc:LocationGeospatialCoordinateAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A coordinate from the Universal Transverse Mercator (UTM) Coordinate System, which represents a location with a hemisphere, zone, an easting value, and a northing value.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="LongitudeCoordinate" type="nc:LongitudeCoordinateType" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A measurement of the angular distance between a point on the Earth and the Prime Meridian.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="LongitudeCoordinateAugmentationPoint" abstract="true">
@@ -9692,11 +9678,6 @@
   <xs:element name="MilitaryStatus" type="nc:StatusType" nillable="true">
     <xs:annotation>
       <xs:documentation>A status of military service of a person.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="MilitarySummary" type="nc:MilitarySummaryType" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A service of a person in a military.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="MilitarySummaryAugmentationPoint" abstract="true">
@@ -11212,11 +11193,6 @@
   <xs:element name="PersonWorkerAssociationAugmentationPoint" abstract="true">
     <xs:annotation>
       <xs:documentation>An augmentation point for PersonWorkerAssociationType.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="PersonWorkLocation" type="nc:LocationType" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A work address or structure of a person. This association is used when the persons employer is not known. If the employer is known, use an Organization which in turn has a Location.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="PersonWorkPlaceAbstract" abstract="true">

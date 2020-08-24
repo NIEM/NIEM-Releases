@@ -103,6 +103,7 @@ Note that schema updates have been committed per issue, so issue-specific file d
 - Refactored citizenship and nationality into separate types [(#124)](https://github.com/NIEM/NIEM-Releases/issues/124)
 - Refactored assessment components [(#148)](https://github.com/NIEM/NIEM-Releases/issues/148)
 - Refactored orientation components [(#151)](https://github.com/NIEM/NIEM-Releases/issues/151)
+- Removed or updated unused elements in Core [(#106)](https://github.com/NIEM/NIEM-Releases/issues/106)
 - Updated inconsistent code set folder paths, file names, and target namespaces [(#58)](https://github.com/NIEM/NIEM-Releases/issues/58)
 - Updated country and state element class terms [(#67)](https://github.com/NIEM/NIEM-Releases/issues/67)
 - Updated location elements [(#100)](https://github.com/NIEM/NIEM-Releases/issues/100)
