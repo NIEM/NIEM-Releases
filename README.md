@@ -11,10 +11,6 @@ The final NIEM 5.0 release will be published Fall 2020.
 
 Please submit beta feedback by Friday, July 18.  Feedback can be posted directly to the [NIEM Releases issue tracker](https://github.com/NIEM/NIEM-Releases/issues) or emailed to niem-comments@lists.gatech.edu.
 
-### Note
-
-Updates to the Naming and Design Rules (NDR) Specification are in progress.  There are conformance validation issues in this beta due to updates to the structures and appinfo schemas that will be resolved once the new NDR 5.0 conformance targets and validation rules become available.
-
 ## Key changes
 
 The following is a summary of the content changes made in this release.  Please review the [5.0 issues](https://github.com/NIEM/NIEM-Releases/issues?page=1&q=is%3Aissue+label%3A5.0) in the NIEM Releases issue tracker or the change log spreadsheet in the release package for a detailed list of changes.
