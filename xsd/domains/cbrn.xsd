@@ -1289,21 +1289,6 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-  <xs:complexType name="OrientationType">
-    <xs:annotation>
-      <xs:documentation>A data type for describing the spatial orientation of an object.</xs:documentation>
-    </xs:annotation>
-    <xs:complexContent>
-      <xs:extension base="cbrn:RemarksComplexObjectType">
-        <xs:sequence>
-          <xs:element ref="cbrn:AzimuthValue" minOccurs="1" maxOccurs="1"/>
-          <xs:element ref="cbrn:InclinationValue" minOccurs="0" maxOccurs="1"/>
-          <xs:element ref="cbrn:RollValue" minOccurs="0" maxOccurs="1"/>
-          <xs:element ref="cbrn:OrientationAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
-        </xs:sequence>
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
   <xs:complexType name="OriginType">
     <xs:annotation>
       <xs:documentation>A data type for the origin of a relative location coordinate system.</xs:documentation>
@@ -1963,7 +1948,7 @@
       <xs:extension base="cbrn:RemarksComplexObjectType">
         <xs:sequence>
           <xs:element ref="cbrn:StateVectorLocationChoiceAbstract" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="cbrn:Orientation" minOccurs="0" maxOccurs="1"/>
+          <xs:element ref="nc:Orientation" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="cbrn:SpeedValue" minOccurs="0" maxOccurs="1"/>
           <xs:element ref="cbrn:StateVectorAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
@@ -2421,7 +2406,7 @@
       <xs:documentation>An average exposure rate reported in an analysis results, expressed in milliroentgen per hour (mR/h).</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="AzimuthValue" type="cbrn:Angle180Type" nillable="true">
+  <xs:element name="Azimuth180Value" type="cbrn:Angle180Type" substitutionGroup="nc:AzimuthAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>An objects(i.e., instrument, detector, or item) orientation, with respect to True North.  Its value is the angle subtended by a line from the center point of the object to True North in the horizontal plane and the line formed by the object's front-to-back axis projected onto the horizontal plane. The angle range is from "-180.0" to "+180.0" degrees. A value of zero implies the front of the object's body is pointed to True North; positive values imply the front is pointed to the east of True North; negative values imply the front is pointed to the west of True North.</xs:documentation>
     </xs:annotation>
@@ -3496,11 +3481,6 @@
       <xs:documentation>true if properly calibrated and considered in service; false otherwise.The indication that the radiation measurement instrument is fit for service:</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="InclinationValue" type="cbrn:Angle90Type" nillable="true">
-    <xs:annotation>
-      <xs:documentation>An object's orientation (i.e., radiation measurement instrument, radiation detector, or measured item) with respect to the horizontal plane.  Its value is the angle subtended by the line formed by the objects front-to-rear axis and the line formed by the projection of that line onto the horizontal plane. The angle range is from "-90.0" to "+90.0" degrees. A value of zero implies the object's front-to-rear axis is level, i.e., aligned with the horizontal plane; positive values implies the object is pointed up; negative values imply the object is pointed down.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
   <xs:element name="InspectionData" type="cbrn:InspectionDataType" nillable="true">
     <xs:annotation>
       <xs:documentation>A set of data regarding an inspection of an item of interest.</xs:documentation>
@@ -4024,16 +4004,6 @@
   <xs:element name="OrganizationParentName" type="niem-xs:string" nillable="true">
     <xs:annotation>
       <xs:documentation>A Name of the parent organization of an organization.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="Orientation" type="cbrn:OrientationType" nillable="true">
-    <xs:annotation>
-      <xs:documentation>An object's orientation (e.g., radiation measurement instrument, radiation detector, or measured item) in space in terms of an internal frame of reference attached to the object's body and an external frame of reference. The object's internal frame of reference consists of three perpendicular axes: front-back, left-right, and top-bottom. The external frame of reference consists of the horizontal plane and True North. The object's orientation is expressed in the terms of three angles: azimuth, inclination, and roll.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="OrientationAugmentationPoint" abstract="true">
-    <xs:annotation>
-      <xs:documentation>An augmentation point for cbrn:OrientationType.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="Origin" type="cbrn:OriginType" nillable="true">
@@ -4629,11 +4599,6 @@
   <xs:element name="ResponseReportAugmentationPoint" abstract="true">
     <xs:annotation>
       <xs:documentation>An augmentation point for cbrn:ResponseReportType.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="RollValue" type="cbrn:Angle180Type" nillable="true">
-    <xs:annotation>
-      <xs:documentation>An object's orientation (e.g., radiation detection instrument, radiation detector, or measured item) with respect to the axis running from the front to the back of the object.  Its value is the angle subtended by a line defined by the objects left-to-right axis and a line defined by the same axis when it is aligned with the horizontal plane. The angle range is from "-180.0" to "+180.0" degrees. A value of zero implies the object's body is not rotated about the front-to-back axis and its left-to- right axis is aligned with the horizontal plane (though the object may be inclined); positive values are clockwise rotations about the front-to-back axis when viewed from behind the object and looking towards the direction to which the object is pointing; negative values are counterclockwise rotations.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="SaturdayHoursText" type="nc:TextType" nillable="true">

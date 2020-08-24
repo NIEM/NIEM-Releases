@@ -3120,8 +3120,8 @@
     <xs:complexContent>
       <xs:extension base="structures:ObjectType">
         <xs:sequence>
-          <xs:element ref="nc:AzimuthValue" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="nc:InclinationValue" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:AzimuthAbstract" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:InclinationAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:RollValue" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:OrientationAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
@@ -5639,11 +5639,6 @@
       <xs:documentation>An orientation of something with respect to True North.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="AzimuthValue" type="nc:Degree360Type" nillable="true">
-    <xs:annotation>
-      <xs:documentation>An angle of rotation of a thing about its normal axis, measured in degrees between the longitudinal axis and true north.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
   <xs:element name="Base64BinaryObject" type="niem-xs:base64Binary" substitutionGroup="nc:BinaryObjectAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A base64 binary encoding of data.</xs:documentation>
@@ -8044,6 +8039,11 @@
       <xs:documentation>An association between an incident and a vehicle.</xs:documentation>
     </xs:annotation>
   </xs:element>
+  <xs:element name="Inclination90PlusMinusValue" type="nc:Degree90PlusMinusType" substitutionGroup="nc:InclinationAbstract" nillable="true">
+    <xs:annotation>
+      <xs:documentation>An angle of rotation of a thing about its lateral axis, measured in degrees between the longitudinal axis and the horizontal plane; negative values indicate a downward rotation.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
   <xs:element name="Inclination90Value" type="nc:Degree90Type" substitutionGroup="nc:InclinationAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>An orientation of an object with respect to the horizontal plane.</xs:documentation>
@@ -8057,11 +8057,6 @@
   <xs:element name="InclinationDecimalValue" type="niem-xs:decimal" substitutionGroup="nc:InclinationAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>An orientation of an object with respect to the horizontal plane.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="InclinationValue" type="nc:Degree90PlusMinusType" nillable="true">
-    <xs:annotation>
-      <xs:documentation>An angle of rotation of a thing about its lateral axis, measured in degrees between the longitudinal axis and the horizontal plane; negative values indicate a downward rotation.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="Injury" type="nc:InjuryType" nillable="true">
@@ -10142,6 +10137,11 @@
   <xs:element name="OrganizationUnitName" type="nc:TextType" nillable="true">
     <xs:annotation>
       <xs:documentation>A name of a high-level division of an organization.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="Orientation" type="nc:OrientationType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A set of angles of rotation about the principle axes (normal, lateral, longitudinal) of a thing, relative to true north and the horizontal plane, measured in degrees.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="OrientationAugmentationPoint" abstract="true">
