@@ -46,6 +46,7 @@ Note that schema updates have been committed per issue, so issue-specific file d
 - Updated accident-related definitions in the Justice domain to add the term 'crash' for better search and discovery [(#107)](https://github.com/NIEM/NIEM-Releases/issues/107)
 - Moved elements in j:ArresteeType to new j:ArrestSubjectAssociationType [(#70)](https://github.com/NIEM/NIEM-Releases/issues/70)
 - Renamed j:SupervisionFineAmount and j:CourtCostAmount elements in j:SentenceType [(#25)](https://github.com/NIEM/NIEM-Releases/issues/25)
+- Removed person finger position elements from j:PersonAugmentationType [(#159)](https://github.com/NIEM/NIEM-Releases/issues/159)
 
 ### Code Tables
 

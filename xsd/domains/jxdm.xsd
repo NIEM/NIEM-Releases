@@ -7112,22 +7112,13 @@
           <xs:element ref="j:PersonIssuedItemTitleAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="j:PersonVendorIdentification" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:PersonWorkPlaceAbstract" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="j:CrippledFingerPositionAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="j:PersonCautionInformationAbstract" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="j:DiscoloredFingerPositionAbstract" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="j:FracturedFingerPositionAbstract" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="j:HealedFracturedFingerPositionAbstract" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="j:MissingFingerPositionAbstract" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="j:MoleFingerPositionAbstract" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="j:NeedleMarkFingerPositionAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="j:PersonBirthplaceAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="j:PersonFirearmSalesDisqualifiedAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="j:PersonHitResultsAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:PersonHandednessAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="j:PersonSexualOrientationAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="j:PersonSpeechDescriptionAbstract" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="j:ScarFingerPositionAbstract" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="j:TattooFingerPositionAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="j:PersonCircumcisionCode" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="j:PersonDeath" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
@@ -15296,16 +15287,6 @@
       <xs:documentation>A description of a location a criminal organization or person often frequents or considers to have control over.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="CrippledFingerPositionAbstract" abstract="true">
-    <xs:annotation>
-      <xs:documentation>A data concept for a finger position code for a finger that is crippled.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="CrippledFingerPositionText" type="nc:TextType" substitutionGroup="j:CrippledFingerPositionAbstract" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A finger position code for a finger that is crippled.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
   <xs:element name="CurrentEvaluationIndicator" type="niem-xs:boolean" nillable="true">
     <xs:annotation>
       <xs:documentation>True if an Person is currently undergoing an evaluation; false otherwise.</xs:documentation>
@@ -15824,16 +15805,6 @@
   <xs:element name="DisciplinaryIncident" type="nc:IncidentType" nillable="true">
     <xs:annotation>
       <xs:documentation>A commission or alleged commission of a prohibited act involving a subject and occurring while in custody and/or during a period of incarceration/holding.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="DiscoloredFingerPositionAbstract" abstract="true">
-    <xs:annotation>
-      <xs:documentation>A data concept for a finger position code for a finger that is discolored.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="DiscoloredFingerPositionText" type="nc:TextType" substitutionGroup="j:DiscoloredFingerPositionAbstract" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A finger position code for a finger that is discolored.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="DispositionCategoryCodeText" type="nc:TextType" substitutionGroup="nc:DispositionCategoryAbstract" nillable="true">
@@ -17961,16 +17932,6 @@
       <xs:documentation>A kind of forensic specimen.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="FracturedFingerPositionAbstract" abstract="true">
-    <xs:annotation>
-      <xs:documentation>A data concept for a finger position code for a finger that is fractured/broken.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="FracturedFingerPositionText" type="nc:TextType" substitutionGroup="j:FracturedFingerPositionAbstract" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A finger position code for a finger that is fractured/broken.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
   <xs:element name="Funeral" type="j:FuneralType" nillable="true">
     <xs:annotation>
       <xs:documentation>A memorial or religious event for the recently deceased.</xs:documentation>
@@ -18149,16 +18110,6 @@
   <xs:element name="HazMatPlacardSuffixText" type="j:HazMatPlacardSuffixTextType" nillable="true">
     <xs:annotation>
       <xs:documentation>A 1-digit placard number from bottom of diamond.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="HealedFracturedFingerPositionAbstract" abstract="true">
-    <xs:annotation>
-      <xs:documentation>A data concept for a finger position code for a finger that is healed from a fracture/break.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="HealedFracturedFingerPositionText" type="nc:TextType" substitutionGroup="j:HealedFracturedFingerPositionAbstract" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A finger position code for a finger that is healed from a fracture/break.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="Hearing" type="j:HearingType" nillable="true">
@@ -21561,16 +21512,6 @@
       <xs:documentation>A crime punishable by imprisonment in a county jail for up to one year.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="MissingFingerPositionAbstract" abstract="true">
-    <xs:annotation>
-      <xs:documentation>A data concept for a finger position code for a missing/amputated finger.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="MissingFingerPositionText" type="nc:TextType" substitutionGroup="j:MissingFingerPositionAbstract" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A finger position code for a missing/amputated finger.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
   <xs:element name="MissingPerson" type="j:MissingPersonType" nillable="true">
     <xs:annotation>
       <xs:documentation>A person whose whereabouts are unknown.</xs:documentation>
@@ -21674,16 +21615,6 @@
   <xs:element name="MissingPersonStatus" type="nc:StatusType" nillable="true">
     <xs:annotation>
       <xs:documentation>A status of a missing person.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="MoleFingerPositionAbstract" abstract="true">
-    <xs:annotation>
-      <xs:documentation>A data concept for a finger position code for a finger with a mole on it.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="MoleFingerPositionText" type="nc:TextType" substitutionGroup="j:MoleFingerPositionAbstract" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A finger position code for a finger with a mole on it.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="MonthlyIncomeTotalAmount" type="nc:AmountType" nillable="true">
@@ -21939,16 +21870,6 @@
   <xs:element name="NeedIntensityLevelText" type="nc:TextType" substitutionGroup="j:NeedIntensityLevelAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A descriptor used to describe how serious a subject has needs of a specific type.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="NeedleMarkFingerPositionAbstract" abstract="true">
-    <xs:annotation>
-      <xs:documentation>A data concept for a finger position code for a finger with a needle mark(s) on it.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="NeedleMarkFingerPositionText" type="nc:TextType" substitutionGroup="j:NeedleMarkFingerPositionAbstract" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A finger position code for a finger with a needle mark(s) on it.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="NeedScoreNumeric" type="nc:NumericType" nillable="true">
@@ -26446,16 +26367,6 @@
       <xs:documentation>An amount of money or time requirement of a sanction that is no longer required to be paid.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="ScarFingerPositionAbstract" abstract="true">
-    <xs:annotation>
-      <xs:documentation>A data concept for a finger position code for a finger with a scar(s) on it.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="ScarFingerPositionText" type="nc:TextType" substitutionGroup="j:ScarFingerPositionAbstract" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A finger position code for a finger with a scar(s) on it.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
   <xs:element name="SearchWarrant" type="j:WarrantType" nillable="true">
     <xs:annotation>
       <xs:documentation>An order signed by a judge authorizing a search of a place or a vehicle. The search warrant is issued for an address where things which may be evidence are to be found.</xs:documentation>
@@ -29424,16 +29335,6 @@
   <xs:element name="TaskReferralDate" type="nc:DateType" nillable="true">
     <xs:annotation>
       <xs:documentation>A date that the subject was referred to a provider to receive help in completing the Task.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="TattooFingerPositionAbstract" abstract="true">
-    <xs:annotation>
-      <xs:documentation>A data concept for a finger position code for a finger with a tattoo(s) on it.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="TattooFingerPositionText" type="nc:TextType" substitutionGroup="j:TattooFingerPositionAbstract" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A finger position code for a finger with a tattoo(s) on it.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="TelephoneCallApprovalStatus" type="nc:StatusType" nillable="true">
