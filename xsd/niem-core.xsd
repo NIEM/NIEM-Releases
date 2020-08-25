@@ -1440,7 +1440,7 @@
           <xs:element ref="nc:DocumentIssuanceLocation" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:DocumentIssueDate" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:DocumentKeywordText" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="nc:DocumentLanguageAbstract" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:DocumentLanguage" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:DocumentLastModifiedDate" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:DocumentLocation" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:DocumentLocationURI" minOccurs="0" maxOccurs="unbounded"/>
@@ -1703,6 +1703,19 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
+  <xs:complexType name="FacilityFunctionType">
+    <xs:annotation>
+      <xs:documentation>A data type for a purpose or use of a facility.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="structures:ObjectType">
+        <xs:sequence>
+          <xs:element ref="nc:FacilityFunctionAbstract" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:FacilityFunctionAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
   <xs:complexType name="FacilityImageAssociationType">
     <xs:annotation>
       <xs:documentation>A data type for an association between a facility and an image.</xs:documentation>
@@ -1785,19 +1798,6 @@
           <xs:element ref="nc:FacilitySystemIPAddressID" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:FacilityUsage" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:FacilityAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
-        </xs:sequence>
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
-  <xs:complexType name="FacilityUsageType">
-    <xs:annotation>
-      <xs:documentation>A data type for a functional usage of a facility.</xs:documentation>
-    </xs:annotation>
-    <xs:complexContent>
-      <xs:extension base="structures:ObjectType">
-        <xs:sequence>
-          <xs:element ref="nc:FacilityUsageAbstract" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="nc:FacilityUsageAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -6975,14 +6975,9 @@
       <xs:documentation>A significant word or phrase that describes the overall content of a document or its main topic.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="DocumentLanguage" type="nc:LanguageType" substitutionGroup="nc:DocumentLanguageAbstract" nillable="true">
+  <xs:element name="DocumentLanguage" type="nc:LanguageType" nillable="true">
     <xs:annotation>
       <xs:documentation>A language of the content of the resource.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="DocumentLanguageAbstract" abstract="true">
-    <xs:annotation>
-      <xs:documentation>A data concept for the language of the content of the resource.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="DocumentLastModifiedDate" type="nc:DateType" nillable="true">
@@ -7565,7 +7560,7 @@
       <xs:documentation>A number of people a facility can manage at a time.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="FacilityCategory" type="nc:FacilityUsageType" nillable="true">
+  <xs:element name="FacilityCategory" type="nc:FacilityFunctionType" nillable="true">
     <xs:annotation>
       <xs:documentation>A category of facility.</xs:documentation>
     </xs:annotation>
@@ -7593,6 +7588,21 @@
   <xs:element name="FacilityDocumentAssociationAugmentationPoint" abstract="true">
     <xs:annotation>
       <xs:documentation>An augmentation point for FacilityDocumentAssociationType.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="FacilityFunctionAbstract" abstract="true">
+    <xs:annotation>
+      <xs:documentation>A data concept for a purpose or use of a facility.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="FacilityFunctionAugmentationPoint" abstract="true">
+    <xs:annotation>
+      <xs:documentation>An augmentation point for type nc:FacilityFunctionType</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="FacilityFunctionText" type="nc:TextType" substitutionGroup="nc:FacilityFunctionAbstract" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A purpose or use of a facility.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="FacilityIdentification" type="nc:IdentificationType" nillable="true">
@@ -7690,24 +7700,9 @@
       <xs:documentation>An IP address of a computing system that supports a facility's activities.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="FacilityUsage" type="nc:FacilityUsageType" nillable="true">
+  <xs:element name="FacilityUsage" type="nc:FacilityFunctionType" nillable="true">
     <xs:annotation>
       <xs:documentation>A functional usage of a facility.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="FacilityUsageAbstract" abstract="true">
-    <xs:annotation>
-      <xs:documentation>A data concept for a data concept for the functional usage of a facility.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="FacilityUsageAugmentationPoint" abstract="true">
-    <xs:annotation>
-      <xs:documentation>An augmentation point for type nc:FacilityUsageType</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="FacilityUsageText" type="nc:TextType" substitutionGroup="nc:FacilityUsageAbstract" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A description of the functional usage of a facility.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="Fee" type="nc:ObligationType" nillable="true">

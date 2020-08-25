@@ -8630,7 +8630,7 @@
           <xs:element ref="j:ProgramRequirementMinimumAge18Indicator" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="j:ProgramRequirementMinimumAge21Indicator" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="j:ProgramStaffMember" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="j:ProgramSupportedAlternativeLanguageAbstract" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="j:ProgramSupportedAlternativeLanguage" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="j:ProgramVerifiedDate" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
       </xs:extension>
@@ -25414,14 +25414,9 @@
       <xs:documentation>A corrections employee assigned or associated with a specific program.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="ProgramSupportedAlternativeLanguageAbstract" abstract="true">
+  <xs:element name="ProgramSupportedAlternativeLanguage" type="nc:LanguageType" nillable="true">
     <xs:annotation>
-      <xs:documentation>A data concept for a kind of alternative language that is supported within a program, other than English.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="ProgramSupportedAlternativeLanguageText" type="nc:TextType" substitutionGroup="j:ProgramSupportedAlternativeLanguageAbstract" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A kind of alternative language that is supported within a program, other than English.</xs:documentation>
+      <xs:documentation>An alternative language that is supported within a program, other than English.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="ProgramTitleText" type="nc:TextType" nillable="true">

@@ -15,9 +15,9 @@
   </xs:annotation>
   <xs:import namespace="http://release.niem.gov/niem/niem-core/5.0/" schemaLocation="../niem-core.xsd"/>
   <xs:import namespace="http://release.niem.gov/niem/structures/5.0/" schemaLocation="../utility/structures.xsd"/>
-  <xs:simpleType name="FacilityUsageCodeSimpleType">
+  <xs:simpleType name="FacilityFunctionCodeSimpleType">
     <xs:annotation>
-      <xs:documentation>A data type for the categories of facilities.</xs:documentation>
+      <xs:documentation>A data type for facility function codes.</xs:documentation>
     </xs:annotation>
     <xs:restriction base="xs:token">
       <xs:enumeration value="11-11 00 00">
@@ -3762,19 +3762,19 @@
       </xs:enumeration>
     </xs:restriction>
   </xs:simpleType>
-  <xs:complexType name="FacilityUsageCodeType">
+  <xs:complexType name="FacilityFunctionCodeType">
     <xs:annotation>
-      <xs:documentation>A data type for the categories of facilities.</xs:documentation>
+      <xs:documentation>A data type for facility function codes.</xs:documentation>
     </xs:annotation>
     <xs:simpleContent>
-      <xs:extension base="occs:FacilityUsageCodeSimpleType">
+      <xs:extension base="occs:FacilityFunctionCodeSimpleType">
         <xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
       </xs:extension>
     </xs:simpleContent>
   </xs:complexType>
-  <xs:simpleType name="FacilityUsageLevel1CodeSimpleType">
+  <xs:simpleType name="FacilityFunctionLevel1CodeSimpleType">
     <xs:annotation>
-      <xs:documentation>A data type for Level 1 facility usage codes.</xs:documentation>
+      <xs:documentation>A data type for Level 1 facility function codes.</xs:documentation>
     </xs:annotation>
     <xs:restriction base="xs:token">
       <xs:enumeration value="11-11 00 00">
@@ -3879,19 +3879,19 @@
       </xs:enumeration>
     </xs:restriction>
   </xs:simpleType>
-  <xs:complexType name="FacilityUsageLevel1CodeType">
+  <xs:complexType name="FacilityFunctionLevel1CodeType">
     <xs:annotation>
-      <xs:documentation>A data type for Level 1 facility usage codes.</xs:documentation>
+      <xs:documentation>A data type for Level 1 facility function codes.</xs:documentation>
     </xs:annotation>
     <xs:simpleContent>
-      <xs:extension base="occs:FacilityUsageLevel1CodeSimpleType">
+      <xs:extension base="occs:FacilityFunctionLevel1CodeSimpleType">
         <xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
       </xs:extension>
     </xs:simpleContent>
   </xs:complexType>
-  <xs:simpleType name="FacilityUsageLevel2CodeSimpleType">
+  <xs:simpleType name="FacilityFunctionLevel2CodeSimpleType">
     <xs:annotation>
-      <xs:documentation>A data type for Level 2 facility usage codes.</xs:documentation>
+      <xs:documentation>A data type for Level 2 facility function codes.</xs:documentation>
     </xs:annotation>
     <xs:restriction base="xs:token">
       <xs:enumeration value="11-11 11 00">
@@ -4586,19 +4586,19 @@
       </xs:enumeration>
     </xs:restriction>
   </xs:simpleType>
-  <xs:complexType name="FacilityUsageLevel2CodeType">
+  <xs:complexType name="FacilityFunctionLevel2CodeType">
     <xs:annotation>
-      <xs:documentation>A data type for Level 2 facility usage codes.</xs:documentation>
+      <xs:documentation>A data type for Level 2 facility function codes.</xs:documentation>
     </xs:annotation>
     <xs:simpleContent>
-      <xs:extension base="occs:FacilityUsageLevel2CodeSimpleType">
+      <xs:extension base="occs:FacilityFunctionLevel2CodeSimpleType">
         <xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
       </xs:extension>
     </xs:simpleContent>
   </xs:complexType>
-  <xs:simpleType name="FacilityUsageLevel3CodeSimpleType">
+  <xs:simpleType name="FacilityFunctionLevel3CodeSimpleType">
     <xs:annotation>
-      <xs:documentation>A data type for Level 3 facility usage codes.</xs:documentation>
+      <xs:documentation>A data type for Level 3 facility function codes.</xs:documentation>
     </xs:annotation>
     <xs:restriction base="xs:token">
       <xs:enumeration value="11-11 11 11">
@@ -7143,19 +7143,19 @@
       </xs:enumeration>
     </xs:restriction>
   </xs:simpleType>
-  <xs:complexType name="FacilityUsageLevel3CodeType">
+  <xs:complexType name="FacilityFunctionLevel3CodeType">
     <xs:annotation>
-      <xs:documentation>A data type for Level 3 facility usage codes.</xs:documentation>
+      <xs:documentation>A data type for Level 3 facility function codes.</xs:documentation>
     </xs:annotation>
     <xs:simpleContent>
-      <xs:extension base="occs:FacilityUsageLevel3CodeSimpleType">
+      <xs:extension base="occs:FacilityFunctionLevel3CodeSimpleType">
         <xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
       </xs:extension>
     </xs:simpleContent>
   </xs:complexType>
-  <xs:simpleType name="FacilityUsageLevel4CodeSimpleType">
+  <xs:simpleType name="FacilityFunctionLevel4CodeSimpleType">
     <xs:annotation>
-      <xs:documentation>A data type for Level 4 facility usage codes.</xs:documentation>
+      <xs:documentation>A data type for Level 4 facility function codes.</xs:documentation>
     </xs:annotation>
     <xs:restriction base="xs:token">
       <xs:enumeration value="11-11 21 17 11">
@@ -7565,39 +7565,39 @@
       </xs:enumeration>
     </xs:restriction>
   </xs:simpleType>
-  <xs:complexType name="FacilityUsageLevel4CodeType">
+  <xs:complexType name="FacilityFunctionLevel4CodeType">
     <xs:annotation>
-      <xs:documentation>A data type for Level 4 facility usage codes.</xs:documentation>
+      <xs:documentation>A data type for Level 4 facility function codes.</xs:documentation>
     </xs:annotation>
     <xs:simpleContent>
-      <xs:extension base="occs:FacilityUsageLevel4CodeSimpleType">
+      <xs:extension base="occs:FacilityFunctionLevel4CodeSimpleType">
         <xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
       </xs:extension>
     </xs:simpleContent>
   </xs:complexType>
-  <xs:element name="FacilityUsageCode" type="occs:FacilityUsageCodeType" substitutionGroup="nc:FacilityUsageAbstract" nillable="true">
+  <xs:element name="FacilityFunctionCode" type="occs:FacilityFunctionCodeType" substitutionGroup="nc:FacilityFunctionAbstract" nillable="true">
     <xs:annotation>
-      <xs:documentation>A description of the functional usage of a facility.</xs:documentation>
+      <xs:documentation>A purpose or use of a facility.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="FacilityUsageLevel1Code" type="occs:FacilityUsageLevel1CodeType" substitutionGroup="nc:FacilityUsageAbstract" nillable="true">
+  <xs:element name="FacilityFunctionLevel1Code" type="occs:FacilityFunctionLevel1CodeType" substitutionGroup="nc:FacilityFunctionAbstract" nillable="true">
     <xs:annotation>
-      <xs:documentation>A high-level usage category for a facility.</xs:documentation>
+      <xs:documentation>A high-level purpose or use of a facility.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="FacilityUsageLevel2Code" type="occs:FacilityUsageLevel2CodeType" substitutionGroup="nc:FacilityUsageAbstract" nillable="true">
+  <xs:element name="FacilityFunctionLevel2Code" type="occs:FacilityFunctionLevel2CodeType" substitutionGroup="nc:FacilityFunctionAbstract" nillable="true">
     <xs:annotation>
-      <xs:documentation>A mid-level usage category for a facility.</xs:documentation>
+      <xs:documentation>A mid-level purpose or use of a facility.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="FacilityUsageLevel3Code" type="occs:FacilityUsageLevel3CodeType" substitutionGroup="nc:FacilityUsageAbstract" nillable="true">
+  <xs:element name="FacilityFunctionLevel3Code" type="occs:FacilityFunctionLevel3CodeType" substitutionGroup="nc:FacilityFunctionAbstract" nillable="true">
     <xs:annotation>
-      <xs:documentation>A usage category for a facility.</xs:documentation>
+      <xs:documentation>A purpose or use of a facility.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="FacilityUsageLevel4Code" type="occs:FacilityUsageLevel4CodeType" substitutionGroup="nc:FacilityUsageAbstract" nillable="true">
+  <xs:element name="FacilityFunctionLevel4Code" type="occs:FacilityFunctionLevel4CodeType" substitutionGroup="nc:FacilityFunctionAbstract" nillable="true">
     <xs:annotation>
-      <xs:documentation>A detailed usage category for a facility.</xs:documentation>
+      <xs:documentation>A detailed purpose or use of a facility.</xs:documentation>
     </xs:annotation>
   </xs:element>
 </xs:schema>
