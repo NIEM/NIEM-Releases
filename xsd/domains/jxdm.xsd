@@ -1612,7 +1612,6 @@
           <xs:element ref="j:ChargeUCRCrimeCategoryText" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="j:ChargeVerdict" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="j:ChargeVictim" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="j:ChargeNCICText" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="j:ChargeSeverityDescriptionText" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="j:ChargeCategoryAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="j:ChargeNCICAbstract" minOccurs="0" maxOccurs="unbounded"/>
@@ -13370,7 +13369,7 @@
       <xs:documentation>An offense within the National Crime Information Center (NCIC) system.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="ChargeNCICText" type="nc:TextType" nillable="true">
+  <xs:element name="ChargeNCICText" type="nc:TextType" substitutionGroup="j:ChargeNCICAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A literal description of an offense within the National Crime Information Center (NCIC) system.</xs:documentation>
     </xs:annotation>
