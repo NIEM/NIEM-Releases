@@ -3066,7 +3066,7 @@
       <xs:extension base="structures:ObjectType">
         <xs:sequence>
           <xs:element ref="nc:OrganizationAbbreviationText" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="nc:OrganizationLEIIdentification" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:OrganizationActiveIndicator" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:OrganizationActivityText" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:OrganizationBranchName" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:OrganizationCategoryAbstract" minOccurs="0" maxOccurs="unbounded"/>
@@ -3081,20 +3081,27 @@
           <xs:element ref="nc:OrganizationIncorporatedIndicator" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:OrganizationIncorporationDate" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:OrganizationIncorporationLocation" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:OrganizationJurisdiction" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:OrganizationLEIIdentification" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:OrganizationLicenseIdentification" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:OrganizationLocalIdentification" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:OrganizationLocation" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:OrganizationName" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:OrganizationNameEffectiveDate" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:OrganizationNameTerminationDate" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:OrganizationNightContactInformation" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:OrganizationOtherIdentification" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:OrganizationParentAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:OrganizationPrimaryContactInformation" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:OrganizationPrincipalOfficial" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:OrganizationServiceHoursAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:OrganizationStatus" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:OrganizationSubUnit" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:OrganizationSubUnitName" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:OrganizationTaxIdentification" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:OrganizationTerminationDate" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:OrganizationUnitName" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:OrganizationValidDate" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:OrganizationAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
       </xs:extension>
@@ -9890,6 +9897,11 @@
       <xs:documentation>An abbreviation, acronym, or code for an organization name.</xs:documentation>
     </xs:annotation>
   </xs:element>
+  <xs:element name="OrganizationActiveIndicator" type="niem-xs:boolean" nillable="true">
+    <xs:annotation>
+      <xs:documentation>True if an organization is active; false if it is inactive.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
   <xs:element name="OrganizationActivityText" type="nc:TextType" nillable="true">
     <xs:annotation>
       <xs:documentation>An activity that an organization is known or thought to be involved with.</xs:documentation>
@@ -9990,9 +10002,19 @@
       <xs:documentation>A location where an organization incorporated.</xs:documentation>
     </xs:annotation>
   </xs:element>
+  <xs:element name="OrganizationJurisdiction" type="nc:JurisdictionType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>An area of service or jurisdiction an organization has over a region.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
   <xs:element name="OrganizationLEIIdentification" type="nc:IdentificationType" nillable="true">
     <xs:annotation>
       <xs:documentation>An identification for a Legal Entity Identifier (LEI), to uniquely identify legally distinct entities that engage in financial transactions.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="OrganizationLicenseIdentification" type="nc:IdentificationType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A license identification for an organization.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="OrganizationLocalIdentification" type="nc:IdentificationType" nillable="true">
@@ -10013,6 +10035,16 @@
   <xs:element name="OrganizationName" type="nc:TextType" nillable="true">
     <xs:annotation>
       <xs:documentation>A name of an organization.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="OrganizationNameEffectiveDate" type="nc:DateType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A date the organization name became effective.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="OrganizationNameTerminationDate" type="nc:DateType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A date the organization name became invalid.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="OrganizationNightContactInformation" type="nc:ContactInformationType" nillable="true">
@@ -10065,6 +10097,16 @@
       <xs:documentation>An association between an organization and its principal official.</xs:documentation>
     </xs:annotation>
   </xs:element>
+  <xs:element name="OrganizationServiceHoursAbstract" abstract="true">
+    <xs:annotation>
+      <xs:documentation>A data concept for an availability of an organization.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="OrganizationServiceHoursText" type="nc:TextType" substitutionGroup="nc:OrganizationServiceHoursAbstract" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A availability of an organization.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
   <xs:element name="OrganizationStatus" type="nc:StatusType" nillable="true">
     <xs:annotation>
       <xs:documentation>A status of an organization.</xs:documentation>
@@ -10113,6 +10155,11 @@
   <xs:element name="OrganizationUnitName" type="nc:TextType" nillable="true">
     <xs:annotation>
       <xs:documentation>A name of a high-level division of an organization.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="OrganizationValidDate" type="nc:DateType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A date to which the organizational unit is valid.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="Orientation" type="nc:OrientationType" nillable="true">

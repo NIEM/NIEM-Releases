@@ -6218,19 +6218,10 @@
         <xs:sequence>
           <xs:element ref="j:DistrictIdentification" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="j:OrganizationAlternateName" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="j:OrganizationLicenseIdentification" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="j:OrganizationValidDate" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="j:OrganizationFieldOfficeText" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="j:OrganizationJurisdiction" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="j:AgencyActiveIndicator" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="j:AgencyAddCancelIndicator" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="j:AgencyBaselinePriorityValue" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="j:AgencyCHRIAuthorizedIndicator" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="j:AgencyControlTerminalIndicator" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="j:AgencyServiceHoursAbstract" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="j:AgencyAuthorizationAbstract" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="j:OrganizationGovernmentLevelAbstract" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="j:OrganizationAuthorizationAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="j:OrganizationFFLID" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="j:OrganizationFieldOfficeText" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="j:OrganizationGovernmentLevelAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="j:OrganizationORIIdentification" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
       </xs:extension>
@@ -11397,61 +11388,6 @@
   <xs:element name="AftercareServicesScreeningTreatmentIntensiveProgramEnrollmentIndicator" type="niem-xs:boolean" nillable="true">
     <xs:annotation>
       <xs:documentation>True if the subject is enrolled in a Treatment Intensive Program (TIP); false otherwise.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="AgencyActiveIndicator" type="niem-xs:boolean" nillable="true">
-    <xs:annotation>
-      <xs:documentation>True if the status of an ORI is active; false if it is inactive.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="AgencyAddCancelIndicator" type="niem-xs:boolean" nillable="true">
-    <xs:annotation>
-      <xs:documentation>True if an agency is authorized to add or cancel a record; false otherwise.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="AgencyAuthorizationAbstract" abstract="true">
-    <xs:annotation>
-      <xs:documentation>A data concept for an agency's access category to data.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="AgencyAuthorizationCode" type="nlets:AgencyAuthorizationCodeType" substitutionGroup="j:AgencyAuthorizationAbstract" nillable="true">
-    <xs:annotation>
-      <xs:documentation>An agency's access category to data.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="AgencyAuthorizationText" type="nc:TextType" substitutionGroup="j:AgencyAuthorizationAbstract" nillable="true">
-    <xs:annotation>
-      <xs:documentation>An agency's access category to data.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="AgencyBaselinePriorityValue" type="nc:NumericType" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A baseline priority; values must be 0-12.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="AgencyCHRIAuthorizedIndicator" type="niem-xs:boolean" nillable="true">
-    <xs:annotation>
-      <xs:documentation>True if an agency is authorized to access criminal history information; false otherwise.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="AgencyControlTerminalIndicator" type="niem-xs:boolean" nillable="true">
-    <xs:annotation>
-      <xs:documentation>True if an agency is a control terminal; false otherwise.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="AgencyServiceHoursAbstract" abstract="true">
-    <xs:annotation>
-      <xs:documentation>A data concept for an availability of an agency.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="AgencyServiceHoursCode" type="nlets:AgencyServiceHoursCodeType" substitutionGroup="j:AgencyServiceHoursAbstract" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A availability of an agency.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="AgencyServiceHoursText" type="nc:TextType" substitutionGroup="j:AgencyServiceHoursAbstract" nillable="true">
-    <xs:annotation>
-      <xs:documentation>An availability of an agency.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="AircraftFuselageColorCode" type="ncic:VCOCodeType" substitutionGroup="nc:AircraftFuselageColorAbstract" nillable="true">
@@ -22619,6 +22555,21 @@
       <xs:documentation>Additional information about an organization.</xs:documentation>
     </xs:annotation>
   </xs:element>
+  <xs:element name="OrganizationAuthorizationAbstract" abstract="true">
+    <xs:annotation>
+      <xs:documentation>A data concept for an organization's or agency's access category to data.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="OrganizationAuthorizationCode" type="nlets:AgencyAuthorizationCodeType" substitutionGroup="j:OrganizationAuthorizationAbstract" nillable="true">
+    <xs:annotation>
+      <xs:documentation>An organization's or agency's access category to data.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="OrganizationAuthorizationText" type="nc:TextType" substitutionGroup="j:OrganizationAuthorizationAbstract" nillable="true">
+    <xs:annotation>
+      <xs:documentation>An organization's or agency's access category to data.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
   <xs:element name="OrganizationCategoryNDExCode" type="ndex:OrganizationCategoryCodeType" substitutionGroup="nc:OrganizationCategoryAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A kind of organization.</xs:documentation>
@@ -22654,29 +22605,19 @@
       <xs:documentation>A governmental level of an organization.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="OrganizationJurisdiction" type="nc:JurisdictionType" nillable="true">
-    <xs:annotation>
-      <xs:documentation>An area of service or jurisdiction an organization has over a region.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="OrganizationLicenseIdentification" type="nc:IdentificationType" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A license identification for an organization.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
   <xs:element name="OrganizationORIIdentification" type="nc:IdentificationType" nillable="true">
     <xs:annotation>
       <xs:documentation>A unique nine character NCIC identification (ORI) assigned to a justice-related organization by the FBI CJIS Division.</xs:documentation>
     </xs:annotation>
   </xs:element>
+  <xs:element name="OrganizationServiceHoursCode" type="nlets:AgencyServiceHoursCodeType" substitutionGroup="nc:OrganizationServiceHoursAbstract" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A availability of an organization or agency.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
   <xs:element name="OrganizationThreatGroupAssociation" type="nc:OrganizationAssociationType" nillable="true">
     <xs:annotation>
       <xs:documentation>A relationship between an organization and any organization, i.e., club, association or group of individuals, either formal or informal (including traditional gangs and terrorist organizations), that may have a common name or identifying symbol, and whose members engage in activities that include, but are not limited to planning, organizing, threatening, financing, soliciting, committing or attempting to commit unlawful acts that would violate the law, which detract from the safe and orderly operations of society.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="OrganizationValidDate" type="nc:DateType" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A date to which the organizational unit is valid.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="OriginalCharge" type="j:ChargeType" nillable="true">

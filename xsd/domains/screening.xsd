@@ -19624,10 +19624,7 @@
           <xs:element ref="scr:GrossAnnualIncomeAmount" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="scr:OrganizationSizeQuantity" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="scr:SuspiciousIndicator" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="scr:OrganizationNameEffectiveDate" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="scr:OrganizationNameIdentification" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="scr:OrganizationNameTerminationDate" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="scr:OrganizationClassificationCategoryAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="scr:OrganizationStatusClassificationCategoryAbstract" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
       </xs:extension>
@@ -23437,12 +23434,7 @@
       <xs:documentation>Additional information about an organization.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="OrganizationClassificationCategoryAbstract" abstract="true">
-    <xs:annotation>
-      <xs:documentation>A data concept for a kind of organization.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="OrganizationClassificationCategoryCode" type="scr:OrganizationCategoryCodeType" substitutionGroup="scr:OrganizationClassificationCategoryAbstract" nillable="true">
+  <xs:element name="OrganizationCategoryCode" type="scr:OrganizationCategoryCodeType" substitutionGroup="nc:OrganizationCategoryAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A kind of organization.</xs:documentation>
     </xs:annotation>
@@ -23457,19 +23449,9 @@
       <xs:documentation>An augmentation point for OrganizationEncounterAssociationType.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="OrganizationNameEffectiveDate" type="nc:DateType" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A date the ORGANIZATION NAME became effective.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
   <xs:element name="OrganizationNameIdentification" type="nc:IdentificationType" nillable="true">
     <xs:annotation>
       <xs:documentation>An identification value of the name of the ORGANIZATION.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="OrganizationNameTerminationDate" type="nc:DateType" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A date the ORGANIZATION NAME became invalid.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="OrganizationPhoneAssociation" type="scr:OrganizationPhoneAssociationType" nillable="true">

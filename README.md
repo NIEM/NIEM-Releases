@@ -93,6 +93,7 @@ Note that schema updates have been committed per issue, so issue-specific file d
 - Harmonized document components and added a new ReportType [(#129)](https://github.com/NIEM/NIEM-Releases/issues/129)
 - Harmonized jurisdiction components [(#141)](https://github.com/NIEM/NIEM-Releases/issues/141)
 - Harmonized metadata components [(#142)](https://github.com/NIEM/NIEM-Releases/issues/142)
+- Harmonized organization components [(#150)](https://github.com/NIEM/NIEM-Releases/issues/150)
 - Merged scr:PersonNameAugmentation and scr:PersonNameTextAugmentation [(#77)](https://github.com/NIEM/NIEM-Releases/issues/77)
 - Merged DOL and BLS namespaces into BLS [(#145)](C:\cdm\niem\releases\5.0\input\harmonization\145-bls)
 - Moved nc:PleaCategoryCodeType to the Justice domain [(#24)](https://github.com/NIEM/NIEM-Releases/issues/24)
