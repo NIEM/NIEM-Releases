@@ -991,20 +991,19 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-  <xs:complexType name="ArresteeType">
+  <xs:complexType name="ArrestSubjectAssociationType">
     <xs:annotation>
-      <xs:documentation>A data type for a person who is arrested for a violation of a criminal statute, ordinance or rule.</xs:documentation>
+      <xs:documentation>A data type for a relationship between an arrest and the arrested subject.</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
-      <xs:extension base="j:SubjectType">
+      <xs:extension base="j:ActivitySubjectAssociationType">
         <xs:sequence>
-          <xs:element ref="j:ArresteeClearanceIndicator" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="j:ArrestSubjectClearanceIndicator" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="j:ArrestSequenceID" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="j:Statute" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="j:ArresteeArmedWithAbstract" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="j:ArresteeJuvenileDispositionAbstract" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="j:ArrestSubjectArmedWithAbstract" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="j:ArrestSubjectJuvenileDispositionAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="j:ArrestSubjectCountAbstract" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="j:ArresteeAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="j:ArrestSubjectAssociationAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -12012,41 +12011,6 @@
       <xs:documentation>True if a person was under some kind of community criminal justice supervision, e.g., probation, parole, pre-trial services, day reporting, at the time of the arrest; false otherwise.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="Arrestee" type="j:ArresteeType" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A person who is arrested for a violation of a criminal statute, ordinance or rule.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="ArresteeArmedWithAbstract" abstract="true">
-    <xs:annotation>
-      <xs:documentation>A data concept for a weapon a subject was carrying.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="ArresteeArmedWithCode" type="ucr:ArresteeWeaponCodeType" substitutionGroup="j:ArresteeArmedWithAbstract" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A weapon a subject was carrying.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="ArresteeAugmentationPoint" abstract="true">
-    <xs:annotation>
-      <xs:documentation>An augmentation point for ArresteeType.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="ArresteeClearanceIndicator" type="niem-xs:boolean" nillable="true">
-    <xs:annotation>
-      <xs:documentation>True if the arrest of this person clears the Incident; false if the Incident was cleared prior to the arrest of this person.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="ArresteeJuvenileDispositionAbstract" abstract="true">
-    <xs:annotation>
-      <xs:documentation>A data concept for a disposition of the arrestee, if the arrestee was under the age of 18 at the time of arrest.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="ArresteeJuvenileDispositionCode" type="ndex:JuvenileDispositionCodeType" substitutionGroup="j:ArresteeJuvenileDispositionAbstract" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A disposition of the arrestee, if the arrestee was under the age of 18 at the time of arrest.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
   <xs:element name="ArrestIntoxicantInvolvedIndicator" type="niem-xs:boolean" nillable="true">
     <xs:annotation>
       <xs:documentation>True if drugs or alcohol were involved in an arrest; false otherwise.</xs:documentation>
@@ -12112,9 +12076,29 @@
       <xs:documentation>A person who is arrested.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="ArrestSubjectAssociation" type="j:ActivitySubjectAssociationType" nillable="true">
+  <xs:element name="ArrestSubjectArmedWithAbstract" abstract="true">
     <xs:annotation>
-      <xs:documentation>A relationship between an arrest activity and a subject.</xs:documentation>
+      <xs:documentation>A data concept for a weapon a subject was carrying.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="ArrestSubjectArmedWithCode" type="ucr:ArresteeWeaponCodeType" substitutionGroup="j:ArrestSubjectArmedWithAbstract" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A weapon a subject was carrying.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="ArrestSubjectAssociation" type="j:ArrestSubjectAssociationType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A relationship between an arrest and a subject.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="ArrestSubjectAssociationAugmentationPoint" abstract="true">
+    <xs:annotation>
+      <xs:documentation>An augmentation point for type j:ArrestSubjectAssociationType</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="ArrestSubjectClearanceIndicator" type="niem-xs:boolean" nillable="true">
+    <xs:annotation>
+      <xs:documentation>True if the arrest of this person clears the Incident; false if the Incident was cleared prior to the arrest of this person.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="ArrestSubjectCountAbstract" abstract="true">
@@ -12130,6 +12114,16 @@
   <xs:element name="ArrestSubjectCustodyTransfer" type="j:CustodyTransferType" nillable="true">
     <xs:annotation>
       <xs:documentation>A transfer of custody or transportation of a subject from one peace official or location to another.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="ArrestSubjectJuvenileDispositionAbstract" abstract="true">
+    <xs:annotation>
+      <xs:documentation>A data concept for a disposition of the arrestee, if the arrestee was under the age of 18 at the time of arrest.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="ArrestSubjectJuvenileDispositionCode" type="ndex:JuvenileDispositionCodeType" substitutionGroup="j:ArrestSubjectJuvenileDispositionAbstract" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A disposition of the arrestee, if the arrestee was under the age of 18 at the time of arrest.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="ArrestSubjectRightsReadIndicator" type="niem-xs:boolean" nillable="true">
