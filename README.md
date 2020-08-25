@@ -49,6 +49,7 @@ Note that schema updates have been committed per issue, so issue-specific file d
 - Moved j:ChargeNCICText to substitution group [(#27)](https://github.com/NIEM/NIEM-Releases/issues/27)
 - Renamed j:SupervisionFineAmount and j:CourtCostAmount elements in j:SentenceType [(#25)](https://github.com/NIEM/NIEM-Releases/issues/25)
 - Removed person finger position elements from j:PersonAugmentationType [(#159)](https://github.com/NIEM/NIEM-Releases/issues/159)
+- Updated person sex codes [(#146)](https://github.com/NIEM/NIEM-Releases/issues/146)
 
 ### Code Tables
 
