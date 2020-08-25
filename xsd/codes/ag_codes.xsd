@@ -19,10 +19,7 @@
   <xs:import namespace="http://release.niem.gov/niem/structures/5.0/" schemaLocation="../utility/structures.xsd"/>
   <xs:simpleType name="CLUIDSimpleType">
     <xs:annotation>
-      <xs:documentation>A data type for system-generated internal identifier of a common land unit (CLU). This identifier is for internal access use only.
-  A CLU is the smallest unit of land that has a permanent, contiguous boundary, common land cover and land management, a common owner, and a common producer association.
-  A CLU is closely related to FSA's definition of 'fields', according to Handbook 2-CP. A CLU is also closely related to land units such as parcels, farmsteads, and lots that are used by NRCS, RMA and RD.
-  The authoritative source of CLU Identifier is Farm Records. CLU Identifier can remain constant even if the precise geospatial shape of the CLU is slightly altered.</xs:documentation>
+      <xs:documentation>A data type for system-generated internal identifier of a common land unit (CLU). This identifier is for internal access use only.</xs:documentation>
     </xs:annotation>
     <xs:restriction base="xs:string">
       <xs:length value="36"/>
@@ -305,11 +302,7 @@
   </xs:complexType>
   <xs:simpleType name="CropYearSimpleType">
     <xs:annotation>
-      <xs:documentation>A data type to indicate a period of time (in year) within which the crop is normally grown and designated by the calendar year in which the crop is normally harvested.
-  For crops:
-  - Harvested over 2 calendar years, the crop year is the calendar year in which the majority of the crop would have been harvested.
-  - Grown over more than 2 calendar years, each year in the growing period will be considered as a separate crop year designated by the calendar year in which the crop sustained a loss.
-  RMA's regulations define Crop Year as the period within which the insured crop is normally grown, regardless of whether or not it is actually grown, and designated by the calendar year in which the insured crop is normally harvested, unless otherwise specified in the Crop Provisions.</xs:documentation>
+      <xs:documentation>A data type to indicate a period of time (in year) within which the crop is normally grown and designated by the calendar year in which the crop is normally harvested.</xs:documentation>
     </xs:annotation>
     <xs:restriction base="xs:integer">
       <xs:pattern value="^([1][9]\d\d|[2]\d\d\d)$"/>
@@ -328,8 +321,7 @@
   </xs:complexType>
   <xs:simpleType name="FarmNumberIDSimpleType">
     <xs:annotation>
-      <xs:documentation>A data type for identification number assigned to all land under control of a particular operator within a particular county.
-  Each County assigns Farm Numbers independently. As a result, farms in different counties might be assigned the same Farm Number; i.e, a Farm Number might be unique only within a particular county. Thus, to uniquely identify a farm, the State FSA Code and County FSA Code must be specified in combination with the Farm Number.</xs:documentation>
+      <xs:documentation>A data type for identification number assigned to all land under control of a particular operator within a particular county.</xs:documentation>
     </xs:annotation>
     <xs:restriction base="xs:integer">
       <xs:minInclusive value="1"/>
@@ -349,9 +341,7 @@
   </xs:complexType>
   <xs:simpleType name="FieldNumberIDSimpleType">
     <xs:annotation>
-      <xs:documentation>A data type for identification number assigned to a field of land that is part of a farm tract.
-  Field numbers are assigned by an FSA county office, and are unique within that office''s farms. A Field Number is used in conjunction with Tract Number, State FSA Code and County FSA Code for uniqueness.
-  Field number and Tract Number are not necessarily unique based upon State ANSI Code and County ANSI Code in instances where the ANSI codes are not the same as the FSA codes.</xs:documentation>
+      <xs:documentation>A data type for identification number assigned to a field of land that is part of a farm tract.</xs:documentation>
     </xs:annotation>
     <xs:restriction base="xs:integer">
       <xs:minInclusive value="1"/>
@@ -544,12 +534,7 @@
   </xs:complexType>
   <xs:simpleType name="IrrigationPracticeCodeSimpleType">
     <xs:annotation>
-      <xs:documentation>A data type containing the irrigation practice code used for a unit of land with a crop.
-  Irrigated Practice is the method of producing a crop by which water, from an adequate water source, is artificially applied in sufficient amounts by appropriate and adequate irrigation equipment and facilities and at the proper times necessary to produce one of the following:
-  1. the yield expected for the area.
-  2. the yield used to establish the production guarantee or amount of insurance/coverage on the irrigated acreage planted to the commodity.
-  3. the producer established approved yield, as applicable.
-  Acreage adjacent to water, such as but not limited to a pond, lake, river, stream, creek or brook, shall not be considered irrigated based solely on the proximity to the water.</xs:documentation>
+      <xs:documentation>A data type containing the irrigation practice code used for a unit of land with a crop.</xs:documentation>
     </xs:annotation>
     <xs:restriction base="xs:token">
       <xs:enumeration value="I">
@@ -661,9 +646,7 @@
   </xs:complexType>
   <xs:simpleType name="OrganicPracticeCategoryCodeSimpleType">
     <xs:annotation>
-      <xs:documentation>A data type containing certification codes used for farm acreage in regards to a system/plan of production and handling practice to produce an organic commodity.
-  Organic practice that is Certified means a system/plan of production and handling practices to respond to site-specific conditions by integrating cultural, biological, and mechanical practices that foster cycling of resources, promote ecological balance, and conserve biodiversity, is certified by an accredited certifying agent, and used to produce an organic commodity or product according to the Organic Foods Production Act of 1990.
-  Organic practice that is Transitional means a system/plan of production and handling practices to produce an organic commodity or product in accordance with the Organic Foods Production Act of 1990, but has not yet qualified to be designated as certified organic.</xs:documentation>
+      <xs:documentation>A data type containing certification codes used for farm acreage in regards to a system/plan of production and handling practice to produce an organic commodity.</xs:documentation>
     </xs:annotation>
     <xs:restriction base="xs:token">
       <xs:enumeration value="N">
@@ -714,9 +697,7 @@
   </xs:complexType>
   <xs:simpleType name="OriginatorIdentificationIDSimpleType">
     <xs:annotation>
-      <xs:documentation>A data type for identifying the entity responsible for originating/publishing data.
-  For Acreage Reporting it identifies the FSA Service Center, Approved Insurance Provider (AIP), or Third Party Site which collected and published the acreage data and any accompanying geospatial data.
-  The identification consists of a prefix indicating the type of Originator, followed by an  identification that uniquely identifies the Originator for that type.</xs:documentation>
+      <xs:documentation>A data type for identifying the entity responsible for originating/publishing data.</xs:documentation>
     </xs:annotation>
     <xs:restriction base="xs:string">
       <xs:length value="6"/>
@@ -908,9 +889,7 @@
   </xs:complexType>
   <xs:simpleType name="SubfieldNumberSimpleType">
     <xs:annotation>
-      <xs:documentation>A data type for alpha number that is used to uniquely identify a subfield within a field, within a tract within a farm within a state and county.
-  Subfields are areas of a field that share a set of common planting characteristic in terms of crop, crop type, intended use, etc. 
-  By convention the first defined subfield is given a value of 'A', with subsequent subfields following in alphabetic order.</xs:documentation>
+      <xs:documentation>A data type for alpha number that is used to uniquely identify a subfield within a field, within a tract within a farm within a state and county.</xs:documentation>
     </xs:annotation>
     <xs:restriction base="xs:string">
       <xs:length value="2"/>
@@ -974,9 +953,7 @@
   </xs:complexType>
   <xs:simpleType name="TractNumberIDSimpleType">
     <xs:annotation>
-      <xs:documentation>A data type for identification number assigned to a unit of contiguous land that is under one ownership and that is operated as a farm or part of a farm. An owner is a person or business having deed to the land.
-  Tract numbers are assigned by an FSA county office, and are unique within that office''s farms. A Tract Number is used in conjunction with a State FSA Code and County FSA Code for uniqueness.
-  Tract numbers are not necessarily unique based upon State ANSI Code and County ANSI in instance where the ANSI codes are not the same as the FSA codes.</xs:documentation>
+      <xs:documentation>A data type for identification number assigned to a unit of contiguous land that is under one ownership and that is operated as a farm or part of a farm. An owner is a person or business having deed to the land.</xs:documentation>
     </xs:annotation>
     <xs:restriction base="xs:integer">
       <xs:minInclusive value="1"/>

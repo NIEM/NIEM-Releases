@@ -78,7 +78,7 @@ Note that schema updates have been committed per issue, so issue-specific file d
 - Fixed invalid augmentation names [(#78)](https://github.com/NIEM/NIEM-Releases/issues/78)
 - Fixed definition of j:PersonSignature [(#92)](https://github.com/NIEM/NIEM-Releases/issues/92)
 - Fixed spelling errors and added local terminology [(#131)](https://github.com/NIEM/NIEM-Releases/issues/131)
-- Fixed definition formatting [(#132)](https://github.com/NIEM/NIEM-Releases/issues/132) - *in progress*
+- Fixed definition formatting [(#132)](https://github.com/NIEM/NIEM-Releases/issues/132)
 - Harmonized warrant components in Justice and Screening [(#62)](https://github.com/NIEM/NIEM-Releases/issues/62)
 - Harmonized military summary components [(#86)](https://github.com/NIEM/NIEM-Releases/issues/86)
 - Harmonized building components [(#98)](https://github.com/NIEM/NIEM-Releases/issues/98)

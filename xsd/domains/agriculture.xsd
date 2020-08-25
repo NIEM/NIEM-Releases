@@ -41,8 +41,7 @@
   <xs:import namespace="http://release.niem.gov/niem/structures/5.0/" schemaLocation="../utility/structures.xsd"/>
   <xs:complexType name="AcreageSubmissionFileType">
     <xs:annotation>
-      <xs:documentation>A data type containing the entire set of the crops planted on a farm, itemized down to the acreage of individual fields and subfields and the individual producer stakeholders.
-  This file set is used to transmit an acreage report from an FSA County Office, an Approved Insurance Provider (AIP), or a producer.</xs:documentation>
+      <xs:documentation>A data type containing the entire set of the crops planted on a farm, itemized down to the acreage of individual fields and subfields and the individual producer stakeholders.</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
       <xs:extension base="structures:ObjectType">
@@ -212,18 +211,12 @@
   </xs:element>
   <xs:element name="AdministrativeCountyFSACode" type="usda_fsa:AdministrativeCountyFSACodeType" nillable="true">
     <xs:annotation>
-      <xs:documentation>A county code of the administering county office.
-  The code is used within the Farm Service Agency (FSA) to identify a county, equivalent entity, or combination thereof within the United States, its possessions, and associated areas as defined within Handbook 1-CM, Exhibit 100.
-  Many of the code values used by are similar to County ANSI/FIPS Code, which follows the American National Standards Institute (ANSI) numeric INCITS 31-2009 and Federal Information Processing Standards Publications (FIPS Pub) 6-4 standard. The expanded even-numbered FSA codes identify counties that contain more than one office due to geographic considerations.
-  Specific values are documented in Handbook 1-CM.</xs:documentation>
+      <xs:documentation>A county code of the administering county office.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="AdministrativeStateFSACode" type="usda_fsa:AdministrativeStateFSACodeType" nillable="true">
     <xs:annotation>
-      <xs:documentation>A state code of administering state office.
-  State code used within the Farm Service Agency (FSA) to identify a state within the United States, United States Possessions, freely associated areas of the United States, or a combination thereof as defined within Handbook 1-CM, Exhibit 100.
-  Many of the code values used by State FSA Code are similar to State ANSI/FIPS Code, which follows the American National Standards Institute (ANSI) numeric INCITS 31-2009 and Federal Information Processing Standards Publications (FIPS Pub) 6-4 standard. In some cases FSA codes are different from the ANSI/FIPS codes.
-  Specific values are documented in the Handbook 1-CM, Exhibit 100.</xs:documentation>
+      <xs:documentation>A state code of administering state office.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="AgricultureProductionPlan" type="ag:AgricultureProductionPlanType" nillable="true">
@@ -238,10 +231,7 @@
   </xs:element>
   <xs:element name="CLUID" type="ag_codes:CLUIDType" nillable="true">
     <xs:annotation>
-      <xs:documentation>A system-generated internal identifier of a common land unit (CLU). This identifier is for internal access use only.
-  A CLU is the smallest unit of land that has a permanent, contiguous boundary, common land cover and land management, a common owner, and a common producer association.
-  A CLU is closely related to FS's definition of 'fields', according to Handbook 2-CP. A CLU is also closely related to land units such as parcels, farmsteads, and lots that are used by NRCS, RMA and RD.
-  The authoritative source of CLU Identifier is Farm Records. CLU Identifier can remain constant even if the precise geospatial shape of the CLU is slightly altered.</xs:documentation>
+      <xs:documentation>A system-generated internal identifier of a common land unit (CLU).</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="CLUProducerReviewRequestIndicator" type="niem-xs:boolean" nillable="true">
@@ -266,12 +256,7 @@
   </xs:element>
   <xs:element name="CropYearValue" type="ag_codes:CropYearType" nillable="true">
     <xs:annotation>
-      <xs:documentation>A period of time (in year) within which the crop is normally grown and designated by the calendar year in which the crop is normally harvested.&#13;
-				For crops:&#13;
-				- Harvested over 2 calendar years, the crop year is the calendar year in which the majority of the crop would have been harvested.&#13;
-				- Grown over more than 2 calendar years, each year in the growing period will be considered as a separate crop year designated by the calendar year in which the crop sustained a loss.&#13;
-				- For which CAT coverage is available, the crop year will be as defined by such coverage.&#13;
-				RMA's regulations define Crop Year as the period within which the insured crop is normally grown, regardless of whether or not it is actually grown, and designated by the calendar year in which the insured crop is normally harvested, unless otherwise specified in the Crop Provisions</xs:documentation>
+      <xs:documentation>A period of time (in year) within which the crop is normally grown and designated by the calendar year in which the crop is normally harvested.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="CustomerInfo" type="ag:CustomerInfoType" nillable="true">
@@ -286,8 +271,7 @@
   </xs:element>
   <xs:element name="CustomerInterAgencyIdentificationID" type="niem-xs:string" nillable="true">
     <xs:annotation>
-      <xs:documentation>A system generated, unique internal identifier used between agencies to identify a USDA customer (individual or business).
-  Currently SCIMS Core Customer Identifier is the source value. This will change if a different customer unique identifier is adopted.</xs:documentation>
+      <xs:documentation>A system generated, unique internal identifier used between agencies to identify a USDA customer (individual or business).</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="FarmCropAcreage" type="ag:FarmCropAcreageType" nillable="true">
@@ -302,8 +286,7 @@
   </xs:element>
   <xs:element name="FarmNumberID" type="ag_codes:FarmNumberIDType" nillable="true">
     <xs:annotation>
-      <xs:documentation>An identifier assigned to all land under control of a particular operator within a particular county.
-  Each County assigns Farm Numbers independently. As a result, farms in different counties might be assigned the same Farm Number; i.e, a Farm Number might be unique only within a particular county. Thus, to uniquely identify a farm, the State FSA Code and County FSA Code must be specified in combination with the Farm Number.</xs:documentation>
+      <xs:documentation>An identifier assigned to all land under control of a particular operator within a particular county.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="FieldCropAcreage" type="ag:FieldCropAcreageType" nillable="true">
@@ -318,9 +301,7 @@
   </xs:element>
   <xs:element name="FieldNumberID" type="ag_codes:FieldNumberIDType" nillable="true">
     <xs:annotation>
-      <xs:documentation>An identifier number assigned to a field of land that is part of a farm tract.
-  Field numbers are assigned by an FSA county office, and are unique within that office's farms. A Field Number is used in conjunction with Tract Number, State FSA Code and County FSA Code for uniqueness.
-  Field number and Tract Number are not necessarily unique based upon State ANSI Code and County ANSI Code in instances where the ANSI codes are not the same as the FSA codes.</xs:documentation>
+      <xs:documentation>An identifier number assigned to a field of land that is part of a farm tract.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="FileCustomerID" type="ag_codes:FileCustomerIDType" nillable="true">
@@ -440,9 +421,7 @@
   </xs:element>
   <xs:element name="OriginatorIdentificationID" type="ag_codes:OriginatorIdentificationIDType" nillable="true">
     <xs:annotation>
-      <xs:documentation>An identifier of the entity responsible for originating/publishing data.
-  For Acreage Reporting it identifies the FSA Service Center, Approved Insurance Provider (AIP), or Third Party Site which collected and published the acreage data and any accompanying geospatial data.
-  The identification consists of a prefix indicating the type of Originator, followed by an  identification that uniquely identifies the Originator for that type.</xs:documentation>
+      <xs:documentation>An identifier of the entity responsible for originating/publishing data.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="PlantedDateModifiedIndicator" type="niem-xs:boolean" nillable="true">
@@ -517,9 +496,7 @@
   </xs:element>
   <xs:element name="TaxIdentificationID" type="ag_codes:TaxIdentificationIDType" nillable="true">
     <xs:annotation>
-      <xs:documentation>A tax identifier assigned to a specific individual, business or other entity and is used to authenticate the individual/entity for matters of taxation and other federal government business.
-  Tax Identification may be a Social Security or Employer Identification number.
-  Federal Tax Identification is not necessarily unique for all United States Department of Agriculture (USDA) customers unless it is combined with a Tax Identification Type Code.</xs:documentation>
+      <xs:documentation>A tax identifier assigned to a specific individual, business or other entity and is used to authenticate the individual/entity for matters of taxation and other federal government business.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="TractCropAcreage" type="ag:TractCropAcreageType" nillable="true">
@@ -534,8 +511,7 @@
   </xs:element>
   <xs:element name="TractNumberID" type="ag_codes:TractNumberIDType" nillable="true">
     <xs:annotation>
-      <xs:documentation>An identifier assigned to a unit of contiguous land that is under one ownership and that is operated as a farm or part of a farm. An owner is a person or business having deed to the land.
-  Tract numbers are assigned by an FSA county office, an</xs:documentation>
+      <xs:documentation>An identifier assigned to a unit of contiguous land that is under one ownership and that is operated as a farm or part of a farm. An owner is a person or business having deed to the land.</xs:documentation>
     </xs:annotation>
   </xs:element>
 </xs:schema>
