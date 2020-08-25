@@ -5558,32 +5558,6 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-  <xs:complexType name="MedicalTreatmentType">
-    <xs:annotation>
-      <xs:documentation>A data type for an activity involving medical care of a subject.</xs:documentation>
-    </xs:annotation>
-    <xs:complexContent>
-      <xs:extension base="nc:TreatmentType">
-        <xs:sequence>
-          <xs:element ref="j:MedicalTreatmentConditionText" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="j:MedicalTreatmentEstimatedText" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="j:MedicalTreatmentImmediacyElectiveIndicator" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="j:MedicalTreatmentImmediacyEmergencyIndicator" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="j:MedicalTreatmentImmediacyMandatoryIndicator" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="j:MedicalTreatmentIncarcerationText" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="j:MedicalTreatmentMedicalOfficerSignatureDate" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="j:MedicalTreatmentPrecautionsEntericIndicator" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="j:MedicalTreatmentPrecautionsRespiratoryIndicator" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="j:MedicalTreatmentPrecautionsUniversalIndicator" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="j:MedicalTreatmentReasonText" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="j:MedicalTreatmentRecommendedText" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="j:MedicalTreatmentRemarksText" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="j:MedicalTreatmentRequestApprovedIndicator" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="j:MedicalTreatmentAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
-        </xs:sequence>
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
   <xs:complexType name="MedicalVisitType">
     <xs:annotation>
       <xs:documentation>A data type for an event of a subject being brought to see a medical professional.</xs:documentation>
@@ -10346,15 +10320,29 @@
     <xs:complexContent>
       <xs:extension base="structures:AugmentationType">
         <xs:sequence>
-          <xs:element ref="j:PrescribedMedicationName" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="j:PrescribedMedicationReasonText" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="j:PrescriptionOrderFollowedIndicator" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="j:PsychiatricDisorderIndicator" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="j:PsychologicalDisorderIndicator" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="j:PhysiologicalDisorderIndicator" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="j:TreatmentConditionText" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="j:TreatmentDiagnosisText" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="j:PersonTreatmentFee" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="j:TreatmentEstimatedText" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="j:TreatmentFee" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="j:TreatmentImmediacyElectiveIndicator" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="j:TreatmentImmediacyEmergencyIndicator" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="j:TreatmentImmediacyMandatoryIndicator" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="j:TreatmentIncarcerationText" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="j:TreatmentIndicator" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="j:TreatmentMedicalOfficerSignatureDate" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="j:TreatmentPhysiologicalDisorderIndicator" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="j:TreatmentPrecautionsEntericIndicator" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="j:TreatmentPrecautionsRespiratoryIndicator" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="j:TreatmentPrecautionsUniversalIndicator" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="j:TreatmentPrescribedMedicationName" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="j:TreatmentPrescribedMedicationReasonText" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="j:TreatmentPrescriptionOrderFollowedIndicator" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="j:TreatmentPsychiatricDisorderIndicator" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="j:TreatmentPsychologicalDisorderIndicator" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="j:TreatmentReasonText" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="j:TreatmentRecommendedText" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="j:TreatmentRemarksText" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="j:TreatmentRequestApprovedIndicator" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -21092,81 +21080,6 @@
       <xs:documentation>An activity involving medical care of a subject.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="MedicalTreatmentAugmentationPoint" abstract="true">
-    <xs:annotation>
-      <xs:documentation>An augmentation point for type j:MedicalTreatmentType</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="MedicalTreatmentConditionText" type="nc:TextType" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A description of the condition suggesting removal to an external medical facility.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="MedicalTreatmentEstimatedText" type="nc:TextType" nillable="true">
-    <xs:annotation>
-      <xs:documentation>An estimated time the subject will be away from the corrections facility.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="MedicalTreatmentImmediacyElectiveIndicator" type="niem-xs:boolean" nillable="true">
-    <xs:annotation>
-      <xs:documentation>True if the medical treatment is elective; false otherwise.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="MedicalTreatmentImmediacyEmergencyIndicator" type="niem-xs:boolean" nillable="true">
-    <xs:annotation>
-      <xs:documentation>True if the medical treatment is emergency; false otherwise.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="MedicalTreatmentImmediacyMandatoryIndicator" type="niem-xs:boolean" nillable="true">
-    <xs:annotation>
-      <xs:documentation>True if the medical treatment is mandatory; false otherwise.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="MedicalTreatmentIncarcerationText" type="nc:TextType" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A comment specific to medical treatment offered during a subject's incarceration.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="MedicalTreatmentMedicalOfficerSignatureDate" type="nc:DateType" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A date on which the medical officer signed the request form.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="MedicalTreatmentPrecautionsEntericIndicator" type="niem-xs:boolean" nillable="true">
-    <xs:annotation>
-      <xs:documentation>True if there are precautions that should be adhered to because the subject is infected with germs transmitted into the stool; false otherwise.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="MedicalTreatmentPrecautionsRespiratoryIndicator" type="niem-xs:boolean" nillable="true">
-    <xs:annotation>
-      <xs:documentation>True if there are precautions that should be adhered to because the subject being transported has an air-borne illness; false otherwise.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="MedicalTreatmentPrecautionsUniversalIndicator" type="niem-xs:boolean" nillable="true">
-    <xs:annotation>
-      <xs:documentation>True if there are precautions that should be adhered to at all times; false otherwise.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="MedicalTreatmentReasonText" type="nc:TextType" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A reason for using an external medical facility.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="MedicalTreatmentRecommendedText" type="nc:TextType" nillable="true">
-    <xs:annotation>
-      <xs:documentation>An examination or therapy recommended to take place at the external medical facility.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="MedicalTreatmentRemarksText" type="nc:TextType" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A remark about the medical treatment .</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="MedicalTreatmentRequestApprovedIndicator" type="niem-xs:boolean" nillable="true">
-    <xs:annotation>
-      <xs:documentation>True if the medical treatment request was approved; false otherwise.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
   <xs:element name="MedicalVisit" type="j:MedicalVisitType" nillable="true">
     <xs:annotation>
       <xs:documentation>An event of a subject being brought to see a medical professional.</xs:documentation>
@@ -25077,11 +24990,6 @@
       <xs:documentation>A relationship between a Person and any organization, i.e., club, association or group of individuals, either formal or informal (including traditional gangs and terrorist organizations), that may have a common name or identifying symbol, and whose members engage in activities that include, but are not limited to planning, organizing, threatening, financing, soliciting, committing or attempting to commit acts that would violate the law, which detract from the safe and orderly operations of society.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="PersonTreatmentFee" type="nc:ObligationType" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A monetary fee associated with a treatment</xs:documentation>
-    </xs:annotation>
-  </xs:element>
   <xs:element name="PersonUSMSFugitiveIdentification" type="nc:IdentificationType" nillable="true">
     <xs:annotation>
       <xs:documentation>An identification assigned to a fugitive by the U.S. Marshal Service (USMS).</xs:documentation>
@@ -25135,11 +25043,6 @@
   <xs:element name="PhysicalMailAssociationAugmentationPoint" abstract="true">
     <xs:annotation>
       <xs:documentation>An augmentation point for PhysicalMailAssociationType.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="PhysiologicalDisorderIndicator" type="niem-xs:boolean" nillable="true">
-    <xs:annotation>
-      <xs:documentation>True if a Person has been diagnosed with a Physiological Disorder; false otherwise.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="Plan" type="j:PlanType" nillable="true">
@@ -25270,21 +25173,6 @@
   <xs:element name="PreparingOfficialRecommendation" type="nc:CommentType" nillable="true">
     <xs:annotation>
       <xs:documentation>A recommendation of the preparing official.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="PrescribedMedicationName" type="nc:TextType" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A name of a Person's prescribed medication</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="PrescribedMedicationReasonText" type="nc:TextType" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A reason provided for an person's prescribed medication</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="PrescriptionOrderFollowedIndicator" type="niem-xs:boolean" nillable="true">
-    <xs:annotation>
-      <xs:documentation>True if a Person has been taking medication as prescribed; false otherwise.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="PresentenceInvestigation" type="j:PresentenceInvestigationType" nillable="true">
@@ -25710,16 +25598,6 @@
   <xs:element name="ProtectionOrderRestrictedPerson" type="nc:PersonType" nillable="true">
     <xs:annotation>
       <xs:documentation>A person that a subject is restricted from having any contact with as defined in a protection order.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="PsychiatricDisorderIndicator" type="niem-xs:boolean" nillable="true">
-    <xs:annotation>
-      <xs:documentation>True if a Person has been diagnosed with a Psychiatric Disorder; false otherwise.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="PsychologicalDisorderIndicator" type="niem-xs:boolean" nillable="true">
-    <xs:annotation>
-      <xs:documentation>True if a Person has been diagnosed with a Psychological Disorder; false otherwise.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="RansomMoneyCode" type="ncic:RMICodeType" nillable="true">
@@ -29802,14 +29680,119 @@
       <xs:documentation>Additional information about a treatment.</xs:documentation>
     </xs:annotation>
   </xs:element>
+  <xs:element name="TreatmentConditionText" type="nc:TextType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A description of the condition suggesting removal to an external medical facility.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
   <xs:element name="TreatmentDiagnosisText" type="nc:TextType" nillable="true">
     <xs:annotation>
       <xs:documentation>A determining or analysis of the manner in which to treat the cause or nature of a problem</xs:documentation>
     </xs:annotation>
   </xs:element>
+  <xs:element name="TreatmentEstimatedText" type="nc:TextType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>An estimated time the subject will be away from the corrections facility.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="TreatmentFee" type="nc:ObligationType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A monetary fee associated with a treatment</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="TreatmentImmediacyElectiveIndicator" type="niem-xs:boolean" nillable="true">
+    <xs:annotation>
+      <xs:documentation>True if the medical treatment is elective; false otherwise.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="TreatmentImmediacyEmergencyIndicator" type="niem-xs:boolean" nillable="true">
+    <xs:annotation>
+      <xs:documentation>True if the medical treatment is emergency; false otherwise.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="TreatmentImmediacyMandatoryIndicator" type="niem-xs:boolean" nillable="true">
+    <xs:annotation>
+      <xs:documentation>True if the medical treatment is mandatory; false otherwise.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="TreatmentIncarcerationText" type="nc:TextType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A comment specific to medical treatment offered during a subject's incarceration.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
   <xs:element name="TreatmentIndicator" type="niem-xs:boolean" nillable="true">
     <xs:annotation>
       <xs:documentation>True if a Person has or is currently undergoing treatment; false otherwise.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="TreatmentMedicalOfficerSignatureDate" type="nc:DateType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A date on which the medical officer signed the request form.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="TreatmentPhysiologicalDisorderIndicator" type="niem-xs:boolean" nillable="true">
+    <xs:annotation>
+      <xs:documentation>True if a Person has been diagnosed with a Physiological Disorder; false otherwise.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="TreatmentPrecautionsEntericIndicator" type="niem-xs:boolean" nillable="true">
+    <xs:annotation>
+      <xs:documentation>True if there are precautions that should be adhered to because the subject is infected with germs transmitted into the stool; false otherwise.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="TreatmentPrecautionsRespiratoryIndicator" type="niem-xs:boolean" nillable="true">
+    <xs:annotation>
+      <xs:documentation>True if there are precautions that should be adhered to because the subject being transported has an air-borne illness; false otherwise.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="TreatmentPrecautionsUniversalIndicator" type="niem-xs:boolean" nillable="true">
+    <xs:annotation>
+      <xs:documentation>True if there are precautions that should be adhered to at all times; false otherwise.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="TreatmentPrescribedMedicationName" type="nc:TextType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A name of a Person's prescribed medication</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="TreatmentPrescribedMedicationReasonText" type="nc:TextType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A reason provided for an person's prescribed medication</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="TreatmentPrescriptionOrderFollowedIndicator" type="niem-xs:boolean" nillable="true">
+    <xs:annotation>
+      <xs:documentation>True if a Person has been taking medication as prescribed; false otherwise.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="TreatmentPsychiatricDisorderIndicator" type="niem-xs:boolean" nillable="true">
+    <xs:annotation>
+      <xs:documentation>True if a Person has been diagnosed with a Psychiatric Disorder; false otherwise.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="TreatmentPsychologicalDisorderIndicator" type="niem-xs:boolean" nillable="true">
+    <xs:annotation>
+      <xs:documentation>True if a Person has been diagnosed with a Psychological Disorder; false otherwise.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="TreatmentReasonText" type="nc:TextType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A reason for using an external medical facility.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="TreatmentRecommendedText" type="nc:TextType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>An examination or therapy recommended to take place at the external medical facility.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="TreatmentRemarksText" type="nc:TextType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A remark about the medical treatment .</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="TreatmentRequestApprovedIndicator" type="niem-xs:boolean" nillable="true">
+    <xs:annotation>
+      <xs:documentation>True if the medical treatment request was approved; false otherwise.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="TruckMakeCode" type="ncic:TrucksCodeType" substitutionGroup="nc:VehicleMakeAbstract" nillable="true">
