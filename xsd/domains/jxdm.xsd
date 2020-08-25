@@ -9152,24 +9152,24 @@
       <xs:extension base="nc:ActivityType">
         <xs:sequence>
           <xs:element ref="j:SentenceAggravatedIndicator" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="j:SentenceImposedText" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="j:SentenceCharge" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="j:SentenceCondition" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="j:SentenceConfinementCreditDayQuantity" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="j:SentenceConfinementCreditIndicator" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="j:SentenceCourtFeeAmount" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="j:SentenceDeferredIndicator" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="j:SentenceDeferredTerm" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="j:SentenceDescriptionText" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="j:SentenceExpirationDate" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="j:SentenceFineAmount" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="j:SentenceGroupingText" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="j:SentenceImposedText" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="j:SentenceIssuerEntity" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="j:SentenceRegisterSexOffenderIndicator" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="j:SentenceSubject" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="j:SentenceSuspendedIndicator" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="j:SentenceSuspendedTerm" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="j:SentenceTerm" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="j:CourtCostAmount" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="j:SupervisionFineAmount" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="j:SentenceAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
       </xs:extension>
@@ -14499,11 +14499,6 @@
   <xs:element name="CourtClerk" type="j:JudicialOfficialType" nillable="true">
     <xs:annotation>
       <xs:documentation>A person who performs the clerk duties in a court.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="CourtCostAmount" type="nc:AmountType" nillable="true">
-    <xs:annotation>
-      <xs:documentation>An amount of expenses of prosecuting the case that a convicted subject may be ordered to pay as reimbursement.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="CourtDivisionText" type="nc:TextType" nillable="true">
@@ -26611,6 +26606,11 @@
       <xs:documentation>True if any days served preceding the sentence will be applied to the sentence duration; false otherwise.</xs:documentation>
     </xs:annotation>
   </xs:element>
+  <xs:element name="SentenceCourtFeeAmount" type="nc:AmountType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>An amount of expenses of prosecuting the case that a convicted subject may be ordered to pay as reimbursement, or any administrative costs.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
   <xs:element name="SentenceDate" type="nc:DateType" nillable="true">
     <xs:annotation>
       <xs:documentation>A date a person was sentenced.</xs:documentation>
@@ -26634,6 +26634,11 @@
   <xs:element name="SentenceExpirationDate" type="nc:DateType" nillable="true">
     <xs:annotation>
       <xs:documentation>A date the sentence expires.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="SentenceFineAmount" type="nc:AmountType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A pecuniary criminal punishment or penalty payable to the public treasury.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="SentenceGroupingText" type="nc:TextType" nillable="true">
@@ -29029,11 +29034,6 @@
   <xs:element name="SupervisionFelonyOffenseIndicator" type="niem-xs:boolean" nillable="true">
     <xs:annotation>
       <xs:documentation>True if a subject is incarcerated for a felony offense; false if a person is incarcerated for a misdemeanor.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="SupervisionFineAmount" type="nc:AmountType" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A pecuniary criminal punishment or penalty payable to the public treasury</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="SupervisionGoodDaysCreditText" type="nc:TextType" nillable="true">
