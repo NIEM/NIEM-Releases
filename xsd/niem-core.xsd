@@ -1542,7 +1542,7 @@
     <xs:complexContent>
       <xs:extension base="structures:ObjectType">
         <xs:sequence>
-          <xs:element ref="nc:EducationQualificationAbstract" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:EducationQualificationRepresentation" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:EducationQualificationIssuedDate" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:EducationQualificationExpirationDate" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:EducationQualificationInstitutionText" minOccurs="0" maxOccurs="unbounded"/>
@@ -2386,7 +2386,7 @@
     <xs:complexContent>
       <xs:extension base="structures:ObjectType">
         <xs:sequence>
-          <xs:element ref="nc:LanguageAbstract" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:LanguageRepresentation" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:LanguageAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
       </xs:extension>
@@ -4331,7 +4331,7 @@
     <xs:complexContent>
       <xs:extension base="structures:ObjectType">
         <xs:sequence>
-          <xs:element ref="nc:StreetDirectionalAbstract" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:StreetDirectionalRepresentation" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:StreetDirectionalAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
       </xs:extension>
@@ -7235,11 +7235,6 @@
       <xs:documentation>A degree, certificate, credit, or other educational qualification obtained by a person.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="EducationQualificationAbstract" abstract="true">
-    <xs:annotation>
-      <xs:documentation>A data concept for a degree, certificate, credit, or other educational qualification obtained by a person.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
   <xs:element name="EducationQualificationAugmentationPoint" abstract="true">
     <xs:annotation>
       <xs:documentation>An augmentation point for type nc:EducationQualificationType</xs:documentation>
@@ -7270,7 +7265,12 @@
       <xs:documentation>A level of education for the given qualification.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="EducationQualificationText" type="nc:TextType" substitutionGroup="nc:EducationQualificationAbstract" nillable="true">
+  <xs:element name="EducationQualificationRepresentation" abstract="true">
+    <xs:annotation>
+      <xs:documentation>A data concept for a representation of a degree, certificate, credit, or other educational qualification obtained by a person.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="EducationQualificationText" type="nc:TextType" substitutionGroup="nc:EducationQualificationRepresentation" nillable="true">
     <xs:annotation>
       <xs:documentation>A degree, certificate, credit, or other educational qualification obtained by a person.</xs:documentation>
     </xs:annotation>
@@ -7502,7 +7502,7 @@
   </xs:element>
   <xs:element name="EntityRepresentation" abstract="true">
     <xs:annotation>
-      <xs:documentation>A data concept for a person, organization, or thing capable of bearing legal rights and responsibilities.</xs:documentation>
+      <xs:documentation>A data concept for a representation of an entity.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="Equipment" type="nc:EquipmentType" nillable="true">
@@ -8750,19 +8750,19 @@
       <xs:documentation>A method of human communication, either spoken or written, consisting of the use of words in a structured and conventional way.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="LanguageAbstract" abstract="true">
-    <xs:annotation>
-      <xs:documentation>A data concept for a system of words or symbols used for communication.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
   <xs:element name="LanguageAugmentationPoint" abstract="true">
     <xs:annotation>
       <xs:documentation>An augmentation point for type nc:LanguageType</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="LanguageName" type="nc:TextType" substitutionGroup="nc:LanguageAbstract" nillable="true">
+  <xs:element name="LanguageName" type="nc:TextType" substitutionGroup="nc:LanguageRepresentation" nillable="true">
     <xs:annotation>
       <xs:documentation>A name of a system of words or symbols used for communication.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="LanguageRepresentation" abstract="true">
+    <xs:annotation>
+      <xs:documentation>A data concept for a representation of a system of words or symbols used for communication.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="LastUpdatedDate" type="nc:DateType" nillable="true">
@@ -12327,7 +12327,7 @@
   </xs:element>
   <xs:element name="StateRepresentation" abstract="true">
     <xs:annotation>
-      <xs:documentation>A data concept for a state, commonwealth, province, or other such geopolitical subdivision of a country.</xs:documentation>
+      <xs:documentation>A data concept for a representation of a state, commonwealth, province, or other such geopolitical subdivision of a country.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="Status" type="nc:StatusType" nillable="true">
@@ -12395,17 +12395,17 @@
       <xs:documentation>A kind of street.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="StreetDirectionalAbstract" abstract="true">
-    <xs:annotation>
-      <xs:documentation>A data concept for a direction that appears in a street name.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
   <xs:element name="StreetDirectionalAugmentationPoint" abstract="true">
     <xs:annotation>
       <xs:documentation>An augmentation point for type nc:StreetDirectionalType</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="StreetDirectionalText" type="nc:TextType" substitutionGroup="nc:StreetDirectionalAbstract" nillable="true">
+  <xs:element name="StreetDirectionalRepresentation" abstract="true">
+    <xs:annotation>
+      <xs:documentation>A data concept for a representation of a direction that appears in a street name.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="StreetDirectionalText" type="nc:TextType" substitutionGroup="nc:StreetDirectionalRepresentation" nillable="true">
     <xs:annotation>
       <xs:documentation>A direction that in a street name.</xs:documentation>
     </xs:annotation>
