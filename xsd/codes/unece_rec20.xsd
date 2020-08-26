@@ -12,6 +12,118 @@
   </xs:annotation>
   <xs:import namespace="http://release.niem.gov/niem/niem-core/5.0/" schemaLocation="../niem-core.xsd"/>
   <xs:import namespace="http://release.niem.gov/niem/structures/5.0/" schemaLocation="../utility/structures.xsd"/>
+  <xs:simpleType name="AreaCodeSimpleType">
+    <xs:annotation>
+      <xs:documentation>A data type for units of measurements for an area value.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="ACR">
+        <xs:annotation>
+          <xs:documentation>acre</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ARE">
+        <xs:annotation>
+          <xs:documentation>are</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CMK">
+        <xs:annotation>
+          <xs:documentation>square centimetre</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="DAA">
+        <xs:annotation>
+          <xs:documentation>decare</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="DMK">
+        <xs:annotation>
+          <xs:documentation>square decimetre</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="FTK">
+        <xs:annotation>
+          <xs:documentation>square foot</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="H16">
+        <xs:annotation>
+          <xs:documentation>square decametre</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="H18">
+        <xs:annotation>
+          <xs:documentation>square hectometre</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="H30">
+        <xs:annotation>
+          <xs:documentation>square micrometre (square micron)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="H59">
+        <xs:annotation>
+          <xs:documentation>square metre per newton</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="HAR">
+        <xs:annotation>
+          <xs:documentation>hectare</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="INK">
+        <xs:annotation>
+          <xs:documentation>square inch</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="KMK">
+        <xs:annotation>
+          <xs:documentation>square kilometre</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="M47">
+        <xs:annotation>
+          <xs:documentation>circular mil</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="M48">
+        <xs:annotation>
+          <xs:documentation>square mile (based on U.S. survey foot)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="MIK">
+        <xs:annotation>
+          <xs:documentation>square mile (statute mile)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="MMK">
+        <xs:annotation>
+          <xs:documentation>square millimetre</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="MTK">
+        <xs:annotation>
+          <xs:documentation>square metre</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="YDK">
+        <xs:annotation>
+          <xs:documentation>square yard</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="AreaCodeType">
+    <xs:annotation>
+      <xs:documentation>A data type for units of measurements for an area value.</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="unece:AreaCodeSimpleType">
+        <xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
   <xs:simpleType name="LengthCodeSimpleType">
     <xs:annotation>
       <xs:documentation>A data type for units of measurements for a length value.</xs:documentation>
@@ -1149,6 +1261,11 @@
       </xs:extension>
     </xs:simpleContent>
   </xs:complexType>
+  <xs:element name="AreaMeasureUnitCode" type="unece:AreaCodeType" substitutionGroup="nc:AreaMeasureUnitAbstract" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A unit of measure for area.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
   <xs:element name="LengthUnitCode" type="unece:LengthCodeType" substitutionGroup="nc:LengthUnitAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A unit of measure of a length value.</xs:documentation>

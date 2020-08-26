@@ -80,6 +80,7 @@ NIEM 5.0 has introduced auxiliary schemas to the release package.  These are sim
 ### Additions
 
 - Added ActivityLocation element to nc:ActivityType [(#71)](https://github.com/NIEM/NIEM-Releases/issues/71)
+- Added AreaMeasureType [(#143)](https://github.com/NIEM/NIEM-Releases/issues/143)
 - Added MailingAddress and PhysicalAddress as more specific substitutions for nc:Address [(#72)](https://github.com/NIEM/NIEM-Releases/issues/72)
 - Added metadata to represent the reason for empty values [(#76)](https://github.com/NIEM/NIEM-Releases/issues/76)
 - Added MilitaryPersonIdentification element to nc:MilitarySummaryType [(#32)](https://github.com/NIEM/NIEM-Releases/issues/32)
