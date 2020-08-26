@@ -9,10 +9,7 @@ The following is a summary of the key changes made in this release.  More detail
 
 - [NIEM specification updates](#niem-specification-updates)
   - [NIEM Naming and Design Rules (NDR) 5.0](#niem-naming-and-design-rules-ndr-50)
-- [Release package updates](#release-package-updates)
 - [Auxiliary content](#auxiliary-content)
-- [External Standards](#external-standards)
-- [Codes](#codes)
 - [Core](#core)
   - [Additions](#additions)
   - [Harmonization](#harmonization)
@@ -27,6 +24,11 @@ The following is a summary of the key changes made in this release.  More detail
   - [Justice](#justice)
   - [MilOps](#milops)
   - [Screening](#screening)
+- [Codes](#codes)
+  - [General changes](#general-changes)
+  - [Version updates](#version-updates)
+- [External Standards](#external-standards)
+- [Release package updates](#release-package-updates)
 - [Other updates](#other-updates)
 
 ## NIEM specification updates
@@ -38,42 +40,12 @@ This release reflects updates made to the NIEM specifications that define rules 
 - Updated structures and appinfo utility schemas and added definitions [(#157)](https://github.com/NIEM/NIEM-Releases/issues/157)
 - Reestablished structures:sequenceID attribute [(#154)](https://github.com/NIEM/NIEM-Releases/issues/154)
 
-## Release package updates
-
-- Simplified folder layout [(#140)](https://github.com/NIEM/NIEM-Releases/issues/140)
-- Changed the character encoding of the XML schemas from "US-ASCII" to "UTF-8" for better international support [(#125)](https://github.com/NIEM/NIEM-Releases/issues/125)
-- Added attribute xml:lang to reference schemas [(#153)](https://github.com/NIEM/NIEM-Releases/issues/153)
-- Normalized schema sort orders [(#179)](https://github.com/NIEM/NIEM-Releases/issues/179)
-
 ## Auxiliary content
 
 NIEM 5.0 has introduced auxiliary schemas to the release package.  These are similar to the NIEM code schemas, which provide codes in a NIEM-conformant format from authoritative sources that may or may not participate in NIEM releases or governance processes.  The auxiliary schemas provide full NIEM-conformant content (properties and types, in addition to codes) from authoritative sources that are not NIEM domains and may or may not actively participate in NIEM releases and governance.
 
 - Added Controlled Unclassified Information (CUI) marking metadata [(#156)](https://github.com/NIEM/NIEM-Releases/issues/156)
 - Added Generic Statistical Information Model (GSIM) content [(#155)](https://github.com/NIEM/NIEM-Releases/issues/155)
-
-## External Standards
-
-- Replaced the full set of GML schemas with a simplified profile representing NIEM requirements [(#128)](https://github.com/NIEM/NIEM-Releases/issues/128)
-
-## Codes
-
-- Moved Core code elements to code namespaces to enable easier code updates during minor releases [(#90)](https://github.com/NIEM/NIEM-Releases/issues/90)
-- Simplified namespace definitions [(#139)](https://github.com/NIEM/NIEM-Releases/issues/139)
-- Synchronized folders, file names, and target namespaces [(#58)](https://github.com/NIEM/NIEM-Releases/issues/58)
-- Merged FIPS 5-2 state codes and Census county codes into consolidated FIPS namespaces [(#52)](https://github.com/NIEM/NIEM-Releases/issues/52)
-- Merged DOL and BLS namespaces into BLS [(#145)](C:\cdm\niem\releases\5.0\input\harmonization\145-bls)
-- Replaced non-breaking spaces in OmniClass facility codes [(#133)](https://github.com/NIEM/NIEM-Releases/issues/133)
-- Updated GENC
-  - Added GENC alpha-2 and numeric country codes [(#94)](https://github.com/NIEM/NIEM-Releases/issues/94)
-  - Updated GENC codes to version 3-11 [(#162)](https://github.com/NIEM/NIEM-Releases/issues/162)
-- Harmonized and updated FBI codes
-  - Updated NCIC codes [(#134)](https://github.com/NIEM/NIEM-Releases/issues/134) and replaced the VMO code set with unique code values
-  - Updated NDEx codes [(#135)](https://github.com/NIEM/NIEM-Releases/issues/135)
-  - Updated UCR codes [(#136)](https://github.com/NIEM/NIEM-Releases/issues/136)
-- Updated Hazmat codes [(#175)](https://github.com/NIEM/NIEM-Releases/issues/175)
-- Updated Justice domain codes [(#137)](https://github.com/NIEM/NIEM-Releases/issues/137)
-- Updated UNECE unit of measure codes to Revision 15 (2020) [(#180)](https://github.com/NIEM/NIEM-Releases/issues/180)
 
 ## Core
 
@@ -185,6 +157,43 @@ NIEM 5.0 merges the changes made in the Core Supplements published since the las
 
 - Refactored AddressAugmentationType [(#110)](https://github.com/NIEM/NIEM-Releases/issues/110)
 - Refactored PersonNameAugmentation and PersonNameTextAugmentation [(#77)](https://github.com/NIEM/NIEM-Releases/issues/77)
+
+## Codes
+
+### General changes
+
+- Moved Core code elements to code namespaces to enable easier code updates during minor releases [(#90)](https://github.com/NIEM/NIEM-Releases/issues/90)
+- Simplified namespace definitions [(#139)](https://github.com/NIEM/NIEM-Releases/issues/139)
+- Synchronized folders, file names, and target namespaces [(#58)](https://github.com/NIEM/NIEM-Releases/issues/58)
+- Added GENC alpha-2 and numeric country codes [(#94)](https://github.com/NIEM/NIEM-Releases/issues/94)
+- Added FIPS unique 5-digit county code set [(#47)](https://github.com/NIEM/NIEM-Releases/issues/47)
+- Harmonized FBI codes across NCIC, NDEx, UCR, and Justice (see individual changes below)
+- Merged BLS and DOL namespaces into single BLS namespace [(#145)](C:\cdm\niem\releases\5.0\input\harmonization\145-bls)
+- Merged FIPS 5-2 state codes and Census county codes into consolidated FIPS namespaces [(#52)](https://github.com/NIEM/NIEM-Releases/issues/52)
+- Replaced non-breaking spaces in OmniClass facility codes [(#133)](https://github.com/NIEM/NIEM-Releases/issues/133)
+- Replaced NCIC vehicle model (VMO) codes with unique values [(#47)](https://github.com/NIEM/NIEM-Releases/issues/47)
+
+### Version updates
+
+- Updated FIPS county codes to 2019 version [(#181)](https://github.com/NIEM/NIEM-Releases/issues/181)
+- Updated GENC codes to version 3-11 [(#162)](https://github.com/NIEM/NIEM-Releases/issues/162)
+- Updated Hazmat codes [(#175)](https://github.com/NIEM/NIEM-Releases/issues/175)
+- Updated Justice domain codes [(#137)](https://github.com/NIEM/NIEM-Releases/issues/137)
+- Updated NCIC codes [(#134)](https://github.com/NIEM/NIEM-Releases/issues/134)
+- Updated NDEx codes [(#135)](https://github.com/NIEM/NIEM-Releases/issues/135)
+- Updated UCR codes [(#136)](https://github.com/NIEM/NIEM-Releases/issues/136)
+- Updated UNECE unit of measure codes to Revision 15 (2020) [(#180)](https://github.com/NIEM/NIEM-Releases/issues/180)
+
+## External Standards
+
+- Replaced the full set of GML schemas with a simplified profile representing NIEM requirements [(#128)](https://github.com/NIEM/NIEM-Releases/issues/128)
+
+## Release package updates
+
+- Simplified folder layout [(#140)](https://github.com/NIEM/NIEM-Releases/issues/140)
+- Changed the character encoding of the XML schemas from "US-ASCII" to "UTF-8" for better international support [(#125)](https://github.com/NIEM/NIEM-Releases/issues/125)
+- Added attribute xml:lang to reference schemas [(#153)](https://github.com/NIEM/NIEM-Releases/issues/153)
+- Normalized schema sort orders [(#179)](https://github.com/NIEM/NIEM-Releases/issues/179)
 
 ## Other updates
 
