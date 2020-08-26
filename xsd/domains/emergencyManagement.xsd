@@ -7120,22 +7120,6 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-  <xs:complexType name="TaskAugmentationType">
-    <xs:annotation>
-      <xs:documentation>A data type for additional information about a task.</xs:documentation>
-    </xs:annotation>
-    <xs:complexContent>
-      <xs:extension base="structures:AugmentationType">
-        <xs:sequence>
-          <xs:element ref="em:TaskAssignedDate" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="em:TaskAssignedEntity" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="em:TaskFunctionAbstract" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="em:TaskLocation" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="em:TaskCompletionStatus" minOccurs="0" maxOccurs="unbounded"/>
-        </xs:sequence>
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
   <xs:complexType name="TeamType">
     <xs:annotation>
       <xs:documentation>A data type who are credentialed and deployed as a team</xs:documentation>
@@ -14786,41 +14770,6 @@
   <xs:element name="StatusPercent" type="nc:PercentType" nillable="true">
     <xs:annotation>
       <xs:documentation>A status percentage.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="TaskAssignedDate" type="nc:DateType" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A date that a task was assigned.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="TaskAssignedEntity" type="nc:EntityType" nillable="true">
-    <xs:annotation>
-      <xs:documentation>An entity assigned to complete a task.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="TaskAugmentation" type="em:TaskAugmentationType" substitutionGroup="nc:TaskAugmentationPoint" nillable="true">
-    <xs:annotation>
-      <xs:documentation>Additional information about a task.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="TaskCompletionStatus" type="em:PercentStatusType" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A percent status of the completion of a task.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="TaskDueDate" type="nc:DateType" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A date on which a task is due to be completed.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="TaskFunctionAbstract" abstract="true">
-    <xs:annotation>
-      <xs:documentation>A data concept for a function, assignment, or task that is part of a plan.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="TaskLocation" type="nc:LocationType" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A location at which a task will occur.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="TeamAugmentationPoint" abstract="true">

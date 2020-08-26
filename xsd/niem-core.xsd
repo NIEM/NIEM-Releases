@@ -4495,13 +4495,21 @@
     <xs:complexContent>
       <xs:extension base="structures:ObjectType">
         <xs:sequence>
-          <xs:element ref="nc:TaskCriteriaForSuccessText" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="nc:TaskCurrentStatus" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:TaskAssignedDate" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:TaskAssignedEntity" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:TaskCompletedIndicator" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:TaskCompletedPercent" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:TaskDescriptionText" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:TaskDueDate" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:TaskEndDate" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:TaskFunctionAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:TaskID" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:TaskLocation" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:TaskName" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:TaskOutcomeDescriptionText" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:TaskStartDate" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:TaskStatus" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:TaskSuccessCriteriaText" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:TaskAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
       </xs:extension>
@@ -12772,19 +12780,29 @@
       <xs:documentation>A clearly defined action or activity specifically assigned to an individual or organization that must be done as it is imposed by an appropriate authority.</xs:documentation>
     </xs:annotation>
   </xs:element>
+  <xs:element name="TaskAssignedDate" type="nc:DateType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A date that a task was assigned.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="TaskAssignedEntity" type="nc:EntityType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>An entity assigned to complete a task.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
   <xs:element name="TaskAugmentationPoint" abstract="true">
     <xs:annotation>
       <xs:documentation>An augmentation point for type nc:TaskType</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="TaskCriteriaForSuccessText" type="nc:TextType" nillable="true">
+  <xs:element name="TaskCompletedIndicator" type="niem-xs:boolean" nillable="true">
     <xs:annotation>
-      <xs:documentation>A description of what needs to be done to successfully complete a task.</xs:documentation>
+      <xs:documentation>True if a task has been completed; false otherwise.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="TaskCurrentStatus" type="nc:StatusType" nillable="true">
+  <xs:element name="TaskCompletedPercent" type="nc:PercentType" nillable="true">
     <xs:annotation>
-      <xs:documentation>A status of the progress toward accomplishment of this task.</xs:documentation>
+      <xs:documentation>A percent representing the amount of the task that has been completed.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="TaskDescriptionText" type="niem-xs:string" nillable="true">
@@ -12792,9 +12810,19 @@
       <xs:documentation>A description of the task in detail.</xs:documentation>
     </xs:annotation>
   </xs:element>
+  <xs:element name="TaskDueDate" type="nc:DateType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A date on which a task is due to be completed.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
   <xs:element name="TaskEndDate" type="nc:DateType" nillable="true">
     <xs:annotation>
-      <xs:documentation>A date for the end of a task.</xs:documentation>
+      <xs:documentation>A date for the actual end of a task.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="TaskFunctionAbstract" abstract="true">
+    <xs:annotation>
+      <xs:documentation>A data concept for a function, assignment, or task that is part of a plan.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="TaskID" type="niem-xs:string" nillable="true">
@@ -12802,14 +12830,34 @@
       <xs:documentation>An identifier for a task.</xs:documentation>
     </xs:annotation>
   </xs:element>
+  <xs:element name="TaskLocation" type="nc:LocationType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A location at which a task will occur.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
   <xs:element name="TaskName" type="niem-xs:string" nillable="true">
     <xs:annotation>
       <xs:documentation>A name of a task.</xs:documentation>
     </xs:annotation>
   </xs:element>
+  <xs:element name="TaskOutcomeDescriptionText" type="nc:TextType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A description of an outcome of a task.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
   <xs:element name="TaskStartDate" type="nc:DateType" nillable="true">
     <xs:annotation>
       <xs:documentation>A date for the start of a task.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="TaskStatus" type="nc:StatusType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A status of the task.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="TaskSuccessCriteriaText" type="nc:TextType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A description of what needs to be done to successfully complete a task.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="TelecommunicationDevice" type="nc:DeviceType" nillable="true">

@@ -10051,11 +10051,9 @@
       <xs:extension base="structures:AugmentationType">
         <xs:sequence>
           <xs:element ref="j:TaskAssistanceProvider" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="j:TaskCompletionAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="j:TaskEstimatedDaysToCompletedQuantity" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="j:TaskHoursPerDayQuantity" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="j:TaskReferralDate" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="nc:TaskID" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -29073,16 +29071,6 @@
   <xs:element name="TaskAugmentation" type="j:TaskAugmentationType" substitutionGroup="nc:TaskAugmentationPoint" nillable="true">
     <xs:annotation>
       <xs:documentation>Additional information about a task.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="TaskCompletionAbstract" abstract="true">
-    <xs:annotation>
-      <xs:documentation>A data concept for a kind of outcome of a completed task.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="TaskCompletionDescriptionText" type="nc:TextType" substitutionGroup="j:TaskCompletionAbstract" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A description of a kind of outcome of a completed task.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="TaskEstimatedDaysToCompletedQuantity" type="nc:QuantityType" nillable="true">
