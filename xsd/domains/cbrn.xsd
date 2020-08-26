@@ -1274,21 +1274,6 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-  <xs:complexType name="OperatingScheduleType">
-    <xs:annotation>
-      <xs:documentation>A data type for a schedule providing the beginning and ending hours of operation by weekday, for a designated time period.</xs:documentation>
-    </xs:annotation>
-    <xs:complexContent>
-      <xs:extension base="structures:ObjectType">
-        <xs:sequence>
-          <xs:element ref="cbrn:ScheduleStartDateTime" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="cbrn:ScheduleEndDateTime" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="cbrn:ScheduleTimeZoneText" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="cbrn:OperatingScheduleAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
-        </xs:sequence>
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
   <xs:complexType name="OriginType">
     <xs:annotation>
       <xs:documentation>A data type for the origin of a relative location coordinate system.</xs:documentation>
@@ -1769,6 +1754,20 @@
           <xs:element ref="cbrn:DetectionEventUUID" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="cbrn:ScanQualityCode" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="cbrn:ScanIdentificationAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="ScheduleAugmentationType">
+    <xs:annotation>
+      <xs:documentation>A data type for additional information about a schedule.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="structures:AugmentationType">
+        <xs:sequence>
+          <xs:element ref="cbrn:ScheduleStartDateTime" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="cbrn:ScheduleEndDateTime" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="cbrn:ScheduleTimeZoneText" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -3991,14 +3990,9 @@
       <xs:documentation>True if the radiation measurement instrument detects the presence of an item; false otherwise.  Indicates the presence of a measured item in the field of view of the radiation measurement instrument during the period of time defined by the parent RadMeasurement element.  It will be</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="OperatingSchedule" type="cbrn:OperatingScheduleType" substitutionGroup="nc:ScheduleAugmentationPoint" nillable="true">
+  <xs:element name="OperatingSchedule" type="nc:ScheduleType" nillable="true">
     <xs:annotation>
       <xs:documentation>A schedule providing the beginning and ending hours of operation by weekday, for a designated time period.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="OperatingScheduleAugmentationPoint" abstract="true">
-    <xs:annotation>
-      <xs:documentation>An augmentation point for cbrn:OperatingScheduleType.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="OrganizationParentName" type="niem-xs:string" nillable="true">
@@ -4621,7 +4615,12 @@
       <xs:documentation>A code describing the quality of a scan.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="ScheduleByWeek" type="cbrn:ScheduleByWeekType" substitutionGroup="nc:ScheduleDayAugmentationPoint" nillable="true">
+  <xs:element name="ScheduleAugmentation" type="cbrn:ScheduleAugmentationType" substitutionGroup="nc:ScheduleAugmentationPoint" nillable="true">
+    <xs:annotation>
+      <xs:documentation>Additional information about a schedule.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="ScheduleByWeek" type="cbrn:ScheduleByWeekType" substitutionGroup="nc:ScheduleWeekAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A schedule where the hours are the same for weekdays.</xs:documentation>
     </xs:annotation>
@@ -4631,7 +4630,7 @@
       <xs:documentation>An augmentation point for cbrn:ScheduleByWeekType.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="ScheduleByWeekDay" type="cbrn:ScheduleByWeekDayType" substitutionGroup="nc:ScheduleDayAugmentationPoint" nillable="true">
+  <xs:element name="ScheduleByWeekDay" type="cbrn:ScheduleByWeekDayType" substitutionGroup="nc:ScheduleWeekAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A schedule where the hours are not the same for weekdays.</xs:documentation>
     </xs:annotation>

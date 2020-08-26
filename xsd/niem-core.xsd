@@ -4216,6 +4216,7 @@
           <xs:element ref="nc:ScheduleExceptionsDescriptionText" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:ScheduleNonStopIndicator" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:ScheduleStatus" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:ScheduleWeekAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:ScheduleAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
       </xs:extension>
@@ -12288,6 +12289,11 @@
   <xs:element name="ScheduleTimeRange" type="nc:TimeRangeType" nillable="true">
     <xs:annotation>
       <xs:documentation>A time range for the schedule.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="ScheduleWeekAbstract" abstract="true">
+    <xs:annotation>
+      <xs:documentation>A data concept for weekly information about a schedule.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="SecondaryDocument" type="nc:DocumentType" nillable="true">
