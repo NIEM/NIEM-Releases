@@ -57,6 +57,7 @@ Note that schema updates have been committed per issue, so issue-specific file d
 - Merged FIPS 5-2 state codes and Census county codes into consolidated FIPS namespaces [(#52)](https://github.com/NIEM/NIEM-Releases/issues/52)
 - Replaced non-breaking spaces in OmniClass facility codes [(#133)](https://github.com/NIEM/NIEM-Releases/issues/133)
 - Added GENC alpha-2 and numeric country codes [(#94)](https://github.com/NIEM/NIEM-Releases/issues/94)
+- Updated GENC codes to version 3-11 [(#162)](https://github.com/NIEM/NIEM-Releases/issues/162)
 - Updated the definition of deprecated aamva:DriverLicenseClassCodeSimpleType code "M" [(#108)](https://github.com/NIEM/NIEM-Releases/issues/108)
 - Updated FBI NCIC codes [(#134)](https://github.com/NIEM/NIEM-Releases/issues/134) and replaced the VMO code set with unique code values
 - Updated FBI NDEx codes [(#135)](https://github.com/NIEM/NIEM-Releases/issues/135)
