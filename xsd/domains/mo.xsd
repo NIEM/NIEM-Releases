@@ -1258,22 +1258,6 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-  <xs:complexType name="OperationPlanType">
-    <xs:annotation>
-      <xs:documentation>A data type for a specification for any plan for the conduct of military operations prepared in response to actual and potential contingencies.</xs:documentation>
-    </xs:annotation>
-    <xs:complexContent>
-      <xs:extension base="structures:ObjectType">
-        <xs:sequence>
-          <xs:element ref="mo:OperationPlanCreateDate" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="mo:OperationPlanTitleText" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="mo:OperationPlanUpdateDate" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="mo:OperationPlanIdentification" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="mo:OperationPlanAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
-        </xs:sequence>
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
   <xs:simpleType name="OPEXCodeSimpleType">
     <xs:annotation>
       <xs:documentation>A data type for the operational status of an event.</xs:documentation>
@@ -3193,24 +3177,9 @@
       <xs:documentation>A data concept for a military symbol code often used to display the track on a GUI.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="OperationPlan" type="mo:OperationPlanType" nillable="true">
+  <xs:element name="OperationPlan" type="nc:PlanType" nillable="true">
     <xs:annotation>
       <xs:documentation>A specification for any plan for the conduct of military operations prepared in response to actual and potential contingencies.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="OperationPlanAugmentationPoint" abstract="true">
-    <xs:annotation>
-      <xs:documentation>An augmentation point for type mo:OperationPlanType</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="OperationPlanCreateDate" type="nc:DateType" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A date on which the plan was created.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="OperationPlanIdentification" type="nc:IdentificationType" nillable="true">
-    <xs:annotation>
-      <xs:documentation>An identification of the subject plan.  Also known as a PID.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="OperationPlanTaskOrganization" type="mo:OperationPlanTaskOrganizationType" nillable="true">
@@ -3221,16 +3190,6 @@
   <xs:element name="OperationPlanTaskOrganizationAugmentationPoint" abstract="true">
     <xs:annotation>
       <xs:documentation>An augmentation point for mo:OperationPlanTaskOrganizationType</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="OperationPlanTitleText" type="niem-xs:string" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A name of the plan, operation, or exercise for the defined Plan Identification Number (PID).</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="OperationPlanUpdateDate" type="nc:DateType" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A date of last change to plan information data.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="OPEXCode" type="mo:OPEXCodeType" nillable="true">

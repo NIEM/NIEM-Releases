@@ -4199,18 +4199,6 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-  <xs:complexType name="ImprovementPlanType">
-    <xs:annotation>
-      <xs:documentation>A data type for a plan for improvement.</xs:documentation>
-    </xs:annotation>
-    <xs:complexContent>
-      <xs:extension base="j:PlanType">
-        <xs:sequence>
-          <xs:element ref="em:ImprovementPlanAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
-        </xs:sequence>
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
   <xs:simpleType name="InaccessibleCauseCodeSimpleType">
     <xs:annotation>
       <xs:documentation>A data type code to specify if the damaged area/item is assessed as inaccessible, why?</xs:documentation>
@@ -6173,31 +6161,6 @@
           <xs:element ref="em:PublicHealthEvent" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="em:PublicHealthEventPlan" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="em:PlanApprovalAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
-        </xs:sequence>
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
-  <xs:complexType name="PlanAugmentationType">
-    <xs:annotation>
-      <xs:documentation>A data type for additional information about a plan.</xs:documentation>
-    </xs:annotation>
-    <xs:complexContent>
-      <xs:extension base="structures:AugmentationType">
-        <xs:sequence>
-          <xs:element ref="em:PlanActivationDecisionText" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="em:PlanAssignedPerson" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="em:PlanDateRange" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="em:PlanName" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="em:PlanOperationalObjectiveText" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="em:PlanPurposeText" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="em:PlanTargetOutcomeText" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="em:PlanApprovalDate" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="em:PlanEstimatedFulfillmentDate" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="em:PlanApprovalEntity" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="em:PlanTask" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="em:PlanReport" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="em:PlanReleaseDate" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="em:PlanRevisionReleaseDate" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -12710,14 +12673,9 @@
       <xs:documentation>A data element for the impacted units.  If dwelling type is multi-family then how many units were impacted.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="ImprovementPlan" type="j:PlanType" nillable="true">
+  <xs:element name="ImprovementPlan" type="nc:PlanType" nillable="true">
     <xs:annotation>
       <xs:documentation>A plan for improvement.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="ImprovementPlanAugmentationPoint" abstract="true">
-    <xs:annotation>
-      <xs:documentation>An augmentation point for type em:ImprovementPlanType</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="InaccessibleCauseCode" type="em:InaccessibleCauseCodeType" nillable="true">
@@ -14080,11 +14038,6 @@
       <xs:documentation>A data element for an assurance level code, defined by FIPS 201</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="PlanActivationDecisionText" type="nc:TextType" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A description of the activation decision for an action plan.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
   <xs:element name="PlanApproval" type="em:PlanApprovalType" nillable="true">
     <xs:annotation>
       <xs:documentation>A set of information about a plan approval.</xs:documentation>
@@ -14093,41 +14046,6 @@
   <xs:element name="PlanApprovalAugmentationPoint" abstract="true">
     <xs:annotation>
       <xs:documentation>An augmentation point for type em:PlanApprovalType</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="PlanApprovalDate" type="nc:DateType" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A date of approval for a plan.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="PlanApprovalEntity" type="nc:EntityType" nillable="true">
-    <xs:annotation>
-      <xs:documentation>An entity that approves a plan.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="PlanAssignedPerson" type="nc:PersonType" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A person responsible for the implementation of a plan.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="PlanAugmentation" type="em:PlanAugmentationType" substitutionGroup="j:PlanAugmentationPoint" nillable="true">
-    <xs:annotation>
-      <xs:documentation>Additional information about a plan.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="PlanDateRange" type="nc:DateRangeType" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A date range for a planning period. For example, a plan could cover planning activities for 01/01/2019-12/31/2019 for a potential activation caused by hurricanes.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="PlanEstimatedFulfillmentDate" type="nc:DateType" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A date on which the actions of a plan are estimated to be completed.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="PlanName" type="nc:TextType" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A name or title of a plan.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="Planning" type="em:PlanningType" nillable="true">
@@ -14140,49 +14058,14 @@
       <xs:documentation>An augmentation point for type em:PlanningType</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="PlanOperationalObjectiveText" type="nc:TextType" nillable="true">
-    <xs:annotation>
-      <xs:documentation>An operational objective for a plan.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
   <xs:element name="PlanProblemAnalysisText" type="nc:TextType" nillable="true">
     <xs:annotation>
       <xs:documentation>A set of problems that occurred during on operation based on a plan.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="PlanPurposeText" type="nc:TextType" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A purpose for a plan.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="PlanReleaseDate" type="nc:DateType" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A release date for a plan.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="PlanReport" type="nc:ReportType" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A report that represents or shares information about a plan.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="PlanRevisionReleaseDate" type="nc:DateType" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A date the next revision of a plan is scheduled to be published.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
   <xs:element name="PlanSuccessAnalysisText" type="nc:TextType" nillable="true">
     <xs:annotation>
       <xs:documentation>A set of successes or objectives achieved during an operation based on a plan.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="PlanTargetOutcomeText" type="nc:TextType" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A target outcome after a plan is activated.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="PlanTask" type="nc:TaskType" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A function, assignment, or task that is part of a plan.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="PointToPointLocationTracking" type="em:PointToPointLocationTrackingType" nillable="true">
@@ -14290,7 +14173,7 @@
       <xs:documentation>A data concept for a kind of public health emergency or disease.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="PublicHealthEventPlan" type="j:PlanType" nillable="true">
+  <xs:element name="PublicHealthEventPlan" type="nc:PlanType" nillable="true">
     <xs:annotation>
       <xs:documentation>A plan that pertains to a public health emergency operation event.</xs:documentation>
     </xs:annotation>
@@ -14625,7 +14508,7 @@
       <xs:documentation>An augmentation point for type em:ResponseOperationType</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="ResponsePlan" type="j:PlanType" nillable="true">
+  <xs:element name="ResponsePlan" type="nc:PlanType" nillable="true">
     <xs:annotation>
       <xs:documentation>An incident response plan.</xs:documentation>
     </xs:annotation>
@@ -14890,7 +14773,7 @@
       <xs:documentation>A data element for the description of the staging location</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="StandardOperatingProcedures" type="j:PlanType" nillable="true">
+  <xs:element name="StandardOperatingProcedures" type="nc:PlanType" nillable="true">
     <xs:annotation>
       <xs:documentation>A set of step-by-step instructions or plans compiled to carry out a complex operation.</xs:documentation>
     </xs:annotation>

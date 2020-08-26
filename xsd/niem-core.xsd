@@ -3809,6 +3809,36 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
+  <xs:complexType name="PlanType">
+    <xs:annotation>
+      <xs:documentation>A data type for a detailed proposal for doing or achieving something.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="structures:ObjectType">
+        <xs:sequence>
+          <xs:element ref="nc:PlanActivationDecisionText" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:PlanApprovalDate" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:PlanApprovalEntity" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:PlanAssignedPerson" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:PlanComment" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:PlanCreatedDate" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:PlanDateRange" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:PlanEstimatedFulfillmentDate" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:PlanIdentification" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:PlanName" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:PlanOperationalObjectiveText" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:PlanPurposeText" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:PlanReleaseDate" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:PlanReport" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:PlanRevisionReleaseDate" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:PlanTargetOutcomeText" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:PlanTask" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:PlanUpdatedDate" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:PlanAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
   <xs:complexType name="PolygonRegionType">
     <xs:annotation>
       <xs:documentation>A data type for a polygon area identified by a set of coordinates.</xs:documentation>
@@ -11300,6 +11330,101 @@
   <xs:element name="PhysicalFeatureLocationText" type="nc:TextType" nillable="true">
     <xs:annotation>
       <xs:documentation>A location on a person's body of a physical feature.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="PlanActivationDecisionText" type="nc:TextType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A description of the activation decision for an action plan.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="PlanApprovalDate" type="nc:DateType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A date of approval for a plan.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="PlanApprovalEntity" type="nc:EntityType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>An entity that approves a plan.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="PlanAssignedPerson" type="nc:PersonType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A person responsible for the implementation of a plan.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="PlanAugmentationPoint" abstract="true">
+    <xs:annotation>
+      <xs:documentation>An augmentation point for type nc:PlanType</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="PlanComment" type="nc:CommentType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A comment relating to a plan.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="PlanCreatedDate" type="nc:DateType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A date on which a plan was created.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="PlanDateRange" type="nc:DateRangeType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A date range for which a plan covers.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="PlanEstimatedFulfillmentDate" type="nc:DateType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A date on which the actions of a plan are estimated to be completed.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="PlanIdentification" type="nc:IdentificationType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>An identification of a plan.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="PlanName" type="nc:TextType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A name or title of a plan.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="PlanOperationalObjectiveText" type="nc:TextType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>An operational objective for a plan.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="PlanPurposeText" type="nc:TextType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A purpose for a plan.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="PlanReleaseDate" type="nc:DateType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A release date for a plan.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="PlanReport" type="nc:ReportType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A report that represents or shares information about a plan.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="PlanRevisionReleaseDate" type="nc:DateType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A date the next revision of a plan is scheduled to be published.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="PlanTargetOutcomeText" type="nc:TextType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A target outcome after a plan is activated.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="PlanTask" type="nc:TaskType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A function, assignment, or task that is part of a plan.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="PlanUpdatedDate" type="nc:DateType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A date of last change to a plan.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="PolygonNodeLocation" type="nc:LocationType" nillable="true">

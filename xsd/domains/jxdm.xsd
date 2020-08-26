@@ -8463,21 +8463,6 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-  <xs:complexType name="PlanType">
-    <xs:annotation>
-      <xs:documentation>A data type for a detailed proposal for doing or achieving something.</xs:documentation>
-    </xs:annotation>
-    <xs:complexContent>
-      <xs:extension base="structures:ObjectType">
-        <xs:sequence>
-          <xs:element ref="j:PlanDefinedDate" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="j:PlanID" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="j:PlanNotation" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="j:PlanAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
-        </xs:sequence>
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
   <xs:complexType name="PleaType">
     <xs:annotation>
       <xs:documentation>A data type for an answer which a defendant in an action at law makes to charges.</xs:documentation>
@@ -12870,7 +12855,7 @@
       <xs:documentation>A court event or activity that is postponed or pending.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="CasePlan" type="j:PlanType" nillable="true">
+  <xs:element name="CasePlan" type="nc:PlanType" nillable="true">
     <xs:annotation>
       <xs:documentation>A determined strategy for a subject's case.</xs:documentation>
     </xs:annotation>
@@ -14245,7 +14230,7 @@
       <xs:documentation>An augmentation point for type j:CorrectiveActionType</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="CorrectiveActionPlan" type="j:PlanType" nillable="true">
+  <xs:element name="CorrectiveActionPlan" type="nc:PlanType" nillable="true">
     <xs:annotation>
       <xs:documentation>A set of details comprising a strategy for addressing a deficiency.</xs:documentation>
     </xs:annotation>
@@ -18460,7 +18445,7 @@
       <xs:documentation>A date on which hearing paperwork was sent.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="HearingPlan" type="j:PlanType" nillable="true">
+  <xs:element name="HearingPlan" type="nc:PlanType" nillable="true">
     <xs:annotation>
       <xs:documentation>A set of objectives for a hearing process.</xs:documentation>
     </xs:annotation>
@@ -24380,7 +24365,7 @@
       <xs:documentation>A number value for the total days of a subject's employment.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="PersonEmploymentPlan" type="j:PlanType" nillable="true">
+  <xs:element name="PersonEmploymentPlan" type="nc:PlanType" nillable="true">
     <xs:annotation>
       <xs:documentation>An employment or vocational plan for a person.</xs:documentation>
     </xs:annotation>
@@ -24985,29 +24970,9 @@
       <xs:documentation>An augmentation point for PhysicalMailAssociationType.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="Plan" type="j:PlanType" nillable="true">
+  <xs:element name="Plan" type="nc:PlanType" nillable="true">
     <xs:annotation>
       <xs:documentation>A detailed proposal for doing or achieving something.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="PlanAugmentationPoint" abstract="true">
-    <xs:annotation>
-      <xs:documentation>An augmentation point for type j:PlanType</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="PlanDefinedDate" type="nc:DateType" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A date when a plan was defined.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="PlanID" type="niem-xs:string" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A unique identifier of a specific plan.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="PlanNotation" type="nc:CommentType" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A notation that is a part of a plan.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="Plea" type="j:PleaType" nillable="true">
@@ -25320,7 +25285,7 @@
       <xs:documentation>A designated owner to maintain the definition of a Treatment Program for its lifecycle.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="ProgramPlan" type="j:PlanType" nillable="true">
+  <xs:element name="ProgramPlan" type="nc:PlanType" nillable="true">
     <xs:annotation>
       <xs:documentation>A plan of activity that may include a number of Treatment Programs as well as activities defined for achievement of Rehabilitation Program Need Satisfaction, Goals, and Objectives.</xs:documentation>
     </xs:annotation>
