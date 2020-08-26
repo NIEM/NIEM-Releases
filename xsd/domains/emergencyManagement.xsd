@@ -4069,6 +4069,7 @@
     <xs:complexContent>
       <xs:extension base="structures:ObjectType">
         <xs:sequence>
+          <xs:element ref="nc:RoleOfPerson" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="em:PersonHumanResource" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="em:JobTitleOrRole" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="em:CheckInOutRecord" minOccurs="0" maxOccurs="unbounded"/>
@@ -4095,7 +4096,6 @@
           <xs:element ref="em:PersonCredentialInformation" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="em:VolunteerIndicator" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:ContactInformation" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="nc:RoleOfPerson" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="em:EmergencySupportFunctionCode" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="em:FirstResponderAvailabilityStatusCode" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="biom:PhysicalFeatureDescriptionDetail" minOccurs="0" maxOccurs="unbounded"/>
@@ -5849,13 +5849,13 @@
     <xs:complexContent>
       <xs:extension base="structures:ObjectType">
         <xs:sequence>
+          <xs:element ref="nc:RoleOfPerson" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="em:PatientConditionName" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="em:PatientConditionOnsetDate" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="em:PatientDiagnosis" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="em:PatientHealthEvent" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="em:PatientIdentification" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="em:PatientOutcomeText" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="nc:RoleOfPerson" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="em:PatientAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
       </xs:extension>

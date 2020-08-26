@@ -3625,14 +3625,14 @@
     <xs:complexContent>
       <xs:extension base="structures:ObjectType">
         <xs:sequence>
+          <xs:element ref="nc:RoleOfItem" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="j:RoleOfBinary" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="j:RoleOfBiometric" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="j:EvidenceAmount" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="j:EvidenceDocumentationBinary" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="j:EvidenceItemContactInformation" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="j:EvidenceItemText" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="j:IBISNumberText" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="j:RoleOfBinary" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="j:RoleOfBiometric" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="nc:RoleOfItem" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="j:EvidenceCollector" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="j:EvidenceCustodyTransfer" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="j:EvidenceKit" minOccurs="0" maxOccurs="unbounded"/>
@@ -3996,9 +3996,9 @@
     <xs:complexContent>
       <xs:extension base="structures:ObjectType">
         <xs:sequence>
+          <xs:element ref="nc:RoleOfPerson" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="j:HearingInvestigatorEmployeeAssignedDate" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="j:HearingInvestigatorEmployeeRequestDeniedReasonText" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="nc:RoleOfPerson" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="j:HearingInvestigatorAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
       </xs:extension>
@@ -5275,10 +5275,10 @@
     <xs:complexContent>
       <xs:extension base="structures:ObjectType">
         <xs:sequence>
-          <xs:element ref="j:LesseeJurisdictionAuthorityAbstract" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="nc:AddressCountyAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:RoleOfOrganization" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:RoleOfPerson" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="j:LesseeJurisdictionAuthorityAbstract" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:AddressCountyAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="j:LesseeAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
       </xs:extension>
@@ -5291,9 +5291,9 @@
     <xs:complexContent>
       <xs:extension base="structures:ObjectType">
         <xs:sequence>
-          <xs:element ref="j:LessorIdentification" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:RoleOfOrganization" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:RoleOfPerson" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="j:LessorIdentification" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="j:LessorAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
       </xs:extension>
@@ -5306,9 +5306,9 @@
     <xs:complexContent>
       <xs:extension base="structures:ObjectType">
         <xs:sequence>
-          <xs:element ref="j:Lien" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:RoleOfOrganization" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:RoleOfPerson" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="j:Lien" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="j:LienHolderAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
       </xs:extension>
@@ -6249,8 +6249,8 @@
     <xs:complexContent>
       <xs:extension base="structures:ObjectType">
         <xs:sequence>
-          <xs:element ref="j:OtherInvolvedPersonSequenceID" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:RoleOfPerson" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="j:OtherInvolvedPersonSequenceID" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="j:InvolvementAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="j:OtherInvolvedPersonAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
@@ -6280,9 +6280,9 @@
     <xs:complexContent>
       <xs:extension base="structures:ObjectType">
         <xs:sequence>
+          <xs:element ref="nc:RoleOfPerson" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="j:PanelMemberRoleText" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="j:PanelMemberTitleText" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="nc:RoleOfPerson" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="j:PanelMemberAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
       </xs:extension>
@@ -6645,8 +6645,8 @@
     <xs:complexContent>
       <xs:extension base="structures:ObjectType">
         <xs:sequence>
-          <xs:element ref="j:ParticipantRoleCategoryAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:RoleOfPerson" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="j:ParticipantRoleCategoryAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="j:ParticipantRelationshipText" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="j:ParticipantAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
@@ -6938,11 +6938,11 @@
     <xs:complexContent>
       <xs:extension base="nc:OrganizationType">
         <xs:sequence>
+          <xs:element ref="nc:RoleOfOrganization" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:RoleOfPerson" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="j:PawnBrokerBranchName" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="j:PawnBrokerLicenseIdentification" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="j:PawnBrokerName" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="nc:RoleOfOrganization" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="nc:RoleOfPerson" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="j:PawnBrokerAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
       </xs:extension>
@@ -9276,6 +9276,7 @@
     <xs:complexContent>
       <xs:extension base="structures:ObjectType">
         <xs:sequence>
+          <xs:element ref="nc:RoleOfPerson" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="j:StaffMemberAffiliatedPrimaryProgram" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="j:StaffMemberAppliedForce" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="j:StaffMemberAssignedWeapon" minOccurs="0" maxOccurs="unbounded"/>
@@ -9289,7 +9290,6 @@
           <xs:element ref="j:StaffMemberLocation" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="j:StaffMemberQualification" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="j:StaffMemberStatus" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="nc:RoleOfPerson" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="j:StaffMemberAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
       </xs:extension>
@@ -10237,9 +10237,9 @@
     <xs:complexContent>
       <xs:extension base="structures:ObjectType">
         <xs:sequence>
+          <xs:element ref="nc:RoleOfItem" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="j:ToolUsageText" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="j:ToolUser" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="nc:RoleOfItem" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="j:ToolAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
       </xs:extension>
