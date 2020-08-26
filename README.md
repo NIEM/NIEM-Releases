@@ -73,6 +73,7 @@ NIEM 5.0 has introduced auxiliary schemas to the release package.  These are sim
   - Updated UCR codes [(#136)](https://github.com/NIEM/NIEM-Releases/issues/136)
 - Updated Hazmat codes [(#175)](https://github.com/NIEM/NIEM-Releases/issues/175)
 - Updated Justice domain codes [(#137)](https://github.com/NIEM/NIEM-Releases/issues/137)
+- Updated UNECE unit of measure codes to Revision 15 (2020) [(#180)](https://github.com/NIEM/NIEM-Releases/issues/180)
 
 ## Core
 
