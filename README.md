@@ -183,6 +183,7 @@ NIEM 5.0 merges the changes made in the Core Supplements published since the las
 - Updated NDEx codes [(#135)](https://github.com/NIEM/NIEM-Releases/issues/135)
 - Updated UCR codes [(#136)](https://github.com/NIEM/NIEM-Releases/issues/136)
 - Updated UNECE unit of measure codes to Revision 15 (2020) [(#180)](https://github.com/NIEM/NIEM-Releases/issues/180)
+- Updated USPS state codes (definition formatting) [(#182)](https://github.com/NIEM/NIEM-Releases/issues/182)
 
 ## External Standards
 
