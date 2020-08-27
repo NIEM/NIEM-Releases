@@ -144,6 +144,7 @@ NIEM 5.0 merges the changes made in the Core Supplements published since the las
 - Moved additional justice-specific types from Core to Justice [(#79)](https://github.com/NIEM/NIEM-Releases/issues/79)
 - Renamed j:SupervisionFineAmount and j:CourtCostAmount elements in j:SentenceType [(#25)](https://github.com/NIEM/NIEM-Releases/issues/25)
 - Removed person finger position elements from j:PersonAugmentationType [(#159)](https://github.com/NIEM/NIEM-Releases/issues/159)
+- Removed nested element j:SupervisionRestriction from j:SupervisionRestrictionType [(#187)](https://github.com/NIEM/NIEM-Releases/issues/187)
 - Updated the definition of deprecated aamva:DriverLicenseClassCodeSimpleType code "M" [(#108)](https://github.com/NIEM/NIEM-Releases/issues/108)
 - Updated accident-related definitions in the Justice domain to add the term 'crash' for better search and discovery [(#107)](https://github.com/NIEM/NIEM-Releases/issues/107)
 - Updated definition of j:PersonSignature [(#92)](https://github.com/NIEM/NIEM-Releases/issues/92)
