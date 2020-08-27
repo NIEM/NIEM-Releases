@@ -205,6 +205,7 @@ NIEM 5.0 merges the changes made in the Core Supplements published since the las
 - Fixed invalid augmentation names [(#78)](https://github.com/NIEM/NIEM-Releases/issues/78)
 - Fixed role types that did not extend structure:ObjectType [(#170)](https://github.com/NIEM/NIEM-Releases/issues/170)
 - Fixed spelling errors and added local terminology [(#131)](https://github.com/NIEM/NIEM-Releases/issues/131)
+- Fixed unused elements [(#186)](https://github.com/NIEM/NIEM-Releases/issues/186)
 - Moved role-of elements first under their types [(#166)](https://github.com/NIEM/NIEM-Releases/issues/166)
 - Moved j:ItemMakeAbstract to Core [(#95)](https://github.com/NIEM/NIEM-Releases/issues/95)
 - Moved nc:EffectiveDate from screening augmentation to nc:PersonNameType [(#96)](https://github.com/NIEM/NIEM-Releases/issues/96)

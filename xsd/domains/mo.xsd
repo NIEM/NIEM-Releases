@@ -1362,6 +1362,7 @@
           <xs:element ref="mo:SectorMinimumAzimuthMeasure" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="mo:SectorMaximumAzimuthMeasure" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="mo:SectorElevationAngle" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="mo:SectorName" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="mo:ScanSectorAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
       </xs:extension>
@@ -2513,7 +2514,7 @@
       <xs:documentation>A name for the condition.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="ContactDSNTelephoneNumber" type="nc:FullTelephoneNumberType" nillable="true">
+  <xs:element name="ContactDSNTelephoneNumber" type="nc:FullTelephoneNumberType" substitutionGroup="nc:ContactMeansAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A Defense Switched Network (DSN) telephone number for a telecommunications device by which a person or organization may be contacted.</xs:documentation>
     </xs:annotation>
