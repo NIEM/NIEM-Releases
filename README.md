@@ -178,6 +178,7 @@ NIEM 5.0 merges the changes made in the Core Supplements published since the las
 - Updated FIPS county codes to 2019 version [(#181)](https://github.com/NIEM/NIEM-Releases/issues/181)
 - Updated GENC codes to version 3-11 [(#162)](https://github.com/NIEM/NIEM-Releases/issues/162)
 - Updated Hazmat codes [(#175)](https://github.com/NIEM/NIEM-Releases/issues/175)
+- Updated ISO 3166-1 country codes to ISO 3166-1:2020 [(#183)](https://github.com/NIEM/NIEM-Releases/issues/183)
 - Updated Justice domain codes [(#137)](https://github.com/NIEM/NIEM-Releases/issues/137)
 - Updated NCIC codes [(#134)](https://github.com/NIEM/NIEM-Releases/issues/134)
 - Updated NDEx codes [(#135)](https://github.com/NIEM/NIEM-Releases/issues/135)
