@@ -209,5 +209,6 @@ NIEM 5.0 merges the changes made in the Core Supplements published since the las
 - Moved j:ItemMakeAbstract to Core [(#95)](https://github.com/NIEM/NIEM-Releases/issues/95)
 - Moved nc:EffectiveDate from screening augmentation to nc:PersonNameType [(#96)](https://github.com/NIEM/NIEM-Releases/issues/96)
 - Moved nc:ConveyanceFuelCategoryAbstract from j:EngineType to nc:ConveyanceType [(#116)](https://github.com/NIEM/NIEM-Releases/issues/116)
+- Removed duplicate components [(#174)](https://github.com/NIEM/NIEM-Releases/issues/174)
 - Removed or updated unused elements in Core [(#106)](https://github.com/NIEM/NIEM-Releases/issues/106)
 - Updated nc:EntityType to remove requirement that it represents a legal entity; added a new legal entity indicator [(#17)](https://github.com/NIEM/NIEM-Releases/issues/17)

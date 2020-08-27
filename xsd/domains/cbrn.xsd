@@ -362,7 +362,7 @@
       <xs:documentation>A data type that provides a list of the values of the coefficients of an Equation.  The first value is term 0, the second term 1, and so forth.</xs:documentation>
     </xs:annotation>
     <xs:simpleContent>
-      <xs:extension base="cbrn:DecimalListSimpleType">
+      <xs:extension base="nc:DecimalListSimpleType">
         <xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
         <xs:attribute ref="cbrn:subEquationNumeric" use="required"/>
       </xs:extension>
@@ -375,7 +375,7 @@
     <xs:complexContent>
       <xs:extension base="cbrn:RemarksComplexObjectType">
         <xs:sequence>
-          <xs:element ref="cbrn:MessageID" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:MessageID" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="cbrn:MessageKindCode" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="cbrn:MessageVersionText" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="cbrn:MessageOrigin" minOccurs="0" maxOccurs="unbounded"/>
@@ -526,12 +526,6 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-  <xs:simpleType name="DecimalListSimpleType">
-    <xs:annotation>
-      <xs:documentation>A data type for a white space-delimited list of decimal.</xs:documentation>
-    </xs:annotation>
-    <xs:list itemType="xs:decimal"/>
-  </xs:simpleType>
   <xs:complexType name="DerivedDataType">
     <xs:annotation>
       <xs:documentation>A data type for measurement data artificially created by an analysis algorithm.</xs:documentation>
@@ -1098,7 +1092,7 @@
       <xs:extension base="cbrn:SystemEventType">
         <xs:sequence>
           <xs:element ref="cbrn:CredentialsAuthenticatedCode" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="cbrn:MessageID" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:MessageID" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="cbrn:MessageKindCode" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="cbrn:MessageStatusCode" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="cbrn:MeasuredItemID" minOccurs="0" maxOccurs="unbounded"/>
@@ -1117,7 +1111,7 @@
       <xs:documentation>A data type the describes the functional roles performed by a military organization.</xs:documentation>
     </xs:annotation>
     <xs:simpleContent>
-      <xs:extension base="cbrn:TokenListSimpleType">
+      <xs:extension base="nc:TokenListSimpleType">
         <xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
       </xs:extension>
     </xs:simpleContent>
@@ -1718,7 +1712,7 @@
           <xs:element ref="cbrn:RequestDateTime" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="cbrn:RequestID" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="cbrn:RequestAgency" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="cbrn:ActivityName" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:ActivityName" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="cbrn:RequestUpdateIndicator" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="cbrn:RequestCancelIndicator" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="cbrn:RequestDataAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
@@ -1954,22 +1948,6 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-  <xs:simpleType name="StringListSimpleType">
-    <xs:annotation>
-      <xs:documentation>A data type for a list of strings.</xs:documentation>
-    </xs:annotation>
-    <xs:list itemType="xs:string"/>
-  </xs:simpleType>
-  <xs:complexType name="StringListType">
-    <xs:annotation>
-      <xs:documentation>A data type that facilitates the storage of a list of string values</xs:documentation>
-    </xs:annotation>
-    <xs:simpleContent>
-      <xs:extension base="cbrn:StringListSimpleType">
-        <xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
-      </xs:extension>
-    </xs:simpleContent>
-  </xs:complexType>
   <xs:complexType name="SystemEventType">
     <xs:annotation>
       <xs:documentation>A data type for a system event.</xs:documentation>
@@ -1988,12 +1966,6 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-  <xs:simpleType name="TokenListSimpleType">
-    <xs:annotation>
-      <xs:documentation>A data type for a list of tokens.</xs:documentation>
-    </xs:annotation>
-    <xs:list itemType="xs:token"/>
-  </xs:simpleType>
   <xs:complexType name="TotalDoseMetadataType">
     <xs:annotation>
       <xs:documentation>A data type for metadata about Total Dose data.</xs:documentation>
@@ -2213,11 +2185,6 @@
   <xs:element name="AcknowledgingAgencyCode" type="cbrncl:GNDAOrganizationCodeType" nillable="true">
     <xs:annotation>
       <xs:documentation>An organization that is responsible for generating an acknowledgement.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="ActivityName" type="niem-xs:string" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A name of the activity associated with a request. This property can be used to provide data for workflow coordination by the sending or receiving systems.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="AlarmAudibleIndicator" type="niem-xs:boolean" nillable="true">
@@ -3758,11 +3725,6 @@
   <xs:element name="MessageHandlingError" type="cbrn:MessageErrorType" nillable="true">
     <xs:annotation>
       <xs:documentation>A description of a message error encountered by an infrastructure component in the process of message handling and transmission.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="MessageID" type="niem-xs:string" nillable="true">
-    <xs:annotation>
-      <xs:documentation>An identifier associated with a message content.  There is no required format for the ID value.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="MessageKindCode" type="cbrncl:MessageKindCodeType" nillable="true">

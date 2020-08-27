@@ -1572,7 +1572,6 @@
           <xs:element ref="m:VesselCargoCapabilityAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="m:VesselCargoCategoryAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="m:VesselCargoOnBoardIndicator" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="m:VesselCategoryAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="m:VesselCDCCapableIndicator" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="m:VesselCDCCargoOnBoardIndicator" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="m:VesselCertificateOfFinancialResponsibilityOperator" minOccurs="0" maxOccurs="unbounded"/>
@@ -2820,12 +2819,7 @@
       <xs:documentation>True if a vessel is carrying cargo; false otherwise.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="VesselCategoryAbstract" abstract="true">
-    <xs:annotation>
-      <xs:documentation>A data concept for a description of a type of a vessel based upon the purpose for which the vessel was designed or built.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="VesselCategoryText" type="nc:TextType" substitutionGroup="m:VesselCategoryAbstract" nillable="true">
+  <xs:element name="VesselCategoryText" type="nc:TextType" substitutionGroup="nc:VesselCategoryAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A kind of vessel based upon the purpose for which the vessel was designed or built.</xs:documentation>
     </xs:annotation>
