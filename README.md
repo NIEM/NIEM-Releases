@@ -125,6 +125,7 @@ NIEM 5.0 merges the changes made in the Core Supplements published since the las
 ### Emergency Management
 
 - Added additional content from the Public Health Emergency Operations Center (PHEOC) Minimum Data Set [(#138)](https://github.com/NIEM/NIEM-Releases/issues/138)
+- Fixed base type of em:DamCategoryCodeType [(#188)](https://github.com/NIEM/NIEM-Releases/issues/188)
 
 ### Immigration
 
