@@ -61,6 +61,7 @@ NIEM 5.0 has introduced auxiliary schemas to the release package.  These are sim
 - Added PersonContactInformation element to represent generic contact information in nc:PersonType [(#29)](https://github.com/NIEM/NIEM-Releases/issues/29)
 - Added street category codes and updated street directionals [(#80)](https://github.com/NIEM/NIEM-Releases/issues/80)
 - Added street direction substitution groups for alternate code representations [(#65)](https://github.com/NIEM/NIEM-Releases/issues/65)
+- Added substitution groups for easier inclusion of local code sets [(#82)](https://github.com/NIEM/NIEM-Releases/issues/82)
 
 ### Harmonization
 

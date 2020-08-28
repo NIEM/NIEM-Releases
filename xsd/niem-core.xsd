@@ -30,6 +30,7 @@
       <appinfo:LocalTerm term="ISO3166" definition="ISO 3166 is a standard published by the International Organization for Standardization (ISO) that defines codes for the names of countries, dependent territories, special areas of geographical interest, and their principal subdivisions (e.g., provinces or states). The official name of the standard is Codes for the representation of names of countries and their subdivisions."/>
       <appinfo:LocalTerm term="ISSN" literal="International Standard Serial Number"/>
       <appinfo:LocalTerm term="MAC" literal="media access control address"/>
+      <appinfo:LocalTerm term="MIME" literal="Multipurpose Internet Mail Extensions"/>
       <appinfo:LocalTerm term="MSRP" literal="Manufacturer's suggested retail price"/>
       <appinfo:LocalTerm term="NANP" literal="North American Numbering Plan"/>
       <appinfo:LocalTerm term="Postdirectional" definition="A word following a street name that indicates the directional taken by the thoroughfare from an arbitrary starting point or line, or the sector where it is located."/>
@@ -173,7 +174,7 @@
           <xs:element ref="nc:ActivityApprovedIndicator" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:ActivityAssignedDate" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:ActivityCapacityQuantity" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="nc:ActivityCategoryText" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:ActivityCategoryAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:ActivityComment" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:ActivityCompletedIndicator" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:ActivityContactEntity" minOccurs="0" maxOccurs="unbounded"/>
@@ -188,7 +189,7 @@
           <xs:element ref="nc:ActivityName" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:ActivityNarrative" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:ActivityPrescribedDuration" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="nc:ActivityReasonText" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:ActivityReasonAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:ActivityReportedDate" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:ActivityRequestedDate" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:ActivityScheduledDate" minOccurs="0" maxOccurs="unbounded"/>
@@ -620,13 +621,13 @@
           <xs:element ref="nc:BinaryID" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:BinaryCategoryAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:BinaryHash" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="nc:BinaryLocationText" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:BinaryLocation" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:BinaryAvailableIndicator" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:BinaryObjectAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:BinaryCaptureDate" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:BinaryCapturer" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:BinaryDescriptionText" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="nc:BinaryFormatText" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:BinaryFormatAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:BinaryFormatStandardName" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:BinaryURI" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:BinarySizeValue" minOccurs="0" maxOccurs="unbounded"/>
@@ -658,10 +659,10 @@
     <xs:complexContent>
       <xs:extension base="structures:ObjectType">
         <xs:sequence>
-          <xs:element ref="nc:CapabilityCategoryText" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:CapabilityCategoryAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:CapabilityDescriptionText" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:CapabilityEndDate" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="nc:CapabilityGeneralCategoryText" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:CapabilityGeneralCategoryAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:CapabilityIdentification" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:CapabilityIsLimitationIndicator" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:CapabilityName" minOccurs="0" maxOccurs="unbounded"/>
@@ -680,7 +681,7 @@
       <xs:extension base="structures:ObjectType">
         <xs:sequence>
           <xs:element ref="nc:CaseDispositionDecisionText" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="nc:CaseDispositionDecisionCategoryText" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:CaseDispositionDecisionCategoryAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:CaseDispositionDecisionAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
       </xs:extension>
@@ -708,11 +709,11 @@
       <xs:extension base="nc:ActivityType">
         <xs:sequence>
           <xs:element ref="nc:CaseTitleText" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="nc:CaseCategoryText" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="nc:CaseGeneralCategoryText" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:CaseCategoryAbstract" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:CaseGeneralCategoryAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:CaseYearDate" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:CaseTrackingID" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="nc:CaseSubCategoryText" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:CaseSubCategoryAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:CaseDocketID" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:CaseResolutionText" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:CaseFiling" minOccurs="0" maxOccurs="unbounded"/>
@@ -791,7 +792,7 @@
           <xs:element ref="nc:ConditionDisciplinaryAction" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:ConditionMandatoryIndicator" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:ConditionViolatedIndicator" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="nc:ConditionViolationText" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:ConditionViolationAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:ConditionViolationDate" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:ConditionAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
@@ -868,6 +869,7 @@
           <xs:element ref="nc:ContactMeansAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:ContactEntity" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:ContactEntityDescriptionText" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:ContactInformationCategoryAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:ContactInformationDescriptionText" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:ContactResponder" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:ContactInformationAvailabilityAbstract" minOccurs="0" maxOccurs="unbounded"/>
@@ -883,7 +885,7 @@
     <xs:complexContent>
       <xs:extension base="structures:ObjectType">
         <xs:sequence>
-          <xs:element ref="nc:ContactRadioCategoryText" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:ContactRadioCategoryAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:ContactRadioChannelText" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:ContactRadioCallSignID" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:ContactRadioAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
@@ -1046,7 +1048,7 @@
       <xs:extension base="structures:ObjectType">
         <xs:sequence>
           <xs:element ref="nc:DecalID" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="nc:DecalColorText" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:DecalColorAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:DecalPeriodAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:DecalYearDate" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:DecalMonthDate" minOccurs="0" maxOccurs="unbounded"/>
@@ -1389,7 +1391,7 @@
           <xs:element ref="nc:DispositionEntity" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:DispositionDate" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:DispositionDescriptionText" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="nc:DispositionReasonText" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:DispositionReasonAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:DispositionReportedAuthorityText" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:DispositionText" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:DispositionInstrument" minOccurs="0" maxOccurs="unbounded"/>
@@ -1407,7 +1409,7 @@
         <xs:sequence>
           <xs:element ref="nc:PrimaryDocument" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:SecondaryDocument" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="nc:DocumentRelationText" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:DocumentRelationAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:DocumentAssociationAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
       </xs:extension>
@@ -1435,7 +1437,7 @@
           <xs:element ref="nc:DocumentDispositionAuthorityName" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:DocumentDispositionInstructionText" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:DocumentDisputedIndicator" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="nc:DocumentDisputedReasonText" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:DocumentDisputedReasonAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:DocumentEffectiveDate" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:DocumentEntrySubmitter" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:DocumentEUDataPrivacyIndicator" minOccurs="0" maxOccurs="unbounded"/>
@@ -1444,24 +1446,24 @@
           <xs:element ref="nc:DocumentFiledDate" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:DocumentFileExtensionText" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:DocumentFileName" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="nc:DocumentFormatCategoryText" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="nc:DocumentFormatText" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:DocumentFormatCategoryAbstract" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:DocumentFormatAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:DocumentGroupID" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:DocumentIdentification" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:DocumentInformationCutOffDate" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:DocumentIntelligenceCategoryAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:DocumentIssuanceLocation" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:DocumentIssueDate" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="nc:DocumentKeywordText" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:DocumentKeywordAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:DocumentLanguage" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:DocumentLastModifiedDate" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:DocumentLocation" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:DocumentLocationURI" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:DocumentManagementCyclePeriodText" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="nc:DocumentMediaCategoryText" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="nc:DocumentMediumText" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:DocumentPhysicalMediumText" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:DocumentOtherRecipient" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:DocumentPermanentRecordIndicator" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:DocumentPhysicalMediumCategoryAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:DocumentPostDate" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:DocumentPrivacyActIndicator" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:DocumentPublicationDate" minOccurs="0" maxOccurs="unbounded"/>
@@ -1558,7 +1560,7 @@
           <xs:element ref="nc:EducationQualificationRepresentation" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:EducationQualificationIssuedDate" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:EducationQualificationExpirationDate" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="nc:EducationQualificationInstitutionText" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:EducationQualificationInstitution" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:EducationQualificationDescriptionText" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:EducationQualificationLevel" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:EducationQualificationAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
@@ -1650,10 +1652,10 @@
           <xs:element ref="nc:EmployeePayAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:EmployeePayHourlyIndicator" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:EmployeePosition" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="nc:EmployeeRankText" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:EmployeeRankAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:EmployeeSchedule" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:EmployeeScheduleFixedIndicator" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="nc:EmployeeShiftText" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:EmployeeShiftAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:EmploymentStatus" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:EmployeeSupervisor" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:EmploymentAssociationAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
@@ -1724,7 +1726,7 @@
           <xs:element ref="nc:EmploymentPositionEssentialLanguage" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:EmploymentPositionIdentification" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:EmploymentPositionLocation" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="nc:EmploymentPositionName" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:EmploymentPositionAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:EmploymentPositionRequiredEducationAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:EmploymentPositionRequiredJobSkillAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:EmploymentPositionSecurityClearanceLevelAbstract" minOccurs="0" maxOccurs="unbounded"/>
@@ -1940,7 +1942,7 @@
           <xs:element ref="nc:FacilityMemberCategoryText" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:FacilityOperatingSchedule" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:FacilityOperationalStatus" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="nc:FacilitySecurityLevelText" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:FacilitySecurityLevelAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:FacilitySiteDiagram" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:FacilitySystemIdentification" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:FacilitySystemIPAddressID" minOccurs="0" maxOccurs="unbounded"/>
@@ -2451,7 +2453,7 @@
           <xs:element ref="nc:ItemColorDescriptionText" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:ItemColorPrimaryAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:ItemColorSecondaryAbstract" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="nc:ItemConditionText" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:ItemConditionAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:ItemCurrentResaleValue" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:ItemDealerIdentification" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:ItemDescriptionText" minOccurs="0" maxOccurs="unbounded"/>
@@ -2469,7 +2471,7 @@
           <xs:element ref="nc:ItemOwner" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:ItemOwnerAppliedID" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:ItemOwnerPurchasedValue" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="nc:ItemOwnershipCategoryText" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:ItemOwnershipCategoryAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:ItemPossessionDescriptionText" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:ItemPossessor" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:ItemQuantity" minOccurs="0" maxOccurs="unbounded"/>
@@ -2604,14 +2606,13 @@
         <xs:sequence>
           <xs:element ref="nc:LocaleCensusBlockID" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:LocaleCensusTractID" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="nc:LocaleCommunityName" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:LocaleCommunityAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:LocaleDescriptionText" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:LocaleDistrictIdentification" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:LocaleDistrictName" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:LocaleEmergencyServicesName" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:LocaleFireJurisdictionID" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:LocaleJudicialDistrictAbstract" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="nc:LocaleJudicialDistrictName" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:LocaleNeighborhoodName" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:LocalePoliceBeatText" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:LocalePoliceGridText" minOccurs="0" maxOccurs="unbounded"/>
@@ -2715,7 +2716,7 @@
           <xs:element ref="nc:LocationGeospatialCoordinateAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:LocationHeightAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:LocationIdentification" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="nc:LocationLandmarkText" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:LocationLandmarkAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:LocationLocale" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:LocationMapLocation" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:LocationName" minOccurs="0" maxOccurs="unbounded"/>
@@ -2820,7 +2821,7 @@
           <xs:element ref="nc:MeasureErrorAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:Measurer" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:MeasureUnitAbstract" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="nc:MeasureMethodText" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:MeasureMethodAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:MeasureEstimatedIndicator" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:MeasureAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
@@ -2839,7 +2840,7 @@
           <xs:element ref="nc:MedicalConditionCauseText" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:MedicalConditionDescriptionText" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:MedicalConditionPresentIndicator" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="nc:MedicalConditionSeverityText" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:MedicalConditionSeverityAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:MedicalConditionDateRange" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:MedicalConditionAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
@@ -2892,7 +2893,7 @@
           <xs:element ref="nc:MessageAttachmentAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:MessageCategoryAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:MessageReferenceID" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="nc:MessageFATCAUsageRestrictionText" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:MessageFATCAUsageRestrictionAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:MessageAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
       </xs:extension>
@@ -2924,12 +2925,12 @@
           <xs:element ref="nc:QualityComment" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:ReleaseDate" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:ReportedDate" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="nc:ReportingOrganizationText" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="nc:ReportingPersonRoleText" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="nc:ReportingPersonText" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:ReportingOrganizationAbstract" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:ReportingPersonRoleAbstract" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:ReportingPersonAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:RepositoryID" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="nc:SensitivityText" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="nc:SourceContactPersonText" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:SensitivityAbstract" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:SourceContactPersonAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:SourceIDText" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:SourceText" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
@@ -3018,7 +3019,7 @@
           <xs:element ref="nc:MilitaryHighRankText" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:MilitaryInductionDate" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:MilitaryPersonIdentification" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="nc:MilitaryReleaseCategoryText" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:MilitaryReleaseCategoryAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:MilitaryReleaseDate" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:MilitaryServiceActiveIndicator" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:MilitaryServiceTimeMeasure" minOccurs="0" maxOccurs="unbounded"/>
@@ -3131,7 +3132,7 @@
     <xs:complexContent>
       <xs:extension base="structures:ObjectType">
         <xs:sequence>
-          <xs:element ref="nc:ObligationPeriodText" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:ObligationPeriodAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:ObligationDateRange" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:ObligationRecurrenceAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
@@ -3156,8 +3157,9 @@
           <xs:element ref="nc:ObligationPaidDate" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:ObligationProgressDescriptionText" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:ObligationRequirementDescriptionText" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="nc:ObligationCategoryText" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:ObligationCategoryAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:ObligationEntity" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:ObligationEntityCategoryAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:ObligationRecipient" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:ObligationRecurrence" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:ObligationAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
@@ -3215,7 +3217,7 @@
         <xs:sequence>
           <xs:element ref="nc:OrganizationAbbreviationText" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:OrganizationActiveIndicator" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="nc:OrganizationActivityText" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:OrganizationActivityAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:OrganizationBranchName" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:OrganizationCategoryAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:OrganizationDayContactInformation" minOccurs="0" maxOccurs="unbounded"/>
@@ -3243,6 +3245,7 @@
           <xs:element ref="nc:OrganizationPrimaryContactInformation" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:OrganizationPrincipalOfficial" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:OrganizationServiceHoursAbstract" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:OrganizationSizeAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:OrganizationStatus" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:OrganizationSubUnit" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:OrganizationSubUnitName" minOccurs="0" maxOccurs="unbounded"/>
@@ -3421,7 +3424,7 @@
           <xs:element ref="nc:PermitCategoryAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:PermitRenewalDate" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:PermitStartDate" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="nc:PermitUsageText" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:PermitUsageAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:PermitAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
       </xs:extension>
@@ -3619,7 +3622,7 @@
     <xs:complexContent>
       <xs:extension base="structures:ObjectType">
         <xs:sequence>
-          <xs:element ref="nc:PersonNamePrefixText" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:PersonNamePrefixAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:PersonGivenName" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:PersonMiddleName" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:PersonSurName" minOccurs="0" maxOccurs="unbounded"/>
@@ -3675,9 +3678,9 @@
       <xs:extension base="nc:PersonLocationAssociationType">
         <xs:sequence>
           <xs:element ref="nc:ResidenceDescriptionText" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="nc:ResidenceOccupancyCategoryText" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:ResidenceOccupancyCategoryAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:ResidencePaymentAmount" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="nc:ResidencePaymentPeriodText" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:ResidencePaymentPeriodAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:PersonResidenceAssociationAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
       </xs:extension>
@@ -3701,7 +3704,7 @@
           <xs:element ref="nc:PersonCapability" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:PersonCircumcisionIndicator" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:PersonCitizenship" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="nc:PersonComplexionText" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:PersonComplexionAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:PersonDeathDate" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:PersonDependentQuantity" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:PersonDescriptionText" minOccurs="0" maxOccurs="unbounded"/>
@@ -3715,13 +3718,13 @@
           <xs:element ref="nc:PersonEyeColorAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:PersonEyewearAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:PersonFacialHairAbstract" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="nc:PersonHairLengthAbstract" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="nc:PersonHairStyleAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:PersonGeneralAppearanceDescriptionText" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:PersonHairAppearanceText" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="nc:PersonHairCategoryText" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:PersonHairCategoryAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:PersonHairColorAbstract" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="nc:PersonHandednessText" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:PersonHairLengthAbstract" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:PersonHairStyleAbstract" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:PersonHandednessAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:PersonHeightDescriptionText" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:PersonHeightMeasure" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:PersonHumanResourceIdentification" minOccurs="0" maxOccurs="unbounded"/>
@@ -3729,14 +3732,14 @@
           <xs:element ref="nc:PersonJewelryDescriptionText" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:PersonJobTitleText" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:PersonLanguageEnglishIndicator" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="nc:PersonLearningDisabilityText" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:PersonLearningDisabilityAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:PersonLicenseIdentification" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:PersonLivingIndicator" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:PersonMedicalCondition" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:PersonMedicalDescriptionText" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:PersonMedicalFileIndicator" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:PersonMedicationRequiredText" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="nc:PersonMentalStateText" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:PersonMentalStateAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:PersonMilitarySummary" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:PersonMoodDescriptionText" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:PersonName" minOccurs="0" maxOccurs="unbounded"/>
@@ -3753,7 +3756,7 @@
           <xs:element ref="nc:PersonSecondaryLanguage" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:PersonSecurityClearanceAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:PersonSexAbstract" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="nc:PersonSexualOrientationText" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:PersonSexualOrientationAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:PersonSkinToneAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:PersonSpeechDescriptionText" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:PersonSSNIdentification" minOccurs="0" maxOccurs="unbounded"/>
@@ -3924,7 +3927,7 @@
     <xs:complexContent>
       <xs:extension base="structures:ObjectType">
         <xs:sequence>
-          <xs:element ref="nc:PhysicalFeatureGeneralCategoryText" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:PhysicalFeatureGeneralCategoryAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:PhysicalFeatureCategoryAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:PhysicalFeatureDescriptionText" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:PhysicalFeatureImage" minOccurs="0" maxOccurs="unbounded"/>
@@ -4039,7 +4042,7 @@
       <xs:extension base="nc:ActivityType">
         <xs:sequence>
           <xs:element ref="nc:ProgressComplianceIndicator" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="nc:ProgressComplianceText" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:ProgressComplianceAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:ProgressPaymentAmount" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:ProgressTimeQuantityText" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:ProgressAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
@@ -4089,7 +4092,7 @@
           <xs:element ref="nc:PublicServiceCategoryAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:PublicServiceLanguage" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:PublicServiceWebsiteURI" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="nc:PublicServiceChannelText" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:PublicServiceChannelAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:PublicServiceLocation" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:PublicServiceRequiredService" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:PublicServiceRelatedService" minOccurs="0" maxOccurs="unbounded"/>
@@ -4201,7 +4204,7 @@
       <xs:extension base="nc:AssociationType">
         <xs:sequence>
           <xs:element ref="nc:Activity" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="nc:ActivityRelationText" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:ActivityRelationAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:RelatedActivityAssociationAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
       </xs:extension>
@@ -4561,7 +4564,7 @@
           <xs:element ref="nc:SubstanceContainerDescriptionText" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:SubstanceQuantityMeasure" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:SubstanceCompositionDescriptionText" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="nc:SubstanceFormText" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:SubstanceFormAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:SubstanceFoundDescriptionText" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:SubstanceAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
@@ -4815,7 +4818,7 @@
       <xs:extension base="nc:ConveyanceType">
         <xs:sequence>
           <xs:element ref="nc:VehicleCMVIndicator" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="nc:VehicleColorInteriorText" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:VehicleColorInteriorAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:VehicleDoorQuantity" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:VehicleIdentification" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:VehicleMakeAbstract" minOccurs="0" maxOccurs="unbounded"/>
@@ -4891,7 +4894,7 @@
           <xs:element ref="nc:RoleOfItem" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:WeaponUser" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:WeaponInvolvedInActivity" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="nc:WeaponUsageText" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:WeaponUsageAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:WeaponAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
       </xs:extension>
@@ -5032,7 +5035,12 @@
       <xs:documentation>A number for the specified maximum enrollment capacity of an activity.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="ActivityCategoryText" type="nc:TextType" nillable="true">
+  <xs:element name="ActivityCategoryAbstract" abstract="true">
+    <xs:annotation>
+      <xs:documentation>A data concept for a kind of activity.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="ActivityCategoryText" type="nc:TextType" substitutionGroup="nc:ActivityCategoryAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A kind of activity.</xs:documentation>
     </xs:annotation>
@@ -5197,12 +5205,22 @@
       <xs:documentation>An association between an activity and an organization primarily associated with that activity.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="ActivityReasonText" type="nc:TextType" nillable="true">
+  <xs:element name="ActivityReasonAbstract" abstract="true">
+    <xs:annotation>
+      <xs:documentation>A data concept for a reason for an activity.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="ActivityReasonText" type="nc:TextType" substitutionGroup="nc:ActivityReasonAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A reason for an activity.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="ActivityRelationText" type="nc:TextType" nillable="true">
+  <xs:element name="ActivityRelationAbstract" abstract="true">
+    <xs:annotation>
+      <xs:documentation>A data concept for a relationship between activities.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="ActivityRelationText" type="nc:TextType" substitutionGroup="nc:ActivityRelationAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A relationship between activities.</xs:documentation>
     </xs:annotation>
@@ -5887,12 +5905,17 @@
       <xs:documentation>A description of a binary object.</xs:documentation>
     </xs:annotation>
   </xs:element>
+  <xs:element name="BinaryFormatAbstract" abstract="true">
+    <xs:annotation>
+      <xs:documentation>A data concept for a file format or content type of a binary object.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
   <xs:element name="BinaryFormatStandardName" type="nc:TextType" nillable="true">
     <xs:annotation>
       <xs:documentation>A name of a standard or protocol used to classify binary content.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="BinaryFormatText" type="nc:TextType" nillable="true">
+  <xs:element name="BinaryFormatText" type="nc:TextType" substitutionGroup="nc:BinaryFormatAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A file format or content type of a binary object.</xs:documentation>
     </xs:annotation>
@@ -5932,7 +5955,7 @@
       <xs:documentation>An identifier that references a binary object.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="BinaryLocationText" type="nc:TextType" nillable="true">
+  <xs:element name="BinaryLocation" type="nc:LocationType" nillable="true">
     <xs:annotation>
       <xs:documentation>A physical location of a binary object.</xs:documentation>
     </xs:annotation>
@@ -5967,7 +5990,12 @@
       <xs:documentation>An augmentation point for CapabilityType.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="CapabilityCategoryText" type="nc:TextType" nillable="true">
+  <xs:element name="CapabilityCategoryAbstract" abstract="true">
+    <xs:annotation>
+      <xs:documentation>A data concept for a specific kind of capacity or ability.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="CapabilityCategoryText" type="nc:TextType" substitutionGroup="nc:CapabilityCategoryAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A specific kind of capacity or ability.</xs:documentation>
     </xs:annotation>
@@ -5982,7 +6010,12 @@
       <xs:documentation>A date that ends the capability</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="CapabilityGeneralCategoryText" type="nc:TextType" nillable="true">
+  <xs:element name="CapabilityGeneralCategoryAbstract" abstract="true">
+    <xs:annotation>
+      <xs:documentation>A data concept for a general classification of a kind of capacity or ability.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="CapabilityGeneralCategoryText" type="nc:TextType" substitutionGroup="nc:CapabilityGeneralCategoryAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A general classification of a kind of capacity or ability.</xs:documentation>
     </xs:annotation>
@@ -6022,7 +6055,12 @@
       <xs:documentation>An augmentation point for CaseType.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="CaseCategoryText" type="nc:TextType" nillable="true">
+  <xs:element name="CaseCategoryAbstract" abstract="true">
+    <xs:annotation>
+      <xs:documentation>A data concept for a kind of case.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="CaseCategoryText" type="nc:TextType" substitutionGroup="nc:CaseCategoryAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A kind of case.</xs:documentation>
     </xs:annotation>
@@ -6047,7 +6085,12 @@
       <xs:documentation>An augmentation point for CaseDispositionDecisionType.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="CaseDispositionDecisionCategoryText" type="nc:TextType" nillable="true">
+  <xs:element name="CaseDispositionDecisionCategoryAbstract" abstract="true">
+    <xs:annotation>
+      <xs:documentation>A data concept for a kind of decision made in a case disposition.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="CaseDispositionDecisionCategoryText" type="nc:TextType" substitutionGroup="nc:CaseDispositionDecisionCategoryAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A kind of decision made in a case disposition.</xs:documentation>
     </xs:annotation>
@@ -6072,7 +6115,12 @@
       <xs:documentation>A document or other piece of information filed by someone or something involved in a case.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="CaseGeneralCategoryText" type="nc:TextType" nillable="true">
+  <xs:element name="CaseGeneralCategoryAbstract" abstract="true">
+    <xs:annotation>
+      <xs:documentation>A data concept for a broadly defined kind of case.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="CaseGeneralCategoryText" type="nc:TextType" substitutionGroup="nc:CaseGeneralCategoryAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A broadly defined kind of case.</xs:documentation>
     </xs:annotation>
@@ -6082,7 +6130,12 @@
       <xs:documentation>A result of a case.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="CaseSubCategoryText" type="niem-xs:string" nillable="true">
+  <xs:element name="CaseSubCategoryAbstract" abstract="true">
+    <xs:annotation>
+      <xs:documentation>A data concept for a more specific classification of a kind of case.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="CaseSubCategoryText" type="niem-xs:string" substitutionGroup="nc:CaseSubCategoryAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A more specific classification of a kind of case.</xs:documentation>
     </xs:annotation>
@@ -6222,12 +6275,17 @@
       <xs:documentation>True if a condition has been violated; false otherwise.</xs:documentation>
     </xs:annotation>
   </xs:element>
+  <xs:element name="ConditionViolationAbstract" abstract="true">
+    <xs:annotation>
+      <xs:documentation>A data concept for a violation of a condition.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
   <xs:element name="ConditionViolationDate" type="nc:DateType" nillable="true">
     <xs:annotation>
       <xs:documentation>A date a condition was violated.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="ConditionViolationText" type="nc:TextType" nillable="true">
+  <xs:element name="ConditionViolationText" type="nc:TextType" substitutionGroup="nc:ConditionViolationAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A violation of a condition.</xs:documentation>
     </xs:annotation>
@@ -6292,6 +6350,11 @@
       <xs:documentation>A period of time or a situation in which an entity is available to be contacted with the given contact information.</xs:documentation>
     </xs:annotation>
   </xs:element>
+  <xs:element name="ContactInformationCategoryAbstract" abstract="true">
+    <xs:annotation>
+      <xs:documentation>A data concept for a kind of contact information.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
   <xs:element name="ContactInformationDescriptionText" type="nc:TextType" nillable="true">
     <xs:annotation>
       <xs:documentation>A description of the contact information.</xs:documentation>
@@ -6327,7 +6390,12 @@
       <xs:documentation>An identifier of a person using a radio.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="ContactRadioCategoryText" type="nc:TextType" nillable="true">
+  <xs:element name="ContactRadioCategoryAbstract" abstract="true">
+    <xs:annotation>
+      <xs:documentation>A data concept for a kind of wavelength or band of a radio.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="ContactRadioCategoryText" type="nc:TextType" substitutionGroup="nc:ContactRadioCategoryAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A kind of wavelength or band of a radio.</xs:documentation>
     </xs:annotation>
@@ -6607,7 +6675,12 @@
       <xs:documentation>An augmentation point for DecalType.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="DecalColorText" type="nc:TextType" nillable="true">
+  <xs:element name="DecalColorAbstract" abstract="true">
+    <xs:annotation>
+      <xs:documentation>A data concept for a color of a decal.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="DecalColorText" type="nc:TextType" substitutionGroup="nc:DecalColorAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A color of a decal.</xs:documentation>
     </xs:annotation>
@@ -6922,7 +6995,12 @@
       <xs:documentation>An official document filed to formally document the disposition of a specific charge.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="DispositionReasonText" type="nc:TextType" nillable="true">
+  <xs:element name="DispositionReasonAbstract" abstract="true">
+    <xs:annotation>
+      <xs:documentation>A data concept for a reason for a disposition.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="DispositionReasonText" type="nc:TextType" substitutionGroup="nc:DispositionReasonAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A reason for a disposition.</xs:documentation>
     </xs:annotation>
@@ -7072,7 +7150,12 @@
       <xs:documentation>True if the accuracy of a document is disputed; false otherwise.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="DocumentDisputedReasonText" type="nc:TextType" nillable="true">
+  <xs:element name="DocumentDisputedReasonAbstract" abstract="true">
+    <xs:annotation>
+      <xs:documentation>A data concept for a reason why the accuracy of a document is disputed.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="DocumentDisputedReasonText" type="nc:TextType" substitutionGroup="nc:DocumentDisputedReasonAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A reason why the accuracy of a document is disputed.</xs:documentation>
     </xs:annotation>
@@ -7109,7 +7192,7 @@
   </xs:element>
   <xs:element name="DocumentFileExtensionText" type="nc:TextType" nillable="true">
     <xs:annotation>
-      <xs:documentation>A file extension of an electronic document.</xs:documentation>
+      <xs:documentation>A file extension of an electronic document.  The file extension should correspond appropriately with the document format information, if provided.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="DocumentFileName" type="nc:TextType" nillable="true">
@@ -7117,12 +7200,22 @@
       <xs:documentation>A file name of an electronic document.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="DocumentFormatCategoryText" type="nc:TextType" nillable="true">
+  <xs:element name="DocumentFormatAbstract" abstract="true">
+    <xs:annotation>
+      <xs:documentation>A data concept for a file format, content type (e.g., a MIME type), or physical format of a document.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="DocumentFormatCategoryAbstract" abstract="true">
+    <xs:annotation>
+      <xs:documentation>A data concept for a kind of classification system used to define the specific format of a binary object or file.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="DocumentFormatCategoryText" type="nc:TextType" substitutionGroup="nc:DocumentFormatCategoryAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A kind of classification system used to define the specific format of a binary object or file.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="DocumentFormatText" type="nc:TextType" nillable="true">
+  <xs:element name="DocumentFormatText" type="nc:TextType" substitutionGroup="nc:DocumentFormatAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A file format, content type (e.g., a MIME type), or physical format of a document.</xs:documentation>
     </xs:annotation>
@@ -7157,7 +7250,12 @@
       <xs:documentation>A date at which a document was issued and when appropriate, signed or otherwise authenticated.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="DocumentKeywordText" type="nc:TextType" nillable="true">
+  <xs:element name="DocumentKeywordAbstract" abstract="true">
+    <xs:annotation>
+      <xs:documentation>A data concept for a significant word or phrase that describes the overall content of a document or its main topic.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="DocumentKeywordText" type="nc:TextType" substitutionGroup="nc:DocumentKeywordAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A significant word or phrase that describes the overall content of a document or its main topic.</xs:documentation>
     </xs:annotation>
@@ -7187,14 +7285,9 @@
       <xs:documentation>A review or update cycle period for a document.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="DocumentMediaCategoryText" type="nc:TextType" nillable="true">
+  <xs:element name="DocumentMediaCategoryText" type="nc:TextType" substitutionGroup="nc:DocumentFormatAbstract" nillable="true">
     <xs:annotation>
-      <xs:documentation>A kind of class that describes the media format of a document.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="DocumentMediumText" type="nc:TextType" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A material or physical carrier for storing a document.</xs:documentation>
+      <xs:documentation>A kind of media type, also known as a MIME type, which indicates the nature and format of a document.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="DocumentOtherRecipient" type="nc:EntityType" nillable="true">
@@ -7205,6 +7298,21 @@
   <xs:element name="DocumentPermanentRecordIndicator" type="niem-xs:boolean" nillable="true">
     <xs:annotation>
       <xs:documentation>True if a document is to be kept as a permanent record; false otherwise.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="DocumentPhysicalMediumCategoryAbstract" abstract="true">
+    <xs:annotation>
+      <xs:documentation>A data concept for a material or physical carrier for storing a document.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="DocumentPhysicalMediumCategoryText" type="nc:TextType" substitutionGroup="nc:DocumentPhysicalMediumCategoryAbstract" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A kind of class that describes the media format of a document.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="DocumentPhysicalMediumText" type="nc:TextType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A material or physical carrier for storing a document.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="DocumentPostDate" type="nc:DateType" nillable="true">
@@ -7237,7 +7345,12 @@
       <xs:documentation>A reference to another document or resource related to the document.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="DocumentRelationText" type="nc:TextType" nillable="true">
+  <xs:element name="DocumentRelationAbstract" abstract="true">
+    <xs:annotation>
+      <xs:documentation>A data concept for a relationship between documents.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="DocumentRelationText" type="nc:TextType" substitutionGroup="nc:DocumentRelationAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A relationship between documents.</xs:documentation>
     </xs:annotation>
@@ -7437,7 +7550,7 @@
       <xs:documentation>A date on which an educational qualification becomes no longer valid.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="EducationQualificationInstitutionText" type="nc:TextType" nillable="true">
+  <xs:element name="EducationQualificationInstitution" type="nc:OrganizationType" nillable="true">
     <xs:annotation>
       <xs:documentation>An organization such as a college, school, or certification body which issues a qualification to a person.</xs:documentation>
     </xs:annotation>
@@ -7592,7 +7705,12 @@
       <xs:documentation>A job, post, or group of duties and responsibilities performed by an employee.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="EmployeeRankText" type="nc:TextType" nillable="true">
+  <xs:element name="EmployeeRankAbstract" abstract="true">
+    <xs:annotation>
+      <xs:documentation>A data concept for a rank, status, or promotion level of a person within an employment organization.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="EmployeeRankText" type="nc:TextType" substitutionGroup="nc:EmployeeRankAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A rank, status, or promotion level of a person within an employment organization.</xs:documentation>
     </xs:annotation>
@@ -7617,7 +7735,12 @@
       <xs:documentation>True if an employee's weekly scheduled hours are fixed; false if the scheduled hours are flexible.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="EmployeeShiftText" type="nc:TextType" nillable="true">
+  <xs:element name="EmployeeShiftAbstract" abstract="true">
+    <xs:annotation>
+      <xs:documentation>A data concept for a set of hours or time frame during which a person usually works.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="EmployeeShiftText" type="nc:TextType" substitutionGroup="nc:EmployeeShiftAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A set of hours or time frame during which a person usually works.</xs:documentation>
     </xs:annotation>
@@ -7670,6 +7793,11 @@
   <xs:element name="EmploymentPosition" type="nc:EmploymentPositionType" nillable="true">
     <xs:annotation>
       <xs:documentation>A job, post, or group of duties and responsibilities.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="EmploymentPositionAbstract" abstract="true">
+    <xs:annotation>
+      <xs:documentation>A data concept for a job name or title of an employment position.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="EmploymentPositionAugmentationPoint" abstract="true">
@@ -7737,7 +7865,7 @@
       <xs:documentation>A location for an employment position.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="EmploymentPositionName" type="nc:TextType" nillable="true">
+  <xs:element name="EmploymentPositionName" type="nc:TextType" substitutionGroup="nc:EmploymentPositionAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A job name or title of an employment position.</xs:documentation>
     </xs:annotation>
@@ -8052,7 +8180,12 @@
       <xs:documentation>An augmentation point for FacilityPersonAssociationType.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="FacilitySecurityLevelText" type="nc:TextType" nillable="true">
+  <xs:element name="FacilitySecurityLevelAbstract" abstract="true">
+    <xs:annotation>
+      <xs:documentation>A data concept for a level of security at which a facility operates.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="FacilitySecurityLevelText" type="nc:TextType" substitutionGroup="nc:FacilitySecurityLevelAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A level of security at which a facility operates.</xs:documentation>
     </xs:annotation>
@@ -8747,7 +8880,12 @@
       <xs:documentation>A data concept for a secondary color of an item.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="ItemConditionText" type="nc:TextType" nillable="true">
+  <xs:element name="ItemConditionAbstract" abstract="true">
+    <xs:annotation>
+      <xs:documentation>A data concept for a state or appearance of an item.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="ItemConditionText" type="nc:TextType" substitutionGroup="nc:ItemConditionAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A state or appearance of an item.</xs:documentation>
     </xs:annotation>
@@ -8932,7 +9070,12 @@
       <xs:documentation>An amount of money a current owner paid to purchase a property item.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="ItemOwnershipCategoryText" type="nc:TextType" nillable="true">
+  <xs:element name="ItemOwnershipCategoryAbstract" abstract="true">
+    <xs:annotation>
+      <xs:documentation>A data concept for a kind of ownership of an item.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="ItemOwnershipCategoryText" type="nc:TextType" substitutionGroup="nc:ItemOwnershipCategoryAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A kind of ownership of an item.</xs:documentation>
     </xs:annotation>
@@ -9222,7 +9365,12 @@
       <xs:documentation>An identifier of a designated census tract area.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="LocaleCommunityName" type="nc:TextType" nillable="true">
+  <xs:element name="LocaleCommunityAbstract" abstract="true">
+    <xs:annotation>
+      <xs:documentation>A data concept for a specific community.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="LocaleCommunityName" type="nc:TextType" substitutionGroup="nc:LocaleCommunityAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A name of a specific community.</xs:documentation>
     </xs:annotation>
@@ -9262,7 +9410,7 @@
       <xs:documentation>A data concept for a judicial district.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="LocaleJudicialDistrictName" type="nc:TextType" nillable="true">
+  <xs:element name="LocaleJudicialDistrictName" type="nc:TextType" substitutionGroup="nc:LocaleJudicialDistrictAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A name of the judicial district.</xs:documentation>
     </xs:annotation>
@@ -9447,7 +9595,17 @@
       <xs:documentation>An identification of a Location.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="LocationLandmarkText" type="nc:TextType" nillable="true">
+  <xs:element name="LocationLandmarkAbstract" abstract="true">
+    <xs:annotation>
+      <xs:documentation>A data concept for a distinguishing physical feature at a location.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="LocationLandmarkName" type="nc:TextType" substitutionGroup="nc:LocationLandmarkAbstract" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A name of a landmark.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="LocationLandmarkText" type="nc:TextType" substitutionGroup="nc:LocationLandmarkAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A distinguishing physical feature at a location.</xs:documentation>
     </xs:annotation>
@@ -9737,7 +9895,12 @@
       <xs:documentation>A list of integer measurement values, all using the same measurement method/device and of the same units.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="MeasureMethodText" type="nc:TextType" nillable="true">
+  <xs:element name="MeasureMethodAbstract" abstract="true">
+    <xs:annotation>
+      <xs:documentation>A data concept for a method used to make a measurement.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="MeasureMethodText" type="nc:TextType" substitutionGroup="nc:MeasureMethodAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A method used to make a measurement.</xs:documentation>
     </xs:annotation>
@@ -9837,7 +10000,12 @@
       <xs:documentation>True if a medical condition currently exists; false otherwise.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="MedicalConditionSeverityText" type="nc:TextType" nillable="true">
+  <xs:element name="MedicalConditionSeverityAbstract" abstract="true">
+    <xs:annotation>
+      <xs:documentation>A data concept for a degree to which a medical condition is affecting a person.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="MedicalConditionSeverityText" type="nc:TextType" substitutionGroup="nc:MedicalConditionSeverityAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A degree to which a medical condition is affecting a person.</xs:documentation>
     </xs:annotation>
@@ -9887,7 +10055,12 @@
       <xs:documentation>A kind of message category.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="MessageFATCAUsageRestrictionText" type="nc:TextType" nillable="true">
+  <xs:element name="MessageFATCAUsageRestrictionAbstract" abstract="true">
+    <xs:annotation>
+      <xs:documentation>A data concept for a set of information about restrictions for use of the information this message contains and the legal framework under which it is given.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="MessageFATCAUsageRestrictionText" type="nc:TextType" substitutionGroup="nc:MessageFATCAUsageRestrictionAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A set of information about restrictions for use of the information this message contains and the legal framework under which it is given.</xs:documentation>
     </xs:annotation>
@@ -10042,7 +10215,12 @@
       <xs:documentation>An identification number for a person in the military.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="MilitaryReleaseCategoryText" type="nc:TextType" nillable="true">
+  <xs:element name="MilitaryReleaseCategoryAbstract" abstract="true">
+    <xs:annotation>
+      <xs:documentation>A data concept for a kind of release a person received from military service.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="MilitaryReleaseCategoryText" type="nc:TextType" substitutionGroup="nc:MilitaryReleaseCategoryAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A kind of release a person received from military service.</xs:documentation>
     </xs:annotation>
@@ -10137,7 +10315,12 @@
       <xs:documentation>An augmentation point for ObligationType.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="ObligationCategoryText" type="nc:TextType" nillable="true">
+  <xs:element name="ObligationCategoryAbstract" abstract="true">
+    <xs:annotation>
+      <xs:documentation>A data concept for a kind of obligation.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="ObligationCategoryText" type="nc:TextType" substitutionGroup="nc:ObligationCategoryAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A kind of obligation.</xs:documentation>
     </xs:annotation>
@@ -10182,6 +10365,16 @@
       <xs:documentation>An entity that must fulfill an obligation.</xs:documentation>
     </xs:annotation>
   </xs:element>
+  <xs:element name="ObligationEntityCategoryAbstract" abstract="true">
+    <xs:annotation>
+      <xs:documentation>A data concept for a kind of entity responsible for fulfilling an obligation.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="ObligationEntityCategoryText" type="nc:TextType" substitutionGroup="nc:ObligationEntityCategoryAbstract" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A kind of entity responsible for fulfilling an obligation.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
   <xs:element name="ObligationExemption" type="nc:ObligationExemptionType" nillable="true">
     <xs:annotation>
       <xs:documentation>A waiving or dismissal of an obligation.</xs:documentation>
@@ -10222,7 +10415,12 @@
       <xs:documentation>A quantity of time that has been spent towards fulfilling an obligation.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="ObligationPeriodText" type="nc:TextType" nillable="true">
+  <xs:element name="ObligationPeriodAbstract" abstract="true">
+    <xs:annotation>
+      <xs:documentation>A data concept for an interval or period at which an obligation is required to be fulfilled.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="ObligationPeriodText" type="nc:TextType" substitutionGroup="nc:ObligationPeriodAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>An interval or period at which an obligation is required to be fulfilled.</xs:documentation>
     </xs:annotation>
@@ -10287,7 +10485,12 @@
       <xs:documentation>True if an organization is active; false if it is inactive.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="OrganizationActivityText" type="nc:TextType" nillable="true">
+  <xs:element name="OrganizationActivityAbstract" abstract="true">
+    <xs:annotation>
+      <xs:documentation>A data concept for an activity that an organization is known or thought to be involved with.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="OrganizationActivityText" type="nc:TextType" substitutionGroup="nc:OrganizationActivityAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>An activity that an organization is known or thought to be involved with.</xs:documentation>
     </xs:annotation>
@@ -10492,6 +10695,16 @@
       <xs:documentation>A availability of an organization.</xs:documentation>
     </xs:annotation>
   </xs:element>
+  <xs:element name="OrganizationSizeAbstract" abstract="true">
+    <xs:annotation>
+      <xs:documentation>A data concept for a size of an organization.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="OrganizationSizeText" type="nc:TextType" substitutionGroup="nc:OrganizationSizeAbstract" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A size of an organization.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
   <xs:element name="OrganizationStatus" type="nc:StatusType" nillable="true">
     <xs:annotation>
       <xs:documentation>A status of an organization.</xs:documentation>
@@ -10692,7 +10905,12 @@
       <xs:documentation>A date on which a permit was issued or renewed.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="PermitUsageText" type="nc:TextType" nillable="true">
+  <xs:element name="PermitUsageAbstract" abstract="true">
+    <xs:annotation>
+      <xs:documentation>A data concept for a usage allowed by a permit.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="PermitUsageText" type="nc:TextType" substitutionGroup="nc:PermitUsageAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A usage allowed by a permit.</xs:documentation>
     </xs:annotation>
@@ -10832,7 +11050,12 @@
       <xs:documentation>A status of a person's citizenship in a country.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="PersonComplexionText" type="nc:TextType" nillable="true">
+  <xs:element name="PersonComplexionAbstract" abstract="true">
+    <xs:annotation>
+      <xs:documentation>A data concept for an appearance or condition of the skin of a person.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="PersonComplexionText" type="nc:TextType" substitutionGroup="nc:PersonComplexionAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>An appearance or condition of the skin of a person.</xs:documentation>
     </xs:annotation>
@@ -11052,7 +11275,12 @@
       <xs:documentation>An overall appearance of the hair of a person.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="PersonHairCategoryText" type="nc:TextType" nillable="true">
+  <xs:element name="PersonHairCategoryAbstract" abstract="true">
+    <xs:annotation>
+      <xs:documentation>A data concept for a kind of hair of a person, such as wavy or straight.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="PersonHairCategoryText" type="nc:TextType" substitutionGroup="nc:PersonHairCategoryAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A kind of hair of a person, such as wavy or straight.</xs:documentation>
     </xs:annotation>
@@ -11177,7 +11405,12 @@
       <xs:documentation>An association between a person and the last known location at which that person was seen.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="PersonLearningDisabilityText" type="nc:TextType" nillable="true">
+  <xs:element name="PersonLearningDisabilityAbstract" abstract="true">
+    <xs:annotation>
+      <xs:documentation>A data concept for a disorder of a person which can cause difficulties in learning something.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="PersonLearningDisabilityText" type="nc:TextType" substitutionGroup="nc:PersonLearningDisabilityAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A disorder of a person which can cause difficulties in learning something.</xs:documentation>
     </xs:annotation>
@@ -11227,7 +11460,12 @@
       <xs:documentation>A medication and dosage required for a person.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="PersonMentalStateText" type="nc:TextType" nillable="true">
+  <xs:element name="PersonMentalStateAbstract" abstract="true">
+    <xs:annotation>
+      <xs:documentation>A data concept for a mental condition of a person.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="PersonMentalStateText" type="nc:TextType" substitutionGroup="nc:PersonMentalStateAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A mental condition of a person.</xs:documentation>
     </xs:annotation>
@@ -11272,7 +11510,12 @@
       <xs:documentation>A kind of person name.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="PersonNamePrefixText" type="nc:TextType" nillable="true">
+  <xs:element name="PersonNamePrefixAbstract" abstract="true">
+    <xs:annotation>
+      <xs:documentation>A data concept for a title or honorific used by a person.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="PersonNamePrefixText" type="nc:TextType" substitutionGroup="nc:PersonNamePrefixAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A title or honorific used by a person.</xs:documentation>
     </xs:annotation>
@@ -11477,7 +11720,12 @@
       <xs:documentation>A gender or sex of a person.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="PersonSexualOrientationText" type="nc:TextType" nillable="true">
+  <xs:element name="PersonSexualOrientationAbstract" abstract="true">
+    <xs:annotation>
+      <xs:documentation>A data concept for a target gender of the sexual interest of a person.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="PersonSexualOrientationText" type="nc:TextType" substitutionGroup="nc:PersonSexualOrientationAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A target gender of the sexual interest of a person.</xs:documentation>
     </xs:annotation>
@@ -11682,7 +11930,12 @@
       <xs:documentation>A description of a physical feature.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="PhysicalFeatureGeneralCategoryText" type="nc:TextType" nillable="true">
+  <xs:element name="PhysicalFeatureGeneralCategoryAbstract" abstract="true">
+    <xs:annotation>
+      <xs:documentation>A data concept for a general kind of physical feature.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="PhysicalFeatureGeneralCategoryText" type="nc:TextType" substitutionGroup="nc:PhysicalFeatureGeneralCategoryAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A general kind of physical feature.</xs:documentation>
     </xs:annotation>
@@ -11912,12 +12165,17 @@
       <xs:documentation>An augmentation point for ProgressType.</xs:documentation>
     </xs:annotation>
   </xs:element>
+  <xs:element name="ProgressComplianceAbstract" abstract="true">
+    <xs:annotation>
+      <xs:documentation>A data concept for a description of the compliance or non-compliance of a person with an activity.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
   <xs:element name="ProgressComplianceIndicator" type="niem-xs:boolean" nillable="true">
     <xs:annotation>
       <xs:documentation>True if a reported progress is acceptable according to the terms set; false otherwise.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="ProgressComplianceText" type="nc:TextType" nillable="true">
+  <xs:element name="ProgressComplianceText" type="nc:TextType" substitutionGroup="nc:ProgressComplianceAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A description of the compliance or non-compliance of a person with an activity.</xs:documentation>
     </xs:annotation>
@@ -12017,7 +12275,12 @@
       <xs:documentation>A kind of public service.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="PublicServiceChannelText" type="nc:TextType" nillable="true">
+  <xs:element name="PublicServiceChannelAbstract" abstract="true">
+    <xs:annotation>
+      <xs:documentation>A data concept for a particular end or object through which the service may be available.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="PublicServiceChannelText" type="nc:TextType" substitutionGroup="nc:PublicServiceChannelAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A particular end or object through which the service may be available.</xs:documentation>
     </xs:annotation>
@@ -12407,17 +12670,42 @@
       <xs:documentation>An identifier for a report.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="ReportingOrganizationText" type="nc:TextType" nillable="true">
+  <xs:element name="ReportingOrganization" type="nc:OrganizationType" substitutionGroup="nc:ReportingOrganizationAbstract" nillable="true">
+    <xs:annotation>
+      <xs:documentation>An organization that provided the information.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="ReportingOrganizationAbstract" abstract="true">
+    <xs:annotation>
+      <xs:documentation>A data concept for an organization that provided the information.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="ReportingOrganizationText" type="nc:TextType" substitutionGroup="nc:ReportingOrganizationAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A name, identifier, or reference of an organization that provided the information.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="ReportingPersonRoleText" type="nc:TextType" nillable="true">
+  <xs:element name="ReportingPerson" type="nc:PersonType" substitutionGroup="nc:ReportingPersonAbstract" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A person who provided the information.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="ReportingPersonAbstract" abstract="true">
+    <xs:annotation>
+      <xs:documentation>A data concept for a person who provided the information.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="ReportingPersonRoleAbstract" abstract="true">
+    <xs:annotation>
+      <xs:documentation>A data concept for a type, responsibility, or role of a person who provided the information.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="ReportingPersonRoleText" type="nc:TextType" substitutionGroup="nc:ReportingPersonRoleAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A type, responsibility, or role of a person who provided the information.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="ReportingPersonText" type="nc:TextType" nillable="true">
+  <xs:element name="ReportingPersonText" type="nc:TextType" substitutionGroup="nc:ReportingPersonAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A name, identifier, or reference of a person who provided the information.</xs:documentation>
     </xs:annotation>
@@ -12502,7 +12790,12 @@
       <xs:documentation>A general description of a place in which a person lives.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="ResidenceOccupancyCategoryText" type="nc:TextType" nillable="true">
+  <xs:element name="ResidenceOccupancyCategoryAbstract" abstract="true">
+    <xs:annotation>
+      <xs:documentation>A data concept for a kind of occupancy of a residence.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="ResidenceOccupancyCategoryText" type="nc:TextType" substitutionGroup="nc:ResidenceOccupancyCategoryAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A kind of occupancy of a residence.</xs:documentation>
     </xs:annotation>
@@ -12512,7 +12805,12 @@
       <xs:documentation>An amount of money a person pays each payment period to live at a residence.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="ResidencePaymentPeriodText" type="nc:TextType" nillable="true">
+  <xs:element name="ResidencePaymentPeriodAbstract" abstract="true">
+    <xs:annotation>
+      <xs:documentation>A data concept for a kind of occupancy of a residence.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="ResidencePaymentPeriodText" type="nc:TextType" substitutionGroup="nc:ResidencePaymentPeriodAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>An interval or period for which a person is required to make regular residence payments.</xs:documentation>
     </xs:annotation>
@@ -12707,7 +13005,12 @@
       <xs:documentation>An entity which issued a security to a person.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="SensitivityText" type="nc:TextType" nillable="true">
+  <xs:element name="SensitivityAbstract" abstract="true">
+    <xs:annotation>
+      <xs:documentation>A data concept for a sensitivity level of the information.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="SensitivityText" type="nc:TextType" substitutionGroup="nc:SensitivityAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A sensitivity level of the information.</xs:documentation>
     </xs:annotation>
@@ -12822,7 +13125,17 @@
       <xs:documentation>A version of a computer application.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="SourceContactPersonText" type="nc:TextType" nillable="true">
+  <xs:element name="SourceContactPerson" type="nc:PersonType" substitutionGroup="nc:SourceContactPersonAbstract" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A person who can answer questions about the information.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="SourceContactPersonAbstract" abstract="true">
+    <xs:annotation>
+      <xs:documentation>A data concept for a person who can answer questions about the information.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="SourceContactPersonText" type="nc:TextType" substitutionGroup="nc:SourceContactPersonAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A person who can answer questions about the information.</xs:documentation>
     </xs:annotation>
@@ -13027,7 +13340,12 @@
       <xs:documentation>A description of a container used to hold a substance.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="SubstanceFormText" type="nc:TextType" nillable="true">
+  <xs:element name="SubstanceFormAbstract" abstract="true">
+    <xs:annotation>
+      <xs:documentation>A data concept for a physical state or form in which a substance appears.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="SubstanceFormText" type="nc:TextType" substitutionGroup="nc:SubstanceFormAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A physical state or form in which a substance appears.</xs:documentation>
     </xs:annotation>
@@ -13422,7 +13740,12 @@
       <xs:documentation>True if a vehicle is a commercial motor vehicle; false otherwise.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="VehicleColorInteriorText" type="nc:TextType" nillable="true">
+  <xs:element name="VehicleColorInteriorAbstract" abstract="true">
+    <xs:annotation>
+      <xs:documentation>A data concept for a color of the interior of a vehicle.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="VehicleColorInteriorText" type="nc:TextType" substitutionGroup="nc:VehicleColorInteriorAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A color of the interior of a vehicle.</xs:documentation>
     </xs:annotation>
@@ -13617,7 +13940,12 @@
       <xs:documentation>An activity in which a weapon was involved.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="WeaponUsageText" type="nc:TextType" nillable="true">
+  <xs:element name="WeaponUsageAbstract" abstract="true">
+    <xs:annotation>
+      <xs:documentation>A data concept for a way or manner in which a weapon was used.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="WeaponUsageText" type="nc:TextType" substitutionGroup="nc:WeaponUsageAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A way or manner in which a weapon was used.</xs:documentation>
     </xs:annotation>
