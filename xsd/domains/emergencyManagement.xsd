@@ -5667,7 +5667,7 @@
         <xs:sequence>
           <xs:element ref="em:OrganizationIssuedID" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="em:OrganizationPersonCommentText" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="nc:EmployeePositionName" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:EmploymentPositionName" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:EmployeeOccupationText" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:EmployeeOccupationCategoryText" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="em:OrganizationPersonRelationText" minOccurs="0" maxOccurs="unbounded"/>
@@ -5897,7 +5897,6 @@
     <xs:complexContent>
       <xs:extension base="structures:AugmentationType">
         <xs:sequence>
-          <xs:element ref="em:PersonJobTitleText" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="em:PersonQualificationText" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="em:PersonEmploymentExperienceText" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="em:PersonSpecialtyText" minOccurs="0" maxOccurs="unbounded"/>
@@ -13930,11 +13929,6 @@
   <xs:element name="PersonIDCategoryText" type="nc:TextType" substitutionGroup="em:IDCategoryCodeAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A kind of identification type of a person</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="PersonJobTitleText" type="nc:TextType" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A job title of personnel as assigned by a facility.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="PersonPublication" type="nc:PublicationType" nillable="true">

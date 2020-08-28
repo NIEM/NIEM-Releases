@@ -53,6 +53,7 @@ NIEM 5.0 has introduced auxiliary schemas to the release package.  These are sim
 
 - Added ActivityLocation element to nc:ActivityType [(#71)](https://github.com/NIEM/NIEM-Releases/issues/71)
 - Added AreaMeasureType [(#143)](https://github.com/NIEM/NIEM-Releases/issues/143)
+- Added employment assignment and position components [(#105)](https://github.com/NIEM/NIEM-Releases/issues/105)
 - Added MailingAddress and PhysicalAddress as more specific substitutions for nc:Address [(#72)](https://github.com/NIEM/NIEM-Releases/issues/72)
 - Added metadata to represent the reason for empty values [(#76)](https://github.com/NIEM/NIEM-Releases/issues/76)
 - Added MilitaryPersonIdentification element to nc:MilitarySummaryType [(#32)](https://github.com/NIEM/NIEM-Releases/issues/32)
@@ -75,6 +76,7 @@ NIEM 5.0 has introduced auxiliary schemas to the release package.  These are sim
 - Harmonized country and state class terms [(#67)](https://github.com/NIEM/NIEM-Releases/issues/67)
 - Harmonized document components and added a new ReportType [(#129)](https://github.com/NIEM/NIEM-Releases/issues/129)
 - Harmonized education components [(#113)](https://github.com/NIEM/NIEM-Releases/issues/113)
+- Harmonized employment components [(#105)](https://github.com/NIEM/NIEM-Releases/issues/105)
 - Harmonized item components [(#115)](https://github.com/NIEM/NIEM-Releases/issues/115)
 - Harmonized jurisdiction components [(#141)](https://github.com/NIEM/NIEM-Releases/issues/141)
 - Harmonized location elements [(#100)](https://github.com/NIEM/NIEM-Releases/issues/100)

@@ -1775,12 +1775,12 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-  <xs:complexType name="EmployerType">
+  <xs:complexType name="EmployerAugmentationType">
     <xs:annotation>
-      <xs:documentation>A data type for Employer Details.</xs:documentation>
+      <xs:documentation>A data type for additional information about an employer.</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
-      <xs:extension base="nc:EntityType">
+      <xs:extension base="structures:AugmentationType">
         <xs:sequence>
           <xs:element ref="hs:EmployerFEINID" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="hs:EmployerName" minOccurs="0" maxOccurs="unbounded"/>
@@ -1789,7 +1789,6 @@
           <xs:element ref="hs:EmployerStateUnemploymentID" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="hs:EmployerTribalMemberOwnedIndicator" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="hs:EmployerCategoryText" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="hs:EmployerAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -9723,14 +9722,9 @@
       <xs:documentation>True if contact by e-mail is supported for follow up purposes; false otherwise.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="Employer" type="hs:EmployerType" nillable="true">
+  <xs:element name="EmployerAugmentation" type="hs:EmployerAugmentationType" substitutionGroup="nc:EmployerAugmentationPoint" nillable="true">
     <xs:annotation>
-      <xs:documentation>An employer.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="EmployerAugmentationPoint" abstract="true">
-    <xs:annotation>
-      <xs:documentation>An augmentation point for EmployerType.</xs:documentation>
+      <xs:documentation>Additional information about an employer.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="EmployerCategoryText" type="niem-xs:string" nillable="true">

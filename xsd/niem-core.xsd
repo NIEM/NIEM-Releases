@@ -1600,6 +1600,141 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
+  <xs:complexType name="EmployeeAssignmentAssociationType">
+    <xs:annotation>
+      <xs:documentation>A data type for an association between an employee and a position or post for which that employee has been temporarily assigned to for some period of time.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="nc:EmploymentAssociationType">
+        <xs:sequence>
+          <xs:element ref="nc:EmployeeRegistrationAbstract" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:EmployeeSupervisorIndicator" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:EmployeeAssignmentAssociationAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="EmployerType">
+    <xs:annotation>
+      <xs:documentation>A data type for an organization or person that employs a person.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="nc:EntityType">
+        <xs:sequence>
+          <xs:element ref="nc:EmployerAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="EmploymentAssociationType">
+    <xs:annotation>
+      <xs:documentation>A data type for an association between an employee and an employer.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="nc:AssociationType">
+        <xs:sequence>
+          <xs:element ref="nc:Employee" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:Employer" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:EmployeeAssignmentAssociation" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:EmployeeContactInformation" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:EmployeeFullTimeIndicator" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:EmployeeHoursFixedIndicator" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:EmployeeHoursDailyQuantity" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:EmployeeHoursWeeklyQuantity" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:EmployeeHoursMonthlyQuantity" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:EmployeeIdentification" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:EmploymentLengthAbstract" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:EmploymentLocation" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:EmployeeOccupationAbstract" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:EmployeeOccupationCategoryAbstract" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:EmployeePayAbstract" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:EmployeePayHourlyIndicator" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:EmployeePosition" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:EmployeeRankText" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:EmployeeSchedule" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:EmployeeScheduleFixedIndicator" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:EmployeeShiftText" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:EmploymentStatus" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:EmployeeSupervisor" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:EmploymentAssociationAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:simpleType name="EmploymentPositionBasisCodeSimpleType">
+    <xs:annotation>
+      <xs:documentation>A data type for a nature or duration of the employment position.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="contractor">
+        <xs:annotation>
+          <xs:documentation>employment for a specific project over a set time frame</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="non-permanent">
+        <xs:annotation>
+          <xs:documentation>fixed term, casual, or on-demand employment</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="permanent">
+        <xs:annotation>
+          <xs:documentation>open-ended employment</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="EmploymentPositionBasisCodeType">
+    <xs:annotation>
+      <xs:documentation>A data type for a nature or duration of the employment position.</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="nc:EmploymentPositionBasisCodeSimpleType">
+        <xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="EmploymentPositionOrganizationAssociationType">
+    <xs:annotation>
+      <xs:documentation>A data type for an association between an employment position and an organization.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="nc:AssociationType">
+        <xs:sequence>
+          <xs:element ref="nc:EmploymentPosition" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:Organization" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:Status" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:EmploymentPositionOrganizationAssociationAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="EmploymentPositionType">
+    <xs:annotation>
+      <xs:documentation>A data type for a job, post, or group of duties and responsibilities to be performed by an employee.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="structures:ObjectType">
+        <xs:sequence>
+          <xs:element ref="nc:EmploymentPositionBargainingExclusionAbstract" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:EmploymentPositionBargainingUnitAbstract" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:EmploymentPositionBasisAbstract" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:EmploymentPositionDepartmentName" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:EmploymentPositionDutyText" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:EmploymentPositionEssentialIndicator" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:EmploymentPositionEssentialLanguage" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:EmploymentPositionIdentification" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:EmploymentPositionLocation" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:EmploymentPositionName" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:EmploymentPositionRequiredEducationAbstract" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:EmploymentPositionRequiredJobSkillAbstract" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:EmploymentPositionSecurityClearanceLevelAbstract" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:EmploymentPositionSupervisoryPosition" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:EmploymentPositionTemporaryIndicator" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:EmploymentPositionAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
   <xs:simpleType name="EmptyReasonCodeSimpleType">
     <xs:annotation>
       <xs:documentation>A data type for a reason why a data value was not provided.</xs:documentation>
@@ -3363,32 +3498,6 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-  <xs:complexType name="PersonEmploymentAssociationType">
-    <xs:annotation>
-      <xs:documentation>A data type for an association between a person and an employment.</xs:documentation>
-    </xs:annotation>
-    <xs:complexContent>
-      <xs:extension base="nc:AssociationType">
-        <xs:sequence>
-          <xs:element ref="nc:Employee" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="nc:Employer" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="nc:EmployeeDepartmentName" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="nc:EmployeePositionName" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="nc:EmployeeOccupationAbstract" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="nc:EmployeeOccupationCategoryAbstract" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="nc:EmployeeRankText" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="nc:EmployeeIdentification" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="nc:EmploymentContactInformation" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="nc:EmploymentLocation" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="nc:EmployeeShiftText" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="nc:EmployeeEarningsRateText" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="nc:EmploymentStatus" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="nc:EmployeeSupervisor" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="nc:PersonEmploymentAssociationAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
-        </xs:sequence>
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
   <xs:complexType name="PersonEncounterType">
     <xs:annotation>
       <xs:documentation>A data type for an encounter between a person of interest and a governmental element, such as an organization, official or surveillance system.</xs:documentation>
@@ -3601,6 +3710,7 @@
           <xs:element ref="nc:PersonDisguiseDescriptionText" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:PersonOrganDonorAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:PersonEducation" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:PersonEmployedIndicator" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:PersonEthnicityAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:PersonEyeColorAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:PersonEyewearAbstract" minOccurs="0" maxOccurs="unbounded"/>
@@ -3617,6 +3727,7 @@
           <xs:element ref="nc:PersonHumanResourceIdentification" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:PersonInjury" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:PersonJewelryDescriptionText" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:PersonJobTitleText" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:PersonLanguageEnglishIndicator" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:PersonLearningDisabilityText" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:PersonLicenseIdentification" minOccurs="0" maxOccurs="unbounded"/>
@@ -3648,6 +3759,7 @@
           <xs:element ref="nc:PersonSSNIdentification" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:PersonStateIdentification" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:PersonTaxIdentification" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:PersonUnemploymentStatus" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:PersonUnionStatusAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:PersonUSCitizenIndicator" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:PersonVisionPrescriptionText" minOccurs="0" maxOccurs="unbounded"/>
@@ -3656,7 +3768,7 @@
           <xs:element ref="nc:PersonXRayImage" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:PersonNationality" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:PersonContactInformation" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="nc:EmploymentContactInformation" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:EmployeeContactInformation" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:PersonEmergencyContactInformation" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:PersonHomeContactInformation" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:PersonAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
@@ -4226,6 +4338,7 @@
         <xs:sequence>
           <xs:element ref="nc:ScheduleDay" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:ScheduleDescriptionText" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:ScheduleEffectiveDateRange" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:ScheduleExceptionsDescriptionText" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:ScheduleNonStopIndicator" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:ScheduleStatus" minOccurs="0" maxOccurs="unbounded"/>
@@ -7394,14 +7507,44 @@
       <xs:documentation>A person who works for a business or a person.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="EmployeeDepartmentName" type="nc:TextType" nillable="true">
+  <xs:element name="EmployeeAssignmentAssociation" type="nc:EmployeeAssignmentAssociationType" nillable="true">
     <xs:annotation>
-      <xs:documentation>A name of a department or other business unit associated with a job position.</xs:documentation>
+      <xs:documentation>An association between an employee and a position or post for which that employee has been temporarily assigned to for some period of time.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="EmployeeEarningsRateText" type="nc:TextType" nillable="true">
+  <xs:element name="EmployeeAssignmentAssociationAugmentationPoint" abstract="true">
     <xs:annotation>
-      <xs:documentation>A monetary compensation a person receives for employment.</xs:documentation>
+      <xs:documentation>An augmentation point for type nc:EmployeeAssignmentAssociationType</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="EmployeeContactInformation" type="nc:ContactInformationType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A means of contacting a person at work.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="EmployeeFullTimeIndicator" type="niem-xs:boolean" nillable="true">
+    <xs:annotation>
+      <xs:documentation>True if a person has full-time employment; false otherwise.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="EmployeeHoursDailyQuantity" type="nc:QuantityType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A number of hours spent at workplace or working in a typical work day.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="EmployeeHoursFixedIndicator" type="niem-xs:boolean" nillable="true">
+    <xs:annotation>
+      <xs:documentation>True if the number of hours that employee works each week is fixed; false if the hours are flexible.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="EmployeeHoursMonthlyQuantity" type="nc:QuantityType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A typical number of hours spent at workplace or working in a typical month.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="EmployeeHoursWeeklyQuantity" type="nc:QuantityType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A number of hours spent at workplace or working in a typical week.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="EmployeeID" type="niem-xs:string" substitutionGroup="nc:SystemUserNameAbstract" nillable="true">
@@ -7434,14 +7577,44 @@
       <xs:documentation>A job of an employee.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="EmployeePositionName" type="nc:TextType" nillable="true">
+  <xs:element name="EmployeePayAbstract" abstract="true">
     <xs:annotation>
-      <xs:documentation>A job name or title of an employee.</xs:documentation>
+      <xs:documentation>A data concept for a monetary compensation a person receives for employment.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="EmployeePayHourlyIndicator" type="niem-xs:boolean" nillable="true">
+    <xs:annotation>
+      <xs:documentation>True if a person is paid on an hourly basis; false if a person is salaried.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="EmployeePosition" type="nc:EmploymentPositionType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A job, post, or group of duties and responsibilities performed by an employee.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="EmployeeRankText" type="nc:TextType" nillable="true">
     <xs:annotation>
       <xs:documentation>A rank, status, or promotion level of a person within an employment organization.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="EmployeeRegistrationAbstract" abstract="true">
+    <xs:annotation>
+      <xs:documentation>A data concept for a registration of an employee.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="EmployeeRegistrationIdentification" type="nc:IdentificationType" substitutionGroup="nc:EmployeeRegistrationAbstract" nillable="true">
+    <xs:annotation>
+      <xs:documentation>An identification of a registration of an employee.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="EmployeeSchedule" type="nc:ScheduleType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A plan for the days and hours that a person will work.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="EmployeeScheduleFixedIndicator" type="niem-xs:boolean" nillable="true">
+    <xs:annotation>
+      <xs:documentation>True if an employee's weekly scheduled hours are fixed; false if the scheduled hours are flexible.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="EmployeeShiftText" type="nc:TextType" nillable="true">
@@ -7454,19 +7627,164 @@
       <xs:documentation>A person who oversees and manages an employee.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="Employer" type="nc:EntityType" nillable="true">
+  <xs:element name="EmployeeSupervisorIndicator" type="niem-xs:boolean" nillable="true">
     <xs:annotation>
-      <xs:documentation>A party/entity (organization or person) who employs a person.</xs:documentation>
+      <xs:documentation>True if the employee is a supervisor; false otherwise.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="EmploymentContactInformation" type="nc:ContactInformationType" nillable="true">
+  <xs:element name="Employer" type="nc:EmployerType" nillable="true">
     <xs:annotation>
-      <xs:documentation>A means of contacting a person at work.</xs:documentation>
+      <xs:documentation>An organization or person that employs a person.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="EmployerAugmentationPoint" abstract="true">
+    <xs:annotation>
+      <xs:documentation>An augmentation point for type nc:EmployerType</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="EmploymentAssociationAugmentationPoint" abstract="true">
+    <xs:annotation>
+      <xs:documentation>An augmentation point for EmploymentAssociationType.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="EmploymentLengthAbstract" abstract="true">
+    <xs:annotation>
+      <xs:documentation>A data concept for an amount of time an employment as lasted.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="EmploymentLengthDuration" type="niem-xs:duration" substitutionGroup="nc:EmploymentLengthAbstract" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A duration over which the given employment has lasted.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="EmploymentLocation" type="nc:LocationType" nillable="true">
     <xs:annotation>
       <xs:documentation>A location where a person works.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="EmploymentPayRateAmount" type="nc:TextType" substitutionGroup="nc:EmployeePayAbstract" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A monetary compensation a person receives for employment.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="EmploymentPosition" type="nc:EmploymentPositionType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A job, post, or group of duties and responsibilities.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="EmploymentPositionAugmentationPoint" abstract="true">
+    <xs:annotation>
+      <xs:documentation>An augmentation point for type nc:EmploymentPositionType</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="EmploymentPositionBargainingExclusionAbstract" abstract="true">
+    <xs:annotation>
+      <xs:documentation>A data concept identifying a kind of position excluded from a bargaining unit.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="EmploymentPositionBargainingUnitAbstract" abstract="true">
+    <xs:annotation>
+      <xs:documentation>A data concept for a bargaining unit representing an employment position.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="EmploymentPositionBargainingUnitText" type="nc:TextType" substitutionGroup="nc:EmploymentPositionBargainingUnitAbstract" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A bargaining unit representing an employment position.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="EmploymentPositionBasisAbstract" abstract="true">
+    <xs:annotation>
+      <xs:documentation>A data concept for a nature or duration of the position, such as permanent, non-permanent, or contractor.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="EmploymentPositionBasisCode" type="nc:EmploymentPositionBasisCodeType" substitutionGroup="nc:EmploymentPositionBasisAbstract" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A nature or duration of the position, such as permanent, non-permanent, or contractor.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="EmploymentPositionBasisText" type="nc:TextType" substitutionGroup="nc:EmploymentPositionBasisAbstract" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A nature or duration of the position, such as permanent, non-permanent, or contractor.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="EmploymentPositionDepartmentName" type="nc:TextType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A name of a department or other business unit associated with a job position.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="EmploymentPositionDutyText" type="nc:TextType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A job duty that will be performed for an employment position.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="EmploymentPositionEssentialIndicator" type="niem-xs:boolean" nillable="true">
+    <xs:annotation>
+      <xs:documentation>True if the employment position is deemed to perform an essential service; false otherwise.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="EmploymentPositionEssentialLanguage" type="nc:LanguageType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A language required for an employment position.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="EmploymentPositionIdentification" type="nc:IdentificationType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>An identification of an employment position.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="EmploymentPositionLocation" type="nc:LocationType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A location for an employment position.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="EmploymentPositionName" type="nc:TextType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A job name or title of an employment position.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="EmploymentPositionOrganizationAssociation" type="nc:EmploymentPositionOrganizationAssociationType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>An association between an employee position and an organization.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="EmploymentPositionOrganizationAssociationAugmentationPoint" abstract="true">
+    <xs:annotation>
+      <xs:documentation>An augmentation point for type nc:EmploymentPositionOrganizationAssociationType</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="EmploymentPositionRequiredEducationAbstract" abstract="true">
+    <xs:annotation>
+      <xs:documentation>A data concept for a kind of educational level or certification required for an employment position.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="EmploymentPositionRequiredEducationText" type="nc:TextType" substitutionGroup="nc:EmploymentPositionRequiredEducationAbstract" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A kind of educational level or certification required for an employment position.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="EmploymentPositionRequiredJobSkillAbstract" abstract="true">
+    <xs:annotation>
+      <xs:documentation>A data concept for a job skill that is required for this position.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="EmploymentPositionRequiredJobSkillText" type="nc:TextType" substitutionGroup="nc:EmploymentPositionRequiredJobSkillAbstract" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A job skill that is required for this position.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="EmploymentPositionSecurityClearanceLevelAbstract" abstract="true">
+    <xs:annotation>
+      <xs:documentation>A data concept for a security clearance level required for an employment position.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="EmploymentPositionSupervisoryPosition" type="nc:EmploymentPositionType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A position responsible for supervising or managing this position.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="EmploymentPositionTemporaryIndicator" type="niem-xs:boolean" nillable="true">
+    <xs:annotation>
+      <xs:documentation>True if the position is temporary in nature; false if it is permanent.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="EmploymentStatus" type="nc:StatusType" nillable="true">
@@ -10544,7 +10862,7 @@
       <xs:documentation>An association between a person and a criminal organization.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="PersonCurrentEmploymentAssociation" type="nc:PersonEmploymentAssociationType" nillable="true">
+  <xs:element name="PersonCurrentEmploymentAssociation" type="nc:EmploymentAssociationType" nillable="true">
     <xs:annotation>
       <xs:documentation>An association between a person and his or her current employment.</xs:documentation>
     </xs:annotation>
@@ -10639,14 +10957,14 @@
       <xs:documentation>A means of contacting someone in the event of an emergency.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="PersonEmploymentAssociation" type="nc:PersonEmploymentAssociationType" nillable="true">
+  <xs:element name="PersonEmployedIndicator" type="niem-xs:boolean" nillable="true">
     <xs:annotation>
-      <xs:documentation>An association between a person and employment information.</xs:documentation>
+      <xs:documentation>True if a person is employed; false if a person is unemployed.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="PersonEmploymentAssociationAugmentationPoint" abstract="true">
+  <xs:element name="PersonEmploymentAssociation" type="nc:EmploymentAssociationType" nillable="true">
     <xs:annotation>
-      <xs:documentation>An augmentation point for PersonEmploymentAssociationType.</xs:documentation>
+      <xs:documentation>An association between an employee and an employer.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="PersonEmploymentLocationAssociation" type="nc:PersonLocationAssociationType" nillable="true">
@@ -10704,7 +11022,7 @@
       <xs:documentation>A kind of facial hair of a person.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="PersonFormerEmploymentAssociation" type="nc:PersonEmploymentAssociationType" nillable="true">
+  <xs:element name="PersonFormerEmploymentAssociation" type="nc:EmploymentAssociationType" nillable="true">
     <xs:annotation>
       <xs:documentation>An association between a person and employment held in the past but not currently held.</xs:documentation>
     </xs:annotation>
@@ -10822,6 +11140,11 @@
   <xs:element name="PersonJewelryDescriptionText" type="nc:TextType" nillable="true">
     <xs:annotation>
       <xs:documentation>A description of adornments a person wears.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="PersonJobTitleText" type="nc:TextType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A title or label that briefly describes the position or kind of work a person does.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="PersonJuvenileClaimedIndicator" type="niem-xs:boolean" nillable="true">
@@ -11207,6 +11530,11 @@
   <xs:element name="PersonTemporaryAssignedUnitAssociation" type="nc:PersonOrganizationAssociationType" nillable="true">
     <xs:annotation>
       <xs:documentation>An association between a person and a temporarily assigned unit.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="PersonUnemploymentStatus" type="nc:StatusType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A status of a person's period of unemployment.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="PersonUnionAssociation" type="nc:PersonUnionAssociationType" nillable="true">
@@ -12292,6 +12620,11 @@
   <xs:element name="ScheduleDescriptionText" type="nc:TextType" nillable="true">
     <xs:annotation>
       <xs:documentation>A description of the schedule.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="ScheduleEffectiveDateRange" type="nc:DateRangeType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A date range over which a schedule will be valid.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="ScheduleExceptionsDescriptionText" type="nc:TextType" nillable="true">

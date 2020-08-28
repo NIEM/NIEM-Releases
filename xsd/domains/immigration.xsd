@@ -2261,6 +2261,21 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
+  <xs:complexType name="EmploymentAssociationAugmentationType">
+    <xs:annotation>
+      <xs:documentation>A data type for additional information about an employment association.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="structures:AugmentationType">
+        <xs:sequence>
+          <xs:element ref="im:EmploymentAuthorizationEndDate" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="im:EmploymentAuthorizationStartDate" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="im:EmploymentAuthorizationText" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="im:EmploymentAuthorizationIndicator" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
   <xs:complexType name="ExchangeVisitorProgramClassificationType">
     <xs:annotation>
       <xs:documentation>A data type for the classification of the educational or training program authorized for non-immigrant alien exchange visitors.</xs:documentation>
@@ -8015,22 +8030,6 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-  <xs:complexType name="PersonEmploymentAssociationAugmentationType">
-    <xs:annotation>
-      <xs:documentation>A data type for additional information about a person employment association.</xs:documentation>
-    </xs:annotation>
-    <xs:complexContent>
-      <xs:extension base="structures:AugmentationType">
-        <xs:sequence>
-          <xs:element ref="im:EmploymentAuthorizationEndDate" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="im:EmploymentAuthorizationStartDate" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="im:EmploymentAuthorizationText" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="j:EmploymentAssignedUnitAbstract" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="im:EmploymentAuthorizationIndicator" minOccurs="0" maxOccurs="unbounded"/>
-        </xs:sequence>
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
   <xs:complexType name="PersonNameAugmentationType">
     <xs:annotation>
       <xs:documentation>A data type for additional information about a person name.</xs:documentation>
@@ -9228,6 +9227,11 @@
       <xs:documentation>A field detailing the alien students level of education</xs:documentation>
     </xs:annotation>
   </xs:element>
+  <xs:element name="EmploymentAssociationAugmentation" type="im:EmploymentAssociationAugmentationType" substitutionGroup="nc:EmploymentAssociationAugmentationPoint" nillable="true">
+    <xs:annotation>
+      <xs:documentation>Additional information about an employment association.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
   <xs:element name="EmploymentAuthorizationEndDate" type="nc:DateType" nillable="true">
     <xs:annotation>
       <xs:documentation>A date through which an alien is authorized by DHS to work for a United States business.</xs:documentation>
@@ -10106,11 +10110,6 @@
   <xs:element name="PersonDependentAssociationAugmentationPoint" abstract="true">
     <xs:annotation>
       <xs:documentation>An augmentation point for PersonDependentAssociationType.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="PersonEmploymentAssociationAugmentation" type="im:PersonEmploymentAssociationAugmentationType" substitutionGroup="nc:PersonEmploymentAssociationAugmentationPoint" nillable="true">
-    <xs:annotation>
-      <xs:documentation>Additional information about a person employment association.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="PersonNameAugmentation" type="im:PersonNameAugmentationType" substitutionGroup="nc:PersonNameAugmentationPoint" nillable="true">

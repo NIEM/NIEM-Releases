@@ -16637,6 +16637,22 @@
       </xs:enumeration>
     </xs:restriction>
   </xs:simpleType>
+  <xs:complexType name="EmploymentAssociationAugmentationType">
+    <xs:annotation>
+      <xs:documentation>A data type for additional information about an employment association.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="structures:AugmentationType">
+        <xs:sequence>
+          <xs:element ref="scr:BeginSalaryAmount" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="scr:EndSalaryAmount" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="scr:EmployeeStarNumberID" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="scr:EmployeeBadgeNumberID" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="scr:EmployeeCallNumberID" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
   <xs:simpleType name="EncounterCategoryCodeSimpleType">
     <xs:annotation>
       <xs:documentation>A data type for a kind of encounter.</xs:documentation>
@@ -20386,25 +20402,6 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-  <xs:complexType name="PersonEmploymentAssociationAugmentationType">
-    <xs:annotation>
-      <xs:documentation>A data type for additional information about a person employment association.</xs:documentation>
-    </xs:annotation>
-    <xs:complexContent>
-      <xs:extension base="structures:AugmentationType">
-        <xs:sequence>
-          <xs:element ref="nc:Person" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="nc:Organization" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="scr:PayRateAmount" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="scr:BeginSalaryAmount" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="scr:EndSalaryAmount" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="scr:EmployeeStarNumberID" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="scr:EmployeeBadgeNumberID" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="scr:EmployeeCallNumberID" minOccurs="0" maxOccurs="unbounded"/>
-        </xs:sequence>
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
   <xs:complexType name="PersonEncounterAssociationType">
     <xs:annotation>
       <xs:documentation>A data type for a relationship of a PERSON of interest to a specific ENCOUNTER with a representative of the federal government.</xs:documentation>
@@ -22634,6 +22631,11 @@
       <xs:documentation>An identifier for a number representing the call number of an EMPLOYEE.</xs:documentation>
     </xs:annotation>
   </xs:element>
+  <xs:element name="EmploymentAssociationAugmentation" type="scr:EmploymentAssociationAugmentationType" substitutionGroup="nc:EmploymentAssociationAugmentationPoint" nillable="true">
+    <xs:annotation>
+      <xs:documentation>Additional information about an employment association.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
   <xs:element name="EncounterCategoryCode" type="scr:EncounterCategoryCodeType" substitutionGroup="nc:EncounterCategoryAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A kind of encounter.</xs:documentation>
@@ -23494,11 +23496,6 @@
       <xs:documentation>An identifier for the user ID of the current owner of the record</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="PayRateAmount" type="nc:AmountType" nillable="true">
-    <xs:annotation>
-      <xs:documentation>An amount of remuneration resulting from PERSON EMPLOYMENT.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
   <xs:element name="PerformanceMetricsAugmentationPoint" abstract="true">
     <xs:annotation>
       <xs:documentation>An augmentation point for PerformanceMetricsType.</xs:documentation>
@@ -23677,11 +23674,6 @@
   <xs:element name="PersonDesignatorValueText" type="niem-xs:string" nillable="true">
     <xs:annotation>
       <xs:documentation>A number indicating the value of the PERSON DESIGNATOR.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="PersonEmploymentAssociationAugmentation" type="scr:PersonEmploymentAssociationAugmentationType" substitutionGroup="nc:PersonEmploymentAssociationAugmentationPoint" nillable="true">
-    <xs:annotation>
-      <xs:documentation>Additional information about a person employment association.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="PersonEncounterAssociation" type="scr:PersonEncounterAssociationType" nillable="true">
