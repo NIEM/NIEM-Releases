@@ -1447,38 +1447,6 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-  <xs:simpleType name="CDLHolderCodeSimpleType">
-    <xs:annotation>
-      <xs:documentation>A data type for a code set indicating at the time of the citation, whether the individual holds a Commercial Driver License (CDL) or, in the case of an unlicensed driver, whether the individual's last held license was a CDL.</xs:documentation>
-    </xs:annotation>
-    <xs:restriction base="xs:token">
-      <xs:enumeration value="NO">
-        <xs:annotation>
-          <xs:documentation>NO - THE CITED DRIVER HAS A CURRENT BASE LICENSE, HAS NEVER HELD A LICENSE, OR HOLDS NO CURRENT LICENSE AND THE PREVIOUS LICENSE WAS A BASE LICENSE.</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="UNKNOWN">
-        <xs:annotation>
-          <xs:documentation>UNKNOWN</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="YES">
-        <xs:annotation>
-          <xs:documentation>THE CITED DRIVER HELD A CURRENT CLP OR CDL, OR IF NO VALID CLP/CDLLICENSE, HIS/HER PREVIOUS LICENSE WAS A CDL OR HIS/HER CLP HAD BEEN DISQUALIFIED AND THE CITATION HAD BEEN ISSUED PRIOR TO THE EXPIRATION DATE OF THE CLP.</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-    </xs:restriction>
-  </xs:simpleType>
-  <xs:complexType name="CDLHolderCodeType">
-    <xs:annotation>
-      <xs:documentation>A data type for a code set indicating at the time of the citation, whether the individual holds a Commercial Driver License (CDL) or, in the case of an unlicensed driver, whether the individual's last held license was a CDL.</xs:documentation>
-    </xs:annotation>
-    <xs:simpleContent>
-      <xs:extension base="j:CDLHolderCodeSimpleType">
-        <xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
-      </xs:extension>
-    </xs:simpleContent>
-  </xs:complexType>
   <xs:complexType name="CertificationType">
     <xs:annotation>
       <xs:documentation>A data type for an official process of distinguishing the credentials of person or entity.</xs:documentation>
@@ -2770,33 +2738,6 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-  <xs:simpleType name="DHSDriverLicenseIssuingCountryCodeSimpleType">
-    <xs:annotation>
-      <xs:documentation>A data type for a code set that identifies a country from the DHS Western Hemisphere Travel Initiative.</xs:documentation>
-    </xs:annotation>
-    <xs:restriction base="xs:token">
-      <xs:enumeration value="CANADA">
-        <xs:annotation>
-          <xs:documentation>CANADA</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="USA">
-        <xs:annotation>
-          <xs:documentation>UNITED STATES OF AMERICA</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-    </xs:restriction>
-  </xs:simpleType>
-  <xs:complexType name="DHSDriverLicenseIssuingCountryCodeType">
-    <xs:annotation>
-      <xs:documentation>A data type for a code set that identifies a country from the DHS Western Hemisphere Travel Initiative.</xs:documentation>
-    </xs:annotation>
-    <xs:simpleContent>
-      <xs:extension base="j:DHSDriverLicenseIssuingCountryCodeSimpleType">
-        <xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
-      </xs:extension>
-    </xs:simpleContent>
-  </xs:complexType>
   <xs:complexType name="DisciplinaryActionAugmentationType">
     <xs:annotation>
       <xs:documentation>A data type for additional information about a disciplinary action.</xs:documentation>
@@ -3081,38 +3022,6 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-  <xs:simpleType name="DriverLicenseHMEThreatCodeSimpleType">
-    <xs:annotation>
-      <xs:documentation>A data type for a code set indicating if a driver should be issued a Hazardous Material Endorsement, as determined by the TSA background check and adjudication process.</xs:documentation>
-    </xs:annotation>
-    <xs:restriction base="xs:token">
-      <xs:enumeration value="NO_THREAT-ISSUE_RENEW_TRANSFER">
-        <xs:annotation>
-          <xs:documentation>NO SECURITY THREAT - ISSUE/RENEW/TRANSFER HME</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="SECURITY_THREAT-DO_NOT_ISSUE_RENEW_TRANSFER">
-        <xs:annotation>
-          <xs:documentation>DETERMINATION OF SECURITY THREAT - DO NOT ISSUE/RENEW/TRANSFER HME</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="SECURITY_THREAT-IMMEDIATELY_REVOKE">
-        <xs:annotation>
-          <xs:documentation>DETERMINATION OF SECURITY THREAT - IMMEDIATELY REVOKE HME</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-    </xs:restriction>
-  </xs:simpleType>
-  <xs:complexType name="DriverLicenseHMEThreatCodeType">
-    <xs:annotation>
-      <xs:documentation>A data type for a code set indicating if a driver should be issued a Hazardous Material Endorsement, as determined by the TSA background check and adjudication process.</xs:documentation>
-    </xs:annotation>
-    <xs:simpleContent>
-      <xs:extension base="j:DriverLicenseHMEThreatCodeSimpleType">
-        <xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
-      </xs:extension>
-    </xs:simpleContent>
-  </xs:complexType>
   <xs:complexType name="DriverLicenseMedicalCertificationType">
     <xs:annotation>
       <xs:documentation>A data type for a medical certification associated with a driver license.</xs:documentation>
@@ -3176,38 +3085,6 @@
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
-  </xs:complexType>
-  <xs:simpleType name="DriverLicenseREALIDComplianceCodeSimpleType">
-    <xs:annotation>
-      <xs:documentation>A data type for a code set that is an indication of the degree to which a driver license or ID Card is compliant with the REAL ID Act.</xs:documentation>
-    </xs:annotation>
-    <xs:restriction base="xs:token">
-      <xs:enumeration value="FULLY_COMPLIANT">
-        <xs:annotation>
-          <xs:documentation>FULLY COMPLIANT</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="MATERIALLY_COMPLIANT">
-        <xs:annotation>
-          <xs:documentation>MATERIALLY COMPLIANT</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="NONCOMPLIANT">
-        <xs:annotation>
-          <xs:documentation>NON-COMPLIANT</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-    </xs:restriction>
-  </xs:simpleType>
-  <xs:complexType name="DriverLicenseREALIDComplianceCodeType">
-    <xs:annotation>
-      <xs:documentation>A data type for a code set that is an indication of the degree to which a driver license or ID Card is compliant with the REAL ID Act.</xs:documentation>
-    </xs:annotation>
-    <xs:simpleContent>
-      <xs:extension base="j:DriverLicenseREALIDComplianceCodeSimpleType">
-        <xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
-      </xs:extension>
-    </xs:simpleContent>
   </xs:complexType>
   <xs:complexType name="DriverLicenseRestrictionType">
     <xs:annotation>
@@ -13006,7 +12883,7 @@
       <xs:documentation>A data concept for a code indicating whether or not the driver held a CDL/CLP at the time of the citation.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="CDLHolderCode" type="j:CDLHolderCodeType" substitutionGroup="j:CDLHolderAbstract" nillable="true">
+  <xs:element name="CDLHolderCode" type="aamva_d20:CDLHolderCodeType" substitutionGroup="j:CDLHolderAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A code indicating whether or not the driver held a CDL/CLP at the time of the citation.</xs:documentation>
     </xs:annotation>
@@ -16146,7 +16023,7 @@
       <xs:documentation>A data concept for a code indicating if a driver should be issued a Hazardous Material Endorsement, as determined by the TSA data concept for a background check and adjudication process.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="DriverLicenseHMEThreatCode" type="j:DriverLicenseHMEThreatCodeType" substitutionGroup="j:DriverLicenseHMEThreatAbstract" nillable="true">
+  <xs:element name="DriverLicenseHMEThreatCode" type="aamva_d20:DriverLicenseHMEThreatCodeType" substitutionGroup="j:DriverLicenseHMEThreatAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A code indicating if a driver should be issued a Hazardous Material Endorsement, as determined by the TSA background check and adjudication process.</xs:documentation>
     </xs:annotation>
@@ -16176,7 +16053,7 @@
       <xs:documentation>A data concept for an identifier of the country in which an identity document was issued.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="DriverLicenseIssuingCountryCode" type="j:DHSDriverLicenseIssuingCountryCodeType" substitutionGroup="j:DriverLicenseIssuingCountryAbstract" nillable="true">
+  <xs:element name="DriverLicenseIssuingCountryCode" type="aamva_d20:DHSDriverLicenseIssuingCountryCodeType" substitutionGroup="j:DriverLicenseIssuingCountryAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>An identifier of the country in which an identity document was issued.</xs:documentation>
     </xs:annotation>
@@ -16331,7 +16208,7 @@
       <xs:documentation>A data concept for an indication of the degree to which a driver license or ID Card is compliant with the REAL ID A data concept for act.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="DriverLicenseREALIDComplianceCode" type="j:DriverLicenseREALIDComplianceCodeType" substitutionGroup="j:DriverLicenseREALIDComplianceAbstract" nillable="true">
+  <xs:element name="DriverLicenseREALIDComplianceCode" type="aamva_d20:DriverLicenseREALIDComplianceCodeType" substitutionGroup="j:DriverLicenseREALIDComplianceAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>An indication of the degree to which a driver license or ID Card is compliant with the REAL ID Act.</xs:documentation>
     </xs:annotation>

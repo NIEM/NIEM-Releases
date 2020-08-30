@@ -11,10 +11,13 @@
     <xs:appinfo>
       <appinfo:LocalTerm term="AAMVA" literal="American Association of Motor Vehicle Administrators"/>
       <appinfo:LocalTerm term="ACD" literal="AAMVA Code Dictionary"/>
+      <appinfo:LocalTerm term="CDL" literal="Commercial Driver's License"/>
       <appinfo:LocalTerm term="CFR" definition="Code of Federal Regulations"/>
       <appinfo:LocalTerm term="CMV" literal="Commercial Motor Vehicle"/>
       <appinfo:LocalTerm term="D20" definition="Standard for Traffic Records Systems"/>
       <appinfo:LocalTerm term="HazMat" literal="Hazardous Materials"/>
+      <appinfo:LocalTerm term="HME" literal="Hazardous Material Endorsement"/>
+      <appinfo:LocalTerm term="TSA" literal="Transportation Security Administration"/>
     </xs:appinfo>
   </xs:annotation>
   <xs:import namespace="http://release.niem.gov/niem/structures/5.0/" schemaLocation="../utility/structures.xsd"/>
@@ -473,6 +476,38 @@
       </xs:extension>
     </xs:simpleContent>
   </xs:complexType>
+  <xs:simpleType name="CDLHolderCodeSimpleType">
+    <xs:annotation>
+      <xs:documentation>A data type for a code set indicating at the time of the citation, whether the individual holds a Commercial Driver License (CDL) or, in the case of an unlicensed driver, whether the individual's last held license was a CDL.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="1">
+        <xs:annotation>
+          <xs:documentation>The cited driver held a current CLP or CDL, or if no valid CLP/CDLlicense, his/her previous license was a CDL or his/her CLP had been disqualified and the citation had been issued prior to the expiration date of the CLP.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="2">
+        <xs:annotation>
+          <xs:documentation>No - The cited driver has a current base license, has never held a license, or holds no current license and the previous license was a base license.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="9">
+        <xs:annotation>
+          <xs:documentation>Unknown</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="CDLHolderCodeType">
+    <xs:annotation>
+      <xs:documentation>A data type for a code set indicating at the time of the citation, whether the individual holds a Commercial Driver License (CDL) or, in the case of an unlicensed driver, whether the individual's last held license was a CDL.</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="aamva_d20:CDLHolderCodeSimpleType">
+        <xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
   <xs:simpleType name="CMVCodeSimpleType">
     <xs:annotation>
       <xs:documentation>A data type for whether a person was operating a commercial motor vehicle in an incident.</xs:documentation>
@@ -766,6 +801,33 @@
       </xs:extension>
     </xs:simpleContent>
   </xs:complexType>
+  <xs:simpleType name="DHSDriverLicenseIssuingCountryCodeSimpleType">
+    <xs:annotation>
+      <xs:documentation>A data type for a code set that identifies a country from the DHS Western Hemisphere Travel Initiative.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="CAN">
+        <xs:annotation>
+          <xs:documentation>Canada</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="USA">
+        <xs:annotation>
+          <xs:documentation>U.S.A.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="DHSDriverLicenseIssuingCountryCodeType">
+    <xs:annotation>
+      <xs:documentation>A data type for a code set that identifies a country from the DHS Western Hemisphere Travel Initiative.</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="aamva_d20:DHSDriverLicenseIssuingCountryCodeSimpleType">
+        <xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
   <xs:simpleType name="DriverLicenseClassCodeSimpleType">
     <xs:annotation>
       <xs:documentation>A data type for kinds of vehicles that a licensed driver may be approved to operate.</xs:documentation>
@@ -799,6 +861,38 @@
     </xs:annotation>
     <xs:simpleContent>
       <xs:extension base="aamva_d20:DriverLicenseClassCodeSimpleType">
+        <xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:simpleType name="DriverLicenseHMEThreatCodeSimpleType">
+    <xs:annotation>
+      <xs:documentation>A data type for a code set indicating if a driver should be issued a Hazardous Material Endorsement, as determined by the TSA background check and adjudication process.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="0">
+        <xs:annotation>
+          <xs:documentation>No security threat - Issue/renew/transfer HME</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="1">
+        <xs:annotation>
+          <xs:documentation>Determination of security threat - Do not issue/renew/transfer HME</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="2">
+        <xs:annotation>
+          <xs:documentation>Determination of security threat - Immediately revoke HME</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="DriverLicenseHMEThreatCodeType">
+    <xs:annotation>
+      <xs:documentation>A data type for a code set indicating if a driver should be issued a Hazardous Material Endorsement, as determined by the TSA background check and adjudication process.</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="aamva_d20:DriverLicenseHMEThreatCodeSimpleType">
         <xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
       </xs:extension>
     </xs:simpleContent>
@@ -957,6 +1051,38 @@
     </xs:annotation>
     <xs:simpleContent>
       <xs:extension base="aamva_d20:DriverLicensePermitEndorsementCodeSimpleType">
+        <xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:simpleType name="DriverLicenseREALIDComplianceCodeSimpleType">
+    <xs:annotation>
+      <xs:documentation>A data type for a code set that is an indication of the degree to which a driver license or ID Card is compliant with the REAL ID Act.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="F">
+        <xs:annotation>
+          <xs:documentation>Fully Compliant</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="M">
+        <xs:annotation>
+          <xs:documentation>Materially Compliant</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="N">
+        <xs:annotation>
+          <xs:documentation>Non-compliant</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="DriverLicenseREALIDComplianceCodeType">
+    <xs:annotation>
+      <xs:documentation>A data type for a code set that is an indication of the degree to which a driver license or ID Card is compliant with the REAL ID Act.</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="aamva_d20:DriverLicenseREALIDComplianceCodeSimpleType">
         <xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
       </xs:extension>
     </xs:simpleContent>
