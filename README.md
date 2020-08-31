@@ -171,6 +171,7 @@ NIEM 5.0 merges the changes made in the Core Supplements published since the las
 - Simplified namespace definitions [(#139)](https://github.com/NIEM/NIEM-Releases/issues/139)
 - Synchronized folders, file names, and target namespaces [(#58)](https://github.com/NIEM/NIEM-Releases/issues/58)
 - Added GENC alpha-2 and numeric country codes [(#94)](https://github.com/NIEM/NIEM-Releases/issues/94)
+- Added appinfo to GENC code types to meet requirements for codespace identifiers [(#163)](https://github.com/NIEM/NIEM-Releases/issues/163)
 - Added FIPS unique 5-digit county code set [(#47)](https://github.com/NIEM/NIEM-Releases/issues/47)
 - Harmonized FBI codes across NCIC, NDEx, UCR, and Justice (see individual changes below)
 - Merged BLS and DOL namespaces into single BLS namespace [(#145)](C:\cdm\niem\releases\5.0\input\harmonization\145-bls)

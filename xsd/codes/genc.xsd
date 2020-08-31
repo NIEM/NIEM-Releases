@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xs:schema targetNamespace="http://release.niem.gov/niem/codes/genc/5.0/" version="beta1" xml:lang="en-US" xsi:schemaLocation="http://release.niem.gov/niem/appinfo/5.0/ ../../../utility/appinfo/5.0/appinfo.xsd http://release.niem.gov/niem/conformanceTargets/3.0/ ../../../utility/conformanceTargets/3.0/conformanceTargets.xsd" ct:conformanceTargets="http://reference.niem.gov/niem/specification/naming-and-design-rules/5.0/#ReferenceSchemaDocument"
+<xs:schema targetNamespace="http://release.niem.gov/niem/codes/genc/5.0/" version="beta1" xml:lang="en-US" xsi:schemaLocation="http://release.niem.gov/niem/appinfo/5.0/ ../../../utility/appinfo/5.0/appinfo.xsd http://release.niem.gov/niem/conformanceTargets/3.0/ ../../../utility/conformanceTargets/3.0/conformanceTargets.xsd http://reference.niem.gov/niem/specification/code-lists/5.0/code-lists-schema-appinfo/ ../../../../http://reference.niem.gov/niem/utility/specification/code-lists/5.0/code-lists-schema-appinfo/code-lists-schema-appinfo.xsd" ct:conformanceTargets="http://reference.niem.gov/niem/specification/naming-and-design-rules/5.0/#ReferenceSchemaDocument"
   xmlns:appinfo="http://release.niem.gov/niem/appinfo/5.0/"
+  xmlns:clsa="http://reference.niem.gov/niem/specification/code-lists/5.0/code-lists-schema-appinfo/"
   xmlns:ct="http://release.niem.gov/niem/conformanceTargets/3.0/"
   xmlns:genc="http://release.niem.gov/niem/codes/genc/5.0/"
   xmlns:nc="http://release.niem.gov/niem/niem-core/5.0/"
@@ -18,6 +19,9 @@
   <xs:simpleType name="CountryAlpha2CodeSimpleType">
     <xs:annotation>
       <xs:documentation>A data type for country codes.</xs:documentation>
+      <xs:appinfo>
+        <clsa:SimpleCodeListBinding codeListURI="http://api.nsgreg.nga.mil/geo-political/GENC/2/3-11" constrainingIndicator="false"/>
+      </xs:appinfo>
     </xs:annotation>
     <xs:restriction base="xs:token">
       <xs:enumeration value="A1">
@@ -1430,6 +1434,9 @@
   <xs:simpleType name="CountryAlpha3CodeSimpleType">
     <xs:annotation>
       <xs:documentation>A data type for country codes.</xs:documentation>
+      <xs:appinfo>
+        <clsa:SimpleCodeListBinding codeListURI="http://api.nsgreg.nga.mil/geo-political/GENC/2/3-11" constrainingIndicator="false"/>
+      </xs:appinfo>
     </xs:annotation>
     <xs:restriction base="xs:token">
       <xs:enumeration value="ABW">
@@ -2867,6 +2874,9 @@
   <xs:simpleType name="CountryNumericCodeSimpleType">
     <xs:annotation>
       <xs:documentation>A data type for country codes.</xs:documentation>
+      <xs:appinfo>
+        <clsa:SimpleCodeListBinding codeListURI="http://api.nsgreg.nga.mil/geo-political/GENC/2/3-11" constrainingIndicator="false"/>
+      </xs:appinfo>
     </xs:annotation>
     <xs:restriction base="xs:token">
       <xs:enumeration value="004">
@@ -4304,6 +4314,9 @@
   <xs:simpleType name="CountrySubdivisionCodeSimpleType">
     <xs:annotation>
       <xs:documentation>A data type for country subdivision codes.</xs:documentation>
+      <xs:appinfo>
+        <clsa:SimpleCodeListBinding codeListURI="http://api.nsgreg.nga.mil/geo-division/GENC/6/3-11" constrainingIndicator="false"/>
+      </xs:appinfo>
     </xs:annotation>
     <xs:restriction base="xs:token">
       <xs:enumeration value="AD-02">
