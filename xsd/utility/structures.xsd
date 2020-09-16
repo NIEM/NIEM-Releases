@@ -40,7 +40,7 @@
     </xs:annotation>
   </xs:attribute>
 
-  <xs:attribute name="sequenceID" type="xs:integer">
+  <xs:attribute name="sequenceID" type="xs:positiveInteger">
     <xs:annotation>
       <xs:documentation>An identifier that establishes the relative order of a property occurrence among sibling properties of a node or object.</xs:documentation>
     </xs:annotation>
