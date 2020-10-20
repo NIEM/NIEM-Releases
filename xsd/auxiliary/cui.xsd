@@ -14,6 +14,7 @@
     <xs:appinfo>
       <appinfo:LocalTerm term="CUI" literal="Controlled Unclassified Information"/>
       <appinfo:LocalTerm term="DLONLY" literal="Dissemination List Controlled Only"/>
+      <appinfo:LocalTerm term="LDC" literal="Limited Dissemination Control"/>
       <appinfo:LocalTerm term="RELTO" literal="Releasable To"/>
     </xs:appinfo>
   </xs:annotation>
@@ -482,58 +483,16 @@
         <xs:sequence>
           <xs:element ref="cui:SpecifiedCategoryMarkingCode" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="cui:BasicCategoryMarkingCode" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="cui:LimitedDisseminationControlMarking" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="cui:LDCMarking" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="cui:DesignatingEntityText" minOccurs="1" maxOccurs="unbounded"/>
           <xs:element ref="cui:DecontrolSchedule" minOccurs="0" maxOccurs="1"/>
-          <xs:element ref="cui:RequiredIndicatorsPerAuthoritiesText" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="cui:DocumentSupplementalAdministrativeMarkingAbstract" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="cui:RequiredIndicatorsText" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="cui:SupplementalAdministrativeMarkingAbstract" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-  <xs:simpleType name="DocumentSupplementalAdministrativeMarkingCodeSimpleType">
-    <xs:annotation>
-      <xs:documentation>A data type for a supplemental administrative marking code to inform recipient(s) of the non-final status of a document.</xs:documentation>
-    </xs:annotation>
-    <xs:restriction base="xs:token">
-      <xs:enumeration value="DELIBERATIVE">
-        <xs:annotation>
-          <xs:documentation>The document is in a deliberative status.</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="DRAFT">
-        <xs:annotation>
-          <xs:documentation>The document is in a draft status.</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="PRE-DECISIONAL">
-        <xs:annotation>
-          <xs:documentation>The document is in a pre-decisional status.</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="PROVISIONAL">
-        <xs:annotation>
-          <xs:documentation>The document is in a provisional status.</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="PROVISIONAL - IN WORK">
-        <xs:annotation>
-          <xs:documentation>The document is in a provisional in work status.</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-    </xs:restriction>
-  </xs:simpleType>
-  <xs:complexType name="DocumentSupplementalAdministrativeMarkingCodeType">
-    <xs:annotation>
-      <xs:documentation>A data type for a supplemental administrative marking code to inform recipient(s) of the non-final status of a document.</xs:documentation>
-    </xs:annotation>
-    <xs:simpleContent>
-      <xs:extension base="cui:DocumentSupplementalAdministrativeMarkingCodeSimpleType">
-        <xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
-      </xs:extension>
-    </xs:simpleContent>
-  </xs:complexType>
-  <xs:simpleType name="LimitedDisseminationControlCodeSimpleType">
+  <xs:simpleType name="LDCCodeSimpleType">
     <xs:annotation>
       <xs:documentation>A data type for a Controlled Unclassified Information (CUI) Executive Agent-approved control that agencies may use to limit or specify CUI dissemination.</xs:documentation>
     </xs:annotation>
@@ -610,27 +569,27 @@
       </xs:enumeration>
     </xs:restriction>
   </xs:simpleType>
-  <xs:complexType name="LimitedDisseminationControlCodeType">
+  <xs:complexType name="LDCCodeType">
     <xs:annotation>
       <xs:documentation>A data type for a Controlled Unclassified Information (CUI) Executive Agent-approved control that agencies may use to limit or specify CUI dissemination.</xs:documentation>
     </xs:annotation>
     <xs:simpleContent>
-      <xs:extension base="cui:LimitedDisseminationControlCodeSimpleType">
+      <xs:extension base="cui:LDCCodeSimpleType">
         <xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
       </xs:extension>
     </xs:simpleContent>
   </xs:complexType>
-  <xs:complexType name="LimitedDisseminationControlType">
+  <xs:complexType name="LDCType">
     <xs:annotation>
       <xs:documentation>A data type for any CUI Executive Agent-approved control that agencies may use to limit or specify CUI dissemination.</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
       <xs:extension base="structures:ObjectType">
         <xs:sequence>
-          <xs:element ref="cui:LimitedDisseminationControlCode" minOccurs="1" maxOccurs="1"/>
-          <xs:element ref="cui:LimitedDisseminationControlForeignDisclosureToAbstract" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="cui:LimitedDisseminationControlDLONLYText" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="cui:LimitedDisseminationControlAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="cui:LDCCode" minOccurs="1" maxOccurs="1"/>
+          <xs:element ref="cui:LDCForeignDisclosureToAbstract" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="cui:LDC-DLONLYText" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="cui:LDCAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -644,7 +603,7 @@
         <xs:sequence>
           <xs:element ref="cui:SpecifiedCategoryMarkingCode" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="cui:BasicCategoryMarkingCode" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="cui:LimitedDisseminationControlMarking" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="cui:LDCMarking" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -956,6 +915,48 @@
       </xs:extension>
     </xs:simpleContent>
   </xs:complexType>
+  <xs:simpleType name="SupplementalAdministrativeMarkingCodeSimpleType">
+    <xs:annotation>
+      <xs:documentation>A data type for a supplemental administrative marking code to inform recipient(s) of the non-final status of a document.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="DELIBERATIVE">
+        <xs:annotation>
+          <xs:documentation>The document is in a deliberative status.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="DRAFT">
+        <xs:annotation>
+          <xs:documentation>The document is in a draft status.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="PRE-DECISIONAL">
+        <xs:annotation>
+          <xs:documentation>The document is in a pre-decisional status.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="PROVISIONAL">
+        <xs:annotation>
+          <xs:documentation>The document is in a provisional status.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="PROVISIONAL - IN WORK">
+        <xs:annotation>
+          <xs:documentation>The document is in a provisional in work status.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="SupplementalAdministrativeMarkingCodeType">
+    <xs:annotation>
+      <xs:documentation>A data type for a supplemental administrative marking code to inform recipient(s) of the non-final status of a document.</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="cui:SupplementalAdministrativeMarkingCodeSimpleType">
+        <xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
   <xs:element name="BasicCategoryMarkingCode" type="cui:BasicCategoryMarkingCodeType" nillable="true">
     <xs:annotation>
       <xs:documentation>A Controlled Unclassified Information (CUI) category for which the authorizing law, regulation, or Government-wide policy does not set out specific handling or dissemination controls.</xs:documentation>
@@ -996,47 +997,32 @@
       <xs:documentation>Metadata about Controlled Unclassified Information (CUI) marking of a document.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="DocumentSupplementalAdministrativeMarkingAbstract" abstract="true">
-    <xs:annotation>
-      <xs:documentation>A data concept for a supplemental administrative marking (e.g., Draft, Deliberate, Predecisional, Provision) to inform recipient(s) of the non-final status of a document.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="DocumentSupplementalAdministrativeMarkingCode" type="cui:DocumentSupplementalAdministrativeMarkingCodeType" substitutionGroup="cui:DocumentSupplementalAdministrativeMarkingAbstract" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A supplemental administrative marking code to inform recipient(s) of the non-final status of a document.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="DocumentSupplementalAdministrativeMarkingText" type="nc:TextType" substitutionGroup="cui:DocumentSupplementalAdministrativeMarkingAbstract" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A supplemental administrative marking text to inform recipient(s) of the non-final status of a document.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="LimitedDisseminationControlAugmentationPoint" abstract="true">
-    <xs:annotation>
-      <xs:documentation>An augmentation point for type cui:LimitedDisseminationControlType</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="LimitedDisseminationControlCode" type="cui:LimitedDisseminationControlCodeType" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A Controlled Unclassified Information (CUI) Executive Agent-approved control that agencies may use to limit or specify CUI dissemination.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="LimitedDisseminationControlCountryCode" type="genc:CountryAlpha3CodeType" substitutionGroup="cui:LimitedDisseminationControlForeignDisclosureToAbstract" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A country code for use with a REL TO and DISPLAY ONLY limited dissemination control for Controlled Unclassified Information (CUI).</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="LimitedDisseminationControlDLONLYText" type="nc:TextType" nillable="true">
+  <xs:element name="LDC-DLONLYText" type="nc:TextType" nillable="true">
     <xs:annotation>
       <xs:documentation>A list of individuals, organizations, or entities for which dissemination is authorized.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="LimitedDisseminationControlForeignDisclosureToAbstract" abstract="true">
+  <xs:element name="LDCAugmentationPoint" abstract="true">
+    <xs:annotation>
+      <xs:documentation>An augmentation point for type cui:LimitedDisseminationControlType</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="LDCCode" type="cui:LDCCodeType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A Controlled Unclassified Information (CUI) Executive Agent-approved control that agencies may use to limit or specify CUI dissemination.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="LDCCountryCode" type="genc:CountryAlpha3CodeType" substitutionGroup="cui:LDCForeignDisclosureToAbstract" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A country code for use with a REL TO and DISPLAY ONLY limited dissemination control for Controlled Unclassified Information (CUI).</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="LDCForeignDisclosureToAbstract" abstract="true">
     <xs:annotation>
       <xs:documentation>A data concept for a foreign country/international organization approved for the release or disclosure of classified information, for use with REL TO and DISPLAY ONLY limited dissemination controls for Controlled Unclassified Information (CUI).</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="LimitedDisseminationControlMarking" type="cui:LimitedDisseminationControlType" nillable="true">
+  <xs:element name="LDCMarking" type="cui:LDCType" nillable="true">
     <xs:annotation>
       <xs:documentation>A marking for a Controlled Unclassified Information (CUI) Executive Agent-approved control that agencies may use to limit or specify CUI dissemination.</xs:documentation>
     </xs:annotation>
@@ -1046,7 +1032,7 @@
       <xs:documentation>Metadata about the Controlled Unclassified Information (CUI) portion marking of a document.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="RequiredIndicatorsPerAuthoritiesText" type="nc:TextType" nillable="true">
+  <xs:element name="RequiredIndicatorsText" type="nc:TextType" nillable="true">
     <xs:annotation>
       <xs:documentation>A required indicator – including, informational, warning, or dissemination statements – as mandated by the law, Federal regulation, or Government-wide policy that makes a specific item of information CUI.</xs:documentation>
     </xs:annotation>
@@ -1054,6 +1040,21 @@
   <xs:element name="SpecifiedCategoryMarkingCode" type="cui:SpecifiedCategoryMarkingCodeType" nillable="true">
     <xs:annotation>
       <xs:documentation>A Controlled Unclassified Information (CUI) category in which the authorizing law, regulation, or Government-wide policy contains specific handling controls that it requires or permits agencies to use that differ from those of CUI Basic.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="SupplementalAdministrativeMarkingAbstract" abstract="true">
+    <xs:annotation>
+      <xs:documentation>A data concept for a supplemental administrative marking (e.g., Draft, Deliberate, Predecisional, Provision) to inform recipient(s) of the non-final status of a document.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="SupplementalAdministrativeMarkingCode" type="cui:SupplementalAdministrativeMarkingCodeType" substitutionGroup="cui:SupplementalAdministrativeMarkingAbstract" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A supplemental administrative marking code to inform recipient(s) of the non-final status of a document.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="SupplementalAdministrativeMarkingText" type="nc:TextType" substitutionGroup="cui:SupplementalAdministrativeMarkingAbstract" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A supplemental administrative marking text to inform recipient(s) of the non-final status of a document.</xs:documentation>
     </xs:annotation>
   </xs:element>
 </xs:schema>
