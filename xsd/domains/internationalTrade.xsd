@@ -643,7 +643,7 @@
           <xs:element ref="it:ProcessingEstablishment" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="it:LoadingProofParty" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="it:GoodsItemStatisticalValueAmount" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="it:CustomsValuationAmount" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="it:CustomsValuation" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="it:CustomsStatus" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="it:ExaminationPlaceAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="it:GoodsItemAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
@@ -705,7 +705,7 @@
           <xs:element ref="it:Buyer" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="it:Seller" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="it:Warehouse" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="it:CustomsValuationAmount" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="it:CustomsValuation" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="it:TradeTerm" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="it:Invoice" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="it:EntryCustomsOfficeLocation" minOccurs="0" maxOccurs="unbounded"/>
@@ -2178,7 +2178,7 @@
       <xs:documentation>A status of the item for Customs purposes at a particular point in time.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="CustomsValuationAmount" type="it:CustomsValuationType" nillable="true">
+  <xs:element name="CustomsValuation" type="it:CustomsValuationType" nillable="true">
     <xs:annotation>
       <xs:documentation>A monetary representation of costs incurred by the shipper in moving goods.</xs:documentation>
     </xs:annotation>
