@@ -1,0 +1,1461 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema targetNamespace="http://release.niem.gov/niem/codes/usps/5.0/" version="1" xml:lang="en-US" xsi:schemaLocation="http://release.niem.gov/niem/appinfo/5.0/ ../utility/appinfo.xsd http://release.niem.gov/niem/conformanceTargets/3.0/ ../utility/conformanceTargets.xsd" ct:conformanceTargets="http://reference.niem.gov/niem/specification/naming-and-design-rules/5.0/#ReferenceSchemaDocument"
+  xmlns:appinfo="http://release.niem.gov/niem/appinfo/5.0/"
+  xmlns:ct="http://release.niem.gov/niem/conformanceTargets/3.0/"
+  xmlns:nc="http://release.niem.gov/niem/niem-core/5.0/"
+  xmlns:structures="http://release.niem.gov/niem/structures/5.0/"
+  xmlns:usps="http://release.niem.gov/niem/codes/usps/5.0/"
+  xmlns:xs="http://www.w3.org/2001/XMLSchema"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <xs:annotation>
+    <xs:documentation>United States Postal Service (USPS) Publication 28 - Postal Addressing Standards</xs:documentation>
+  </xs:annotation>
+  <xs:import namespace="http://release.niem.gov/niem/niem-core/5.0/" schemaLocation="../niem-core.xsd"/>
+  <xs:import namespace="http://release.niem.gov/niem/structures/5.0/" schemaLocation="../utility/structures.xsd"/>
+  <xs:simpleType name="StreetDirectionalCodeSimpleType">
+    <xs:annotation>
+      <xs:documentation>A data type for street directionals.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="E">
+        <xs:annotation>
+          <xs:documentation>EAST</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="N">
+        <xs:annotation>
+          <xs:documentation>NORTH</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="NE">
+        <xs:annotation>
+          <xs:documentation>NORTHEAST</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="NW">
+        <xs:annotation>
+          <xs:documentation>NORTHWEST</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="S">
+        <xs:annotation>
+          <xs:documentation>SOUTH</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="SE">
+        <xs:annotation>
+          <xs:documentation>SOUTHEAST</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="SW">
+        <xs:annotation>
+          <xs:documentation>SOUTHWEST</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="W">
+        <xs:annotation>
+          <xs:documentation>WEST</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="StreetDirectionalCodeType">
+    <xs:annotation>
+      <xs:documentation>A data type for street directionals.</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="usps:StreetDirectionalCodeSimpleType">
+        <xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:simpleType name="StreetSuffixCodeSimpleType">
+    <xs:annotation>
+      <xs:documentation>A data type for suffix forms that are primary street suffix names, common street suffixes or suffix abbreviations, and recommended official Postal Service standard suffix abbreviations.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="ALY">
+        <xs:annotation>
+          <xs:documentation>ALLEY</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ANX">
+        <xs:annotation>
+          <xs:documentation>ANEX</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ARC">
+        <xs:annotation>
+          <xs:documentation>ARCADE</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AVE">
+        <xs:annotation>
+          <xs:documentation>AVENUE</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="BCH">
+        <xs:annotation>
+          <xs:documentation>BEACH</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="BG">
+        <xs:annotation>
+          <xs:documentation>BURG</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="BGS">
+        <xs:annotation>
+          <xs:documentation>BURGS</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="BLF">
+        <xs:annotation>
+          <xs:documentation>BLUFF</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="BLFS">
+        <xs:annotation>
+          <xs:documentation>BLUFFS</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="BLVD">
+        <xs:annotation>
+          <xs:documentation>BOULEVARD</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="BND">
+        <xs:annotation>
+          <xs:documentation>BEND</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="BR">
+        <xs:annotation>
+          <xs:documentation>BRANCH</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="BRG">
+        <xs:annotation>
+          <xs:documentation>BRIDGE</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="BRK">
+        <xs:annotation>
+          <xs:documentation>BROOK</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="BRKS">
+        <xs:annotation>
+          <xs:documentation>BROOKS</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="BTM">
+        <xs:annotation>
+          <xs:documentation>BOTTOM</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="BYP">
+        <xs:annotation>
+          <xs:documentation>BYPASS</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="BYU">
+        <xs:annotation>
+          <xs:documentation>BAYOU</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CIR">
+        <xs:annotation>
+          <xs:documentation>CIRCLE</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CIRS">
+        <xs:annotation>
+          <xs:documentation>CIRCLES</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CLB">
+        <xs:annotation>
+          <xs:documentation>CLUB</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CLF">
+        <xs:annotation>
+          <xs:documentation>CLIFF</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CLFS">
+        <xs:annotation>
+          <xs:documentation>CLIFFS</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CMN">
+        <xs:annotation>
+          <xs:documentation>COMMON</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CMNS">
+        <xs:annotation>
+          <xs:documentation>COMMONS</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="COR">
+        <xs:annotation>
+          <xs:documentation>CORNER</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CORS">
+        <xs:annotation>
+          <xs:documentation>CORNERS</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CP">
+        <xs:annotation>
+          <xs:documentation>CAMP</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CPE">
+        <xs:annotation>
+          <xs:documentation>CAPE</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CRES">
+        <xs:annotation>
+          <xs:documentation>CRESCENT</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CRK">
+        <xs:annotation>
+          <xs:documentation>CREEK</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CRSE">
+        <xs:annotation>
+          <xs:documentation>COURSE</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CRST">
+        <xs:annotation>
+          <xs:documentation>CREST</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CSWY">
+        <xs:annotation>
+          <xs:documentation>CAUSEWAY</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CT">
+        <xs:annotation>
+          <xs:documentation>COURT</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CTR">
+        <xs:annotation>
+          <xs:documentation>CENTER</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CTRS">
+        <xs:annotation>
+          <xs:documentation>CENTERS</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CTS">
+        <xs:annotation>
+          <xs:documentation>COURTS</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CURV">
+        <xs:annotation>
+          <xs:documentation>CURVE</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CV">
+        <xs:annotation>
+          <xs:documentation>COVE</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CVS">
+        <xs:annotation>
+          <xs:documentation>COVES</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CYN">
+        <xs:annotation>
+          <xs:documentation>CANYON</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="DL">
+        <xs:annotation>
+          <xs:documentation>DALE</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="DM">
+        <xs:annotation>
+          <xs:documentation>DAM</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="DR">
+        <xs:annotation>
+          <xs:documentation>DRIVE</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="DRS">
+        <xs:annotation>
+          <xs:documentation>DRIVES</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="DV">
+        <xs:annotation>
+          <xs:documentation>DIVIDE</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="EST">
+        <xs:annotation>
+          <xs:documentation>ESTATE</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ESTS">
+        <xs:annotation>
+          <xs:documentation>ESTATES</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="EXPY">
+        <xs:annotation>
+          <xs:documentation>EXPRESSWAY</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="EXT">
+        <xs:annotation>
+          <xs:documentation>EXTENSION</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="EXTS">
+        <xs:annotation>
+          <xs:documentation>EXTENSIONS</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="FALL">
+        <xs:annotation>
+          <xs:documentation>FALL</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="FLD">
+        <xs:annotation>
+          <xs:documentation>FIELD</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="FLDS">
+        <xs:annotation>
+          <xs:documentation>FIELDS</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="FLS">
+        <xs:annotation>
+          <xs:documentation>FALLS</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="FLT">
+        <xs:annotation>
+          <xs:documentation>FLAT</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="FLTS">
+        <xs:annotation>
+          <xs:documentation>FLATS</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="FRD">
+        <xs:annotation>
+          <xs:documentation>FORD</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="FRDS">
+        <xs:annotation>
+          <xs:documentation>FORDS</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="FRG">
+        <xs:annotation>
+          <xs:documentation>FORGE</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="FRGS">
+        <xs:annotation>
+          <xs:documentation>FORGES</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="FRK">
+        <xs:annotation>
+          <xs:documentation>FORK</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="FRKS">
+        <xs:annotation>
+          <xs:documentation>FORKS</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="FRST">
+        <xs:annotation>
+          <xs:documentation>FOREST</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="FRY">
+        <xs:annotation>
+          <xs:documentation>FERRY</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="FT">
+        <xs:annotation>
+          <xs:documentation>FORT</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="FWY">
+        <xs:annotation>
+          <xs:documentation>FREEWAY</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="GDN">
+        <xs:annotation>
+          <xs:documentation>GARDEN</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="GDNS">
+        <xs:annotation>
+          <xs:documentation>GARDENS</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="GLN">
+        <xs:annotation>
+          <xs:documentation>GLEN</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="GLNS">
+        <xs:annotation>
+          <xs:documentation>GLENS</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="GRN">
+        <xs:annotation>
+          <xs:documentation>GREEN</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="GRNS">
+        <xs:annotation>
+          <xs:documentation>GREENS</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="GRV">
+        <xs:annotation>
+          <xs:documentation>GROVE</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="GRVS">
+        <xs:annotation>
+          <xs:documentation>GROVES</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="GTWY">
+        <xs:annotation>
+          <xs:documentation>GATEWAY</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="HBR">
+        <xs:annotation>
+          <xs:documentation>HARBOR</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="HBRS">
+        <xs:annotation>
+          <xs:documentation>HARBORS</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="HL">
+        <xs:annotation>
+          <xs:documentation>HILL</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="HLS">
+        <xs:annotation>
+          <xs:documentation>HILLS</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="HOLW">
+        <xs:annotation>
+          <xs:documentation>HOLLOW</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="HTS">
+        <xs:annotation>
+          <xs:documentation>HEIGHTS</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="HVN">
+        <xs:annotation>
+          <xs:documentation>HAVEN</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="HWY">
+        <xs:annotation>
+          <xs:documentation>HIGHWAY</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="INLT">
+        <xs:annotation>
+          <xs:documentation>INLET</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="IS">
+        <xs:annotation>
+          <xs:documentation>ISLAND</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ISLE">
+        <xs:annotation>
+          <xs:documentation>ISLE</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ISS">
+        <xs:annotation>
+          <xs:documentation>ISLANDS</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="JCT">
+        <xs:annotation>
+          <xs:documentation>JUNCTION</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="JCTS">
+        <xs:annotation>
+          <xs:documentation>JUNCTIONS</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="KNL">
+        <xs:annotation>
+          <xs:documentation>KNOLL</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="KNLS">
+        <xs:annotation>
+          <xs:documentation>KNOLLS</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="KY">
+        <xs:annotation>
+          <xs:documentation>KEY</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="KYS">
+        <xs:annotation>
+          <xs:documentation>KEYS</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="LAND">
+        <xs:annotation>
+          <xs:documentation>LAND</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="LCK">
+        <xs:annotation>
+          <xs:documentation>LOCK</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="LCKS">
+        <xs:annotation>
+          <xs:documentation>LOCKS</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="LDG">
+        <xs:annotation>
+          <xs:documentation>LODGE</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="LF">
+        <xs:annotation>
+          <xs:documentation>LOAF</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="LGT">
+        <xs:annotation>
+          <xs:documentation>LIGHT</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="LGTS">
+        <xs:annotation>
+          <xs:documentation>LIGHTS</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="LK">
+        <xs:annotation>
+          <xs:documentation>LAKE</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="LKS">
+        <xs:annotation>
+          <xs:documentation>LAKES</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="LN">
+        <xs:annotation>
+          <xs:documentation>LANE</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="LNDG">
+        <xs:annotation>
+          <xs:documentation>LANDING</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="LOOP">
+        <xs:annotation>
+          <xs:documentation>LOOP</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="MALL">
+        <xs:annotation>
+          <xs:documentation>MALL</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="MDW">
+        <xs:annotation>
+          <xs:documentation>MEADOW</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="MDWS">
+        <xs:annotation>
+          <xs:documentation>MEADOWS</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="MEWS">
+        <xs:annotation>
+          <xs:documentation>MEWS</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ML">
+        <xs:annotation>
+          <xs:documentation>MILL</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="MLS">
+        <xs:annotation>
+          <xs:documentation>MILLS</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="MNR">
+        <xs:annotation>
+          <xs:documentation>MANOR</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="MNRS">
+        <xs:annotation>
+          <xs:documentation>MANORS</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="MSN">
+        <xs:annotation>
+          <xs:documentation>MISSION</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="MT">
+        <xs:annotation>
+          <xs:documentation>MOUNT</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="MTN">
+        <xs:annotation>
+          <xs:documentation>MOUNTAIN</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="MTNS">
+        <xs:annotation>
+          <xs:documentation>MOUNTAINS</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="MTWY">
+        <xs:annotation>
+          <xs:documentation>MOTORWAY</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="NCK">
+        <xs:annotation>
+          <xs:documentation>NECK</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="OPAS">
+        <xs:annotation>
+          <xs:documentation>OVERPASS</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ORCH">
+        <xs:annotation>
+          <xs:documentation>ORCHARD</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="OVAL">
+        <xs:annotation>
+          <xs:documentation>OVAL</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="PARK">
+        <xs:annotation>
+          <xs:documentation>PARK</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="PARK">
+        <xs:annotation>
+          <xs:documentation>PARKS</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="PASS">
+        <xs:annotation>
+          <xs:documentation>PASS</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="PATH">
+        <xs:annotation>
+          <xs:documentation>PATH</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="PIKE">
+        <xs:annotation>
+          <xs:documentation>PIKE</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="PKWY">
+        <xs:annotation>
+          <xs:documentation>PARKWAY</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="PKWY">
+        <xs:annotation>
+          <xs:documentation>PARKWAYS</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="PL">
+        <xs:annotation>
+          <xs:documentation>PLACE</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="PLN">
+        <xs:annotation>
+          <xs:documentation>PLAIN</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="PLNS">
+        <xs:annotation>
+          <xs:documentation>PLAINS</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="PLZ">
+        <xs:annotation>
+          <xs:documentation>PLAZA</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="PNE">
+        <xs:annotation>
+          <xs:documentation>PINE</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="PNES">
+        <xs:annotation>
+          <xs:documentation>PINES</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="PR">
+        <xs:annotation>
+          <xs:documentation>PRAIRIE</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="PRT">
+        <xs:annotation>
+          <xs:documentation>PORT</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="PRTS">
+        <xs:annotation>
+          <xs:documentation>PORTS</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="PSGE">
+        <xs:annotation>
+          <xs:documentation>PASSAGE</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="PT">
+        <xs:annotation>
+          <xs:documentation>POINT</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="PTS">
+        <xs:annotation>
+          <xs:documentation>POINTS</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="RADL">
+        <xs:annotation>
+          <xs:documentation>RADIAL</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="RAMP">
+        <xs:annotation>
+          <xs:documentation>RAMP</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="RD">
+        <xs:annotation>
+          <xs:documentation>ROAD</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="RDG">
+        <xs:annotation>
+          <xs:documentation>RIDGE</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="RDGS">
+        <xs:annotation>
+          <xs:documentation>RIDGES</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="RDS">
+        <xs:annotation>
+          <xs:documentation>ROADS</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="RIV">
+        <xs:annotation>
+          <xs:documentation>RIVER</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="RNCH">
+        <xs:annotation>
+          <xs:documentation>RANCH</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ROW">
+        <xs:annotation>
+          <xs:documentation>ROW</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="RPD">
+        <xs:annotation>
+          <xs:documentation>RAPID</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="RPDS">
+        <xs:annotation>
+          <xs:documentation>RAPIDS</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="RST">
+        <xs:annotation>
+          <xs:documentation>REST</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="RTE">
+        <xs:annotation>
+          <xs:documentation>ROUTE</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="RUE">
+        <xs:annotation>
+          <xs:documentation>RUE</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="RUN">
+        <xs:annotation>
+          <xs:documentation>RUN</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="SHL">
+        <xs:annotation>
+          <xs:documentation>SHOAL</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="SHLS">
+        <xs:annotation>
+          <xs:documentation>SHOALS</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="SHR">
+        <xs:annotation>
+          <xs:documentation>SHORE</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="SHRS">
+        <xs:annotation>
+          <xs:documentation>SHORES</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="SKWY">
+        <xs:annotation>
+          <xs:documentation>SKYWAY</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="SMT">
+        <xs:annotation>
+          <xs:documentation>SUMMIT</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="SPG">
+        <xs:annotation>
+          <xs:documentation>SPRING</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="SPGS">
+        <xs:annotation>
+          <xs:documentation>SPRINGS</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="SPUR">
+        <xs:annotation>
+          <xs:documentation>SPUR</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="SPUR">
+        <xs:annotation>
+          <xs:documentation>SPURS</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="SQ">
+        <xs:annotation>
+          <xs:documentation>SQUARE</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="SQS">
+        <xs:annotation>
+          <xs:documentation>SQUARES</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ST">
+        <xs:annotation>
+          <xs:documentation>STREET</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="STA">
+        <xs:annotation>
+          <xs:documentation>STATION</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="STRA">
+        <xs:annotation>
+          <xs:documentation>STRAVENUE</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="STRM">
+        <xs:annotation>
+          <xs:documentation>STREAM</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="STS">
+        <xs:annotation>
+          <xs:documentation>STREETS</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="TER">
+        <xs:annotation>
+          <xs:documentation>TERRACE</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="TPKE">
+        <xs:annotation>
+          <xs:documentation>TURNPIKE</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="TRAK">
+        <xs:annotation>
+          <xs:documentation>TRACK</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="TRCE">
+        <xs:annotation>
+          <xs:documentation>TRACE</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="TRFY">
+        <xs:annotation>
+          <xs:documentation>TRAFFICWAY</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="TRL">
+        <xs:annotation>
+          <xs:documentation>TRAIL</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="TRLR">
+        <xs:annotation>
+          <xs:documentation>TRAILER</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="TRWY">
+        <xs:annotation>
+          <xs:documentation>THROUGHWAY</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="TUNL">
+        <xs:annotation>
+          <xs:documentation>TUNNEL</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="UN">
+        <xs:annotation>
+          <xs:documentation>UNION</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="UNS">
+        <xs:annotation>
+          <xs:documentation>UNIONS</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="UPAS">
+        <xs:annotation>
+          <xs:documentation>UNDERPASS</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="VIA">
+        <xs:annotation>
+          <xs:documentation>VIADUCT</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="VIS">
+        <xs:annotation>
+          <xs:documentation>VISTA</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="VL">
+        <xs:annotation>
+          <xs:documentation>VILLE</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="VLG">
+        <xs:annotation>
+          <xs:documentation>VILLAGE</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="VLGS">
+        <xs:annotation>
+          <xs:documentation>VILLAGES</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="VLY">
+        <xs:annotation>
+          <xs:documentation>VALLEY</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="VLYS">
+        <xs:annotation>
+          <xs:documentation>VALLEYS</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="VW">
+        <xs:annotation>
+          <xs:documentation>VIEW</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="VWS">
+        <xs:annotation>
+          <xs:documentation>VIEWS</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="WALK">
+        <xs:annotation>
+          <xs:documentation>WALK</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="WALK">
+        <xs:annotation>
+          <xs:documentation>WALKS</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="WALL">
+        <xs:annotation>
+          <xs:documentation>WALL</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="WAY">
+        <xs:annotation>
+          <xs:documentation>WAY</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="WAYS">
+        <xs:annotation>
+          <xs:documentation>WAYS</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="WL">
+        <xs:annotation>
+          <xs:documentation>WELL</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="WLS">
+        <xs:annotation>
+          <xs:documentation>WELLS</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="XING">
+        <xs:annotation>
+          <xs:documentation>CROSSING</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="XRD">
+        <xs:annotation>
+          <xs:documentation>CROSSROAD</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="XRDS">
+        <xs:annotation>
+          <xs:documentation>CROSSROADS</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="StreetSuffixCodeType">
+    <xs:annotation>
+      <xs:documentation>A data type for suffix forms that are primary street suffix names, common street suffixes or suffix abbreviations, and recommended official Postal Service standard suffix abbreviations.</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="usps:StreetSuffixCodeSimpleType">
+        <xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:simpleType name="USStateCodeSimpleType">
+    <xs:annotation>
+      <xs:documentation>A data type for states.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="AA">
+        <xs:annotation>
+          <xs:documentation>Armed Forces Americas (except Canada)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AE">
+        <xs:annotation>
+          <xs:documentation>Armed Forces Europe, the Middle East, and Canada</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AK">
+        <xs:annotation>
+          <xs:documentation>Alaska</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AL">
+        <xs:annotation>
+          <xs:documentation>Alabama</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AP">
+        <xs:annotation>
+          <xs:documentation>Armed Forces Pacific</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AR">
+        <xs:annotation>
+          <xs:documentation>Arkansas</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AS">
+        <xs:annotation>
+          <xs:documentation>American Samoa</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AZ">
+        <xs:annotation>
+          <xs:documentation>Arizona</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CA">
+        <xs:annotation>
+          <xs:documentation>California</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CO">
+        <xs:annotation>
+          <xs:documentation>Colorado</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CT">
+        <xs:annotation>
+          <xs:documentation>Connecticut</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="DC">
+        <xs:annotation>
+          <xs:documentation>District of Columbia</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="DE">
+        <xs:annotation>
+          <xs:documentation>Delaware</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="FL">
+        <xs:annotation>
+          <xs:documentation>Florida</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="FM">
+        <xs:annotation>
+          <xs:documentation>Federated States of Micronesia</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="GA">
+        <xs:annotation>
+          <xs:documentation>Georgia</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="GU">
+        <xs:annotation>
+          <xs:documentation>Guam</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="HI">
+        <xs:annotation>
+          <xs:documentation>Hawaii</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="IA">
+        <xs:annotation>
+          <xs:documentation>Iowa</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ID">
+        <xs:annotation>
+          <xs:documentation>Idaho</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="IL">
+        <xs:annotation>
+          <xs:documentation>Illinois</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="IN">
+        <xs:annotation>
+          <xs:documentation>Indiana</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="KS">
+        <xs:annotation>
+          <xs:documentation>Kansas</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="KY">
+        <xs:annotation>
+          <xs:documentation>Kentucky</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="LA">
+        <xs:annotation>
+          <xs:documentation>Louisiana</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="MA">
+        <xs:annotation>
+          <xs:documentation>Massachusetts</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="MD">
+        <xs:annotation>
+          <xs:documentation>Maryland</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ME">
+        <xs:annotation>
+          <xs:documentation>Maine</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="MH">
+        <xs:annotation>
+          <xs:documentation>Marshall Islands</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="MI">
+        <xs:annotation>
+          <xs:documentation>Michigan</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="MN">
+        <xs:annotation>
+          <xs:documentation>Minnesota</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="MO">
+        <xs:annotation>
+          <xs:documentation>Missouri</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="MP">
+        <xs:annotation>
+          <xs:documentation>Northern Mariana Islands</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="MS">
+        <xs:annotation>
+          <xs:documentation>Mississippi</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="MT">
+        <xs:annotation>
+          <xs:documentation>Montana</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="NC">
+        <xs:annotation>
+          <xs:documentation>North Carolina</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ND">
+        <xs:annotation>
+          <xs:documentation>North Dakota</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="NE">
+        <xs:annotation>
+          <xs:documentation>Nebraska</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="NH">
+        <xs:annotation>
+          <xs:documentation>New Hampshire</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="NJ">
+        <xs:annotation>
+          <xs:documentation>New Jersey</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="NM">
+        <xs:annotation>
+          <xs:documentation>New Mexico</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="NV">
+        <xs:annotation>
+          <xs:documentation>Nevada</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="NY">
+        <xs:annotation>
+          <xs:documentation>New York</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="OH">
+        <xs:annotation>
+          <xs:documentation>Ohio</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="OK">
+        <xs:annotation>
+          <xs:documentation>Oklahoma</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="OR">
+        <xs:annotation>
+          <xs:documentation>Oregon</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="PA">
+        <xs:annotation>
+          <xs:documentation>Pennsylvania</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="PR">
+        <xs:annotation>
+          <xs:documentation>Puerto Rico</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="PW">
+        <xs:annotation>
+          <xs:documentation>Palau</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="RI">
+        <xs:annotation>
+          <xs:documentation>Rhode Island</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="SC">
+        <xs:annotation>
+          <xs:documentation>South Carolina</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="SD">
+        <xs:annotation>
+          <xs:documentation>South Dakota</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="TN">
+        <xs:annotation>
+          <xs:documentation>Tennessee</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="TX">
+        <xs:annotation>
+          <xs:documentation>Texas</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="UT">
+        <xs:annotation>
+          <xs:documentation>Utah</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="VA">
+        <xs:annotation>
+          <xs:documentation>Virginia</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="VI">
+        <xs:annotation>
+          <xs:documentation>Virgin Islands</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="VT">
+        <xs:annotation>
+          <xs:documentation>Vermont</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="WA">
+        <xs:annotation>
+          <xs:documentation>Washington</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="WI">
+        <xs:annotation>
+          <xs:documentation>Wisconsin</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="WV">
+        <xs:annotation>
+          <xs:documentation>West Virginia</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="WY">
+        <xs:annotation>
+          <xs:documentation>Wyoming</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="USStateCodeType">
+    <xs:annotation>
+      <xs:documentation>A data type for states.</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="usps:USStateCodeSimpleType">
+        <xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:element name="StateCode" type="usps:USStateCodeType" substitutionGroup="nc:StateRepresentation" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A state, commonwealth, province, or other such geopolitical subdivision of a country.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="StreetCategoryCode" type="usps:StreetSuffixCodeType" substitutionGroup="nc:StreetCategoryAbstract" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A kind of street.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="StreetDirectionalCode" type="usps:StreetDirectionalCodeType" substitutionGroup="nc:StreetDirectionalRepresentation" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A direction that appears before a street name.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+</xs:schema>

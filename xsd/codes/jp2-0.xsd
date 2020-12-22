@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema targetNamespace="http://release.niem.gov/niem/codes/jp2-0/5.0/" version="1" xml:lang="en-US" xsi:schemaLocation="http://release.niem.gov/niem/appinfo/5.0/ ../utility/appinfo.xsd http://release.niem.gov/niem/conformanceTargets/3.0/ ../utility/conformanceTargets.xsd" ct:conformanceTargets="http://reference.niem.gov/niem/specification/naming-and-design-rules/5.0/#ReferenceSchemaDocument"
+  xmlns:appinfo="http://release.niem.gov/niem/appinfo/5.0/"
+  xmlns:ct="http://release.niem.gov/niem/conformanceTargets/3.0/"
+  xmlns:jp2-0="http://release.niem.gov/niem/codes/jp2-0/5.0/"
+  xmlns:nc="http://release.niem.gov/niem/niem-core/5.0/"
+  xmlns:structures="http://release.niem.gov/niem/structures/5.0/"
+  xmlns:xs="http://www.w3.org/2001/XMLSchema"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <xs:annotation>
+    <xs:documentation>DoD Joint Publication 2.0 - Joint Intelligence</xs:documentation>
+    <xs:appinfo>
+      <appinfo:LocalTerm term="DoD" literal="Department of Defense"/>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:import namespace="http://release.niem.gov/niem/niem-core/5.0/" schemaLocation="../niem-core.xsd"/>
+  <xs:import namespace="http://release.niem.gov/niem/structures/5.0/" schemaLocation="../utility/structures.xsd"/>
+  <xs:simpleType name="DocumentIntelligenceCategoryCodeSimpleType">
+    <xs:annotation>
+      <xs:documentation>A data type for natures or genres of a document or resource.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="CI">
+        <xs:annotation>
+          <xs:documentation>Counterintelligence</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="COMINT">
+        <xs:annotation>
+          <xs:documentation>communications intelligence</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ELINT">
+        <xs:annotation>
+          <xs:documentation>electronic intelligence</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="FISINT">
+        <xs:annotation>
+          <xs:documentation>foreign instrumentation signals intelligence</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="GEOINT">
+        <xs:annotation>
+          <xs:documentation>Geospatial Intelligence</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="HUMINT">
+        <xs:annotation>
+          <xs:documentation>Human Intelligence</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="IMINT">
+        <xs:annotation>
+          <xs:documentation>imagery intelligence</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="MASINT">
+        <xs:annotation>
+          <xs:documentation>Measurement and Signature Intelligence</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="OSINT">
+        <xs:annotation>
+          <xs:documentation>Open-Source Intelligence</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="SIGINT">
+        <xs:annotation>
+          <xs:documentation>Signals Intelligence</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="TECHINT">
+        <xs:annotation>
+          <xs:documentation>Technical Intelligence</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="DocumentIntelligenceCategoryCodeType">
+    <xs:annotation>
+      <xs:documentation>A data type for natures or genres of a document or resource.</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="jp2-0:DocumentIntelligenceCategoryCodeSimpleType">
+        <xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:element name="DocumentIntelligenceCategoryCode" type="jp2-0:DocumentIntelligenceCategoryCodeType" substitutionGroup="nc:DocumentIntelligenceCategoryAbstract" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A nature or genre of the resource.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+</xs:schema>

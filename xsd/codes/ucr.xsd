@@ -1,0 +1,2501 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema targetNamespace="http://release.niem.gov/niem/codes/ucr/5.0/" version="1" xml:lang="en-US" xsi:schemaLocation="http://release.niem.gov/niem/appinfo/5.0/ ../utility/appinfo.xsd http://release.niem.gov/niem/conformanceTargets/3.0/ ../utility/conformanceTargets.xsd" ct:conformanceTargets="http://reference.niem.gov/niem/specification/naming-and-design-rules/5.0/#ReferenceSchemaDocument"
+  xmlns:appinfo="http://release.niem.gov/niem/appinfo/5.0/"
+  xmlns:ct="http://release.niem.gov/niem/conformanceTargets/3.0/"
+  xmlns:structures="http://release.niem.gov/niem/structures/5.0/"
+  xmlns:ucr="http://release.niem.gov/niem/codes/ucr/5.0/"
+  xmlns:xs="http://www.w3.org/2001/XMLSchema"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <xs:annotation>
+    <xs:documentation>FBI Uniform Crime Reporting (UCR) codes</xs:documentation>
+    <xs:appinfo>
+      <appinfo:LocalTerm term="LEOKA" literal="Law Enforcement Officer Killed or Assaulted"/>
+      <appinfo:LocalTerm term="NIBRS" literal="National Incident-Based Reporting System"/>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:import namespace="http://release.niem.gov/niem/structures/5.0/" schemaLocation="../utility/structures.xsd"/>
+  <xs:simpleType name="ArrestCategoryCodeSimpleType">
+    <xs:annotation>
+      <xs:documentation>A data type for kinds of arrests that can occur.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="ON-VIEW_ARREST">
+        <xs:annotation>
+          <xs:documentation>ON-VIEW ARREST</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="SUMMONED-CITED">
+        <xs:annotation>
+          <xs:documentation>SUMMONED/CITED</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="TAKEN_INTO_CUSTODY">
+        <xs:annotation>
+          <xs:documentation>TAKEN INTO CUSTODY</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="ArrestCategoryCodeType">
+    <xs:annotation>
+      <xs:documentation>A data type for kinds of arrests that can occur.</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="ucr:ArrestCategoryCodeSimpleType">
+        <xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:simpleType name="ArresteeWeaponCodeSimpleType">
+    <xs:annotation>
+      <xs:documentation>A data type for weapons with which a subject may be armed with upon apprehension.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="CLUB-BLACKJACK-BRASS_KNUCKLES">
+        <xs:annotation>
+          <xs:documentation>CLUB/ BLACKJACK/ BRASS KNUCKLES</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="FIREARM-TYPE_NOT_STATED">
+        <xs:annotation>
+          <xs:documentation>FIREARM (TYPE NOT STATED)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="FIREARM-TYPE_NOT_STATED-AUTOMATIC">
+        <xs:annotation>
+          <xs:documentation>FIREARM (TYPE NOT STATED) - AUTOMATIC</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="HANDGUN">
+        <xs:annotation>
+          <xs:documentation>HANDGUN</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="HANDGUN-AUTOMATIC">
+        <xs:annotation>
+          <xs:documentation>HANDGUN - AUTOMATIC</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="LETHAL_CUTTING_INSTRUMENT">
+        <xs:annotation>
+          <xs:documentation>LETHAL CUTTING INSTRUMENT</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="OTHER_FIREARM">
+        <xs:annotation>
+          <xs:documentation>OTHER FIREARM</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="OTHER_FIREARM-AUTOMATIC">
+        <xs:annotation>
+          <xs:documentation>OTHER FIREARM - AUTOMATIC</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="RIFLE">
+        <xs:annotation>
+          <xs:documentation>RIFLE</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="RIFLE-AUTOMATIC">
+        <xs:annotation>
+          <xs:documentation>RIFLE - AUTOMATIC</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="SHOTGUN">
+        <xs:annotation>
+          <xs:documentation>SHOTGUN</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="SHOTGUN-AUTOMATIC">
+        <xs:annotation>
+          <xs:documentation>SHOTGUN - AUTOMATIC</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="UNARMED">
+        <xs:annotation>
+          <xs:documentation>UNARMED</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="ArresteeWeaponCodeType">
+    <xs:annotation>
+      <xs:documentation>A data type for weapons with which a subject may be armed with upon apprehension.</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="ucr:ArresteeWeaponCodeSimpleType">
+        <xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:simpleType name="DrugCategoryCodeSimpleType">
+    <xs:annotation>
+      <xs:documentation>A data type for kinds of drugs.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="AMPHETAMINES-METHAMPHETAMINES">
+        <xs:annotation>
+          <xs:documentation>AMPHETAMINES/METHAMPHETAMINES</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="BARBITURATES">
+        <xs:annotation>
+          <xs:documentation>BARBITURATES</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="COCAINE">
+        <xs:annotation>
+          <xs:documentation>COCAINE (ALL FORMS EXCEPT CRACK)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CRACK_COCAINE">
+        <xs:annotation>
+          <xs:documentation>CRACK COCAINE</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="HASHISH">
+        <xs:annotation>
+          <xs:documentation>HASHISH</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="HEROIN">
+        <xs:annotation>
+          <xs:documentation>HEROIN</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="LSD">
+        <xs:annotation>
+          <xs:documentation>LSD</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="MARIJUANA">
+        <xs:annotation>
+          <xs:documentation>MARIJUANA</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="MORPHINE">
+        <xs:annotation>
+          <xs:documentation>MORPHINE</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="OPIUM">
+        <xs:annotation>
+          <xs:documentation>OPIUM</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="OTHER_DEPRESSANTS">
+        <xs:annotation>
+          <xs:documentation>OTHER DEPRESSANTS</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="OTHER_DRUGS">
+        <xs:annotation>
+          <xs:documentation>OTHER DRUGS</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="OTHER_HALLUCINOGENS">
+        <xs:annotation>
+          <xs:documentation>OTHER HALLUCINOGENS</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="OTHER_NARCOTICS">
+        <xs:annotation>
+          <xs:documentation>OTHER NARCOTICS</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="OTHER_STIMULANTS">
+        <xs:annotation>
+          <xs:documentation>OTHER STIMULANTS</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="OVER_THREE_DRUG_TYPES">
+        <xs:annotation>
+          <xs:documentation>OVER THREE DRUG TYPES</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="PCP">
+        <xs:annotation>
+          <xs:documentation>PCP</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="UNKNOWN_DRUG_TYPE">
+        <xs:annotation>
+          <xs:documentation>UNKNOWN DRUG TYPE</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="DrugCategoryCodeType">
+    <xs:annotation>
+      <xs:documentation>A data type for kinds of drugs.</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="ucr:DrugCategoryCodeSimpleType">
+        <xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:simpleType name="ForceCategoryCodeSimpleType">
+    <xs:annotation>
+      <xs:documentation>A data type for kinds of weapons or forces used by a subject in committing an offense.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="ASPHYXIATION">
+        <xs:annotation>
+          <xs:documentation>ASPHYXIATION</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AUTOMATIC_FIREARM">
+        <xs:annotation>
+          <xs:documentation>AUTOMATIC FIREARM (TYPE NOT STATED)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AUTOMATIC_HANDGUN">
+        <xs:annotation>
+          <xs:documentation>AUTOMATIC HANDGUN</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AUTOMATIC_RIFLE">
+        <xs:annotation>
+          <xs:documentation>AUTOMATIC RIFLE</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AUTOMATIC_SHOTGUN">
+        <xs:annotation>
+          <xs:documentation>AUTOMATIC SHOTGUN</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="BLUNT_OBJECT">
+        <xs:annotation>
+          <xs:documentation>BLUNT OBJECT</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="DRUGS-NARCOTICS-SLEEPING_PILLS">
+        <xs:annotation>
+          <xs:documentation>DRUGS/ NARCOTICS/ SLEEPING PILLS</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="EXPLOSIVES">
+        <xs:annotation>
+          <xs:documentation>EXPLOSIVES</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="FIRE-INCENDIARY_DEVICE">
+        <xs:annotation>
+          <xs:documentation>FIRE/ INCENDIARY DEVICE</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="FIREARM">
+        <xs:annotation>
+          <xs:documentation>FIREARM (TYPE NOT STATED)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="HANDGUN">
+        <xs:annotation>
+          <xs:documentation>HANDGUN</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="KNIFE-CUTTING_INSTRUMENT">
+        <xs:annotation>
+          <xs:documentation>KNIFE/CUTTING INSTRUMENT</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="MOTOR_VEHICLE-VESSEL">
+        <xs:annotation>
+          <xs:documentation>MOTOR VEHICLE/VESSEL</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="NONE">
+        <xs:annotation>
+          <xs:documentation>NONE</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="OTHER">
+        <xs:annotation>
+          <xs:documentation>OTHER</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="OTHER_AUTOMATIC_FIREARM">
+        <xs:annotation>
+          <xs:documentation>OTHER AUTOMATIC FIREARM</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="OTHER_FIREARM">
+        <xs:annotation>
+          <xs:documentation>OTHER FIREARM</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="PERSONAL_WEAPONS">
+        <xs:annotation>
+          <xs:documentation>PERSONAL WEAPONS</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="POISON">
+        <xs:annotation>
+          <xs:documentation>POISON</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="RIFLE">
+        <xs:annotation>
+          <xs:documentation>RIFLE</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="SHOTGUN">
+        <xs:annotation>
+          <xs:documentation>SHOTGUN</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="UNKNOWN">
+        <xs:annotation>
+          <xs:documentation>UNKNOWN</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="ForceCategoryCodeType">
+    <xs:annotation>
+      <xs:documentation>A data type for kinds of weapons or forces used by a subject in committing an offense.</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="ucr:ForceCategoryCodeSimpleType">
+        <xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:simpleType name="IncidentBiasMotivationCodeSimpleType">
+    <xs:annotation>
+      <xs:documentation>A data type for bias motivations for an incident.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="ANTI-AMERICAN_INDIAN-ALASKAN_NATIVE">
+        <xs:annotation>
+          <xs:documentation>ANTI-AMERICAN INDIAN OR ALASKAN NATIVE</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ANTI-ARAB">
+        <xs:annotation>
+          <xs:documentation>ANTI-ARAB</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ANTI-ASIAN">
+        <xs:annotation>
+          <xs:documentation>ANTI-ASIAN</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ANTI-ATHEISM-AGNOSTICISM">
+        <xs:annotation>
+          <xs:documentation>ANTI-ATHEISM/ AGNOSTICISM</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ANTI-BISEXUAL">
+        <xs:annotation>
+          <xs:documentation>ANTI-BISEXUAL</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ANTI-BLACK-AFRICAN_AMERICAN">
+        <xs:annotation>
+          <xs:documentation>ANTI-BLACK OR AFRICAN AMERICAN</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ANTI-BUDDHIST">
+        <xs:annotation>
+          <xs:documentation>ANTI-BUDDHIST</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ANTI-CATHOLIC">
+        <xs:annotation>
+          <xs:documentation>ANTI-CATHOLIC</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ANTI-DISABLED">
+        <xs:annotation>
+          <xs:documentation>ANTI-DISABLED</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ANTI-EASTERN_ORTHODOX">
+        <xs:annotation>
+          <xs:documentation>ANTI-EASTERN_ORTHODOX</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ANTI-FEMALE">
+        <xs:annotation>
+          <xs:documentation>ANTI-FEMALE</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ANTI-GAY">
+        <xs:annotation>
+          <xs:documentation>ANTI-GAY</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ANTI-GENDER_NON-CONFORMING">
+        <xs:annotation>
+          <xs:documentation>ANTI-GENDER NON-CONFORMING</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ANTI-HETEROSEXUAL">
+        <xs:annotation>
+          <xs:documentation>ANTI-HETEROSEXUAL</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ANTI-HISPANIC-LATINO">
+        <xs:annotation>
+          <xs:documentation>ANTI-HISPANIC OR LATINO</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ANTI-ISLAMIC">
+        <xs:annotation>
+          <xs:documentation>ANTI-ISLAMIC (MUSLIM)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ANTI-JEHOVAH_WITNESS">
+        <xs:annotation>
+          <xs:documentation>ANTI-JEHOVAH_WITNESS</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ANTI-JEWISH">
+        <xs:annotation>
+          <xs:documentation>ANTI-JEWISH</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ANTI-LESBIAN">
+        <xs:annotation>
+          <xs:documentation>ANTI-LESBIAN</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ANTI-LESBIAN-GAY-BISEXUAL-TRANSGENDER">
+        <xs:annotation>
+          <xs:documentation>ANTI-LESBIAN, GAY, BISEXUAL, OR TRANSGENDER (MIXED GROUP)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ANTI-MALE">
+        <xs:annotation>
+          <xs:documentation>ANTI-MALE</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ANTI-MENTAL_DISABILITY">
+        <xs:annotation>
+          <xs:documentation>ANTI-MENTAL DISABILITY</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ANTI-MORMON">
+        <xs:annotation>
+          <xs:documentation>ANTI-MORMON</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ANTI-MULTIPLE_RACES-GROUP">
+        <xs:annotation>
+          <xs:documentation>ANTI-MULTIPLE RACES, GROUP</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ANTI-MULTIPLE_RELIGIONS">
+        <xs:annotation>
+          <xs:documentation>ANTI-MULTIPLE RELIGIONS, GROUP</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ANTI-NATIVE_HAWAIIAN-OTHER_PACIFIC_ISLANDER">
+        <xs:annotation>
+          <xs:documentation>ANTI-NATIVE HAWAIIAN OR OTHER PACIFIC ISLANDER</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ANTI-NOT_HISPANIC-LATINO">
+        <xs:annotation>
+          <xs:documentation>ANTI-NOT HISPANIC OR LATINO</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ANTI-OTHER_ETHNICITY_NATIONAL_ORIGIN">
+        <xs:annotation>
+          <xs:documentation>ANTI-OTHER_ETHNICITY_NATIONAL_ORIGIN</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ANTI-OTHER_RELIGION">
+        <xs:annotation>
+          <xs:documentation>ANTI-OTHER_RELIGION</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ANTI-PHYSICAL_DISABILITY">
+        <xs:annotation>
+          <xs:documentation>ANTI-PHYSICAL DISABILITY</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ANTI-PROTESTANT">
+        <xs:annotation>
+          <xs:documentation>ANTI-PROTESTANT</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ANTI-SIKH">
+        <xs:annotation>
+          <xs:documentation>ANTI-SIKH</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ANTI-TRANSGENDER">
+        <xs:annotation>
+          <xs:documentation>ANTI-TRANSGENDER</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ANTI-WHITE">
+        <xs:annotation>
+          <xs:documentation>ANTI-WHITE</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="GENDER_BIAS">
+        <xs:annotation>
+          <xs:documentation>GENDER_BIAS</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="NONE">
+        <xs:annotation>
+          <xs:documentation>NONE (NO BIAS)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="POLITICAL_AFFILIATION_BIAS">
+        <xs:annotation>
+          <xs:documentation>POLITICAL_AFFILIATION_BIAS</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="UNKNOWN">
+        <xs:annotation>
+          <xs:documentation>UNKNOWN (OFFENDER'S MOTIVATION NOT KNOWN)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="IncidentBiasMotivationCodeType">
+    <xs:annotation>
+      <xs:documentation>A data type for bias motivations for an incident.</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="ucr:IncidentBiasMotivationCodeSimpleType">
+        <xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:simpleType name="IncidentExceptionalClearanceCodeSimpleType">
+    <xs:annotation>
+      <xs:documentation>A data type for ways in which an incident may be cleared exceptionally.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="DEATH_OF_OFFENDER">
+        <xs:annotation>
+          <xs:documentation>DEATH OF OFFENDER</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="IN_CUSTODY_OF_OTHER_JURISDICTION">
+        <xs:annotation>
+          <xs:documentation>IN CUSTODY OF OTHER JURISDICTION</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="JUVENILE-NO_CUSTODY">
+        <xs:annotation>
+          <xs:documentation>JUVENILE/NO CUSTODY (THE HANDLING OF A JUVENILE WITHOUT TAKING HIM/HER INTO CUSTODY, BUT RATHER BY ORAL OR WRITTEN NOTICE GIVEN TO THE PARENTS OR LEGAL GUARDIAN IN A CASE INVOLVING A MINOR OFFENSE, SUCH AS A PETTY LARCENY)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="NOT_APPLICABLE">
+        <xs:annotation>
+          <xs:documentation>NOT APPLICABLE (NOT CLEARED EXCEPTIONALLY)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="PROSECUTION_DECLINED">
+        <xs:annotation>
+          <xs:documentation>PROSECUTION DECLINED (BY THE PROSECUTOR FOR OTHER THAN LACK OF PROBABLE CAUSE)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="VICTIM_REFUSED_TO_COOPERATE">
+        <xs:annotation>
+          <xs:documentation>VICTIM REFUSED TO COOPERATE (IN THE PROSECUTION)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="IncidentExceptionalClearanceCodeType">
+    <xs:annotation>
+      <xs:documentation>A data type for ways in which an incident may be cleared exceptionally.</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="ucr:IncidentExceptionalClearanceCodeSimpleType">
+        <xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:simpleType name="IncidentFactorCodeSimpleType">
+    <xs:annotation>
+      <xs:documentation>A data type for factors that may have been involved in or contributed to a subject committing an offense.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="ALCOHOL">
+        <xs:annotation>
+          <xs:documentation>ALCOHOL</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="COMPUTER_EQUIPMENT-HANDHELD_DEVICE">
+        <xs:annotation>
+          <xs:documentation>COMPUTER EQUIPMENT/HANDHELD DEVICE</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="DRUGS-NARCOTICS">
+        <xs:annotation>
+          <xs:documentation>DRUGS OR NARCOTICS</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="NOT_APPLICABLE">
+        <xs:annotation>
+          <xs:documentation>NOT APPLICABLE</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="IncidentFactorCodeType">
+    <xs:annotation>
+      <xs:documentation>A data type for factors that may have been involved in or contributed to a subject committing an offense.</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="ucr:IncidentFactorCodeSimpleType">
+        <xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:simpleType name="InjuryCategoryCodeSimpleType">
+    <xs:annotation>
+      <xs:documentation>A data type for a general category of harm or injury.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="APPARENT_BROKEN_BONES">
+        <xs:annotation>
+          <xs:documentation>APPARENT BROKEN BONES</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="APPARENT_MINOR_INJURY">
+        <xs:annotation>
+          <xs:documentation>APPARENT MINOR INJURY</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="LOSS_OF_TEETH">
+        <xs:annotation>
+          <xs:documentation>LOSS OF TEETH</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="NONE">
+        <xs:annotation>
+          <xs:documentation>NONE</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="OTHER_MAJOR_INJURY">
+        <xs:annotation>
+          <xs:documentation>OTHER MAJOR INJURY</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="POSSIBLE_INTERNAL_INJURY">
+        <xs:annotation>
+          <xs:documentation>POSSIBLE INTERNAL INJURY</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="SEVERE_LACERATION">
+        <xs:annotation>
+          <xs:documentation>SEVERE LACERATION</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="UNCONSCIOUSNESS">
+        <xs:annotation>
+          <xs:documentation>UNCONSCIOUSNESS</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="InjuryCategoryCodeType">
+    <xs:annotation>
+      <xs:documentation>A data type for a general category of harm or injury.</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="ucr:InjuryCategoryCodeSimpleType">
+        <xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:simpleType name="JudicialDistrictCodeSimpleType">
+    <xs:annotation>
+      <xs:documentation>A data type for a judicial district.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="ALABAMA_MIDDLE">
+        <xs:annotation>
+          <xs:documentation>MIDDLE ALABAMA</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ALABAMA_NORTHERN">
+        <xs:annotation>
+          <xs:documentation>NORTHERN ALABAMA</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ALABAMA_SOUTHERN">
+        <xs:annotation>
+          <xs:documentation>SOUTHERN ALABAMA</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ALASKA">
+        <xs:annotation>
+          <xs:documentation>ALASKA</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ARIZONA">
+        <xs:annotation>
+          <xs:documentation>ARIZONA</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ARKANSAS_EASTERN">
+        <xs:annotation>
+          <xs:documentation>EASTERN ARKANSAS</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ARKANSAS_WESTERN">
+        <xs:annotation>
+          <xs:documentation>WESTERN ARKANSAS</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CALIFORNIA_CENTRAL">
+        <xs:annotation>
+          <xs:documentation>CENTRAL CALIFORNIA</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CALIFORNIA_EASTERN">
+        <xs:annotation>
+          <xs:documentation>EASTERN CALIFORNIA</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CALIFORNIA_NORTHERN">
+        <xs:annotation>
+          <xs:documentation>NORTHERN CALIFORNIA</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CALIFORNIA_SOUTHERN">
+        <xs:annotation>
+          <xs:documentation>SOUTHERN CALIFORNIA</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="COLORADO">
+        <xs:annotation>
+          <xs:documentation>COLORADO</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CONNECTICUT">
+        <xs:annotation>
+          <xs:documentation>CONNECTICUT</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="DELAWARE">
+        <xs:annotation>
+          <xs:documentation>DELAWARE</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="FLORIDA_MIDDLE">
+        <xs:annotation>
+          <xs:documentation>MIDDLE FLORIDA</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="FLORIDA_NORTHERN">
+        <xs:annotation>
+          <xs:documentation>NORTHERN FLORIDA</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="FLORIDA_SOUTHERN">
+        <xs:annotation>
+          <xs:documentation>SOUTHERN FLORIDA</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="GEORGIA_MIDDLE">
+        <xs:annotation>
+          <xs:documentation>MIDDLE GEORGIA</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="GEORGIA_NORTHERN">
+        <xs:annotation>
+          <xs:documentation>NORTHERN GEORGIA</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="GEORGIA_SOUTHERN">
+        <xs:annotation>
+          <xs:documentation>SOUTHERN GEORGIA</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="GUAM">
+        <xs:annotation>
+          <xs:documentation>GUAM</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="HAWAII">
+        <xs:annotation>
+          <xs:documentation>HAWAII</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="IDAHO">
+        <xs:annotation>
+          <xs:documentation>IDAHO</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ILLINOIS_CENTRAL">
+        <xs:annotation>
+          <xs:documentation>CENTRAL ILLINOIS</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ILLINOIS_NORTHERN">
+        <xs:annotation>
+          <xs:documentation>NORTHERN ILLINOIS</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ILLINOIS_SOUTHERN">
+        <xs:annotation>
+          <xs:documentation>SOUTHERN ILLINOIS</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="INDIANA_NORTHERN">
+        <xs:annotation>
+          <xs:documentation>NORTHERN INDIANA</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="INDIANA_SOUTHERN">
+        <xs:annotation>
+          <xs:documentation>SOUTHERN INDIANA</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="IOWA_NORTHERN">
+        <xs:annotation>
+          <xs:documentation>NORTHERN IOWA</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="IOWA_SOUTHERN">
+        <xs:annotation>
+          <xs:documentation>SOUTHERN IOWA</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="KANSAS">
+        <xs:annotation>
+          <xs:documentation>KANSAS</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="KENTUCKY_EASTERN">
+        <xs:annotation>
+          <xs:documentation>EASTERN KENTUCKY</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="KENTUCKY_WESTERN">
+        <xs:annotation>
+          <xs:documentation>WESTERN KENTUCKY</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="LOUISIANA_EASTERN">
+        <xs:annotation>
+          <xs:documentation>EASTERN LOUISIANA</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="LOUISIANA_MIDDLE">
+        <xs:annotation>
+          <xs:documentation>MIDDLE LOUISIANA</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="LOUISIANA_WESTERN">
+        <xs:annotation>
+          <xs:documentation>WESTERN LOUISIANA</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="MAINE">
+        <xs:annotation>
+          <xs:documentation>MAINE</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="MARIANA_ISLANDS_NORTHERN">
+        <xs:annotation>
+          <xs:documentation>NORTHERN MARIANA ISLANDS</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="MARYLAND">
+        <xs:annotation>
+          <xs:documentation>MARYLAND</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="MASSACHUSETTS">
+        <xs:annotation>
+          <xs:documentation>MASSACHUSETTS</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="MICHIGAN_EASTERN">
+        <xs:annotation>
+          <xs:documentation>EASTERN MICHIGAN</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="MICHIGAN_WESTERN">
+        <xs:annotation>
+          <xs:documentation>WESTERN MICHIGAN</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="MINNESOTA">
+        <xs:annotation>
+          <xs:documentation>MINNESOTA</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="MISSISSIPPI_NORTHERN">
+        <xs:annotation>
+          <xs:documentation>NORTHERN MISSISSIPPI</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="MISSISSIPPI_SOUTHERN">
+        <xs:annotation>
+          <xs:documentation>SOUTHERN MISSISSIPPI</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="MISSOURI_EASTERN">
+        <xs:annotation>
+          <xs:documentation>EASTERN MISSOURI</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="MISSOURI_WESTERN">
+        <xs:annotation>
+          <xs:documentation>WESTERN MISSOURI</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="MONTANA">
+        <xs:annotation>
+          <xs:documentation>MONTANA</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="NEBRASKA">
+        <xs:annotation>
+          <xs:documentation>NEBRASKA</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="NEVADA">
+        <xs:annotation>
+          <xs:documentation>NEVADA</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="NEW_HAMPSHIRE">
+        <xs:annotation>
+          <xs:documentation>NEW HAMPSHIRE</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="NEW_JERSEY">
+        <xs:annotation>
+          <xs:documentation>NEW JERSEY</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="NEW_MEXICO">
+        <xs:annotation>
+          <xs:documentation>NEW MEXICO</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="NEW_YORK_EASTERN">
+        <xs:annotation>
+          <xs:documentation>EASTERN NEW YORK</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="NEW_YORK_NORTHERN">
+        <xs:annotation>
+          <xs:documentation>NORTHERN NEW YORK</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="NEW_YORK_SOUTHERN">
+        <xs:annotation>
+          <xs:documentation>SOUTHERN NEW YORK</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="NEW_YORK_WESTERN">
+        <xs:annotation>
+          <xs:documentation>WESTERN NEW YORK</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="NORTH_CAROLINA_EASTERN">
+        <xs:annotation>
+          <xs:documentation>EASTERN NORTH CAROLINA</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="NORTH_CAROLINA_MIDDLE">
+        <xs:annotation>
+          <xs:documentation>MIDDLE NORTH CAROLINA</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="NORTH_CAROLINA_WESTERN">
+        <xs:annotation>
+          <xs:documentation>WESTERN NORTH CAROLINA</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="NORTH_DAKOTA">
+        <xs:annotation>
+          <xs:documentation>NORTH DAKOTA</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="OHIO_NORTHERN">
+        <xs:annotation>
+          <xs:documentation>NORTHERN OHIO</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="OHIO_SOUTHERN">
+        <xs:annotation>
+          <xs:documentation>SOUTHERN OHIO</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="OKLAHOMA_EASTERN">
+        <xs:annotation>
+          <xs:documentation>EASTERN OKLAHOMA</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="OKLAHOMA_NORTHERN">
+        <xs:annotation>
+          <xs:documentation>NORTHERN OKLAHOMA</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="OKLAHOMA_WESTERN">
+        <xs:annotation>
+          <xs:documentation>WESTERN OKLAHOMA</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="OREGON">
+        <xs:annotation>
+          <xs:documentation>OREGON</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="PENNSYLVANIA_EASTERN">
+        <xs:annotation>
+          <xs:documentation>EASTERN PENNSYLVANIA</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="PENNSYLVANIA_MIDDLE">
+        <xs:annotation>
+          <xs:documentation>MIDDLE PENNSYLVANIA</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="PENNSYLVANIA_WESTERN">
+        <xs:annotation>
+          <xs:documentation>WESTERN PENNSYLVANIA</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="PUERTO_RICO">
+        <xs:annotation>
+          <xs:documentation>PUERTO RICO</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="RHODE_ISLAND">
+        <xs:annotation>
+          <xs:documentation>RHODE ISLAND</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="SOUTH_CAROLINA">
+        <xs:annotation>
+          <xs:documentation>SOUTH CAROLINA</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="SOUTH_DAKOTA">
+        <xs:annotation>
+          <xs:documentation>SOUTH DAKOTA</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="TENNESSEE_EASTERN">
+        <xs:annotation>
+          <xs:documentation>EASTERN TENNESSEE</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="TENNESSEE_MIDDLE">
+        <xs:annotation>
+          <xs:documentation>MIDDLE TENNESSEE</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="TENNESSEE_WESTERN">
+        <xs:annotation>
+          <xs:documentation>WESTERN TENNESSEE</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="TEXAS_EASTERN">
+        <xs:annotation>
+          <xs:documentation>EASTERN TEXAS</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="TEXAS_NORTHERN">
+        <xs:annotation>
+          <xs:documentation>NORTHERN TEXAS</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="TEXAS_SOUTHERN">
+        <xs:annotation>
+          <xs:documentation>SOUTHERN TEXAS</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="TEXAS_WESTERN">
+        <xs:annotation>
+          <xs:documentation>WESTERN TEXAS</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="UTAH">
+        <xs:annotation>
+          <xs:documentation>UTAH</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="VERMONT">
+        <xs:annotation>
+          <xs:documentation>VERMONT</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="VIRGIN_ISLANDS">
+        <xs:annotation>
+          <xs:documentation>VIRGIN ISLANDS</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="VIRGINIA_EASTERN">
+        <xs:annotation>
+          <xs:documentation>EASTERN VIRGINIA</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="VIRGINIA_WESTERN">
+        <xs:annotation>
+          <xs:documentation>WESTERN VIRGINIA</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="WASHINGTON_DC">
+        <xs:annotation>
+          <xs:documentation>DISTRICT OF COLUMBIA DISTRICT COURT</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="WASHINGTON_EASTERN">
+        <xs:annotation>
+          <xs:documentation>EASTERN WASHINGTON</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="WASHINGTON_WESTERN">
+        <xs:annotation>
+          <xs:documentation>WESTERN WASHINGTON</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="WEST_VIRGINIA_NORTHERN">
+        <xs:annotation>
+          <xs:documentation>NORTHERN WEST VIRGINIA</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="WEST_VIRGINIA_SOUTHERN">
+        <xs:annotation>
+          <xs:documentation>SOUTHERN WEST VIRGINIA</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="WISCONSIN_EASTERN">
+        <xs:annotation>
+          <xs:documentation>EASTERN WISCONSIN</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="WISCONSIN_WESTERN">
+        <xs:annotation>
+          <xs:documentation>WESTERN WISCONSIN</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="WYOMING">
+        <xs:annotation>
+          <xs:documentation>WYOMING</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="JudicialDistrictCodeType">
+    <xs:annotation>
+      <xs:documentation>A data type for a judicial district.</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="ucr:JudicialDistrictCodeSimpleType">
+        <xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:simpleType name="JustifiableHomicideFactorCodeSimpleType">
+    <xs:annotation>
+      <xs:documentation>A data type for circumstances of a justifiable homicide.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="CRIMINAL_ATTACKED_CIVILIAN">
+        <xs:annotation>
+          <xs:documentation>CRIMINAL ATTACKED A CIVILIAN</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CRIMINAL_ATTACKED_LEO-OTHER_OFFICER_KILLED_CRIMINAL">
+        <xs:annotation>
+          <xs:documentation>CRIMINAL ATTACKED POLICE OFFICER AND CRIMINAL KILLED BY ANOTHER POLICE OFFICER</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CRIMINAL_ATTACKED_LEO-THAT_OFFICER_KILLED_CRIMINAL">
+        <xs:annotation>
+          <xs:documentation>CRIMINAL ATTACKED POLICE OFFICER AND THAT OFFICER KILLED CRIMINAL</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CRIMINAL_ATTEMPTED_FLIGHT_FROM_CRIME">
+        <xs:annotation>
+          <xs:documentation>CRIMINAL ATTEMPTED FLIGHT FROM A CRIME</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CRIMINAL_KILLED_IN_COMMISSION_OF_CRIME">
+        <xs:annotation>
+          <xs:documentation>CRIMINAL KILLED IN COMMISSION OF A CRIME</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CRIMINAL_RESISTED_ARREST">
+        <xs:annotation>
+          <xs:documentation>CRIMINAL RESISTED ARREST</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="UNABLE_TO_DETERMINE-NOT_ENOUGH_INFORMATION">
+        <xs:annotation>
+          <xs:documentation>UNABLE TO DETERMINE/NOT ENOUGH INFORMATION</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="JustifiableHomicideFactorCodeType">
+    <xs:annotation>
+      <xs:documentation>A data type for circumstances of a justifiable homicide.</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="ucr:JustifiableHomicideFactorCodeSimpleType">
+        <xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:simpleType name="LEOKAActivityCategoryCodeSimpleType">
+    <xs:annotation>
+      <xs:documentation>A data type for a kind of activity or circumstance in which a law enforcement officer was engaged at the time of assault.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="ALL_OTHER">
+        <xs:annotation>
+          <xs:documentation>ALL OTHER</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AMBUSH-NO_WARNING">
+        <xs:annotation>
+          <xs:documentation>AMBUSH-NO WARNING</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ATTEMPTING_OTHER_ARRESTS">
+        <xs:annotation>
+          <xs:documentation>ATTEMPTING OTHER ARRESTS</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="BURGLARIES_IN_PROGRESS-PURSUING_BURGLARY_SUSPECTS">
+        <xs:annotation>
+          <xs:documentation>BURGLARIES IN PROGRESS OR PURSUING BURGLARY SUSPECTS</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CIVIL_DISORDER">
+        <xs:annotation>
+          <xs:documentation>CIVIL DISORDER (RIOT, MASS DISOBEDIENCE)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="HANDLING_PERSONS_WITH_MENTAL_ILLNESS">
+        <xs:annotation>
+          <xs:documentation>HANDLING PERSONS WITH MENTAL ILLNESS</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="HANDLING-TRANSPORTING-CUSTODY_OF_PRISONERS">
+        <xs:annotation>
+          <xs:documentation>HANDLING, TRANSPORTING, CUSTODY OF PRISONERS</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="INVESTIGATING_SUSPICIOUS_PERSONS-CIRCUMSTANCES">
+        <xs:annotation>
+          <xs:documentation>INVESTIGATING SUSPICIOUS PERSONS OR CIRCUMSTANCES</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="RESPONDING_TO_DISTURBANCE_CALL">
+        <xs:annotation>
+          <xs:documentation>RESPONDING TO DISTURBANCE CALL (FAMILY QUARRELS, PERSON WITH FIREARM, ETC.)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ROBBERIES_IN_PROGRESS-PURSUING_ROBBERY_SUSPECTS">
+        <xs:annotation>
+          <xs:documentation>ROBBERIES IN PROGRESS OR PURSUING ROBBERY SUSPECTS</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="TRAFFIC_PURSUITS-STOPS">
+        <xs:annotation>
+          <xs:documentation>TRAFFIC PURSUITS AND STOPS</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="LEOKAActivityCategoryCodeType">
+    <xs:annotation>
+      <xs:documentation>A data type for a kind of activity or circumstance in which a law enforcement officer was engaged at the time of assault.</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="ucr:LEOKAActivityCategoryCodeSimpleType">
+        <xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:simpleType name="LEOKAOfficerAssignmentCategoryCodeSimpleType">
+    <xs:annotation>
+      <xs:documentation>A data type for an assignment a law enforcement officer was on when assaulted.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="DETECTIVE-SPECIAL_ASSIGNMENT-ALONE-NON_UNIFORMED_LEO">
+        <xs:annotation>
+          <xs:documentation>DETECTIVE OR SPECIAL ASSIGNMENT (ALONE) - NON-UNIFORMED OFFICERS</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="DETECTIVE-SPECIAL_ASSIGNMENT-ASSISTED-NON_UNIFORMED_LEO">
+        <xs:annotation>
+          <xs:documentation>DETECTIVE OR SPECIAL ASSIGNMENT (ASSISTED) - NON-UNIFORMED OFFICERS</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ONE-OFFICER_VEHICLE-ALONE-UNIFORMED_LEO">
+        <xs:annotation>
+          <xs:documentation>ONE-OFFICER VEHICLE (ALONE) - UNIFORMED LAW ENFORCEMENT OFFICERS</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ONE-OFFICER_VEHICLE-ASSISTED-UNIFORMED_LEO">
+        <xs:annotation>
+          <xs:documentation>ONE-OFFICER VEHICLE (ASSISTED) - UNIFORMED LAW ENFORCEMENT OFFICERS</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="OTHER-ALONE-LEO_SERVING_IN_OTHER_CAPACITY">
+        <xs:annotation>
+          <xs:documentation>OTHER (ALONE) - LAW ENFORCEMENT OFFICERS SERVING IN OTHER CAPACITIES (FOOT PATROL, OFF DUTY, ETC.)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="OTHER-ASSISTED-LEO_SERVING_IN_OTHER_CAPACITY">
+        <xs:annotation>
+          <xs:documentation>OTHER (ASSISTED) - LAW ENFORCEMENT OFFICERS SERVING IN OTHER CAPACITIES (FOOT PATROL, OFF DUTY, ETC.)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="TWO-OFFICER_VEHICLE-UNIFORMED_LEO">
+        <xs:annotation>
+          <xs:documentation>TWO-OFFICER VEHICLE - UNIFORMED LAW ENFORCEMENT OFFICERS</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="LEOKAOfficerAssignmentCategoryCodeType">
+    <xs:annotation>
+      <xs:documentation>A data type for an assignment a law enforcement officer was on when assaulted.</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="ucr:LEOKAOfficerAssignmentCategoryCodeSimpleType">
+        <xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:simpleType name="MethodOfEntryCodeSimpleType">
+    <xs:annotation>
+      <xs:documentation>A data type for methods of entry into a structure or premises.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="FORCE">
+        <xs:annotation>
+          <xs:documentation>FORCE</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="NO_FORCE">
+        <xs:annotation>
+          <xs:documentation>NO FORCE</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="MethodOfEntryCodeType">
+    <xs:annotation>
+      <xs:documentation>A data type for methods of entry into a structure or premises.</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="ucr:MethodOfEntryCodeSimpleType">
+        <xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:simpleType name="MultipleArresteeSegmentsCodeSimpleType">
+    <xs:annotation>
+      <xs:documentation>A data type for the ways in which an arrested subject is counted or scored in a system so that a subject is counted only once despite potentially multiple arrests at a time.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="COUNT_ARRESTEE">
+        <xs:annotation>
+          <xs:documentation>COUNT ARRESTEE</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="MULTIPLE">
+        <xs:annotation>
+          <xs:documentation>MULTIPLE</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="NOT_APPLICABLE">
+        <xs:annotation>
+          <xs:documentation>NOT APPLICABLE</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="MultipleArresteeSegmentsCodeType">
+    <xs:annotation>
+      <xs:documentation>A data type for the ways in which an arrested subject is counted or scored in a system so that a subject is counted only once despite potentially multiple arrests at a time.</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="ucr:MultipleArresteeSegmentsCodeSimpleType">
+        <xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:simpleType name="NIBRSReportCategoryCodeSimpleType">
+    <xs:annotation>
+      <xs:documentation>A data type for a kind of report contained in the NIBRS submission.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="EMPLOYEE_COUNT_REPORT">
+        <xs:annotation>
+          <xs:documentation>EMPLOYEE COUNT REPORT</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="GROUP_A_INCIDENT_REPORT">
+        <xs:annotation>
+          <xs:documentation>GROUP A INCIDENT REPORT</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="GROUP_A_INCIDENT_REPORT_LEOKA">
+        <xs:annotation>
+          <xs:documentation>GROUP A INCIDENT REPORT LEOKA</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="GROUP_B_ARREST_REPORT">
+        <xs:annotation>
+          <xs:documentation>GROUP B ARREST REPORT</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="HATE_CRIME_REPORT">
+        <xs:annotation>
+          <xs:documentation>HATE CRIME REPORT</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ZERO_REPORT">
+        <xs:annotation>
+          <xs:documentation>ZERO REPORT</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="NIBRSReportCategoryCodeType">
+    <xs:annotation>
+      <xs:documentation>A data type for a kind of report contained in the NIBRS submission.</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="ucr:NIBRSReportCategoryCodeSimpleType">
+        <xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:simpleType name="OffenseCodeSimpleType">
+    <xs:annotation>
+      <xs:documentation>A data type for Uniform Crime Reporting (UCR) offense codes.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="AGGRAVATED_ASSAULT">
+        <xs:annotation>
+          <xs:documentation>AGGRAVATED ASSAULT</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ALL_OTHER_OFFENSES">
+        <xs:annotation>
+          <xs:documentation>ALL OTHER OFFENSES</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ARSON">
+        <xs:annotation>
+          <xs:documentation>ARSON</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="BAD_CHECKS">
+        <xs:annotation>
+          <xs:documentation>BAD CHECKS</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="BETTING-WAGERING">
+        <xs:annotation>
+          <xs:documentation>BETTING/WAGERING</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="BRIBERY">
+        <xs:annotation>
+          <xs:documentation>BRIBERY</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="BURGLARY-BREAKING_ENTERING">
+        <xs:annotation>
+          <xs:documentation>BURGLARY/BREAKING &amp; ENTERING</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="COUNTERFEIT-FORGERY">
+        <xs:annotation>
+          <xs:documentation>COUNTERFEITING/FORGERY</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CRUELTY_TO_ANIMALS">
+        <xs:annotation>
+          <xs:documentation>ANIMAL CRUELTY</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CURFEW-LOITERING-VAGRANCY_VIOLATIONS">
+        <xs:annotation>
+          <xs:documentation>CURFEW/LOITERING/VAGRANCY VIOLATIONS</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="DAMAGE-DESTRUCTION-VANDALISM_OF_PROPERTY">
+        <xs:annotation>
+          <xs:documentation>DESTRUCTION/DAMAGE/VANDALISM OF PROPERTY</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="DISORDERLY_CONDUCT">
+        <xs:annotation>
+          <xs:documentation>DISORDERLY CONDUCT</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="DRIVING_UNDER_INFLUENCE">
+        <xs:annotation>
+          <xs:documentation>DRIVING UNDER THE INFLUENCE</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="DRUG_EQUIPMENT_VIOLATIONS">
+        <xs:annotation>
+          <xs:documentation>DRUG EQUIPMENT VIOLATIONS</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="DRUG-NARCOTIC_VIOLATIONS">
+        <xs:annotation>
+          <xs:documentation>DRUG/NARCOTIC VIOLATIONS</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="DRUNKENNESS">
+        <xs:annotation>
+          <xs:documentation>DRUNKENNESS</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="EMBEZZLEMENT">
+        <xs:annotation>
+          <xs:documentation>EMBEZZLEMENT</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ESPIONAGE">
+        <xs:annotation>
+          <xs:documentation>ESPIONAGE</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="EXPLOSIVES">
+        <xs:annotation>
+          <xs:documentation>EXPLOSIVES</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="EXPORT_VIOLATIONS">
+        <xs:annotation>
+          <xs:documentation>EXPORT VIOLATIONS</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="EXTORTION-BLACKMAIL">
+        <xs:annotation>
+          <xs:documentation>EXTORTION/BLACKMAIL</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="FAILURE_TO_APPEAR">
+        <xs:annotation>
+          <xs:documentation>BOND FAILURE TO APPEAR</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="FAMILY_OFFENSES-NONVIOLENT">
+        <xs:annotation>
+          <xs:documentation>FAMILY OFFENSES, NONVIOLENT</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="FEDERAL_LIQUOR_OFFENSES">
+        <xs:annotation>
+          <xs:documentation>FEDERAL LIQUOR OFFENSES</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="FEDERAL_RESOURCE_VIOLATIONS">
+        <xs:annotation>
+          <xs:documentation>FEDERAL RESOURCE VIOLATIONS</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="FEDERAL_TOBACCO_OFFENSES">
+        <xs:annotation>
+          <xs:documentation>FEDERAL TOBACCO OFFENSES</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="FIREARM_ACT_VIOLATION">
+        <xs:annotation>
+          <xs:documentation>FIREARM ACT VIOLATION</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="FONDLING">
+        <xs:annotation>
+          <xs:documentation>FONDLING</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="FRAUD-BY_WIRE">
+        <xs:annotation>
+          <xs:documentation>WIRE FRAUD</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="FRAUD-CREDIT_CARD-AUTOMATIC_TELLER_MACHINE">
+        <xs:annotation>
+          <xs:documentation>CREDIT CARD/AUTOMATED TELLER MACHINE FRAUD</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="FRAUD-FALSE_PRETENSES-SWINDLE-CONFIDENCE_GAME">
+        <xs:annotation>
+          <xs:documentation>FALSE PRETENSES/SWINDLE/CONFIDENCE GAME</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="FRAUD-IMPERSONATION">
+        <xs:annotation>
+          <xs:documentation>IMPERSONATION</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="FRAUD-WELFARE_FRAUD">
+        <xs:annotation>
+          <xs:documentation>WELFARE FRAUD</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="FUGITIVE-FLIGHT_TO_AVOID_DEPORTATION">
+        <xs:annotation>
+          <xs:documentation>FUGITIVE - FLIGHT TO AVOID DEPORTATION</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="FUGITIVE-FLIGHT_TO_AVOID_PROSECUTION">
+        <xs:annotation>
+          <xs:documentation>FUGITIVE - FLIGHT TO AVOID PROSECUTION</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="FUGITIVE-HARBORING_ESCAPEE-CONCEALING_FROM_ARREST">
+        <xs:annotation>
+          <xs:documentation>FUGITIVE - HARBORING ESCAPEE - CONCEALING FROM ARREST</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="GAMBLING-EQUIPMENT_VIOLATION">
+        <xs:annotation>
+          <xs:documentation>GAMBLING EQUIPMENT VIOLATION</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="GAMBLING-OPERATING_PROMOTING_ASSISTING">
+        <xs:annotation>
+          <xs:documentation>OPERATING/PROMOTING/ASSISTING GAMBLING</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="HACKING-COMPUTER_INVASION">
+        <xs:annotation>
+          <xs:documentation>HACKING/COMPUTER INVASION</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="HUMAN_TRAFFICKING-COMMERCIAL_SEX_ACTS">
+        <xs:annotation>
+          <xs:documentation>HUMAN TRAFFICKING, COMMERCIAL SEX ACTS</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="HUMAN_TRAFFICKING-INVOLUNTARY_SERVITUDE">
+        <xs:annotation>
+          <xs:documentation>HUMAN TRAFFICKING, INVOLUNTARY SERVITUDE</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="IDENTITY_THEFT">
+        <xs:annotation>
+          <xs:documentation>IDENTITY THEFT</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="IMMIGRATION-FALSE_CITIZENSHIP">
+        <xs:annotation>
+          <xs:documentation>IMMIGRATION - FALSE CITIZENSHIP</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="IMMIGRATION-ILLEGAL_ENTRY_INTO_US">
+        <xs:annotation>
+          <xs:documentation>IMMIGRATION - ILLEGAL ENTRY INTO US</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="IMMIGRATION-OTHER_IMMIGRATION_VIOLATIONS">
+        <xs:annotation>
+          <xs:documentation>IMMIGRATION - OTHER IMMIGRATION VIOLATIONS</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="IMMIGRATION-RE_ENTRY_AFTER_DEPORTATION">
+        <xs:annotation>
+          <xs:documentation>IMMIGRATION - RE-ENTRY AFTER DEPORTATION</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="IMMIGRATION-SMUGGLING_ALIENS">
+        <xs:annotation>
+          <xs:documentation>IMMIGRATION - SMUGGLING ALIENS</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="IMPORT_VIOLATIONS">
+        <xs:annotation>
+          <xs:documentation>IMPORT VIOLATIONS</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="INCEST">
+        <xs:annotation>
+          <xs:documentation>INCEST</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="INTIMIDATION">
+        <xs:annotation>
+          <xs:documentation>INTIMIDATION</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="JUSTIFIABLE_HOMICIDE">
+        <xs:annotation>
+          <xs:documentation>JUSTIFIABLE HOMICIDE</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="KIDNAPPING-ABDUCTION">
+        <xs:annotation>
+          <xs:documentation>KIDNAPPING/ABDUCTION</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="LARCENY">
+        <xs:annotation>
+          <xs:documentation>ALL OTHER LARCENY</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="LARCENY-FROM_AUTO">
+        <xs:annotation>
+          <xs:documentation>THEFT FROM MOTOR VEHICLE</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="LARCENY-FROM_BUILDING">
+        <xs:annotation>
+          <xs:documentation>THEFT FROM BUILDING</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="LARCENY-FROM_COIN_OPERATED_MACHINE">
+        <xs:annotation>
+          <xs:documentation>THEFT FROM COIN-OPERATED MACHINE OR DEVICE</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="LARCENY-PARTS_FROM_VEHICLE">
+        <xs:annotation>
+          <xs:documentation>THEFT OF MOTOR VEHICLE PARTS OR ACCESSORIES</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="LIQUOR_LAW_VIOLATIONS">
+        <xs:annotation>
+          <xs:documentation>LIQUOR LAW VIOLATIONS</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="MANSLAUGHTER_NEGLIGENT">
+        <xs:annotation>
+          <xs:documentation>NEGLIGENT MANSLAUGHTER</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="MANSLAUGHTER_NONNEGLIGENT-MURDER">
+        <xs:annotation>
+          <xs:documentation>MURDER &amp; NONNEGLIGENT MANSLAUGHTER</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="MONEY_LAUNDERING">
+        <xs:annotation>
+          <xs:documentation>MONEY LAUNDERING</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="MOTOR_VEHICLE_THEFT">
+        <xs:annotation>
+          <xs:documentation>MOTOR VEHICLE THEFT</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="OBSCENE_MATERIAL-PORNOGRAPHY">
+        <xs:annotation>
+          <xs:documentation>PORNOGRAPHY/OBSCENE MATERIAL</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="PEEPING_TOM">
+        <xs:annotation>
+          <xs:documentation>PEEPING TOM</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="PERJURY">
+        <xs:annotation>
+          <xs:documentation>PERJURY</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="POCKET_PICKING">
+        <xs:annotation>
+          <xs:documentation>POCKET-PICKING</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="PROSTITUTION">
+        <xs:annotation>
+          <xs:documentation>PROSTITUTION</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="PROSTITUTION-ASSISTING_OR_PROMOTING">
+        <xs:annotation>
+          <xs:documentation>ASSISTING OR PROMOTING PROSTITUTION</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="PROSTITUTION-PURCHASING">
+        <xs:annotation>
+          <xs:documentation>PURCHASING PROSTITUTION</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="PURSE_SNATCHING">
+        <xs:annotation>
+          <xs:documentation>PURSE-SNATCHING</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="RAPE">
+        <xs:annotation>
+          <xs:documentation>RAPE</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="RAPE-STATUTORY">
+        <xs:annotation>
+          <xs:documentation>STATUTORY RAPE</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ROBBERY">
+        <xs:annotation>
+          <xs:documentation>ROBBERY</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="SEX_ASSAULT-OBJECT">
+        <xs:annotation>
+          <xs:documentation>SEXUAL ASSAULT WITH AN OBJECT</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="SEX_OFFENDER_REGISTRATION_VIOLATION">
+        <xs:annotation>
+          <xs:documentation>FAILURE TO REGISTER AS SEX OFFENDER</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="SHOPLIFTING">
+        <xs:annotation>
+          <xs:documentation>SHOPLIFTING</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="SIMPLE_ASSAULT">
+        <xs:annotation>
+          <xs:documentation>SIMPLE ASSAULT</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="SODOMY">
+        <xs:annotation>
+          <xs:documentation>SODOMY</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="SPORTS_TAMPERING">
+        <xs:annotation>
+          <xs:documentation>SPORTS TAMPERING</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="STOLEN_PROPERTY_OFFENSES">
+        <xs:annotation>
+          <xs:documentation>STOLEN OFFENSES</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="TREASON">
+        <xs:annotation>
+          <xs:documentation>TREASON</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="TRESPASSING">
+        <xs:annotation>
+          <xs:documentation>TRESPASS OF REAL</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="WEAPON_LAW_VIOLATIONS">
+        <xs:annotation>
+          <xs:documentation>WEAPON LAW VIOLATIONS</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="WEAPONS_OF_MASS_DESTRUCTION">
+        <xs:annotation>
+          <xs:documentation>WEAPONS OF MASS DESTRUCTION</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="WILDLIFE_TRAFFICKING">
+        <xs:annotation>
+          <xs:documentation>WILDLIFE TRAFFICKING</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="OffenseCodeType">
+    <xs:annotation>
+      <xs:documentation>A data type for Uniform Crime Reporting (UCR) offense codes.</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="ucr:OffenseCodeSimpleType">
+        <xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:simpleType name="PersonAgeCodeSimpleType">
+    <xs:annotation>
+      <xs:documentation>A data type used to indicate the age of an individual victim when the reported crime occurred. Age code of person less than or equal to 1 year old.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="BABY">
+        <xs:annotation>
+          <xs:documentation>PERSON AGE 6 DAYS TO 1 YEAR OLD</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="NEONATAL">
+        <xs:annotation>
+          <xs:documentation>PERSON AGE UNDER 24 HOURS</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="NEWBORN">
+        <xs:annotation>
+          <xs:documentation>PERSON AGE 1 TO 6 DAYS OLD</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="UNKNOWN">
+        <xs:annotation>
+          <xs:documentation>UNKNOWN</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="PersonAgeCodeType">
+    <xs:annotation>
+      <xs:documentation>A data type used to indicate the age of an individual victim when the reported crime occurred. Age code of person less than or equal to 1 year old.</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="ucr:PersonAgeCodeSimpleType">
+        <xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:simpleType name="PersonOrganizationAffiliationCategoryCodeSimpleType">
+    <xs:annotation>
+      <xs:documentation>A data type for an affiliation between a person and an organization.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="AUXILLARY">
+        <xs:annotation>
+          <xs:documentation>A AUXILLARY EMPLOYEE</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="FULL-TIME">
+        <xs:annotation>
+          <xs:documentation>A FULL-TIME EMPLOYEE</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="INTERNSHIP">
+        <xs:annotation>
+          <xs:documentation>A INTERNSHIP EMPLOYEE</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="OTHER">
+        <xs:annotation>
+          <xs:documentation>A UNSPECIFIED EMPLOYEE</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="PART-TIME">
+        <xs:annotation>
+          <xs:documentation>A PART-TIME EMPLOYEE</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="PARTNER">
+        <xs:annotation>
+          <xs:documentation>A PARTNER</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="RESERVE">
+        <xs:annotation>
+          <xs:documentation>A RESERVE EMPLOYEE</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="VOLUNTEER">
+        <xs:annotation>
+          <xs:documentation>A VOLUNTEER</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="PersonOrganizationAffiliationCategoryCodeType">
+    <xs:annotation>
+      <xs:documentation>A data type for an affiliation between a person and an organization.</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="ucr:PersonOrganizationAffiliationCategoryCodeSimpleType">
+        <xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:simpleType name="PropertyCategoryCodeSimpleType">
+    <xs:annotation>
+      <xs:documentation>A data type for categories or classifications of a property item.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="AIRCRAFT">
+        <xs:annotation>
+          <xs:documentation>AIRCRAFT</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AIRCRAFT_PARTS-ACCESSORIES">
+        <xs:annotation>
+          <xs:documentation>AIRCRAFT PARTS/ ACCESSORIES</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ALCOHOL">
+        <xs:annotation>
+          <xs:documentation>ALCOHOL</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ARTISTIC_SUPPLIES-ACCESSORIES">
+        <xs:annotation>
+          <xs:documentation>ARTISTIC SUPPLIES/ ACCESSORIES</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AUTOMOBILE">
+        <xs:annotation>
+          <xs:documentation>AUTOMOBILE</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="BICYCLES">
+        <xs:annotation>
+          <xs:documentation>BICYCLES</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="BUILDING_MATERIALS">
+        <xs:annotation>
+          <xs:documentation>BUILDING MATERIALS</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="BUSES">
+        <xs:annotation>
+          <xs:documentation>BUSES</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CAMPING-HUNTING-FISHING_EQUIPMENT-SUPPLIES">
+        <xs:annotation>
+          <xs:documentation>CAMPING/ HUNTING/ FISHING EQUIPMENT/ SUPPLIES</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CHEMICALS">
+        <xs:annotation>
+          <xs:documentation>CHEMICALS</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CLOTHES-FURS">
+        <xs:annotation>
+          <xs:documentation>CLOTHES/ FURS</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="COLLECTIONS-COLLECTIBLES">
+        <xs:annotation>
+          <xs:documentation>COLLECTIONS/ COLLECTIBLES</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="COMPUTER_HARDWARE-SOFTWARE">
+        <xs:annotation>
+          <xs:documentation>COMPUTER HARDWARE/ SOFTWARE</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CONSUMABLE_GOODS">
+        <xs:annotation>
+          <xs:documentation>CONSUMABLE GOODS</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CREDIT-DEBIT_CARDS">
+        <xs:annotation>
+          <xs:documentation>CREDIT/ DEBIT CARDS</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CROPS">
+        <xs:annotation>
+          <xs:documentation>CROPS</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="DOCUMENTS-PERSONAL-BUSINESS">
+        <xs:annotation>
+          <xs:documentation>DOCUMENTS/ PERSONAL OR BUSINESS</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="DRUGS-NARCOTIC_EQUIPMENT">
+        <xs:annotation>
+          <xs:documentation>DRUG/ NARCOTIC EQUIPMENT</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="DRUGS-NARCOTICS">
+        <xs:annotation>
+          <xs:documentation>DRUGS/ NARCOTICS</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="EXPLOSIVES">
+        <xs:annotation>
+          <xs:documentation>EXPLOSIVES</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="FARM_EQUIPMENT">
+        <xs:annotation>
+          <xs:documentation>FARM EQUIPMENT</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="FIREARM_ACCESSORIES">
+        <xs:annotation>
+          <xs:documentation>FIREARM ACCESSORIES</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="FIREARMS">
+        <xs:annotation>
+          <xs:documentation>FIREARMS</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="FUEL">
+        <xs:annotation>
+          <xs:documentation>FUEL</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="GAMBLING_EQUIPMENT">
+        <xs:annotation>
+          <xs:documentation>GAMBLING EQUIPMENT</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="HEAVY_CONSTRUCTION-INDUSTRIAL_EQUIPMENT">
+        <xs:annotation>
+          <xs:documentation>HEAVY CONSTRUCTION/ INDUSTRIAL EQUIPMENT</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="HOUSEHOLD_GOODS">
+        <xs:annotation>
+          <xs:documentation>HOUSEHOLD GOODS</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="IDENTITY_DOCUMENTS">
+        <xs:annotation>
+          <xs:documentation>IDENTITY DOCUMENTS</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="IDENTITY-INTANGIBLE">
+        <xs:annotation>
+          <xs:documentation>IDENTITY - INTANGIBLE</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="JEWELRY-PRECIOUS_METALS-GEMS">
+        <xs:annotation>
+          <xs:documentation>JEWELRY/ PRECIOUS METALS/ GEMS</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="LAW_ENFORCEMENT_EQUIPMENT">
+        <xs:annotation>
+          <xs:documentation>LAW ENFORCEMENT EQUIPMENT</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="LAWN-YARD-GARDEN_EQUIPMENT">
+        <xs:annotation>
+          <xs:documentation>LAWN/ YARD/ GARDEN EQUIPMENT</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="LIVESTOCK">
+        <xs:annotation>
+          <xs:documentation>LIVESTOCK</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="LOGGING_EQUIPMENT">
+        <xs:annotation>
+          <xs:documentation>LOGGING EQUIPMENT</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="MEDICAL-MEDICAL_LAB_EQUIPMENT">
+        <xs:annotation>
+          <xs:documentation>MEDICAL/ MEDICAL LAB EQUIPMENT</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="MERCHANDISE">
+        <xs:annotation>
+          <xs:documentation>MERCHANDISE</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="METALS-NON_PRECIOUS">
+        <xs:annotation>
+          <xs:documentation>METALS, NON-PRECIOUS</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="MONEY">
+        <xs:annotation>
+          <xs:documentation>MONEY</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="MUSICAL_INSTRUMENTS">
+        <xs:annotation>
+          <xs:documentation>MUSICAL INSTRUMENTS</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="NEGOTIABLE_INSTRUMENTS">
+        <xs:annotation>
+          <xs:documentation>NEGOTIABLE INSTRUMENTS</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="NONNEGOTIABLE_INSTRUMENTS">
+        <xs:annotation>
+          <xs:documentation>NONNEGOTIABLE INSTRUMENTS</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="OFFICE-TYPE_EQUIPMENT">
+        <xs:annotation>
+          <xs:documentation>OFFICE-TYPE EQUIPMENT</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="OTHER">
+        <xs:annotation>
+          <xs:documentation>OTHER</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="OTHER_MOTOR_VEHICLES">
+        <xs:annotation>
+          <xs:documentation>OTHER MOTOR VEHICLES</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="PENDING_INVENTORY">
+        <xs:annotation>
+          <xs:documentation>PENDING INVENTORY</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="PETS">
+        <xs:annotation>
+          <xs:documentation>PETS</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="PHOTOGRAPHIC-OPTICAL_EQUIPMENT">
+        <xs:annotation>
+          <xs:documentation>PHOTOGRAPHIC/ OPTICAL EQUIPMENT</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="PORTABLE_ELECTRONIC_COMMUNICATIONS">
+        <xs:annotation>
+          <xs:documentation>PORTABLE ELECTRONIC COMMUNICATIONS</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="PURSES-HANDBAGS-WALLETS">
+        <xs:annotation>
+          <xs:documentation>PURSES/ HANDBAGS/ WALLETS</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="RADIO-TV-VCR-DVD_PLAYERS">
+        <xs:annotation>
+          <xs:documentation>RADIO/ TV/ VCR/ DVD PLAYERS</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="RECORDINGS-AUDIO-VISUAL">
+        <xs:annotation>
+          <xs:documentation>RECORDINGS - AUDIO/ VISUAL</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="RECREATIONAL_VEHICLES">
+        <xs:annotation>
+          <xs:documentation>RECREATIONAL VEHICLES</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="RECREATIONAL-SPORTS_EQUIPMENT">
+        <xs:annotation>
+          <xs:documentation>RECREATIONAL/ SPORTS EQUIPMENT</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="STRUCTURES-INDUSTRIAL-MANUFACTURING">
+        <xs:annotation>
+          <xs:documentation>STRUCTURES - INDUSTRIAL/ MANUFACTURING</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="STRUCTURES-OTHER">
+        <xs:annotation>
+          <xs:documentation>STRUCTURES - OTHER</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="STRUCTURES-OTHER_COMMERCIAL-BUSINESS">
+        <xs:annotation>
+          <xs:documentation>STRUCTURES - OTHER COMMERCIAL/ BUSINESS</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="STRUCTURES-OTHER_DWELLINGS">
+        <xs:annotation>
+          <xs:documentation>STRUCTURES - OTHER DWELLINGS</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="STRUCTURES-PUBLIC-COMMUNITY">
+        <xs:annotation>
+          <xs:documentation>STRUCTURES - PUBLIC/ COMMUNITY</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="STRUCTURES-SINGLE_OCCUPANCY_DWELLINGS">
+        <xs:annotation>
+          <xs:documentation>STRUCTURES - SINGLE OCCUPANCY DWELLINGS</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="STRUCTURES-STORAGE">
+        <xs:annotation>
+          <xs:documentation>STRUCTURES - STORAGE</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="TOOLS">
+        <xs:annotation>
+          <xs:documentation>TOOLS</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="TRAILERS">
+        <xs:annotation>
+          <xs:documentation>TRAILERS</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="TRUCKS">
+        <xs:annotation>
+          <xs:documentation>TRUCKS</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="VEHICLE_PARTS-ACCESSORIES">
+        <xs:annotation>
+          <xs:documentation>VEHICLE PARTS/ ACCESSORIES</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="WATERCRAFT">
+        <xs:annotation>
+          <xs:documentation>WATERCRAFT</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="WATERCRAFT_EQUIPMENT-PARTS-ACCESSORIES">
+        <xs:annotation>
+          <xs:documentation>WATERCRAFT EQUIPMENT/PARTS/ACCESSORIES</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="WEAPONS-OTHER">
+        <xs:annotation>
+          <xs:documentation>WEAPONS - OTHER</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="PropertyCategoryCodeType">
+    <xs:annotation>
+      <xs:documentation>A data type for categories or classifications of a property item.</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="ucr:PropertyCategoryCodeSimpleType">
+        <xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:simpleType name="ReportActionCategoryCodeSimpleType">
+    <xs:annotation>
+      <xs:documentation>A data type for a kind of action to be taken on the report.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="ADD">
+        <xs:annotation>
+          <xs:documentation>ADD</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="DELETE">
+        <xs:annotation>
+          <xs:documentation>DELETE</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="INCIDENT_REPORT">
+        <xs:annotation>
+          <xs:documentation>INCIDENT REPORT</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="REPLACE">
+        <xs:annotation>
+          <xs:documentation>REPLACE</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="ReportActionCategoryCodeType">
+    <xs:annotation>
+      <xs:documentation>A data type for a kind of action to be taken on the report.</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="ucr:ReportActionCategoryCodeSimpleType">
+        <xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:simpleType name="ResidentCodeSimpleType">
+    <xs:annotation>
+      <xs:documentation>A data type for whether or not a person was a resident of a town, city, or community in relation to some activity.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="NONRESIDENT">
+        <xs:annotation>
+          <xs:documentation>NONRESIDENT</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="RESIDENT">
+        <xs:annotation>
+          <xs:documentation>RESIDENT</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="UNKNOWN">
+        <xs:annotation>
+          <xs:documentation>UNKNOWN</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="ResidentCodeType">
+    <xs:annotation>
+      <xs:documentation>A data type for whether or not a person was a resident of a town, city, or community in relation to some activity.</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="ucr:ResidentCodeSimpleType">
+        <xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:simpleType name="VictimCategoryCodeSimpleType">
+    <xs:annotation>
+      <xs:documentation>A data type for kinds of victims in an incident.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="BUSINESS">
+        <xs:annotation>
+          <xs:documentation>BUSINESS</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="FINANCIAL_INSTITUTION">
+        <xs:annotation>
+          <xs:documentation>FINANCIAL INSTITUTION</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="GOVERNMENT">
+        <xs:annotation>
+          <xs:documentation>GOVERNMENT</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="INDIVIDUAL">
+        <xs:annotation>
+          <xs:documentation>INDIVIDUAL</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="LAW_ENFORCEMENT_OFFICER">
+        <xs:annotation>
+          <xs:documentation>LAW ENFORCEMENT OFFICER</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="OTHER">
+        <xs:annotation>
+          <xs:documentation>OTHER</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="RELIGIOUS_ORGANIZATION">
+        <xs:annotation>
+          <xs:documentation>RELIGIOUS ORGANIZATION</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="SOCIETY-PUBLIC">
+        <xs:annotation>
+          <xs:documentation>SOCIETY/ PUBLIC</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="UNKNOWN">
+        <xs:annotation>
+          <xs:documentation>UNKNOWN</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="VictimCategoryCodeType">
+    <xs:annotation>
+      <xs:documentation>A data type for kinds of victims in an incident.</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="ucr:VictimCategoryCodeSimpleType">
+        <xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+</xs:schema>

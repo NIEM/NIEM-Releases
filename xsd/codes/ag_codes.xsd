@@ -1,0 +1,974 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema targetNamespace="http://release.niem.gov/niem/codes/ag_codes/5.0/" version="1" xml:lang="en-US" xsi:schemaLocation="http://release.niem.gov/niem/appinfo/5.0/ ../utility/appinfo.xsd http://release.niem.gov/niem/conformanceTargets/3.0/ ../utility/conformanceTargets.xsd" ct:conformanceTargets="http://reference.niem.gov/niem/specification/naming-and-design-rules/5.0/#ReferenceSchemaDocument"
+  xmlns:ag_codes="http://release.niem.gov/niem/codes/ag_codes/5.0/"
+  xmlns:appinfo="http://release.niem.gov/niem/appinfo/5.0/"
+  xmlns:ct="http://release.niem.gov/niem/conformanceTargets/3.0/"
+  xmlns:structures="http://release.niem.gov/niem/structures/5.0/"
+  xmlns:xs="http://www.w3.org/2001/XMLSchema"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <xs:annotation>
+    <xs:documentation>Agriculture codes</xs:documentation>
+    <xs:appinfo>
+      <appinfo:LocalTerm term="CLU" literal="Common land unit"/>
+      <appinfo:LocalTerm term="CVT" literal="Crop Validation Table"/>
+      <appinfo:LocalTerm term="FSA" literal="Farm Service Agency"/>
+      <appinfo:LocalTerm term="NRCS" literal="National Resources Conservation Service"/>
+      <appinfo:LocalTerm term="RMA" literal="Risk Management Agency"/>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:import namespace="http://release.niem.gov/niem/structures/5.0/" schemaLocation="../utility/structures.xsd"/>
+  <xs:simpleType name="CLUIDSimpleType">
+    <xs:annotation>
+      <xs:documentation>A data type for system-generated internal identifier of a common land unit (CLU). This identifier is for internal access use only.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:length value="36"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="CLUIDType">
+    <xs:annotation>
+      <xs:documentation>A data type for system-generated internal identifier of a common land unit (CLU). This identifier is for internal access use only.</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="ag_codes:CLUIDSimpleType">
+        <xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:simpleType name="CoordinateReferenceSystemCodeSimpleType">
+    <xs:annotation>
+      <xs:documentation>A data type containing the geospatial projection standard used for calculating acreage.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="26901">
+        <xs:annotation>
+          <xs:documentation>NAD83 UTM Zone 1N</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="26902">
+        <xs:annotation>
+          <xs:documentation>NAD83 UTM Zone 2N</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="26903">
+        <xs:annotation>
+          <xs:documentation>NAD83 UTM Zone 3N</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="26904">
+        <xs:annotation>
+          <xs:documentation>NAD83 UTM Zone 4N</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="26905">
+        <xs:annotation>
+          <xs:documentation>NAD83 UTM Zone 5N</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="26906">
+        <xs:annotation>
+          <xs:documentation>NAD83 UTM Zone 6N</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="26907">
+        <xs:annotation>
+          <xs:documentation>NAD83 UTM Zone 7N</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="26908">
+        <xs:annotation>
+          <xs:documentation>NAD83 UTM Zone 8N</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="26909">
+        <xs:annotation>
+          <xs:documentation>NAD83 UTM Zone 9N</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="26910">
+        <xs:annotation>
+          <xs:documentation>NAD83 UTM Zone 10N</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="26911">
+        <xs:annotation>
+          <xs:documentation>NAD83 UTM Zone 11N</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="26912">
+        <xs:annotation>
+          <xs:documentation>NAD83 UTM Zone 12N</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="26913">
+        <xs:annotation>
+          <xs:documentation>NAD83 UTM Zone 13N</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="26914">
+        <xs:annotation>
+          <xs:documentation>NAD83 UTM Zone 14N</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="26915">
+        <xs:annotation>
+          <xs:documentation>NAD83 UTM Zone 15N</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="26916">
+        <xs:annotation>
+          <xs:documentation>NAD83 UTM Zone 16N</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="26917">
+        <xs:annotation>
+          <xs:documentation>NAD83 UTM Zone 17N</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="26918">
+        <xs:annotation>
+          <xs:documentation>NAD83 UTM Zone 18N</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="26919">
+        <xs:annotation>
+          <xs:documentation>NAD83 UTM Zone 19N</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="26920">
+        <xs:annotation>
+          <xs:documentation>NAD83 UTM Zone 20N</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="26921">
+        <xs:annotation>
+          <xs:documentation>NAD83 UTM Zone 21N</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="26922">
+        <xs:annotation>
+          <xs:documentation>NAD83 UTM Zone 22N</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="26923">
+        <xs:annotation>
+          <xs:documentation>NAD83 UTM Zone 23N</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="32655">
+        <xs:annotation>
+          <xs:documentation>WGS84 UTM Zone 55N</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="32702">
+        <xs:annotation>
+          <xs:documentation>WGS84 UTM Zone 2S</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="32755">
+        <xs:annotation>
+          <xs:documentation>WGS84 UTM Zone 55S</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="3857">
+        <xs:annotation>
+          <xs:documentation>WGS84 Web Mercator (Auxiliary Sphere)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="CoordinateReferenceSystemCodeType">
+    <xs:annotation>
+      <xs:documentation>A data type for coordinate reference system codes.</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="ag_codes:CoordinateReferenceSystemCodeSimpleType">
+        <xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:simpleType name="CoreProductCategorySimpleType">
+    <xs:annotation>
+      <xs:documentation>A data type containing subclassification of agricultural products in addition to the main classification provided by the Core Product Code. Each product classified by a Core Product Code is also assigned a Core Product Type Code providing greater clarification of the crop/commodity, tree, livestock ,etc. Codes are maintained by the Pilot CVT (Crop Validation Table).</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:token">
+      <xs:length value="4"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="CoreProductCategoryType">
+    <xs:annotation>
+      <xs:documentation>A data type for core product subclassification code.</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="ag_codes:CoreProductCategorySimpleType">
+        <xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:simpleType name="CoreProductSimpleType">
+    <xs:annotation>
+      <xs:documentation>A data type containing classification codes of core agricultural products defined by the Pilot CVT (Crop Validation Table). Products are classified into individual crop and commodity types, tree types, and types of livestock.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:token">
+      <xs:length value="4"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="CoreProductType">
+    <xs:annotation>
+      <xs:documentation>A data type containing classification codes.</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="ag_codes:CoreProductSimpleType">
+        <xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:simpleType name="CroppingPracticeCodeSimpleType">
+    <xs:annotation>
+      <xs:documentation>A data type for code identifying the cropping practice applicable for a reported crop/commodity on a field/subfield.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="108">
+        <xs:annotation>
+          <xs:documentation>Non-Conventional</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="120">
+        <xs:annotation>
+          <xs:documentation>Not Following Another Crop</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="19">
+        <xs:annotation>
+          <xs:documentation>Following Another Crop</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="210">
+        <xs:annotation>
+          <xs:documentation>Standard Planting</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="211">
+        <xs:annotation>
+          <xs:documentation>Winter Planted</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="220">
+        <xs:annotation>
+          <xs:documentation>Interplanting</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="30">
+        <xs:annotation>
+          <xs:documentation>Fall Planted</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="4">
+        <xs:annotation>
+          <xs:documentation>Continuous Cropping</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="46">
+        <xs:annotation>
+          <xs:documentation>Spring Planted</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="5">
+        <xs:annotation>
+          <xs:documentation>Summer Fallow</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="6">
+        <xs:annotation>
+          <xs:documentation>Water Fallow</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="997">
+        <xs:annotation>
+          <xs:documentation>No Cropping Practice Specified</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="CroppingPracticeCodeType">
+    <xs:annotation>
+      <xs:documentation>A data type for code to represent cropping practice applicable for a reported crop/commodity.</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="ag_codes:CroppingPracticeCodeSimpleType">
+        <xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:simpleType name="CropYearSimpleType">
+    <xs:annotation>
+      <xs:documentation>A data type to indicate a period of time (in year) within which the crop is normally grown and designated by the calendar year in which the crop is normally harvested.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:integer">
+      <xs:pattern value="^([1][9]\d\d|[2]\d\d\d)$"/>
+      <xs:totalDigits value="4"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="CropYearType">
+    <xs:annotation>
+      <xs:documentation>A data type to indicate a period of time (in year) within which the crop is normally grown and designated by the calendar year in which the crop is normally harvested.</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="ag_codes:CropYearSimpleType">
+        <xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:simpleType name="FarmNumberIDSimpleType">
+    <xs:annotation>
+      <xs:documentation>A data type for identification number assigned to all land under control of a particular operator within a particular county.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:integer">
+      <xs:minInclusive value="1"/>
+      <xs:maxInclusive value="9999999"/>
+      <xs:totalDigits value="7"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="FarmNumberIDType">
+    <xs:annotation>
+      <xs:documentation>A data type for identification number assigned to all land under control of a particular operator within a particular county.</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="ag_codes:FarmNumberIDSimpleType">
+        <xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:simpleType name="FieldNumberIDSimpleType">
+    <xs:annotation>
+      <xs:documentation>A data type for identification number assigned to a field of land that is part of a farm tract.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:integer">
+      <xs:minInclusive value="1"/>
+      <xs:maxInclusive value="9999999"/>
+      <xs:totalDigits value="7"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="FieldNumberIDType">
+    <xs:annotation>
+      <xs:documentation>A data type for identification number assigned to a field of land that is part of a farm tract.</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="ag_codes:FieldNumberIDSimpleType">
+        <xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:simpleType name="FileCustomerIDSimpleType">
+    <xs:annotation>
+      <xs:documentation>A data type for internal identifier uniquely identifying a customer within a specific file. Each unique customer within a given file will have a unique File Customer Identifier. File Customer Identifier values are not unique across files.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:integer">
+      <xs:minInclusive value="1"/>
+      <xs:maxInclusive value="99"/>
+      <xs:totalDigits value="2"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="FileCustomerIDType">
+    <xs:annotation>
+      <xs:documentation>A data type for internal identifier uniquely identifying a customer within a specific file.</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="ag_codes:FileCustomerIDSimpleType">
+        <xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:simpleType name="FinalReportedAcreageSimpleType">
+    <xs:annotation>
+      <xs:documentation>A data type for final number of acres that were reported.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:decimal">
+      <xs:fractionDigits value="2"/>
+      <xs:totalDigits value="8"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="FinalReportedAcreageType">
+    <xs:annotation>
+      <xs:documentation>A data type for final number of acres that were reported.</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="ag_codes:FinalReportedAcreageSimpleType">
+        <xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:simpleType name="GeospatialDataSubmissionMethodCodeSimpleType">
+    <xs:annotation>
+      <xs:documentation>A data type containing codes identifying the method used to submit geospatial data used to create a geospatial shape/polygon.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="C">
+        <xs:annotation>
+          <xs:documentation>CLU - Existing FSA CLU is used to provide the shape/polygon</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="D">
+        <xs:annotation>
+          <xs:documentation>Digitized - Third party provider/producer has drawn/digitized the shape/polygon</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="G">
+        <xs:annotation>
+          <xs:documentation>GIS Algorithm - GIS algorithm used by third party provider or producer system to create operational boundaries based on raw data collection method (MICS, FMIS)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="GeospatialDataSubmissionMethodCodeType">
+    <xs:annotation>
+      <xs:documentation>A data type for code to identify the method used to submit geospatial data used to create a geospatial shape/polygon.</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="ag_codes:GeospatialDataSubmissionMethodCodeSimpleType">
+        <xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:simpleType name="GeospatialShapeModifiedOtherReasonTextSimpleType">
+    <xs:annotation>
+      <xs:documentation>A data type for free form text providing the reason that a geospatial shape was modified from its original form when a reason other than the possible list of provided reasons is needed.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:length value="80"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="GeospatialShapeModifiedOtherReasonTextType">
+    <xs:annotation>
+      <xs:documentation>A data type for free form text providing the reason that a geospatial shape was modified from its original form when a reason other than the possible list of provided reasons is needed.</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="ag_codes:GeospatialShapeModifiedOtherReasonTextSimpleType">
+        <xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:simpleType name="GeospatialShapeModifiedReasonCodeSimpleType">
+    <xs:annotation>
+      <xs:documentation>A data type containing codes identifying the reason that a geospatial shape/polygon was modified from its original shape.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="C">
+        <xs:annotation>
+          <xs:documentation>Corrected Acres Calculation Difference</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="G">
+        <xs:annotation>
+          <xs:documentation>GPS Issue</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="MD">
+        <xs:annotation>
+          <xs:documentation>Missing Data</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="O">
+        <xs:annotation>
+          <xs:documentation>Other</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="S">
+        <xs:annotation>
+          <xs:documentation>Shape Drawn Incorrectly</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="GeospatialShapeModifiedReasonCodeType">
+    <xs:annotation>
+      <xs:documentation>A data type containing codes identifying the reason that a geospatial shape/polygon was modified from its original shape.</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="ag_codes:GeospatialShapeModifiedReasonCodeSimpleType">
+        <xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:simpleType name="GeospatialShapeSourceCodeSimpleType">
+    <xs:annotation>
+      <xs:documentation>A data type containing codes identifying the source data used to create a geospatial shape/polygon.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="B">
+        <xs:annotation>
+          <xs:documentation>Field Boundaries: Polygon is based on the outer boundaries of the field (i.e. vehicle GPS capabilities)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="C">
+        <xs:annotation>
+          <xs:documentation>CLU: Existing FSA CLU was used to provide the shape/polygon</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="D">
+        <xs:annotation>
+          <xs:documentation>Digitized: Third party provider/producer has drawn/digitized the shape/polygon</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="F">
+        <xs:annotation>
+          <xs:documentation>FMIS: Shape/polygon has been created by the producer''s Farm Management Information System</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="R">
+        <xs:annotation>
+          <xs:documentation>Raw Controller File: Shape/polygon has been created from a producer submitted raw controller file</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="GeospatialShapeSourceCodeType">
+    <xs:annotation>
+      <xs:documentation>A data type for code to identify the source data used to create a geospatial shape/polygon.</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="ag_codes:GeospatialShapeSourceCodeSimpleType">
+        <xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:simpleType name="IrrigationPracticeCodeSimpleType">
+    <xs:annotation>
+      <xs:documentation>A data type containing the irrigation practice code used for a unit of land with a crop.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="I">
+        <xs:annotation>
+          <xs:documentation>Irrigated</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="N">
+        <xs:annotation>
+          <xs:documentation>Non-Irrigate</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="IrrigationPracticeCodeType">
+    <xs:annotation>
+      <xs:documentation>A data type for code to identify irrigation practice used.</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="ag_codes:IrrigationPracticeCodeSimpleType">
+        <xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:simpleType name="MICSCodeSimpleType">
+    <xs:annotation>
+      <xs:documentation>A data type containing codes identifying the Mobile Implement Control System (MICS) used in the collection of geospatial data.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="AG">
+        <xs:annotation>
+          <xs:documentation>AGCO</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AL">
+        <xs:annotation>
+          <xs:documentation>AgLeader</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CNH">
+        <xs:annotation>
+          <xs:documentation>Case IH/Ford/New Holland</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="FS">
+        <xs:annotation>
+          <xs:documentation>FSA</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="JD">
+        <xs:annotation>
+          <xs:documentation>John Deere</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="O">
+        <xs:annotation>
+          <xs:documentation>Other</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="PP">
+        <xs:annotation>
+          <xs:documentation>Precision Planting</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="RA">
+        <xs:annotation>
+          <xs:documentation>Raven</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="TR">
+        <xs:annotation>
+          <xs:documentation>Trimble</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="UN">
+        <xs:annotation>
+          <xs:documentation>Unknown</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="MICSCodeType">
+    <xs:annotation>
+      <xs:documentation>A data type for misc. codes to identify the Mobile Implement Control System (MICS) used in the collection of geospatial data.</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="ag_codes:MICSCodeSimpleType">
+        <xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:simpleType name="MICSNameSimpleType">
+    <xs:annotation>
+      <xs:documentation>A data type containing a code name identifying the Mobile Implement Control System (MICS) used in the collection of geospatial data.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:length value="20"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="MICSNameType">
+    <xs:annotation>
+      <xs:documentation>A data type containing a code name identifying the Mobile Implement Control System (MICS) used in the collection of geospatial data.</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="ag_codes:MICSNameSimpleType">
+        <xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:simpleType name="OrganicPracticeCategoryCodeSimpleType">
+    <xs:annotation>
+      <xs:documentation>A data type containing certification codes used for farm acreage in regards to a system/plan of production and handling practice to produce an organic commodity.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="N">
+        <xs:annotation>
+          <xs:documentation>Not Specified (Conventional)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="OC">
+        <xs:annotation>
+          <xs:documentation>Organic (USDA Certified)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="OT">
+        <xs:annotation>
+          <xs:documentation>Organic (Transitional)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="OrganicPracticeCategoryCodeType">
+    <xs:annotation>
+      <xs:documentation>A data type for code to represent the type of certification for farm acreage production practice to produce organic commodity.</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="ag_codes:OrganicPracticeCategoryCodeSimpleType">
+        <xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:simpleType name="OriginalReportedAcreageSimpleType">
+    <xs:annotation>
+      <xs:documentation>A data type for original, unmodified, number of acres that were reported.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:decimal">
+      <xs:fractionDigits value="2"/>
+      <xs:totalDigits value="8"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="OriginalReportedAcreageType">
+    <xs:annotation>
+      <xs:documentation>A data type for original, unmodified, number of acres that were reported.</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="ag_codes:OriginalReportedAcreageSimpleType">
+        <xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:simpleType name="OriginatorIdentificationIDSimpleType">
+    <xs:annotation>
+      <xs:documentation>A data type for identifying the entity responsible for originating/publishing data.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:length value="6"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="OriginatorIdentificationIDType">
+    <xs:annotation>
+      <xs:documentation>A data type for identifying the entity responsible for originating/publishing data.</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="ag_codes:OriginatorIdentificationIDSimpleType">
+        <xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:simpleType name="PlantedDateModifiedOtherReasonTextSimpleType">
+    <xs:annotation>
+      <xs:documentation>A data type for free form text providing the reason that a planted date was modified from its original value when a reason other than the possible list of provided reasons is needed.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:length value="80"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="PlantedDateModifiedOtherReasonTextType">
+    <xs:annotation>
+      <xs:documentation>A data type for free form text providing the reason that a planted date was modified from its original value.</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="ag_codes:PlantedDateModifiedOtherReasonTextSimpleType">
+        <xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:simpleType name="PlantedDateModifiedReasonCodeSimpleType">
+    <xs:annotation>
+      <xs:documentation>A data type containing the reason codes that a planted date was modified from its original value.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="C">
+        <xs:annotation>
+          <xs:documentation>Correction</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="MP">
+        <xs:annotation>
+          <xs:documentation>Multiple Planting Dates</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="O">
+        <xs:annotation>
+          <xs:documentation>Other</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="PlantedDateModifiedReasonCodeType">
+    <xs:annotation>
+      <xs:documentation>A data type for reason code that a planted date was modified.</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="ag_codes:PlantedDateModifiedReasonCodeSimpleType">
+        <xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:simpleType name="ProducerSharePercentSimpleType">
+    <xs:annotation>
+      <xs:documentation>A data type for producer's share of a crop and the benefits coming from that crop, expressed as a percentage.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:decimal">
+      <xs:fractionDigits value="4"/>
+      <xs:totalDigits value="5"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="ProducerSharePercentType">
+    <xs:annotation>
+      <xs:documentation>A data type for producer's share of a crop and the benefits coming from that crop, expressed as a percentage.</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="ag_codes:ProducerSharePercentSimpleType">
+        <xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:simpleType name="ProductIntendedUseSimpleType">
+    <xs:annotation>
+      <xs:documentation>A data type identifying the intended use code for an agricultural product such as a crop/commodity, tree, livestock, etc. Codes for intended uses are specific to a particular combination of Core Product Code and Core Product Type Code and are maintained by the Pilot CVT (Crop Validation Table).</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:token">
+      <xs:length value="4"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="ProductIntendedUseType">
+    <xs:annotation>
+      <xs:documentation>A data type for agricultural product code.</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="ag_codes:ProductIntendedUseSimpleType">
+        <xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:simpleType name="ProductPlantingCodeSimpleType">
+    <xs:annotation>
+      <xs:documentation>A data type for code to identify the planting of a product/crop as either conventional (planted as normal or no planting required) or unconventional/irregular in a predefined way.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="F">
+        <xs:annotation>
+          <xs:documentation>Failed Acreage (acreage that was timely planted with the intent to harvest, but because of disaster related conditions, the crop failed before it could be brought to harvest).</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="P">
+        <xs:annotation>
+          <xs:documentation>Prevented Planted (the inability to plant the intended crop acreage with proper equipment by the final planting date for the crop type because of a natural disaster).</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="V">
+        <xs:annotation>
+          <xs:documentation>Volunteer. (a crop that was planted in a previous crop year on the applicable acreage or drifted from other acreage, successfully self-seeded, and is growing this crop year on the applicable acreage without being intentionally sown or managed).</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="ProductPlantingCodeType">
+    <xs:annotation>
+      <xs:documentation>A data type for code to identify the planting of a product/crop.</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="ag_codes:ProductPlantingCodeSimpleType">
+        <xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:simpleType name="ReportedAcreageModifiedOtherReasonTextSimpleType">
+    <xs:annotation>
+      <xs:documentation>A data type for reason code identifying the reason that the reported acreage was modified from its original value.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:length value="80"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="ReportedAcreageModifiedOtherReasonTextType">
+    <xs:annotation>
+      <xs:documentation>A data type for reason code identifying the reason that the reported acreage was modified from its original value.</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="ag_codes:ReportedAcreageModifiedOtherReasonTextSimpleType">
+        <xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:simpleType name="ReportedAcreageModifiedReasonCodeSimpleType">
+    <xs:annotation>
+      <xs:documentation>A data type identifying the reason codes that the reported acreage was modified from its original value.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="C">
+        <xs:annotation>
+          <xs:documentation>Corrected Acres</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="G">
+        <xs:annotation>
+          <xs:documentation>GPS Issue</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="MD">
+        <xs:annotation>
+          <xs:documentation>Missing Data</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="O">
+        <xs:annotation>
+          <xs:documentation>Other</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="ReportedAcreageModifiedReasonCodeType">
+    <xs:annotation>
+      <xs:documentation>A data type for reason code for modified reported acreage.</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="ag_codes:ReportedAcreageModifiedReasonCodeSimpleType">
+        <xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:simpleType name="SubfieldNumberSimpleType">
+    <xs:annotation>
+      <xs:documentation>A data type for alpha number that is used to uniquely identify a subfield within a field, within a tract within a farm within a state and county.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:length value="2"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="SubfieldNumberType">
+    <xs:annotation>
+      <xs:documentation>A data type for alpha number that is used to uniquely identify a subfield within a field, within a tract within a farm within a state and county.</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="ag_codes:SubfieldNumberSimpleType">
+        <xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:simpleType name="TaxIdentificationCategoryCodeSimpleType">
+    <xs:annotation>
+      <xs:documentation>A data type for identifying the tax identification type assigned to a specific individual, business or other entity and is used to authenticate the individual/entity for matters of taxation and other government business.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:integer">
+      <xs:enumeration value="1">
+        <xs:annotation>
+          <xs:documentation>SSN</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="2">
+        <xs:annotation>
+          <xs:documentation>EIN</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="TaxIdentificationCategoryCodeType">
+    <xs:annotation>
+      <xs:documentation>A data type for identifying the tax identification type assigned to a specific individual, business or other entity.</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="ag_codes:TaxIdentificationCategoryCodeSimpleType">
+        <xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:simpleType name="TaxIdentificationIDSimpleType">
+    <xs:annotation>
+      <xs:documentation>A data type for tax identification assigned to a specific individual, business or other entity and is used to authenticate the individual/entity for matters of taxation and other federal government business.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:length value="9"/>
+      <xs:pattern value="[0-9]{9}"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="TaxIdentificationIDType">
+    <xs:annotation>
+      <xs:documentation>A data type for tax identification assigned to a specific individual, business or other entity.</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="ag_codes:TaxIdentificationIDSimpleType">
+        <xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:simpleType name="TractNumberIDSimpleType">
+    <xs:annotation>
+      <xs:documentation>A data type for identification number assigned to a unit of contiguous land that is under one ownership and that is operated as a farm or part of a farm. An owner is a person or business having deed to the land.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:integer">
+      <xs:minInclusive value="1"/>
+      <xs:maxInclusive value="9999999"/>
+      <xs:totalDigits value="7"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="TractNumberIDType">
+    <xs:annotation>
+      <xs:documentation>A data type for identification number assigned to a unit of contiguous land that is under one ownership and that is operated as a farm or part of a farm.</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="ag_codes:TractNumberIDSimpleType">
+        <xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+</xs:schema>

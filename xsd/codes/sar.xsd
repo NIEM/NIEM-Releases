@@ -1,0 +1,464 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema targetNamespace="http://release.niem.gov/niem/codes/pmise_sar/5.0/" version="1" xml:lang="en-US" xsi:schemaLocation="http://release.niem.gov/niem/appinfo/5.0/ ../utility/appinfo.xsd http://release.niem.gov/niem/conformanceTargets/3.0/ ../utility/conformanceTargets.xsd" ct:conformanceTargets="http://reference.niem.gov/niem/specification/naming-and-design-rules/5.0/#ReferenceSchemaDocument"
+  xmlns:appinfo="http://release.niem.gov/niem/appinfo/5.0/"
+  xmlns:ct="http://release.niem.gov/niem/conformanceTargets/3.0/"
+  xmlns:sar="http://release.niem.gov/niem/codes/pmise_sar/5.0/"
+  xmlns:structures="http://release.niem.gov/niem/structures/5.0/"
+  xmlns:xs="http://www.w3.org/2001/XMLSchema"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <xs:annotation>
+    <xs:documentation>Program Manager for the Information Sharing Environment (PM-ISE) Suspicious Activity Reporting (SAR)</xs:documentation>
+    <xs:appinfo>
+      <appinfo:LocalTerm term="FS" literal="Functional Standard"/>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:import namespace="http://release.niem.gov/niem/structures/5.0/" schemaLocation="../utility/structures.xsd"/>
+  <xs:simpleType name="SuspiciousActivityCodeSimpleType">
+    <xs:annotation>
+      <xs:documentation>A data type for the broad categorization of Suspicious Activity.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="AVIATION">
+        <xs:annotation>
+          <xs:documentation>AVIATION ACTIVITY</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CYBER">
+        <xs:annotation>
+          <xs:documentation>CYBER ATTACK</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ELICIT">
+        <xs:annotation>
+          <xs:documentation>ELICITING INFORMATION</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="EXPERT">
+        <xs:annotation>
+          <xs:documentation>ACQUISITION OF EXPERTISE</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="INTRSN">
+        <xs:annotation>
+          <xs:documentation>BREACH/ATTEMPTED INSTRUSION</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="MATRLS">
+        <xs:annotation>
+          <xs:documentation>MATERIALS/ACQUISITION/STORAGE</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="MISREP">
+        <xs:annotation>
+          <xs:documentation>MISREPRESENTATION</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="PHOTO">
+        <xs:annotation>
+          <xs:documentation>PHOTOGRAPHY</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="RECRUT">
+        <xs:annotation>
+          <xs:documentation>RECRUITING</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="SABOT">
+        <xs:annotation>
+          <xs:documentation>SABOTAGE/TAMPERING/VANDALISM</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="SECTOR">
+        <xs:annotation>
+          <xs:documentation>SECTOR-SPECIFIC INCIDENT</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="SURVL">
+        <xs:annotation>
+          <xs:documentation>OBSERVATION/SURVEILLANCE</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="TESTSEC">
+        <xs:annotation>
+          <xs:documentation>TESTING OR PROBING OF SECURITY</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="THEFT">
+        <xs:annotation>
+          <xs:documentation>THEFT/LOSS/DIVERSION</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="THREAT">
+        <xs:annotation>
+          <xs:documentation>EXPRESSED OR IMPLIED THREAT</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="WPNS">
+        <xs:annotation>
+          <xs:documentation>WEAPONS DISCOVERY</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="SuspiciousActivityCodeType">
+    <xs:annotation>
+      <xs:documentation>A data type for the broad categorization of Suspicious Activity.</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="sar:SuspiciousActivityCodeSimpleType">
+        <xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:simpleType name="TargetSectorCodeSimpleType">
+    <xs:annotation>
+      <xs:documentation>A data type for the broad categorization of infrastructure type.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="AGRI">
+        <xs:annotation>
+          <xs:documentation>Food, Agriculture, Livestock</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CHEM">
+        <xs:annotation>
+          <xs:documentation>Chemical</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="COMM">
+        <xs:annotation>
+          <xs:documentation>Commercial Assets</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CORR">
+        <xs:annotation>
+          <xs:documentation>Correctional Location</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CSTL">
+        <xs:annotation>
+          <xs:documentation>Coastal Facilities</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CULTR">
+        <xs:annotation>
+          <xs:documentation>Cultural/Religious/Ethnical</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="DAMS">
+        <xs:annotation>
+          <xs:documentation>Dams</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="DFNSE">
+        <xs:annotation>
+          <xs:documentation>Defense Industrial Base</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="EDU">
+        <xs:annotation>
+          <xs:documentation>Education</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="EMRG">
+        <xs:annotation>
+          <xs:documentation>Emergency Services</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ENRG">
+        <xs:annotation>
+          <xs:documentation>Energy, Utilities</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ENTMT">
+        <xs:annotation>
+          <xs:documentation>Entertainment Venue</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="FIN">
+        <xs:annotation>
+          <xs:documentation>Banking, Finance</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="GVTBLDG">
+        <xs:annotation>
+          <xs:documentation>Government Facilities</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="HAZMAT">
+        <xs:annotation>
+          <xs:documentation>Chemical, Hazardous Material</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="HLTH">
+        <xs:annotation>
+          <xs:documentation>Healthcare, Public Health</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="IT">
+        <xs:annotation>
+          <xs:documentation>Information Technology</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="LIVSTK">
+        <xs:annotation>
+          <xs:documentation>Livestock</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="MAIL">
+        <xs:annotation>
+          <xs:documentation>Postal, Shipping</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="MASS">
+        <xs:annotation>
+          <xs:documentation>Mass Gathering Location</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="MFG">
+        <xs:annotation>
+          <xs:documentation>Manufacturing</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="MNMT">
+        <xs:annotation>
+          <xs:documentation>National Monument, Icon</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="NATRL">
+        <xs:annotation>
+          <xs:documentation>Natural Threats</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="NCLR">
+        <xs:annotation>
+          <xs:documentation>Nuclear Facilities</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="OTHR">
+        <xs:annotation>
+          <xs:documentation>Other</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="POP">
+        <xs:annotation>
+          <xs:documentation>Population</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="PRSN">
+        <xs:annotation>
+          <xs:documentation>Person</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="RETL">
+        <xs:annotation>
+          <xs:documentation>Retail</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="SPCFXN">
+        <xs:annotation>
+          <xs:documentation>Special Function</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="TACTCP">
+        <xs:annotation>
+          <xs:documentation>Tactical Command Post</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="TELCM">
+        <xs:annotation>
+          <xs:documentation>Telecommunications</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="TRANS">
+        <xs:annotation>
+          <xs:documentation>Transportation</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="UTL">
+        <xs:annotation>
+          <xs:documentation>Utilities</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="WATR">
+        <xs:annotation>
+          <xs:documentation>Water</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="TargetSectorCodeType">
+    <xs:annotation>
+      <xs:documentation>A data type for the broad categorization of infrastructure type.</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="sar:TargetSectorCodeSimpleType">
+        <xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:simpleType name="TipClassCodeSimpleType">
+    <xs:annotation>
+      <xs:documentation>A data type for a kind of threat to which the tip or lead pertains.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="BIO">
+        <xs:annotation>
+          <xs:documentation>Biological</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CHEM">
+        <xs:annotation>
+          <xs:documentation>Chemical</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CNTFTG">
+        <xs:annotation>
+          <xs:documentation>Counterfitting</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CTMN">
+        <xs:annotation>
+          <xs:documentation>Contaimination</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CYBER">
+        <xs:annotation>
+          <xs:documentation>Cyberstalking</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="EXPL">
+        <xs:annotation>
+          <xs:documentation>Explosives</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="FRAUD">
+        <xs:annotation>
+          <xs:documentation>Fraud</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="FUND">
+        <xs:annotation>
+          <xs:documentation>Terrorism Funding</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="HATE">
+        <xs:annotation>
+          <xs:documentation>Hate Crime</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="INCEND">
+        <xs:annotation>
+          <xs:documentation>Incendiary</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="INFRA">
+        <xs:annotation>
+          <xs:documentation>Critical Infrastructure</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="LAUND">
+        <xs:annotation>
+          <xs:documentation>Money Laundering</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="NCLR">
+        <xs:annotation>
+          <xs:documentation>Nuclear/Radiological</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="SPCSA">
+        <xs:annotation>
+          <xs:documentation>Suspicious Activity</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="SPCSP">
+        <xs:annotation>
+          <xs:documentation>Suspicious Person</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="SPCSSBST">
+        <xs:annotation>
+          <xs:documentation>Suspicious Substance</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="THRTPUB">
+        <xs:annotation>
+          <xs:documentation>Threat Against Public Figure</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="VRUS">
+        <xs:annotation>
+          <xs:documentation>Virus/Worm</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="TipClassCodeType">
+    <xs:annotation>
+      <xs:documentation>A data type for a kind of threat to which the tip or lead pertains.</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="sar:TipClassCodeSimpleType">
+        <xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:simpleType name="TipDomainCodeSimpleType">
+    <xs:annotation>
+      <xs:documentation>A data type for a broad category of threat to which the tip or lead pertains.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="A">
+        <xs:annotation>
+          <xs:documentation>Criminal Incident</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="B">
+        <xs:annotation>
+          <xs:documentation>Critical Infrastructure</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="C">
+        <xs:annotation>
+          <xs:documentation>Cyber Crime</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="D">
+        <xs:annotation>
+          <xs:documentation>Financial Incident</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="E">
+        <xs:annotation>
+          <xs:documentation>Intelligence</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="F">
+        <xs:annotation>
+          <xs:documentation>Security Issue</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="G">
+        <xs:annotation>
+          <xs:documentation>Suspicious Incident</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="H">
+        <xs:annotation>
+          <xs:documentation>Threats/Crimes Against Persons</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="TipDomainCodeType">
+    <xs:annotation>
+      <xs:documentation>A data type for a broad category of threat to which the tip or lead pertains.</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="sar:TipDomainCodeSimpleType">
+        <xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+</xs:schema>

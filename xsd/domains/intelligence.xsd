@@ -1,0 +1,519 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema targetNamespace="http://release.niem.gov/niem/domains/intelligence/5.0/" version="1" xml:lang="en-US" xsi:schemaLocation="http://release.niem.gov/niem/appinfo/5.0/ ../utility/appinfo.xsd http://release.niem.gov/niem/conformanceTargets/3.0/ ../utility/conformanceTargets.xsd" ct:conformanceTargets="http://reference.niem.gov/niem/specification/naming-and-design-rules/5.0/#ReferenceSchemaDocument"
+  xmlns:appinfo="http://release.niem.gov/niem/appinfo/5.0/"
+  xmlns:biom="http://release.niem.gov/niem/domains/biometrics/5.0/"
+  xmlns:ct="http://release.niem.gov/niem/conformanceTargets/3.0/"
+  xmlns:intel="http://release.niem.gov/niem/domains/intelligence/5.0/"
+  xmlns:iso_3166="http://release.niem.gov/niem/codes/iso_3166-1/5.0/"
+  xmlns:j="http://release.niem.gov/niem/domains/jxdm/7.0/"
+  xmlns:nc="http://release.niem.gov/niem/niem-core/5.0/"
+  xmlns:ncic="http://release.niem.gov/niem/codes/ncic/5.0/"
+  xmlns:niem-xs="http://release.niem.gov/niem/proxy/niem-xs/5.0/"
+  xmlns:structures="http://release.niem.gov/niem/structures/5.0/"
+  xmlns:xs="http://www.w3.org/2001/XMLSchema"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <xs:annotation>
+    <xs:documentation>Intelligence</xs:documentation>
+    <xs:appinfo>
+      <appinfo:LocalTerm term="Alpha2" definition="Two-letter"/>
+      <appinfo:LocalTerm term="Alpha3" definition="Three-letter"/>
+      <appinfo:LocalTerm term="CBEFF" literal="Common Biometric Exchange Formats Framework"/>
+      <appinfo:LocalTerm term="ECR" literal="(Threat Group Member) Criteria for Entry"/>
+      <appinfo:LocalTerm term="FBI" literal="Federal Bureau of Investigation"/>
+      <appinfo:LocalTerm term="FIPS" literal="Federal Information Processing Standards"/>
+      <appinfo:LocalTerm term="FIPS10-4" definition="The FIPS 10-4 standard, Countries, Dependencies, Areas of Special Sovereignty, and Their Principal Administrative Divisions, was a list of two-letter country codes that were used by the U.S. Government for geographical data processing in many publications."/>
+      <appinfo:LocalTerm term="ICMWG" literal="Intelligence Community Metadata Working Group"/>
+      <appinfo:LocalTerm term="INA" literal="Immigration and Nationality Act"/>
+      <appinfo:LocalTerm term="ISO" literal="International Organization for Standardization"/>
+      <appinfo:LocalTerm term="ISO3166" definition="ISO 3166 is a standard published by the International Organization for Standardization (ISO) that defines codes for the names of countries, dependent territories, special areas of geographical interest, and their principal subdivisions (e.g., provinces or states). The official name of the standard is Codes for the representation of names of countries and their subdivisions."/>
+      <appinfo:LocalTerm term="NCTC" literal="National Counterterrorism Center"/>
+      <appinfo:LocalTerm term="VGTOF" literal="Violent Gang and Terrorist Organizations File"/>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:import namespace="http://release.niem.gov/niem/codes/iso_3166-1/5.0/" schemaLocation="../codes/iso_3166.xsd"/>
+  <xs:import namespace="http://release.niem.gov/niem/codes/ncic/5.0/" schemaLocation="../codes/ncic.xsd"/>
+  <xs:import namespace="http://release.niem.gov/niem/domains/biometrics/5.0/" schemaLocation="biom.xsd"/>
+  <xs:import namespace="http://release.niem.gov/niem/domains/jxdm/7.0/" schemaLocation="jxdm.xsd"/>
+  <xs:import namespace="http://release.niem.gov/niem/niem-core/5.0/" schemaLocation="../niem-core.xsd"/>
+  <xs:import namespace="http://release.niem.gov/niem/proxy/niem-xs/5.0/" schemaLocation="../adapters/niem-xs.xsd"/>
+  <xs:import namespace="http://release.niem.gov/niem/structures/5.0/" schemaLocation="../utility/structures.xsd"/>
+  <xs:complexType name="AgencyInterestCategoryType">
+    <xs:annotation>
+      <xs:documentation>A data type for a groupings of persons by the reason they are of interest to intelligence.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="structures:ObjectType">
+        <xs:sequence>
+          <xs:element ref="intel:SubjectCategoryCodeText" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="intel:FBIECRCode" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="intel:StateINACodeText" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="intel:AgencyInterestOtherCategory" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="intel:AgencyInterestCategoryAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="AgencyInterestOtherCategoryType">
+    <xs:annotation>
+      <xs:documentation>A data type for a details that describe an additional person-categorization system that groups of people by the reason they are of interest to intelligence.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="structures:ObjectType">
+        <xs:sequence>
+          <xs:element ref="intel:AgencyInterestCategoryText" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="intel:AgencyInterestCategoryCodeText" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="intel:AgencyInterestCategoryDescriptionText" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="intel:AgencyInterestOtherCategoryAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="AgencySubjectHandlingType">
+    <xs:annotation>
+      <xs:documentation>A data type for actions to take on contact with the person.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="structures:ObjectType">
+        <xs:sequence>
+          <xs:element ref="intel:AgencySubjectHandlingFBICodeText" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="intel:SubjectHandling" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="intel:AgencySubjectHandlingAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="AgencySubjectInterestType">
+    <xs:annotation>
+      <xs:documentation>A data type for a detailed description of why an agency placed the person in its repository or why the data on the person is being exchanged.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="structures:ObjectType">
+        <xs:sequence>
+          <xs:element ref="j:SubjectCautionInformationAbstract" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="intel:AgencyName" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="intel:AgencyInterestCategory" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="intel:AgencySubjectHandling" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="intel:SubjectReasonOnListText" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="intel:AgencySubjectInterestAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="BiometricCaptureAugmentationType">
+    <xs:annotation>
+      <xs:documentation>A data type for additional information about a biometric capture.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="structures:AugmentationType">
+        <xs:sequence>
+          <xs:element ref="intel:CBEFFText" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="ContactInformationAugmentationType">
+    <xs:annotation>
+      <xs:documentation>A data type for additional information about a contact information.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="structures:AugmentationType">
+        <xs:sequence>
+          <xs:element ref="intel:ContactSatelliteTelephoneNumber" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="IdentificationAugmentationType">
+    <xs:annotation>
+      <xs:documentation>A data type for additional information about an identification.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="structures:AugmentationType">
+        <xs:sequence>
+          <xs:element ref="intel:AuthenticIndicator" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="intel:IdentificationIssuingCountryAbstract" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="intel:IdentificationIssuingStateName" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="intel:IdentificationIssuingLocalityText" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="intel:PersonInIdentification" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="LocationAugmentationType">
+    <xs:annotation>
+      <xs:documentation>A data type for additional information about a location.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="structures:AugmentationType">
+        <xs:sequence>
+          <xs:element ref="intel:LocationGlobalRegionCodeText" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="intel:LocationUsageText" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="PersonAugmentationType">
+    <xs:annotation>
+      <xs:documentation>A data type for additional information about a person.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="structures:AugmentationType">
+        <xs:sequence>
+          <xs:element ref="intel:PersonAgencySubjectInterest" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="intel:PersonMultimediaIDBinary" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="intel:PersonSystemIdentification" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="intel:PersonEyeDescriptionText" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="intel:PersonOccupationName" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="PersonIdentityAssociationAugmentationType">
+    <xs:annotation>
+      <xs:documentation>A data type for additional information about a person identity association.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="structures:AugmentationType">
+        <xs:sequence>
+          <xs:element ref="intel:AuthenticatedIdentity" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="intel:PrimaryIdentity" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="PersonInIDType">
+    <xs:annotation>
+      <xs:documentation>A data type for the human being referenced in the context of an identification.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="structures:ObjectType">
+        <xs:sequence>
+          <xs:element ref="nc:PersonName" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:PersonBirthDate" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="intel:PersonInIDAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="PersonOtherIDType">
+    <xs:annotation>
+      <xs:documentation>A data type for the kind of identifier assigned to a person, if the identifier is not explicitly defined in a standard enumeration.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="structures:ObjectType">
+        <xs:sequence>
+          <xs:element ref="intel:PersonOtherIDAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="PotentialIdentityMatchAssociationType">
+    <xs:annotation>
+      <xs:documentation>A data type for an association relating a set of identities that may potentially belong to the same person.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="nc:AssociationType">
+        <xs:sequence>
+          <xs:element ref="nc:Identity" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="intel:PotentialIdentityMatchDescriptionText" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="intel:PotentialIdentityMatchAssociationAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="SubjectHandlingType">
+    <xs:annotation>
+      <xs:documentation>A data type for an action for the designated agency to take on contact with the person.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="structures:ObjectType">
+        <xs:sequence>
+          <xs:element ref="intel:SubjectHandlingAgencyName" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="intel:SubjectHandlingCodeText" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="intel:SubjectHandlingDescriptionText" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="intel:SubjectHandlingAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="AgencyInterestCategory" type="intel:AgencyInterestCategoryType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A grouping of persons by the reason they are of interest to intelligence.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="AgencyInterestCategoryAugmentationPoint" abstract="true">
+    <xs:annotation>
+      <xs:documentation>An augmentation point for AgencyInterestCategoryType.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="AgencyInterestCategoryCodeText" type="nc:TextType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A reason that a group of people are of interest to intelligence.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="AgencyInterestCategoryDescriptionText" type="nc:TextType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A description of the reason that a group of people are of interest to intelligence.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="AgencyInterestCategoryText" type="nc:TextType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A kind of source of the code and/or description used to detail groups of people by the reason they are of interest to intelligence.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="AgencyInterestOtherCategory" type="intel:AgencyInterestOtherCategoryType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>An additional person-categorization system that groups of people by the reason they are of interest to intelligence.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="AgencyInterestOtherCategoryAugmentationPoint" abstract="true">
+    <xs:annotation>
+      <xs:documentation>An augmentation point for AgencyInterestOtherCategoryType.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="AgencyName" type="nc:TextType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A name of a government organization that has specified an interest in this person, or has issued a warning or handling instructions regarding this person.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="AgencySubjectHandling" type="intel:AgencySubjectHandlingType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>An action to take on contact with the person.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="AgencySubjectHandlingAugmentationPoint" abstract="true">
+    <xs:annotation>
+      <xs:documentation>An augmentation point for AgencySubjectHandlingType.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="AgencySubjectHandlingFBICodeText" type="nc:TextType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>An action for the designated agency to take on contact with the person.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="AgencySubjectInterestAugmentationPoint" abstract="true">
+    <xs:annotation>
+      <xs:documentation>An augmentation point for AgencySubjectInterestType.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="AuthenticatedIdentity" type="nc:PersonType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>An identity that has been verified by some authority.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="AuthenticIndicator" type="niem-xs:boolean" nillable="true">
+    <xs:annotation>
+      <xs:documentation>True if something is of undisputed origin or veracity, genuine; false otherwise.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="BiometricCaptureAugmentation" type="intel:BiometricCaptureAugmentationType" substitutionGroup="biom:BiometricCaptureAugmentationPoint" nillable="true">
+    <xs:annotation>
+      <xs:documentation>Additional information about a biometric capture.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="CBEFFText" type="nc:TextType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A data format [not defined by the ICMWG] for biometric data.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="ContactInformationAugmentation" type="intel:ContactInformationAugmentationType" substitutionGroup="nc:ContactInformationAugmentationPoint" nillable="true">
+    <xs:annotation>
+      <xs:documentation>Additional information about contact information.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="ContactSatelliteTelephoneNumber" type="nc:TelephoneNumberType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A satellite phone number of a person.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="ConveyanceRegistrationIdentification" type="nc:IdentificationType" substitutionGroup="j:RegistrationIdentification" nillable="true">
+    <xs:annotation>
+      <xs:documentation>An identification with a unique number or code assigned to a conveyance for registration purposes.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="CountryFIPS10-4PlusNCTCCodeText" type="nc:TextType" substitutionGroup="nc:CountryRepresentation" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A union of additional country codes managed by NCTC and the FIPS 10-4 country codes.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="FBIECRCode" type="ncic:ECRCodeType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A VGTOF Group Member Capability Criteria for Entry</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="IdentificationAugmentation" type="intel:IdentificationAugmentationType" substitutionGroup="nc:IdentificationAugmentationPoint" nillable="true">
+    <xs:annotation>
+      <xs:documentation>Additional information about an identification.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="IdentificationIssuingCountryAbstract" abstract="true">
+    <xs:annotation>
+      <xs:documentation>A data concept for a GeoPolitical Entity from which this identification was issued.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="IdentificationIssuingCountryISO3166Alpha2Code" type="iso_3166:CountryAlpha2CodeType" substitutionGroup="intel:IdentificationIssuingCountryAbstract" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A GeoPolitical Entity from which this identification was issued.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="IdentificationIssuingCountryName" type="nc:TextType" substitutionGroup="intel:IdentificationIssuingCountryAbstract" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A name of a GeoPolitical Entity from which this identification was issued.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="IdentificationIssuingLocalityText" type="nc:TextType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A Geographic Location from which this identification was issued.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="IdentificationIssuingStateName" type="nc:TextType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A name of a major administrative district or division of a country from which this identification was issued.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="LocationAugmentation" type="intel:LocationAugmentationType" substitutionGroup="nc:LocationAugmentationPoint" nillable="true">
+    <xs:annotation>
+      <xs:documentation>Additional information about a location.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="LocationGlobalRegionCodeText" type="nc:TextType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A National Intelligence Priorities Framework area.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="LocationUsageText" type="nc:TextType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A context within which a location is used.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="PersonAffiliationAssociation" type="nc:PersonOrganizationAssociationType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>An association for another organization a person is affiliated with.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="PersonAgencySubjectInterest" type="intel:AgencySubjectInterestType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A description of why an agency placed the person in its repository or why the data on the person is being exchanged.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="PersonAugmentation" type="intel:PersonAugmentationType" substitutionGroup="nc:PersonAugmentationPoint" nillable="true">
+    <xs:annotation>
+      <xs:documentation>Additional information about a person.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="PersonEyeDescriptionText" type="nc:TextType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A text description of the characteristics of a persons eyes.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="PersonIdentityAssociationAugmentation" type="intel:PersonIdentityAssociationAugmentationType" substitutionGroup="nc:PersonIdentityAssociationAugmentationPoint" nillable="true">
+    <xs:annotation>
+      <xs:documentation>Additional information about a person identity association.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="PersonInIDAugmentationPoint" abstract="true">
+    <xs:annotation>
+      <xs:documentation>An augmentation point for PersonInIDType.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="PersonInIdentification" type="nc:IdentificationType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>An identification of the human being referenced in the context of an identification.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="PersonMultimediaIDBinary" type="nc:BinaryType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A non-textual indicator of a persons identity.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="PersonOccupationName" type="nc:TextType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A name of an occupation.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="PersonOtherIDAugmentationPoint" abstract="true">
+    <xs:annotation>
+      <xs:documentation>An augmentation point for PersonOtherIDType.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="PersonSystemIdentification" type="nc:SystemIdentificationType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A system identification that references a person.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="PhysicalFeatureCategoryCodeText" type="nc:TextType" substitutionGroup="nc:PhysicalFeatureCategoryAbstract" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A visible, atypical distinguishing trait, property or quality of a person.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="PotentialIdentityMatchAssociation" type="intel:PotentialIdentityMatchAssociationType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>An association relating a set of identities that may potentially belong to the same person.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="PotentialIdentityMatchAssociationAugmentationPoint" abstract="true">
+    <xs:annotation>
+      <xs:documentation>An augmentation point for PotentialIdentityMatchAssociationType.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="PotentialIdentityMatchDescriptionText" type="nc:TextType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A description of why the different identities may belong to the same person.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="PrimaryIdentity" type="nc:PersonType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>An identity that a person is first known as (e.g., for law enforcement), primarily known as, or primarily goes by.  This may or may not be the -real- or authenticated identity.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="StateINACodeText" type="nc:TextType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A Department of State code that identifies the reason that a group of people are of interest to intelligence.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="SubjectCategoryCodeText" type="nc:TextType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A general category or classification of persons by the reason they are of interest to intelligence.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="SubjectHandling" type="intel:SubjectHandlingType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>An action for the designated agency to take on contact with the person.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="SubjectHandlingAgencyName" type="nc:TextType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A name of an agency for whom the person handling information is designated.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="SubjectHandlingAugmentationPoint" abstract="true">
+    <xs:annotation>
+      <xs:documentation>An augmentation point for SubjectHandlingType.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="SubjectHandlingCodeText" type="nc:TextType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>An action for the designated agency to take on contact with the person.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="SubjectHandlingDescriptionText" type="nc:TextType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A description that identifies the action for the designated agency to take on contact with the person.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="SubjectReasonOnListText" type="nc:TextType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A reason why the person has been added to a terrorist watch list by a government organization.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="SystemIdentification" type="nc:SystemIdentificationType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A number or code identification assigned by a system to uniquely identify a person or object.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="ThreatCategoryCode" type="j:TipClassCodeType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A kind of threat.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+</xs:schema>

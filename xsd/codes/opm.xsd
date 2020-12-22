@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema targetNamespace="http://release.niem.gov/niem/codes/opm/5.0/" version="1" xml:lang="en-US" xsi:schemaLocation="http://release.niem.gov/niem/appinfo/5.0/ ../utility/appinfo.xsd http://release.niem.gov/niem/conformanceTargets/3.0/ ../utility/conformanceTargets.xsd" ct:conformanceTargets="http://reference.niem.gov/niem/specification/naming-and-design-rules/5.0/#ReferenceSchemaDocument"
+  xmlns:appinfo="http://release.niem.gov/niem/appinfo/5.0/"
+  xmlns:ct="http://release.niem.gov/niem/conformanceTargets/3.0/"
+  xmlns:nc="http://release.niem.gov/niem/niem-core/5.0/"
+  xmlns:opm="http://release.niem.gov/niem/codes/opm/5.0/"
+  xmlns:structures="http://release.niem.gov/niem/structures/5.0/"
+  xmlns:xs="http://www.w3.org/2001/XMLSchema"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <xs:annotation>
+    <xs:documentation>US Office of Personnel Management (OPM)</xs:documentation>
+  </xs:annotation>
+  <xs:import namespace="http://release.niem.gov/niem/niem-core/5.0/" schemaLocation="../niem-core.xsd"/>
+  <xs:import namespace="http://release.niem.gov/niem/structures/5.0/" schemaLocation="../utility/structures.xsd"/>
+  <xs:simpleType name="EducationLevelCodeSimpleType">
+    <xs:annotation>
+      <xs:documentation>A data type for a level of education reached by a person.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="01">
+        <xs:annotation>
+          <xs:documentation>No formal education or some elementary school--did not complete. Elementary school means grades 1 through 8, or equivalent, not completed.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="02">
+        <xs:annotation>
+          <xs:documentation>Elementary school completed--no high school. Grade 8 or equivalent completed.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="03">
+        <xs:annotation>
+          <xs:documentation>Some high school--did not graduate. High school means grades 9 through 12, or equivalent.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="04">
+        <xs:annotation>
+          <xs:documentation>High school graduate or certificate of equivalency.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="05">
+        <xs:annotation>
+          <xs:documentation>Terminal occupational program--did not complete. Program extending beyond grade 12, usually no more than three years; designed to prepare students for immediate employment in an occupation or cluster of occupations; not designed as the equivalent of the first two or three years of a baccalaureate degree program. Includes cooperative training or apprenticeship consisting of formal classroom instruction coupled with on-the-job training.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="06">
+        <xs:annotation>
+          <xs:documentation>Terminal occupational program--certificate of completion, diploma or equivalent. See code 05 above for definition of terminal occupational program. Two levels are recognized: (1) The technical and/or semi-professional level preparing technicians or semiprofessional personnel in engineering and nonengineering fields; and (2) the craftsman/clerical level training artisans, skilled operators, and clerical workers.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="07">
+        <xs:annotation>
+          <xs:documentation>Some college--less than one year. Less than 30 semester hours completed.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="08">
+        <xs:annotation>
+          <xs:documentation>One year college. 30-59 semester hours or 45-89 quarter hours completed.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="09">
+        <xs:annotation>
+          <xs:documentation>Two years college. 60-89 semester hours or 90-134 quarter hours completed.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="10">
+        <xs:annotation>
+          <xs:documentation>Associate Degree. 2-year college degree program completed.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="11">
+        <xs:annotation>
+          <xs:documentation>Three years college. 90-119 semester hours or 135-179 quarter hours completed.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="12">
+        <xs:annotation>
+          <xs:documentation>Four years college. 120 or more semester hours or 180 or more quarter hours completed--no baccalaureate (Bachelor's) degree.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="13">
+        <xs:annotation>
+          <xs:documentation>Bachelor's degree. Requires completion of at least four, but no more than five, years of academic work; includes Bachelor's degree conferred in a cooperative plan or program that provides for alternate class attendance and employment in business, industry, or government to allow student to combine actual work experience with college studies.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="14">
+        <xs:annotation>
+          <xs:documentation>Post-Bachelor's. Some work beyond (at a higher level than) the Bachelor's degree but no additional higher degree.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="15">
+        <xs:annotation>
+          <xs:documentation>First professional. Signifies the completion of academic requirements for selected professions that are based on programs requiring at least two academic years of previous college work for entrance and a total of at least six academic years of college work for completion, e.g., Dentistry (D.D.S. or D.M.D.), Law (LL. B. or J.D.), Medicine (M.D.), Theology (B.D.), Veterinary Medicine (D.V.M.), Chiropody or Podiatry (D.S.C. or D.P.), Optometry (O.D.), and Osteopathy (D.O.).</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="16">
+        <xs:annotation>
+          <xs:documentation>Post-first professional. Some work beyond (at a higher level than) the first professional degree but no additional higher degree.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="17">
+        <xs:annotation>
+          <xs:documentation>Master's degree. For liberal arts and sciences customarily granted upon successful completion of one (sometimes two) academic years beyond the Bachelor's degree. In professional fields, an advanced degree beyond the first professional but below the Ph.D., e.g., the LL.M.; M.S. in surgery following the M.D.; M.S.D., Master of Science in Dentistry; M.S.W., Master of Social Work.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="18">
+        <xs:annotation>
+          <xs:documentation>Post-Master's. Some work beyond (at a higher level than) the Master's degree but no additional higher degree.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="19">
+        <xs:annotation>
+          <xs:documentation>Sixth-year degree. Includes such degrees as Advanced Certificate in Education, Advanced Master of Education, Advanced Graduate Certificate, Advanced Specialist in Education Certificate, Certificate of Advanced Graduate Study, Certificate of Advanced Study, Advanced Degree in Education, Specialist in Education, Licentiate in Philosophy, Specialist in Guidance and Counseling, Specialist in Art, Specialist in Science, Specialist in School Administration, Specialist in School Psychology, Licentiate in Sacred Theology.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="20">
+        <xs:annotation>
+          <xs:documentation>Post-sixth year. Some work beyond (at a higher level than) the sixth-year degree but no additional higher degree.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="21">
+        <xs:annotation>
+          <xs:documentation>Doctorate degree. Includes such degrees as Doctor of Education, Doctor of Juridical Science, Doctor of Public Health, and the Ph.D. (or equivalent) in any field. Does not include a Doctor's degree that is a first professional degree, per code 15.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="22">
+        <xs:annotation>
+          <xs:documentation>Post-Doctorate. Work beyond the Doctorate.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="EducationLevelCodeType">
+    <xs:annotation>
+      <xs:documentation>A data type for a level of education reached by a person.</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="opm:EducationLevelCodeSimpleType">
+        <xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:element name="EducationLevelCode" type="opm:EducationLevelCodeType" substitutionGroup="nc:EducationLevelRepresentation" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A level of education reached by a person.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+</xs:schema>

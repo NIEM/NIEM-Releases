@@ -1,0 +1,447 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema targetNamespace="http://release.niem.gov/niem/codes/hl7/5.0/" version="1" xml:lang="en-US" xsi:schemaLocation="http://release.niem.gov/niem/appinfo/5.0/ ../utility/appinfo.xsd http://release.niem.gov/niem/conformanceTargets/3.0/ ../utility/conformanceTargets.xsd" ct:conformanceTargets="http://reference.niem.gov/niem/specification/naming-and-design-rules/5.0/#ReferenceSchemaDocument"
+  xmlns:appinfo="http://release.niem.gov/niem/appinfo/5.0/"
+  xmlns:ct="http://release.niem.gov/niem/conformanceTargets/3.0/"
+  xmlns:hl7="http://release.niem.gov/niem/codes/hl7/5.0/"
+  xmlns:nc="http://release.niem.gov/niem/niem-core/5.0/"
+  xmlns:structures="http://release.niem.gov/niem/structures/5.0/"
+  xmlns:xs="http://www.w3.org/2001/XMLSchema"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <xs:annotation>
+    <xs:documentation>Health Level Seven (HL-7) Fast Healthcare Interoperability Resources (FHIR)</xs:documentation>
+  </xs:annotation>
+  <xs:import namespace="http://release.niem.gov/niem/niem-core/5.0/" schemaLocation="../niem-core.xsd"/>
+  <xs:import namespace="http://release.niem.gov/niem/structures/5.0/" schemaLocation="../utility/structures.xsd"/>
+  <xs:simpleType name="ReligionCodeSimpleType">
+    <xs:annotation>
+      <xs:documentation>A data type for a religion to which a person can subscribe or believe; a categorization of spiritual beliefs.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="1001">
+        <xs:annotation>
+          <xs:documentation>Adventist</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="1002">
+        <xs:annotation>
+          <xs:documentation>African Religions</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="1003">
+        <xs:annotation>
+          <xs:documentation>Afro-Caribbean Religions</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="1004">
+        <xs:annotation>
+          <xs:documentation>Agnosticism</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="1005">
+        <xs:annotation>
+          <xs:documentation>Anglican</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="1006">
+        <xs:annotation>
+          <xs:documentation>Animism</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="1007">
+        <xs:annotation>
+          <xs:documentation>Atheism</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="1008">
+        <xs:annotation>
+          <xs:documentation>Babi &amp; Baha'I faiths</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="1009">
+        <xs:annotation>
+          <xs:documentation>Baptist</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="1010">
+        <xs:annotation>
+          <xs:documentation>Bon</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="1011">
+        <xs:annotation>
+          <xs:documentation>Cao Dai</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="1012">
+        <xs:annotation>
+          <xs:documentation>Celticism</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="1013">
+        <xs:annotation>
+          <xs:documentation>Christian (non-Catholic, non-specific)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="1014">
+        <xs:annotation>
+          <xs:documentation>Confucianism</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="1015">
+        <xs:annotation>
+          <xs:documentation>Cyberculture Religions</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="1016">
+        <xs:annotation>
+          <xs:documentation>Divination</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="1017">
+        <xs:annotation>
+          <xs:documentation>Fourth Way</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="1018">
+        <xs:annotation>
+          <xs:documentation>Free Daism</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="1019">
+        <xs:annotation>
+          <xs:documentation>Gnosis</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="1020">
+        <xs:annotation>
+          <xs:documentation>Hinduism</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="1021">
+        <xs:annotation>
+          <xs:documentation>Humanism</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="1022">
+        <xs:annotation>
+          <xs:documentation>Independent</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="1023">
+        <xs:annotation>
+          <xs:documentation>Islam</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="1024">
+        <xs:annotation>
+          <xs:documentation>Jainism</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="1025">
+        <xs:annotation>
+          <xs:documentation>Jehovah's Witnesses</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="1026">
+        <xs:annotation>
+          <xs:documentation>Judaism</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="1027">
+        <xs:annotation>
+          <xs:documentation>Latter Day Saints</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="1028">
+        <xs:annotation>
+          <xs:documentation>Lutheran</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="1029">
+        <xs:annotation>
+          <xs:documentation>Mahayana</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="1030">
+        <xs:annotation>
+          <xs:documentation>Meditation</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="1031">
+        <xs:annotation>
+          <xs:documentation>Messianic Judaism</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="1032">
+        <xs:annotation>
+          <xs:documentation>Mitraism</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="1033">
+        <xs:annotation>
+          <xs:documentation>New Age</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="1034">
+        <xs:annotation>
+          <xs:documentation>non-Roman Catholic</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="1035">
+        <xs:annotation>
+          <xs:documentation>Occult</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="1036">
+        <xs:annotation>
+          <xs:documentation>Orthodox</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="1037">
+        <xs:annotation>
+          <xs:documentation>Paganism</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="1038">
+        <xs:annotation>
+          <xs:documentation>Pentecostal</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="1039">
+        <xs:annotation>
+          <xs:documentation>Process, The</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="1040">
+        <xs:annotation>
+          <xs:documentation>Reformed/Presbyterian</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="1041">
+        <xs:annotation>
+          <xs:documentation>Roman Catholic Church</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="1042">
+        <xs:annotation>
+          <xs:documentation>Satanism</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="1043">
+        <xs:annotation>
+          <xs:documentation>Scientology</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="1044">
+        <xs:annotation>
+          <xs:documentation>Shamanism</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="1045">
+        <xs:annotation>
+          <xs:documentation>Shiite (Islam)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="1046">
+        <xs:annotation>
+          <xs:documentation>Shinto</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="1047">
+        <xs:annotation>
+          <xs:documentation>Sikism</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="1048">
+        <xs:annotation>
+          <xs:documentation>Spiritualism</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="1049">
+        <xs:annotation>
+          <xs:documentation>Sunni (Islam)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="1050">
+        <xs:annotation>
+          <xs:documentation>Taoism</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="1051">
+        <xs:annotation>
+          <xs:documentation>Theravada</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="1052">
+        <xs:annotation>
+          <xs:documentation>Unitarian-Universalism</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="1053">
+        <xs:annotation>
+          <xs:documentation>Universal Life Church</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="1054">
+        <xs:annotation>
+          <xs:documentation>Vajrayana (Tibetan)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="1055">
+        <xs:annotation>
+          <xs:documentation>Veda</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="1056">
+        <xs:annotation>
+          <xs:documentation>Voodoo</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="1057">
+        <xs:annotation>
+          <xs:documentation>Wicca</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="1058">
+        <xs:annotation>
+          <xs:documentation>Yaohushua</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="1059">
+        <xs:annotation>
+          <xs:documentation>Zen Buddhism</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="1060">
+        <xs:annotation>
+          <xs:documentation>Zoroastrianism</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="1061">
+        <xs:annotation>
+          <xs:documentation>Assembly of God</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="1062">
+        <xs:annotation>
+          <xs:documentation>Brethren</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="1063">
+        <xs:annotation>
+          <xs:documentation>Christian Scientist</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="1064">
+        <xs:annotation>
+          <xs:documentation>Church of Christ</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="1065">
+        <xs:annotation>
+          <xs:documentation>Church of God</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="1066">
+        <xs:annotation>
+          <xs:documentation>Congregational</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="1067">
+        <xs:annotation>
+          <xs:documentation>Disciples of Christ</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="1068">
+        <xs:annotation>
+          <xs:documentation>Eastern Orthodox</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="1069">
+        <xs:annotation>
+          <xs:documentation>Episcopalian</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="1070">
+        <xs:annotation>
+          <xs:documentation>Evangelical Covenant</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="1071">
+        <xs:annotation>
+          <xs:documentation>Friends</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="1072">
+        <xs:annotation>
+          <xs:documentation>Full Gospel</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="1073">
+        <xs:annotation>
+          <xs:documentation>Methodist</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="1074">
+        <xs:annotation>
+          <xs:documentation>Native American</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="1075">
+        <xs:annotation>
+          <xs:documentation>Nazarene</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="1076">
+        <xs:annotation>
+          <xs:documentation>Presbyterian</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="1077">
+        <xs:annotation>
+          <xs:documentation>Protestant</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="1078">
+        <xs:annotation>
+          <xs:documentation>Protestant, No Denomination</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="1079">
+        <xs:annotation>
+          <xs:documentation>Reformed</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="1080">
+        <xs:annotation>
+          <xs:documentation>Salvation Army</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="1081">
+        <xs:annotation>
+          <xs:documentation>Unitarian Universalist</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="1082">
+        <xs:annotation>
+          <xs:documentation>United Church of Christ</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="ReligionCodeType">
+    <xs:annotation>
+      <xs:documentation>A data type for a religion to which a person can subscribe or believe; a categorization of spiritual beliefs.</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="hl7:ReligionCodeSimpleType">
+        <xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:element name="ReligionCode" type="hl7:ReligionCodeType" substitutionGroup="nc:PersonReligionAbstract" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A religion to which a person subscribes or believes; a categorization of spiritual beliefs.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+</xs:schema>

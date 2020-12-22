@@ -1,0 +1,2846 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema targetNamespace="http://release.niem.gov/niem/codes/dea_ctlsub/5.0/" version="1" xml:lang="en-US" xsi:schemaLocation="http://release.niem.gov/niem/appinfo/5.0/ ../utility/appinfo.xsd http://release.niem.gov/niem/conformanceTargets/3.0/ ../utility/conformanceTargets.xsd" ct:conformanceTargets="http://reference.niem.gov/niem/specification/naming-and-design-rules/5.0/#ReferenceSchemaDocument"
+  xmlns:appinfo="http://release.niem.gov/niem/appinfo/5.0/"
+  xmlns:ct="http://release.niem.gov/niem/conformanceTargets/3.0/"
+  xmlns:dea="http://release.niem.gov/niem/codes/dea_ctlsub/5.0/"
+  xmlns:nc="http://release.niem.gov/niem/niem-core/5.0/"
+  xmlns:structures="http://release.niem.gov/niem/structures/5.0/"
+  xmlns:xs="http://www.w3.org/2001/XMLSchema"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <xs:annotation>
+    <xs:documentation>Drug Enforcement Administration (DEA) Controlled Substances</xs:documentation>
+  </xs:annotation>
+  <xs:import namespace="http://release.niem.gov/niem/niem-core/5.0/" schemaLocation="../niem-core.xsd"/>
+  <xs:import namespace="http://release.niem.gov/niem/structures/5.0/" schemaLocation="../utility/structures.xsd"/>
+  <xs:simpleType name="DEAClassScheduleCodeCodeSimpleType">
+    <xs:annotation>
+      <xs:documentation>A data type for a class to which the Drug Enforcement Agency (DEA) has assigned the product under the Controlled Substances Act of 1970.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="I">
+        <xs:annotation>
+          <xs:documentation>Schedule I Controlled Substances.  Substances in this schedule have no currently accepted medical use in the United States, a lack of accepted safety for use under medical supervision, and a high potential for abuse.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="II">
+        <xs:annotation>
+          <xs:documentation>Schedule II Controlled Substances.  Substances in this schedule have a high potential for abuse which may lead to severe psychological or physical dependence.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="III">
+        <xs:annotation>
+          <xs:documentation>Schedule III Controlled Substances.  Substances in this schedule have a potential for abuse less than substances in Schedules I or II and abuse may lead to moderate or low physical dependence or high psychological dependence.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="IV">
+        <xs:annotation>
+          <xs:documentation>Schedule IV Controlled Substances.  Substances in this schedule have a low potential for abuse relative to substances in Schedule III.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="V">
+        <xs:annotation>
+          <xs:documentation>Schedule V Controlled Substances.  Substances in this schedule have a low potential for abuse relative to substances listed in Schedule IV and consist primarily of preparations containing limited quantities of certain narcotics.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="DEAClassScheduleCodeCodeType">
+    <xs:annotation>
+      <xs:documentation>A data type for a class to which the Drug Enforcement Agency (DEA) has assigned the product under the Controlled Substances Act of 1970.</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="dea:DEAClassScheduleCodeCodeSimpleType">
+        <xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:simpleType name="DrugCategoryCodeSimpleType">
+    <xs:annotation>
+      <xs:documentation>A data type for a kind of substance by which a person is intoxicated.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="A1">
+        <xs:annotation>
+          <xs:documentation>Amphetamine (clandestine)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="A2">
+        <xs:annotation>
+          <xs:documentation>Methamphetamine (clandestine)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="A3">
+        <xs:annotation>
+          <xs:documentation>Crystal Methamphetamine ("ice")</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="A4">
+        <xs:annotation>
+          <xs:documentation>P2P</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="A5">
+        <xs:annotation>
+          <xs:documentation>Methcathinone</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="A6">
+        <xs:annotation>
+          <xs:documentation>Other Stimulant (clandestine)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="A7">
+        <xs:annotation>
+          <xs:documentation>Amphetamine or Stimulant Related Chemical</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="A8">
+        <xs:annotation>
+          <xs:documentation>Methylphenidate</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="B1">
+        <xs:annotation>
+          <xs:documentation>Pseudoephedrine</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="B2">
+        <xs:annotation>
+          <xs:documentation>Ephedrine</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="B3">
+        <xs:annotation>
+          <xs:documentation>Iodine or Red Phosphorus</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="C1">
+        <xs:annotation>
+          <xs:documentation>Cocaine HCL</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="C2">
+        <xs:annotation>
+          <xs:documentation>Cocaine Base (excluding crack)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="C3">
+        <xs:annotation>
+          <xs:documentation>Crack Cocaine</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="C4">
+        <xs:annotation>
+          <xs:documentation>Cocaine (pharmaceutical)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="C5">
+        <xs:annotation>
+          <xs:documentation>Cocaine Related Chemical</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="D1">
+        <xs:annotation>
+          <xs:documentation>Depressant (clandestine)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="D2">
+        <xs:annotation>
+          <xs:documentation>Methaqualone</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="D3">
+        <xs:annotation>
+          <xs:documentation>Fentanyl (clandestine)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="D4">
+        <xs:annotation>
+          <xs:documentation>Depressant Related Chemical</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="E1">
+        <xs:annotation>
+          <xs:documentation>Chemical Equipment (non drug specific)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="G1">
+        <xs:annotation>
+          <xs:documentation>GHB or GBL or BD (And GHB Analogues)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="G2">
+        <xs:annotation>
+          <xs:documentation>Ketamine (And Its Analogues)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="G3">
+        <xs:annotation>
+          <xs:documentation>Unspecified Analogues</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="H1">
+        <xs:annotation>
+          <xs:documentation>Heroin</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="H2">
+        <xs:annotation>
+          <xs:documentation>Opium</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="H3">
+        <xs:annotation>
+          <xs:documentation>Morphine Base</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="H4">
+        <xs:annotation>
+          <xs:documentation>Opium or Heroin or Morphine Related Chemical</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="L1">
+        <xs:annotation>
+          <xs:documentation>LSD</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="L2">
+        <xs:annotation>
+          <xs:documentation>PCP</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="L3">
+        <xs:annotation>
+          <xs:documentation>MDA or MDMA or MDE</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="L4">
+        <xs:annotation>
+          <xs:documentation>Other Hallucinogen</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="L5">
+        <xs:annotation>
+          <xs:documentation>Hallucinogen Related Chemical</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="M1">
+        <xs:annotation>
+          <xs:documentation>Marijuana (foreign origin)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="M2">
+        <xs:annotation>
+          <xs:documentation>Marijuana (domestic origin)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="M3">
+        <xs:annotation>
+          <xs:documentation>Indoor cultivation</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="M4">
+        <xs:annotation>
+          <xs:documentation>Hashish</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="M5">
+        <xs:annotation>
+          <xs:documentation>Hashish Oil</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="N1">
+        <xs:annotation>
+          <xs:documentation>Opioid Treatment Pharmaceuticals</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="N2">
+        <xs:annotation>
+          <xs:documentation>Hydromorphone (Dilaudid)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="N3">
+        <xs:annotation>
+          <xs:documentation>Schedule II Pharmaceutical Narcotic</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="N4">
+        <xs:annotation>
+          <xs:documentation>Schedule II Pharmaceutical Non Narcotic</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="N5">
+        <xs:annotation>
+          <xs:documentation>Schedule III Narcotic</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="N6">
+        <xs:annotation>
+          <xs:documentation>Benzodiazepine</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="N7">
+        <xs:annotation>
+          <xs:documentation>All Other Pharmaceutical Controlled Substances</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="N8">
+        <xs:annotation>
+          <xs:documentation>Oxycodone</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="N9">
+        <xs:annotation>
+          <xs:documentation>Hydrocodone</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="R1">
+        <xs:annotation>
+          <xs:documentation>Palladone</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="S1">
+        <xs:annotation>
+          <xs:documentation>Steroid (pharmaceutical)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="S2">
+        <xs:annotation>
+          <xs:documentation>Steroid (clandestine)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Z1">
+        <xs:annotation>
+          <xs:documentation>No Specific Drug</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="DrugCategoryCodeType">
+    <xs:annotation>
+      <xs:documentation>A data type for a kind of substance by which a person is intoxicated.</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="dea:DrugCategoryCodeSimpleType">
+        <xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:simpleType name="DrugCodeSimpleType">
+    <xs:annotation>
+      <xs:documentation>A data type for drug codes.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="1100">
+        <xs:annotation>
+          <xs:documentation>Amphetamine</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="1105">
+        <xs:annotation>
+          <xs:documentation>Methamphetamine</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="1205">
+        <xs:annotation>
+          <xs:documentation>Lisdexamfetamine</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="1228">
+        <xs:annotation>
+          <xs:documentation>Benzphetamine</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="1230">
+        <xs:annotation>
+          <xs:documentation>Cathine</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="1233">
+        <xs:annotation>
+          <xs:documentation>3-Fluoro-N-methylcathinone (3-FMC)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="1235">
+        <xs:annotation>
+          <xs:documentation>Cathinone</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="1237">
+        <xs:annotation>
+          <xs:documentation>Methcathinone</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="1238">
+        <xs:annotation>
+          <xs:documentation>4-Fluoro-N-methylcathinone (4-FMC)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="1246">
+        <xs:annotation>
+          <xs:documentation>Pentedrone (α-methylaminovalerophenone)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="1248">
+        <xs:annotation>
+          <xs:documentation>Mephedrone (4-Methyl-N-methylcathinone)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="1249">
+        <xs:annotation>
+          <xs:documentation>4-Methyl-N-ethylcathinone (4-MEC)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="1258">
+        <xs:annotation>
+          <xs:documentation>Naphyrone</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="1405">
+        <xs:annotation>
+          <xs:documentation>Stimulant compounds previously excepted</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="1475">
+        <xs:annotation>
+          <xs:documentation>N-Ethylamphetamine</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="1480">
+        <xs:annotation>
+          <xs:documentation>N,N-Dimethylamphetamine</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="1485">
+        <xs:annotation>
+          <xs:documentation>Pyrovalerone</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="1503">
+        <xs:annotation>
+          <xs:documentation>Fenethylline</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="1530">
+        <xs:annotation>
+          <xs:documentation>Pemoline</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="1575">
+        <xs:annotation>
+          <xs:documentation>Fenproporex</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="1580">
+        <xs:annotation>
+          <xs:documentation>Mefenorex</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="1585">
+        <xs:annotation>
+          <xs:documentation>Aminorex</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="1590">
+        <xs:annotation>
+          <xs:documentation>4-Methylaminorex (cis isomer)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="1605">
+        <xs:annotation>
+          <xs:documentation>Mazindol</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="1610">
+        <xs:annotation>
+          <xs:documentation>Diethylpropion</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="1615">
+        <xs:annotation>
+          <xs:documentation>Phendimetrazine</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="1625">
+        <xs:annotation>
+          <xs:documentation>Lorcaserin</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="1631">
+        <xs:annotation>
+          <xs:documentation>Phenmetrazine</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="1635">
+        <xs:annotation>
+          <xs:documentation>SPA</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="1640">
+        <xs:annotation>
+          <xs:documentation>Phentermine</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="1645">
+        <xs:annotation>
+          <xs:documentation>Chlorphentermine</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="1647">
+        <xs:annotation>
+          <xs:documentation>Clortermine</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="1670">
+        <xs:annotation>
+          <xs:documentation>Dexfenfluramine</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="1670">
+        <xs:annotation>
+          <xs:documentation>Fenfluramine</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="1675">
+        <xs:annotation>
+          <xs:documentation>Sibutramine</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="1680">
+        <xs:annotation>
+          <xs:documentation>Modafinil</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="1724">
+        <xs:annotation>
+          <xs:documentation>Methylphenidate</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="1750">
+        <xs:annotation>
+          <xs:documentation>Pipradrol</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="1760">
+        <xs:annotation>
+          <xs:documentation>Fencamfamin</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="2010">
+        <xs:annotation>
+          <xs:documentation>Gamma Hydroxybutyric Acid</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="2012">
+        <xs:annotation>
+          <xs:documentation>Gamma Hydroxybutyric Acid preparations</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="2020">
+        <xs:annotation>
+          <xs:documentation>Embutramide</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="2100">
+        <xs:annotation>
+          <xs:documentation>Aprobarbital</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="2100">
+        <xs:annotation>
+          <xs:documentation>Barbituric acid derivative</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="2100">
+        <xs:annotation>
+          <xs:documentation>Butabarbital (secbutabarbital)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="2100">
+        <xs:annotation>
+          <xs:documentation>Butalbital</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="2100">
+        <xs:annotation>
+          <xs:documentation>Butobarbital (butethal)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="2100">
+        <xs:annotation>
+          <xs:documentation>Talbutal</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="2100">
+        <xs:annotation>
+          <xs:documentation>Thiamylal</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="2100">
+        <xs:annotation>
+          <xs:documentation>Thiopental</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="2100">
+        <xs:annotation>
+          <xs:documentation>Vinbarbital</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="2125">
+        <xs:annotation>
+          <xs:documentation>Amobarbital</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="2126">
+        <xs:annotation>
+          <xs:documentation>Amobarbital &amp; noncontrolled active ingred.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="2126">
+        <xs:annotation>
+          <xs:documentation>Amobarbital suppository dosage form</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="2138">
+        <xs:annotation>
+          <xs:documentation>Fospropofol</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="2145">
+        <xs:annotation>
+          <xs:documentation>Barbital</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="2223">
+        <xs:annotation>
+          <xs:documentation>Suvorexant</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="2250">
+        <xs:annotation>
+          <xs:documentation>Methylphenobarbital (mephobarbital)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="2261">
+        <xs:annotation>
+          <xs:documentation>Perampanel</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="2264">
+        <xs:annotation>
+          <xs:documentation>Methohexital</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="2270">
+        <xs:annotation>
+          <xs:documentation>Pentobarbital</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="2271">
+        <xs:annotation>
+          <xs:documentation>Pentobarbital &amp; noncontrolled active ingred.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="2271">
+        <xs:annotation>
+          <xs:documentation>Pentobarbital suppository dosage form</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="2285">
+        <xs:annotation>
+          <xs:documentation>Phenobarbital</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="2315">
+        <xs:annotation>
+          <xs:documentation>Secobarbital</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="2316">
+        <xs:annotation>
+          <xs:documentation>Secobarbital &amp; noncontrolled active ingred</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="2316">
+        <xs:annotation>
+          <xs:documentation>Secobarbital suppository dosage form</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="2460">
+        <xs:annotation>
+          <xs:documentation>Chloral betaine</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="2465">
+        <xs:annotation>
+          <xs:documentation>Chloral hydrate</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="2467">
+        <xs:annotation>
+          <xs:documentation>Dichloralphenazone</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="2510">
+        <xs:annotation>
+          <xs:documentation>Chlorhexadol</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="2540">
+        <xs:annotation>
+          <xs:documentation>Ethchlorvynol</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="2545">
+        <xs:annotation>
+          <xs:documentation>Ethinamate</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="2550">
+        <xs:annotation>
+          <xs:documentation>Glutethimide</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="2565">
+        <xs:annotation>
+          <xs:documentation>Methaqualone</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="2572">
+        <xs:annotation>
+          <xs:documentation>Mecloqualone</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="2575">
+        <xs:annotation>
+          <xs:documentation>Methyprylon</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="2585">
+        <xs:annotation>
+          <xs:documentation>Paraldehyde</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="2591">
+        <xs:annotation>
+          <xs:documentation>Petrichloral</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="2600">
+        <xs:annotation>
+          <xs:documentation>Sulfondiethylmethane</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="2605">
+        <xs:annotation>
+          <xs:documentation>Sulfonethylmethane</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="2610">
+        <xs:annotation>
+          <xs:documentation>Sulfonmethane</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="2710">
+        <xs:annotation>
+          <xs:documentation>Brivaracetam</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="2731">
+        <xs:annotation>
+          <xs:documentation>Alfaxalone</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="2737">
+        <xs:annotation>
+          <xs:documentation>Clonazepam</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="2744">
+        <xs:annotation>
+          <xs:documentation>Chlordiazepoxide</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="2746">
+        <xs:annotation>
+          <xs:documentation>Lacosamide</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="2748">
+        <xs:annotation>
+          <xs:documentation>Bromazepam</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="2749">
+        <xs:annotation>
+          <xs:documentation>Camazepam</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="2751">
+        <xs:annotation>
+          <xs:documentation>Clobazam</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="2752">
+        <xs:annotation>
+          <xs:documentation>Clotiazepam</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="2753">
+        <xs:annotation>
+          <xs:documentation>Cloxazolam</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="2754">
+        <xs:annotation>
+          <xs:documentation>Delorazepam</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="2756">
+        <xs:annotation>
+          <xs:documentation>Estazolam</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="2758">
+        <xs:annotation>
+          <xs:documentation>Ethyl loflazepate</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="2759">
+        <xs:annotation>
+          <xs:documentation>Fludiazepam</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="2762">
+        <xs:annotation>
+          <xs:documentation>Halazepam</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="2763">
+        <xs:annotation>
+          <xs:documentation>Flunitrazepam</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="2764">
+        <xs:annotation>
+          <xs:documentation>Prazepam</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="2765">
+        <xs:annotation>
+          <xs:documentation>Diazepam</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="2767">
+        <xs:annotation>
+          <xs:documentation>Flurazepam</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="2768">
+        <xs:annotation>
+          <xs:documentation>Clorazepate</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="2771">
+        <xs:annotation>
+          <xs:documentation>Haloxazolam</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="2772">
+        <xs:annotation>
+          <xs:documentation>Ketazolam</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="2773">
+        <xs:annotation>
+          <xs:documentation>Loprazolam</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="2774">
+        <xs:annotation>
+          <xs:documentation>Lormetazepam</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="2779">
+        <xs:annotation>
+          <xs:documentation>Ezogabine</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="2781">
+        <xs:annotation>
+          <xs:documentation>Zaleplon</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="2782">
+        <xs:annotation>
+          <xs:documentation>Pregabalin</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="2783">
+        <xs:annotation>
+          <xs:documentation>Zolpidem</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="2784">
+        <xs:annotation>
+          <xs:documentation>Zopiclone</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="2800">
+        <xs:annotation>
+          <xs:documentation>Mebutamate</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="2820">
+        <xs:annotation>
+          <xs:documentation>Meprobamate</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="2834">
+        <xs:annotation>
+          <xs:documentation>Nitrazepam</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="2835">
+        <xs:annotation>
+          <xs:documentation>Oxazepam</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="2836">
+        <xs:annotation>
+          <xs:documentation>Medazepam</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="2837">
+        <xs:annotation>
+          <xs:documentation>Nimetazepam</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="2838">
+        <xs:annotation>
+          <xs:documentation>Nordiazepam</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="2839">
+        <xs:annotation>
+          <xs:documentation>Oxazolam</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="2881">
+        <xs:annotation>
+          <xs:documentation>Quazepam</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="2882">
+        <xs:annotation>
+          <xs:documentation>Alprazolam</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="2883">
+        <xs:annotation>
+          <xs:documentation>Pinazepam</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="2884">
+        <xs:annotation>
+          <xs:documentation>Midazolam</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="2885">
+        <xs:annotation>
+          <xs:documentation>Lorazepam</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="2886">
+        <xs:annotation>
+          <xs:documentation>Tetrazepam</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="2887">
+        <xs:annotation>
+          <xs:documentation>Triazolam</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="2925">
+        <xs:annotation>
+          <xs:documentation>Temazepam</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="4000">
+        <xs:annotation>
+          <xs:documentation>[3,2-c]-furazan-5α-androstan-17β-ol</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="4000">
+        <xs:annotation>
+          <xs:documentation>[3,2-c]pyrazole-androst-4-en-17β-ol</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="4000">
+        <xs:annotation>
+          <xs:documentation>1-Androstenediol (3beta,17beta-dihydroxy-5alpha-androst-1-ene; 3alpha,17beta-dihydroxy-5alpha-androst-1-ene)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="4000">
+        <xs:annotation>
+          <xs:documentation>1-Androstenedione (5alpha-androst-1-en-3,17-dione)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="4000">
+        <xs:annotation>
+          <xs:documentation>13Beta-ethyl-17beta-hydroxygon-4-en-3-one</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="4000">
+        <xs:annotation>
+          <xs:documentation>17Alpha-methyl-3alpha,17beta-dihydroxy-5alpha-androstane</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="4000">
+        <xs:annotation>
+          <xs:documentation>17Alpha-methyl-3beta,17beta-dihydroxy-5alpha-androstane</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="4000">
+        <xs:annotation>
+          <xs:documentation>17Alpha-methyl-3beta,17beta-dihydroxyandrost-4-ene</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="4000">
+        <xs:annotation>
+          <xs:documentation>17Alpha-methyl-4-hydroxynandrolone (17alpha-methyl-4-hydroxy-17beta-hydroxyestr-4-en-3-one)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="4000">
+        <xs:annotation>
+          <xs:documentation>17Alpha-methyl-delta1-dihydrotestosterone (17beta-hydroxy-17alpha-methyl-5alpha-androst-1-en-3-one)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="4000">
+        <xs:annotation>
+          <xs:documentation>17α-Methyl-5α-androstan-17β-ol</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="4000">
+        <xs:annotation>
+          <xs:documentation>17α-methyl-androst-2-ene-3,17β-diol</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="4000">
+        <xs:annotation>
+          <xs:documentation>17α-methyl-androsta-1,4-diene-3,17β-diol</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="4000">
+        <xs:annotation>
+          <xs:documentation>17α-Methyl-androstan-3-hydroxyimine-17β-ol</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="4000">
+        <xs:annotation>
+          <xs:documentation>17β-Hydroxy-androstano[2,3-d]isoxazole</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="4000">
+        <xs:annotation>
+          <xs:documentation>17β-Hydroxy-androstano[3,2-c]isoxazole</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="4000">
+        <xs:annotation>
+          <xs:documentation>18a-Homo-3-hydroxy-estra-2,5(10)-dien-17-one</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="4000">
+        <xs:annotation>
+          <xs:documentation>19-Nor-4-androstenediol (3beta,17beta-dihydroxyestr-4-ene; 3alpha,17beta-dihydroxyestr-4-ene)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="4000">
+        <xs:annotation>
+          <xs:documentation>19-Nor-4-androstenedione (estr-4-en-3,17-dione)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="4000">
+        <xs:annotation>
+          <xs:documentation>19-Nor-4,9(10)-androstadienedione</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="4000">
+        <xs:annotation>
+          <xs:documentation>19-Nor-5-androstenediol (3beta,17beta-dihydroxyestr-5-ene; 3alpha,17beta-dihydroxyestr-5-ene)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="4000">
+        <xs:annotation>
+          <xs:documentation>19-Nor-5-androstenedione (estr-5-en-3,17-dione)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="4000">
+        <xs:annotation>
+          <xs:documentation>2α,17α-dimethyl-17β-hydroxy-5β-androstan-3-one</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="4000">
+        <xs:annotation>
+          <xs:documentation>2α,3α-epithio-17α-methyl-5α-androstan-17β-ol</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="4000">
+        <xs:annotation>
+          <xs:documentation>3Alpha,17beta-dihydroxy-5alpha-androstane</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="4000">
+        <xs:annotation>
+          <xs:documentation>3Beta,17beta-dihydroxy-5alpha-androstane</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="4000">
+        <xs:annotation>
+          <xs:documentation>3β-hydroxy-estra-4,9,11-trien-17-one</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="4000">
+        <xs:annotation>
+          <xs:documentation>4-Androstenediol (3beta,17beta-dihydroxy-androst-4-ene)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="4000">
+        <xs:annotation>
+          <xs:documentation>4-Androstenedione (androst-4-en-3,17-dione)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="4000">
+        <xs:annotation>
+          <xs:documentation>4-chloro-17α-methyl-17β-hydroxy-androst-4-en-3-one</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="4000">
+        <xs:annotation>
+          <xs:documentation>4-chloro-17α-methyl-17β-hydroxy-androst-4-ene-3,11­dione</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="4000">
+        <xs:annotation>
+          <xs:documentation>4-chloro-17α-methyl-androst-4-ene-3β,17β-diol</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="4000">
+        <xs:annotation>
+          <xs:documentation>4-chloro-17α-methyl-androsta-1,4-diene-3,17β-diol</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="4000">
+        <xs:annotation>
+          <xs:documentation>4-Dihydrotestosterone (17beta-hydroxyandrostan-3one)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="4000">
+        <xs:annotation>
+          <xs:documentation>4-Hydroxy-19-nortestosterone (4,17beta-dihydroxyestr4-en-3-one)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="4000">
+        <xs:annotation>
+          <xs:documentation>4-Hydroxy-androst-4-ene-3,17-dione</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="4000">
+        <xs:annotation>
+          <xs:documentation>4-Hydroxytestosterone (4,17beta-dihydroxyandrost-4en-3-one)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="4000">
+        <xs:annotation>
+          <xs:documentation>5-Androstenediol (3beta,17beta-dihydroxy-androst-5ene)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="4000">
+        <xs:annotation>
+          <xs:documentation>5-Androstenedione (androst-5-en-3,17-dione)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="4000">
+        <xs:annotation>
+          <xs:documentation>5α-Androstan-3,6,17-trione</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="4000">
+        <xs:annotation>
+          <xs:documentation>6-bromo-androsta-1,4-diene-3,17-dione</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="4000">
+        <xs:annotation>
+          <xs:documentation>6-bromo-androstan-3,17-dione</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="4000">
+        <xs:annotation>
+          <xs:documentation>6α-Methyl-androst-4-ene-3,17-dione</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="4000">
+        <xs:annotation>
+          <xs:documentation>Anabolic steroids</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="4000">
+        <xs:annotation>
+          <xs:documentation>Androstanedione (5alpha-androstan-3,17-dione)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="4000">
+        <xs:annotation>
+          <xs:documentation>Bolasterone (7alpha,17alpha-dimethyl-17betahydroxyandrost-4-en-3-one)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="4000">
+        <xs:annotation>
+          <xs:documentation>Boldenone (17beta-hydroxyandrost-1,4-diene-3-one)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="4000">
+        <xs:annotation>
+          <xs:documentation>Boldione</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="4000">
+        <xs:annotation>
+          <xs:documentation>Calusterone (7beta,17alpha-dimethyl-17betahydroxyandrost-4-en-3-one)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="4000">
+        <xs:annotation>
+          <xs:documentation>Clostebol (4-chloro-17beta-hydroxyandrost-4-en-3-one)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="4000">
+        <xs:annotation>
+          <xs:documentation>Dehydrochloromethyltestosterone (4-chloro-17betahydroxy-17alpha-methylandrost-1,4-dien-3-one)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="4000">
+        <xs:annotation>
+          <xs:documentation>Delta1-dihydrotestosterone (17beta-hydroxy-5alphaandrost-1-en-3-one)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="4000">
+        <xs:annotation>
+          <xs:documentation>Desoxymethyltestosterone</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="4000">
+        <xs:annotation>
+          <xs:documentation>Drostanolone (17beta-hydroxy-2alpha-methyl-5alphaandrostan-3-one)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="4000">
+        <xs:annotation>
+          <xs:documentation>Estra-4,9,11-triene-3,17-dione</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="4000">
+        <xs:annotation>
+          <xs:documentation>Ethylestrenol (17alpha-ethyl-17beta-hydroxyestr-4-ene)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="4000">
+        <xs:annotation>
+          <xs:documentation>Fluoxymesterone (9-fluoro-17alpha-methyl11beta,17beta-dihydroxyandrost-4-en-3-one)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="4000">
+        <xs:annotation>
+          <xs:documentation>Formebolone (2-formyl-17alpha-methyl11alpha,17beta-dihydroxyandrost-1,4-dien-3-one)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="4000">
+        <xs:annotation>
+          <xs:documentation>Furazabol (17alpha-methyl-17betahydroxyandrostano[2,3-c]-furazan)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="4000">
+        <xs:annotation>
+          <xs:documentation>Mestanolone (17alpha-methyl-17beta-hydroxy-5alphaandrostan-3-one)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="4000">
+        <xs:annotation>
+          <xs:documentation>Mesterolone (1alpha-methyl-17beta-hydroxy-5alphaandrostan-3-one)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="4000">
+        <xs:annotation>
+          <xs:documentation>Methandienone (17alpha-methyl-17betahydroxyandrost-1,4-dien-3-one)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="4000">
+        <xs:annotation>
+          <xs:documentation>Methandriol (17alpha-methyl-3beta,17betadihydroxyandrost-5-ene)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="4000">
+        <xs:annotation>
+          <xs:documentation>Methasterone (2alpha,17alpha-dimethyl-5alphaandrostan-17beta-ol-3-one)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="4000">
+        <xs:annotation>
+          <xs:documentation>Methenolone (1-methyl-17beta-hydroxy-5alpha-androst1-en-3-one)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="4000">
+        <xs:annotation>
+          <xs:documentation>Methyldienolone (17alpha-methyl-17beta-hydroxyestra4,9(10)-dien-3-one)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="4000">
+        <xs:annotation>
+          <xs:documentation>Methyltestosterone (17alpha-methyl-17betahydroxyandrost-4-en-3-one)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="4000">
+        <xs:annotation>
+          <xs:documentation>Methyltrienolone (17alpha-methyl-17beta-hydroxyestra4,9,11-trien-3-one)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="4000">
+        <xs:annotation>
+          <xs:documentation>Mibolerone (7alpha,17alpha-dimethyl-17betahydroxyestr-4-en-3-one)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="4000">
+        <xs:annotation>
+          <xs:documentation>Nandrolone (17beta-hydroxyestr-4-en-3-one)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="4000">
+        <xs:annotation>
+          <xs:documentation>Norbolethone (13beta,17alpha-diethyl-17betahydroxygon-4-en-3-one)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="4000">
+        <xs:annotation>
+          <xs:documentation>Norclostebol (4-chloro-17beta-hydroxyestr-4-en-3-one</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="4000">
+        <xs:annotation>
+          <xs:documentation>Norethandrolone (17alpha-ethyl-17beta-hydroxyestr-4en-3-one)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="4000">
+        <xs:annotation>
+          <xs:documentation>Normethandrolone (17alpha-methyl-17betahydroxyestr-4-en-3-one)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="4000">
+        <xs:annotation>
+          <xs:documentation>Oxandrolone (17alpha-methyl-17beta-hydroxy-2-oxa5alpha-androstan-3-one)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="4000">
+        <xs:annotation>
+          <xs:documentation>Oxymesterone (17alpha-methyl-4,17betadihydroxyandrost-4-en-3-one)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="4000">
+        <xs:annotation>
+          <xs:documentation>Oxymetholone (17alpha-methyl-2-hydroxymethylene17beta-hydroxy-5alpha-androstan-3-one)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="4000">
+        <xs:annotation>
+          <xs:documentation>Prostanozol (17beta-hydroxy-5alpha-androstano[3,2c]pyrazole)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="4000">
+        <xs:annotation>
+          <xs:documentation>Stanozolol (17alpha-methyl-17beta-hydroxy-5alphaandrost-2-eno[3,2-c]-pyrazole)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="4000">
+        <xs:annotation>
+          <xs:documentation>Stenbolone (17beta-hydroxy-2-methyl--5alpha-androst1-en-3-one)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="4000">
+        <xs:annotation>
+          <xs:documentation>Testolactone (13-hydroxy-3-oxo-13,17-secoandrosta1,4-dien-17-oic acid lactone)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="4000">
+        <xs:annotation>
+          <xs:documentation>Testosterone (17beta-hydroxyandrost-4-en-3-one)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="4000">
+        <xs:annotation>
+          <xs:documentation>Tetrahydrogestrinone (13beta,17alpha-diethyl-17betahydroxygon-4,9,11-trien-3-one)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="4000">
+        <xs:annotation>
+          <xs:documentation>Trenbolone (17beta-hydroxyestr-4,9,11-trien-3-one)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="6250">
+        <xs:annotation>
+          <xs:documentation>JWH-250 (1-Pentyl-3-(2-methoxyphenylacetyl) indole)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="7008">
+        <xs:annotation>
+          <xs:documentation>SR-18 (Also known as RCS-8) (1-Cyclohexylethyl-3-(2methoxyphenylacetyl) indole)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="7010">
+        <xs:annotation>
+          <xs:documentation>ADB–FUBINACA (N-(1-amino-3,3-dimethyl-1-oxobutan­2-yl)-1-(4-fluorobenzyl)-1H-indazole-3-carboxamide)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="7011">
+        <xs:annotation>
+          <xs:documentation>5-Fluoro-UR-144 and XLR11 [1-(5-Fluoro-pentyl)1Hindol-3-yl](2,2,3,3-tetramethylcyclopropyl)methanone</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="7012">
+        <xs:annotation>
+          <xs:documentation>AB-FUBINACA (N-(1-amino-3-methyl-1-oxobutan-2-yl)1-(4-fluorobenzyl)-1H-indazole-3-carboxamide)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="7014">
+        <xs:annotation>
+          <xs:documentation>(1-(4-Fluorobenzyl)-1H-indol-3-yl)(2,2,3,3tetramethylcyclopropyl)methanone</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="7019">
+        <xs:annotation>
+          <xs:documentation>JWH-019 (1-Hexyl-3-(1-naphthoyl)indole)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="7020">
+        <xs:annotation>
+          <xs:documentation>MDMB–FUBINACA (Methyl 2-(1-(4-fluorobenzyl)-1H­indazole-3-carboxamido)-3,3-dimethylbutanoate)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="7021">
+        <xs:annotation>
+          <xs:documentation>Methyl 2-(1-(4-fluorobenzyl)-1Hindazole-3carboxamido)-3-methylbutanoate</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="7023">
+        <xs:annotation>
+          <xs:documentation>AB-PINACA (N-(1-amino-3-methyl1-oxobutan-2-yl)-1-pentyl-1H-indazole3-carboxamide)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="7024">
+        <xs:annotation>
+          <xs:documentation>THJ-2201 [1-(5-fluoropentyl)-1H-indazol-3yl](naphthalen-1-yl)methanone</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="7025">
+        <xs:annotation>
+          <xs:documentation>5F-AB-PINACA (N-(1-amino-3-methyl-1-oxobutan-2yl)-1-(5-fluoropentyl)-1 H-indazole-3-carboxamide)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="7031">
+        <xs:annotation>
+          <xs:documentation>AB-CHMINACA (N-(1-amino-3-methyl-1oxobutan-2-yl)-1-(cyclohexylmethyl)1H-indazole-3-carboxamide</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="7032">
+        <xs:annotation>
+          <xs:documentation>MAB-CHMINACA (N-(1-amino-3,3dimethyl-1oxobutan-2-yl)-1-(cyclohexylmethyl)-1H-indazole-3carboxamide)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="7033">
+        <xs:annotation>
+          <xs:documentation>5F–AMB (Methyl 2-(1-(5-fluoropentyl)-1H-indazole-3­carboxamido)-3-methylbutanoate)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="7034">
+        <xs:annotation>
+          <xs:documentation>5F–ADB; 5F–MDMB–PINACA (Methyl 2-(1-(5­fluoropentyl)-1H-indazole-3-carboxamido)-3,3dimethylbutanoate)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="7035">
+        <xs:annotation>
+          <xs:documentation>ADB-PINACA (N-(1-amino-3,3-dimethyl-1-oxobutan-2yl)-1-pentyl-1H-indazole-3-carboxamide)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="7036">
+        <xs:annotation>
+          <xs:documentation>Ethyl 2-(1-(5-fluoropentyl)-1H-indazole-3-carboxamido)3,3-dimethylbutanoate</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="7041">
+        <xs:annotation>
+          <xs:documentation>Methyl 2-(1-(5-fluoropentyl)-1H-indole-3-carboxamido)3,3-dimethylbutanoate</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="7042">
+        <xs:annotation>
+          <xs:documentation>MDMB–CHMICA, MMB–CHMINACA (Methyl 2-(1­(cyclohexylmethyl)-1H-indole-3-carboxamido)-3,3dimethylbutanoate)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="7044">
+        <xs:annotation>
+          <xs:documentation>MMB-CHMICA, AMB-CHMICA (methyl 2-(1(cyclohexylmethyl)-1 H-indole-3-carboxamido)-3methylbutanoate)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="7047">
+        <xs:annotation>
+          <xs:documentation>N-(Adamantan-1-yl)-1-(4-fluorobenzyl)-1H-indazole-3carboxamide</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="7048">
+        <xs:annotation>
+          <xs:documentation>APINACA and AKB48 N-(1-Adamantyl)-1-pentyl-1Hindazole-3-carboxamide</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="7049">
+        <xs:annotation>
+          <xs:documentation>5F–APINACA, 5F–AKB48 (N-(adamantan-1-yl)-1-(5­fluoropentyl)-1H-indazole-3-carboxamide)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="7081">
+        <xs:annotation>
+          <xs:documentation>JWH-081 (1-Pentyl-3-(1-(4-methoxynaphthoyl) indole)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="7083">
+        <xs:annotation>
+          <xs:documentation>1-(5-Fluoropentyl)-N-(2-phenylpropan-2-yl)-1Hindazole-3-carboxamide</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="7085">
+        <xs:annotation>
+          <xs:documentation>5F-CUMYL-P7AICA (1-(5-fluoropentyl)-N-(2phenylpropan-2-yl)-1 H-pyrrolo[2,3-b]pyridine-3carboxamide)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="7089">
+        <xs:annotation>
+          <xs:documentation>4-CN-CUMYL-BUTINACA (1-(4-cyanobutyl)-N-(2phenylpropan-2-yl)-1 H-indazole-3-carboxamide)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="7104">
+        <xs:annotation>
+          <xs:documentation>SR-19 (Also known as RCS-4) (1-Pentyl-3-[(4methoxy)-benzoyl] indole</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="7118">
+        <xs:annotation>
+          <xs:documentation>JWH-018 (also known as AM678) (1-Pentyl-3-(1naphthoyl)indole)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="7122">
+        <xs:annotation>
+          <xs:documentation>JWH-122 (1-Pentyl-3-(4-methyl-1-naphthoyl) indole)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="7144">
+        <xs:annotation>
+          <xs:documentation>UR-144 (1-Pentyl-1H-indol-3-yl)(2,2,3,3tetramethylcyclopropyl)metanone</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="7173">
+        <xs:annotation>
+          <xs:documentation>JWH-073 (1-Butyl-3-(1-naphthoyl)indole)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="7200">
+        <xs:annotation>
+          <xs:documentation>JWH-200 (1-[2-(4-Morpholinyl)ethyl]-3-(1naphthoyl)indole)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="7201">
+        <xs:annotation>
+          <xs:documentation>AM2201 (1-(5-Fluoropentyl)-3-(1-naphthoyl) indole)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="7203">
+        <xs:annotation>
+          <xs:documentation>JWH-203 (1-Pentyl-3-(2-chlorophenylacetyl) indole)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="7221">
+        <xs:annotation>
+          <xs:documentation>NM2201; CBL2201 (Naphthalen-1-yl 1-(5-fluoropentyl)1 H-indole-3-carboxylate)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="7222">
+        <xs:annotation>
+          <xs:documentation>PB-22 (Quinolin-8-yl 1-pentyl-1H-indole-3-carboxylate)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="7225">
+        <xs:annotation>
+          <xs:documentation>5F-PB-22 (Quinolin-8-yl 1-(5-fluoropentyl)-1H-indole-3carboxylate)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="7245">
+        <xs:annotation>
+          <xs:documentation>4-methyl-alpha-ethylaminopentiophenone (4-MEAP)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="7246">
+        <xs:annotation>
+          <xs:documentation>N-ethylhexedrone</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="7249">
+        <xs:annotation>
+          <xs:documentation>Alpha-ethyltryptamine</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="7260">
+        <xs:annotation>
+          <xs:documentation>Ibogaine</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="7285">
+        <xs:annotation>
+          <xs:documentation>Ketamine</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="7295">
+        <xs:annotation>
+          <xs:documentation>Tiletamine &amp; Zolazepam Combination Product</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="7297">
+        <xs:annotation>
+          <xs:documentation>CP-47,497 (5-(1,1-Dimethylheptyl)-2-[(1R,3S)-3hydroxycyclohexyl-phenol)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="7298">
+        <xs:annotation>
+          <xs:documentation>CP-47,497 C8 Homologue (5-(1,1-Dimethyloctyl)-2[(1R,3S)3-hydroxycyclohexyl-phenol)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="7300">
+        <xs:annotation>
+          <xs:documentation>Lysergic acid</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="7310">
+        <xs:annotation>
+          <xs:documentation>Lysergic acid amide</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="7315">
+        <xs:annotation>
+          <xs:documentation>Lysergic acid diethylamide</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="7348">
+        <xs:annotation>
+          <xs:documentation>2,5-Dimethoxy-4-(n)-propylthiophenethylamine (2C-T7)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="7350">
+        <xs:annotation>
+          <xs:documentation>Marihuana Extract</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="7360">
+        <xs:annotation>
+          <xs:documentation>Marihuana</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="7365">
+        <xs:annotation>
+          <xs:documentation>Dronabinol in an oral solution in a drug product approved for marketing by the U.S. Food and Drug Administration</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="7367">
+        <xs:annotation>
+          <xs:documentation>Approved Cannabidiol Drugs (as defined in 21 CFR 1308.15(f))</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="7369">
+        <xs:annotation>
+          <xs:documentation>Dronabinol (synthetic) in sesame oil in soft gelatin capsule as approved by FDA</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="7370">
+        <xs:annotation>
+          <xs:documentation>Tetrahydrocannabinols</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="7374">
+        <xs:annotation>
+          <xs:documentation>Parahexyl</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="7379">
+        <xs:annotation>
+          <xs:documentation>Nabilone</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="7381">
+        <xs:annotation>
+          <xs:documentation>Mescaline</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="7385">
+        <xs:annotation>
+          <xs:documentation>2-(4-Ethylthio-2,5-dimethoxyphenyl) ethanamine (2C-T-2 )</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="7390">
+        <xs:annotation>
+          <xs:documentation>3,4,5-Trimethoxyamphetamine</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="7391">
+        <xs:annotation>
+          <xs:documentation>4-Bromo-2,5-dimethoxyamphetamine</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="7392">
+        <xs:annotation>
+          <xs:documentation>4-Bromo-2,5-dimethoxyphenethylamine</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="7395">
+        <xs:annotation>
+          <xs:documentation>4-Methyl-2,5-dimethoxyamphetamine</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="7396">
+        <xs:annotation>
+          <xs:documentation>2,5-Dimethoxyamphetamine</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="7398">
+        <xs:annotation>
+          <xs:documentation>JWH-398 (1-Pentyl-3-(4-chloro-1-naphthoyl) indole)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="7399">
+        <xs:annotation>
+          <xs:documentation>2,5-Dimethoxy-4-ethylamphetamine</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="7400">
+        <xs:annotation>
+          <xs:documentation>3,4-Methylenedioxyamphetamine</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="7401">
+        <xs:annotation>
+          <xs:documentation>5-Methoxy-3,4-methylenedioxyamphetamine</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="7402">
+        <xs:annotation>
+          <xs:documentation>N-Hydroxy-3,4-methylenedioxyamphetamine</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="7404">
+        <xs:annotation>
+          <xs:documentation>3,4-Methylenedioxy-N-ethylamphetamine</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="7405">
+        <xs:annotation>
+          <xs:documentation>3,4-Methylenedioxymethamphetamine</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="7411">
+        <xs:annotation>
+          <xs:documentation>4-Methoxyamphetamine</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="7415">
+        <xs:annotation>
+          <xs:documentation>Peyote</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="7431">
+        <xs:annotation>
+          <xs:documentation>5-Methoxy-N-N-dimethyltryptamine</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="7432">
+        <xs:annotation>
+          <xs:documentation>Alpha-methyltryptamine</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="7433">
+        <xs:annotation>
+          <xs:documentation>Bufotenine</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="7434">
+        <xs:annotation>
+          <xs:documentation>Diethyltryptamine</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="7435">
+        <xs:annotation>
+          <xs:documentation>Dimethyltryptamine</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="7437">
+        <xs:annotation>
+          <xs:documentation>Psilocybin</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="7438">
+        <xs:annotation>
+          <xs:documentation>Psilocyn</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="7439">
+        <xs:annotation>
+          <xs:documentation>5-Methoxy-N,N-diisopropyltryptamine</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="7443">
+        <xs:annotation>
+          <xs:documentation>4-chloro-alpha-pyrrolidinovalerophenone (4-chloro-a-PVP)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="7446">
+        <xs:annotation>
+          <xs:documentation>4´-methyl-alpha-pyrrolidinohexiophenone (MPHP)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="7455">
+        <xs:annotation>
+          <xs:documentation>N-Ethyl-1-phenylcyclohexylamine</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="7458">
+        <xs:annotation>
+          <xs:documentation>1-(1-Phenylcyclohexyl)pyrrolidine</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="7460">
+        <xs:annotation>
+          <xs:documentation>1-Phenylcyclohexylamine</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="7470">
+        <xs:annotation>
+          <xs:documentation>1-[1-(2-Thienyl)cyclohexyl]piperidine</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="7471">
+        <xs:annotation>
+          <xs:documentation>Phencyclidine</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="7473">
+        <xs:annotation>
+          <xs:documentation>1-[1-(2-Thienyl)cyclohexyl]pyrrolidine</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="7482">
+        <xs:annotation>
+          <xs:documentation>N-Ethyl-3-piperidyl benzilate</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="7484">
+        <xs:annotation>
+          <xs:documentation>N-Methyl-3-piperidyl benzilate</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="7493">
+        <xs:annotation>
+          <xs:documentation>N-Benzylpiperazine</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="7498">
+        <xs:annotation>
+          <xs:documentation>4-Methyl-alphapyrrolidinopropiophenone (4-MePPP)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="7508">
+        <xs:annotation>
+          <xs:documentation>2-(2,5-Dimethoxy-4-methylphenyl) ethanamine (2C-D)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="7509">
+        <xs:annotation>
+          <xs:documentation>2-(2,5-Dimethoxy-4-ethylphenyl) ethanamine (2C-E )</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="7517">
+        <xs:annotation>
+          <xs:documentation>2-(2,5-Dimethoxyphenyl) ethanamine (2C-H)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="7518">
+        <xs:annotation>
+          <xs:documentation>2-(4-iodo-2,5-dimethoxyphenyl) ethanamine (2C-I)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="7519">
+        <xs:annotation>
+          <xs:documentation>2-(4-Chloro-2,5-dimethoxyphenyl) ethanamine (2C-C)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="7521">
+        <xs:annotation>
+          <xs:documentation>2-(2,5-Dimethoxy-4-nitro-phenyl) ethanamine (2C-N)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="7524">
+        <xs:annotation>
+          <xs:documentation>2-(2,5-Dimethoxy-4-(n)-propylphenyl) ethanamine (2CP)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="7532">
+        <xs:annotation>
+          <xs:documentation>2-(4-Isopropylthio)-2,5-dimethoxyphenyl) ethanamine (2C-T-4 )</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="7535">
+        <xs:annotation>
+          <xs:documentation>MDPV (3,4-Methylenedioxypyrovalerone)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="7536">
+        <xs:annotation>
+          <xs:documentation>2-(4-bromo-2,5-dimethoxyphenyl)-N-(2-methoxybenzyl) ethanamine (25B-NBOMe)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="7537">
+        <xs:annotation>
+          <xs:documentation>2-(4-chloro-2,5-dimethoxyphenyl)-N-(2-methoxybenzyl) ethanamine (25C-NBOMe)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="7538">
+        <xs:annotation>
+          <xs:documentation>2-(4-iodo-2,5-dimethoxyphenyl)-N-(2-methoxybenzyl) ethanamine (25I-NBOMe)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="7540">
+        <xs:annotation>
+          <xs:documentation>Methylone (3,4-Methylenedioxy-N-methylcathinone)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="7541">
+        <xs:annotation>
+          <xs:documentation>Butylone</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="7542">
+        <xs:annotation>
+          <xs:documentation>Pentylone</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="7543">
+        <xs:annotation>
+          <xs:documentation>N-Ethylpentylone (1-(1,3-benzodioxol-5-yl)-2(ethylamino)-pentan-1-one)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="7544">
+        <xs:annotation>
+          <xs:documentation>alpha-pyrrolidinohexanophenone (a-PHP)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="7545">
+        <xs:annotation>
+          <xs:documentation>alpha-pyrrolidinopentiophenone (α-PVP)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="7546">
+        <xs:annotation>
+          <xs:documentation>alpha-pyrrolidinobutiophenone (α-PBP)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="7548">
+        <xs:annotation>
+          <xs:documentation>alpha-pyrrolidinoheptaphenone (PV8)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="7694">
+        <xs:annotation>
+          <xs:documentation>AM-694 (1-(5-Fluoropentyl)-3-(2-iodobenzoyl) indole)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="8192">
+        <xs:annotation>
+          <xs:documentation>Carisoprodol</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="8333">
+        <xs:annotation>
+          <xs:documentation>4-Anilino-N-phenethyl-4-piperidine (ANPP)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="8501">
+        <xs:annotation>
+          <xs:documentation>Phenylacetone</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="8603">
+        <xs:annotation>
+          <xs:documentation>1-Piperidinocyclohexanecarbonitrile</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="9010">
+        <xs:annotation>
+          <xs:documentation>Alphaprodine</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="9020">
+        <xs:annotation>
+          <xs:documentation>Anileridine</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="9040">
+        <xs:annotation>
+          <xs:documentation>Coca Leaves</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="9041">
+        <xs:annotation>
+          <xs:documentation>Cocaine</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="9050">
+        <xs:annotation>
+          <xs:documentation>Codeine</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="9051">
+        <xs:annotation>
+          <xs:documentation>Acetyldihydrocodeine</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="9052">
+        <xs:annotation>
+          <xs:documentation>Benzylmorphine</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="9053">
+        <xs:annotation>
+          <xs:documentation>Codeine-N-oxide</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="9054">
+        <xs:annotation>
+          <xs:documentation>Cyprenorphine</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="9055">
+        <xs:annotation>
+          <xs:documentation>Desomorphine</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="9056">
+        <xs:annotation>
+          <xs:documentation>Etorphine (except HCl)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="9059">
+        <xs:annotation>
+          <xs:documentation>Etorphine HCl</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="9064">
+        <xs:annotation>
+          <xs:documentation>Buprenorphine</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="9070">
+        <xs:annotation>
+          <xs:documentation>Codeine methylbromide</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="9120">
+        <xs:annotation>
+          <xs:documentation>Dihydrocodeine</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="9143">
+        <xs:annotation>
+          <xs:documentation>Oxycodone</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="9145">
+        <xs:annotation>
+          <xs:documentation>Dihydromorphine</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="9150">
+        <xs:annotation>
+          <xs:documentation>Hydromorphone</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="9167">
+        <xs:annotation>
+          <xs:documentation>Difenoxin 1 mg/25 ug AtSO4/du</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="9168">
+        <xs:annotation>
+          <xs:documentation>Difenoxin</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="9170">
+        <xs:annotation>
+          <xs:documentation>Diphenoxylate</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="9180">
+        <xs:annotation>
+          <xs:documentation>Ecgonine</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="9190">
+        <xs:annotation>
+          <xs:documentation>Ethylmorphine</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="9193">
+        <xs:annotation>
+          <xs:documentation>Hydrocodone</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="9200">
+        <xs:annotation>
+          <xs:documentation>Heroin</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="9210">
+        <xs:annotation>
+          <xs:documentation>Levomethorphan</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="9220">
+        <xs:annotation>
+          <xs:documentation>Levorphanol</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="9226">
+        <xs:annotation>
+          <xs:documentation>Isomethadone</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="9230">
+        <xs:annotation>
+          <xs:documentation>Meperidine</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="9232">
+        <xs:annotation>
+          <xs:documentation>Meperidine intermediate-A</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="9233">
+        <xs:annotation>
+          <xs:documentation>Meperidine intermediate-B</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="9234">
+        <xs:annotation>
+          <xs:documentation>Meperidine intermediate-C</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="9240">
+        <xs:annotation>
+          <xs:documentation>Metazocine</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="9250">
+        <xs:annotation>
+          <xs:documentation>Methadone</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="9254">
+        <xs:annotation>
+          <xs:documentation>Methadone intermediate</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="9260">
+        <xs:annotation>
+          <xs:documentation>Metopon</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="9273">
+        <xs:annotation>
+          <xs:documentation>Dextropropoxyphene, bulk (non-dosage forms)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="9278">
+        <xs:annotation>
+          <xs:documentation>Dextropropoxyphene dosage forms</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="9300">
+        <xs:annotation>
+          <xs:documentation>Morphine</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="9301">
+        <xs:annotation>
+          <xs:documentation>Hydromorphinol</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="9302">
+        <xs:annotation>
+          <xs:documentation>Methyldesorphine</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="9304">
+        <xs:annotation>
+          <xs:documentation>Methyldihydromorphine</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="9305">
+        <xs:annotation>
+          <xs:documentation>Morphine methylbromide</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="9306">
+        <xs:annotation>
+          <xs:documentation>Morphine methylsulfonate</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="9307">
+        <xs:annotation>
+          <xs:documentation>Morphine-N-oxide</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="9308">
+        <xs:annotation>
+          <xs:documentation>Myrophine</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="9309">
+        <xs:annotation>
+          <xs:documentation>Nicocodeine</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="9312">
+        <xs:annotation>
+          <xs:documentation>Nicomorphine</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="9313">
+        <xs:annotation>
+          <xs:documentation>Normorphine</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="9314">
+        <xs:annotation>
+          <xs:documentation>Pholcodine</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="9315">
+        <xs:annotation>
+          <xs:documentation>Thebacon</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="9319">
+        <xs:annotation>
+          <xs:documentation>Acetorphine</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="9330">
+        <xs:annotation>
+          <xs:documentation>Oripavine</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="9333">
+        <xs:annotation>
+          <xs:documentation>Thebaine</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="9334">
+        <xs:annotation>
+          <xs:documentation>Dihydroetorphine</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="9335">
+        <xs:annotation>
+          <xs:documentation>Drotebanol</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="9400">
+        <xs:annotation>
+          <xs:documentation>Nalorphine</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="9547">
+        <xs:annotation>
+          <xs:documentation>U-47700 (3,4-dichloro-N-[2-(dimethylamino)cyclohexyl]-N-methylbenzamide)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="9551">
+        <xs:annotation>
+          <xs:documentation>AH-7921 (3,4-dichloro-N-[(1-dimethylamino)cyclohexylmethyl]benzamide))</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="9560">
+        <xs:annotation>
+          <xs:documentation>MT-45 (1-cyclohexyl-4-(1,2-diphenylethyl)piperazine))</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="9600">
+        <xs:annotation>
+          <xs:documentation>Opium, raw</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="9601">
+        <xs:annotation>
+          <xs:documentation>Acetylmethadol</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="9602">
+        <xs:annotation>
+          <xs:documentation>Allylprodine</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="9603">
+        <xs:annotation>
+          <xs:documentation>Alphacetylmethadol except levo-alphacetylmethadol</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="9604">
+        <xs:annotation>
+          <xs:documentation>Alphameprodine</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="9605">
+        <xs:annotation>
+          <xs:documentation>Alphamethadol</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="9606">
+        <xs:annotation>
+          <xs:documentation>Benzethidine</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="9607">
+        <xs:annotation>
+          <xs:documentation>Betacetylmethadol</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="9608">
+        <xs:annotation>
+          <xs:documentation>Betameprodine</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="9609">
+        <xs:annotation>
+          <xs:documentation>Betamethadol</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="9610">
+        <xs:annotation>
+          <xs:documentation>Opium extracts</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="9611">
+        <xs:annotation>
+          <xs:documentation>Betaprodine</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="9612">
+        <xs:annotation>
+          <xs:documentation>Clonitazene</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="9613">
+        <xs:annotation>
+          <xs:documentation>Dextromoramide</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="9615">
+        <xs:annotation>
+          <xs:documentation>Diampromide</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="9616">
+        <xs:annotation>
+          <xs:documentation>Diethylthiambutene</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="9617">
+        <xs:annotation>
+          <xs:documentation>Dimenoxadol</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="9618">
+        <xs:annotation>
+          <xs:documentation>Dimepheptanol</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="9619">
+        <xs:annotation>
+          <xs:documentation>Dimethylthiambutene</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="9620">
+        <xs:annotation>
+          <xs:documentation>Opium fluid extract</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="9621">
+        <xs:annotation>
+          <xs:documentation>Dioxaphetyl butyrate</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="9622">
+        <xs:annotation>
+          <xs:documentation>Dipipanone</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="9623">
+        <xs:annotation>
+          <xs:documentation>Ethylmethylthiambutene</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="9624">
+        <xs:annotation>
+          <xs:documentation>Etonitazene</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="9625">
+        <xs:annotation>
+          <xs:documentation>Etoxeridine</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="9626">
+        <xs:annotation>
+          <xs:documentation>Furethidine</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="9627">
+        <xs:annotation>
+          <xs:documentation>Hydroxypethidine</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="9628">
+        <xs:annotation>
+          <xs:documentation>Ketobemidone</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="9629">
+        <xs:annotation>
+          <xs:documentation>Levomoramide</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="9630">
+        <xs:annotation>
+          <xs:documentation>Opium tincture</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="9631">
+        <xs:annotation>
+          <xs:documentation>Levophenacylmorphan</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="9632">
+        <xs:annotation>
+          <xs:documentation>Morpheridine</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="9633">
+        <xs:annotation>
+          <xs:documentation>Noracymethadol</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="9634">
+        <xs:annotation>
+          <xs:documentation>Norlevorphanol</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="9635">
+        <xs:annotation>
+          <xs:documentation>Normethadone</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="9636">
+        <xs:annotation>
+          <xs:documentation>Norpipanone</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="9637">
+        <xs:annotation>
+          <xs:documentation>Phenadoxone</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="9638">
+        <xs:annotation>
+          <xs:documentation>Phenampromide</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="9639">
+        <xs:annotation>
+          <xs:documentation>Opium, powdered</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="9640">
+        <xs:annotation>
+          <xs:documentation>Opium, granulated</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="9641">
+        <xs:annotation>
+          <xs:documentation>Phenoperidine</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="9642">
+        <xs:annotation>
+          <xs:documentation>Piritramide</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="9643">
+        <xs:annotation>
+          <xs:documentation>Proheptazine</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="9644">
+        <xs:annotation>
+          <xs:documentation>Properidine</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="9645">
+        <xs:annotation>
+          <xs:documentation>Racemoramide</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="9646">
+        <xs:annotation>
+          <xs:documentation>Trimeperidine</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="9647">
+        <xs:annotation>
+          <xs:documentation>Phenomorphan</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="9648">
+        <xs:annotation>
+          <xs:documentation>Levo-alphacetylmethadol</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="9649">
+        <xs:annotation>
+          <xs:documentation>Propiram</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="9650">
+        <xs:annotation>
+          <xs:documentation>Opium poppy</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="9650">
+        <xs:annotation>
+          <xs:documentation>Poppy Straw</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="9652">
+        <xs:annotation>
+          <xs:documentation>Oxymorphone</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="9661">
+        <xs:annotation>
+          <xs:documentation>1-Methyl-4-phenyl-4-propionoxypiperidine</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="9663">
+        <xs:annotation>
+          <xs:documentation>1-(2-Phenylethyl)-4-phenyl-4-acetoxypiperidine</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="9670">
+        <xs:annotation>
+          <xs:documentation>Poppy Straw Concentrate</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="9709">
+        <xs:annotation>
+          <xs:documentation>Pentazocine</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="9715">
+        <xs:annotation>
+          <xs:documentation>Phenazocine</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="9720">
+        <xs:annotation>
+          <xs:documentation>Butorphanol</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="9725">
+        <xs:annotation>
+          <xs:documentation>Eluxadoline</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="9729">
+        <xs:annotation>
+          <xs:documentation>Thiafentanil</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="9730">
+        <xs:annotation>
+          <xs:documentation>Piminodine</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="9732">
+        <xs:annotation>
+          <xs:documentation>Racemethorphan</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="9733">
+        <xs:annotation>
+          <xs:documentation>Racemorphan</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="9737">
+        <xs:annotation>
+          <xs:documentation>Alfentanil</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="9739">
+        <xs:annotation>
+          <xs:documentation>Remifentanil</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="9740">
+        <xs:annotation>
+          <xs:documentation>Sufentanil</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="9743">
+        <xs:annotation>
+          <xs:documentation>Carfentanil</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="9750">
+        <xs:annotation>
+          <xs:documentation>Tilidine</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="9752">
+        <xs:annotation>
+          <xs:documentation>Tramadol (2-[(dimethylamino)methyl]-1-(3-methoxyphenyl)cyclohexanol)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="9780">
+        <xs:annotation>
+          <xs:documentation>Tapentadol</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="9800">
+        <xs:annotation>
+          <xs:documentation>Bezitramide</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="9801">
+        <xs:annotation>
+          <xs:documentation>Fentanyl</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="9802">
+        <xs:annotation>
+          <xs:documentation>Moramide-intermediate</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="9803">
+        <xs:annotation>
+          <xs:documentation>Codeine &amp; isoquinoline alkaloid 90 mg/du</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="9804">
+        <xs:annotation>
+          <xs:documentation>Codeine combination product 90 mg/du</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="9807">
+        <xs:annotation>
+          <xs:documentation>Dihydrocodeine combination product 90 mg/du</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="9808">
+        <xs:annotation>
+          <xs:documentation>Ethylmorphine combination product 15 mg/du</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="9809">
+        <xs:annotation>
+          <xs:documentation>Opium combination product 25 mg/du</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="9810">
+        <xs:annotation>
+          <xs:documentation>Morphine combination product/50 mg/(100 ml or 100 gm)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="9811">
+        <xs:annotation>
+          <xs:documentation>Acryl fentanyl (N-(1-phenethylpiperidin-4-yl)-N-phenylacrylamide)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="9812">
+        <xs:annotation>
+          <xs:documentation>Para-Fluorofentanyl</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="9813">
+        <xs:annotation>
+          <xs:documentation>3-Methylfentanyl</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="9814">
+        <xs:annotation>
+          <xs:documentation>Alpha-methylfentanyl</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="9815">
+        <xs:annotation>
+          <xs:documentation>Acetyl-alpha-methylfentanyl</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="9816">
+        <xs:annotation>
+          <xs:documentation>N-(2-fluorophenyl)-N-(1-phenethylpiperidin-4-yl)propionamide</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="9821">
+        <xs:annotation>
+          <xs:documentation>Acetyl Fentanyl (N-(1-phenethylpiperidin-4-yl)-N-phenylacetamide)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="9822">
+        <xs:annotation>
+          <xs:documentation>Butyryl Fentanyl</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="9823">
+        <xs:annotation>
+          <xs:documentation>Para-fluorobutyryl fentanyl</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="9824">
+        <xs:annotation>
+          <xs:documentation>4-Fluoroisobutyryl fentanyl (N-(4-fluorophenyl)-N-(1-phenethylpiperidin-4-yl)isobutyramide)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="9825">
+        <xs:annotation>
+          <xs:documentation>2-methoxy-N-(1-phenethylpiperidin-4-yl)-N-phenylacetamide</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="9826">
+        <xs:annotation>
+          <xs:documentation>Para-chloroisobutyryl fentanyl</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="9827">
+        <xs:annotation>
+          <xs:documentation>Isobutyryl fentanyl</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="9830">
+        <xs:annotation>
+          <xs:documentation>Beta-hydroxyfentanyl</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="9831">
+        <xs:annotation>
+          <xs:documentation>Beta-hydroxy-3-methylfentanyl</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="9832">
+        <xs:annotation>
+          <xs:documentation>Alpha-methylthiofentanyl</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="9833">
+        <xs:annotation>
+          <xs:documentation>3-Methylthiofentanyl</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="9834">
+        <xs:annotation>
+          <xs:documentation>Furanyl fentanyl (N-(1-phenethylpiperidin-4-yl)-N-phenylfuran-2-carboxamide)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="9835">
+        <xs:annotation>
+          <xs:documentation>Thiofentanyl</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="9836">
+        <xs:annotation>
+          <xs:documentation>Beta-hydroxythiofentanyl</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="9837">
+        <xs:annotation>
+          <xs:documentation>Para-methoxybutyryl fentanyl</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="9838">
+        <xs:annotation>
+          <xs:documentation>Ocfentanil</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="9840">
+        <xs:annotation>
+          <xs:documentation>Valeryl fentanyl</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="9843">
+        <xs:annotation>
+          <xs:documentation>N-(1-phenethylpiperidin-4-yl)-N-phenyltetrahydrofuran-2-carboxamide</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="9845">
+        <xs:annotation>
+          <xs:documentation>Cyclopropyl Fentanyl</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="9847">
+        <xs:annotation>
+          <xs:documentation>Cyclopentyl fentanyl</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="9850">
+        <xs:annotation>
+          <xs:documentation>Fentanyl related-substances as defined in 21 CFR 1308.11(h)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="DrugCodeType">
+    <xs:annotation>
+      <xs:documentation>A data type for drug codes.</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="dea:DrugCodeSimpleType">
+        <xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:element name="DrugCategoryCode" type="dea:DrugCategoryCodeType" substitutionGroup="nc:SubstanceCategoryAbstract" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A drug.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="DrugClassScheduleCode" type="dea:DEAClassScheduleCodeCodeType" substitutionGroup="nc:DrugClassScheduleAbstract" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A class to which the Drug Enforcement Agency (DEA) has assigned the product under the Controlled Substances Act of 1970.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="DrugCode" type="dea:DrugCodeType" substitutionGroup="nc:SubstanceAbstract" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A drug.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+</xs:schema>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema targetNamespace="http://release.niem.gov/niem/adapters/edxl-cap/5.0/" version="1" xml:lang="en-US" xsi:schemaLocation="http://release.niem.gov/niem/appinfo/5.0/ ../utility/appinfo.xsd http://release.niem.gov/niem/conformanceTargets/3.0/ ../utility/conformanceTargets.xsd" ct:conformanceTargets="http://reference.niem.gov/niem/specification/naming-and-design-rules/5.0/#ReferenceSchemaDocument"
+  xmlns:appinfo="http://release.niem.gov/niem/appinfo/5.0/"
+  xmlns:cap="urn:oasis:names:tc:emergency:cap:1.1"
+  xmlns:ct="http://release.niem.gov/niem/conformanceTargets/3.0/"
+  xmlns:edxl-cap="http://release.niem.gov/niem/adapters/edxl-cap/5.0/"
+  xmlns:structures="http://release.niem.gov/niem/structures/5.0/"
+  xmlns:xs="http://www.w3.org/2001/XMLSchema"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <xs:annotation>
+    <xs:documentation>Common Alerting Protocol</xs:documentation>
+  </xs:annotation>
+  <xs:import namespace="http://release.niem.gov/niem/structures/5.0/" schemaLocation="../utility/structures.xsd"/>
+  <xs:import namespace="urn:oasis:names:tc:emergency:cap:1.1" schemaLocation="../external/cap.xsd" appinfo:externalImportIndicator="true">
+    <xs:annotation>
+      <xs:documentation>Common Alerting Protocol (CAP) is a simple but general format for exchanging effective warning messages based on best practices identified in academic research and real-world experience.</xs:documentation>
+    </xs:annotation>
+  </xs:import>
+  <xs:complexType name="AlertAdapterType" appinfo:externalAdapterTypeIndicator="true">
+    <xs:annotation>
+      <xs:documentation>A data type for a simple but general format for exchanging effective warning messages based on best practices identified in academic research and real-world experience.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="structures:ObjectType">
+        <xs:sequence>
+          <xs:element ref="cap:alert" minOccurs="0" maxOccurs="unbounded">
+            <xs:annotation>
+              <xs:documentation>A container for all component parts of the CAP alert message. The container provides basic information about the current message: its purpose, its source and its status, as well as unique identifier for the current message and links to any other, related messages.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="AlertAdapter" type="edxl-cap:AlertAdapterType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A simple but general format for exchanging effective warning messages based on best practices identified in academic research and real-world experience.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+</xs:schema>
