@@ -18,4 +18,6 @@ The following is a summary of the key changes made in this release.  More detail
 
 - **Cyber domain** (new) - Added content supporting Federal Incident Reporting Requirements (FIRR) ([#209](https://github.com/NIEM/NIEM-Releases/issues/209))
 
+- **Emergency Management domain** - Added flood damage claim content from OpenFEMA ([#208](https://github.com/NIEM/NIEM-Releases/issues/208))
+
 - **Military Operations domain** - Added content from the Joint Non-Kinetic Effectiveness (JNKE) IEPD ([#210](https://github.com/NIEM/NIEM-Releases/issues/210))
