@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xs:schema targetNamespace="http://release.niem.gov/niem/domains/cyber/5.1/" version="alpha1" xml:lang="en-US" xsi:schemaLocation="http://release.niem.gov/niem/appinfo/5.0/ ../utility/appinfo.xsd http://release.niem.gov/niem/conformanceTargets/3.0/ ../utility/conformanceTargets.xsd" ct:conformanceTargets="http://reference.niem.gov/niem/specification/naming-and-design-rules/5.0/#ReferenceSchemaDocument"
+<xs:schema targetNamespace="http://release.niem.gov/niem/domains/cyber/5.1/" version="alpha2" xml:lang="en-US" xsi:schemaLocation="http://release.niem.gov/niem/appinfo/5.0/ ../utility/appinfo.xsd http://release.niem.gov/niem/conformanceTargets/3.0/ ../utility/conformanceTargets.xsd" ct:conformanceTargets="http://reference.niem.gov/niem/specification/naming-and-design-rules/5.0/#ReferenceSchemaDocument"
   xmlns:appinfo="http://release.niem.gov/niem/appinfo/5.0/"
   xmlns:ct="http://release.niem.gov/niem/conformanceTargets/3.0/"
   xmlns:cyber="http://release.niem.gov/niem/domains/cyber/5.1/"
@@ -18,6 +18,518 @@
   <xs:import namespace="http://release.niem.gov/niem/niem-core/5.0/" schemaLocation="../niem-core.xsd"/>
   <xs:import namespace="http://release.niem.gov/niem/proxy/niem-xs/5.0/" schemaLocation="../adapters/niem-xs.xsd"/>
   <xs:import namespace="http://release.niem.gov/niem/structures/5.0/" schemaLocation="../utility/structures.xsd"/>
+  <xs:simpleType name="AccessedInformationCodeSimpleType">
+    <xs:annotation>
+      <xs:documentation>A data type for a kind of information that has been or potentially has been accessed, manipulated, destroyed, or rendered unusable as a result of a breach</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="Academic and Professional Background Information">
+        <xs:annotation>
+          <xs:documentation>Academic and Professional Background Information has been accessed, potentially accessed, manipulated, destroyed, or rendered unusable as a result of a breach</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Alias (i.e., username or screenname)">
+        <xs:annotation>
+          <xs:documentation>Alias (i.e., username or screenname) information has been accessed, potentially accessed, manipulated, destroyed, or rendered unusable as a result of a breach</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Alien Registration Number">
+        <xs:annotation>
+          <xs:documentation>Alien Registration Number has been accessed, potentially accessed, manipulated, destroyed, or rendered unusable as a result of a breach</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Business Bank Account Number (sole proprietor)">
+        <xs:annotation>
+          <xs:documentation>Business Bank Account Number (sole proprietor) has been accessed, potentially accessed, manipulated, destroyed, or rendered unusable as a result of a breach</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Business Credit Card Number (sole proprietor)">
+        <xs:annotation>
+          <xs:documentation>Business Credit Card Number (sole proprietor) has been accessed, potentially accessed, manipulated, destroyed, or rendered unusable as a result of a breach</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Business Device Identifiers or Serial Numbers (sole proprietor)">
+        <xs:annotation>
+          <xs:documentation>Business Device Identifiers or Serial Numbers (sole proprietor) have been accessed, potentially accessed, manipulated, destroyed, or rendered unusable as a result of a breach</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Business Email Address">
+        <xs:annotation>
+          <xs:documentation>Business Email Address information has been accessed, potentially accessed, manipulated, destroyed, or rendered unusable as a result of a breach</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Business Financial Information (including loan information)">
+        <xs:annotation>
+          <xs:documentation>Business Financial Information (including loan information) has been accessed, potentially accessed, manipulated, destroyed, or rendered unusable as a result of a breach</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Business Mailing Address (sole proprietor)">
+        <xs:annotation>
+          <xs:documentation>Business Mailing Address (sole proprietor) information has been accessed, potentially accessed, manipulated, destroyed, or rendered unusable as a result of a breach</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Business Mobile Number (sole proprietor)">
+        <xs:annotation>
+          <xs:documentation>Business Mobile Number (sole proprietor) has been accessed, potentially accessed, manipulated, destroyed, or rendered unusable as a result of a breach</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Business Phone or Fax Number (sole proprietor)">
+        <xs:annotation>
+          <xs:documentation>Business Phone or Fax Number (sole proprietor) has been accessed, potentially accessed, manipulated, destroyed, or rendered unusable as a result of a breach</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Business Taxpayer Identification Number (sole proprietor)">
+        <xs:annotation>
+          <xs:documentation>Business Taxpayer Identification Number (sole proprietor) has been accessed, potentially accessed, manipulated, destroyed, or rendered unusable as a result of a breach</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Business Vehicle Identification Number (sole proprietor)">
+        <xs:annotation>
+          <xs:documentation>Business Vehicle Identification Number (sole proprietor) has been accessed, potentially accessed, manipulated, destroyed, or rendered unusable as a result of a breach</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Case Files">
+        <xs:annotation>
+          <xs:documentation>Case Files have been accessed, potentially accessed, manipulated, destroyed, or rendered unusable as a result of a breach</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Cell Tower Records (i.e., logs, user location, time, etc.)">
+        <xs:annotation>
+          <xs:documentation>Cell Tower Record (i.e., logs, user location, time, etc.) has been accessed, potentially accessed, manipulated, destroyed, or rendered unusable as a result of a breach</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Children Information">
+        <xs:annotation>
+          <xs:documentation>Children Information has been accessed, potentially accessed, manipulated, destroyed, or rendered unusable as a result of a breach</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Citizenship">
+        <xs:annotation>
+          <xs:documentation>Citizenship information has been accessed, potentially accessed, manipulated, destroyed, or rendered unusable as a result of a breach</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="City or County of Birth">
+        <xs:annotation>
+          <xs:documentation>City or County of Birth information has been accessed, potentially accessed, manipulated, destroyed, or rendered unusable as a result of a breach</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Civil/Criminal History Information/Police Record">
+        <xs:annotation>
+          <xs:documentation>Civil/Criminal History Information/Police Record has been accessed, potentially accessed, manipulated, destroyed, or rendered unusable as a result of a breach</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Country of Birth">
+        <xs:annotation>
+          <xs:documentation>Country of Birth information has been accessed, potentially accessed, manipulated, destroyed, or rendered unusable as a result of a breach</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Credit History Information">
+        <xs:annotation>
+          <xs:documentation>Credit History Information has been accessed, potentially accessed, manipulated, destroyed, or rendered unusable as a result of a breach</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Credit/Debit Card Number">
+        <xs:annotation>
+          <xs:documentation>Credit/Debit Card Number has been accessed, potentially accessed, manipulated, destroyed, or rendered unusable as a result of a breach</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Criminal Justice Information System (CJIS) suspect information">
+        <xs:annotation>
+          <xs:documentation>Criminal Justice Information System (CJIS) suspect information has been accessed, potentially accessed, manipulated, destroyed, or rendered unusable as a result of a breach</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Date of Birth (Day, Month, Year)">
+        <xs:annotation>
+          <xs:documentation>Date of Birth information has been accessed, potentially accessed, manipulated, destroyed, or rendered unusable as a result of a breach</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Dental Profile">
+        <xs:annotation>
+          <xs:documentation>Dental Profile has been accessed, potentially accessed, manipulated, destroyed, or rendered unusable as a result of a breach</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Department of Defense (DoD) ID Number">
+        <xs:annotation>
+          <xs:documentation>Department of Defense (DoD) ID Number has been accessed, potentially accessed, manipulated, destroyed, or rendered unusable as a result of a breach</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Device Settings or Preferences (i.e., security level, sharing options, ringtones)">
+        <xs:annotation>
+          <xs:documentation>Device Setting or Preference (i.e., security level, sharing options, ringtones) has been accessed, potentially accessed, manipulated, destroyed, or rendered unusable as a result of a breach</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Disability Information">
+        <xs:annotation>
+          <xs:documentation>Disability Information has been accessed, potentially accessed, manipulated, destroyed, or rendered unusable as a result of a breach</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="DNA Sample or Profile">
+        <xs:annotation>
+          <xs:documentation>DNA Sample or Profile has been accessed, potentially accessed, manipulated, destroyed, or rendered unusable as a result of a breach</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="DoD Benefits Number">
+        <xs:annotation>
+          <xs:documentation>DoD Benefits Number has been accessed, potentially accessed, manipulated, destroyed, or rendered unusable as a result of a breach</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Driver’s License Number">
+        <xs:annotation>
+          <xs:documentation>Driver’s License Number has been accessed, potentially accessed, manipulated, destroyed, or rendered unusable as a result of a breach</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Drug Enforcement Administration (DEA) Registration Number">
+        <xs:annotation>
+          <xs:documentation>Drug Enforcement Administration (DEA) Registration Number has been accessed, potentially accessed, manipulated, destroyed, or rendered unusable as a result of a breach</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Education Information">
+        <xs:annotation>
+          <xs:documentation>Education Information has been accessed, potentially accessed, manipulated, destroyed, or rendered unusable as a result of a breach</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Emergency Contact Information">
+        <xs:annotation>
+          <xs:documentation>Emergency Contact Information has been accessed, potentially accessed, manipulated, destroyed, or rendered unusable as a result of a breach</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Employee Identification Number">
+        <xs:annotation>
+          <xs:documentation>Employee Identification Number has been accessed, potentially accessed, manipulated, destroyed, or rendered unusable as a result of a breach</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Employment Information">
+        <xs:annotation>
+          <xs:documentation>Employment Information has been accessed, potentially accessed, manipulated, destroyed, or rendered unusable as a result of a breach</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Ethnicity">
+        <xs:annotation>
+          <xs:documentation>Ethnicity information has been accessed, potentially accessed, manipulated, destroyed, or rendered unusable as a result of a breach</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Eye Color">
+        <xs:annotation>
+          <xs:documentation>Eye Color information has been accessed, potentially accessed, manipulated, destroyed, or rendered unusable as a result of a breach</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Federal Student Aid Number">
+        <xs:annotation>
+          <xs:documentation>Federal Student Aid Number has been accessed, potentially accessed, manipulated, destroyed, or rendered unusable as a result of a breach</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="File/Case Identification (ID) Number">
+        <xs:annotation>
+          <xs:documentation>File/Case Identification (ID) Number has been accessed, potentially accessed, manipulated, destroyed, or rendered unusable as a result of a breach</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Fingerprints">
+        <xs:annotation>
+          <xs:documentation>Fingerprint information has been accessed, potentially accessed, manipulated, destroyed, or rendered unusable as a result of a breach</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Gender">
+        <xs:annotation>
+          <xs:documentation>Gender information has been accessed, potentially accessed, manipulated, destroyed, or rendered unusable as a result of a breach</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Global Positioning System (GPS)/Location Data">
+        <xs:annotation>
+          <xs:documentation>Global Positioning System (GPS)/Location Data has been accessed, potentially accessed, manipulated, destroyed, or rendered unusable as a result of a breach</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Grades">
+        <xs:annotation>
+          <xs:documentation>student grade information has been accessed, potentially accessed, manipulated, destroyed, or rendered unusable as a result of a breach</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Group/Organization Membership">
+        <xs:annotation>
+          <xs:documentation>Group/Organization Membership information has been accessed, potentially accessed, manipulated, destroyed, or rendered unusable as a result of a breach</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Hair Color">
+        <xs:annotation>
+          <xs:documentation>Hair Color information has been accessed, potentially accessed, manipulated, destroyed, or rendered unusable as a result of a breach</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Health Information">
+        <xs:annotation>
+          <xs:documentation>Health Information has been accessed, potentially accessed, manipulated, destroyed, or rendered unusable as a result of a breach</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Health Plan Beneficiary Number">
+        <xs:annotation>
+          <xs:documentation>Health Plan Beneficiary Number has been accessed, potentially accessed, manipulated, destroyed, or rendered unusable as a result of a breach</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Height">
+        <xs:annotation>
+          <xs:documentation>Height information has been accessed, potentially accessed, manipulated, destroyed, or rendered unusable as a result of a breach</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Home Address">
+        <xs:annotation>
+          <xs:documentation>Home Address information has been accessed, potentially accessed, manipulated, destroyed, or rendered unusable as a result of a breach</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Home Phone or Fax Number">
+        <xs:annotation>
+          <xs:documentation>Home Phone or Fax Number has been accessed, potentially accessed, manipulated, destroyed, or rendered unusable as a result of a breach</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Immigration Status">
+        <xs:annotation>
+          <xs:documentation>Immigration Status information has been accessed, potentially accessed, manipulated, destroyed, or rendered unusable as a result of a breach</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Law Enforcement evidence">
+        <xs:annotation>
+          <xs:documentation>law enforcement evidence has been accessed, potentially accessed, manipulated, destroyed, or rendered unusable as a result of a breach</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Law Enforcement Information">
+        <xs:annotation>
+          <xs:documentation>Law Enforcement Information has been accessed, potentially accessed, manipulated, destroyed, or rendered unusable as a result of a breach</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="License Plate Number">
+        <xs:annotation>
+          <xs:documentation>License Plate Number has been accessed, potentially accessed, manipulated, destroyed, or rendered unusable as a result of a breach</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Marital Status">
+        <xs:annotation>
+          <xs:documentation>Marital Status information has been accessed, potentially accessed, manipulated, destroyed, or rendered unusable as a result of a breach</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Medical/Health Information">
+        <xs:annotation>
+          <xs:documentation>Medical/Health Information has been accessed, potentially accessed, manipulated, destroyed, or rendered unusable as a result of a breach</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Mental Health Information">
+        <xs:annotation>
+          <xs:documentation>Mental Health Information has been accessed, potentially accessed, manipulated, destroyed, or rendered unusable as a result of a breach</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Military Service Information">
+        <xs:annotation>
+          <xs:documentation>Military Service Information has been accessed, potentially accessed, manipulated, destroyed, or rendered unusable as a result of a breach</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Mother’s Maiden Name">
+        <xs:annotation>
+          <xs:documentation>Mother’s Maiden Name has been accessed, potentially accessed, manipulated, destroyed, or rendered unusable as a result of a breach</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Name (including nicknames)">
+        <xs:annotation>
+          <xs:documentation>Name (including nicknames) information has been accessed, potentially accessed, manipulated, destroyed, or rendered unusable as a result of a breach</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Nationality">
+        <xs:annotation>
+          <xs:documentation>Nationality information has been accessed, potentially accessed, manipulated, destroyed, or rendered unusable as a result of a breach</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Network Communications Data">
+        <xs:annotation>
+          <xs:documentation>Network Communications Data has been accessed, potentially accessed, manipulated, destroyed, or rendered unusable as a result of a breach</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Other">
+        <xs:annotation>
+          <xs:documentation>Other information has been accessed, potentially accessed, manipulated, destroyed, or rendered unusable as a result of a breach</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Palm Prints">
+        <xs:annotation>
+          <xs:documentation>Palm Prints information has been accessed, potentially accessed, manipulated, destroyed, or rendered unusable as a result of a breach</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Passport Number">
+        <xs:annotation>
+          <xs:documentation>Passport Number has been accessed, potentially accessed, manipulated, destroyed, or rendered unusable as a result of a breach</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Patient ID Number">
+        <xs:annotation>
+          <xs:documentation>Patient ID Number has been accessed, potentially accessed, manipulated, destroyed, or rendered unusable as a result of a breach</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Patient ID Number">
+        <xs:annotation>
+          <xs:documentation>Patient ID Number has been accessed, potentially accessed, manipulated, destroyed, or rendered unusable as a result of a breach</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Personal Bank Account Number">
+        <xs:annotation>
+          <xs:documentation>Personal Bank Account Number has been accessed, potentially accessed, manipulated, destroyed, or rendered unusable as a result of a breach</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Personal Device Identifiers or Serial Numbers">
+        <xs:annotation>
+          <xs:documentation>Personal Device Identifiers or Serial Numbers have been accessed, potentially accessed, manipulated, destroyed, or rendered unusable as a result of a breach</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Personal Email Address">
+        <xs:annotation>
+          <xs:documentation>Personal Email Address information has been accessed, potentially accessed, manipulated, destroyed, or rendered unusable as a result of a breach</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Personal Financial Information (including loan information)">
+        <xs:annotation>
+          <xs:documentation>Personal Financial Information (including loan information) has been accessed, potentially accessed, manipulated, destroyed, or rendered unusable as a result of a breach</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Personal Mobile Number">
+        <xs:annotation>
+          <xs:documentation>Personal Mobile Number has been accessed, potentially accessed, manipulated, destroyed, or rendered unusable as a result of a breach</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Personnel Files">
+        <xs:annotation>
+          <xs:documentation>Personnel Files have been accessed, potentially accessed, manipulated, destroyed, or rendered unusable as a result of a breach</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Photos">
+        <xs:annotation>
+          <xs:documentation>Photo has been accessed, potentially accessed, manipulated, destroyed, or rendered unusable as a result of a breach</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Professional License Number">
+        <xs:annotation>
+          <xs:documentation>Professional License Number has been accessed, potentially accessed, manipulated, destroyed, or rendered unusable as a result of a breach</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Professional/personal references">
+        <xs:annotation>
+          <xs:documentation>Professional/personal references information has been accessed, potentially accessed, manipulated, destroyed, or rendered unusable as a result of a breach</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Protected Critical Infrastructure Information (PCII)">
+        <xs:annotation>
+          <xs:documentation>Protected Critical Infrastructure Information (PCII) has been accessed, potentially accessed, manipulated, destroyed, or rendered unusable as a result of a breach</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Race">
+        <xs:annotation>
+          <xs:documentation>Race information has been accessed, potentially accessed, manipulated, destroyed, or rendered unusable as a result of a breach</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Religion/Religious Preference">
+        <xs:annotation>
+          <xs:documentation>Religion/Religious Preference information has been accessed, potentially accessed, manipulated, destroyed, or rendered unusable as a result of a breach</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Resume or Curriculum Vitae">
+        <xs:annotation>
+          <xs:documentation>Resume or Curriculum Vitae information has been accessed, potentially accessed, manipulated, destroyed, or rendered unusable as a result of a breach</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Retina/Iris Scans">
+        <xs:annotation>
+          <xs:documentation>Retina/Iris Scans information has been accessed, potentially accessed, manipulated, destroyed, or rendered unusable as a result of a breach</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Scars, Marks, Tattoos">
+        <xs:annotation>
+          <xs:documentation>Scars, Marks, Tattoos information has been accessed, potentially accessed, manipulated, destroyed, or rendered unusable as a result of a breach</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Security Clearance/Background Check Information">
+        <xs:annotation>
+          <xs:documentation>Security Clearance/Background Check Information has been accessed, potentially accessed, manipulated, destroyed, or rendered unusable as a result of a breach</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Sexual Orientation">
+        <xs:annotation>
+          <xs:documentation>Sexual Orientation information has been accessed, potentially accessed, manipulated, destroyed, or rendered unusable as a result of a breach</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Signatures">
+        <xs:annotation>
+          <xs:documentation>Signature information has been accessed, potentially accessed, manipulated, destroyed, or rendered unusable as a result of a breach</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Social Security Number">
+        <xs:annotation>
+          <xs:documentation>Social Security Number has been accessed, potentially accessed, manipulated, destroyed, or rendered unusable as a result of a breach</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Spouse Information">
+        <xs:annotation>
+          <xs:documentation>Spouse Information has been accessed, potentially accessed, manipulated, destroyed, or rendered unusable as a result of a breach</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Student ID Number">
+        <xs:annotation>
+          <xs:documentation>Student ID Number has been accessed, potentially accessed, manipulated, destroyed, or rendered unusable as a result of a breach</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Taxpayer Identification Number">
+        <xs:annotation>
+          <xs:documentation>Taxpayer Identification Number has been accessed, potentially accessed, manipulated, destroyed, or rendered unusable as a result of a breach</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Taxpayer Information/Tax Return Information">
+        <xs:annotation>
+          <xs:documentation>Taxpayer Information/Tax Return Information has been accessed, potentially accessed, manipulated, destroyed, or rendered unusable as a result of a breach</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Truncated or Partial Social Security Number">
+        <xs:annotation>
+          <xs:documentation>Truncated or Partial Social Security Number has been accessed, potentially accessed, manipulated, destroyed, or rendered unusable as a result of a breach</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Vascular Scans">
+        <xs:annotation>
+          <xs:documentation>Vascular Scans information has been accessed, potentially accessed, manipulated, destroyed, or rendered unusable as a result of a breach</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Vehicle Identification Number">
+        <xs:annotation>
+          <xs:documentation>Vehicle Identification Number has been accessed, potentially accessed, manipulated, destroyed, or rendered unusable as a result of a breach</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Video Recording">
+        <xs:annotation>
+          <xs:documentation>Video Recording has been accessed, potentially accessed, manipulated, destroyed, or rendered unusable as a result of a breach</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Voice/Audio Recording">
+        <xs:annotation>
+          <xs:documentation>Voice/Audio Recording has been accessed, potentially accessed, manipulated, destroyed, or rendered unusable as a result of a breach</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Weight">
+        <xs:annotation>
+          <xs:documentation>Weight information has been accessed, potentially accessed, manipulated, destroyed, or rendered unusable as a result of a breach</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Workers’ Compensation Information">
+        <xs:annotation>
+          <xs:documentation>Workers’ Compensation Information has been accessed, potentially accessed, manipulated, destroyed, or rendered unusable as a result of a breach</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Zip Code">
+        <xs:annotation>
+          <xs:documentation>Zip Code information has been accessed, potentially accessed, manipulated, destroyed, or rendered unusable as a result of a breach</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="AccessedInformationCodeType">
+    <xs:annotation>
+      <xs:documentation>A data type for a kind of information that has been or potentially has been accessed, manipulated, destroyed, or rendered unusable as a result of a breach</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="cyber:AccessedInformationCodeSimpleType">
+        <xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
   <xs:complexType name="AttackPatternType">
     <xs:annotation>
       <xs:documentation>A data type for a tactic, technique, or procedure (TTP) used in an attempt to compromise targets</xs:documentation>
@@ -109,14 +621,356 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
+  <xs:simpleType name="BreachAccessedQuantityCategoryCodeSimpleType">
+    <xs:annotation>
+      <xs:documentation>A data type for a statement of whether information has been accessed or potentially accessed by a non-authorized user</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="Confirmed">
+        <xs:annotation>
+          <xs:documentation>There was confirmed access of Personally Identifiable Information by a non-authorized user</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Potential">
+        <xs:annotation>
+          <xs:documentation>There was a potential access of Personally Identifiable Information by a non-authorized user</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="BreachAccessedQuantityCategoryCodeType">
+    <xs:annotation>
+      <xs:documentation>A data type for a statement of whether information has been accessed or potentially accessed by a non-authorized user</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="cyber:BreachAccessedQuantityCategoryCodeSimpleType">
+        <xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:simpleType name="BreachAlteredQuantityCategoryCodeSimpleType">
+    <xs:annotation>
+      <xs:documentation>A data type for a statement of whether the count of information accessed by a non-authorized user is an approximate or known one</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="">
+        <xs:annotation>
+          <xs:documentation>There was a potential access of information by a non-authorized user</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="">
+        <xs:annotation>
+          <xs:documentation>There was confirmed access of information by a non-authorized user</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Approximate">
+        <xs:annotation>
+          <xs:documentation>The count of information accessed by a non-authorized user is an approximate one</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Known">
+        <xs:annotation>
+          <xs:documentation>The count of information accessed by a non-authorized user is a known one</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="BreachAlteredQuantityCategoryCodeType">
+    <xs:annotation>
+      <xs:documentation>A data type for a statement of whether the count of information accessed by a non-authorized user is an approximate or known one</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="cyber:BreachAlteredQuantityCategoryCodeSimpleType">
+        <xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:simpleType name="BreachCategoryCodeSimpleType">
+    <xs:annotation>
+      <xs:documentation>A data type for a kind of information accessed or potentially accessed in a compromise</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="Children's Online Privacy Protection Act (COPPA) information">
+        <xs:annotation>
+          <xs:documentation>A breach of Children's Online Privacy Protection Act (COPPA) information as a result of a cyber incident</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Criminal Justice Information System (CJIS) protected information">
+        <xs:annotation>
+          <xs:documentation>A breach of Criminal Justice Information System (CJIS) protected information as a result of a cyber incident</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Cyber-related Personally Identifiable Information (PII)">
+        <xs:annotation>
+          <xs:documentation>A breach of Personally Identifiable Information as a result of a cyber incident</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Family Educational Rights and Privacy Act (FERPA) information">
+        <xs:annotation>
+          <xs:documentation>A breach of Family Educational Rights and Privacy Act (FERPA) information as a result of a cyber incident</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Gramm-Leach-Bliley Act protected information">
+        <xs:annotation>
+          <xs:documentation>A breach of Gramm-Leach-Bliley Act protected information as a result of a cyber incident</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Hybrid">
+        <xs:annotation>
+          <xs:documentation>A breach of Personally Identifiable Information as a result of both a cyber and non-cyber incident</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Jurisdiction specifically protected information">
+        <xs:annotation>
+          <xs:documentation>A breach of tribally, locally, and/or regionally protected  information as a result of a cyber incident</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Non-Cyber PII">
+        <xs:annotation>
+          <xs:documentation>A breach of Personally Identifiable Information as a result of a non-cyber incident</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Other">
+        <xs:annotation>
+          <xs:documentation>a breach of information as a result of a cyber incident</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Payment Card Industry (PCI) protected information">
+        <xs:annotation>
+          <xs:documentation>A breach of Payment Card Industry Data Security Standard (PCI DSS) protected information as a result of a cyber incident</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Protected Critical Infrastructure Information (PCII)">
+        <xs:annotation>
+          <xs:documentation>A breach of Protected Critical Infrastructure Information (PCII) information as a result of a cyber incident</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Protected Health Information (PHI)">
+        <xs:annotation>
+          <xs:documentation>A breach of Protected Health  Information as a result of a cyber incident</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Tax information - federal or other">
+        <xs:annotation>
+          <xs:documentation>A breach of protected tax information as a result of a cyber incident</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="BreachCategoryCodeType">
+    <xs:annotation>
+      <xs:documentation>A data type for a kind of information accessed or potentially accessed in a breach</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="cyber:BreachCategoryCodeSimpleType">
+        <xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:simpleType name="BreachClassificationCategoryCodeSimpleType">
+    <xs:annotation>
+      <xs:documentation>A data type for a kind of category of information that has been or potentially has been accessed, manipulated, destroyed, or rendered unusable as a result of a breach</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="Biographical Information">
+        <xs:annotation>
+          <xs:documentation>Biographical Information has been accessed, potentially accessed, manipulated, destroyed, or rendered unusable as a result of a breach</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Biometrics, Distinguishing Features, and Characteristics">
+        <xs:annotation>
+          <xs:documentation>Biometrics, Distinguishing Features, and Characteristics information has been accessed, potentially accessed, manipulated, destroyed, or rendered unusable as a result of a breach</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Children's Online Privacy Protection Act (COPPA) information">
+        <xs:annotation>
+          <xs:documentation>Minor’s information protected under the Children's Online Privacy Protection Act (COPPA) that has been or potentially has been accessed, potentially accessed, manipulated, destroyed, or rendered unusable as a result of a compromise</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Credit Card Information">
+        <xs:annotation>
+          <xs:documentation>Credit Card or other Information protected under the Payment Card Industry Data Security Standard (PCI DSS) that has been or potentially has been accessed, potentially accessed, manipulated, destroyed, or rendered unusable as a result of a compromise</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Device Information">
+        <xs:annotation>
+          <xs:documentation>Device Information has been accessed, potentially accessed, manipulated, destroyed, or rendered unusable as a result of a breach</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Evidence Information">
+        <xs:annotation>
+          <xs:documentation>Evidence in a law enforcement investigation that has been or potentially has been accessed, potentially accessed, manipulated, destroyed, or rendered unusable as a result of a compromise</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Financial Information">
+        <xs:annotation>
+          <xs:documentation>Financial Information protected under Gramm-Leach-Bliley Act that has been or potentially has been accessed, potentially accessed, manipulated, destroyed, or rendered unusable as a result of a compromise</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Identifying Numbers">
+        <xs:annotation>
+          <xs:documentation>Identifying Numbers have been accessed, potentially accessed, manipulated, destroyed, or rendered unusable as a result of a breach</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Jurisdiction Specific protected information">
+        <xs:annotation>
+          <xs:documentation>Information protected by tribal, regional, and/or local laws that has been or potentially has been accessed, potentially accessed, manipulated, destroyed, or rendered unusable as a result of a compromise</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Medical and Emergency Information">
+        <xs:annotation>
+          <xs:documentation>Medical and Emergency Information has been accessed, potentially accessed, manipulated, destroyed, or rendered unusable as a result of a breach</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Other Specific Information or File Types">
+        <xs:annotation>
+          <xs:documentation>Other Specific Information or File Types have been accessed, potentially accessed, manipulated, destroyed, or rendered unusable as a result of a breach</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Protected Critical Infrastructure Information (PCII)">
+        <xs:annotation>
+          <xs:documentation>Protected Critical Infrastructure Information (PCII) has been accessed, potentially accessed, manipulated, destroyed, or rendered unusable as a result of a breach</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Protected Health Information (PHI)">
+        <xs:annotation>
+          <xs:documentation>Medical and Emergency Information that has been or potentially has been accessed, potentially accessed, manipulated, destroyed, or rendered unusable as a result of a compromise</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Student Information">
+        <xs:annotation>
+          <xs:documentation>Student grade information protected under Family Educational Rights and Privacy Act (FERPA) that has been or potentially has been accessed, potentially accessed, manipulated, destroyed, or rendered unusable as a result of a compromise</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Suspect identitying information">
+        <xs:annotation>
+          <xs:documentation>Criminal Justice Information System protected information that has been or potentially has been accessed, potentially accessed, manipulated, destroyed, or rendered unusable as a result of a compromise</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Tax Information">
+        <xs:annotation>
+          <xs:documentation>Tax Information that has been or potentially has been accessed, potentially accessed, manipulated, destroyed, or rendered unusable as a result of a compromise</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="BreachClassificationCategoryCodeType">
+    <xs:annotation>
+      <xs:documentation>A data type for a kind of category of information that has been or potentially has been accessed, manipulated, destroyed, or rendered unusable as a result of a breach</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="cyber:BreachClassificationCategoryCodeSimpleType">
+        <xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:simpleType name="BreachEffectCodeSimpleType">
+    <xs:annotation>
+      <xs:documentation>A data type for a kind of effect on information resulting from a breach</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="Compromise Flag">
+        <xs:annotation>
+          <xs:documentation>Unauthorized access of Information was due to compromise</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Loss 100000 or More People">
+        <xs:annotation>
+          <xs:documentation>Information for 100,000 or more people was exfiltrated, modified, deleted, or compromised</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Loss Of Control Flag">
+        <xs:annotation>
+          <xs:documentation>Unauthorized access of Information was due to loss of control</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Unauthorized Access">
+        <xs:annotation>
+          <xs:documentation>Information was accessed without authorization</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Unauthorized Acquisition Flag">
+        <xs:annotation>
+          <xs:documentation>Unauthorized access of Information was due to unauthorized acquisition</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Unauthorized Disclosure Flag">
+        <xs:annotation>
+          <xs:documentation>Unauthorized access of Information was due to unauthorized disclosure</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Unauthorized Person">
+        <xs:annotation>
+          <xs:documentation>Information was accessed by a person other than an authorized user</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Unauthorized Purpose">
+        <xs:annotation>
+          <xs:documentation>Information was accessed for an unauthorized purpose</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="BreachEffectCodeType">
+    <xs:annotation>
+      <xs:documentation>A data type for a kind of effect on information resulting from a breach</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="cyber:BreachEffectCodeSimpleType">
+        <xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="BreachEffectType">
+    <xs:annotation>
+      <xs:documentation>A data type for an effect of a breach of information</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="structures:ObjectType">
+        <xs:sequence>
+          <xs:element ref="cyber:BreachAccessedQuantity" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="cyber:BreachAccessedQuantityCategoryCode" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="cyber:BreachAlteredQuantity" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="cyber:BreachAlteredQuantityCategoryCode" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="cyber:BreachEffectCode" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="cyber:BreachEffectAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
   <xs:simpleType name="BreachNotificationMethodCodeSimpleType">
     <xs:annotation>
       <xs:documentation>A data type for a method by which an individual is notified of a breach</xs:documentation>
     </xs:annotation>
     <xs:restriction base="xs:token">
+      <xs:enumeration value="Automated Machine-to-Machine Method">
+        <xs:annotation>
+          <xs:documentation>An entity was notified of a breach via an automated machine-to-machine method (e.g. STIX/TAXII)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
       <xs:enumeration value="Email">
         <xs:annotation>
           <xs:documentation>An entity was notified of a breach via email</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Hybrid">
+        <xs:annotation>
+          <xs:documentation>An entity was notified of a breach via a combination of methods.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="In-person">
+        <xs:annotation>
+          <xs:documentation>An entity was notified of a breach in-person.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Non-verbal telecommunications platform">
+        <xs:annotation>
+          <xs:documentation>An entity was notified of a breach via a non-verbal telecommunications platform (e.g. Slack, threat intelligence platform, etc.)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Online reporting form">
+        <xs:annotation>
+          <xs:documentation>An entity was notified of a breach via an online reporting form</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
       <xs:enumeration value="Other">
@@ -132,6 +986,11 @@
       <xs:enumeration value="SMS">
         <xs:annotation>
           <xs:documentation>An entity was notified of a breach via SMS</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Telephone call">
+        <xs:annotation>
+          <xs:documentation>An entity was notified of a breach via a telephone call</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
       <xs:enumeration value="Verbal">
@@ -176,6 +1035,20 @@
           <xs:element ref="cyber:BreachIndividualsNotifiedIndicator" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="cyber:BreachNotificationMethod" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="cyber:BreachNotificationAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="BreachObservedDataType">
+    <xs:annotation>
+      <xs:documentation>A data type for information that has been observed on a cybersecurity related entity</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="structures:ObjectType">
+        <xs:sequence>
+          <xs:element ref="cyber:ObservationPublicInternetIndicator" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="cyber:ObservedData" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="cyber:BreachObservedDataAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -233,19 +1106,19 @@
   </xs:complexType>
   <xs:complexType name="BreachType">
     <xs:annotation>
-      <xs:documentation>A data type for information pertaining to a loss of control, compromise, unauthorized access, unauthorized disclosure, unauthorized acquisition of a system, system component(s), data, or process by an unauthorized user or for an unauthorized purpose</xs:documentation>
+      <xs:documentation>A data type for information pertaining to a loss of control, compromise, unauthorized access, unauthorized disclosure, unauthorized acquisition of a system, system component(s), data, or process(es)</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
       <xs:extension base="structures:ObjectType">
         <xs:sequence>
-          <xs:element ref="cyber:PIIBreachCategoryCode" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="cyber:PIIClassificationCategoryCode" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="cyber:PIICategoryCode" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="cyber:PIIEffect" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="cyber:BreachCategoryCode" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="cyber:BreachClassificationCategoryCode" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="cyber:AccessedInformationCode" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="cyber:BreachEffect" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="cyber:BreachNotification" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="cyber:BreachRemediationService" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="cyber:BreachExposedFile" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="cyber:PIIObservedData" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="cyber:BreachObservedData" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="cyber:BreachAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
       </xs:extension>
@@ -262,6 +1135,22 @@
           <xs:element ref="cyber:ClassifiedInformationExposureSystemName" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="cyber:ClassifiedInformationExposureCauseDescriptionText" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="cyber:ClassifiedInformationExposureAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="CommonVulnerabilityEnumerationType">
+    <xs:annotation>
+      <xs:documentation>A data type for a CommonVulnerabilityEnumeration record</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="structures:ObjectType">
+        <xs:sequence>
+          <xs:element ref="cyber:CommonVulnerabilityEnumerationID" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="cyber:CommonVulnerabilityEnumerationDescriptionText" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="cyber:CommonVulnerabilityScoringSystemScoreNumeric" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="cyber:VulnerabilityRemoteCodeExecutableIndicator" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="cyber:CommonVulnerabilityEnumerationAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -395,6 +1284,11 @@
           <xs:element ref="ip:Sector" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:ContactInformation" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="nc:Organization" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="cyber:SignificantIncident" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="cyber:DeclarationOfEmergency" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="cyber:CyberVulnerability" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="cyber:CyberInsuranceClaim" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="cyber:IncidentImpactedPlatform" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="cyber:CyberIncidentAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
       </xs:extension>
@@ -452,6 +1346,24 @@
           <xs:element ref="cyber:TrafficLightProtocolCode" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="cyber:KillChainPhase" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="cyber:CyberIndicatorAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="CyberInsuranceClaimType">
+    <xs:annotation>
+      <xs:documentation>A data type for cyber insurance</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="structures:ObjectType">
+        <xs:sequence>
+          <xs:element ref="nc:Entity" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="cyber:InsuranceClaimFiledIndicator" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="cyber:InsuranceResponseIndicator" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="cyber:InsuranceClaimResponseCategoryCode" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="cyber:InsuranceResponseShareIndicator" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="cyber:InsuranceResponseSharingDescriptionText" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="cyber:CyberInsuranceClaimAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -607,6 +1519,21 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
+  <xs:complexType name="CyberVulnerabilityType">
+    <xs:annotation>
+      <xs:documentation>A data type for a weakness that can be exploited by a threat actor</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="structures:ObjectType">
+        <xs:sequence>
+          <xs:element ref="cyber:VulnerabilityIsKnownIndicator" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="cyber:VulnerabilityIsPublicIndicator" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="cyber:CommonVulnerabilityEnumeration" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="cyber:CyberVulnerabilityAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
   <xs:complexType name="DataClassificationAppealType">
     <xs:annotation>
       <xs:documentation>A data type for an appeal or challenge related to the security classification of data</xs:documentation>
@@ -633,6 +1560,22 @@
           <xs:element ref="cyber:DataClassificationReferenceDescriptionText" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="cyber:DataClassificationAppeal" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="cyber:DataClassificationAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="DeclarationOfEmergencyType">
+    <xs:annotation>
+      <xs:documentation>A data type for the formal Declaration of an Emergency</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="structures:ObjectType">
+        <xs:sequence>
+          <xs:element ref="cyber:DeclarationOfEmergencyDesignator" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="cyber:ResourceDeploymentReasonText" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:StartDate" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:EndDate" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="cyber:DeclarationOfEmergencyAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -840,6 +1783,11 @@
       <xs:documentation>A data type for a kind of assistance required to respond to an incident</xs:documentation>
     </xs:annotation>
     <xs:restriction base="xs:token">
+      <xs:enumeration value="Hybrid">
+        <xs:annotation>
+          <xs:documentation>Remote and on-site assistance required with the incident</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
       <xs:enumeration value="None">
         <xs:annotation>
           <xs:documentation>No assistance required with the incident</xs:documentation>
@@ -878,7 +1826,26 @@
           <xs:element ref="cyber:IncidentAssistanceRequiredCategoryCode" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="cyber:IncidentLogShareIndicator" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="cyber:IncidentLogAvailableIndicator" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="cyber:IncidentLogDescriptionText" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="cyber:NetworkMapAvailableIndicator" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="cyber:IncidentAssistanceAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="IncidentComplianceDriverType">
+    <xs:annotation>
+      <xs:documentation>A data type for mandatory information reporting to an entity after an incident</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="structures:ObjectType">
+        <xs:sequence>
+          <xs:element ref="cyber:IncidentReportedComplianceDriverIndicator" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="cyber:ComplianceDriverReportedToEntityDescriptionText" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="cyber:ComplianceDriverViolatedText" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="cyber:ComplianceDriverReportedDate" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="cyber:BreachNotificationMethodCode" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="cyber:IncidentComplianceDriverAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -1055,6 +2022,18 @@
       </xs:extension>
     </xs:simpleContent>
   </xs:complexType>
+  <xs:complexType name="IncidentImpactedPlatformType">
+    <xs:annotation>
+      <xs:documentation>A data type for a platform impacted by the incident</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="structures:ObjectType">
+        <xs:sequence>
+          <xs:element ref="cyber:IncidentImpactedPlatformAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
   <xs:complexType name="IncidentInfectedDeviceType">
     <xs:annotation>
       <xs:documentation>A data type for the kind of device infected by a cyber incident</xs:documentation>
@@ -1136,6 +2115,7 @@
         <xs:sequence>
           <xs:element ref="cyber:IncidentNotifiedEntityCategoryCode" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="cyber:IncidentNotifiedEntityOtherDescriptionText" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="cyber:IncidentComplianceDriver" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="cyber:IncidentNotificationAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
       </xs:extension>
@@ -1146,14 +2126,34 @@
       <xs:documentation>A data type for a kind of entity notified of an incident</xs:documentation>
     </xs:annotation>
     <xs:restriction base="xs:token">
+      <xs:enumeration value="Attorney General Notified Flag">
+        <xs:annotation>
+          <xs:documentation>Attorney General has been notified of the incident</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
       <xs:enumeration value="Information Owners Notified Flag">
         <xs:annotation>
           <xs:documentation>Information Owner has been notified of the incident</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
+      <xs:enumeration value="Information Sharing and Analysis Center / Organization (ISAC / ISAO) Notified Flag">
+        <xs:annotation>
+          <xs:documentation>ISAC or ISAO has been notified of the incident</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
       <xs:enumeration value="Inspector General Notified Flag">
         <xs:annotation>
           <xs:documentation>Inspector General has been notified of the incident</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Insurance Company Notified Flag">
+        <xs:annotation>
+          <xs:documentation>Insurance Company has been notified of the incident</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Law Enforcement Notified Flag">
+        <xs:annotation>
+          <xs:documentation>Law Enforcement has been notified of the incident</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
       <xs:enumeration value="Legal Counsel Notified Flag">
@@ -1164,6 +2164,11 @@
       <xs:enumeration value="Other Notified Flag">
         <xs:annotation>
           <xs:documentation>A previously unspecified entity have been notified of the incident</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Political Leadership Notified Flag">
+        <xs:annotation>
+          <xs:documentation>Political Leadership has been notified of the incident</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
       <xs:enumeration value="Privacy Officials Notified Flag">
@@ -1179,6 +2184,11 @@
       <xs:enumeration value="System Owners Notified Flag">
         <xs:annotation>
           <xs:documentation>System Owner has been notified of the incident</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Vendor Notified Flag">
+        <xs:annotation>
+          <xs:documentation>Vendor has been notified of the incident</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
     </xs:restriction>
@@ -1380,8 +2390,9 @@
         <xs:sequence>
           <xs:element ref="nc:SystemName" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="cyber:IncidentSystemImpactDescriptionText" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="cyber:FISMASystemCategoryName" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="cyber:SystemCategoryName" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="cyber:IncidentSystemJeopardyCode" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="cyber:FISMAIndicator" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="cyber:IncidentSystemImpactAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
       </xs:extension>
@@ -1474,6 +2485,43 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
+  <xs:simpleType name="InsuranceClaimResponseCategoryCodeSimpleType">
+    <xs:annotation>
+      <xs:documentation>A data type for a kind of assistance provided by cyber insurance company</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="Hybrid">
+        <xs:annotation>
+          <xs:documentation>Remote and onsite assistance provided by the insurance company for this incident</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="None">
+        <xs:annotation>
+          <xs:documentation>No assistance provided by the insurance company for this incident</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="On-site">
+        <xs:annotation>
+          <xs:documentation>on-site assistance provided by the insurance company for this incident</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Remote">
+        <xs:annotation>
+          <xs:documentation>Remote assistance provided by the insurance company for this incident</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="InsuranceClaimResponseCategoryCodeType">
+    <xs:annotation>
+      <xs:documentation>A data type for a kind of assistance provided by cyber insurance company</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="cyber:InsuranceClaimResponseCategoryCodeSimpleType">
+        <xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
   <xs:complexType name="KillChainPhaseType">
     <xs:annotation>
       <xs:documentation>A data type for a phase in a kill chain, which describes the various phases an attacker may undertake in order to achieve their objectives</xs:documentation>
@@ -1511,6 +2559,7 @@
         <xs:sequence>
           <xs:element ref="cyber:MalwareName" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="cyber:MalwareDescriptionText" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="cyber:MalwareAliasName" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="cyber:MalwareAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
       </xs:extension>
@@ -1588,719 +2637,6 @@
       </xs:extension>
     </xs:simpleContent>
   </xs:complexType>
-  <xs:simpleType name="PIIAccessedQuantityCategoryCodeSimpleType">
-    <xs:annotation>
-      <xs:documentation>A data type for a statement of whether Personally Identifiable Information has been accessed or potentially accessed by a non-authorized user</xs:documentation>
-    </xs:annotation>
-    <xs:restriction base="xs:token">
-      <xs:enumeration value="Confirmed">
-        <xs:annotation>
-          <xs:documentation>There was confirmed access of Personally Identifiable Information by a non-authorized user</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="Potential">
-        <xs:annotation>
-          <xs:documentation>There was a potential access of Personally Identifiable Information by a non-authorized user</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-    </xs:restriction>
-  </xs:simpleType>
-  <xs:complexType name="PIIAccessedQuantityCategoryCodeType">
-    <xs:annotation>
-      <xs:documentation>A data type for a statement of whether Personally Identifiable Information has been accessed or potentially accessed by a non-authorized user</xs:documentation>
-    </xs:annotation>
-    <xs:simpleContent>
-      <xs:extension base="cyber:PIIAccessedQuantityCategoryCodeSimpleType">
-        <xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
-      </xs:extension>
-    </xs:simpleContent>
-  </xs:complexType>
-  <xs:simpleType name="PIIAlteredQuantityCategoryCodeSimpleType">
-    <xs:annotation>
-      <xs:documentation>A data type for a statement of whether the count of Personally Identifiable Information accessed by a non-authorized user is an approximate or known one</xs:documentation>
-    </xs:annotation>
-    <xs:restriction base="xs:token">
-      <xs:enumeration value="Approximate">
-        <xs:annotation>
-          <xs:documentation>The count of Personally Identifiable Information accessed by a non-authorized user is an approximate one</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="Known">
-        <xs:annotation>
-          <xs:documentation>The count of Personally Identifiable Information accessed by a non-authorized user is a known one</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-    </xs:restriction>
-  </xs:simpleType>
-  <xs:complexType name="PIIAlteredQuantityCategoryCodeType">
-    <xs:annotation>
-      <xs:documentation>A data type for a statement of whether the count of Personally Identifiable Information accessed by a non-authorized user is an approximate or known one</xs:documentation>
-    </xs:annotation>
-    <xs:simpleContent>
-      <xs:extension base="cyber:PIIAlteredQuantityCategoryCodeSimpleType">
-        <xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
-      </xs:extension>
-    </xs:simpleContent>
-  </xs:complexType>
-  <xs:simpleType name="PIIBreachCategoryCodeSimpleType">
-    <xs:annotation>
-      <xs:documentation>A data type for a kind of Personally Identifiable Information data accessed or potentially accessed in the breach</xs:documentation>
-    </xs:annotation>
-    <xs:restriction base="xs:token">
-      <xs:enumeration value="Both">
-        <xs:annotation>
-          <xs:documentation>A breach of Personally Identifiable Information as a result of both a cyber and non-cyber incident</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="Cyber-related Personally Identifiable Information (PII)">
-        <xs:annotation>
-          <xs:documentation>A breach of Personally Identifiable Information as a result of a cyber incident</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="Non-Cyber PII">
-        <xs:annotation>
-          <xs:documentation>A breach of Personally Identifiable Information as a result of a non-cyber incident</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-    </xs:restriction>
-  </xs:simpleType>
-  <xs:complexType name="PIIBreachCategoryCodeType">
-    <xs:annotation>
-      <xs:documentation>A data type for a kind of Personally Identifiable Information data accessed or potentially accessed in the breach</xs:documentation>
-    </xs:annotation>
-    <xs:simpleContent>
-      <xs:extension base="cyber:PIIBreachCategoryCodeSimpleType">
-        <xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
-      </xs:extension>
-    </xs:simpleContent>
-  </xs:complexType>
-  <xs:simpleType name="PIICategoryCodeSimpleType">
-    <xs:annotation>
-      <xs:documentation>A data type for a kind of Personally Identifiable Information that has been accessed, potentially accessed, manipulated, destroyed, or rendered unusable as a result of a breach</xs:documentation>
-    </xs:annotation>
-    <xs:restriction base="xs:token">
-      <xs:enumeration value="Academic and Professional Background Information">
-        <xs:annotation>
-          <xs:documentation>Academic and Professional Background Information has been accessed, potentially accessed, manipulated, destroyed, or rendered unusable as a result of a breach</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="Alias (i.e., username or screenname)">
-        <xs:annotation>
-          <xs:documentation>Alias (i.e., username or screenname) information has been accessed, potentially accessed, manipulated, destroyed, or rendered unusable as a result of a breach</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="Alien Registration Number">
-        <xs:annotation>
-          <xs:documentation>Alien Registration Number has been accessed, potentially accessed, manipulated, destroyed, or rendered unusable as a result of a breach</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="Business Bank Account Number (sole proprietor)">
-        <xs:annotation>
-          <xs:documentation>Business Bank Account Number (sole proprietor) has been accessed, potentially accessed, manipulated, destroyed, or rendered unusable as a result of a breach</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="Business Credit Card Number (sole proprietor)">
-        <xs:annotation>
-          <xs:documentation>Business Credit Card Number (sole proprietor) has been accessed, potentially accessed, manipulated, destroyed, or rendered unusable as a result of a breach</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="Business Device Identifiers or Serial Numbers (sole proprietor)">
-        <xs:annotation>
-          <xs:documentation>Business Device Identifiers or Serial Numbers (sole proprietor) have been accessed, potentially accessed, manipulated, destroyed, or rendered unusable as a result of a breach</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="Business Email Address">
-        <xs:annotation>
-          <xs:documentation>Business Email Address information has been accessed, potentially accessed, manipulated, destroyed, or rendered unusable as a result of a breach</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="Business Financial Information (including loan information)">
-        <xs:annotation>
-          <xs:documentation>Business Financial Information (including loan information) has been accessed, potentially accessed, manipulated, destroyed, or rendered unusable as a result of a breach</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="Business Mailing Address (sole proprietor)">
-        <xs:annotation>
-          <xs:documentation>Business Mailing Address (sole proprietor) information has been accessed, potentially accessed, manipulated, destroyed, or rendered unusable as a result of a breach</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="Business Mobile Number (sole proprietor)">
-        <xs:annotation>
-          <xs:documentation>Business Mobile Number (sole proprietor) has been accessed, potentially accessed, manipulated, destroyed, or rendered unusable as a result of a breach</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="Business Phone or Fax Number (sole proprietor)">
-        <xs:annotation>
-          <xs:documentation>Business Phone or Fax Number (sole proprietor) has been accessed, potentially accessed, manipulated, destroyed, or rendered unusable as a result of a breach</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="Business Taxpayer Identification Number (sole proprietor)">
-        <xs:annotation>
-          <xs:documentation>Business Taxpayer Identification Number (sole proprietor) has been accessed, potentially accessed, manipulated, destroyed, or rendered unusable as a result of a breach</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="Business Vehicle Identification Number (sole proprietor)">
-        <xs:annotation>
-          <xs:documentation>Business Vehicle Identification Number (sole proprietor) has been accessed, potentially accessed, manipulated, destroyed, or rendered unusable as a result of a breach</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="Case Files">
-        <xs:annotation>
-          <xs:documentation>Case Files have been accessed, potentially accessed, manipulated, destroyed, or rendered unusable as a result of a breach</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="Cell Tower Records (i.e., logs, user location, time, etc.)">
-        <xs:annotation>
-          <xs:documentation>Cell Tower Record (i.e., logs, user location, time, etc.) has been accessed, potentially accessed, manipulated, destroyed, or rendered unusable as a result of a breach</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="Children Information">
-        <xs:annotation>
-          <xs:documentation>Children Information has been accessed, potentially accessed, manipulated, destroyed, or rendered unusable as a result of a breach</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="Citizenship">
-        <xs:annotation>
-          <xs:documentation>Citizenship information has been accessed, potentially accessed, manipulated, destroyed, or rendered unusable as a result of a breach</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="City or County of Birth">
-        <xs:annotation>
-          <xs:documentation>City or County of Birth information has been accessed, potentially accessed, manipulated, destroyed, or rendered unusable as a result of a breach</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="Civil/Criminal History Information/Police Record">
-        <xs:annotation>
-          <xs:documentation>Civil/Criminal History Information/Police Record has been accessed, potentially accessed, manipulated, destroyed, or rendered unusable as a result of a breach</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="Country of Birth">
-        <xs:annotation>
-          <xs:documentation>Country of Birth information has been accessed, potentially accessed, manipulated, destroyed, or rendered unusable as a result of a breach</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="Credit History Information">
-        <xs:annotation>
-          <xs:documentation>Credit History Information has been accessed, potentially accessed, manipulated, destroyed, or rendered unusable as a result of a breach</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="Credit/Debit Card Number">
-        <xs:annotation>
-          <xs:documentation>Credit/Debit Card Number has been accessed, potentially accessed, manipulated, destroyed, or rendered unusable as a result of a breach</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="Date of Birth (Day, Month, Year)">
-        <xs:annotation>
-          <xs:documentation>Date of Birth information has been accessed, potentially accessed, manipulated, destroyed, or rendered unusable as a result of a breach</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="Dental Profile">
-        <xs:annotation>
-          <xs:documentation>Dental Profile has been accessed, potentially accessed, manipulated, destroyed, or rendered unusable as a result of a breach</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="Department of Defense (DoD) ID Number">
-        <xs:annotation>
-          <xs:documentation>Department of Defense (DoD) ID Number has been accessed, potentially accessed, manipulated, destroyed, or rendered unusable as a result of a breach</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="Device Settings or Preferences (i.e., security level, sharing options, ringtones)">
-        <xs:annotation>
-          <xs:documentation>Device Setting or Preference (i.e., security level, sharing options, ringtones) has been accessed, potentially accessed, manipulated, destroyed, or rendered unusable as a result of a breach</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="Disability Information">
-        <xs:annotation>
-          <xs:documentation>Disability Information has been accessed, potentially accessed, manipulated, destroyed, or rendered unusable as a result of a breach</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="DNA Sample or Profile">
-        <xs:annotation>
-          <xs:documentation>DNA Sample or Profile has been accessed, potentially accessed, manipulated, destroyed, or rendered unusable as a result of a breach</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="DoD Benefits Number">
-        <xs:annotation>
-          <xs:documentation>DoD Benefits Number has been accessed, potentially accessed, manipulated, destroyed, or rendered unusable as a result of a breach</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="Driver’s License Number">
-        <xs:annotation>
-          <xs:documentation>Driver’s License Number has been accessed, potentially accessed, manipulated, destroyed, or rendered unusable as a result of a breach</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="Drug Enforcement Administration (DEA) Registration Number">
-        <xs:annotation>
-          <xs:documentation>Drug Enforcement Administration (DEA) Registration Number has been accessed, potentially accessed, manipulated, destroyed, or rendered unusable as a result of a breach</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="Education Information">
-        <xs:annotation>
-          <xs:documentation>Education Information has been accessed, potentially accessed, manipulated, destroyed, or rendered unusable as a result of a breach</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="Emergency Contact Information">
-        <xs:annotation>
-          <xs:documentation>Emergency Contact Information has been accessed, potentially accessed, manipulated, destroyed, or rendered unusable as a result of a breach</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="Employee Identification Number">
-        <xs:annotation>
-          <xs:documentation>Employee Identification Number has been accessed, potentially accessed, manipulated, destroyed, or rendered unusable as a result of a breach</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="Employment Information">
-        <xs:annotation>
-          <xs:documentation>Employment Information has been accessed, potentially accessed, manipulated, destroyed, or rendered unusable as a result of a breach</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="Ethnicity">
-        <xs:annotation>
-          <xs:documentation>Ethnicity information has been accessed, potentially accessed, manipulated, destroyed, or rendered unusable as a result of a breach</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="Eye Color">
-        <xs:annotation>
-          <xs:documentation>Eye Color information has been accessed, potentially accessed, manipulated, destroyed, or rendered unusable as a result of a breach</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="Federal Student Aid Number">
-        <xs:annotation>
-          <xs:documentation>Federal Student Aid Number has been accessed, potentially accessed, manipulated, destroyed, or rendered unusable as a result of a breach</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="File/Case Identification (ID) Number">
-        <xs:annotation>
-          <xs:documentation>File/Case Identification (ID) Number has been accessed, potentially accessed, manipulated, destroyed, or rendered unusable as a result of a breach</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="Fingerprints">
-        <xs:annotation>
-          <xs:documentation>Fingerprint information has been accessed, potentially accessed, manipulated, destroyed, or rendered unusable as a result of a breach</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="Gender">
-        <xs:annotation>
-          <xs:documentation>Gender information has been accessed, potentially accessed, manipulated, destroyed, or rendered unusable as a result of a breach</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="Global Positioning System (GPS)/Location Data">
-        <xs:annotation>
-          <xs:documentation>Global Positioning System (GPS)/Location Data has been accessed, potentially accessed, manipulated, destroyed, or rendered unusable as a result of a breach</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="Group/Organization Membership">
-        <xs:annotation>
-          <xs:documentation>Group/Organization Membership information has been accessed, potentially accessed, manipulated, destroyed, or rendered unusable as a result of a breach</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="Hair Color">
-        <xs:annotation>
-          <xs:documentation>Hair Color information has been accessed, potentially accessed, manipulated, destroyed, or rendered unusable as a result of a breach</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="Health Information">
-        <xs:annotation>
-          <xs:documentation>Health Information has been accessed, potentially accessed, manipulated, destroyed, or rendered unusable as a result of a breach</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="Health Plan Beneficiary Number">
-        <xs:annotation>
-          <xs:documentation>Health Plan Beneficiary Number has been accessed, potentially accessed, manipulated, destroyed, or rendered unusable as a result of a breach</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="Height">
-        <xs:annotation>
-          <xs:documentation>Height information has been accessed, potentially accessed, manipulated, destroyed, or rendered unusable as a result of a breach</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="Home Address">
-        <xs:annotation>
-          <xs:documentation>Home Address information has been accessed, potentially accessed, manipulated, destroyed, or rendered unusable as a result of a breach</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="Home Phone or Fax Number">
-        <xs:annotation>
-          <xs:documentation>Home Phone or Fax Number has been accessed, potentially accessed, manipulated, destroyed, or rendered unusable as a result of a breach</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="Immigration Status">
-        <xs:annotation>
-          <xs:documentation>Immigration Status information has been accessed, potentially accessed, manipulated, destroyed, or rendered unusable as a result of a breach</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="Law Enforcement Information">
-        <xs:annotation>
-          <xs:documentation>Law Enforcement Information has been accessed, potentially accessed, manipulated, destroyed, or rendered unusable as a result of a breach</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="License Plate Number">
-        <xs:annotation>
-          <xs:documentation>License Plate Number has been accessed, potentially accessed, manipulated, destroyed, or rendered unusable as a result of a breach</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="Marital Status">
-        <xs:annotation>
-          <xs:documentation>Marital Status information has been accessed, potentially accessed, manipulated, destroyed, or rendered unusable as a result of a breach</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="Medical/Health Information">
-        <xs:annotation>
-          <xs:documentation>Medical/Health Information has been accessed, potentially accessed, manipulated, destroyed, or rendered unusable as a result of a breach</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="Mental Health Information">
-        <xs:annotation>
-          <xs:documentation>Mental Health Information has been accessed, potentially accessed, manipulated, destroyed, or rendered unusable as a result of a breach</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="Military Service Information">
-        <xs:annotation>
-          <xs:documentation>Military Service Information has been accessed, potentially accessed, manipulated, destroyed, or rendered unusable as a result of a breach</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="Mother’s Maiden Name">
-        <xs:annotation>
-          <xs:documentation>Mother’s Maiden Name has been accessed, potentially accessed, manipulated, destroyed, or rendered unusable as a result of a breach</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="Name (including nicknames)">
-        <xs:annotation>
-          <xs:documentation>Name (including nicknames) information has been accessed, potentially accessed, manipulated, destroyed, or rendered unusable as a result of a breach</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="Nationality">
-        <xs:annotation>
-          <xs:documentation>Nationality information has been accessed, potentially accessed, manipulated, destroyed, or rendered unusable as a result of a breach</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="Network Communications Data">
-        <xs:annotation>
-          <xs:documentation>Network Communications Data has been accessed, potentially accessed, manipulated, destroyed, or rendered unusable as a result of a breach</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="Other">
-        <xs:annotation>
-          <xs:documentation>Other information has been accessed, potentially accessed, manipulated, destroyed, or rendered unusable as a result of a breach</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="Palm Prints">
-        <xs:annotation>
-          <xs:documentation>Palm Prints information has been accessed, potentially accessed, manipulated, destroyed, or rendered unusable as a result of a breach</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="Passport Number">
-        <xs:annotation>
-          <xs:documentation>Passport Number has been accessed, potentially accessed, manipulated, destroyed, or rendered unusable as a result of a breach</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="Patient ID Number">
-        <xs:annotation>
-          <xs:documentation>Patient ID Number has been accessed, potentially accessed, manipulated, destroyed, or rendered unusable as a result of a breach</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="Patient ID Number">
-        <xs:annotation>
-          <xs:documentation>Patient ID Number has been accessed, potentially accessed, manipulated, destroyed, or rendered unusable as a result of a breach</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="Personal Bank Account Number">
-        <xs:annotation>
-          <xs:documentation>Personal Bank Account Number has been accessed, potentially accessed, manipulated, destroyed, or rendered unusable as a result of a breach</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="Personal Device Identifiers or Serial Numbers">
-        <xs:annotation>
-          <xs:documentation>Personal Device Identifiers or Serial Numbers have been accessed, potentially accessed, manipulated, destroyed, or rendered unusable as a result of a breach</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="Personal Email Address">
-        <xs:annotation>
-          <xs:documentation>Personal Email Address information has been accessed, potentially accessed, manipulated, destroyed, or rendered unusable as a result of a breach</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="Personal Financial Information (including loan information)">
-        <xs:annotation>
-          <xs:documentation>Personal Financial Information (including loan information) has been accessed, potentially accessed, manipulated, destroyed, or rendered unusable as a result of a breach</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="Personal Mobile Number">
-        <xs:annotation>
-          <xs:documentation>Personal Mobile Number has been accessed, potentially accessed, manipulated, destroyed, or rendered unusable as a result of a breach</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="Personnel Files">
-        <xs:annotation>
-          <xs:documentation>Personnel Files have been accessed, potentially accessed, manipulated, destroyed, or rendered unusable as a result of a breach</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="Photos">
-        <xs:annotation>
-          <xs:documentation>Photo has been accessed, potentially accessed, manipulated, destroyed, or rendered unusable as a result of a breach</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="Professional License Number">
-        <xs:annotation>
-          <xs:documentation>Professional License Number has been accessed, potentially accessed, manipulated, destroyed, or rendered unusable as a result of a breach</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="Professional/personal references">
-        <xs:annotation>
-          <xs:documentation>Professional/personal references information has been accessed, potentially accessed, manipulated, destroyed, or rendered unusable as a result of a breach</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="Race">
-        <xs:annotation>
-          <xs:documentation>Race information has been accessed, potentially accessed, manipulated, destroyed, or rendered unusable as a result of a breach</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="Religion/Religious Preference">
-        <xs:annotation>
-          <xs:documentation>Religion/Religious Preference information has been accessed, potentially accessed, manipulated, destroyed, or rendered unusable as a result of a breach</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="Resume or Curriculum Vitae">
-        <xs:annotation>
-          <xs:documentation>Resume or Curriculum Vitae information has been accessed, potentially accessed, manipulated, destroyed, or rendered unusable as a result of a breach</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="Retina/Iris Scans">
-        <xs:annotation>
-          <xs:documentation>Retina/Iris Scans information has been accessed, potentially accessed, manipulated, destroyed, or rendered unusable as a result of a breach</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="Scars, Marks, Tattoos">
-        <xs:annotation>
-          <xs:documentation>Scars, Marks, Tattoos information has been accessed, potentially accessed, manipulated, destroyed, or rendered unusable as a result of a breach</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="Security Clearance/Background Check Information">
-        <xs:annotation>
-          <xs:documentation>Security Clearance/Background Check Information has been accessed, potentially accessed, manipulated, destroyed, or rendered unusable as a result of a breach</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="Sexual Orientation">
-        <xs:annotation>
-          <xs:documentation>Sexual Orientation information has been accessed, potentially accessed, manipulated, destroyed, or rendered unusable as a result of a breach</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="Signatures">
-        <xs:annotation>
-          <xs:documentation>Signature information has been accessed, potentially accessed, manipulated, destroyed, or rendered unusable as a result of a breach</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="Social Security Number">
-        <xs:annotation>
-          <xs:documentation>Social Security Number has been accessed, potentially accessed, manipulated, destroyed, or rendered unusable as a result of a breach</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="Spouse Information">
-        <xs:annotation>
-          <xs:documentation>Spouse Information has been accessed, potentially accessed, manipulated, destroyed, or rendered unusable as a result of a breach</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="Student ID Number">
-        <xs:annotation>
-          <xs:documentation>Student ID Number has been accessed, potentially accessed, manipulated, destroyed, or rendered unusable as a result of a breach</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="Taxpayer Identification Number">
-        <xs:annotation>
-          <xs:documentation>Taxpayer Identification Number has been accessed, potentially accessed, manipulated, destroyed, or rendered unusable as a result of a breach</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="Taxpayer Information/Tax Return Information">
-        <xs:annotation>
-          <xs:documentation>Taxpayer Information/Tax Return Information has been accessed, potentially accessed, manipulated, destroyed, or rendered unusable as a result of a breach</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="Truncated or Partial Social Security Number">
-        <xs:annotation>
-          <xs:documentation>Truncated or Partial Social Security Number has been accessed, potentially accessed, manipulated, destroyed, or rendered unusable as a result of a breach</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="Vascular Scans">
-        <xs:annotation>
-          <xs:documentation>Vascular Scans information has been accessed, potentially accessed, manipulated, destroyed, or rendered unusable as a result of a breach</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="Vehicle Identification Number">
-        <xs:annotation>
-          <xs:documentation>Vehicle Identification Number has been accessed, potentially accessed, manipulated, destroyed, or rendered unusable as a result of a breach</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="Video Recording">
-        <xs:annotation>
-          <xs:documentation>Video Recording has been accessed, potentially accessed, manipulated, destroyed, or rendered unusable as a result of a breach</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="Voice/Audio Recording">
-        <xs:annotation>
-          <xs:documentation>Voice/Audio Recording has been accessed, potentially accessed, manipulated, destroyed, or rendered unusable as a result of a breach</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="Weight">
-        <xs:annotation>
-          <xs:documentation>Weight information has been accessed, potentially accessed, manipulated, destroyed, or rendered unusable as a result of a breach</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="Workers’ Compensation Information">
-        <xs:annotation>
-          <xs:documentation>Workers’ Compensation Information has been accessed, potentially accessed, manipulated, destroyed, or rendered unusable as a result of a breach</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="Zip Code">
-        <xs:annotation>
-          <xs:documentation>Zip Code information has been accessed, potentially accessed, manipulated, destroyed, or rendered unusable as a result of a breach</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-    </xs:restriction>
-  </xs:simpleType>
-  <xs:complexType name="PIICategoryCodeType">
-    <xs:annotation>
-      <xs:documentation>A data type for a kind of Personally Identifiable Information that has been accessed, potentially accessed, manipulated, destroyed, or rendered unusable as a result of a breach</xs:documentation>
-    </xs:annotation>
-    <xs:simpleContent>
-      <xs:extension base="cyber:PIICategoryCodeSimpleType">
-        <xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
-      </xs:extension>
-    </xs:simpleContent>
-  </xs:complexType>
-  <xs:simpleType name="PIIClassificationCategoryCodeSimpleType">
-    <xs:annotation>
-      <xs:documentation>A data type for a kind of category of Personally Identifiable Information that has been accessed, potentially accessed, manipulated, destroyed, or rendered unusable as a result of a breach</xs:documentation>
-    </xs:annotation>
-    <xs:restriction base="xs:token">
-      <xs:enumeration value="Biographical Information">
-        <xs:annotation>
-          <xs:documentation>Biographical Information has been accessed, potentially accessed, manipulated, destroyed, or rendered unusable as a result of a breach</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="Biometrics, Distinguishing Features, and Characteristics">
-        <xs:annotation>
-          <xs:documentation>Biometrics, Distinguishing Features, and Characteristics information has been accessed, potentially accessed, manipulated, destroyed, or rendered unusable as a result of a breach</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="Device Information">
-        <xs:annotation>
-          <xs:documentation>Device Information has been accessed, potentially accessed, manipulated, destroyed, or rendered unusable as a result of a breach</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="Identifying Numbers">
-        <xs:annotation>
-          <xs:documentation>Identifying Numbers have been accessed, potentially accessed, manipulated, destroyed, or rendered unusable as a result of a breach</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="Medical and Emergency Information">
-        <xs:annotation>
-          <xs:documentation>Medical and Emergency Information has been accessed, potentially accessed, manipulated, destroyed, or rendered unusable as a result of a breach</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="Other Specific Information or File Types">
-        <xs:annotation>
-          <xs:documentation>Other Specific Information or File Types have been accessed, potentially accessed, manipulated, destroyed, or rendered unusable as a result of a breach</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-    </xs:restriction>
-  </xs:simpleType>
-  <xs:complexType name="PIIClassificationCategoryCodeType">
-    <xs:annotation>
-      <xs:documentation>A data type for a kind of category of Personally Identifiable Information that has been accessed, potentially accessed, manipulated, destroyed, or rendered unusable as a result of a breach</xs:documentation>
-    </xs:annotation>
-    <xs:simpleContent>
-      <xs:extension base="cyber:PIIClassificationCategoryCodeSimpleType">
-        <xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
-      </xs:extension>
-    </xs:simpleContent>
-  </xs:complexType>
-  <xs:simpleType name="PIIEffectCodeSimpleType">
-    <xs:annotation>
-      <xs:documentation>A data type for a kind of effect on Personally Identifiable Information resulting from a breach</xs:documentation>
-    </xs:annotation>
-    <xs:restriction base="xs:token">
-      <xs:enumeration value="Compromise Flag">
-        <xs:annotation>
-          <xs:documentation>Unauthorized access of Personally Identifiable Information was due to compromise</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="Loss 100000 or More People">
-        <xs:annotation>
-          <xs:documentation>Personally Identifiable Information for 100,000 or more people was exfiltrated, modified, deleted, or compromised</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="Loss Of Control Flag">
-        <xs:annotation>
-          <xs:documentation>Unauthorized access of Personally Identifiable Information was due to loss of control</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="Unauthorized Access">
-        <xs:annotation>
-          <xs:documentation>Personally Identifiable Information was accessed without authorization</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="Unauthorized Acquisition Flag">
-        <xs:annotation>
-          <xs:documentation>Unauthorized access of Personally Identifiable Information was due to unauthorized acquisition</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="Unauthorized Disclosure Flag">
-        <xs:annotation>
-          <xs:documentation>Unauthorized access of Personally Identifiable Information was due to unauthorized disclosure</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="Unauthorized Person">
-        <xs:annotation>
-          <xs:documentation>Personally Identifiable Information was accessed by a person other than an authorized user</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="Unauthorized Purpose">
-        <xs:annotation>
-          <xs:documentation>Personally Identifiable Information was accessed for an unauthorized purpose</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-    </xs:restriction>
-  </xs:simpleType>
-  <xs:complexType name="PIIEffectCodeType">
-    <xs:annotation>
-      <xs:documentation>A data type for a kind of effect on Personally Identifiable Information resulting from a breach</xs:documentation>
-    </xs:annotation>
-    <xs:simpleContent>
-      <xs:extension base="cyber:PIIEffectCodeSimpleType">
-        <xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
-      </xs:extension>
-    </xs:simpleContent>
-  </xs:complexType>
-  <xs:complexType name="PIIEffectType">
-    <xs:annotation>
-      <xs:documentation>A data type for an effect of a breach of Personally Identifiable Information</xs:documentation>
-    </xs:annotation>
-    <xs:complexContent>
-      <xs:extension base="structures:ObjectType">
-        <xs:sequence>
-          <xs:element ref="cyber:PIIAccessedQuantity" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="cyber:PIIAccessedQuantityCategoryCode" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="cyber:PIIAlteredQuantity" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="cyber:PIIAlteredQuantityCategoryCode" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="cyber:PIIEffectCode" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="cyber:PIIEffectAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
-        </xs:sequence>
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
-  <xs:complexType name="PIIObservedDataType">
-    <xs:annotation>
-      <xs:documentation>A data type for personally identifiable information that has been observed on a cyber security related entity</xs:documentation>
-    </xs:annotation>
-    <xs:complexContent>
-      <xs:extension base="structures:ObjectType">
-        <xs:sequence>
-          <xs:element ref="cyber:ObservationPublicInternetIndicator" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="cyber:ObservedData" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="cyber:PIIObservedDataAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
-        </xs:sequence>
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
   <xs:complexType name="PlatformType">
     <xs:annotation>
       <xs:documentation>A data type for the kind of operating system and hardware on which software applications can be run</xs:documentation>
@@ -2309,6 +2645,20 @@
       <xs:extension base="structures:ObjectType">
         <xs:sequence>
           <xs:element ref="cyber:PlatformName" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="cyber:PlatformCategoryDescriptionText" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="cyber:PlatformOwnerName" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="cyber:PlatformLocation" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="cyber:PlatformPartText" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="cyber:PlatformVendorText" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="cyber:PlatformProductText" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="cyber:PlatformVersionText" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="cyber:PlatformUpdateText" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="cyber:PlatformEditionText" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="cyber:PlatformLanguageText" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="cyber:PlatformSoftwareEditionText" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="cyber:PlatformTargetSoftwareText" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="cyber:PlatformTargetHardwareText" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="cyber:PlatformOtherText" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="cyber:PlatformAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
       </xs:extension>
@@ -2352,6 +2702,36 @@
           <xs:element ref="cyber:ProtocolCategoryCode" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="cyber:ProtocolName" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="cyber:ProtocolAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="ResponderType">
+    <xs:annotation>
+      <xs:documentation>A data type for an external entity assisting with a cyber incident</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="nc:EntityType">
+        <xs:sequence>
+          <xs:element ref="cyber:ResponderOnsiteQuantity" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="cyber:ResponderOnsiteTimeDuration" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="cyber:ResponderOnsiteStartDateTime" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="cyber:ResponderOnsiteEndDateTime" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="cyber:ResponderAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="SignificantIncidentType">
+    <xs:annotation>
+      <xs:documentation>A data type for a significant incident</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="structures:ObjectType">
+        <xs:sequence>
+          <xs:element ref="cyber:SignificantIncidentDesignator" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="cyber:SignificantIncidentDesignationReasonText" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="cyber:SignificantIncidentAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -2423,6 +2803,11 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
+  <xs:element name="AccessedInformationCode" type="cyber:AccessedInformationCodeType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A kind of information that has been or potentially has been accessed, manipulated, destroyed, or rendered unusable as a result of a breach</xs:documentation>
+    </xs:annotation>
+  </xs:element>
   <xs:element name="AttackPattern" type="cyber:AttackPatternType" nillable="true">
     <xs:annotation>
       <xs:documentation>A tactic, technique, or procedure (TTP) used in an attempt to compromise targets</xs:documentation>
@@ -2465,12 +2850,57 @@
   </xs:element>
   <xs:element name="Breach" type="cyber:BreachType" nillable="true">
     <xs:annotation>
-      <xs:documentation>A loss of control, compromise, unauthorized access, unauthorized disclosure, unauthorized acquisition of a system, system component(s), data, or process by an unauthorized user or for an unauthorized purpose</xs:documentation>
+      <xs:documentation>A loss of control, compromise, unauthorized access, unauthorized disclosure, unauthorized acquisition of a system, system component(s), data, or process(es)</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="BreachAccessedQuantity" type="nc:QuantityType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A count of information that has been accessed or potentially accessed by a non-authorized user</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="BreachAccessedQuantityCategoryCode" type="cyber:BreachAccessedQuantityCategoryCodeType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A statement of whether information has been accessed or potentially accessed by a non-authorized user</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="BreachAlteredQuantity" type="nc:QuantityType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A count of Information that has been manipulated, destroyed, or rendered unusable</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="BreachAlteredQuantityCategoryCode" type="cyber:BreachAlteredQuantityCategoryCodeType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A statement of whether the count of Information accessed by a non-authorized user is an approximate or known one</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="BreachAugmentationPoint" abstract="true">
     <xs:annotation>
       <xs:documentation>An augmentation point for type cyber:BreachType</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="BreachCategoryCode" type="cyber:BreachCategoryCodeType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A kind of information accessed or potentially accessed in a breach</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="BreachClassificationCategoryCode" type="cyber:BreachClassificationCategoryCodeType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A kind of category of information that has been or potentially has been accessed, manipulated, destroyed, or rendered unusable as a result of a breach</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="BreachEffect" type="cyber:BreachEffectType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>An effect on information resulting from a breach</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="BreachEffectAugmentationPoint" abstract="true">
+    <xs:annotation>
+      <xs:documentation>An augmentation point for type cyber:BreachEffectType</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="BreachEffectCode" type="cyber:BreachEffectCodeType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A kind of effect on information resulting from a breach</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="BreachExposedFile" type="cyber:ExposedFileType" nillable="true">
@@ -2521,6 +2951,16 @@
   <xs:element name="BreachNotificationQuantity" type="nc:QuantityType" nillable="true">
     <xs:annotation>
       <xs:documentation>A count of the individuals notified of a breach</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="BreachObservedData" type="cyber:BreachObservedDataType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A data related to information that has been observed on a cybersecurity related entity</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="BreachObservedDataAugmentationPoint" abstract="true">
+    <xs:annotation>
+      <xs:documentation>An augmentation point for type cyber:BreachObservedDataType</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="BreachRemediationService" type="cyber:BreachRemediationServiceType" nillable="true">
@@ -2576,6 +3016,46 @@
   <xs:element name="ClassifiedInformationOriginationSystemName" type="nc:TextType" nillable="true">
     <xs:annotation>
       <xs:documentation>A name of the system from which exposed classified information originated</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="CommonVulnerabilityEnumeration" type="cyber:CommonVulnerabilityEnumerationType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>An enumeration for a common vulnerability</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="CommonVulnerabilityEnumerationAugmentationPoint" abstract="true">
+    <xs:annotation>
+      <xs:documentation>An augmentation point for type cyber:CommonVulnerabilityEnumerationType</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="CommonVulnerabilityEnumerationDescriptionText" type="nc:TextType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A description of the Common Vulnerability Enumeration</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="CommonVulnerabilityEnumerationID" type="niem-xs:string" nillable="true">
+    <xs:annotation>
+      <xs:documentation>An identifier for a unique Common Vulnerability Enumeration</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="CommonVulnerabilityScoringSystemScoreNumeric" type="nc:NumericType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A calculated severity score for a cyber vulnerability assigned by the Common Vulnerability Scoring System</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="ComplianceDriverReportedDate" type="nc:DateType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A date when the entity received the report</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="ComplianceDriverReportedToEntityDescriptionText" type="nc:TextType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A description of which entity receives reports of this type</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="ComplianceDriverViolatedText" type="nc:TextType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A description of the violated compliance driver</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="CompromisedCommunication" type="cyber:CompromisedCommunicationType" nillable="true">
@@ -2708,6 +3188,16 @@
       <xs:documentation>A name of a pattern that can be used to detect suspicious or malicious cyber activity</xs:documentation>
     </xs:annotation>
   </xs:element>
+  <xs:element name="CyberInsuranceClaim" type="cyber:CyberInsuranceClaimType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A cyber insurance claim</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="CyberInsuranceClaimAugmentationPoint" abstract="true">
+    <xs:annotation>
+      <xs:documentation>An augmentation point for type cyber:CyberInsuranceClaimType</xs:documentation>
+    </xs:annotation>
+  </xs:element>
   <xs:element name="CyberObservableDestinationIndicator" type="niem-xs:boolean" nillable="true">
     <xs:annotation>
       <xs:documentation>True if the observable object was the target of a compromising communication; false otherwise</xs:documentation>
@@ -2788,6 +3278,16 @@
       <xs:documentation>An augmentation point for type cyber:CyberObservableURLObjectType</xs:documentation>
     </xs:annotation>
   </xs:element>
+  <xs:element name="CyberVulnerability" type="cyber:CyberVulnerabilityType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A weakness that can be exploited by a threat actor</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="CyberVulnerabilityAugmentationPoint" abstract="true">
+    <xs:annotation>
+      <xs:documentation>An augmentation point for type cyber:CyberVulnerabilityType</xs:documentation>
+    </xs:annotation>
+  </xs:element>
   <xs:element name="DataClassification" type="cyber:DataClassificationType" nillable="true">
     <xs:annotation>
       <xs:documentation>A process for the security classification of data</xs:documentation>
@@ -2831,6 +3331,21 @@
   <xs:element name="DataClassificationReferenceDescriptionText" type="nc:TextType" nillable="true">
     <xs:annotation>
       <xs:documentation>A description of the reference used for determining the security classification of data</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="DeclarationOfEmergency" type="cyber:DeclarationOfEmergencyType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A designation of an emergency</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="DeclarationOfEmergencyAugmentationPoint" abstract="true">
+    <xs:annotation>
+      <xs:documentation>An augmentation point for type cyber:DeclarationOfEmergencyType</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="DeclarationOfEmergencyDesignator" type="nc:PersonType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A designator of who made the decision to declare an emergency</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="DestinationPortID" type="niem-xs:string" nillable="true">
@@ -2913,9 +3428,9 @@
       <xs:documentation>A beginning date of the time window during which the data related to the incident was seen</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="FISMASystemCategoryName" type="nc:TextType" nillable="true">
+  <xs:element name="FISMAIndicator" type="niem-xs:boolean" nillable="true">
     <xs:annotation>
-      <xs:documentation>A name of FISMA system such as General Support System, Major Application</xs:documentation>
+      <xs:documentation>True if a Federal Information Security Management Act of 2002 system; false otherwise</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="Hardware" type="cyber:PlatformType" substitutionGroup="cyber:Platform" nillable="true">
@@ -2946,6 +3461,16 @@
   <xs:element name="IncidentAssistanceRequiredCategoryCode" type="cyber:IncidentAssistanceRequiredCategoryCodeType" nillable="true">
     <xs:annotation>
       <xs:documentation>A kind of assistance required to respond to an incident</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="IncidentComplianceDriver" type="cyber:IncidentComplianceDriverType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A mandatory information reporting to an entity after an incident</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="IncidentComplianceDriverAugmentationPoint" abstract="true">
+    <xs:annotation>
+      <xs:documentation>An augmentation point for type cyber:IncidentComplianceDriverType</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="IncidentConsequenceCategoryCode" type="cyber:IncidentConsequenceCategoryCodeType" nillable="true">
@@ -3033,6 +3558,16 @@
       <xs:documentation>A count of the endpoints impacted by the cyber incident</xs:documentation>
     </xs:annotation>
   </xs:element>
+  <xs:element name="IncidentImpactedPlatform" type="cyber:PlatformType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A platform impacted by the incident</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="IncidentImpactedPlatformAugmentationPoint" abstract="true">
+    <xs:annotation>
+      <xs:documentation>An augmentation point for type cyber:IncidentImpactedPlatformType</xs:documentation>
+    </xs:annotation>
+  </xs:element>
   <xs:element name="IncidentImpactedUserQuantity" type="nc:QuantityType" nillable="true">
     <xs:annotation>
       <xs:documentation>A count of the users impacted by the cyber incident</xs:documentation>
@@ -3061,6 +3596,11 @@
   <xs:element name="IncidentLogAvailableIndicator" type="niem-xs:boolean" nillable="true">
     <xs:annotation>
       <xs:documentation>True if logs are available for a cyber incident; false otherwise</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="IncidentLogDescriptionText" type="nc:TextType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A description of the kind of incident log</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="IncidentLogShareIndicator" type="niem-xs:boolean" nillable="true">
@@ -3121,6 +3661,11 @@
   <xs:element name="IncidentRecoveryStrategy" type="cyber:IncidentStrategyType" nillable="true">
     <xs:annotation>
       <xs:documentation>A strategy used to recover from an incident</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="IncidentReportedComplianceDriverIndicator" type="niem-xs:boolean" nillable="true">
+    <xs:annotation>
+      <xs:documentation>True if reported to compliance driver; false otherwise</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="IncidentResponse" type="cyber:IncidentResponseType" nillable="true">
@@ -3218,6 +3763,31 @@
       <xs:documentation>An augmentation point for type cyber:InformationExchangePolicyType</xs:documentation>
     </xs:annotation>
   </xs:element>
+  <xs:element name="InsuranceClaimFiledIndicator" type="niem-xs:boolean" nillable="true">
+    <xs:annotation>
+      <xs:documentation>True if cyber insurance claim filed; false otherwise</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="InsuranceClaimResponseCategoryCode" type="cyber:InsuranceClaimResponseCategoryCodeType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A kind of assistance provided by cyber insurance company</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="InsuranceResponseIndicator" type="niem-xs:boolean" nillable="true">
+    <xs:annotation>
+      <xs:documentation>True if cyber insurance company responds; false otherwise</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="InsuranceResponseShareIndicator" type="niem-xs:boolean" nillable="true">
+    <xs:annotation>
+      <xs:documentation>True if cyber insurance allows cyber incident information to be shared; false otherwise</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="InsuranceResponseSharingDescriptionText" type="nc:TextType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A description of cyber insurance company requirements for sharing information beyond the victim</xs:documentation>
+    </xs:annotation>
+  </xs:element>
   <xs:element name="KillChainName" type="nc:TextType" nillable="true">
     <xs:annotation>
       <xs:documentation>A name of a kill chain</xs:documentation>
@@ -3273,6 +3843,11 @@
       <xs:documentation>A software or firmware intended to perform an unauthorized process that will have adverse impact on the confidentiality, integrity, or availability of an information system</xs:documentation>
     </xs:annotation>
   </xs:element>
+  <xs:element name="MalwareAliasName" type="nc:TextType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>An additional name of a malware instance or family</xs:documentation>
+    </xs:annotation>
+  </xs:element>
   <xs:element name="MalwareAugmentationPoint" abstract="true">
     <xs:annotation>
       <xs:documentation>An augmentation point for type cyber:MalwareType</xs:documentation>
@@ -3286,6 +3861,11 @@
   <xs:element name="MalwareName" type="nc:TextType" nillable="true">
     <xs:annotation>
       <xs:documentation>A name of a malware instance or family</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="NetworkMapAvailableIndicator" type="niem-xs:boolean" nillable="true">
+    <xs:annotation>
+      <xs:documentation>True if a network map is available for the network; false otherwise</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="ObservationPublicInternetIndicator" type="niem-xs:boolean" nillable="true">
@@ -3318,66 +3898,6 @@
       <xs:documentation>A kind of organization</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="PIIAccessedQuantity" type="nc:QuantityType" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A count of Personally Identifiable Information that has been accessed or potentially accessed by a non-authorized user</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="PIIAccessedQuantityCategoryCode" type="cyber:PIIAccessedQuantityCategoryCodeType" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A statement of whether Personally Identifiable Information has been accessed or potentially accessed by a non-authorized user</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="PIIAlteredQuantity" type="nc:QuantityType" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A count of Personally Identifiable Information that has been manipulated, destroyed, or rendered unusable</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="PIIAlteredQuantityCategoryCode" type="cyber:PIIAlteredQuantityCategoryCodeType" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A statement of whether the count of Personally Identifiable Information accessed by a non-authorized user is an approximate or known one</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="PIIBreachCategoryCode" type="cyber:PIIBreachCategoryCodeType" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A kind of Personally Identifiable Information data accessed or potentially accessed in the breach</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="PIICategoryCode" type="cyber:PIICategoryCodeType" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A kind of Personally Identifiable Information that has been accessed, potentially accessed, manipulated, destroyed, or rendered unusable as a result of a breach</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="PIIClassificationCategoryCode" type="cyber:PIIClassificationCategoryCodeType" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A kind of category of Personally Identifiable Information that has been accessed, potentially accessed, manipulated, destroyed, or rendered unusable as a result of a breach</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="PIIEffect" type="cyber:PIIEffectType" nillable="true">
-    <xs:annotation>
-      <xs:documentation>An effect on Personally Identifiable Information resulting from a breach</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="PIIEffectAugmentationPoint" abstract="true">
-    <xs:annotation>
-      <xs:documentation>An augmentation point for type cyber:PIIEffectType</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="PIIEffectCode" type="cyber:PIIEffectCodeType" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A kind of effect on Personally Identifiable Information resulting from a breach</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="PIIObservedData" type="cyber:PIIObservedDataType" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A data related to personally identifiable information that has been observed on a cyber security related entity</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="PIIObservedDataAugmentationPoint" abstract="true">
-    <xs:annotation>
-      <xs:documentation>An augmentation point for type cyber:PIIObservedDataType</xs:documentation>
-    </xs:annotation>
-  </xs:element>
   <xs:element name="Platform" type="cyber:PlatformType" nillable="true">
     <xs:annotation>
       <xs:documentation>A name of an operating system and hardware on which a software application can be run</xs:documentation>
@@ -3388,9 +3908,79 @@
       <xs:documentation>An augmentation point for type cyber:PlatformType</xs:documentation>
     </xs:annotation>
   </xs:element>
+  <xs:element name="PlatformCategoryDescriptionText" type="nc:TextType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A description of the type of platform impacted such as cloud, bare metal, virtual, or off-premise</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="PlatformEditionText" type="nc:TextType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A Common Platform Environment (CPE) well-formed name text component to capture edition-related terms applied by the vendor to the product.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="PlatformLanguageText" type="nc:TextType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A Common Platform Environment (CPE) well-formed name text component to define the language supported in the user interface of the product being described.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="PlatformLocation" type="nc:LocationType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A description of the physical location of the platform</xs:documentation>
+    </xs:annotation>
+  </xs:element>
   <xs:element name="PlatformName" type="nc:TextType" nillable="true">
     <xs:annotation>
       <xs:documentation>A name of an operating system and hardware on which a software application can be run</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="PlatformOtherText" type="nc:TextType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A Common Platform Environment (CPE) well-formed name text component to capture any other general descriptive or identifying information which is vendor or product-specific and which does not logically fit in any other attribute value.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="PlatformOwnerName" type="nc:EntityType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A name of who owns the platform impacted</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="PlatformPartText" type="nc:TextType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A Common Platform Environment (CPE) well-formed name text component to identify a class of applications, a class of operating systems, or a class of hardware devices.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="PlatformProductText" type="nc:TextType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A Common Platform Environment (CPE) well-formed name text component to describe or identify the most common and recognizable title or name of the product.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="PlatformSoftwareEditionText" type="nc:TextType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A Common Platform Environment (CPE) well-formed name text component to characterize how the product is tailored to a particular market or class of end users.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="PlatformTargetHardwareText" type="nc:TextType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A Common Platform Environment (CPE) well-formed name text component to characterize the instruction set architecture (e.g., x86) on which the product being described or identified by the WFN operates.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="PlatformTargetSoftwareText" type="nc:TextType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A Common Platform Environment (CPE) well-formed name text component to characterize the software computing environment within which the product operates.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="PlatformUpdateText" type="nc:TextType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A Common Platform Environment (CPE) well-formed name text component for a vendor-specific alphanumeric string characterizing the particular update, service pack, or point release of the product.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="PlatformVendorText" type="nc:TextType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A Common Platform Environment (CPE) well-formed name text component for a vendor-specific alphanumeric string characterizing the particular update, service pack, or point release of the product.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="PlatformVersionText" type="nc:TextType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A Common Platform Environment (CPE) well-formed name text component for a vendor-specific alphanumeric string characterizing the particular release version of the product.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="Protocol" type="cyber:ProtocolType" nillable="true">
@@ -3423,9 +4013,44 @@
       <xs:documentation>An identification that references a reporting organization</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="Responder" type="nc:EntityType" substitutionGroup="nc:Entity" nillable="true">
+  <xs:element name="ResourceDeploymentReasonText" type="nc:TextType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A reason for declaring an emergency incident according to local requirements</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="Responder" type="cyber:ResponderType" substitutionGroup="nc:Entity" nillable="true">
     <xs:annotation>
       <xs:documentation>An external entity assisting with a cyber incident</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="ResponderAugmentationPoint" abstract="true">
+    <xs:annotation>
+      <xs:documentation>An augmentation point for type cyber:ResponderType</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="ResponderEntityName" type="nc:EntityType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A name of the entity responding onsite to the incident</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="ResponderOnsiteEndDateTime" type="niem-xs:dateTime" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A date and time at which the external entity ended its response</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="ResponderOnsiteQuantity" type="nc:QuantityType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A count of how many personnel responded onsite</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="ResponderOnsiteStartDateTime" type="niem-xs:dateTime" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A date and time at which the external entity began its response</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="ResponderOnsiteTimeDuration" type="niem-xs:duration" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A length of how many hours personnel were onsite</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="SecurityEventIndicator" type="niem-xs:boolean" nillable="true">
@@ -3433,9 +4058,34 @@
       <xs:documentation>True if an incident is a security event that has not been determined to reach the level of an incident but is of sufficient interest to be recorded; false otherwise</xs:documentation>
     </xs:annotation>
   </xs:element>
+  <xs:element name="SignificantIncident" type="cyber:SignificantIncidentType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A designation of whether an incident is classified as a significant incident</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="SignificantIncidentAugmentationPoint" abstract="true">
+    <xs:annotation>
+      <xs:documentation>An augmentation point for type cyber:SignificantIncidentType</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="SignificantIncidentDesignationReasonText" type="nc:TextType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A reason for declaring the Incident a significant incident according to local requirements.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="SignificantIncidentDesignator" type="nc:PersonType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>An entity who made the decision to classify as a significant incident</xs:documentation>
+    </xs:annotation>
+  </xs:element>
   <xs:element name="SourcePortID" type="niem-xs:string" nillable="true">
     <xs:annotation>
       <xs:documentation>An identifier of the port of a source system that initiates a communication</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="SystemCategoryName" type="nc:TextType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A name of particular system type such as General Support System, Major Application, Proxy Server</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="TrafficLightProtocolCode" type="cyber:TrafficLightProtocolCodeType" nillable="true">
@@ -3476,6 +4126,21 @@
   <xs:element name="UserAugmentationPoint" abstract="true">
     <xs:annotation>
       <xs:documentation>An augmentation point for type cyber:UserType</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="VulnerabilityIsKnownIndicator" type="niem-xs:boolean" nillable="true">
+    <xs:annotation>
+      <xs:documentation>True if vulnerability is known; false otherwise</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="VulnerabilityIsPublicIndicator" type="niem-xs:boolean" nillable="true">
+    <xs:annotation>
+      <xs:documentation>True if vulnerability is publicly acknowledged; false otherwise</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="VulnerabilityRemoteCodeExecutableIndicator" type="niem-xs:boolean" nillable="true">
+    <xs:annotation>
+      <xs:documentation>True if vulnerability allows for remote code execution; false otherwise</xs:documentation>
     </xs:annotation>
   </xs:element>
 </xs:schema>
