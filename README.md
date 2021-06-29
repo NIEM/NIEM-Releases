@@ -1,22 +1,32 @@
 
-# NIEM 5.1 Alpha 1
+# NIEM 5.1 Alpha 2
 
-This is the alpha 1 draft of the NIEM 5.1 minor release.
+This is the alpha 2 draft of the NIEM 5.1 minor release.
 
 In a minor release, content may be updated in domains and code tables.  Core, namespaces imported by Core, and the architecture, which is defined by the NIEM Naming and Design Rules (NDR), will remain locked until the next major release.
 
 ## Feedback
 
-Please submit feedback by Friday, April 16, 2021. Feedback can be posted directly to the NIEM Releases [issue tracker](https://github.com/NIEM/NIEM-Releases/issues) (see [help](https://github.com/NIEM/NIEM-Releases/wiki/Issues)) or emailed to [niem-comments@lists.gatech.edu](niem-comments@lists.gatech.edu).
+Please submit feedback by Friday, July 9, 2021. Feedback can be posted directly to the NIEM Releases [issue tracker](https://github.com/NIEM/NIEM-Releases/issues) (see [help](https://github.com/NIEM/NIEM-Releases/wiki/Issues)) or emailed to [niem-comments@lists.gatech.edu](niem-comments@lists.gatech.edu).
 
 ## Key changes
 
 The following is a summary of the key changes made in this release.  More details are available from the [5.1 issues](https://github.com/NIEM/NIEM-Releases/issues?page=1&q=is%3Aissue+label%3A5.1) in the NIEM Releases issue tracker, and the change log spreadsheet in the release package.
 
-- **Biometrics domain** - Added additional DNA-related content ([#152](https://github.com/NIEM/NIEM-Releases/issues/152))
+- **Biometrics domain**
+  - Added additional DNA-related content ([#152](https://github.com/NIEM/NIEM-Releases/issues/152))
 
-- **Cyber domain** (new) - Added content supporting Federal Incident Reporting Requirements (FIRR) ([#209](https://github.com/NIEM/NIEM-Releases/issues/209))
+- **Cyber domain** (new)
+  - Added content supporting Federal Incident Reporting Requirements (FIRR) ([#209](https://github.com/NIEM/NIEM-Releases/issues/209))
 
-- **Emergency Management domain** - Added flood damage claim content from OpenFEMA ([#208](https://github.com/NIEM/NIEM-Releases/issues/208))
+- **Emergency Management domain**
+  - Added flood damage claim content from OpenFEMA ([#208](https://github.com/NIEM/NIEM-Releases/issues/208))
 
-- **Military Operations domain** - Added content from the Joint Non-Kinetic Effectiveness (JNKE) IEPD ([#210](https://github.com/NIEM/NIEM-Releases/issues/210))
+- **Justice domain**
+  - Moved Justice elements with a NCIC data type to the NCIC namespace ([#214](https://github.com/NIEM/NIEM-Releases/issues/214))
+
+- **Military Operations domain**
+  - Added content from the Joint Non-Kinetic Effectiveness (JNKE) IEPD ([#210](https://github.com/NIEM/NIEM-Releases/issues/210))
+
+- **NCIC codes**
+  - Re-added 4.2 code sets that were removed from the 5.0 release due to harmonization efforts across the FBI and Justice code sets for legacy support. ([#211](https://github.com/NIEM/NIEM-Releases/issues/211))
