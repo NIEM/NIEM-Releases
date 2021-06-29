@@ -1,0 +1,2580 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema targetNamespace="http://release.niem.gov/niem/codes/ncic/5.0.1/" version="beta1" xml:lang="en-US" xsi:schemaLocation="http://release.niem.gov/niem/appinfo/5.0/ ../utility/appinfo.xsd http://release.niem.gov/niem/conformanceTargets/3.0/ ../utility/conformanceTargets.xsd" ct:conformanceTargets="http://reference.niem.gov/niem/specification/naming-and-design-rules/5.0/#ReferenceSchemaDocument"
+  xmlns:appinfo="http://release.niem.gov/niem/appinfo/5.0/"
+  xmlns:ct="http://release.niem.gov/niem/conformanceTargets/3.0/"
+  xmlns:j="http://release.niem.gov/niem/domains/jxdm/7.0/"
+  xmlns:nc="http://release.niem.gov/niem/niem-core/5.0/"
+  xmlns:ncic-5.0.1="http://release.niem.gov/niem/codes/ncic/5.0.1/"
+  xmlns:structures="http://release.niem.gov/niem/structures/5.0/"
+  xmlns:xs="http://www.w3.org/2001/XMLSchema"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <xs:annotation>
+    <xs:documentation>FBI National Crime and Information Center (NCIC) 5.0.1 domain update codes</xs:documentation>
+  </xs:annotation>
+  <xs:import namespace="http://release.niem.gov/niem/domains/jxdm/7.0/" schemaLocation="../domains/jxdm.xsd"/>
+  <xs:import namespace="http://release.niem.gov/niem/niem-core/5.0/" schemaLocation="../niem-core.xsd"/>
+  <xs:import namespace="http://release.niem.gov/niem/structures/5.0/" schemaLocation="../utility/structures.xsd"/>
+  <xs:simpleType name="BLTCodeSimpleType">
+    <xs:annotation>
+      <xs:documentation>A data type for 12 - Blood Type (BLT) Field Codes</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="ABNEG">
+        <xs:annotation>
+          <xs:documentation>AB NEGATIVE</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ABPOS">
+        <xs:annotation>
+          <xs:documentation>AB POSITIVE</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ABUNK">
+        <xs:annotation>
+          <xs:documentation>AB UNKNOWN</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ANEG">
+        <xs:annotation>
+          <xs:documentation>A NEGATIVE</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="APOS">
+        <xs:annotation>
+          <xs:documentation>A POSITIVE</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AUNK">
+        <xs:annotation>
+          <xs:documentation>A UNKNOWN</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="BNEG">
+        <xs:annotation>
+          <xs:documentation>B NEGATIVE</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="BPOS">
+        <xs:annotation>
+          <xs:documentation>B POSITIVE</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="BUNK">
+        <xs:annotation>
+          <xs:documentation>B UNKNOWN</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ONEG">
+        <xs:annotation>
+          <xs:documentation>O NEGATIVE</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="OPOS">
+        <xs:annotation>
+          <xs:documentation>O POSITIVE</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="OUNK">
+        <xs:annotation>
+          <xs:documentation>O UNKNOWN</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="UNKWN">
+        <xs:annotation>
+          <xs:documentation>UNKNOWN</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="BLTCodeType">
+    <xs:annotation>
+      <xs:documentation>A data type for 12 - Blood Type (BLT) Field Codes</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="ncic-5.0.1:BLTCodeSimpleType">
+        <xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:simpleType name="BOATCodeSimpleType">
+    <xs:annotation>
+      <xs:documentation>A data type for 1 - Introduction to State and Country Field Usage</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="AS">
+        <xs:annotation>
+          <xs:documentation>AMERICAN SAMOA</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CF">
+        <xs:annotation>
+          <xs:documentation>CALIFORNIA</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CL">
+        <xs:annotation>
+          <xs:documentation>COLORADO</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="DL">
+        <xs:annotation>
+          <xs:documentation>DELAWARE</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="HA">
+        <xs:annotation>
+          <xs:documentation>HAWAII</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="KA">
+        <xs:annotation>
+          <xs:documentation>KANSAS</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="MC">
+        <xs:annotation>
+          <xs:documentation>MICHIGAN</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="MI">
+        <xs:annotation>
+          <xs:documentation>MISSISSIPPI</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="MS">
+        <xs:annotation>
+          <xs:documentation>MASSACHUSETTS</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="WN">
+        <xs:annotation>
+          <xs:documentation>WASHINGTON</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="WS">
+        <xs:annotation>
+          <xs:documentation>WISCONSIN</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="BOATCodeType">
+    <xs:annotation>
+      <xs:documentation>A data type for 1 - Introduction to State and Country Field Usage</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="ncic-5.0.1:BOATCodeSimpleType">
+        <xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:simpleType name="CanadianCodeSimpleType">
+    <xs:annotation>
+      <xs:documentation>A data type for 2.1: Canadian Provinces</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="AB">
+        <xs:annotation>
+          <xs:documentation>ALBERTA</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="BC">
+        <xs:annotation>
+          <xs:documentation>BRITISH COLUMBIA</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="MB">
+        <xs:annotation>
+          <xs:documentation>MANITOBA</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="NF">
+        <xs:annotation>
+          <xs:documentation>NEWFOUNDLAND (INCLUDES LABRADOR)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="NK">
+        <xs:annotation>
+          <xs:documentation>NEW BRUNSWICK</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="NS">
+        <xs:annotation>
+          <xs:documentation>NOVA SCOTIA</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="NT">
+        <xs:annotation>
+          <xs:documentation>NORTHWEST TERRITORIES</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ON">
+        <xs:annotation>
+          <xs:documentation>ONTARIO</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="PE">
+        <xs:annotation>
+          <xs:documentation>PRINCE EDWARD ISLAND</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="PQ">
+        <xs:annotation>
+          <xs:documentation>QUEBEC</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="SN">
+        <xs:annotation>
+          <xs:documentation>SASKATCHEWAN</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="XN">
+        <xs:annotation>
+          <xs:documentation>NUNAVUT TERRITORY (NUVAVUT)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="YT">
+        <xs:annotation>
+          <xs:documentation>YUKON (TERRITORY)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="CanadianCodeType">
+    <xs:annotation>
+      <xs:documentation>A data type for 2.1: Canadian Provinces</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="ncic-5.0.1:CanadianCodeSimpleType">
+        <xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:simpleType name="CountryCodeSimpleType">
+    <xs:annotation>
+      <xs:documentation>A data type for 2.2: Country Codes</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="AA">
+        <xs:annotation>
+          <xs:documentation>ALBANIA</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AD">
+        <xs:annotation>
+          <xs:documentation>ANDORRA</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AE">
+        <xs:annotation>
+          <xs:documentation>ANGUILLA (FORMERLY ST. KITTS-ANGUILLA, ST. KITTS - AW)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AF">
+        <xs:annotation>
+          <xs:documentation>AFGHANISTAN</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AH">
+        <xs:annotation>
+          <xs:documentation>ASHMORE AND CARTIER ISLANDS, TERRITORY OF (AUSTRALIAN EXTERNAL TERRITORY)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AI">
+        <xs:annotation>
+          <xs:documentation>ANTIGUA AND BARBUDA (FORMERLY ANTIGUA)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AJ">
+        <xs:annotation>
+          <xs:documentation>ARUBA (NOW INDEPENDENT OF NETHERLANDS ANTILLES)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AN">
+        <xs:annotation>
+          <xs:documentation>ALGERIA</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AO">
+        <xs:annotation>
+          <xs:documentation>ANGOLA</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AP">
+        <xs:annotation>
+          <xs:documentation>ARMENIA</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AQ">
+        <xs:annotation>
+          <xs:documentation>AZORES ISLANDS</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AS">
+        <xs:annotation>
+          <xs:documentation>AUSTRALIA (PRE 1995 RES BOAT FILE CODE FOR AMERICAN SAMOA, SEE AM)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AT">
+        <xs:annotation>
+          <xs:documentation>ARGENTINA</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AU">
+        <xs:annotation>
+          <xs:documentation>AUSTRIA</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AV">
+        <xs:annotation>
+          <xs:documentation>AZERBAIJAN</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="BB">
+        <xs:annotation>
+          <xs:documentation>BARBADOS</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="BD">
+        <xs:annotation>
+          <xs:documentation>BAHAMAS, THE</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="BE">
+        <xs:annotation>
+          <xs:documentation>BAHRAIN/BAHREIN</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="BF">
+        <xs:annotation>
+          <xs:documentation>BASSAS DA INDIA (FRENCH POSSESSION)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="BG">
+        <xs:annotation>
+          <xs:documentation>BELGIUM</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="BH">
+        <xs:annotation>
+          <xs:documentation>BELIZE (FORMERLY BRITISH HONDURAS)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="BI">
+        <xs:annotation>
+          <xs:documentation>BURUNDI</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="BL">
+        <xs:annotation>
+          <xs:documentation>BANGLADESH</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="BM">
+        <xs:annotation>
+          <xs:documentation>BERMUDA</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="BN">
+        <xs:annotation>
+          <xs:documentation>BHUTAN</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="BO">
+        <xs:annotation>
+          <xs:documentation>BRITISH INDIAN OCEAN TERRITORY (DEPENDENT TERRITORY OF UNITED KINGDOM)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="BP">
+        <xs:annotation>
+          <xs:documentation>BOSNIA AND HERZEGOVENIA (HERZEGOVENIA HC REFERENCE ONLY)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="BQ">
+        <xs:annotation>
+          <xs:documentation>BOUVET ISLAND (NORWEGIAN TERRITORY)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="BR">
+        <xs:annotation>
+          <xs:documentation>BURMA</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="BS">
+        <xs:annotation>
+          <xs:documentation>SOLOMON ISLANDS (FORMERLY BRITISH SOLOMON ISLANDS)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="BT">
+        <xs:annotation>
+          <xs:documentation>BOTSWANA</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="BU">
+        <xs:annotation>
+          <xs:documentation>BULGARIA</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="BV">
+        <xs:annotation>
+          <xs:documentation>BOLIVIA</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="BW">
+        <xs:annotation>
+          <xs:documentation>BALEARIC ISLANDS</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="BX">
+        <xs:annotation>
+          <xs:documentation>BRUNEI</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="BY">
+        <xs:annotation>
+          <xs:documentation>BELARUS</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="BZ">
+        <xs:annotation>
+          <xs:documentation>BRAZIL</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CB">
+        <xs:annotation>
+          <xs:documentation>COLOMBIA, REPUBLIC OF</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CC">
+        <xs:annotation>
+          <xs:documentation>CUBA, REPUBLIC OF</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CD">
+        <xs:annotation>
+          <xs:documentation>CANADA (USE WHEN PROVINCE IS NOT LISTED)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CF">
+        <xs:annotation>
+          <xs:documentation>CHAD (PRE 1995 RES BOAT FILE CODE FOR CALIFORNIA, SEE CA)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CJ">
+        <xs:annotation>
+          <xs:documentation>CAMBODIA (FORMERLY KHMER REPUBLIC AND KAMPUCHEA)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CM">
+        <xs:annotation>
+          <xs:documentation>CAMEROON</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CP">
+        <xs:annotation>
+          <xs:documentation>CAYMAN ISLANDS (DEPENDENT TERRITORY OF UNITED KINGDOM)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CQ">
+        <xs:annotation>
+          <xs:documentation>CHILE</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CR">
+        <xs:annotation>
+          <xs:documentation>COSTA RICA</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CS">
+        <xs:annotation>
+          <xs:documentation>CYPRUS, REPUBLIC OF</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CV">
+        <xs:annotation>
+          <xs:documentation>CAPE VERDE ISLANDS</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CW">
+        <xs:annotation>
+          <xs:documentation>CENTRAL AFRICAN REPUBLIC</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CY">
+        <xs:annotation>
+          <xs:documentation>SRI LANKA (FORMERLY CEYLON)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="DB">
+        <xs:annotation>
+          <xs:documentation>CLIPPERTON ISLAND (FRENCH POSSESSION)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="DD">
+        <xs:annotation>
+          <xs:documentation>COCOS (KEELING) ISLANDS (AUSTRALIAN DEPENDENCY)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="DG">
+        <xs:annotation>
+          <xs:documentation>COMOROS (FEDERAL ISLAMIC REPUBLIC OF THE)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="DH">
+        <xs:annotation>
+          <xs:documentation>BENIN (FORMERLY DAHOMEY)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="DI">
+        <xs:annotation>
+          <xs:documentation>COOK ISLANDS</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="DJ">
+        <xs:annotation>
+          <xs:documentation>CORAL SEA ISLANDS (AUSTRALIAN TERRITORY)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="DK">
+        <xs:annotation>
+          <xs:documentation>DENMARK, KINGDOM OF</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="DM">
+        <xs:annotation>
+          <xs:documentation>DOMINICA</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="DN">
+        <xs:annotation>
+          <xs:documentation>DJIBOUTI, REPUBLIC OF</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="DR">
+        <xs:annotation>
+          <xs:documentation>DOMINICAN REPUBLIC</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="EK">
+        <xs:annotation>
+          <xs:documentation>EQUATORIAL GUINEA</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="EL">
+        <xs:annotation>
+          <xs:documentation>EL SALVADOR</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="EN">
+        <xs:annotation>
+          <xs:documentation>ENGLAND (ALSO UN FOR UNITED KINGDOM)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="EO">
+        <xs:annotation>
+          <xs:documentation>ETHIOPIA</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ER">
+        <xs:annotation>
+          <xs:documentation>EUROPA ISLAND (FRENCH POSSESSION)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ES">
+        <xs:annotation>
+          <xs:documentation>ESTONIA</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ET">
+        <xs:annotation>
+          <xs:documentation>ERITREA</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="EU">
+        <xs:annotation>
+          <xs:documentation>ECUADOR</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="EY">
+        <xs:annotation>
+          <xs:documentation>EGYPT (FORMERLY UNITED ARAB REPUBLIC - UA REFERENCE ONLY)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="EZ">
+        <xs:annotation>
+          <xs:documentation>CZECH REPUBLIC</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="FA">
+        <xs:annotation>
+          <xs:documentation>FALKLAND ISLANDS, UK DEPENDENCY (ISLAS MALVINAS)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="FD">
+        <xs:annotation>
+          <xs:documentation>FINLAND</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="FG">
+        <xs:annotation>
+          <xs:documentation>FRENCH GUIANA (DEPARTMENT OF FRANCE)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="FJ">
+        <xs:annotation>
+          <xs:documentation>FIJI</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="FN">
+        <xs:annotation>
+          <xs:documentation>FRANCE</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="FO">
+        <xs:annotation>
+          <xs:documentation>FAROE ISLANDS</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="FP">
+        <xs:annotation>
+          <xs:documentation>FRENCH POLYNESIA, TERRITORY OF (FRENCH OVERSEAS TERRITORY)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="FR">
+        <xs:annotation>
+          <xs:documentation>FRENCH SOUTHERN AND ANTARTIC LANDS, TERRITORY OF THE FRENCH OVERSEAS TERRITORY)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="FS">
+        <xs:annotation>
+          <xs:documentation>MICRONESIA, FEDERATED STATES OF</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="GB">
+        <xs:annotation>
+          <xs:documentation>GABON</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="GC">
+        <xs:annotation>
+          <xs:documentation>GREECE</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="GD">
+        <xs:annotation>
+          <xs:documentation>GEORGIA (FORMERLY GRUZINSKAYA)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="GE">
+        <xs:annotation>
+          <xs:documentation>GERMANY (EAST GERMANY: 1945-1989 -EM)(WEST GERMANY: 1945-1989, SEE GW AND WG)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="GF">
+        <xs:annotation>
+          <xs:documentation>GUERNSEY, BAILIWICK OF (BRITISH CROWN DEPENDENCY)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="GG">
+        <xs:annotation>
+          <xs:documentation>GHANA</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="GI">
+        <xs:annotation>
+          <xs:documentation>GUINEA</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="GJ">
+        <xs:annotation>
+          <xs:documentation>GRENADA</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="GK">
+        <xs:annotation>
+          <xs:documentation>GAMBIA, THE</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="GN">
+        <xs:annotation>
+          <xs:documentation>GREENLAND</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="GO">
+        <xs:annotation>
+          <xs:documentation>GLORIOSO ISLANDS (FRENCH POSSESSION)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="GP">
+        <xs:annotation>
+          <xs:documentation>GUADELOUPE, OVERSEAS DEPARTMENT OF FRANCE</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="GS">
+        <xs:annotation>
+          <xs:documentation>SOUTH GEORGIA AND SOUTH SANDWICH ISLANDS</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="GT">
+        <xs:annotation>
+          <xs:documentation>GUATEMALA</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="GY">
+        <xs:annotation>
+          <xs:documentation>GUYANA</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="GZ">
+        <xs:annotation>
+          <xs:documentation>GAZA</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="HC">
+        <xs:annotation>
+          <xs:documentation>HERZEGOVENIA (FOR REFERENCE ONLY) AND BOSNIA BP</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="HD">
+        <xs:annotation>
+          <xs:documentation>HONDURAS</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="HE">
+        <xs:annotation>
+          <xs:documentation>HEARD ISLAND AND MCDONALD ISLAND. TERRITORY OF (AUSTRALIAN EXTERNAL TERRITORY)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="HK">
+        <xs:annotation>
+          <xs:documentation>HONG KONG</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="HN">
+        <xs:annotation>
+          <xs:documentation>VANUATU, REPUBLIC OF (FORMERLY NEW HEBRIDES)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="HR">
+        <xs:annotation>
+          <xs:documentation>CHRISTMAS ISLAND, TERRITORY OF (AUSTRALIAN EXTERNAL TERRITORY)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="HS">
+        <xs:annotation>
+          <xs:documentation>SAINT HELENA</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="HT">
+        <xs:annotation>
+          <xs:documentation>HAITI</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="HU">
+        <xs:annotation>
+          <xs:documentation>HUNGARY</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="IB">
+        <xs:annotation>
+          <xs:documentation>MAN, ISLE OF (BRITISH CROWN DEPENDENCY)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="IC">
+        <xs:annotation>
+          <xs:documentation>ICELAND</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="IE">
+        <xs:annotation>
+          <xs:documentation>IRELAND (DOES NOT INCLUDE NORTH IRELAND)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="II">
+        <xs:annotation>
+          <xs:documentation>INDIA (INCLUDING SIKKIM-SK FOR REFERENCE ONLY)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="IM">
+        <xs:annotation>
+          <xs:documentation>MADEIRA ISLANDS</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="IO">
+        <xs:annotation>
+          <xs:documentation>INDONESIA (INCLUDES PORTUESE TIMOR)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="IQ">
+        <xs:annotation>
+          <xs:documentation>IRAQ</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="IR">
+        <xs:annotation>
+          <xs:documentation>IRAN</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="IS">
+        <xs:annotation>
+          <xs:documentation>ISRAEL</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="IT">
+        <xs:annotation>
+          <xs:documentation>ITALY (INCLUDES SICILY AND SARDINIA)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="IU">
+        <xs:annotation>
+          <xs:documentation>NIUE</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="IY">
+        <xs:annotation>
+          <xs:documentation>IVORY COAST (COTE D'LVOIRE)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="JA">
+        <xs:annotation>
+          <xs:documentation>JAPAN</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="JE">
+        <xs:annotation>
+          <xs:documentation>JERSEY, BAILIWICK OF (BRITISH CROWN DEPENDENCY)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="JM">
+        <xs:annotation>
+          <xs:documentation>JAMAICA</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="JN">
+        <xs:annotation>
+          <xs:documentation>JAN MAYEN (NORWEGIAN TERRITORY)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="JO">
+        <xs:annotation>
+          <xs:documentation>JORDAN</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="JU">
+        <xs:annotation>
+          <xs:documentation>JUAN DE NOVA ISLAND</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="KB">
+        <xs:annotation>
+          <xs:documentation>KIRIBATI (FORMERLY GILBERT ISLANDS, ELLICE ISLAND SEE TV)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="KC">
+        <xs:annotation>
+          <xs:documentation>CROATIA</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="KE">
+        <xs:annotation>
+          <xs:documentation>KENYA</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="KH">
+        <xs:annotation>
+          <xs:documentation>MANAHIKI ISLAND</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="KN">
+        <xs:annotation>
+          <xs:documentation>KOREA - NORTH KOREA</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="KO">
+        <xs:annotation>
+          <xs:documentation>SOUTH KOREA</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="KT">
+        <xs:annotation>
+          <xs:documentation>KAZAKHSTAN</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="KU">
+        <xs:annotation>
+          <xs:documentation>KUWAIT</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="KV">
+        <xs:annotation>
+          <xs:documentation>KOSOVO</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="KZ">
+        <xs:annotation>
+          <xs:documentation>KYRGYZSTAN</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="LB">
+        <xs:annotation>
+          <xs:documentation>LIBERIA</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="LD">
+        <xs:annotation>
+          <xs:documentation>MOLDOVA</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="LE">
+        <xs:annotation>
+          <xs:documentation>LESOTHO</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="LF">
+        <xs:annotation>
+          <xs:documentation>SLOVAKIA</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="LH">
+        <xs:annotation>
+          <xs:documentation>LITHUANIA</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="LI">
+        <xs:annotation>
+          <xs:documentation>LIECHTENSTEIN</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="LN">
+        <xs:annotation>
+          <xs:documentation>LEBANON</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="LO">
+        <xs:annotation>
+          <xs:documentation>SLOVENIA</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="LS">
+        <xs:annotation>
+          <xs:documentation>LAOS</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="LT">
+        <xs:annotation>
+          <xs:documentation>LATVIA</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="LU">
+        <xs:annotation>
+          <xs:documentation>SAINT LUCIA</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="LX">
+        <xs:annotation>
+          <xs:documentation>LUXEMBOURG</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="LY">
+        <xs:annotation>
+          <xs:documentation>LIBYA</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="MF">
+        <xs:annotation>
+          <xs:documentation>MALAWI</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="MG">
+        <xs:annotation>
+          <xs:documentation>MONGOLIA</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="MJ">
+        <xs:annotation>
+          <xs:documentation>MONACO</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ML">
+        <xs:annotation>
+          <xs:documentation>MALI</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="MM">
+        <xs:annotation>
+          <xs:documentation>MEXICO (SEE SEPARATE LIST OF MEXICAN STATES; USE CODE MM ONLY WHEN STATE IS UNKNOWN)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="MP">
+        <xs:annotation>
+          <xs:documentation>MADAGASCAR (INCLUDED IN MALAGASY REPUBLIC)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="MQ">
+        <xs:annotation>
+          <xs:documentation>MOROCCO</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="MU">
+        <xs:annotation>
+          <xs:documentation>MAURITANIA</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="MV">
+        <xs:annotation>
+          <xs:documentation>MALDIVES</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="MY">
+        <xs:annotation>
+          <xs:documentation>MALTA</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="MZ">
+        <xs:annotation>
+          <xs:documentation>MALAYSIA</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="NE">
+        <xs:annotation>
+          <xs:documentation>NETHERLANDS (HOLLAND)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="NG">
+        <xs:annotation>
+          <xs:documentation>NIGERIA</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="NI">
+        <xs:annotation>
+          <xs:documentation>NORTHERN IRELAND (USE UN FOR UNITED KINGDOM)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="NN">
+        <xs:annotation>
+          <xs:documentation>NIGER</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="NO">
+        <xs:annotation>
+          <xs:documentation>PAPAU NEW GUINEA (FORMERLY NEW GUINEA)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="NP">
+        <xs:annotation>
+          <xs:documentation>NEPAL</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="NQ">
+        <xs:annotation>
+          <xs:documentation>NEW CALEDONIA AND DEPENDENCIES, TERRITORY OF (FRENCH OVERSEAS TERRITORY)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="NR">
+        <xs:annotation>
+          <xs:documentation>NAURA</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="NU">
+        <xs:annotation>
+          <xs:documentation>NICARAGUA</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="NW">
+        <xs:annotation>
+          <xs:documentation>NORWAY</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="NX">
+        <xs:annotation>
+          <xs:documentation>NETHERLANDS ANTILLES (BONAIRE AND CURACAO)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="NZ">
+        <xs:annotation>
+          <xs:documentation>NEW ZEALAND</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="OC">
+        <xs:annotation>
+          <xs:documentation>MACAU (FORMERLY MACAO)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="OF">
+        <xs:annotation>
+          <xs:documentation>NORFOLK ISLAND, TERRITORY OF (AUSTRALIAN EXTERNAL TERRITORY)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="OI">
+        <xs:annotation>
+          <xs:documentation>OKINAWA</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="OM">
+        <xs:annotation>
+          <xs:documentation>OMAN</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="PC">
+        <xs:annotation>
+          <xs:documentation>PITCAIRN, HENDERSON, DUCIE, AND OENO ISLANDS (DEPENDENT TERRITORY OF UNITED KINGDOM)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="PD">
+        <xs:annotation>
+          <xs:documentation>PALAU, REPUBLIC OF</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="PF">
+        <xs:annotation>
+          <xs:documentation>PARACEL ISLANDS</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="PG">
+        <xs:annotation>
+          <xs:documentation>GUINEA-BISSAU (FORMERLY PORTUGUESE GUINEA)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="PI">
+        <xs:annotation>
+          <xs:documentation>PHILIPPINES</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="PK">
+        <xs:annotation>
+          <xs:documentation>PAKISTAN</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="PM">
+        <xs:annotation>
+          <xs:documentation>PANAMA</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="PO">
+        <xs:annotation>
+          <xs:documentation>POLAND</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="PS">
+        <xs:annotation>
+          <xs:documentation>SAINT PIERRE AND MIQUELON, TERRITORIAL COLLECTIVITY OF</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="PT">
+        <xs:annotation>
+          <xs:documentation>PORTUGAL</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="PU">
+        <xs:annotation>
+          <xs:documentation>PERU</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="PV">
+        <xs:annotation>
+          <xs:documentation>PARAGUAY</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="QA">
+        <xs:annotation>
+          <xs:documentation>QATAR</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="RA">
+        <xs:annotation>
+          <xs:documentation>RUSSIA (FORMERLY USSR)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="RB">
+        <xs:annotation>
+          <xs:documentation>CONGO, REPUBLIC OF (BRAZZAVILLE CAPTIAL)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="RC">
+        <xs:annotation>
+          <xs:documentation>CHINA - PEOPLE'S REPUBLIC OF CHINA</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="RE">
+        <xs:annotation>
+          <xs:documentation>REUNION, DEPARTMENT OF</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="RF">
+        <xs:annotation>
+          <xs:documentation>RUSSIAN FEDERATION</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="RG">
+        <xs:annotation>
+          <xs:documentation>GIBRALTAR (DEPENDENT TERRITORY OF UNITED KINGDOM)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="RH">
+        <xs:annotation>
+          <xs:documentation>ZIMBABWE, REPUBLIC OF (FORMERLY RHODESIA)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="RR">
+        <xs:annotation>
+          <xs:documentation>MONTSERRAT (DEPENDENT TERRITORY OF UNITED KINGDOM)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="RS">
+        <xs:annotation>
+          <xs:documentation>WESTERN SAHARA (FORMERLY SPANISH SAHARA)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="RU">
+        <xs:annotation>
+          <xs:documentation>ROMANIA/RUMANIA</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="RV">
+        <xs:annotation>
+          <xs:documentation>VIETNAM, SOCIALIST REPUBLIC OF (FORMERLY VIETNAM-VM REFERENCE ONLY)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="RW">
+        <xs:annotation>
+          <xs:documentation>RWANDA</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="RY">
+        <xs:annotation>
+          <xs:documentation>YEMEN, REPUBLIC OF (PEOPLE'S DEMOCRATIC REPUBLIC OF YEMEN-ST AND YEMEN ARAB REPUBLIC-YE, UNIFIED IN 1990)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="SA">
+        <xs:annotation>
+          <xs:documentation>SIERRE LEONE (SIERRA LEONE)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="SB">
+        <xs:annotation>
+          <xs:documentation>SAUDI ARABIA</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="SE">
+        <xs:annotation>
+          <xs:documentation>SEYCHELLES</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="SF">
+        <xs:annotation>
+          <xs:documentation>SOUTH AFRICA</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="SG">
+        <xs:annotation>
+          <xs:documentation>SENEGAL</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="SH">
+        <xs:annotation>
+          <xs:documentation>SAN MARINO</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="SJ">
+        <xs:annotation>
+          <xs:documentation>NAMIBIA (SOUTH-WEST AFRICA)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="SM">
+        <xs:annotation>
+          <xs:documentation>SOMALIA</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="SP">
+        <xs:annotation>
+          <xs:documentation>SPAIN</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="SQ">
+        <xs:annotation>
+          <xs:documentation>SWEDEN</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="SR">
+        <xs:annotation>
+          <xs:documentation>SINGAPORE</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="SS">
+        <xs:annotation>
+          <xs:documentation>SCOTLAND OR UN FOR UNITED KINGDOM</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="SU">
+        <xs:annotation>
+          <xs:documentation>SUDAN</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="SV">
+        <xs:annotation>
+          <xs:documentation>SVALBARD (NORWEIGAN TERRITORY)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="SW">
+        <xs:annotation>
+          <xs:documentation>SWAZILAND</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="SY">
+        <xs:annotation>
+          <xs:documentation>SYRIA</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="SZ">
+        <xs:annotation>
+          <xs:documentation>SWITZERLAND</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="TC">
+        <xs:annotation>
+          <xs:documentation>UNITED ARAB EMIRATES (FORMERLY TRUCIAL STATES)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="TD">
+        <xs:annotation>
+          <xs:documentation>TRUST TERRITORY OF THE PACIFIC ISLANDS</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="TE">
+        <xs:annotation>
+          <xs:documentation>SPRATLY ISLANDS</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="TF">
+        <xs:annotation>
+          <xs:documentation>TUAMONTU ARCHIPELAGO</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="TG">
+        <xs:annotation>
+          <xs:documentation>TONGA</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="TH">
+        <xs:annotation>
+          <xs:documentation>THAILAND</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="TJ">
+        <xs:annotation>
+          <xs:documentation>TAJIKISTAN</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="TK">
+        <xs:annotation>
+          <xs:documentation>TOKELAU (NEW ZEALAND TERRITORY)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="TM">
+        <xs:annotation>
+          <xs:documentation>TROMELIN ISLAND (FRENCH POSSESSION)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="TO">
+        <xs:annotation>
+          <xs:documentation>TOGO</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="TP">
+        <xs:annotation>
+          <xs:documentation>SAO TOME AND PRINCIPE</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="TQ">
+        <xs:annotation>
+          <xs:documentation>TONGAREVA</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="TR">
+        <xs:annotation>
+          <xs:documentation>TURKS AND CACOS ISLANDS (DEPENDENT TERRITORY OF UNITED KINGDOM)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="TS">
+        <xs:annotation>
+          <xs:documentation>SAINT CHRISTOPHER (OR SAINT KITTS) AND NEVIS</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="TT">
+        <xs:annotation>
+          <xs:documentation>TRINIDAD AND TOBAGO</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="TU">
+        <xs:annotation>
+          <xs:documentation>TUNISIA</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="TV">
+        <xs:annotation>
+          <xs:documentation>TUVALU (FORMERLY ELLICE ISLAND, GILBERT ISLANDS KB)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="TW">
+        <xs:annotation>
+          <xs:documentation>TAIWAN, REPUBLIC OF CHINA</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="TY">
+        <xs:annotation>
+          <xs:documentation>TURKEY</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="TZ">
+        <xs:annotation>
+          <xs:documentation>TANZANIA, UNITED REPUBLIC OF</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="UG">
+        <xs:annotation>
+          <xs:documentation>UGANDA</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="UK">
+        <xs:annotation>
+          <xs:documentation>UKRAINE</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="UM">
+        <xs:annotation>
+          <xs:documentation>MAURITIUS</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="UN">
+        <xs:annotation>
+          <xs:documentation>UNITED KINGDOM (ENGLAND-EN, SCOTLAND-SS, WALES-WL, NORTH IRELAND-NI, GREAT BRITIAN FOR REFERENCE ONLY)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="UR">
+        <xs:annotation>
+          <xs:documentation>TURKMENISTAN</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="US">
+        <xs:annotation>
+          <xs:documentation>USA - USED: 1. LIS FIELD OF PLATES ISSUED BY US GOVT, US MILITARY PLATES AND US CIVILIAN AIRCRAFT, 2. RES OF BOATS THAT ARE USCG DOCUMENTED, 3. GUN MAK FIELD UNKN, MFD IN US, NOT US MIL WEAPON, 4. III POB NAT AMER IF STATE IS UNKN</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="UV">
+        <xs:annotation>
+          <xs:documentation>BURKINA FASO (KNOWN AS BURKINA,FORMERLY UPPER VOLTA)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="UY">
+        <xs:annotation>
+          <xs:documentation>URUGUAY</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="UZ">
+        <xs:annotation>
+          <xs:documentation>UZBEKISTAN, REPUBLIC OF</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="VB">
+        <xs:annotation>
+          <xs:documentation>BRITISH VIRGIN ISLANDS</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="VV">
+        <xs:annotation>
+          <xs:documentation>SAINT VINCENT AND THE GRENADINES</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="VY">
+        <xs:annotation>
+          <xs:documentation>VATICAN CITY</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="VZ">
+        <xs:annotation>
+          <xs:documentation>VENEZUELA, REPUBLIC OF</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="WB">
+        <xs:annotation>
+          <xs:documentation>WEST BANK</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="WF">
+        <xs:annotation>
+          <xs:documentation>WALLIS AND FUTUAN (FRENCH TERRITORY)(FRENCH OVERSEAS TERRITORY)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="WL">
+        <xs:annotation>
+          <xs:documentation>WALES (ALSO UN FOR UNITED KINGDOM)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="WN">
+        <xs:annotation>
+          <xs:documentation>WEST INDIES (FOR WEST INDIES ISLANDS NOT SEPARATELY LISTED) (PRE 1995 RES BOAT FILE CODE FOR WASHINGTON, SEE WA)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="WS">
+        <xs:annotation>
+          <xs:documentation>WESTERN SAMOA (PRE 1995 RES BOAT FILE CODE FOR WISCONSIN, SEE WI)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="XA">
+        <xs:annotation>
+          <xs:documentation>SERBIA</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="XB">
+        <xs:annotation>
+          <xs:documentation>MONTENEGRO</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="XX">
+        <xs:annotation>
+          <xs:documentation>UNKNOWN PLACE OF BIRTH (FOR USE IN III RECORDS ONLY)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="YG">
+        <xs:annotation>
+          <xs:documentation>YUGOSLAVIA</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="YO">
+        <xs:annotation>
+          <xs:documentation>MAYOTTE, TERRITORIAL COLLECTIVITY OF</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="YY">
+        <xs:annotation>
+          <xs:documentation>UNLISTED (ANY FOREIGN COUNTRY/DEPENDENCY/TERRITORY NOT INCLUDED IN THE ABBREVIATION LIST)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ZB">
+        <xs:annotation>
+          <xs:documentation>MARTINIQUE</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ZC">
+        <xs:annotation>
+          <xs:documentation>SURINAM</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ZD">
+        <xs:annotation>
+          <xs:documentation>MACEDONIA</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ZF">
+        <xs:annotation>
+          <xs:documentation>SOUTH SUDAN</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ZI">
+        <xs:annotation>
+          <xs:documentation>CANARY ISLANDS</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ZM">
+        <xs:annotation>
+          <xs:documentation>ZAMBIA, REPUBLIC OF (FORMERLY CONGO KINSHASA)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ZO">
+        <xs:annotation>
+          <xs:documentation>MOZAMBIQUE</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ZR">
+        <xs:annotation>
+          <xs:documentation>CONGO, DEMOCRATIC REPUBLIC OF, CAPITAL KINSHASA (FORMERLY ZAIRE)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="CountryCodeType">
+    <xs:annotation>
+      <xs:documentation>A data type for 2.2: Country Codes</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="ncic-5.0.1:CountryCodeSimpleType">
+        <xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:simpleType name="ETNCodeSimpleType">
+    <xs:annotation>
+      <xs:documentation>A data type for 23 - Ethnicity (ETN) and Person of Interest Ethnicity (PIE) Field Codes</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="H">
+        <xs:annotation>
+          <xs:documentation>HISPANIC OR LATINO</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="N">
+        <xs:annotation>
+          <xs:documentation>NON-HISPANIC OR NOT LATINO</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="ETNCodeType">
+    <xs:annotation>
+      <xs:documentation>A data type for 23 - Ethnicity (ETN) and Person of Interest Ethnicity (PIE) Field Codes</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="ncic-5.0.1:ETNCodeSimpleType">
+        <xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:simpleType name="EYECodeSimpleType">
+    <xs:annotation>
+      <xs:documentation>A data type for 4 - Eye Color (EYE) and Person with Information Eye Color (PEY) Field Codes</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="BLK">
+        <xs:annotation>
+          <xs:documentation>BLACK</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="BLU">
+        <xs:annotation>
+          <xs:documentation>BLUE</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="BRO">
+        <xs:annotation>
+          <xs:documentation>BROWN</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="GRN">
+        <xs:annotation>
+          <xs:documentation>GREEN</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="GRY">
+        <xs:annotation>
+          <xs:documentation>GRAY</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="HAZ">
+        <xs:annotation>
+          <xs:documentation>HAZEL</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="MAR">
+        <xs:annotation>
+          <xs:documentation>MAROON</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="MUL">
+        <xs:annotation>
+          <xs:documentation>MULTICOLORED</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="PNK">
+        <xs:annotation>
+          <xs:documentation>PINK</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="XXX">
+        <xs:annotation>
+          <xs:documentation>UNKNOWN</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="EYECodeType">
+    <xs:annotation>
+      <xs:documentation>A data type for 4 - Eye Color (EYE) and Person with Information Eye Color (PEY) Field Codes</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="ncic-5.0.1:EYECodeSimpleType">
+        <xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:simpleType name="HAIRCodeSimpleType">
+    <xs:annotation>
+      <xs:documentation>A data type for 5 - Hair Color (HAI) and Person with Information Hair Color (PHA) Field Codes</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="BLD">
+        <xs:annotation>
+          <xs:documentation>BALD</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="BLK">
+        <xs:annotation>
+          <xs:documentation>BLACK</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="BLN">
+        <xs:annotation>
+          <xs:documentation>BLOND OR STRAWBERRY</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="BLU">
+        <xs:annotation>
+          <xs:documentation>BLUE</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="BRO">
+        <xs:annotation>
+          <xs:documentation>BROWN</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="GRN">
+        <xs:annotation>
+          <xs:documentation>GREEN</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="GRY">
+        <xs:annotation>
+          <xs:documentation>GRAY OR PARTIALLY GRAY</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ONG">
+        <xs:annotation>
+          <xs:documentation>ORANGE</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="PLE">
+        <xs:annotation>
+          <xs:documentation>PURPLE</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="PNK">
+        <xs:annotation>
+          <xs:documentation>PINK</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="RED">
+        <xs:annotation>
+          <xs:documentation>RED OR AUBURN</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="SDY">
+        <xs:annotation>
+          <xs:documentation>SANDY</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="WHI">
+        <xs:annotation>
+          <xs:documentation>WHITE</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="XXX">
+        <xs:annotation>
+          <xs:documentation>UNKNOWN OR COMPLETELY BALD</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="HAIRCodeType">
+    <xs:annotation>
+      <xs:documentation>A data type for 5 - Hair Color (HAI) and Person with Information Hair Color (PHA) Field Codes</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="ncic-5.0.1:HAIRCodeSimpleType">
+        <xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:simpleType name="RACECodeSimpleType">
+    <xs:annotation>
+      <xs:documentation>A data type for 3 - Race (RAC), Protected Person Race (PPR), and Person with Information Race (PIR) Field Codes</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="A">
+        <xs:annotation>
+          <xs:documentation>ASIAN</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="B">
+        <xs:annotation>
+          <xs:documentation>BLACK</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="H">
+        <xs:annotation>
+          <xs:documentation>HISPANIC OR LATINO</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="I">
+        <xs:annotation>
+          <xs:documentation>AMERICAN INDIAN</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="P">
+        <xs:annotation>
+          <xs:documentation>NATIVE HAWAIIAN OR OTHER PACIFIC ISLANDER</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="U">
+        <xs:annotation>
+          <xs:documentation>UNKNOWN</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="W">
+        <xs:annotation>
+          <xs:documentation>WHITE</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="RACECodeType">
+    <xs:annotation>
+      <xs:documentation>A data type for 3 - Race (RAC), Protected Person Race (PPR), and Person with Information Race (PIR) Field Codes</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="ncic-5.0.1:RACECodeSimpleType">
+        <xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:simpleType name="ROVCodeSimpleType">
+    <xs:annotation>
+      <xs:documentation>A data type for 24 - Relationship of Victim (ROV) Field Codes</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="AQ">
+        <xs:annotation>
+          <xs:documentation>AQ - VICTIM WAS ACQUAINTANCE</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="BE">
+        <xs:annotation>
+          <xs:documentation>BE - VICTIM WAS BABYSITTEE (THE BABY)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="BG">
+        <xs:annotation>
+          <xs:documentation>BG - VICTIM WAS BOYFRIEND/GIRLFRIEND</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CF">
+        <xs:annotation>
+          <xs:documentation>CF - VICTIM WAS CHILD OF BOYFRIEND OR GIRLFRIEND</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CH">
+        <xs:annotation>
+          <xs:documentation>CH - VICTIM WAS CHILD</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CS">
+        <xs:annotation>
+          <xs:documentation>CS - VICTIM WAS COMMON-LAW-SPOUSE</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="EE">
+        <xs:annotation>
+          <xs:documentation>EE - VICTIM WAS EMPLOYEE</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ER">
+        <xs:annotation>
+          <xs:documentation>ER - VICTIM WAS EMPLOYER</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="FR">
+        <xs:annotation>
+          <xs:documentation>FR - VICTIM WAS FRIEND</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="GC">
+        <xs:annotation>
+          <xs:documentation>GC - VICTIM WAS GRANDCHILD</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="GP">
+        <xs:annotation>
+          <xs:documentation>GP - VICTIM WAS GRANDPARENT</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="HR">
+        <xs:annotation>
+          <xs:documentation>HR - HOMOSEXUAL RELATIONSHIP</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="IL">
+        <xs:annotation>
+          <xs:documentation>IL - VICTIM WAS IN-LAW</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="NE">
+        <xs:annotation>
+          <xs:documentation>NE - VICTIM WAS NEIGHBOR</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="OF">
+        <xs:annotation>
+          <xs:documentation>OF - VICTIM WAS OTHER FAMILY MEMBER</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="OK">
+        <xs:annotation>
+          <xs:documentation>OK - VICTIM WAS OTHERWISE KNOWN</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="PA">
+        <xs:annotation>
+          <xs:documentation>PA - VICTIM WAS PARENT</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="RU">
+        <xs:annotation>
+          <xs:documentation>RU - RELATIONSHIP UNKNOWN</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="SB">
+        <xs:annotation>
+          <xs:documentation>SB - VICTIM WAS SIBLING</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="SC">
+        <xs:annotation>
+          <xs:documentation>SC - VICTIM WAS STEPCHILD</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="SE">
+        <xs:annotation>
+          <xs:documentation>SE - VICTIM WAS SPOUSE</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="SP">
+        <xs:annotation>
+          <xs:documentation>SP - VICTIM WAS STEPPARENT</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="SS">
+        <xs:annotation>
+          <xs:documentation>SS - VICTIM WAS STEPSIBLING</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ST">
+        <xs:annotation>
+          <xs:documentation>ST - VICTIM WAS STRANGER</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="XS">
+        <xs:annotation>
+          <xs:documentation>XS - VICTIM WAS EX-SPOUSE</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="ROVCodeType">
+    <xs:annotation>
+      <xs:documentation>A data type for 24 - Relationship of Victim (ROV) Field Codes</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="ncic-5.0.1:ROVCodeSimpleType">
+        <xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:simpleType name="SEXCodeSimpleType">
+    <xs:annotation>
+      <xs:documentation>A data type for 2 - Sex, Sex of Victim (SOV), and Protected Person Sex (PSX) Field Codes</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="F">
+        <xs:annotation>
+          <xs:documentation>FEMALE</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="M">
+        <xs:annotation>
+          <xs:documentation>MALE</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="U">
+        <xs:annotation>
+          <xs:documentation>UNKNOWN</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="SEXCodeType">
+    <xs:annotation>
+      <xs:documentation>A data type for 2 - Sex, Sex of Victim (SOV), and Protected Person Sex (PSX) Field Codes</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="ncic-5.0.1:SEXCodeSimpleType">
+        <xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:simpleType name="SKINCodeSimpleType">
+    <xs:annotation>
+      <xs:documentation>A data type for 6 - Skin Tone (SKN) and Person with Information Skin Tone (PSK) Field Codes</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="ALB">
+        <xs:annotation>
+          <xs:documentation>ALBINO</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="BLK">
+        <xs:annotation>
+          <xs:documentation>BLACK</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="DBR">
+        <xs:annotation>
+          <xs:documentation>DARK BROWN</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="DRK">
+        <xs:annotation>
+          <xs:documentation>DARK</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="FAR">
+        <xs:annotation>
+          <xs:documentation>FAIR</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="LBR">
+        <xs:annotation>
+          <xs:documentation>LIGHT BROWN</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="LGT">
+        <xs:annotation>
+          <xs:documentation>LIGHT</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="MBR">
+        <xs:annotation>
+          <xs:documentation>MEDIUM BROWN</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="MED">
+        <xs:annotation>
+          <xs:documentation>MEDIUM</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="OLV">
+        <xs:annotation>
+          <xs:documentation>OLIVE</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="RUD">
+        <xs:annotation>
+          <xs:documentation>RUDDY</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="SAL">
+        <xs:annotation>
+          <xs:documentation>SALLOW</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="YEL">
+        <xs:annotation>
+          <xs:documentation>YELLOW</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="SKINCodeType">
+    <xs:annotation>
+      <xs:documentation>A data type for 6 - Skin Tone (SKN) and Person with Information Skin Tone (PSK) Field Codes</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="ncic-5.0.1:SKINCodeSimpleType">
+        <xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:simpleType name="UnitedStatesCodeSimpleType">
+    <xs:annotation>
+      <xs:documentation>A data type for 2.6: United States</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="AK">
+        <xs:annotation>
+          <xs:documentation>ALASKA</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AL">
+        <xs:annotation>
+          <xs:documentation>ALABAMA</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AR">
+        <xs:annotation>
+          <xs:documentation>ARKANSAS</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AZ">
+        <xs:annotation>
+          <xs:documentation>ARIZONA</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CA">
+        <xs:annotation>
+          <xs:documentation>CALIFORNIA (PRE 1995 RES BOAT FILE CODE - CF)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CO">
+        <xs:annotation>
+          <xs:documentation>COLORADO (PRE 1995 RES BOAT FILE CODE - CL)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CT">
+        <xs:annotation>
+          <xs:documentation>CONNECTICUT</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="DC">
+        <xs:annotation>
+          <xs:documentation>DISTRICT OF COLUMBIA, WASHINGTON</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="DE">
+        <xs:annotation>
+          <xs:documentation>DELAWARE (PRE 1995 RES BOAT FILE CODE - DL)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="FL">
+        <xs:annotation>
+          <xs:documentation>FLORIDA</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="GA">
+        <xs:annotation>
+          <xs:documentation>GEORGIA</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="HI">
+        <xs:annotation>
+          <xs:documentation>HAWAII (PRE 1995 RES BOAT FILE CODE - HA)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="IA">
+        <xs:annotation>
+          <xs:documentation>IOWA</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ID">
+        <xs:annotation>
+          <xs:documentation>IDAHO</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="IL">
+        <xs:annotation>
+          <xs:documentation>ILLINOIS</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="IN">
+        <xs:annotation>
+          <xs:documentation>INDIANA</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="KS">
+        <xs:annotation>
+          <xs:documentation>KANSAS (PRE 1995 RES BOAT FILE CODE-KA)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="KY">
+        <xs:annotation>
+          <xs:documentation>KENTUCKY</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="LA">
+        <xs:annotation>
+          <xs:documentation>LOUISIANA</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="MA">
+        <xs:annotation>
+          <xs:documentation>MASSACHUSETTS (PRE 1995 RES BOAT FILE CODE - MS)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="MD">
+        <xs:annotation>
+          <xs:documentation>MARYLAND</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ME">
+        <xs:annotation>
+          <xs:documentation>MAINE</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="MI">
+        <xs:annotation>
+          <xs:documentation>MICHIGAN (PRE 1995 RES BOAT FILE CODE FOR MISSISSIPPI, SEE-MS) (PRE 1995 RES BOAT FILE - MC)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="MN">
+        <xs:annotation>
+          <xs:documentation>MINNESOTA</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="MO">
+        <xs:annotation>
+          <xs:documentation>MISSOURI</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="MS">
+        <xs:annotation>
+          <xs:documentation>MISSISSIPPI (PRE 1995 RES BOAT FILE CODE FOR MASSACHUSETTS, SEE MA) (PRE 1995 RES BOAT FILE CODE - MI)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="MT">
+        <xs:annotation>
+          <xs:documentation>MONTANA</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="NB">
+        <xs:annotation>
+          <xs:documentation>NEBRASKA</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="NC">
+        <xs:annotation>
+          <xs:documentation>NORTH CAROLINA</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ND">
+        <xs:annotation>
+          <xs:documentation>NORTH DAKOTA</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="NH">
+        <xs:annotation>
+          <xs:documentation>NEW HAMPSHIRE</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="NJ">
+        <xs:annotation>
+          <xs:documentation>NEW JERSEY</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="NM">
+        <xs:annotation>
+          <xs:documentation>NEW MEXICO</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="NV">
+        <xs:annotation>
+          <xs:documentation>NEVADA</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="NY">
+        <xs:annotation>
+          <xs:documentation>NEW YORK</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="OH">
+        <xs:annotation>
+          <xs:documentation>OHIO</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="OK">
+        <xs:annotation>
+          <xs:documentation>OKLAHOMA</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="OR">
+        <xs:annotation>
+          <xs:documentation>OREGON</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="PA">
+        <xs:annotation>
+          <xs:documentation>PENNSYLVANIA</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="RI">
+        <xs:annotation>
+          <xs:documentation>RHODE ISLAND</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="SC">
+        <xs:annotation>
+          <xs:documentation>SOUTH CAROLINA</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="SD">
+        <xs:annotation>
+          <xs:documentation>SOUTH DAKOTA</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="TN">
+        <xs:annotation>
+          <xs:documentation>TENNESSEE</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="TX">
+        <xs:annotation>
+          <xs:documentation>TEXAS</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="UT">
+        <xs:annotation>
+          <xs:documentation>UTAH</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="VA">
+        <xs:annotation>
+          <xs:documentation>VIRGINIA</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="VT">
+        <xs:annotation>
+          <xs:documentation>VERMONT</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="WA">
+        <xs:annotation>
+          <xs:documentation>WASHINGTON (PRE 1995 RES BOAT FILE CODE - WN)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="WI">
+        <xs:annotation>
+          <xs:documentation>WISCONSIN (PRE 1995 RES BOAT FILE CODE - WS)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="WV">
+        <xs:annotation>
+          <xs:documentation>WEST VIRGINIA</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="WY">
+        <xs:annotation>
+          <xs:documentation>WYOMING</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="UnitedStatesCodeType">
+    <xs:annotation>
+      <xs:documentation>A data type for 2.6: United States</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="ncic-5.0.1:UnitedStatesCodeSimpleType">
+        <xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:simpleType name="USTerritoriesCodeSimpleType">
+    <xs:annotation>
+      <xs:documentation>A data type for 2.7: United States Territories</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="AM">
+        <xs:annotation>
+          <xs:documentation>AMERICAN SAMOA (ISLANDS) (PRE 1995 RES BOAT FILE CODE - AS)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="BK">
+        <xs:annotation>
+          <xs:documentation>BAKER ISLAND</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CG">
+        <xs:annotation>
+          <xs:documentation>CAROLINE ISLANDS</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="GM">
+        <xs:annotation>
+          <xs:documentation>GUAM</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="HO">
+        <xs:annotation>
+          <xs:documentation>HOWLAND ISLAND</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="JI">
+        <xs:annotation>
+          <xs:documentation>JOHNSTON ATOLL</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="JR">
+        <xs:annotation>
+          <xs:documentation>JARVIS ISLAND</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="KI">
+        <xs:annotation>
+          <xs:documentation>KINGMAN REEF</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="MH">
+        <xs:annotation>
+          <xs:documentation>MARSHALL ISLANDS</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="MK">
+        <xs:annotation>
+          <xs:documentation>NORTHERN MARIANA ISLANDS, COMMONWEALTH ASSOCIATED WITH THE US</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="MW">
+        <xs:annotation>
+          <xs:documentation>MIDWAY ISLANDS</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="PL">
+        <xs:annotation>
+          <xs:documentation>PALMYRA ATOLL</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="PR">
+        <xs:annotation>
+          <xs:documentation>PUERTO RICO</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="VI">
+        <xs:annotation>
+          <xs:documentation>VIRGIN ISLANDS</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="VL">
+        <xs:annotation>
+          <xs:documentation>NAVASSA ISLAND</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="WK">
+        <xs:annotation>
+          <xs:documentation>WAKE ISLAND</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="USTerritoriesCodeType">
+    <xs:annotation>
+      <xs:documentation>A data type for 2.7: United States Territories</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="ncic-5.0.1:USTerritoriesCodeSimpleType">
+        <xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:simpleType name="VehicleEPDCodeSimpleType">
+    <xs:annotation>
+      <xs:documentation>A data type for 7 - Vehicle Engine Power or Displacement (EPD) Field Codes</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="C">
+        <xs:annotation>
+          <xs:documentation>CUBIC CENTIMETERS</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="H">
+        <xs:annotation>
+          <xs:documentation>HORSEPOWER</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="I">
+        <xs:annotation>
+          <xs:documentation>CUBIC INCH</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="L">
+        <xs:annotation>
+          <xs:documentation>LITER</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="P">
+        <xs:annotation>
+          <xs:documentation>POUNDS OF THRUST OR VOLTAGE</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="VehicleEPDCodeType">
+    <xs:annotation>
+      <xs:documentation>A data type for 7 - Vehicle Engine Power or Displacement (EPD) Field Codes</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="ncic-5.0.1:VehicleEPDCodeSimpleType">
+        <xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:element name="CountryCode" type="ncic-5.0.1:CountryCodeType" substitutionGroup="nc:CountryRepresentation" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A country, territory, dependency, or other such geopolitical subdivision of a location.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="EngineDisplacementUnitCode" type="ncic-5.0.1:VehicleEPDCodeType" substitutionGroup="nc:VolumeUnitAbstract" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A kind of measurement unit used to quantify power/displacement.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="JewelryGenderCode" type="ncic-5.0.1:SEXCodeType" substitutionGroup="j:JewelryGenderAbstract" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A gender of a person a piece of jewelry is designed for, e.g., a man's ring vs a woman's ring.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="PersonBirthplaceCode" type="ncic-5.0.1:CountryCodeType" substitutionGroup="j:PersonBirthplaceAbstract" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A country of a person's birth.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="PersonBloodTypeCode" type="ncic-5.0.1:BLTCodeType" substitutionGroup="nc:PersonBloodTypeAbstract" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A blood group and RH factor of a person.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="PersonEthnicityCode" type="ncic-5.0.1:ETNCodeType" substitutionGroup="nc:PersonEthnicityAbstract" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A cultural lineage of a person.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="PersonEyeColorCode" type="ncic-5.0.1:EYECodeType" substitutionGroup="nc:PersonEyeColorAbstract" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A color of the eyes of a person.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="PersonHairColorCode" type="ncic-5.0.1:HAIRCodeType" substitutionGroup="nc:PersonHairColorAbstract" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A color of the hair of a person.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="PersonRaceCode" type="ncic-5.0.1:RACECodeType" substitutionGroup="nc:PersonRaceAbstract" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A classification of a person based on factors such as geographical locations and genetics.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="PersonSexCode" type="ncic-5.0.1:SEXCodeType" substitutionGroup="nc:PersonSexAbstract" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A gender or sex of a person.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="PersonSkinToneCode" type="ncic-5.0.1:SKINCodeType" substitutionGroup="nc:PersonSkinToneAbstract" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A color or tone of the skin of a person.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="StateCanadianProvinceCode" type="ncic-5.0.1:CanadianCodeType" substitutionGroup="nc:StateRepresentation" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A province.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="StateUSCode" type="ncic-5.0.1:UnitedStatesCodeType" substitutionGroup="nc:StateRepresentation" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A state in the United States.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="StateUSTerritoriesCode" type="ncic-5.0.1:USTerritoriesCodeType" substitutionGroup="nc:StateRepresentation" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A United States territory.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="VictimToSubjectRelationshipCode" type="ncic-5.0.1:ROVCodeType" substitutionGroup="j:VictimToSubjectRelationshipAbstract" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A code that identifies the victim's relationship to subject who perpetrated a crime against them, depicting who the victim was to the offender.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+</xs:schema>
