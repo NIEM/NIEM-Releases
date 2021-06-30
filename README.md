@@ -35,3 +35,7 @@ The following is a summary of the key changes made in this release.  More detail
 ## Code updates
 
 - Updated CUI codes ([#212](https://github.com/NIEM/NIEM-Releases/issues/212))
+
+## Minor fixes
+
+- Updated the definition of hs:Visitation ([#213](https://github.com/NIEM/NIEM-Releases/issues/213))
