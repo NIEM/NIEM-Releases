@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xs:schema targetNamespace="http://release.niem.gov/niem/auxiliary/cui/5.0/" version="1" xml:lang="en-US" xsi:schemaLocation="http://release.niem.gov/niem/appinfo/5.0/ ../utility/appinfo.xsd http://release.niem.gov/niem/conformanceTargets/3.0/ ../utility/conformanceTargets.xsd" ct:conformanceTargets="http://reference.niem.gov/niem/specification/naming-and-design-rules/5.0/#ReferenceSchemaDocument"
+<xs:schema targetNamespace="http://release.niem.gov/niem/auxiliary/cui/5.1/" version="alpha2" xml:lang="en-US" xsi:schemaLocation="http://release.niem.gov/niem/appinfo/5.0/ ../utility/appinfo.xsd http://release.niem.gov/niem/conformanceTargets/3.0/ ../utility/conformanceTargets.xsd" ct:conformanceTargets="http://reference.niem.gov/niem/specification/naming-and-design-rules/5.0/#ReferenceSchemaDocument"
   xmlns:appinfo="http://release.niem.gov/niem/appinfo/5.0/"
   xmlns:ct="http://release.niem.gov/niem/conformanceTargets/3.0/"
-  xmlns:cui="http://release.niem.gov/niem/auxiliary/cui/5.0/"
+  xmlns:cui="http://release.niem.gov/niem/auxiliary/cui/5.1/"
   xmlns:genc="http://release.niem.gov/niem/codes/genc/5.0/"
   xmlns:nc="http://release.niem.gov/niem/niem-core/5.0/"
   xmlns:niem-xs="http://release.niem.gov/niem/proxy/niem-xs/5.0/"
@@ -517,16 +517,6 @@
           <xs:documentation>Portion marking abbreviation for Attorney Work Product. Dissemination of information protected by the Attorney Work Product Privilege beyond the attorney, the attorney’s agents, or the client can result in the loss of the privilege and is prohibited by this marking, unless specifically permitted by the overseeing attorney who originated the work product or their successor. Note: the Legal Privilege Category marking “PRIVILEGE” must be applied in order to use this limited dissemination control marking.</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
-      <xs:enumeration value="DELIB">
-        <xs:annotation>
-          <xs:documentation>Portion marking abbreviation for Deliberative Process. Dissemination of information protected by the deliberative process privilege beyond the department, agency, or U.S. Government decision maker who is part of the policy deliberation can result in the loss of the privilege and is prohibited by this marking, unless the executive decision makers at the agency decide to disclose the information outside the bounds of its protection. Note: the Legal Privilege Category marking “PRIVILEGE” must be applied in order to use this limited dissemination control marking.</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="Deliberative">
-        <xs:annotation>
-          <xs:documentation>Deliberative Process.  Dissemination of information protected by the deliberative process privilege beyond the department, agency, or U.S. Government decision maker who is part of the policy deliberation can result in the loss of the privilege and is prohibited by this marking, unless the executive decision makers at the agency decide to disclose the information outside the bounds of its protection. Note: the Legal Privilege Category marking “PRIVILEGE” must be applied in order to use this limited dissemination control marking.</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
       <xs:enumeration value="DISPLAY ONLY">
         <xs:annotation>
           <xs:documentation>Display only. Information is authorized for disclosure to a foreign recipient, but without providing the foreign recipient with a physical copy for retention, regardless of medium to the foreign country(ies)/international organization(s) indicated, through established foreign disclosure procedures and channels.</xs:documentation>
@@ -811,11 +801,6 @@
       <xs:enumeration value="SP-PERS">
         <xs:annotation>
           <xs:documentation>Personnel Records. Related to the employees of federal agencies.</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="SP-PHYS">
-        <xs:annotation>
-          <xs:documentation>Physical Security. Related to protection of federal buildings, grounds or property.</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
       <xs:enumeration value="SP-PRIIG">

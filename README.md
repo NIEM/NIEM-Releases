@@ -31,3 +31,7 @@ The following is a summary of the key changes made in this release.  More detail
 
 - **NCIC codes**
   - Re-added 4.2 code sets that were removed from the 5.0 release due to harmonization efforts across the FBI and Justice code sets for legacy support. ([#211](https://github.com/NIEM/NIEM-Releases/issues/211))
+
+## Code updates
+
+- Updated CUI codes ([#212](https://github.com/NIEM/NIEM-Releases/issues/212))
