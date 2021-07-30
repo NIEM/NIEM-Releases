@@ -1,13 +1,13 @@
 
-# NIEM 5.1 Alpha 2
+# NIEM 5.1 Beta 1
 
-This is the alpha 2 draft of the NIEM 5.1 minor release.
+This is the beta 1 draft of the NIEM 5.1 minor release.
 
 In a minor release, content may be updated in domains and code tables.  Core, namespaces imported by Core, and the architecture, which is defined by the NIEM Naming and Design Rules (NDR), will remain locked until the next major release.
 
 ## Feedback
 
-Please submit feedback by Friday, July 9, 2021. Feedback can be posted directly to the NIEM Releases [issue tracker](https://github.com/NIEM/NIEM-Releases/issues) (see [help](https://github.com/NIEM/NIEM-Releases/wiki/Issues)) or emailed to [niem-comments@lists.gatech.edu](niem-comments@lists.gatech.edu).
+Please submit feedback by Wednesday, August 18, 2021. Feedback can be posted directly to the NIEM Releases [issue tracker](https://github.com/NIEM/NIEM-Releases/issues) (see [help](https://github.com/NIEM/NIEM-Releases/wiki/Issues)) or emailed to [niem-comments@lists.gatech.edu](niem-comments@lists.gatech.edu).
 
 ## Key changes
 
