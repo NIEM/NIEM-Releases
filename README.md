@@ -32,6 +32,7 @@ The following is a summary of the key changes made in this release.  More detail
 - **NCIC codes**
   - Re-added 4.2 code sets that were removed from the 5.0 release due to harmonization efforts across the FBI and Justice code sets for legacy support. ([#211](https://github.com/NIEM/NIEM-Releases/issues/211))
   - Removed ncic:BOATCodeType as it is no longer being used ([#218](https://github.com/NIEM/NIEM-Releases/issues/218))
+  - Updated codes for NIEM 5.1, with changes to the MAK, VMA, and VMO code sets ([#219](https://github.com/NIEM/NIEM-Releases/issues/219))
 
 ## Code updates
 
