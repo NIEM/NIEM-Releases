@@ -41,3 +41,4 @@ The following is a summary of the key changes made in this release.  More detail
 ## Minor fixes
 
 - Updated the definition of hs:Visitation ([#213](https://github.com/NIEM/NIEM-Releases/issues/213))
+- Updated the definition of the Geospatial adapter namespace (geo) to reflect that GML is now included with NIEM as a subset ([#220](https://github.com/NIEM/NIEM-Releases/issues/220))
