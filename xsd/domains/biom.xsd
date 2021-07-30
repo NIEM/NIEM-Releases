@@ -40,6 +40,7 @@
       <appinfo:LocalTerm term="ITL" literal="Information Technology Laboratory"/>
       <appinfo:LocalTerm term="MISC" literal="Miscellaneous"/>
       <appinfo:LocalTerm term="Mito" literal="Mitochondrial"/>
+      <appinfo:LocalTerm term="mtDNA" literal="Mitochondrial DNA"/>
       <appinfo:LocalTerm term="NCIC" literal="National Crime Information Center"/>
       <appinfo:LocalTerm term="NIST" literal="National Institute of Standards and Technology"/>
       <appinfo:LocalTerm term="PHD" literal="Photo Capture Date"/>
@@ -50,6 +51,7 @@
       <appinfo:LocalTerm term="SBSC" literal="Subject Body Status Code"/>
       <appinfo:LocalTerm term="SMS" literal="Scar/Mark/Tattoo Size"/>
       <appinfo:LocalTerm term="SMT" literal="Scars, Marks, and Tattoos"/>
+      <appinfo:LocalTerm term="SNP" literal="single nucleotide polymorphism"/>
       <appinfo:LocalTerm term="SPC" literal="Speaker Plurality Code"/>
       <appinfo:LocalTerm term="STR" literal="Short tandem repeat"/>
       <appinfo:LocalTerm term="TDD" literal="Tooth data detail"/>
@@ -3088,7 +3090,7 @@
   </xs:complexType>
   <xs:complexType name="DNAMitoDataType">
     <xs:annotation>
-      <xs:documentation>A data type for a description of the mitochondira (mtDNA) data</xs:documentation>
+      <xs:documentation>A data type for a description of the mitochondria (mtDNA) data</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
       <xs:extension base="structures:ObjectType">
@@ -3578,7 +3580,7 @@
   </xs:complexType>
   <xs:complexType name="DNASourceType">
     <xs:annotation>
-      <xs:documentation>A data type for a description of the DNA source such as the source category person vs. stain; cellular orgin blood, etc</xs:documentation>
+      <xs:documentation>A data type for a description of the DNA source such as the source category person vs. stain; cellular origin blood, etc</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
       <xs:extension base="structures:ObjectType">
@@ -15065,12 +15067,12 @@
   </xs:element>
   <xs:element name="DNAAlleleCall1Text" type="nc:TextType" nillable="true">
     <xs:annotation>
-      <xs:documentation>A description of the allele call, e.g. "X" or "Y" for locus Amelogenin, or the number of repeat units for an alllele of locus CSF1PO.</xs:documentation>
+      <xs:documentation>A description of the allele call, e.g. "X" or "Y" for locus Amelogenin, or the number of repeat units for an allele of locus CSF1PO.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="DNAAlleleCall2Text" type="nc:TextType" nillable="true">
     <xs:annotation>
-      <xs:documentation>A number of repeat units in the allele call, used only if the DNAAlleleOperator is "Range"</xs:documentation>
+      <xs:documentation>A number of repeat units in the allele call, used only if the DNAAlleleOperatorCode is "Range"</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="DNAAlleleCall3Text" type="nc:TextType" nillable="true">
@@ -15095,7 +15097,7 @@
   </xs:element>
   <xs:element name="DNAAlleleRequiredIndicator" type="niem-xs:boolean" nillable="true">
     <xs:annotation>
-      <xs:documentation>True if this allelle [in a mixture] is a required allele for searching; false otherwise.  The indicator is used when the mixture cannot be deduced to a single-source profile, but this allele may be attributable to the perpetrator after using victim alleles to isolate alleles coming from unknown source.</xs:documentation>
+      <xs:documentation>True if this allele [in a mixture] is a required allele for searching; false otherwise. The indicator is used when the mixture cannot be deduced to a single-source profile, but this allele may be attributable to the perpetrator after using victim alleles to isolate alleles coming from unknown source.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="DNAAnalysis" type="biom:DNAAnalysisType" nillable="true">
@@ -15160,7 +15162,7 @@
   </xs:element>
   <xs:element name="DNACartridgeIdentification" type="nc:IdentificationType" nillable="true">
     <xs:annotation>
-      <xs:documentation>An identifier, part number or version number of the DNA cartridge or chip used to produce a DNA profile.  E.g. A0210001057.  This element has the IdentificationType because a DNACartridge may have multiple DNACartridgeIdentifications and need the IdentificationCategoryDescriptionText filed of the IdentificationType to differentiate one DNACartridgeIdentification from another.</xs:documentation>
+      <xs:documentation>An identifier, part number or version number of the DNA cartridge or chip used to produce a DNA profile. E.g. A0210001057. This element has the IdentificationType because a DNACartridge may have multiple DNACartridgeIdentification elements and need the IdentificationCategoryDescriptionText filed of the IdentificationType to differentiate one DNACartridgeIdentification from another.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="DNACartridgeName" type="nc:TextType" nillable="true">
@@ -15190,7 +15192,7 @@
   </xs:element>
   <xs:element name="DNADataIdentification" type="nc:IdentificationType" nillable="true">
     <xs:annotation>
-      <xs:documentation>An identification for the DNA profile or representation data for which the transaction is based, e.g. sample ID, barcode, or profile ID.  DNADataIdentification is added in NIEM 5.1 to replace ProfileID in the future.  This is because a DNA representation may need multiple identifiers, and DNADataIdentification can support multiple identifiers better than ProfileID can.</xs:documentation>
+      <xs:documentation>An identification for the DNA profile or representation data for which the transaction is based, e.g. sample ID, barcode, or profile ID. DNADataIdentification is added in NIEM 5.1 to replace DNAProfileID in the future. This is because a DNA representation may need multiple identifiers, and DNADataIdentification can support multiple identifiers better than DNAProfileID can.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="DNADonor" type="biom:DNADonorType" nillable="true">
@@ -15230,7 +15232,7 @@
   </xs:element>
   <xs:element name="DNADonorVitalityCode" type="biom:DNADonorVitalityCodeType" nillable="true">
     <xs:annotation>
-      <xs:documentation>A vitality status of a DNA donor.  DNADonorVitalityCode is added in NIEM 5.1 to replace DNADonorStatusCode in the future.  This is because "Missing Person" as a status value for DNADonorStatusSimpleCode is confusing.  The fact that the sample was collected from an artifact from a reported missing person is already conveyed in DNADataCategory.</xs:documentation>
+      <xs:documentation>A vitality status of a DNA donor. DNADonorVitalityCode is added in NIEM 5.1 to replace DNADonorStatusCode in the future. This is because "Missing Person" as a status value for DNADonorStatusCode is confusing. The fact that the sample was collected from an artifact from a reported missing person is already conveyed in DNADataCategory.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="DNAElectropherogram" type="biom:DNAElectropherogramType" nillable="true">
@@ -15530,7 +15532,7 @@
   </xs:element>
   <xs:element name="DNAMitoData" type="biom:DNAMitoDataType" nillable="true">
     <xs:annotation>
-      <xs:documentation>A description of the mitochondira (mtDNA) data.  DNAMitoData is added in NIEM 5.1 to replace DNAMitochondrialData in the future.  This is because the data architecture of DNAMitochondrialData does not support the taxonomy of mtDNA data.</xs:documentation>
+      <xs:documentation>A description of the mitochondria (mtDNA) data. DNAMitoData is added in NIEM 5.1 to replace DNAMitochondrialData in the future. This is because the data architecture of DNAMitochondrialData does not support the taxonomy of mtDNA data.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="DNAMitoDataAugmentationPoint" abstract="true">
@@ -15720,7 +15722,7 @@
   </xs:element>
   <xs:element name="DNASource" type="biom:DNASourceType" nillable="true">
     <xs:annotation>
-      <xs:documentation>A description of the DNA source such as the source category person vs. stain; cellular orgin blood, etc.  DNASource is added in NIEM 5.1 to replace DNASampleOrigin, DNAProfileCategoryCode, and DNADonorCategoryCode in the future.  This is because the information can be better represented by the data architecture of DNASource.</xs:documentation>
+      <xs:documentation>A description of the DNA source such as the source category person vs. stain; cellular origin blood, etc. DNASource is added in NIEM 5.1 to replace DNASampleOrigin, DNAProfileCategoryCode, and DNADonorCategoryCode in the future. This is because the information can be better represented by the data architecture of DNASource.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="DNASourceAugmentationPoint" abstract="true">
@@ -15735,7 +15737,7 @@
   </xs:element>
   <xs:element name="DNASourceCompositeIndicator" type="niem-xs:boolean" nillable="true">
     <xs:annotation>
-      <xs:documentation>True if the source is a composite of DNA profiles with multiple DNASourceCategoryCodes; false otherwise.</xs:documentation>
+      <xs:documentation>True if the source is a composite of DNA profiles with multiple DNASourceCategoryCode elements; false otherwise.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="DNASourceIdentification" type="nc:IdentificationType" nillable="true">
@@ -15780,7 +15782,7 @@
   </xs:element>
   <xs:element name="DNASTRProfilePartialIndicator" type="niem-xs:boolean" nillable="true">
     <xs:annotation>
-      <xs:documentation>True if one or more loci in the Kit used for the STR typing did not yield result and/or yielded partial result; false otherwise.  This indicator can be used to assess the quality of the STR profile.  DNASTRProfilePartialIndicator is added in NIEM 5.1 to replace DNALocusAnalysisIndicator in the future.  This is because the STRProfilePartialIndicator value and the kit information represent a partial profile better than DNALocusAnalysisIndicators.</xs:documentation>
+      <xs:documentation>True if one or more loci in the Kit used for the STR typing did not yield result and/or yielded partial result; false otherwise. This indicator can be used to assess the quality of the STR profile. DNASTRProfilePartialIndicator is added in NIEM 5.1 to replace DNALocusAnalysisIndicator in the future. This is because the DNASTRProfilePartialIndicator value and the kit information represent a partial profile better than DNALocusAnalysisIndicator.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="DNATypingTechnologyCategoryCode" type="biom:DNATypingTechnologyCategoryCodeType" nillable="true">

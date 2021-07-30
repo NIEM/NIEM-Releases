@@ -12,6 +12,11 @@
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <xs:annotation>
     <xs:documentation>Cyber</xs:documentation>
+    <xs:appinfo>
+      <appinfo:LocalTerm term="DNS" literal="Domain Name System"/>
+      <appinfo:LocalTerm term="FISMA" literal="Federal Information Security Modernization Act"/>
+      <appinfo:LocalTerm term="WFN" literal="well-formed CPE name"/>
+    </xs:appinfo>
   </xs:annotation>
   <xs:import namespace="http://release.niem.gov/niem/codes/stix/5.1/" schemaLocation="../codes/stix.xsd"/>
   <xs:import namespace="http://release.niem.gov/niem/domains/infrastructureProtection/5.0/" schemaLocation="infrastructureProtection.xsd"/>
@@ -351,11 +356,6 @@
       <xs:enumeration value="Passport Number">
         <xs:annotation>
           <xs:documentation>Passport Number has been accessed, potentially accessed, manipulated, destroyed, or rendered unusable as a result of a breach</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="Patient ID Number">
-        <xs:annotation>
-          <xs:documentation>Patient ID Number has been accessed, potentially accessed, manipulated, destroyed, or rendered unusable as a result of a breach</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
       <xs:enumeration value="Patient ID Number">
@@ -712,7 +712,7 @@
       </xs:enumeration>
       <xs:enumeration value="Jurisdiction specifically protected information">
         <xs:annotation>
-          <xs:documentation>A breach of tribally, locally, and/or regionally protected  information as a result of a cyber incident</xs:documentation>
+          <xs:documentation>A breach of tribally, locally, and/or regionally protected information as a result of a cyber incident</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
       <xs:enumeration value="Non-Cyber PII">
@@ -737,7 +737,7 @@
       </xs:enumeration>
       <xs:enumeration value="Protected Health Information (PHI)">
         <xs:annotation>
-          <xs:documentation>A breach of Protected Health  Information as a result of a cyber incident</xs:documentation>
+          <xs:documentation>A breach of Protected Health Information as a result of a cyber incident</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
       <xs:enumeration value="Tax information - federal or other">
@@ -3699,7 +3699,7 @@
   </xs:element>
   <xs:element name="IncidentStrategyRevisedDescriptionText" type="nc:TextType" nillable="true">
     <xs:annotation>
-      <xs:documentation>A description of a revised strategy used for responding to an incident, in the event  that the original strategy was unsuccessful</xs:documentation>
+      <xs:documentation>A description of a revised strategy used for responding to an incident, in the event that the original strategy was unsuccessful</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="IncidentStrategyRevisedReasonDescriptionText" type="nc:TextType" nillable="true">

@@ -19,11 +19,15 @@
     <xs:appinfo>
       <appinfo:LocalTerm term="Aimpoint" definition="A point associated with a target and assigned for a specific weapon impact."/>
       <appinfo:LocalTerm term="AMETL" literal="Agency Mission Essential Task List"/>
+      <appinfo:LocalTerm term="ASN" literal="Autonomous System Number"/>
       <appinfo:LocalTerm term="CAPEC" literal="Common Attack Pattern Enumeration and Classification"/>
+      <appinfo:LocalTerm term="CAs" literal="Certificate Authorities"/>
       <appinfo:LocalTerm term="CET" literal="Cyber Effectiveness Table"/>
+      <appinfo:LocalTerm term="CIDR" literal="Classless Inter-domain Routing"/>
       <appinfo:LocalTerm term="codespace" definition="A controlled vocabulary"/>
       <appinfo:LocalTerm term="COLE" literal="Cyber Operations Lethality and Effectiveness"/>
       <appinfo:LocalTerm term="CPE" literal="Common Platform Enumeration"/>
+      <appinfo:LocalTerm term="CRL" literal="Certificate Revocation List"/>
       <appinfo:LocalTerm term="CVE" literal="Common Vulnerabilities and Exposures"/>
       <appinfo:LocalTerm term="CWE" literal="Common Weakness Enumeration"/>
       <appinfo:LocalTerm term="CYBOX" literal="Cyber Observable eXpression"/>
@@ -34,6 +38,7 @@
       <appinfo:LocalTerm term="DSN" literal="Defense Switched Network"/>
       <appinfo:LocalTerm term="FISMA" literal="Federal Information Security Modernization Act"/>
       <appinfo:LocalTerm term="FMID" literal="Force Management Identifier"/>
+      <appinfo:LocalTerm term="FQDN" literal="Fully qualified domain name"/>
       <appinfo:LocalTerm term="GFM" literal="Global Force Management"/>
       <appinfo:LocalTerm term="IC" literal="Intelligence Community"/>
       <appinfo:LocalTerm term="JNKE" literal="Joint Non-Kinetics Effectiveness"/>
@@ -49,17 +54,21 @@
       <appinfo:LocalTerm term="MILSTD2525-B" literal="Military Standard 2525 B (MIL-STD-2525B)"/>
       <appinfo:LocalTerm term="MILSTD2525-C" literal="Military Standard 2525 C (MIL-STD-2525C)"/>
       <appinfo:LocalTerm term="MILSTD2525-D" literal="Military Standard 2525 D (MIL-STD-2525D)"/>
+      <appinfo:LocalTerm term="NETBIOS" literal="Network Basic Input/Output System"/>
       <appinfo:LocalTerm term="NIPR" literal="Non-classified Internet Protocol Router Network"/>
       <appinfo:LocalTerm term="NIST" literal="National Institute of Standards and Technology"/>
       <appinfo:LocalTerm term="OEM" literal="Operational Environment Model"/>
+      <appinfo:LocalTerm term="OIDs" literal="Object IDs"/>
       <appinfo:LocalTerm term="OPEX" literal="Operation Exercise"/>
       <appinfo:LocalTerm term="OSI" literal="Open Systems Interconnection"/>
       <appinfo:LocalTerm term="PII" literal="Personally identifiable information"/>
       <appinfo:LocalTerm term="POC" literal="Point of Contact"/>
       <appinfo:LocalTerm term="REGEX" literal="Regular Expression"/>
+      <appinfo:LocalTerm term="SCADA" literal="Supervisory control and data acquisition"/>
       <appinfo:LocalTerm term="SIDC" literal="Symbol Identification Code"/>
       <appinfo:LocalTerm term="SIPR" literal="SECRET Internet Protocol Router Network"/>
       <appinfo:LocalTerm term="SP" literal="Special Publication"/>
+      <appinfo:LocalTerm term="SSID" literal="Service Set Identifier"/>
       <appinfo:LocalTerm term="STANAG" literal="Standardization Agreement"/>
       <appinfo:LocalTerm term="TCM" literal="Target Characterization Model"/>
       <appinfo:LocalTerm term="TCTF" literal="Technical Cyber Threat Framework"/>
@@ -70,8 +79,10 @@
       <appinfo:LocalTerm term="URN" literal="Unit Reference Number"/>
       <appinfo:LocalTerm term="UTM" literal="Univeral Transvere Mercator"/>
       <appinfo:LocalTerm term="UUID" literal="Universally unique identifier"/>
+      <appinfo:LocalTerm term="VLAN" literal="Virtual local area network"/>
       <appinfo:LocalTerm term="Waypoint" definition="A point or a series of points to which a moving object may be vectored."/>
       <appinfo:LocalTerm term="WCM" literal="Weapon Characterization Model"/>
+      <appinfo:LocalTerm term="Weibull" literal="A continuous probability distribution"/>
       <appinfo:LocalTerm term="WFN" definition="A well-formed name from the Common Platform Enumeration (CPE)"/>
       <appinfo:LocalTerm term="WGS84" literal="World Geodetic System 84"/>
       <appinfo:LocalTerm term="X509" definition="A standard defining the format of public key certificates."/>
@@ -795,7 +806,7 @@
   </xs:complexType>
   <xs:complexType name="BetaDistributionComputationMethodType">
     <xs:annotation>
-      <xs:documentation>A data type for the continuous probability distribution that expresses the probability of occurence of an event, proportions and percentages.</xs:documentation>
+      <xs:documentation>A data type for the continuous probability distribution that expresses the probability of occurrence of an event, proportions and percentages.</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
       <xs:extension base="structures:ObjectType">
@@ -6143,7 +6154,7 @@
       </xs:enumeration>
       <xs:enumeration value="buffer-errors">
         <xs:annotation>
-          <xs:documentation>From 4.1. The software performs operations on a memory buffer,  but it can read from or write to a memory location that is outside of the  intended boundary of the buffer.</xs:documentation>
+          <xs:documentation>From 4.1. The software performs operations on a memory buffer, but it can read from or write to a memory location that is outside of the intended boundary of the buffer.</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
       <xs:enumeration value="cavity-filler">
@@ -10111,14 +10122,12 @@
   </xs:element>
   <xs:element name="AuthenticationDataText" type="nc:TextType" nillable="true">
     <xs:annotation>
-      <xs:documentation>A data set containing information supporting the
-authentication.</xs:documentation>
+      <xs:documentation>A data set containing information supporting the authentication.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="AuthenticationTokenProtectionMechanismCode" type="mo:AuthenticationTokenProtectionMechanismCodeType" nillable="true">
     <xs:annotation>
-      <xs:documentation>A code for authentication token protection
-mechanism.</xs:documentation>
+      <xs:documentation>A code for authentication token protection mechanism.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="AuthorityURI" type="niem-xs:anyURI" substitutionGroup="nc:JurisdictionAbstract" nillable="true">
@@ -10173,8 +10182,7 @@ mechanism.</xs:documentation>
   </xs:element>
   <xs:element name="BIOSInformationDate" type="nc:TextType" nillable="true">
     <xs:annotation>
-      <xs:documentation>A date of the BIOS (e.g. the datestamp of the BIOS
-revision).</xs:documentation>
+      <xs:documentation>A date of the BIOS (e.g. the datestamp of the BIOS revision).</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="BIOSInformationManufacturerText" type="nc:TextType" nillable="true">
@@ -10229,8 +10237,7 @@ revision).</xs:documentation>
   </xs:element>
   <xs:element name="CertificateContentIssuerText" type="nc:TextType" nillable="true">
     <xs:annotation>
-      <xs:documentation>A Certificate Authority who issued the X.509
-certificate.</xs:documentation>
+      <xs:documentation>A Certificate Authority who issued the X.509 certificate.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="CertificateContentNonStandardExtension" type="mo:X509NonStandardExtensionType" nillable="true">
@@ -10270,8 +10277,7 @@ certificate.</xs:documentation>
   </xs:element>
   <xs:element name="CertificateContentVersionText" type="nc:TextType" nillable="true">
     <xs:annotation>
-      <xs:documentation>A description of the version of the encoded
-certificate.</xs:documentation>
+      <xs:documentation>A description of the version of the encoded certificate.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="CertificateSignatureAlgorithmText" type="nc:TextType" nillable="true">
@@ -10286,8 +10292,7 @@ certificate.</xs:documentation>
   </xs:element>
   <xs:element name="CertificateSignatureComputedText" type="niem-xs:string" nillable="true">
     <xs:annotation>
-      <xs:documentation>A digital signature computed upon this X.509
-certificate.</xs:documentation>
+      <xs:documentation>A digital signature computed upon this X.509 certificate.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="CETMetadata" type="nc:MetadataType" nillable="true" appinfo:appliesToTypes="structures:AssociationType structures:ObjectType">
@@ -10597,8 +10602,7 @@ certificate.</xs:documentation>
   </xs:element>
   <xs:element name="CyberEntityNodeAccountAbstract" abstract="true">
     <xs:annotation>
-      <xs:documentation>A data concept for a representation of a cyber
-account.</xs:documentation>
+      <xs:documentation>A data concept for a representation of a cyber account.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="CyberEntityNodeAccountText" type="nc:TextType" substitutionGroup="mo:CyberEntityNodeAccountAbstract" nillable="true">
@@ -10658,8 +10662,7 @@ account.</xs:documentation>
   </xs:element>
   <xs:element name="CyberspaceIntendedEffect" type="mo:CyberspaceIntendedEffectType" nillable="true">
     <xs:annotation>
-      <xs:documentation>A characterization of the cyberspace intended
-effect.</xs:documentation>
+      <xs:documentation>A characterization of the cyberspace intended effect.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="CyberspaceIntendedEffectAugmentationPoint" abstract="true">
@@ -10669,8 +10672,7 @@ effect.</xs:documentation>
   </xs:element>
   <xs:element name="CyberspaceIntendedEffectCode" type="mo:CyberspaceIntendedEffectCodeType" nillable="true">
     <xs:annotation>
-      <xs:documentation>A code indicating the intended effect in
-cyberspace.</xs:documentation>
+      <xs:documentation>A code indicating the intended effect in cyberspace.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="CyberspaceLayerDescriptionText" type="nc:TextType" nillable="true">
@@ -10695,8 +10697,7 @@ cyberspace.</xs:documentation>
   </xs:element>
   <xs:element name="CyberUserAccountFullName" type="nc:TextType" nillable="true">
     <xs:annotation>
-      <xs:documentation>A full name of the user for which the account was
-created.</xs:documentation>
+      <xs:documentation>A full name of the user for which the account was created.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="CyberUserAccountHomeDirectoryText" type="nc:TextType" nillable="true">
@@ -10706,8 +10707,7 @@ created.</xs:documentation>
   </xs:element>
   <xs:element name="CyberUserAccountLastLoginTime" type="nc:TextType" nillable="true">
     <xs:annotation>
-      <xs:documentation>A date/time that the user account was last logged
-into.</xs:documentation>
+      <xs:documentation>A date/time that the user account was last logged into.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="CyberUserAccountPasswordRequiredIndicator" type="niem-xs:boolean" nillable="true">
@@ -11252,8 +11252,7 @@ into.</xs:documentation>
   </xs:element>
   <xs:element name="ImplementationSpecificSettingMetadata" type="mo:ImplementationSpecificSettingMetadataType" nillable="true">
     <xs:annotation>
-      <xs:documentation>Metadata about settings that are specific to an
-implementation.</xs:documentation>
+      <xs:documentation>Metadata about settings that are specific to an implementation.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="IndicatorSettingData" type="mo:IndicatorSettingDataType" substitutionGroup="mo:SettingDataRepresentation" nillable="true">
@@ -11283,8 +11282,7 @@ implementation.</xs:documentation>
   </xs:element>
   <xs:element name="IPv4AddressNetworkPortionText" type="niem-xs:string" nillable="true">
     <xs:annotation>
-      <xs:documentation>A network portion of an identifier assigned to a computer or other device connected to a TCP/IP network, based on version 4 of the Internet
-Protocol.</xs:documentation>
+      <xs:documentation>A network portion of an identifier assigned to a computer or other device connected to a TCP/IP network, based on version 4 of the Internet Protocol.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="IPv6AddressNetworkMaskText" type="niem-xs:string" nillable="true">
@@ -11294,14 +11292,12 @@ Protocol.</xs:documentation>
   </xs:element>
   <xs:element name="IPv6AddressNetworkText" type="niem-xs:string" nillable="true">
     <xs:annotation>
-      <xs:documentation>A netwwork portion of an identifier assigned to a computer or other device connected to a TCP/IP network, based on version 6 of the Internet
-Protocol.</xs:documentation>
+      <xs:documentation>A netwwork portion of an identifier assigned to a computer or other device connected to a TCP/IP network, based on version 6 of the Internet Protocol.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="IPv6CIDRAddressID" type="niem-xs:string" nillable="true">
     <xs:annotation>
-      <xs:documentation>An address in Classless Inter-domain Routing notation (the IP address and its associated routing prefix), based on version 6 of the Internet
-Protocol.</xs:documentation>
+      <xs:documentation>An address in Classless Inter-domain Routing notation (the IP address and its associated routing prefix), based on version 6 of the Internet Protocol.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="ItemOriginCountryCode" type="nc:CountryType" nillable="true">
@@ -11406,8 +11402,7 @@ Protocol.</xs:documentation>
   </xs:element>
   <xs:element name="LogicalLinkDescriptionText" type="nc:TextType" nillable="true">
     <xs:annotation>
-      <xs:documentation>A description of a logical association between
-nodes.</xs:documentation>
+      <xs:documentation>A description of a logical association between nodes.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="LogNormalComputationMethod" type="mo:LogNormalComputationMethodType" substitutionGroup="mo:UncertaintyComputationMethodAbstract" nillable="true">
@@ -11707,8 +11702,7 @@ nodes.</xs:documentation>
   </xs:element>
   <xs:element name="NodeContainerMethodCode" type="mo:NodeContainerMethodCodeType" nillable="true">
     <xs:annotation>
-      <xs:documentation>A code used to establish a 1-N linkage between a parent node (any device or logical location with an Internet protocol address or other analogous
-identifier) and other nodes “contained” by the parent. The containing concept can be physical like in a building or virtual like a virtual machine running on a host.</xs:documentation>
+      <xs:documentation>A code used to establish a 1-N linkage between a parent node (any device or logical location with an Internet protocol address or other analogous identifier) and other nodes “contained” by the parent. The containing concept can be physical like in a building or virtual like a virtual machine running on a host.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="NodeDescriptionText" type="nc:TextType" nillable="true">
@@ -11988,8 +11982,7 @@ identifier) and other nodes “contained” by the parent. The containing concep
   </xs:element>
   <xs:element name="OperatingSystemPatchText" type="nc:TextType" nillable="true">
     <xs:annotation>
-      <xs:documentation>A detailed description of install operating system
-patches.</xs:documentation>
+      <xs:documentation>A detailed description of install operating system patches.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="OperationPlan" type="nc:PlanType" nillable="true">
@@ -12054,8 +12047,7 @@ patches.</xs:documentation>
   </xs:element>
   <xs:element name="PersonaGroupInterestText" type="nc:TextType" substitutionGroup="mo:PersonaGroupInterestAbstract" nillable="true">
     <xs:annotation>
-      <xs:documentation>A description of the common interest of a persona
-group.</xs:documentation>
+      <xs:documentation>A description of the common interest of a persona group.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="PersonaGroupNode" type="mo:PersonaGroupNodeType" substitutionGroup="mo:BaseNodeAbstract" nillable="true">
@@ -12075,8 +12067,7 @@ group.</xs:documentation>
   </xs:element>
   <xs:element name="PersonaLinkDescriptionText" type="nc:TextType" nillable="true">
     <xs:annotation>
-      <xs:documentation>A description of a persona association between
-nodes.</xs:documentation>
+      <xs:documentation>A description of a persona association between nodes.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="PersonaNode" type="mo:PersonaNodeType" substitutionGroup="mo:BaseNodeAbstract" nillable="true">
@@ -12166,8 +12157,7 @@ nodes.</xs:documentation>
   </xs:element>
   <xs:element name="PoissonComputationMethodCumulativeIndicator" type="niem-xs:boolean" nillable="true">
     <xs:annotation>
-      <xs:documentation>True if the computation should return the cumulative Poisson probability that the number of random events occurring will be between zero and the number of events (x), inclusive; false if the computation should return the Poisson
-probability that the number of events occurring will be exactly x.</xs:documentation>
+      <xs:documentation>True if the computation should return the cumulative Poisson probability that the number of random events occurring will be between zero and the number of events (x), inclusive; false if the computation should return the Poisson probability that the number of events occurring will be exactly x.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="PortOfDebarkationLocation" type="nc:LocationType" nillable="true">
@@ -12192,8 +12182,7 @@ probability that the number of events occurring will be exactly x.</xs:documenta
   </xs:element>
   <xs:element name="ProbFunctionProbabilitiesValuesComputationMethodRangeList" type="nc:DecimalListType" nillable="true">
     <xs:annotation>
-      <xs:documentation>A set of probabilities associated with values in
-x_range.</xs:documentation>
+      <xs:documentation>A set of probabilities associated with values in x_range.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="ProbFunctionXValuesComputationMethodRangeList" type="nc:DecimalListType" nillable="true">
@@ -12528,8 +12517,7 @@ x_range.</xs:documentation>
   </xs:element>
   <xs:element name="SupportingDocumentation" type="nc:DocumentType" nillable="true">
     <xs:annotation>
-      <xs:documentation>A document that provides additional supporting
-information.</xs:documentation>
+      <xs:documentation>A document that provides additional supporting information.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="SupportingMissionEssentialTask" type="mo:MissionEssentialTaskType" nillable="true">
@@ -12574,8 +12562,7 @@ information.</xs:documentation>
   </xs:element>
   <xs:element name="TargetComponentText" type="nc:TextType" nillable="true">
     <xs:annotation>
-      <xs:documentation>A text field that specifies the component which is being specifically targeted by the weapon, e.g., computer application, operating system, hardware
-component, network, SCADA, telephony, video, etc.</xs:documentation>
+      <xs:documentation>A text field that specifies the component which is being specifically targeted by the weapon, e.g., computer application, operating system, hardware component, network, SCADA, telephony, video, etc.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="TargetDegradePercent" type="niem-xs:decimal" nillable="true">
@@ -12685,8 +12672,7 @@ component, network, SCADA, telephony, video, etc.</xs:documentation>
   </xs:element>
   <xs:element name="TechnicalImpactCode" type="mo:TechnicalImpactCodeType" nillable="true">
     <xs:annotation>
-      <xs:documentation>A negative technical impact that can result from an
-attack.</xs:documentation>
+      <xs:documentation>A negative technical impact that can result from an attack.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="TelephoneNumberCategoryCode" type="mo:TelephoneNumberCategoryCodeType" substitutionGroup="nc:TelephoneNumberCategoryAbstract" nillable="true">
@@ -12731,14 +12717,12 @@ attack.</xs:documentation>
   </xs:element>
   <xs:element name="TestOrganization" type="nc:OrganizationType" nillable="true">
     <xs:annotation>
-      <xs:documentation>An organization responsible for conducting the
-test.</xs:documentation>
+      <xs:documentation>An organization responsible for conducting the test.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="TestPlanDocument" type="nc:DocumentType" nillable="true">
     <xs:annotation>
-      <xs:documentation>A document containing the test plan in its original
-form.</xs:documentation>
+      <xs:documentation>A document containing the test plan in its original form.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="TestRawDataDocument" type="nc:DocumentType" nillable="true">
@@ -12798,8 +12782,7 @@ form.</xs:documentation>
   </xs:element>
   <xs:element name="TransportLayerPortStateCode" type="mo:TransportLayerPortStateCodeType" nillable="true">
     <xs:annotation>
-      <xs:documentation>A code indicating the states of a transport layer
-port.</xs:documentation>
+      <xs:documentation>A code indicating the states of a transport layer port.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="TransportLayerProtocolCode" type="mo:TransportLayerProtocolCodeType" nillable="true">
@@ -13014,14 +12997,12 @@ port.</xs:documentation>
   </xs:element>
   <xs:element name="ValidityNotAfterTime" type="niem-xs:dateTime" nillable="true">
     <xs:annotation>
-      <xs:documentation>A date on which the certificate validity period
-ends.</xs:documentation>
+      <xs:documentation>A date on which the certificate validity period ends.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="ValidityNotBeforeTime" type="niem-xs:dateTime" nillable="true">
     <xs:annotation>
-      <xs:documentation>A date on which the certificate validity period
-begins.</xs:documentation>
+      <xs:documentation>A date on which the certificate validity period begins.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="ValueSettingData" type="mo:ValueSettingDataType" substitutionGroup="mo:SettingDataRepresentation" nillable="true">
@@ -13126,13 +13107,12 @@ begins.</xs:documentation>
   </xs:element>
   <xs:element name="WeaponCommunityID" type="niem-xs:string" nillable="true">
     <xs:annotation>
-      <xs:documentation>An identifier that is generally accepted by the community to denote a specific weapon. </xs:documentation>
+      <xs:documentation>An identifier that is generally accepted by the community to denote a specific weapon.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="WeaponConfigurationID" type="niem-xs:string" nillable="true">
     <xs:annotation>
-      <xs:documentation>An identifier used to denote a specific weapon
-configuration. </xs:documentation>
+      <xs:documentation>An identifier used to denote a specific weapon configuration.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="WeaponConfigurationName" type="nc:TextType" nillable="true">
@@ -13207,8 +13187,7 @@ configuration. </xs:documentation>
   </xs:element>
   <xs:element name="WeaponTargetedComponent" type="mo:CPEMatchConditionalSetType" nillable="true">
     <xs:annotation>
-      <xs:documentation>A specific component/s (software, hardware, OS) which are vulnerable to the weapon. This could include multiple versions or range of versions of a
-product or multiple versions of multiple products.</xs:documentation>
+      <xs:documentation>A specific component/s (software, hardware, OS) which are vulnerable to the weapon. This could include multiple versions or range of versions of a product or multiple versions of multiple products.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="WeaponTestConfiguration" type="mo:WeaponTestConfigurationType" nillable="true">
@@ -13243,7 +13222,7 @@ product or multiple versions of multiple products.</xs:documentation>
   </xs:element>
   <xs:element name="WeaponVersionText" type="nc:TextType" nillable="true">
     <xs:annotation>
-      <xs:documentation>A version number or unique identifer of the version of the weapon.</xs:documentation>
+      <xs:documentation>A version number or unique identifier of the version of the weapon.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="WeibullComputationMethod" type="mo:WeibullComputationMethodType" substitutionGroup="mo:UncertaintyComputationMethodAbstract" nillable="true">
@@ -13363,8 +13342,7 @@ product or multiple versions of multiple products.</xs:documentation>
   </xs:element>
   <xs:element name="WindowsUserSecurityIDCode" type="mo:SIDCodeType" nillable="true">
     <xs:annotation>
-      <xs:documentation>A code indicating the type of Windows security
-identifier.</xs:documentation>
+      <xs:documentation>A code indicating the type of Windows security identifier.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="X509CertificateAugmentationPoint" abstract="true">
@@ -13409,8 +13387,7 @@ identifier.</xs:documentation>
   </xs:element>
   <xs:element name="X509RawCertificateText" type="nc:TextType" nillable="true">
     <xs:annotation>
-      <xs:documentation>A string representing the raw contexts of a
-certificate.</xs:documentation>
+      <xs:documentation>A string representing the raw contexts of a certificate.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="X509V3ExtensionAugmentationPoint" abstract="true">
@@ -13430,8 +13407,7 @@ certificate.</xs:documentation>
   </xs:element>
   <xs:element name="X509V3ExtensionCertificatePoliciesText" type="nc:TextType" nillable="true">
     <xs:annotation>
-      <xs:documentation>A field that captures a sequence of one or more policy information terms, each of which consists of an object identifier (OID) and optional qualifiers.
-Also equivalent to the object ID (OID) value of 2.5.29.32.</xs:documentation>
+      <xs:documentation>A field that captures a sequence of one or more policy information terms, each of which consists of an object identifier (OID) and optional qualifiers. Also equivalent to the object ID (OID) value of 2.5.29.32.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="X509V3ExtensionCRLDistributionPointsText" type="nc:TextType" nillable="true">
@@ -13441,8 +13417,7 @@ Also equivalent to the object ID (OID) value of 2.5.29.32.</xs:documentation>
   </xs:element>
   <xs:element name="X509V3ExtensionExtendedKeyUsageText" type="nc:TextType" nillable="true">
     <xs:annotation>
-      <xs:documentation>A field that captures a list of usages indicating purposes for which the certificate public key can be used for. Also equivalent to the object ID (OID)
-value of 2.5.29.37.</xs:documentation>
+      <xs:documentation>A field that captures a list of usages indicating purposes for which the certificate public key can be used for. Also equivalent to the object ID (OID) value of 2.5.29.37.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="X509V3ExtensionInhibitAnyPolicyText" type="nc:TextType" nillable="true">
@@ -13467,26 +13442,22 @@ value of 2.5.29.37.</xs:documentation>
   </xs:element>
   <xs:element name="X509V3ExtensionPolicyConstraintsText" type="nc:TextType" nillable="true">
     <xs:annotation>
-      <xs:documentation>A field that captures any constraints on path validation for certificates issued to CAs. Also equivalent to the object ID (OID) value of
-2.5.29.36.</xs:documentation>
+      <xs:documentation>A field that captures any constraints on path validation for certificates issued to CAs. Also equivalent to the object ID (OID) value of 2.5.29.36.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="X509V3ExtensionPolicyMappingsText" type="nc:TextType" nillable="true">
     <xs:annotation>
-      <xs:documentation>A field that captures one or more pairs of OIDs; each pair includes an issuerDomainPolicy and a subjectDomainPolicy. The pairing indicates whether the issuing CA considers its issuerDomainPolicy equivalent to the subject CA's
-subjectDomainPolicy. Also equivalent to the object ID (OID) value of 2.5.29.33.</xs:documentation>
+      <xs:documentation>A field that captures one or more pairs of OIDs; each pair includes an issuerDomainPolicy and a subjectDomainPolicy. The pairing indicates whether the issuing CA considers its issuerDomainPolicy equivalent to the subject CA's subjectDomainPolicy. Also equivalent to the object ID (OID) value of 2.5.29.33.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="X509V3ExtensionPrivateKeyUsagePeriod" type="mo:ValidityType" nillable="true">
     <xs:annotation>
-      <xs:documentation>A field that captures the validity period for the private key, if it is different from the validity period of the certificate. Also equivalent to the
-object ID (OID) value of 2.5.29.16.</xs:documentation>
+      <xs:documentation>A field that captures the validity period for the private key, if it is different from the validity period of the certificate. Also equivalent to the object ID (OID) value of 2.5.29.16.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="X509V3ExtensionSubjectAlternativeName" type="nc:TextType" nillable="true">
     <xs:annotation>
-      <xs:documentation>A name that captures the additional identities to be bound to the subject of the certificate. Also equivalent to the object ID (OID) value of
-2.5.29.17.</xs:documentation>
+      <xs:documentation>A name that captures the additional identities to be bound to the subject of the certificate. Also equivalent to the object ID (OID) value of 2.5.29.17.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="X509V3ExtensionSubjectDirectoryAttributesText" type="nc:TextType" nillable="true">
