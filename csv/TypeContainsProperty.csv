@@ -185,8 +185,7 @@
 "biom","ContentInformationType","biom:ContentInformationType","biom","ProcessingAuthorityText","biom:ProcessingAuthorityText","0","unbounded",""
 "biom","ContentInformationType","biom:ContentInformationType","biom","ProcessingCommentText","biom:ProcessingCommentText","0","unbounded",""
 "biom","ContentInformationType","biom:ContentInformationType","biom","ContentInformationAugmentationPoint","biom:ContentInformationAugmentationPoint","0","unbounded",""
-"biom","ContentRecordSummaryType","biom:ContentRecordSummaryType","biom","ImageReferenceIdentification","biom:ImageReferenceIdentification","0","unbounded","(Obsolete, use
-    ImageReferenceID)"
+"biom","ContentRecordSummaryType","biom:ContentRecordSummaryType","biom","ImageReferenceIdentification","biom:ImageReferenceIdentification","0","unbounded",
 "biom","ContentRecordSummaryType","biom:ContentRecordSummaryType","biom","ImageReferenceID","biom:ImageReferenceID","0","unbounded",""
 "biom","ContentRecordSummaryType","biom:ContentRecordSummaryType","biom","ANSIRecordCategoryCode","biom:ANSIRecordCategoryCode","0","unbounded",""
 "biom","ContentRecordSummaryType","biom:ContentRecordSummaryType","biom","ContentRecordSummaryAugmentationPoint","biom:ContentRecordSummaryAugmentationPoint","0","unbounded",""
@@ -308,7 +307,7 @@
 "biom","DNAEncodingType","biom:DNAEncodingType","biom","DNASTRData","biom:DNASTRData","0","1",""
 "biom","DNAEncodingType","biom:DNAEncodingType","biom","DNAMitoData","biom:DNAMitoData","0","1",""
 "biom","DNAEncodingType","biom:DNAEncodingType","biom","DNAUserDefinedProfileAbstract","biom:DNAUserDefinedProfileAbstract","0","1",""
-"biom","DNAEncodingType","biom:DNAEncodingType","biom","DNACommentText","biom:DNACommentText","0","unbounded","Comment is required to contain the details if the DNA Typing Technology Code is ""User-defined"", DNASourceCategoryCode is ""Other"", and/or DNAUserDefinedProfileAbstract is used."
+"biom","DNAEncodingType","biom:DNAEncodingType","biom","DNACommentText","biom:DNACommentText","0","unbounded","If any of the subelements of DNAEncoding have values such as ""Other"", ""User-defined""; or if DNAUserDefinedProfileAbstract is used, then DNACommentText is required to include detailed information about customized elements."
 "biom","DNAEncodingType","biom:DNAEncodingType","biom","DNAEncodingAugmentationPoint","biom:DNAEncodingAugmentationPoint","0","unbounded",""
 "biom","DNAFragmentSequenceAnalysisType","biom:DNAFragmentSequenceAnalysisType","biom","DNAFragmentSequenceAnalysisID","biom:DNAFragmentSequenceAnalysisID","0","1",""
 "biom","DNAFragmentSequenceAnalysisType","biom:DNAFragmentSequenceAnalysisType","biom","DNAFragmentSequenceAnalysisCategoryCode","biom:DNAFragmentSequenceAnalysisCategoryCode","1","1",""
@@ -424,8 +423,8 @@
 "biom","DNASourceType","biom:DNASourceType","biom","DNASourceKnownIndicator","biom:DNASourceKnownIndicator","0","1",""
 "biom","DNASourceType","biom:DNASourceType","biom","DNASampleOrigin","biom:DNASampleOrigin","0","1",""
 "biom","DNASourceType","biom:DNASourceType","biom","DNASourceAugmentationPoint","biom:DNASourceAugmentationPoint","0","unbounded",""
-"biom","DNASTRDataType","biom:DNASTRDataType","biom","DNAKit","biom:DNAKit","0","1",""
-"biom","DNASTRDataType","biom:DNASTRDataType","biom","DNABatchID","biom:DNABatchID","0","1",""
+"biom","DNASTRDataType","biom:DNASTRDataType","biom","DNAKit","biom:DNAKit","0","1","The DNA kit for the STR data when all loci are typed by the same kit"
+"biom","DNASTRDataType","biom:DNASTRDataType","biom","DNABatchID","biom:DNABatchID","0","1","The Batch ID for the STR data when all loci are typed at the same time with the same batch ID"
 "biom","DNASTRDataType","biom:DNASTRDataType","biom","DNASTRLaneNumeric","biom:DNASTRLaneNumeric","0","1",""
 "biom","DNASTRDataType","biom:DNASTRDataType","biom","DNASTRProfilePartialIndicator","biom:DNASTRProfilePartialIndicator","0","1",""
 "biom","DNASTRDataType","biom:DNASTRDataType","biom","DNALocus","biom:DNALocus","0","unbounded",""
@@ -695,8 +694,7 @@
 "biom","FrictionRidgeDetailType","biom:FrictionRidgeDetailType","biom","ResolutionMethodInformation","biom:ResolutionMethodInformation","0","unbounded",""
 "biom","FrictionRidgeDetailType","biom:FrictionRidgeDetailType","biom","SubjectExistentialDetails","biom:SubjectExistentialDetails","0","unbounded",""
 "biom","FrictionRidgeDetailType","biom:FrictionRidgeDetailType","biom","FrictionRidgeDetailAugmentationPoint","biom:FrictionRidgeDetailAugmentationPoint","0","unbounded",""
-"biom","FrictionRidgeImageAreaOfCorrespondenceType","biom:FrictionRidgeImageAreaOfCorrespondenceType","biom","ImageReferenceIdentification","biom:ImageReferenceIdentification","0","unbounded","(Obsolete, use
-    ImageReferenceID)"
+"biom","FrictionRidgeImageAreaOfCorrespondenceType","biom:FrictionRidgeImageAreaOfCorrespondenceType","biom","ImageReferenceIdentification","biom:ImageReferenceIdentification","0","unbounded",
 "biom","FrictionRidgeImageAreaOfCorrespondenceType","biom:FrictionRidgeImageAreaOfCorrespondenceType","biom","ImageReferenceID","biom:ImageReferenceID","0","unbounded",""
 "biom","FrictionRidgeImageAreaOfCorrespondenceType","biom:FrictionRidgeImageAreaOfCorrespondenceType","biom","ImageSegmentPolygon","biom:ImageSegmentPolygon","0","unbounded",""
 "biom","FrictionRidgeImageAreaOfCorrespondenceType","biom:FrictionRidgeImageAreaOfCorrespondenceType","biom","MinutiaeCommentText","biom:MinutiaeCommentText","0","unbounded",""
@@ -715,8 +713,7 @@
 "biom","FrictionRidgeImageRegionOfInterestType","biom:FrictionRidgeImageRegionOfInterestType","biom","ImageSegmentVerticalOffsetMeasure","biom:ImageSegmentVerticalOffsetMeasure","0","unbounded",""
 "biom","FrictionRidgeImageRegionOfInterestType","biom:FrictionRidgeImageRegionOfInterestType","biom","ImageSegmentPolygon","biom:ImageSegmentPolygon","0","unbounded",""
 "biom","FrictionRidgeImageRegionOfInterestType","biom:FrictionRidgeImageRegionOfInterestType","biom","FrictionRidgeImageRegionOfInterestAugmentationPoint","biom:FrictionRidgeImageRegionOfInterestAugmentationPoint","0","unbounded",""
-"biom","FrictionRidgeImageRelativeRotationType","biom:FrictionRidgeImageRelativeRotationType","biom","ImageReferenceIdentification","biom:ImageReferenceIdentification","0","unbounded","(Obsolete, use
-    ImageReferenceID)"
+"biom","FrictionRidgeImageRelativeRotationType","biom:FrictionRidgeImageRelativeRotationType","biom","ImageReferenceIdentification","biom:ImageReferenceIdentification","0","unbounded",
 "biom","FrictionRidgeImageRelativeRotationType","biom:FrictionRidgeImageRelativeRotationType","biom","ImageReferenceID","biom:ImageReferenceID","0","unbounded",""
 "biom","FrictionRidgeImageRelativeRotationType","biom:FrictionRidgeImageRelativeRotationType","biom","ImageRelativeOverallRotationValue","biom:ImageRelativeOverallRotationValue","0","unbounded",""
 "biom","FrictionRidgeImageRelativeRotationType","biom:FrictionRidgeImageRelativeRotationType","biom","FrictionRidgeImageRelativeRotationAugmentationPoint","biom:FrictionRidgeImageRelativeRotationAugmentationPoint","0","unbounded",""
@@ -879,8 +876,7 @@
 "biom","MinutiaeDotType","biom:MinutiaeDotType","biom","ImageFeatureVertex","biom:ImageFeatureVertex","0","unbounded",""
 "biom","MinutiaeDotType","biom:MinutiaeDotType","biom","MinutiaeDotLengthMeasure","biom:MinutiaeDotLengthMeasure","0","unbounded",""
 "biom","MinutiaeDotType","biom:MinutiaeDotType","biom","MinutiaeDotAugmentationPoint","biom:MinutiaeDotAugmentationPoint","0","unbounded",""
-"biom","MinutiaeExaminerComparisonDeterminationType","biom:MinutiaeExaminerComparisonDeterminationType","biom","ImageReferenceIdentification","biom:ImageReferenceIdentification","0","unbounded","(Obsolete, use
-    ImageReferenceID)"
+"biom","MinutiaeExaminerComparisonDeterminationType","biom:MinutiaeExaminerComparisonDeterminationType","biom","ImageReferenceIdentification","biom:ImageReferenceIdentification","0","unbounded",
 "biom","MinutiaeExaminerComparisonDeterminationType","biom:MinutiaeExaminerComparisonDeterminationType","biom","ImageReferenceID","biom:ImageReferenceID","0","unbounded",""
 "biom","MinutiaeExaminerComparisonDeterminationType","biom:MinutiaeExaminerComparisonDeterminationType","biom","MinutiaeExaminerComparisonDeterminationResultCode","biom:MinutiaeExaminerComparisonDeterminationResultCode","0","unbounded",""
 "biom","MinutiaeExaminerComparisonDeterminationType","biom:MinutiaeExaminerComparisonDeterminationType","biom","MinutiaeExaminerProgressCode","biom:MinutiaeExaminerProgressCode","0","unbounded",""
@@ -2014,7 +2010,7 @@
 "cyber","CyberIncidentType","cyber:CyberIncidentType","cyber","IncidentOccurredDescriptionText","cyber:IncidentOccurredDescriptionText","0","unbounded",""
 "cyber","CyberIncidentType","cyber:CyberIncidentType","cyber","IncidentResponse","cyber:IncidentResponse","0","unbounded",""
 "cyber","CyberIncidentType","cyber:CyberIncidentType","cyber","IncidentSeverity","cyber:IncidentSeverity","0","unbounded",""
-"cyber","CyberIncidentType","cyber:CyberIncidentType","cyber","CyberIndicator","cyber:CyberIndicator","0","unbounded",""
+"cyber","CyberIncidentType","cyber:CyberIncidentType","cyber","CyberIndicatorPattern","cyber:CyberIndicatorPattern","0","unbounded",""
 "cyber","CyberIncidentType","cyber:CyberIncidentType","cyber","IncidentInfectedDevice","cyber:IncidentInfectedDevice","0","unbounded",""
 "cyber","CyberIncidentType","cyber:CyberIncidentType","cyber","InformationExchangePolicy","cyber:InformationExchangePolicy","0","unbounded",""
 "cyber","CyberIncidentType","cyber:CyberIncidentType","cyber","MajorIncident","cyber:MajorIncident","0","unbounded",""
@@ -2031,15 +2027,14 @@
 "cyber","CyberIncidentType","cyber:CyberIncidentType","cyber","CyberInsuranceClaim","cyber:CyberInsuranceClaim","0","unbounded",""
 "cyber","CyberIncidentType","cyber:CyberIncidentType","cyber","IncidentImpactedPlatform","cyber:IncidentImpactedPlatform","0","unbounded",""
 "cyber","CyberIncidentType","cyber:CyberIncidentType","cyber","CyberIncidentAugmentationPoint","cyber:CyberIncidentAugmentationPoint","0","unbounded",""
-"cyber","CyberIndicatorType","cyber:CyberIndicatorType","cyber","CyberIndicatorDefensiveMeasureText","cyber:CyberIndicatorDefensiveMeasureText","0","unbounded",""
-"cyber","CyberIndicatorType","cyber:CyberIndicatorType","cyber","CyberIndicatorDefensiveMeasureComplianceIndicator","cyber:CyberIndicatorDefensiveMeasureComplianceIndicator","0","unbounded",""
-"cyber","CyberIndicatorType","cyber:CyberIndicatorType","cyber","CyberIndicatorName","cyber:CyberIndicatorName","0","unbounded",""
-"cyber","CyberIndicatorType","cyber:CyberIndicatorType","cyber","CyberIndicatorDescriptionText","cyber:CyberIndicatorDescriptionText","0","unbounded",""
-"cyber","CyberIndicatorType","cyber:CyberIndicatorType","cyber","CyberIndicatorDiamondModelClassificationCode","cyber:CyberIndicatorDiamondModelClassificationCode","0","unbounded",""
-"cyber","CyberIndicatorType","cyber:CyberIndicatorType","cyber","TrafficLightProtocolCode","cyber:TrafficLightProtocolCode","0","unbounded",""
-"cyber","CyberIndicatorType","cyber:CyberIndicatorType","cyber","KillChainPhase","cyber:KillChainPhase","0","unbounded",""
-"cyber","CyberIndicatorType","cyber:CyberIndicatorType","cyber","CyberIndicatorAugmentationPoint","cyber:CyberIndicatorAugmentationPoint","0","unbounded",""
-"cyber","CyberInsuranceClaimType","cyber:CyberInsuranceClaimType","nc","Entity","nc:Entity","0","unbounded",""
+"cyber","CyberIndicatorPatternType","cyber:CyberIndicatorPatternType","cyber","CyberIndicatorDefensiveMeasureText","cyber:CyberIndicatorDefensiveMeasureText","0","unbounded",""
+"cyber","CyberIndicatorPatternType","cyber:CyberIndicatorPatternType","cyber","CyberIndicatorDefensiveMeasureComplianceIndicator","cyber:CyberIndicatorDefensiveMeasureComplianceIndicator","0","unbounded",""
+"cyber","CyberIndicatorPatternType","cyber:CyberIndicatorPatternType","cyber","CyberIndicatorName","cyber:CyberIndicatorName","0","unbounded",""
+"cyber","CyberIndicatorPatternType","cyber:CyberIndicatorPatternType","cyber","CyberIndicatorDescriptionText","cyber:CyberIndicatorDescriptionText","0","unbounded",""
+"cyber","CyberIndicatorPatternType","cyber:CyberIndicatorPatternType","cyber","CyberIndicatorDiamondModelClassificationCode","cyber:CyberIndicatorDiamondModelClassificationCode","0","unbounded",""
+"cyber","CyberIndicatorPatternType","cyber:CyberIndicatorPatternType","cyber","TrafficLightProtocolCode","cyber:TrafficLightProtocolCode","0","unbounded",""
+"cyber","CyberIndicatorPatternType","cyber:CyberIndicatorPatternType","cyber","KillChainPhase","cyber:KillChainPhase","0","unbounded",""
+"cyber","CyberIndicatorPatternType","cyber:CyberIndicatorPatternType","cyber","CyberIndicatorPatternAugmentationPoint","cyber:CyberIndicatorPatternAugmentationPoint","0","unbounded",""
 "cyber","CyberInsuranceClaimType","cyber:CyberInsuranceClaimType","cyber","InsuranceClaimFiledIndicator","cyber:InsuranceClaimFiledIndicator","0","unbounded",""
 "cyber","CyberInsuranceClaimType","cyber:CyberInsuranceClaimType","cyber","InsuranceResponseIndicator","cyber:InsuranceResponseIndicator","0","unbounded",""
 "cyber","CyberInsuranceClaimType","cyber:CyberInsuranceClaimType","cyber","InsuranceClaimResponseCategoryCode","cyber:InsuranceClaimResponseCategoryCode","0","unbounded",""
@@ -2114,7 +2109,7 @@
 "cyber","IncidentComplianceDriverType","cyber:IncidentComplianceDriverType","cyber","ComplianceDriverReportedToEntityDescriptionText","cyber:ComplianceDriverReportedToEntityDescriptionText","0","unbounded",""
 "cyber","IncidentComplianceDriverType","cyber:IncidentComplianceDriverType","cyber","ComplianceDriverViolatedText","cyber:ComplianceDriverViolatedText","0","unbounded",""
 "cyber","IncidentComplianceDriverType","cyber:IncidentComplianceDriverType","cyber","ComplianceDriverReportedDate","cyber:ComplianceDriverReportedDate","0","unbounded",""
-"cyber","IncidentComplianceDriverType","cyber:IncidentComplianceDriverType","cyber","BreachNotificationMethodCode","cyber:BreachNotificationMethodCode","0","unbounded",""
+"cyber","IncidentComplianceDriverType","cyber:IncidentComplianceDriverType","cyber","BreachNotificationMethod","cyber:BreachNotificationMethod","0","unbounded",""
 "cyber","IncidentComplianceDriverType","cyber:IncidentComplianceDriverType","cyber","IncidentComplianceDriverAugmentationPoint","cyber:IncidentComplianceDriverAugmentationPoint","0","unbounded",""
 "cyber","IncidentDiscoveryMethodType","cyber:IncidentDiscoveryMethodType","cyber","IncidentDiscoveryMethodCode","cyber:IncidentDiscoveryMethodCode","0","unbounded",""
 "cyber","IncidentDiscoveryMethodType","cyber:IncidentDiscoveryMethodType","cyber","IncidentDiscoveryOtherMethodDescriptionText","cyber:IncidentDiscoveryOtherMethodDescriptionText","0","unbounded",""
@@ -5407,7 +5402,7 @@
 "j","ConveyancePartType","j:ConveyancePartType","j","ConveyancePartCategoryAbstract","j:ConveyancePartCategoryAbstract","0","unbounded",
 "j","ConveyancePartType","j:ConveyancePartType","j","ConveyancePartDescriptionText","j:ConveyancePartDescriptionText","0","unbounded",
 "j","ConveyancePartType","j:ConveyancePartType","j","ConveyancePartAugmentationPoint","j:ConveyancePartAugmentationPoint","0","unbounded",""
-"j","ConveyanceRegistrationStatusType","j:ConveyanceRegistrationStatusType","j","ConveyanceRegistrationStatusAbstract","j:ConveyanceRegistrationStatusAbstract","0","unbounded","A most recent activity recorded for a registration."
+"j","ConveyanceRegistrationStatusType","j:ConveyanceRegistrationStatusType","j","ConveyanceRegistrationStatusAbstract","j:ConveyanceRegistrationStatusAbstract","0","unbounded",
 "j","ConveyanceRegistrationStatusType","j:ConveyanceRegistrationStatusType","j","ConveyanceRegistrationStatusDetailAbstract","j:ConveyanceRegistrationStatusDetailAbstract","0","unbounded",
 "j","ConveyanceRegistrationStatusType","j:ConveyanceRegistrationStatusType","j","ConveyanceRegistrationStatusAugmentationPoint","j:ConveyanceRegistrationStatusAugmentationPoint","0","unbounded",""
 "j","ConveyanceRegistrationType","j:ConveyanceRegistrationType","nc","Conveyance","nc:Conveyance","0","unbounded",
@@ -5841,12 +5836,12 @@
 "j","DriverLicenseWithdrawalType","j:DriverLicenseWithdrawalType","j","DriverLicenseWithdrawalAbstract","j:DriverLicenseWithdrawalAbstract","0","unbounded",
 "j","DriverLicenseWithdrawalType","j:DriverLicenseWithdrawalType","j","DriverLicenseWithdrawalDueProcessStatusAbstract","j:DriverLicenseWithdrawalDueProcessStatusAbstract","0","unbounded",
 "j","DriverLicenseWithdrawalType","j:DriverLicenseWithdrawalType","j","DriverLicenseWithdrawalEffectiveDate","j:DriverLicenseWithdrawalEffectiveDate","0","unbounded",
-"j","DriverLicenseWithdrawalType","j:DriverLicenseWithdrawalType","j","DriverLicenseWithdrawalEligibilityAbstract","j:DriverLicenseWithdrawalEligibilityAbstract","0","unbounded","An indication of when a driver is eligible to apply for reinstatement of those driving privileges withdrawn."
+"j","DriverLicenseWithdrawalType","j:DriverLicenseWithdrawalType","j","DriverLicenseWithdrawalEligibilityAbstract","j:DriverLicenseWithdrawalEligibilityAbstract","0","unbounded",
 "j","DriverLicenseWithdrawalType","j:DriverLicenseWithdrawalType","j","DriverLicenseWithdrawalEligibilityDate","j:DriverLicenseWithdrawalEligibilityDate","0","unbounded",
 "j","DriverLicenseWithdrawalType","j:DriverLicenseWithdrawalType","j","DriverLicenseWithdrawalExtentAbstract","j:DriverLicenseWithdrawalExtentAbstract","0","unbounded",
 "j","DriverLicenseWithdrawalType","j:DriverLicenseWithdrawalType","j","DriverLicenseWithdrawalIssuingAuthorityAbstract","j:DriverLicenseWithdrawalIssuingAuthorityAbstract","0","unbounded",""
 "j","DriverLicenseWithdrawalType","j:DriverLicenseWithdrawalType","j","DriverLicenseWithdrawalLocatorReferenceIdentification","j:DriverLicenseWithdrawalLocatorReferenceIdentification","0","unbounded",
-"j","DriverLicenseWithdrawalType","j:DriverLicenseWithdrawalType","j","DriverLicenseWithdrawalReasonReferenceAbstract","j:DriverLicenseWithdrawalReasonReferenceAbstract","0","unbounded","A withdrawal reason for future reference by the original State of Conviction."
+"j","DriverLicenseWithdrawalType","j:DriverLicenseWithdrawalType","j","DriverLicenseWithdrawalReasonReferenceAbstract","j:DriverLicenseWithdrawalReasonReferenceAbstract","0","unbounded",
 "j","DriverLicenseWithdrawalType","j:DriverLicenseWithdrawalType","j","DriverLicenseWithdrawalReinstatementDate","j:DriverLicenseWithdrawalReinstatementDate","0","unbounded",
 "j","DriverLicenseWithdrawalType","j:DriverLicenseWithdrawalType","j","DriverLicenseWithdrawalAugmentationPoint","j:DriverLicenseWithdrawalAugmentationPoint","0","unbounded",""
 "j","DrivingIncidentType","j:DrivingIncidentType","j","DrivingAccidentSeverityAbstract","j:DrivingAccidentSeverityAbstract","0","unbounded",
@@ -6053,8 +6048,8 @@
 "j","FinancialCompilationType","j:FinancialCompilationType","nc","Insurance","nc:Insurance","0","unbounded",""
 "j","FinancialCompilationType","j:FinancialCompilationType","j","FinancialCompilationAugmentationPoint","j:FinancialCompilationAugmentationPoint","0","unbounded",""
 "j","FingerprintActivityType","j:FingerprintActivityType","j","FingerprintActivityAugmentationPoint","j:FingerprintActivityAugmentationPoint","0","unbounded",""
-"j","FirearmType","j:FirearmType","j","FirearmMakeAbstract","j:FirearmMakeAbstract","0","unbounded","A manufacturer of a firearm."
-"j","FirearmType","j:FirearmType","j","FirearmCategoryAbstract","j:FirearmCategoryAbstract","0","unbounded","A kind of firearm."
+"j","FirearmType","j:FirearmType","j","FirearmMakeAbstract","j:FirearmMakeAbstract","0","unbounded",
+"j","FirearmType","j:FirearmType","j","FirearmCategoryAbstract","j:FirearmCategoryAbstract","0","unbounded",
 "j","FirearmType","j:FirearmType","j","FirearmCategoryDescriptionAbstract","j:FirearmCategoryDescriptionAbstract","0","unbounded",
 "j","FirearmType","j:FirearmType","j","FirearmAutomaticIndicator","j:FirearmAutomaticIndicator","0","unbounded",
 "j","FirearmType","j:FirearmType","j","FirearmBarrelLengthMeasure","j:FirearmBarrelLengthMeasure","0","unbounded",
@@ -6476,7 +6471,7 @@
 "j","JewelryStoneType","j:JewelryStoneType","j","JewelryStoneCutText","j:JewelryStoneCutText","0","unbounded",""
 "j","JewelryStoneType","j:JewelryStoneType","j","JewelryStoneQuantity","j:JewelryStoneQuantity","0","unbounded",""
 "j","JewelryStoneType","j:JewelryStoneType","j","JewelryStoneAugmentationPoint","j:JewelryStoneAugmentationPoint","0","unbounded",""
-"j","JewelryType","j:JewelryType","j","JewelryCategoryAbstract","j:JewelryCategoryAbstract","0","unbounded","A kind of jewelry."
+"j","JewelryType","j:JewelryType","j","JewelryCategoryAbstract","j:JewelryCategoryAbstract","0","unbounded",
 "j","JewelryType","j:JewelryType","j","JewelryGenderAbstract","j:JewelryGenderAbstract","0","unbounded",""
 "j","JewelryType","j:JewelryType","j","JewelryShapeAbstract","j:JewelryShapeAbstract","0","unbounded",""
 "j","JewelryType","j:JewelryType","j","JewelryStoneArrangementText","j:JewelryStoneArrangementText","0","unbounded",""
@@ -7909,11 +7904,11 @@
 "j","TipTaxonomyType","j:TipTaxonomyType","j","TipClassAbstract","j:TipClassAbstract","0","unbounded",""
 "j","TipTaxonomyType","j:TipTaxonomyType","j","TipDomainAbstract","j:TipDomainAbstract","0","unbounded",""
 "j","TipTaxonomyType","j:TipTaxonomyType","j","TipTaxonomyAugmentationPoint","j:TipTaxonomyAugmentationPoint","0","unbounded",""
-"j","TitleStatusType","j:TitleStatusType","j","TitleStatusAbstract","j:TitleStatusAbstract","0","unbounded","A status of a title."
+"j","TitleStatusType","j:TitleStatusType","j","TitleStatusAbstract","j:TitleStatusAbstract","0","unbounded",
 "j","TitleStatusType","j:TitleStatusType","j","TitleStatusAugmentationPoint","j:TitleStatusAugmentationPoint","0","unbounded",""
 "j","TitleType","j:TitleType","j","Lien","j:Lien","0","unbounded",""
 "j","TitleType","j:TitleType","j","TitleCategoryText","j:TitleCategoryText","0","unbounded",""
-"j","TitleType","j:TitleType","j","TitleDocumentCategoryAbstract","j:TitleDocumentCategoryAbstract","0","unbounded","A kind of individual title document."
+"j","TitleType","j:TitleType","j","TitleDocumentCategoryAbstract","j:TitleDocumentCategoryAbstract","0","unbounded",
 "j","TitleType","j:TitleType","j","TitleDuplicateQuantity","j:TitleDuplicateQuantity","0","unbounded",""
 "j","TitleType","j:TitleType","j","TitleHolder","j:TitleHolder","0","unbounded",""
 "j","TitleType","j:TitleType","j","TitleIdentification","j:TitleIdentification","0","unbounded",""
@@ -7997,7 +7992,7 @@
 "j","VehicleAugmentationType","j:VehicleAugmentationType","j","VehicleTitle","j:VehicleTitle","0","unbounded",""
 "j","VehicleBranderType","j:VehicleBranderType","nc","RoleOfOrganization","nc:RoleOfOrganization","0","unbounded",""
 "j","VehicleBranderType","j:VehicleBranderType","j","VehicleBranderIdentification","j:VehicleBranderIdentification","0","unbounded",
-"j","VehicleBranderType","j:VehicleBranderType","j","VehicleBranderCategoryAbstract","j:VehicleBranderCategoryAbstract","0","unbounded","A kind of brander of a vehicle."
+"j","VehicleBranderType","j:VehicleBranderType","j","VehicleBranderCategoryAbstract","j:VehicleBranderCategoryAbstract","0","unbounded",
 "j","VehicleBranderType","j:VehicleBranderType","j","VehicleBranderAugmentationPoint","j:VehicleBranderAugmentationPoint","0","unbounded",""
 "j","VehicleBrandType","j:VehicleBrandType","j","VehicleBrandDamagePercentageCategoryAbstract","j:VehicleBrandDamagePercentageCategoryAbstract","0","unbounded",
 "j","VehicleBrandType","j:VehicleBrandType","j","VehicleBrandDate","j:VehicleBrandDate","0","unbounded",
@@ -8015,7 +8010,7 @@
 "j","VehicleInspectionType","j:VehicleInspectionType","j","VehicleInspectionAddress","j:VehicleInspectionAddress","0","unbounded",
 "j","VehicleInspectionType","j:VehicleInspectionType","j","VehicleInspectionInspectorIdentification","j:VehicleInspectionInspectorIdentification","0","unbounded",
 "j","VehicleInspectionType","j:VehicleInspectionType","j","VehicleInspectionJurisdictionAuthorityAbstract","j:VehicleInspectionJurisdictionAuthorityAbstract","0","unbounded",
-"j","VehicleInspectionType","j:VehicleInspectionType","j","VehicleInspectionSmogCertificateAbstract","j:VehicleInspectionSmogCertificateAbstract","0","unbounded","An indication of whether or not a vehicle has a current smog certificate."
+"j","VehicleInspectionType","j:VehicleInspectionType","j","VehicleInspectionSmogCertificateAbstract","j:VehicleInspectionSmogCertificateAbstract","0","unbounded",
 "j","VehicleInspectionType","j:VehicleInspectionType","j","VehicleInspectionStationIdentification","j:VehicleInspectionStationIdentification","0","unbounded",
 "j","VehicleInspectionType","j:VehicleInspectionType","j","VehicleInspectionTestCategoryText","j:VehicleInspectionTestCategoryText","0","unbounded",
 "j","VehicleInspectionType","j:VehicleInspectionType","j","VehicleInspectionAugmentationPoint","j:VehicleInspectionAugmentationPoint","0","unbounded",""
@@ -9061,9 +9056,9 @@
 "nc","AircraftType","nc:AircraftType","nc","AircraftCallSignIdentification","nc:AircraftCallSignIdentification","0","unbounded",""
 "nc","AircraftType","nc:AircraftType","nc","AircraftCategoryAbstract","nc:AircraftCategoryAbstract","0","unbounded",""
 "nc","AircraftType","nc:AircraftType","nc","AircraftFuselageColorAbstract","nc:AircraftFuselageColorAbstract","0","unbounded",""
-"nc","AircraftType","nc:AircraftType","nc","AircraftMakeAbstract","nc:AircraftMakeAbstract","0","unbounded","A manufacturer of an aircraft."
-"nc","AircraftType","nc:AircraftType","nc","AircraftModelAbstract","nc:AircraftModelAbstract","0","unbounded","A specific design or kind of aircraft made by a manufacturer."
-"nc","AircraftType","nc:AircraftType","nc","AircraftStyleAbstract","nc:AircraftStyleAbstract","0","unbounded","A style of an aircraft."
+"nc","AircraftType","nc:AircraftType","nc","AircraftMakeAbstract","nc:AircraftMakeAbstract","0","unbounded",
+"nc","AircraftType","nc:AircraftType","nc","AircraftModelAbstract","nc:AircraftModelAbstract","0","unbounded",
+"nc","AircraftType","nc:AircraftType","nc","AircraftStyleAbstract","nc:AircraftStyleAbstract","0","unbounded",
 "nc","AircraftType","nc:AircraftType","nc","AircraftTailIdentification","nc:AircraftTailIdentification","0","unbounded",""
 "nc","AircraftType","nc:AircraftType","nc","AircraftWingColorAbstract","nc:AircraftWingColorAbstract","0","unbounded",""
 "nc","AircraftType","nc:AircraftType","nc","AircraftAugmentationPoint","nc:AircraftAugmentationPoint","0","unbounded",""
@@ -9089,7 +9084,7 @@
 "nc","AreaMeasureType","nc:AreaMeasureType","nc","AreaMeasureUnitAbstract","nc:AreaMeasureUnitAbstract","0","unbounded",""
 "nc","AreaMeasureType","nc:AreaMeasureType","nc","AreaMeasureAugmentationPoint","nc:AreaMeasureAugmentationPoint","0","unbounded",""
 "nc","AreaType","nc:AreaType","nc","AreaDescriptionText","nc:AreaDescriptionText","0","unbounded",
-"nc","AreaType","nc:AreaType","nc","AreaGeographicAbstract","nc:AreaGeographicAbstract","0","unbounded","A local or map-specific geographically-based code used to describe an area."
+"nc","AreaType","nc:AreaType","nc","AreaGeographicAbstract","nc:AreaGeographicAbstract","0","unbounded",
 "nc","AreaType","nc:AreaType","nc","AreaRegionAbstract","nc:AreaRegionAbstract","0","unbounded",""
 "nc","AreaType","nc:AreaType","nc","AreaAugmentationPoint","nc:AreaAugmentationPoint","0","unbounded",""
 "nc","ArrivalType","nc:ArrivalType","nc","ArrivalDate","nc:ArrivalDate","0","unbounded",""
@@ -9224,7 +9219,7 @@
 "nc","DateRangeType","nc:DateRangeType","nc","EndDate","nc:EndDate","0","unbounded",""
 "nc","DateRangeType","nc:DateRangeType","nc","DateRangeAugmentationPoint","nc:DateRangeAugmentationPoint","0","unbounded",""
 "nc","DateType","nc:DateType","nc","DateRepresentation","nc:DateRepresentation","0","unbounded",""
-"nc","DateType","nc:DateType","nc","DateAccuracyAbstract","nc:DateAccuracyAbstract","0","1","A subjective assessment that indicates belief that date content is exact or accurate."
+"nc","DateType","nc:DateType","nc","DateAccuracyAbstract","nc:DateAccuracyAbstract","0","1",
 "nc","DateType","nc:DateType","nc","DateMarginOfErrorDuration","nc:DateMarginOfErrorDuration","0","1",
 "nc","DateType","nc:DateType","nc","DateAugmentationPoint","nc:DateAugmentationPoint","0","unbounded",""
 "nc","DecalType","nc:DecalType","nc","DecalID","nc:DecalID","0","unbounded",
@@ -9311,7 +9306,7 @@
 "nc","DocumentType","nc:DocumentType","nc","DocumentGroupID","nc:DocumentGroupID","0","unbounded",""
 "nc","DocumentType","nc:DocumentType","nc","DocumentIdentification","nc:DocumentIdentification","0","unbounded",""
 "nc","DocumentType","nc:DocumentType","nc","DocumentInformationCutOffDate","nc:DocumentInformationCutOffDate","0","unbounded",""
-"nc","DocumentType","nc:DocumentType","nc","DocumentIntelligenceCategoryAbstract","nc:DocumentIntelligenceCategoryAbstract","0","unbounded","A nature or genre of the resource."
+"nc","DocumentType","nc:DocumentType","nc","DocumentIntelligenceCategoryAbstract","nc:DocumentIntelligenceCategoryAbstract","0","unbounded",
 "nc","DocumentType","nc:DocumentType","nc","DocumentIssuanceLocation","nc:DocumentIssuanceLocation","0","unbounded",""
 "nc","DocumentType","nc:DocumentType","nc","DocumentIssueDate","nc:DocumentIssueDate","0","unbounded",""
 "nc","DocumentType","nc:DocumentType","nc","DocumentKeywordAbstract","nc:DocumentKeywordAbstract","0","unbounded",""
@@ -9338,7 +9333,7 @@
 "nc","DocumentType","nc:DocumentType","nc","DocumentSourceText","nc:DocumentSourceText","0","unbounded",""
 "nc","DocumentType","nc:DocumentType","nc","DocumentStatus","nc:DocumentStatus","0","unbounded",""
 "nc","DocumentType","nc:DocumentType","nc","DocumentStatusCategoryAbstract","nc:DocumentStatusCategoryAbstract","0","unbounded",""
-"nc","DocumentType","nc:DocumentType","nc","DocumentSubjectAbstract","nc:DocumentSubjectAbstract","0","unbounded","A subject code systems used and the appropriate subject code assigned to the document."
+"nc","DocumentType","nc:DocumentType","nc","DocumentSubjectAbstract","nc:DocumentSubjectAbstract","0","unbounded",
 "nc","DocumentType","nc:DocumentType","nc","DocumentSubmissionAmount","nc:DocumentSubmissionAmount","0","unbounded",""
 "nc","DocumentType","nc:DocumentType","nc","DocumentSubmitter","nc:DocumentSubmitter","0","unbounded",""
 "nc","DocumentType","nc:DocumentType","nc","DocumentSummaryText","nc:DocumentSummaryText","0","unbounded",""
@@ -9352,7 +9347,7 @@
 "nc","DoubleRangeType","nc:DoubleRangeType","nc","DoubleRangeAugmentationPoint","nc:DoubleRangeAugmentationPoint","0","unbounded",""
 "nc","DrugType","nc:DrugType","nc","DrugDaysSupplyQuantity","nc:DrugDaysSupplyQuantity","0","unbounded",""
 "nc","DrugType","nc:DrugType","nc","DrugStrengthText","nc:DrugStrengthText","0","unbounded",""
-"nc","DrugType","nc:DrugType","nc","DrugClassScheduleAbstract","nc:DrugClassScheduleAbstract","0","unbounded","A class to which the Drug Enforcement Agency (DEA) has assigned the product under the Controlled Substances Act of 1970"
+"nc","DrugType","nc:DrugType","nc","DrugClassScheduleAbstract","nc:DrugClassScheduleAbstract","0","unbounded",
 "nc","DrugType","nc:DrugType","nc","DrugCoverageExceptionReasonText","nc:DrugCoverageExceptionReasonText","0","unbounded",""
 "nc","DrugType","nc:DrugType","nc","DrugAugmentationPoint","nc:DrugAugmentationPoint","0","unbounded",""
 "nc","EducationLevelType","nc:EducationLevelType","nc","EducationLevelRepresentation","nc:EducationLevelRepresentation","0","unbounded",""
@@ -9658,7 +9653,7 @@
 "nc","LocaleType","nc:LocaleType","nc","LocaleDistrictName","nc:LocaleDistrictName","0","unbounded",
 "nc","LocaleType","nc:LocaleType","nc","LocaleEmergencyServicesName","nc:LocaleEmergencyServicesName","0","unbounded",
 "nc","LocaleType","nc:LocaleType","nc","LocaleFireJurisdictionID","nc:LocaleFireJurisdictionID","0","unbounded",
-"nc","LocaleType","nc:LocaleType","nc","LocaleJudicialDistrictAbstract","nc:LocaleJudicialDistrictAbstract","0","unbounded","A judicial district within a region."
+"nc","LocaleType","nc:LocaleType","nc","LocaleJudicialDistrictAbstract","nc:LocaleJudicialDistrictAbstract","0","unbounded",
 "nc","LocaleType","nc:LocaleType","nc","LocaleNeighborhoodName","nc:LocaleNeighborhoodName","0","unbounded",
 "nc","LocaleType","nc:LocaleType","nc","LocalePoliceBeatText","nc:LocalePoliceBeatText","0","unbounded",
 "nc","LocaleType","nc:LocaleType","nc","LocalePoliceGridText","nc:LocalePoliceGridText","0","unbounded",
@@ -9668,7 +9663,7 @@
 "nc","LocaleType","nc:LocaleType","nc","LocaleZoneName","nc:LocaleZoneName","0","unbounded",
 "nc","LocaleType","nc:LocaleType","nc","LocaleEmergencyServicesJurisdictionID","nc:LocaleEmergencyServicesJurisdictionID","0","unbounded",""
 "nc","LocaleType","nc:LocaleType","nc","LocaleAugmentationPoint","nc:LocaleAugmentationPoint","0","unbounded",""
-"nc","Location2DGeospatialCoordinateType","nc:Location2DGeospatialCoordinateType","nc","GeographicDatumAbstract","nc:GeographicDatumAbstract","0","1","A spatial reference system."
+"nc","Location2DGeospatialCoordinateType","nc:Location2DGeospatialCoordinateType","nc","GeographicDatumAbstract","nc:GeographicDatumAbstract","0","1",
 "nc","Location2DGeospatialCoordinateType","nc:Location2DGeospatialCoordinateType","nc","GeographicCoordinateLatitude","nc:GeographicCoordinateLatitude","1","1",""
 "nc","Location2DGeospatialCoordinateType","nc:Location2DGeospatialCoordinateType","nc","GeographicCoordinateLongitude","nc:GeographicCoordinateLongitude","1","1",""
 "nc","Location2DGeospatialCoordinateType","nc:Location2DGeospatialCoordinateType","nc","Location2DGeospatialCoordinateAugmentationPoint","nc:Location2DGeospatialCoordinateAugmentationPoint","0","unbounded",""
@@ -9896,7 +9891,7 @@
 "nc","PassportType","nc:PassportType","nc","PersonBirthDate","nc:PersonBirthDate","0","unbounded",""
 "nc","PassportType","nc:PassportType","nc","PersonBirthLocation","nc:PersonBirthLocation","0","unbounded",""
 "nc","PassportType","nc:PassportType","nc","PassportBookIdentification","nc:PassportBookIdentification","0","unbounded",""
-"nc","PassportType","nc:PassportType","nc","PassportCategoryAbstract","nc:PassportCategoryAbstract","0","unbounded","A kind of passport."
+"nc","PassportType","nc:PassportType","nc","PassportCategoryAbstract","nc:PassportCategoryAbstract","0","unbounded",
 "nc","PassportType","nc:PassportType","nc","PersonDigitalImage","nc:PersonDigitalImage","0","unbounded",""
 "nc","PassportType","nc:PassportType","nc","PersonCitizenshipCountry","nc:PersonCitizenshipCountry","0","unbounded",""
 "nc","PassportType","nc:PassportType","nc","PassportElectronicIndicator","nc:PassportElectronicIndicator","0","unbounded",""
@@ -10226,7 +10221,7 @@
 "nc","SecuritiesType","nc:SecuritiesType","nc","SecuritiesCollectionDateRange","nc:SecuritiesCollectionDateRange","0","unbounded",
 "nc","SecuritiesType","nc:SecuritiesType","nc","SecuritiesDateSeriesAbstract","nc:SecuritiesDateSeriesAbstract","0","unbounded",
 "nc","SecuritiesType","nc:SecuritiesType","nc","SecuritiesDenominationAbstract","nc:SecuritiesDenominationAbstract","0","unbounded",
-"nc","SecuritiesType","nc:SecuritiesType","nc","SecuritiesCategoryAbstract","nc:SecuritiesCategoryAbstract","0","unbounded","A kind of security."
+"nc","SecuritiesType","nc:SecuritiesType","nc","SecuritiesCategoryAbstract","nc:SecuritiesCategoryAbstract","0","unbounded",
 "nc","SecuritiesType","nc:SecuritiesType","nc","SecuritiesIssuer","nc:SecuritiesIssuer","0","unbounded",""
 "nc","SecuritiesType","nc:SecuritiesType","nc","SecuritiesAugmentationPoint","nc:SecuritiesAugmentationPoint","0","unbounded",""
 "nc","SiteType","nc:SiteType","nc","SiteLocation","nc:SiteLocation","0","unbounded",""
@@ -10338,8 +10333,8 @@
 "nc","VehicleType","nc:VehicleType","nc","VehicleColorInteriorAbstract","nc:VehicleColorInteriorAbstract","0","unbounded",""
 "nc","VehicleType","nc:VehicleType","nc","VehicleDoorQuantity","nc:VehicleDoorQuantity","0","unbounded",""
 "nc","VehicleType","nc:VehicleType","nc","VehicleIdentification","nc:VehicleIdentification","0","unbounded",""
-"nc","VehicleType","nc:VehicleType","nc","VehicleMakeAbstract","nc:VehicleMakeAbstract","0","unbounded","A manufacturer of a vehicle."
-"nc","VehicleType","nc:VehicleType","nc","VehicleModelAbstract","nc:VehicleModelAbstract","0","unbounded","A specific design or class of vehicle made by a manufacturer."
+"nc","VehicleType","nc:VehicleType","nc","VehicleMakeAbstract","nc:VehicleMakeAbstract","0","unbounded",
+"nc","VehicleType","nc:VehicleType","nc","VehicleModelAbstract","nc:VehicleModelAbstract","0","unbounded",
 "nc","VehicleType","nc:VehicleType","nc","VehicleMSRPAmount","nc:VehicleMSRPAmount","0","unbounded",""
 "nc","VehicleType","nc:VehicleType","nc","VehicleOdometerReadingMeasure","nc:VehicleOdometerReadingMeasure","0","unbounded",""
 "nc","VehicleType","nc:VehicleType","nc","VehiclePassengerSafeQuantity","nc:VehiclePassengerSafeQuantity","0","unbounded",""
@@ -10354,8 +10349,8 @@
 "nc","VehicleType","nc:VehicleType","nc","VehicleAugmentationPoint","nc:VehicleAugmentationPoint","0","unbounded",""
 "nc","VelocityMeasureType","nc:VelocityMeasureType","nc","Bearing","nc:Bearing","0","unbounded",""
 "nc","VelocityMeasureType","nc:VelocityMeasureType","nc","VelocityMeasureAugmentationPoint","nc:VelocityMeasureAugmentationPoint","0","unbounded",""
-"nc","VesselType","nc:VesselType","nc","VesselMakeAbstract","nc:VesselMakeAbstract","0","unbounded","A manufacturer of a vessel."
-"nc","VesselType","nc:VesselType","nc","VesselCategoryAbstract","nc:VesselCategoryAbstract","0","unbounded","A kind of vessel."
+"nc","VesselType","nc:VesselType","nc","VesselMakeAbstract","nc:VesselMakeAbstract","0","unbounded",
+"nc","VesselType","nc:VesselType","nc","VesselCategoryAbstract","nc:VesselCategoryAbstract","0","unbounded",
 "nc","VesselType","nc:VesselType","nc","VesselHullIdentification","nc:VesselHullIdentification","0","unbounded",
 "nc","VesselType","nc:VesselType","nc","VesselHullMaterialAbstract","nc:VesselHullMaterialAbstract","0","unbounded",
 "nc","VesselType","nc:VesselType","nc","VesselHullShapeAbstract","nc:VesselHullShapeAbstract","0","unbounded",
