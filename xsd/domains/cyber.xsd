@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xs:schema targetNamespace="http://release.niem.gov/niem/domains/cyber/5.1/" version="beta1" xml:lang="en-US" xsi:schemaLocation="http://release.niem.gov/niem/appinfo/5.0/ ../utility/appinfo.xsd http://release.niem.gov/niem/conformanceTargets/3.0/ ../utility/conformanceTargets.xsd" ct:conformanceTargets="http://reference.niem.gov/niem/specification/naming-and-design-rules/5.0/#ReferenceSchemaDocument"
+<xs:schema targetNamespace="http://release.niem.gov/niem/domains/cyber/5.1/" version="1" xml:lang="en-US" xsi:schemaLocation="http://release.niem.gov/niem/appinfo/5.0/ ../utility/appinfo.xsd http://release.niem.gov/niem/conformanceTargets/3.0/ ../utility/conformanceTargets.xsd" ct:conformanceTargets="http://reference.niem.gov/niem/specification/naming-and-design-rules/5.0/#ReferenceSchemaDocument"
   xmlns:appinfo="http://release.niem.gov/niem/appinfo/5.0/"
   xmlns:ct="http://release.niem.gov/niem/conformanceTargets/3.0/"
   xmlns:cyber="http://release.niem.gov/niem/domains/cyber/5.1/"
@@ -1284,7 +1284,7 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-  <xs:simpleType name="CyberIndicatorDiamondModelClassificationCodeSimpleType">
+  <xs:simpleType name="CyberIndicatorPatternDiamondModelClassificationCodeSimpleType">
     <xs:annotation>
       <xs:documentation>A data type for a classification of an indicator by kind of Diamond Model component</xs:documentation>
     </xs:annotation>
@@ -1311,12 +1311,12 @@
       </xs:enumeration>
     </xs:restriction>
   </xs:simpleType>
-  <xs:complexType name="CyberIndicatorDiamondModelClassificationCodeType">
+  <xs:complexType name="CyberIndicatorPatternDiamondModelClassificationCodeType">
     <xs:annotation>
       <xs:documentation>A data type for a classification of an indicator by kind of Diamond Model component</xs:documentation>
     </xs:annotation>
     <xs:simpleContent>
-      <xs:extension base="cyber:CyberIndicatorDiamondModelClassificationCodeSimpleType">
+      <xs:extension base="cyber:CyberIndicatorPatternDiamondModelClassificationCodeSimpleType">
         <xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
       </xs:extension>
     </xs:simpleContent>
@@ -1328,11 +1328,11 @@
     <xs:complexContent>
       <xs:extension base="structures:ObjectType">
         <xs:sequence>
-          <xs:element ref="cyber:CyberIndicatorDefensiveMeasureText" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="cyber:CyberIndicatorDefensiveMeasureComplianceIndicator" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="cyber:CyberIndicatorName" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="cyber:CyberIndicatorDescriptionText" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="cyber:CyberIndicatorDiamondModelClassificationCode" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="cyber:CyberIndicatorPatternDefensiveMeasureText" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="cyber:CyberIndicatorPatternDefensiveMeasureComplianceIndicator" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="cyber:CyberIndicatorPatternName" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="cyber:CyberIndicatorPatternDescriptionText" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="cyber:CyberIndicatorPatternDiamondModelClassificationCode" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="cyber:TrafficLightProtocolCode" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="cyber:KillChainPhase" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="cyber:CyberIndicatorPatternAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
@@ -3142,31 +3142,6 @@
       <xs:documentation>A date and time of the reporting of a cyber incident to Congress</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="CyberIndicatorDefensiveMeasureComplianceIndicator" type="niem-xs:boolean" nillable="true">
-    <xs:annotation>
-      <xs:documentation>True if the cyber threat indicator or defensive measure submitted by a non-federal entity to the U.S. Federal Government is to be considered commercial, financial, and proprietary information in compliance with the Cybersecurity Information Sharing Act of 2015; false otherwise</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="CyberIndicatorDefensiveMeasureText" type="nc:TextType" nillable="true">
-    <xs:annotation>
-      <xs:documentation>An action taken to counteract the indicator of compromise</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="CyberIndicatorDescriptionText" type="nc:TextType" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A description that provides more details and context about an Indicator, potentially including its purpose and its key characteristics</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="CyberIndicatorDiamondModelClassificationCode" type="cyber:CyberIndicatorDiamondModelClassificationCodeType" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A classification of a cyber indicator by kind of Diamond Model component</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="CyberIndicatorName" type="nc:TextType" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A name of a pattern that can be used to detect suspicious or malicious cyber activity</xs:documentation>
-    </xs:annotation>
-  </xs:element>
   <xs:element name="CyberIndicatorPattern" type="cyber:CyberIndicatorPatternType" nillable="true">
     <xs:annotation>
       <xs:documentation>A pattern that can be used to detect suspicious or malicious cyber activity; false otherwise</xs:documentation>
@@ -3175,6 +3150,31 @@
   <xs:element name="CyberIndicatorPatternAugmentationPoint" abstract="true">
     <xs:annotation>
       <xs:documentation>An augmentation point for type cyber:CyberIndicatorPatternType</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="CyberIndicatorPatternDefensiveMeasureComplianceIndicator" type="niem-xs:boolean" nillable="true">
+    <xs:annotation>
+      <xs:documentation>True if the cyber threat indicator or defensive measure submitted by a non-federal entity to the U.S. Federal Government is to be considered commercial, financial, and proprietary information in compliance with the Cybersecurity Information Sharing Act of 2015; false otherwise</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="CyberIndicatorPatternDefensiveMeasureText" type="nc:TextType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>An action taken to counteract the indicator of compromise</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="CyberIndicatorPatternDescriptionText" type="nc:TextType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A description that provides more details and context about an Indicator, potentially including its purpose and its key characteristics</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="CyberIndicatorPatternDiamondModelClassificationCode" type="cyber:CyberIndicatorPatternDiamondModelClassificationCodeType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A classification of a cyber indicator by kind of Diamond Model component</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="CyberIndicatorPatternName" type="nc:TextType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A name of a pattern that can be used to detect suspicious or malicious cyber activity</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="CyberInsuranceClaim" type="cyber:CyberInsuranceClaimType" nillable="true">
