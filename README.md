@@ -1,13 +1,9 @@
 
-# NIEM 5.1 Beta 1
+# NIEM 5.1
 
-This is the beta 1 draft of the NIEM 5.1 minor release.
+This is the NIEM 5.1 minor release.
 
 In a minor release, content may be updated in domains and code tables.  Core, namespaces imported by Core, and the architecture, which is defined by the NIEM Naming and Design Rules (NDR), will remain locked until the next major release.
-
-## Feedback
-
-Please submit feedback by Friday, August 20, 2021. Feedback can be posted directly to the NIEM Releases [issue tracker](https://github.com/NIEM/NIEM-Releases/issues) (see [help](https://github.com/NIEM/NIEM-Releases/wiki/Issues)) or emailed to [niem-comments@lists.gatech.edu](niem-comments@lists.gatech.edu).
 
 ## Key changes
 
@@ -16,6 +12,9 @@ The following is a summary of the key changes made in this release.  More detail
 - **Biometrics domain**
   - Added additional DNA-related content ([#152](https://github.com/NIEM/NIEM-Releases/issues/152))
   - Updated pedigree content ([#224](https://github.com/NIEM/NIEM-Releases/issues/224))
+
+- **CUI**
+  - Split the single Limited Dissemination Control (LDC) code set into separate document marking and portion marking LDC code sets ([#233](https://github.com/NIEM/NIEM-Releases/issues/223))
 
 - **Cyber domain** (new)
   - Added content supporting Federal Incident Reporting Requirements (FIRR) ([#209](https://github.com/NIEM/NIEM-Releases/issues/209))
@@ -29,9 +28,6 @@ The following is a summary of the key changes made in this release.  More detail
 
 - **Military Operations domain**
   - Added content from the Joint Non-Kinetic Effectiveness (JNKE) IEPD ([#210](https://github.com/NIEM/NIEM-Releases/issues/210))
-
-- **CUI**
-  - Split the single Limited Dissemination Control (LDC) code set into separate document marking and portion marking LDC code sets ([#233](https://github.com/NIEM/NIEM-Releases/issues/223))
 
 - **NCIC codes**
   - Re-added 4.2 code sets that were removed from the 5.0 release due to harmonization efforts across the FBI and Justice code sets for legacy support. ([#211](https://github.com/NIEM/NIEM-Releases/issues/211))
