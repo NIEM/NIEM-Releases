@@ -29,6 +29,9 @@ The following is a summary of the key changes made in this release.  More detail
 - **Military Operations domain**
   - Added content from the Joint Non-Kinetic Effectiveness (JNKE) IEPD ([#210](https://github.com/NIEM/NIEM-Releases/issues/210))
 
+- **CUI**
+  - Split the single Limited Dissemination Control (LDC) code set into separate document marking and portion marking LDC code sets ([#233](https://github.com/NIEM/NIEM-Releases/issues/223))
+
 - **NCIC codes**
   - Re-added 4.2 code sets that were removed from the 5.0 release due to harmonization efforts across the FBI and Justice code sets for legacy support. ([#211](https://github.com/NIEM/NIEM-Releases/issues/211))
   - Removed ncic:BOATCodeType as it is no longer being used ([#218](https://github.com/NIEM/NIEM-Releases/issues/218))
@@ -37,9 +40,11 @@ The following is a summary of the key changes made in this release.  More detail
 ## Code updates
 
 - Updated CUI codes ([#212](https://github.com/NIEM/NIEM-Releases/issues/212))
+
 - Updated ISO 639-3 language codes *(2012-02-18 update)* ([#222](https://github.com/NIEM/NIEM-Releases/issues/222))
 
 ## Minor fixes
 
 - Updated the definition of hs:Visitation ([#213](https://github.com/NIEM/NIEM-Releases/issues/213))
+
 - Updated the definition of the Geospatial adapter namespace (geo) to reflect that GML is now included with NIEM as a subset ([#220](https://github.com/NIEM/NIEM-Releases/issues/220))
