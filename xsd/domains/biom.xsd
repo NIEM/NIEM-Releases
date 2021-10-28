@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xs:schema targetNamespace="http://release.niem.gov/niem/domains/biometrics/5.1/" version="beta1" xml:lang="en-US" xsi:schemaLocation="http://release.niem.gov/niem/appinfo/5.0/ ../utility/appinfo.xsd http://release.niem.gov/niem/conformanceTargets/3.0/ ../utility/conformanceTargets.xsd" ct:conformanceTargets="http://reference.niem.gov/niem/specification/naming-and-design-rules/5.0/#ReferenceSchemaDocument"
+<xs:schema targetNamespace="http://release.niem.gov/niem/domains/biometrics/5.1/" version="1" xml:lang="en-US" xsi:schemaLocation="http://release.niem.gov/niem/appinfo/5.0/ ../utility/appinfo.xsd http://release.niem.gov/niem/conformanceTargets/3.0/ ../utility/conformanceTargets.xsd" ct:conformanceTargets="http://reference.niem.gov/niem/specification/naming-and-design-rules/5.0/#ReferenceSchemaDocument"
   xmlns:appinfo="http://release.niem.gov/niem/appinfo/5.0/"
   xmlns:biom="http://release.niem.gov/niem/domains/biometrics/5.1/"
   xmlns:ct="http://release.niem.gov/niem/conformanceTargets/3.0/"
@@ -11061,6 +11061,11 @@
           <xs:documentation>Known</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
+      <xs:enumeration value="S">
+        <xs:annotation>
+          <xs:documentation>Search target, the member to be searched/identified (in a kinship search request) or the candidate match for a kinship search (in a kinship match)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
       <xs:enumeration value="U">
         <xs:annotation>
           <xs:documentation>Unknown</xs:documentation>
@@ -11078,6 +11083,71 @@
       </xs:extension>
     </xs:simpleContent>
   </xs:complexType>
+  <xs:complexType name="PedigreeMemberType">
+    <xs:annotation>
+      <xs:documentation>A data type for the description of a member in the pedigree tree.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="structures:ObjectType">
+        <xs:sequence>
+          <xs:element ref="biom:PedigreeMemberIdentification" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:PersonSexText" minOccurs="0" maxOccurs="1"/>
+          <xs:element ref="biom:PedigreeMemberStatusCode" minOccurs="0" maxOccurs="1"/>
+          <xs:element ref="biom:PedigreeFatherIdentification" minOccurs="0" maxOccurs="1"/>
+          <xs:element ref="biom:PedigreeMotherIdentification" minOccurs="0" maxOccurs="1"/>
+          <xs:element ref="nc:CommentText" minOccurs="0" maxOccurs="1"/>
+          <xs:element ref="biom:PedigreeMemberAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:simpleType name="PedigreeStatusCodeSimpleType">
+    <xs:annotation>
+      <xs:documentation>A data type for the coding of a pedigree's veracity status</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="Candidate">
+        <xs:annotation>
+          <xs:documentation>Pedigree is a candidate match for the search target member</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Claimed">
+        <xs:annotation>
+          <xs:documentation>Pedigree represents an unverified claim</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Inconclusive">
+        <xs:annotation>
+          <xs:documentation>Pedigree's DNA kinship analysis produced inconclusive results</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Negated">
+        <xs:annotation>
+          <xs:documentation>Pedigree is refuted by DNA kinship analysis</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Unable to process">
+        <xs:annotation>
+          <xs:documentation>Pedigree contains error(s), e.g. there is a disjoint member node in the pedigree, and/or the DNA data in the reference part of the pedigree is not consistent with the pedigree, etc.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Verified">
+        <xs:annotation>
+          <xs:documentation>Pedigree is confirmed by DNA kinship analysis</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="PedigreeStatusCodeType">
+    <xs:annotation>
+      <xs:documentation>A data type for the coding of a pedigree's veracity status</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="biom:PedigreeStatusCodeSimpleType">
+        <xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
   <xs:complexType name="PedigreeType">
     <xs:annotation>
       <xs:documentation>A data type for the description of biological lineage among individuals (members).</xs:documentation>
@@ -11085,12 +11155,9 @@
     <xs:complexContent>
       <xs:extension base="structures:ObjectType">
         <xs:sequence>
-          <xs:element ref="biom:PedigreeID" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="biom:PedigreeMemberIndexNumeric" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="biom:PedigreeMemberStatusCode" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="biom:PedigreeDNASampleID" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="biom:PedigreeFatherIndexNumeric" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="biom:PedigreeMotherIndexNumeric" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="biom:PedigreeIdentification" minOccurs="1" maxOccurs="unbounded"/>
+          <xs:element ref="biom:PedigreeStatusCode" minOccurs="1" maxOccurs="1"/>
+          <xs:element ref="biom:PedigreeMember" minOccurs="1" maxOccurs="unbounded"/>
           <xs:element ref="biom:PedigreeCommentText" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="biom:PedigreeAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
@@ -18315,14 +18382,34 @@
       <xs:documentation>An identifier for a DNA sample linking it to this related pedigree.</xs:documentation>
     </xs:annotation>
   </xs:element>
+  <xs:element name="PedigreeFatherIdentification" type="nc:IdentificationType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>An identification of the father of the subject of this DNA pedigree</xs:documentation>
+    </xs:annotation>
+  </xs:element>
   <xs:element name="PedigreeFatherIndexNumeric" type="biom:Integer0To999Type" nillable="true">
     <xs:annotation>
       <xs:documentation>An index number that refers to the father of the subject of this pedigree.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="PedigreeID" type="nc:TextType" nillable="true">
+  <xs:element name="PedigreeIdentification" type="nc:IdentificationType" nillable="true">
     <xs:annotation>
-      <xs:documentation>An identifier (i.e., file number) of a pedigree.</xs:documentation>
+      <xs:documentation>An identification of a genetic pedigree</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="PedigreeMember" type="biom:PedigreeMemberType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A description of a member in the pedigree tree</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="PedigreeMemberAugmentationPoint" abstract="true">
+    <xs:annotation>
+      <xs:documentation>An augmentation point for type biom:PedigreeMemberType</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="PedigreeMemberIdentification" type="nc:IdentificationType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>An identification of a DNA pedigree</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="PedigreeMemberIndexNumeric" type="nc:TextType" nillable="true">
@@ -18333,6 +18420,11 @@
   <xs:element name="PedigreeMemberStatusCode" type="biom:PedigreeMemberStatusCodeType" nillable="true">
     <xs:annotation>
       <xs:documentation>A status of a subject of a pedigree.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="PedigreeMotherIdentification" type="nc:IdentificationType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>An identification of the mother of a subject of this DNA pedigree</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="PedigreeMotherIndexNumeric" type="biom:Integer0To999Type" nillable="true">
@@ -18348,6 +18440,11 @@
   <xs:element name="PedigreeResolutionText" type="nc:TextType" nillable="true">
     <xs:annotation>
       <xs:documentation>A resolution/decision from analyzing a pedigree.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="PedigreeStatusCode" type="biom:PedigreeStatusCodeType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A coding of a pedigree's veracity status</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="PersonAugmentation" type="biom:PersonAugmentationType" substitutionGroup="nc:PersonAugmentationPoint" nillable="true">

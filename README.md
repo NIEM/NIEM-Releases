@@ -15,6 +15,7 @@ The following is a summary of the key changes made in this release.  More detail
 
 - **Biometrics domain**
   - Added additional DNA-related content ([#152](https://github.com/NIEM/NIEM-Releases/issues/152))
+  - Updated pedigree content ([#224](https://github.com/NIEM/NIEM-Releases/issues/224))
 
 - **Cyber domain** (new)
   - Added content supporting Federal Incident Reporting Requirements (FIRR) ([#209](https://github.com/NIEM/NIEM-Releases/issues/209))
