@@ -36,7 +36,7 @@ The following is a summary of the key changes made in this release.  More detail
 
 ## Code updates
 
-- Updated CUI codes ([#212](https://github.com/NIEM/NIEM-Releases/issues/212))
+- Updated CUI codes ([#212](https://github.com/NIEM/NIEM-Releases/issues/212) and [#225](https://github.com/NIEM/NIEM-Releases/issues/225))
 
 - Updated ISO 639-3 language codes *(2012-02-18 update)* ([#222](https://github.com/NIEM/NIEM-Releases/issues/222))
 
