@@ -12,6 +12,7 @@ The following is a summary of the key changes made in this release.  More detail
 - **Biometrics domain**
   - Added additional DNA-related content ([#152](https://github.com/NIEM/NIEM-Releases/issues/152))
   - Updated pedigree content ([#224](https://github.com/NIEM/NIEM-Releases/issues/224))
+  - Restored DNAPedigree components from the 4.1 release for backward compatibility ([#227](https://github.com/NIEM/NIEM-Releases/issues/227))
 
 - **CUI**
   - Split the single Limited Dissemination Control (LDC) code set into separate document marking and portion marking LDC code sets ([#233](https://github.com/NIEM/NIEM-Releases/issues/223))
