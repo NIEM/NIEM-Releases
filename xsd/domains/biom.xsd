@@ -2629,7 +2629,7 @@
   </xs:complexType>
   <xs:complexType name="DNAEncodingType">
     <xs:annotation>
-      <xs:documentation>A data type for a representation or an encoding of the DNA data from a person (can be a composite profile based on multiple DNA samples) or a DNA sample (can be a single-source sample or a mixture sample from a crime scene).</xs:documentation>
+      <xs:documentation>A data type for an encoding or representation of the DNA data from a person (can be a composite profile based on multiple DNA samples) or a DNA sample (can be a single-source sample or a mixture sample from a crime scene).</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
       <xs:extension base="structures:ObjectType">
@@ -2739,7 +2739,7 @@
   </xs:complexType>
   <xs:complexType name="DNAInstrumentProcessType">
     <xs:annotation>
-      <xs:documentation>A data type for a description of the DNA instrument testing process used to produce a DNA profile</xs:documentation>
+      <xs:documentation>A data type for a description of the DNA instrument testing process used to produce DNA raw data and in most cases, a DNA profile.</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
       <xs:extension base="biom:DeviceType">
@@ -15180,7 +15180,7 @@
   </xs:element>
   <xs:element name="DNAAlleleCall1Text" type="nc:TextType" nillable="true">
     <xs:annotation>
-      <xs:documentation>A description of the allele call, e.g. "X" or "XY" for locus Amelogenin, or the number of repeat units for an alllele of locus CSF1PO.</xs:documentation>
+      <xs:documentation>A description of the allele call, e.g. "X" or "Y" for an allele of locus Amelogenin, or the number of repeat units for an allele of locus CSF1PO.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="DNAAlleleCall2Text" type="nc:TextType" nillable="true">
@@ -15940,7 +15940,7 @@
   </xs:element>
   <xs:element name="DNASTRProfilePartialIndicator" type="niem-xs:boolean" nillable="true">
     <xs:annotation>
-      <xs:documentation>True if one or more loci in the Kit used for the STR typing did not yield result; false otherwise.  This indicator can be used to assess the quality of the STR profile.</xs:documentation>
+      <xs:documentation>True if one or more loci in the Kit used for the STR typing did not yield result or yielded partial result; false otherwise. This indicator can be used to assess the quality of the STR profile.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="DNATypingTechnologyCategoryCode" type="biom:DNATypingTechnologyCategoryCodeType" nillable="true">
