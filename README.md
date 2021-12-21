@@ -41,6 +41,8 @@ The following is a summary of the key changes made in this release.  More detail
 
 - Updated ISO 639-3 language codes *(2012-02-18 update)* ([#222](https://github.com/NIEM/NIEM-Releases/issues/222))
 
+- Updated ucr:IncidentBiasMotivationCodeSimpleType code value and definition ([#229](https://github.com/NIEM/NIEM-Releases/issues/229))
+
 ## Minor fixes
 
 - Updated the definition of hs:Visitation ([#213](https://github.com/NIEM/NIEM-Releases/issues/213))
