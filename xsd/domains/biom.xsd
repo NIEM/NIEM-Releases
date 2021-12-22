@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xs:schema targetNamespace="http://release.niem.gov/niem/domains/biometrics/5.0/" version="1" xml:lang="en-US" xsi:schemaLocation="http://release.niem.gov/niem/appinfo/5.0/ ../utility/appinfo.xsd http://release.niem.gov/niem/conformanceTargets/3.0/ ../utility/conformanceTargets.xsd" ct:conformanceTargets="http://reference.niem.gov/niem/specification/naming-and-design-rules/5.0/#ReferenceSchemaDocument"
+<xs:schema targetNamespace="http://release.niem.gov/niem/domains/biometrics/5.1/" version="1" xml:lang="en-US" xsi:schemaLocation="http://release.niem.gov/niem/appinfo/5.0/ ../utility/appinfo.xsd http://release.niem.gov/niem/conformanceTargets/3.0/ ../utility/conformanceTargets.xsd" ct:conformanceTargets="http://reference.niem.gov/niem/specification/naming-and-design-rules/5.0/#ReferenceSchemaDocument"
   xmlns:appinfo="http://release.niem.gov/niem/appinfo/5.0/"
-  xmlns:biom="http://release.niem.gov/niem/domains/biometrics/5.0/"
+  xmlns:biom="http://release.niem.gov/niem/domains/biometrics/5.1/"
   xmlns:ct="http://release.niem.gov/niem/conformanceTargets/3.0/"
-  xmlns:iso_639-3="http://release.niem.gov/niem/codes/iso_639-3/5.0/"
-  xmlns:mo="http://release.niem.gov/niem/domains/militaryOperations/5.0/"
+  xmlns:iso_639-3="http://release.niem.gov/niem/codes/iso_639-3/5.1/"
+  xmlns:mo="http://release.niem.gov/niem/domains/militaryOperations/5.1/"
   xmlns:nc="http://release.niem.gov/niem/niem-core/5.0/"
-  xmlns:ncic="http://release.niem.gov/niem/codes/ncic/5.0/"
+  xmlns:ncic="http://release.niem.gov/niem/codes/ncic/5.1/"
   xmlns:niem-xs="http://release.niem.gov/niem/proxy/niem-xs/5.0/"
   xmlns:structures="http://release.niem.gov/niem/structures/5.0/"
   xmlns:xs="http://www.w3.org/2001/XMLSchema"
@@ -40,6 +40,7 @@
       <appinfo:LocalTerm term="ITL" literal="Information Technology Laboratory"/>
       <appinfo:LocalTerm term="MISC" literal="Miscellaneous"/>
       <appinfo:LocalTerm term="Mito" literal="Mitochondrial"/>
+      <appinfo:LocalTerm term="mtDNA" literal="Mitochondrial DNA"/>
       <appinfo:LocalTerm term="NCIC" literal="National Crime Information Center"/>
       <appinfo:LocalTerm term="NIST" literal="National Institute of Standards and Technology"/>
       <appinfo:LocalTerm term="PHD" literal="Photo Capture Date"/>
@@ -50,6 +51,7 @@
       <appinfo:LocalTerm term="SBSC" literal="Subject Body Status Code"/>
       <appinfo:LocalTerm term="SMS" literal="Scar/Mark/Tattoo Size"/>
       <appinfo:LocalTerm term="SMT" literal="Scars, Marks, and Tattoos"/>
+      <appinfo:LocalTerm term="SNP" literal="single nucleotide polymorphism"/>
       <appinfo:LocalTerm term="SPC" literal="Speaker Plurality Code"/>
       <appinfo:LocalTerm term="STR" literal="Short tandem repeat"/>
       <appinfo:LocalTerm term="TDD" literal="Tooth data detail"/>
@@ -62,9 +64,9 @@
       <appinfo:LocalTerm term="Y-STR" literal="Short tandem repeat (STR) on the Y-chromosome"/>
     </xs:appinfo>
   </xs:annotation>
-  <xs:import namespace="http://release.niem.gov/niem/codes/iso_639-3/5.0/" schemaLocation="../codes/iso_639-3.xsd"/>
-  <xs:import namespace="http://release.niem.gov/niem/codes/ncic/5.0/" schemaLocation="../codes/ncic.xsd"/>
-  <xs:import namespace="http://release.niem.gov/niem/domains/militaryOperations/5.0/" schemaLocation="mo.xsd"/>
+  <xs:import namespace="http://release.niem.gov/niem/codes/iso_639-3/5.1/" schemaLocation="../codes/iso_639-3.xsd"/>
+  <xs:import namespace="http://release.niem.gov/niem/codes/ncic/5.1/" schemaLocation="../codes/ncic.xsd"/>
+  <xs:import namespace="http://release.niem.gov/niem/domains/militaryOperations/5.1/" schemaLocation="mo.xsd"/>
   <xs:import namespace="http://release.niem.gov/niem/niem-core/5.0/" schemaLocation="../niem-core.xsd"/>
   <xs:import namespace="http://release.niem.gov/niem/proxy/niem-xs/5.0/" schemaLocation="../adapters/niem-xs.xsd"/>
   <xs:import namespace="http://release.niem.gov/niem/structures/5.0/" schemaLocation="../utility/structures.xsd"/>
@@ -2089,6 +2091,80 @@
       </xs:extension>
     </xs:simpleContent>
   </xs:complexType>
+  <xs:simpleType name="DNAAlleleOperatorCodeSimpleType">
+    <xs:annotation>
+      <xs:documentation>A data type for a description of the operation for the allele call(s)</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="AboveUpperLimit">
+        <xs:annotation>
+          <xs:documentation>Allele call is strictly larger than DNAAlleleCall1Text, and DNAAlleleCall1Text is the ladder upper limit value</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="BelowLowerLimit">
+        <xs:annotation>
+          <xs:documentation>Allele call is strictly less than DNAAlleleCall1Text, and DNAAlleleCall1Text is the ladder lower limit value</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Equal">
+        <xs:annotation>
+          <xs:documentation>Allele call equals DNAAlleleCall1Text</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Range">
+        <xs:annotation>
+          <xs:documentation>Allele call is between DNAAlleleCall1Text and DNAAlleleCall2Text</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="DNAAlleleOperatorCodeType">
+    <xs:annotation>
+      <xs:documentation>A data type for a description of the operation for the allele call(s)</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="biom:DNAAlleleOperatorCodeSimpleType">
+        <xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="DNAAlleleType">
+    <xs:annotation>
+      <xs:documentation>A data type for a description of a DNA fragment data that occupies a given locus (position) on a chromosome and detected in a polymorphic system.  An individual's genotype for that gene is the set of alleles it happens to possess.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="structures:ObjectType">
+        <xs:sequence>
+          <xs:element ref="biom:DNAAlleleOperatorCode" minOccurs="0" maxOccurs="1"/>
+          <xs:element ref="biom:DNAAlleleCall1Text" minOccurs="0" maxOccurs="1"/>
+          <xs:element ref="biom:DNAAlleleCall2Text" minOccurs="0" maxOccurs="1"/>
+          <xs:element ref="biom:DNAAllelePeakHeightValue" minOccurs="0" maxOccurs="1"/>
+          <xs:element ref="biom:DNAAlleleRequiredIndicator" minOccurs="0" maxOccurs="1"/>
+          <xs:element ref="biom:DNAAlleleAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="DNAAnalysisProcessType">
+    <xs:annotation>
+      <xs:documentation>A data type for a description of the DNA analysis process used (e.g. DNA genotype analysis software, DNA mixture deconvolution software, etc.) to produce a DNA profile</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="structures:ObjectType">
+        <xs:sequence>
+          <xs:element ref="biom:ProcessUTCDate" minOccurs="1" maxOccurs="1"/>
+          <xs:element ref="biom:DNAAnalysisProcessingEntity" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="biom:DNAAnalysisProcessSite" minOccurs="1" maxOccurs="1"/>
+          <xs:element ref="biom:DNALaboratoryAccreditation" minOccurs="0" maxOccurs="1"/>
+          <xs:element ref="biom:ProcessName" minOccurs="1" maxOccurs="1"/>
+          <xs:element ref="biom:DNAAnalysisProcessManufacturerName" minOccurs="0" maxOccurs="1"/>
+          <xs:element ref="biom:DNAAnalysisProcessSoftware" minOccurs="0" maxOccurs="1"/>
+          <xs:element ref="biom:ProcessDescriptionText" minOccurs="0" maxOccurs="1"/>
+          <xs:element ref="biom:DNAAnalysisProcessAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
   <xs:simpleType name="DNAAnalysisQuantityCodeSimpleType">
     <xs:annotation>
       <xs:documentation>A data type for a number of DNA analyses</xs:documentation>
@@ -2116,69 +2192,264 @@
       </xs:extension>
     </xs:simpleContent>
   </xs:complexType>
+  <xs:complexType name="DNAAnalysisType">
+    <xs:annotation>
+      <xs:documentation>A data type for a description of the DNA analysis data or "raw" data</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="structures:ObjectType">
+        <xs:sequence>
+          <xs:element ref="biom:DNAFragmentSequenceAnalysis" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="biom:DNAElectropherogram" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="biom:DNAAnalysisAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="DNACartridgeType">
+    <xs:annotation>
+      <xs:documentation>A data type for a description of the DNA cartridge or chip used, usually, on a Rapid DNA instrument</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="structures:ObjectType">
+        <xs:sequence>
+          <xs:element ref="biom:DNACartridgeName" minOccurs="1" maxOccurs="1"/>
+          <xs:element ref="biom:DNACartridgeIdentification" minOccurs="1" maxOccurs="unbounded"/>
+          <xs:element ref="biom:DNACartridgeAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:simpleType name="DNACategoryCodeSimpleType">
+    <xs:annotation>
+      <xs:documentation>A data type for a category of DNA data</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="Arrestee">
+        <xs:annotation>
+          <xs:documentation>The known sample from a person who has been arrested</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Asylee">
+        <xs:annotation>
+          <xs:documentation>The known sample from an asylum seeker</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Consensual Sex Partner">
+        <xs:annotation>
+          <xs:documentation>The known sample from a consensual sex partner, may be used in the mixture analysis for a sextual assault case.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Control">
+        <xs:annotation>
+          <xs:documentation>The known sample to be used as a positive control in QA processes.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Convicted Offender">
+        <xs:annotation>
+          <xs:documentation>The known sample from a person who has been convicted of a crime in federal, state, and/or local courts</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Deportee">
+        <xs:annotation>
+          <xs:documentation>The known sample from a person who has been deported</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Detainee">
+        <xs:annotation>
+          <xs:documentation>The known sample from a person who has been detained</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Elimination">
+        <xs:annotation>
+          <xs:documentation>The known sample to be used to detect contamination in DNA profiles</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Family Relative">
+        <xs:annotation>
+          <xs:documentation>The known sample from a person who is a family relative, may be used in the kinship analysis for a missing person case.  The specific kinship between the relative and the missing person is defined in the Pedigree element.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Forensic">
+        <xs:annotation>
+          <xs:documentation>The latent sample from a field, e.g. a crime scene</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Immigration Applicant">
+        <xs:annotation>
+          <xs:documentation>The known sample from an immigration applicant</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Immigration Sponsor">
+        <xs:annotation>
+          <xs:documentation>The known sample from an immigration sponsor</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Juvenile">
+        <xs:annotation>
+          <xs:documentation>Convicted offender who was a juvenile at the time of the conviction</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Known Suspected Terrorist">
+        <xs:annotation>
+          <xs:documentation>The sample (reference or latent) from a person who is a known or suspected terrorist</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Legal">
+        <xs:annotation>
+          <xs:documentation>The known sample from a person whose DNA sample is collected under applicable legal authorities.  An example is a sample collected from a person found not guilty by reason of insanity who is required by the relevant federal/state/local law to provide a DNA sample for analysis and entry into a DNA database.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Missing Person">
+        <xs:annotation>
+          <xs:documentation>The latent sample from a presumed missing person artifact such as a toothbrush, may be used to search the unidentified person DNA profiles for identification</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Other">
+        <xs:annotation>
+          <xs:documentation>Other category</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Population">
+        <xs:annotation>
+          <xs:documentation>The known sample to be used for population frequency or study purpose</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Refugee">
+        <xs:annotation>
+          <xs:documentation>The known sample from a person who has been recognised under the 1951 Convention relating to the status of refugees to be a refugee.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Spouse">
+        <xs:annotation>
+          <xs:documentation>The known sample from a spouse, may be used in the parentage trio analysis for a missing person case or a paternity case.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Staff">
+        <xs:annotation>
+          <xs:documentation>The known sample from a staff, used to detect contamination in the DNA profiles.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Suspect">
+        <xs:annotation>
+          <xs:documentation>The known sample from a person who is alleged to be the perpetrator of a crime</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Training">
+        <xs:annotation>
+          <xs:documentation>The known sample to be used in DNA operation training, proficiency, and/or competency</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Unaccompanied Minor">
+        <xs:annotation>
+          <xs:documentation>The known sample from an unaccompanied minor, may be used to search for the minor's parents/relatives for family reunification</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Unidentified Person">
+        <xs:annotation>
+          <xs:documentation>The sample from an unidentified body in a disaster or a person who could not identify himself/herself such as an abandoned infant</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Unspecified">
+        <xs:annotation>
+          <xs:documentation>Unspecified category</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Victim">
+        <xs:annotation>
+          <xs:documentation>The known sample from a victim, may be used in the mixture analysis for a crime</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Volunteer">
+        <xs:annotation>
+          <xs:documentation>The known sample from a person who volunteered a DNA sample</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="DNACategoryCodeType">
+    <xs:annotation>
+      <xs:documentation>A data type for a category of DNA data</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="biom:DNACategoryCodeSimpleType">
+        <xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
   <xs:simpleType name="DNACellularCategoryCodeSimpleType">
     <xs:annotation>
       <xs:documentation>A data type for a kind of origination cell from where a DNA sample was collected</xs:documentation>
     </xs:annotation>
-    <xs:restriction base="xs:integer">
-      <xs:enumeration value="0">
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="Blood">
         <xs:annotation>
           <xs:documentation>Blood</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
-      <xs:enumeration value="1">
+      <xs:enumeration value="Bone">
         <xs:annotation>
           <xs:documentation>Bone</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
-      <xs:enumeration value="10">
+      <xs:enumeration value="Buccal Cell">
         <xs:annotation>
-          <xs:documentation>Other</xs:documentation>
+          <xs:documentation>Bucall cells from buccal swabs</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
-      <xs:enumeration value="11">
-        <xs:annotation>
-          <xs:documentation>Unknown</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="2">
+      <xs:enumeration value="Comingled Biological Material">
         <xs:annotation>
           <xs:documentation>Comingled Biological Material</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
-      <xs:enumeration value="3">
+      <xs:enumeration value="Hair">
         <xs:annotation>
           <xs:documentation>Hair</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
-      <xs:enumeration value="4">
+      <xs:enumeration value="Other">
         <xs:annotation>
-          <xs:documentation>Saliva</xs:documentation>
+          <xs:documentation>Other</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
-      <xs:enumeration value="5">
+      <xs:enumeration value="Saliva">
         <xs:annotation>
-          <xs:documentation>Semen</xs:documentation>
+          <xs:documentation>Saliva, e.g. from coffee cups, cigarette butts, etc.</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
-      <xs:enumeration value="6">
+      <xs:enumeration value="Semen">
+        <xs:annotation>
+          <xs:documentation>Semen, e.g. sample from a rapie kit</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Skin">
         <xs:annotation>
           <xs:documentation>Skin</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
-      <xs:enumeration value="7">
+      <xs:enumeration value="Sweat or Fingerprint">
         <xs:annotation>
           <xs:documentation>Sweat or Fingerprint</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
-      <xs:enumeration value="8">
+      <xs:enumeration value="Tissue">
         <xs:annotation>
           <xs:documentation>Tissue</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
-      <xs:enumeration value="9">
+      <xs:enumeration value="Tooth">
         <xs:annotation>
-          <xs:documentation>Tooth</xs:documentation>
+          <xs:documentation>Tooth used by mitochondria typing</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Tooth Pulp">
+        <xs:annotation>
+          <xs:documentation>Tooth pulp used by STR typing</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Unknown">
+        <xs:annotation>
+          <xs:documentation>Unknown</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
     </xs:restriction>
@@ -2301,10 +2572,43 @@
           <xs:element ref="biom:DNADonorDentalRecordsAvailableCode" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="biom:DNADonorCollectionLocationDescriptionText" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="biom:DNADonorStatusCode" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="biom:DNADonorVitalityCode" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="biom:DNADonorAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
+  </xs:complexType>
+  <xs:simpleType name="DNADonorVitalityCodeSimpleType">
+    <xs:annotation>
+      <xs:documentation>A data type for a DNA donor's vitality status code</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="Alive">
+        <xs:annotation>
+          <xs:documentation>Alive</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Deceased">
+        <xs:annotation>
+          <xs:documentation>Deceased</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Unknown">
+        <xs:annotation>
+          <xs:documentation>Unknown</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="DNADonorVitalityCodeType">
+    <xs:annotation>
+      <xs:documentation>A data type for a DNA donor's vitality status code</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="biom:DNADonorVitalityCodeSimpleType">
+        <xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
+      </xs:extension>
+    </xs:simpleContent>
   </xs:complexType>
   <xs:complexType name="DNAElectropherogramType">
     <xs:annotation>
@@ -2319,6 +2623,74 @@
           <xs:element ref="biom:DNAElectropherogramBinaryObject" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="biom:DNAElectropherogramScreenshotImage" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="biom:DNAElectropherogramAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="DNAEncodingType">
+    <xs:annotation>
+      <xs:documentation>A data type for an encoding or representation of the DNA data from a person (can be a composite profile based on multiple DNA samples) or a DNA sample (can be a single-source sample or a mixture sample from a crime scene).</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="structures:ObjectType">
+        <xs:sequence>
+          <xs:element ref="biom:DNATypingTechnologyCode" minOccurs="1" maxOccurs="1"/>
+          <xs:element ref="biom:DNASampleCollection" minOccurs="0" maxOccurs="1"/>
+          <xs:element ref="biom:DNASource" minOccurs="0" maxOccurs="1"/>
+          <xs:element ref="biom:DNAProcess" minOccurs="0" maxOccurs="1"/>
+          <xs:element ref="biom:DNAAnalysis" minOccurs="0" maxOccurs="1"/>
+          <xs:element ref="biom:DNASTRData" minOccurs="0" maxOccurs="1"/>
+          <xs:element ref="biom:DNAMitoData" minOccurs="0" maxOccurs="1"/>
+          <xs:element ref="biom:DNAUserDefinedProfileAbstract" minOccurs="0" maxOccurs="1"/>
+          <xs:element ref="biom:DNACommentText" minOccurs="0" maxOccurs="unbounded">
+            <xs:annotation>
+              <xs:documentation>If any of the subelements of DNAEncoding have values such as "Other", "User-defined"; or if DNAUserDefinedProfileAbstract is used, then DNACommentText is required to include detailed information about customized elements.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element ref="biom:DNAEncodingAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:simpleType name="DNAFragmentSequenceAnalysisCategoryCodeSimpleType">
+    <xs:annotation>
+      <xs:documentation>A data type for a category of fragment sequence analysis (FSA)</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="Ladder">
+        <xs:annotation>
+          <xs:documentation>fragment sequence analysis (FSA) for the ladder</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Sample">
+        <xs:annotation>
+          <xs:documentation>fragment sequence analysis (FSA) for the sample</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="DNAFragmentSequenceAnalysisCategoryCodeType">
+    <xs:annotation>
+      <xs:documentation>A data type for a category of fragment sequence analysis (FSA)</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="biom:DNAFragmentSequenceAnalysisCategoryCodeSimpleType">
+        <xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="DNAFragmentSequenceAnalysisType">
+    <xs:annotation>
+      <xs:documentation>A data type for a description of the DNA fragment sequence analysis (FSA) data</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="structures:ObjectType">
+        <xs:sequence>
+          <xs:element ref="biom:DNAFragmentSequenceAnalysisID" minOccurs="0" maxOccurs="1"/>
+          <xs:element ref="biom:DNAFragmentSequenceAnalysisCategoryCode" minOccurs="1" maxOccurs="1"/>
+          <xs:element ref="biom:DNAFragmentSequenceAnalysisFileStorageText" minOccurs="1" maxOccurs="1"/>
+          <xs:element ref="biom:DNAFragmentSequenceAnalysisBinaryObject" minOccurs="1" maxOccurs="1"/>
+          <xs:element ref="biom:DNAFragmentSequenceAnalysisAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -2365,6 +2737,25 @@
       </xs:extension>
     </xs:simpleContent>
   </xs:complexType>
+  <xs:complexType name="DNAInstrumentProcessType">
+    <xs:annotation>
+      <xs:documentation>A data type for a description of the DNA instrument testing process used to produce DNA raw data and in most cases, a DNA profile.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="biom:DeviceType">
+        <xs:sequence>
+          <xs:element ref="biom:ProcessUTCDate" minOccurs="1" maxOccurs="1"/>
+          <xs:element ref="biom:DNAAnalysisProcessingEntity" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="biom:DNAInstrumentSite" minOccurs="1" maxOccurs="1"/>
+          <xs:element ref="biom:DNALaboratoryAccreditation" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="biom:DNAInstrumentSoftware" minOccurs="0" maxOccurs="1"/>
+          <xs:element ref="biom:DNACartridge" minOccurs="0" maxOccurs="1"/>
+          <xs:element ref="biom:ProcessDescriptionText" minOccurs="0" maxOccurs="1"/>
+          <xs:element ref="biom:DNAInstrumentProcessAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
   <xs:complexType name="DNAKitType">
     <xs:annotation>
       <xs:documentation>A data type for a DNA kit</xs:documentation>
@@ -2393,7 +2784,7 @@
       </xs:enumeration>
       <xs:enumeration value="1">
         <xs:annotation>
-          <xs:documentation>ISO 17025 Accreditation</xs:documentation>
+          <xs:documentation>ISO 17025 Accreditation.  Note that ASCLD Lab Accreditation or ISO 17025/FBI QAS by itself is not an accreditation; and therefore, is not listed as a separate accreditation from "ISO 17025 Accreditation.</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
       <xs:enumeration value="2">
@@ -2575,6 +2966,108 @@
       </xs:extension>
     </xs:simpleContent>
   </xs:complexType>
+  <xs:simpleType name="DNALocusCategoryCodeSimpleType">
+    <xs:annotation>
+      <xs:documentation>A data type for a locus category: "Autosomal", "X-STR", "Y-STR", "Other"</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="Autosomal">
+        <xs:annotation>
+          <xs:documentation>Autosomal</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Other">
+        <xs:annotation>
+          <xs:documentation>Other</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="X-STR">
+        <xs:annotation>
+          <xs:documentation>X-STR</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Y-STR">
+        <xs:annotation>
+          <xs:documentation>Y-STR</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="DNALocusCategoryCodeType">
+    <xs:annotation>
+      <xs:documentation>A data type for a category of the locus, e.g. autosomal, X-STR, Y-STR, etc.</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="biom:DNALocusCategoryCodeSimpleType">
+        <xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:simpleType name="DNALocusQualityStatusCodeSimpleType">
+    <xs:annotation>
+      <xs:documentation>A data type for a quality status for the locus</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="Normal">
+        <xs:annotation>
+          <xs:documentation>The locus data is complete and contains reliable allele calls</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Not Definitive">
+        <xs:annotation>
+          <xs:documentation>The locus data contains not definitive/ambiguous allele calls</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Partial">
+        <xs:annotation>
+          <xs:documentation>The locus data contains allele dropout(s)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Silent Allele">
+        <xs:annotation>
+          <xs:documentation>The locus data contains silent/null alleles</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="DNALocusQualityStatusCodeType">
+    <xs:annotation>
+      <xs:documentation>A data type for a quality status for the locus</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="biom:DNALocusQualityStatusCodeSimpleType">
+        <xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="DNALocusType">
+    <xs:annotation>
+      <xs:documentation>A data type for a STR locus data</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="structures:ObjectType">
+        <xs:sequence>
+          <xs:element ref="biom:DNALocusName" minOccurs="1" maxOccurs="1"/>
+          <xs:element ref="biom:DNALocusCategoryCode" minOccurs="1" maxOccurs="1"/>
+          <xs:element ref="biom:DNAKit" minOccurs="0" maxOccurs="1">
+            <xs:annotation>
+              <xs:documentation>The DNA kit for the locus when the DNA profile is a composite profile from the typing results using different kits.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element ref="biom:DNABatchID" minOccurs="0" maxOccurs="1">
+            <xs:annotation>
+              <xs:documentation>The Batch ID for the locus when the DNA profile is a composite profile from the typing results using different kits.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element ref="biom:ProcessUTCDate" minOccurs="0" maxOccurs="1"/>
+          <xs:element ref="biom:DNAAnalysisProcessingEntity" minOccurs="0" maxOccurs="1"/>
+          <xs:element ref="biom:DNALocusQualityStatusCode" minOccurs="1" maxOccurs="1"/>
+          <xs:element ref="biom:DNAAllele" minOccurs="1" maxOccurs="unbounded"/>
+          <xs:element ref="biom:DNALocusAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
   <xs:complexType name="DNAMitochondrialDataType">
     <xs:annotation>
       <xs:documentation>A data type for a description of DNA mitochondrial data</xs:documentation>
@@ -2591,6 +3084,210 @@
           <xs:element ref="biom:DNAMitoBaseCytosineQuantity" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="biom:DNAMitoBaseThymineQuantity" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="biom:DNAMitochondrialDataAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="DNAMitoDataType">
+    <xs:annotation>
+      <xs:documentation>A data type for a description of the mitochondria (mtDNA) data</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="structures:ObjectType">
+        <xs:sequence>
+          <xs:element ref="biom:DNAMitoReferenceSequenceText" minOccurs="0" maxOccurs="1"/>
+          <xs:element ref="biom:DNAMitoFragment" minOccurs="1" maxOccurs="unbounded"/>
+          <xs:element ref="biom:DNACommentText" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="biom:DNAMitoDataAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="DNAMitoFragmentType">
+    <xs:annotation>
+      <xs:documentation>A data type for a description of a mitochondria fragment data</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="structures:ObjectType">
+        <xs:sequence>
+          <xs:element ref="biom:ProcessUTCDate" minOccurs="1" maxOccurs="1"/>
+          <xs:element ref="biom:DNAAnalysisProcessingEntity" minOccurs="0" maxOccurs="1"/>
+          <xs:element ref="biom:DNAMitoFragmentStartNumeric" minOccurs="1" maxOccurs="1"/>
+          <xs:element ref="biom:DNAMitoFragmentEndNumeric" minOccurs="1" maxOccurs="1"/>
+          <xs:element ref="biom:DNAMitoPolymorphism" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="biom:DNAMitoFragmentAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:simpleType name="DNAMitoPolymorphismBaseCodeSimpleType">
+    <xs:annotation>
+      <xs:documentation>A data type for a code for the mitochondria base as defined by the International Union of Pure and Applied Chemistry (IUPAC)</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="-">
+        <xs:annotation>
+          <xs:documentation>Deletion</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="A">
+        <xs:annotation>
+          <xs:documentation>Adenine</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="B">
+        <xs:annotation>
+          <xs:documentation>G, T, C</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="C">
+        <xs:annotation>
+          <xs:documentation>Cytosine</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="D">
+        <xs:annotation>
+          <xs:documentation>G, A, T</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="G">
+        <xs:annotation>
+          <xs:documentation>Guanine</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="H">
+        <xs:annotation>
+          <xs:documentation>A, C, T</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="K">
+        <xs:annotation>
+          <xs:documentation>G, T</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="M">
+        <xs:annotation>
+          <xs:documentation>A, C</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="N">
+        <xs:annotation>
+          <xs:documentation>G, A, T, C</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="R">
+        <xs:annotation>
+          <xs:documentation>G, A</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="S">
+        <xs:annotation>
+          <xs:documentation>G, C</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="T">
+        <xs:annotation>
+          <xs:documentation>Thymine</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="V">
+        <xs:annotation>
+          <xs:documentation>G, C, A</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="W">
+        <xs:annotation>
+          <xs:documentation>A, T</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Y">
+        <xs:annotation>
+          <xs:documentation>T, C</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="DNAMitoPolymorphismBaseCodeType">
+    <xs:annotation>
+      <xs:documentation>A data type for a code for the mitochondria base as defined by the International Union of Pure and Applied Chemistry (IUPAC)</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="biom:DNAMitoPolymorphismBaseCodeSimpleType">
+        <xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="DNAMitoPolymorphismType">
+    <xs:annotation>
+      <xs:documentation>A data type for a description of the differences between the mitochondria DNA data from the revised Cambridge reference sequence (rCRS)</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="structures:ObjectType">
+        <xs:sequence>
+          <xs:element ref="biom:DNAMitoPolymorphismSiteNumeric" minOccurs="0" maxOccurs="1"/>
+          <xs:element ref="biom:DNAMitoPolymorphismOffsetNumeric" minOccurs="0" maxOccurs="1"/>
+          <xs:element ref="biom:DNAMitoPolymorphismBaseCode" minOccurs="0" maxOccurs="1"/>
+          <xs:element ref="biom:DNAMitoPolymorphismAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:simpleType name="DNAPedigreeMemberStatusCodeSimpleType">
+    <xs:annotation>
+      <xs:documentation>A data type for a DNA pedigree member status code</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="K">
+        <xs:annotation>
+          <xs:documentation>Known</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="U">
+        <xs:annotation>
+          <xs:documentation>Unknown</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="DNAPedigreeMemberStatusCodeType">
+    <xs:annotation>
+      <xs:documentation>A data type for a DNA pedigree member status code</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="biom:DNAPedigreeMemberStatusCodeSimpleType">
+        <xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="DNAPedigreeType">
+    <xs:annotation>
+      <xs:documentation>A data type for a description of a pedigree originating and held at a DNA laboratory</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="structures:ObjectType">
+        <xs:sequence>
+          <xs:element ref="biom:DNAPedigreeID" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="biom:DNAPedigreeMemberIndexNumeric" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="biom:DNAPedigreeMemberStatusCode" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="biom:DNAPedigreeSampleID" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="biom:DNAPedigreeFatherIndexNumeric" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="biom:DNAPedigreeMotherIndexNumeric" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="biom:DNAPedigreeCommentText" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="biom:DNAPedigreeAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="DNAProcessType">
+    <xs:annotation>
+      <xs:documentation>A data type for a description of the DNA testing and analysis process used to produce a DNA profile</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="structures:ObjectType">
+        <xs:sequence>
+          <xs:element ref="biom:DNAInstrumentProcess" minOccurs="1" maxOccurs="unbounded"/>
+          <xs:element ref="biom:DNAAnalysisProcess" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="biom:DNAProcessAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -2711,6 +3408,23 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
+  <xs:complexType name="DNARecordType">
+    <xs:annotation>
+      <xs:documentation>A data type for a description of DNA data record</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="structures:ObjectType">
+        <xs:sequence>
+          <xs:element ref="biom:DNACategoryCode" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="biom:DNADonor" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="biom:DNADataIdentification" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="biom:DNAEncoding" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="biom:DNAProfileSupplementalText" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="biom:DNARecordAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
   <xs:simpleType name="DNARelationshipCodeSimpleType">
     <xs:annotation>
       <xs:documentation>A data type for a DNA donor relationship code</xs:documentation>
@@ -2763,9 +3477,26 @@
       </xs:extension>
     </xs:simpleContent>
   </xs:complexType>
+  <xs:complexType name="DNASampleCollectionType">
+    <xs:annotation>
+      <xs:documentation>A data type for a description of the DNA sample collection</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="structures:ObjectType">
+        <xs:sequence>
+          <xs:element ref="biom:DNASampleCollectionUTCDate" minOccurs="1" maxOccurs="1"/>
+          <xs:element ref="biom:DNASampleCollectionDateEstimateRangeDuration" minOccurs="0" maxOccurs="1"/>
+          <xs:element ref="biom:DNASampleCollectionEntity" minOccurs="1" maxOccurs="1"/>
+          <xs:element ref="biom:DNASampleCollectionSite" minOccurs="1" maxOccurs="1"/>
+          <xs:element ref="biom:DNASampleCollectionCommentText" minOccurs="0" maxOccurs="1"/>
+          <xs:element ref="biom:DNASampleCollectionAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
   <xs:simpleType name="DNASampleOriginCodeSimpleType">
     <xs:annotation>
-      <xs:documentation>A data type for a DNA source code</xs:documentation>
+      <xs:documentation>A data type for a DNA origin code</xs:documentation>
     </xs:annotation>
     <xs:restriction base="xs:token">
       <xs:enumeration value="BP">
@@ -2787,7 +3518,7 @@
   </xs:simpleType>
   <xs:complexType name="DNASampleOriginCodeType">
     <xs:annotation>
-      <xs:documentation>A data type for a DNA source code</xs:documentation>
+      <xs:documentation>A data type for a DNA origin code</xs:documentation>
     </xs:annotation>
     <xs:simpleContent>
       <xs:extension base="biom:DNASampleOriginCodeSimpleType">
@@ -2837,6 +3568,101 @@
           <xs:element ref="biom:DNAGenotypeAllelePair" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="biom:DNACommentText" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="biom:DNASampleAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:simpleType name="DNASourceCategoryCodeSimpleType">
+    <xs:annotation>
+      <xs:documentation>A data type for a description of the DNA source category</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="Evidentiary, Deconvoluted">
+        <xs:annotation>
+          <xs:documentation>The source of the DNA data is a deconvoluted profile from a mixed stain</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Evidentiary, Differential Extraction">
+        <xs:annotation>
+          <xs:documentation>The source of the DNA data is from a differential extraction</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Evidentiary, Mixture Source">
+        <xs:annotation>
+          <xs:documentation>The source of the DNA data is from a mixture stain (multiple contributors)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Evidentiary, Single Source">
+        <xs:annotation>
+          <xs:documentation>Evidentiary sample or stain (DNA sample collected from an unknown human remain or piece of evidence believed to be from a single contributor)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Evidentiary, Unknown Single or Mixture">
+        <xs:annotation>
+          <xs:documentation>The source of the DNA data is from a stain with unknown number of contrimutors, it could be single-sourced or mixed</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Other">
+        <xs:annotation>
+          <xs:documentation>The source of the DNA data is not in the list, details should be noted in comments.  For example, if the DNA profile is a composite of a person reference profile and an evidentiary profile (such as a representative DNA profile in a person‐centric use case for DoD and DHS), then the DNASourceCategoryCode is “Other”, and the details should be noted in DNACommentText.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Person">
+        <xs:annotation>
+          <xs:documentation>Person (DNA sample collected from an identified or referenced individual)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="DNASourceCategoryCodeType">
+    <xs:annotation>
+      <xs:documentation>A data type for a description of the DNA source category</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="biom:DNASourceCategoryCodeSimpleType">
+        <xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="DNASourceType">
+    <xs:annotation>
+      <xs:documentation>A data type for a description of the DNA source such as the source category person vs. stain; cellular origin blood, etc</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="structures:ObjectType">
+        <xs:sequence>
+          <xs:element ref="biom:DNASourceIdentification" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="biom:DNASourceCategoryCode" minOccurs="0" maxOccurs="1"/>
+          <xs:element ref="biom:DNASourceCompositeIndicator" minOccurs="0" maxOccurs="1"/>
+          <xs:element ref="biom:DNASourceKnownIndicator" minOccurs="0" maxOccurs="1"/>
+          <xs:element ref="biom:DNASampleOrigin" minOccurs="0" maxOccurs="1"/>
+          <xs:element ref="biom:DNASourceAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="DNASTRDataType">
+    <xs:annotation>
+      <xs:documentation>A data type for a description of the DNA data from the short tandem repeat (STR) analysis on nuclear DNA</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="structures:ObjectType">
+        <xs:sequence>
+          <xs:element ref="biom:DNAKit" minOccurs="0" maxOccurs="1">
+            <xs:annotation>
+              <xs:documentation>The DNA kit for the STR data when all loci are typed by the same kit</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element ref="biom:DNABatchID" minOccurs="0" maxOccurs="1">
+            <xs:annotation>
+              <xs:documentation>The Batch ID for the STR data when all loci are typed at the same time with the same batch ID</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element ref="biom:DNASTRLaneNumeric" minOccurs="0" maxOccurs="1"/>
+          <xs:element ref="biom:DNASTRProfilePartialIndicator" minOccurs="0" maxOccurs="1"/>
+          <xs:element ref="biom:DNALocus" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="biom:DNACommentText" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="biom:DNASTRDataAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -2935,6 +3761,38 @@
     </xs:annotation>
     <xs:simpleContent>
       <xs:extension base="biom:DNATypingTechnologyCategoryCodeSimpleType">
+        <xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:simpleType name="DNATypingTechnologyCodeSimpleType">
+    <xs:annotation>
+      <xs:documentation>A data type for a kind of DNA typing technology</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="mtDNA First Generation">
+        <xs:annotation>
+          <xs:documentation>Mitochondira first generation sequencing (FGS) technology, also called the mitochondria chain termination method or Sanger sequencing method</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="STR">
+        <xs:annotation>
+          <xs:documentation>Short Tandem Repeat (STR) analysis on nuclear DNA (including Autosomal STR, X-STR and Y-STR)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="User-defined">
+        <xs:annotation>
+          <xs:documentation>User-defined typing technologies such as nuclear single nucleotide polymorphisms (SNPs), nuclear or mtDNA next generation sequencing (NGS) method, nuclear or mtDNA massive parallel sequencing (MPS) technologies, etc.  A comment for the parent element is required to include the details of this user-defined typing technology.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="DNATypingTechnologyCodeType">
+    <xs:annotation>
+      <xs:documentation>A data type for a kind of DNA typing technology</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="biom:DNATypingTechnologyCodeSimpleType">
         <xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
       </xs:extension>
     </xs:simpleContent>
@@ -7915,7 +8773,7 @@
   </xs:simpleType>
   <xs:complexType name="LocusGenotypeProbabilityValueType">
     <xs:annotation>
-      <xs:documentation>A data type for an expression of the probability of an individual having these alleles at a single locus. This probability can be calculated by various formulas that consider if the locus is homozygous or heterozygous.</xs:documentation>
+      <xs:documentation>A data type for an expression of the probability of an individual having these alleles at a single locus. This probability can be calculated by various formulas that consider if the locus is homozygous or heterozygous. The frequency of the individual alleles is based on population statistics data.</xs:documentation>
     </xs:annotation>
     <xs:simpleContent>
       <xs:extension base="biom:LocusGenotypeProbabilityValueSimpleType">
@@ -10249,6 +11107,11 @@
           <xs:documentation>Known</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
+      <xs:enumeration value="S">
+        <xs:annotation>
+          <xs:documentation>Search target, the member to be searched/identified (in a kinship search request) or the candidate match for a kinship search (in a kinship match)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
       <xs:enumeration value="U">
         <xs:annotation>
           <xs:documentation>Unknown</xs:documentation>
@@ -10266,6 +11129,71 @@
       </xs:extension>
     </xs:simpleContent>
   </xs:complexType>
+  <xs:complexType name="PedigreeMemberType">
+    <xs:annotation>
+      <xs:documentation>A data type for the description of a member in the pedigree tree.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="structures:ObjectType">
+        <xs:sequence>
+          <xs:element ref="biom:PedigreeMemberIdentification" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:PersonSexText" minOccurs="0" maxOccurs="1"/>
+          <xs:element ref="biom:PedigreeMemberStatusCode" minOccurs="0" maxOccurs="1"/>
+          <xs:element ref="biom:PedigreeFatherIdentification" minOccurs="0" maxOccurs="1"/>
+          <xs:element ref="biom:PedigreeMotherIdentification" minOccurs="0" maxOccurs="1"/>
+          <xs:element ref="nc:CommentText" minOccurs="0" maxOccurs="1"/>
+          <xs:element ref="biom:PedigreeMemberAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:simpleType name="PedigreeStatusCodeSimpleType">
+    <xs:annotation>
+      <xs:documentation>A data type for the coding of a pedigree's veracity status</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="Candidate">
+        <xs:annotation>
+          <xs:documentation>Pedigree is a candidate match for the search target member</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Claimed">
+        <xs:annotation>
+          <xs:documentation>Pedigree represents an unverified claim</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Inconclusive">
+        <xs:annotation>
+          <xs:documentation>Pedigree's DNA kinship analysis produced inconclusive results</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Negated">
+        <xs:annotation>
+          <xs:documentation>Pedigree is refuted by DNA kinship analysis</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Unable to process">
+        <xs:annotation>
+          <xs:documentation>Pedigree contains error(s), e.g. there is a disjoint member node in the pedigree, and/or the DNA data in the reference part of the pedigree is not consistent with the pedigree, etc.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Verified">
+        <xs:annotation>
+          <xs:documentation>Pedigree is confirmed by DNA kinship analysis</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="PedigreeStatusCodeType">
+    <xs:annotation>
+      <xs:documentation>A data type for the coding of a pedigree's veracity status</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="biom:PedigreeStatusCodeSimpleType">
+        <xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
   <xs:complexType name="PedigreeType">
     <xs:annotation>
       <xs:documentation>A data type for the description of biological lineage among individuals (members).</xs:documentation>
@@ -10273,12 +11201,9 @@
     <xs:complexContent>
       <xs:extension base="structures:ObjectType">
         <xs:sequence>
-          <xs:element ref="biom:PedigreeID" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="biom:PedigreeMemberIndexNumeric" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="biom:PedigreeMemberStatusCode" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="biom:PedigreeDNASampleID" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="biom:PedigreeFatherIndexNumeric" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="biom:PedigreeMotherIndexNumeric" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="biom:PedigreeIdentification" minOccurs="1" maxOccurs="unbounded"/>
+          <xs:element ref="biom:PedigreeStatusCode" minOccurs="1" maxOccurs="1"/>
+          <xs:element ref="biom:PedigreeMember" minOccurs="1" maxOccurs="unbounded"/>
           <xs:element ref="biom:PedigreeCommentText" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="biom:PedigreeAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
@@ -13813,7 +14738,7 @@
       <xs:documentation>A data concept for a minimum or native resolution</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="CaptureUTCDateTime" type="niem-xs:dateTime" nillable="true">
+  <xs:element name="CaptureUTCDateTime" type="nc:ZuluDateTimeType" nillable="true">
     <xs:annotation>
       <xs:documentation>A UTC date and time for the capture of a biometric sample</xs:documentation>
     </xs:annotation>
@@ -14243,14 +15168,24 @@
       <xs:documentation>A description of whether there has been post-recording removal (cutting) of a signal or non-presence of a useful signal from the original recording of the acoustic vocalizations in a way that disrupts time references</xs:documentation>
     </xs:annotation>
   </xs:element>
+  <xs:element name="DNAAllele" type="biom:DNAAlleleType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A description of a DNA fragment data that occupies a given locus (position) on a chromosome and detected in a polymorphic system.  An individual's genotype for that gene is the set of alleles it happens to possess.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="DNAAlleleAugmentationPoint" abstract="true">
+    <xs:annotation>
+      <xs:documentation>An augmentation point for type biom:DNAAlleleType</xs:documentation>
+    </xs:annotation>
+  </xs:element>
   <xs:element name="DNAAlleleCall1Text" type="nc:TextType" nillable="true">
     <xs:annotation>
-      <xs:documentation>A kind of a DNA allele call (first of three possible) for the referenced locus in an STR profile</xs:documentation>
+      <xs:documentation>A description of the allele call, e.g. "X" or "Y" for an allele of locus Amelogenin, or the number of repeat units for an allele of locus CSF1PO.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="DNAAlleleCall2Text" type="nc:TextType" nillable="true">
     <xs:annotation>
-      <xs:documentation>A kind of a DNA allele call (second of three possible) for the referenced locus in an STR profile</xs:documentation>
+      <xs:documentation>A number of repeat units in the allele call, used only if the DNAAlleleOperatorCode is "Range"</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="DNAAlleleCall3Text" type="nc:TextType" nillable="true">
@@ -14263,6 +15198,61 @@
       <xs:documentation>True if DNA allele is found; false otherwise</xs:documentation>
     </xs:annotation>
   </xs:element>
+  <xs:element name="DNAAlleleOperatorCode" type="biom:DNAAlleleOperatorCodeType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A symbol or function on the allele call value(s), e.g. equal, range, etc.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="DNAAllelePeakHeightValue" type="niem-xs:positiveInteger" nillable="true">
+    <xs:annotation>
+      <xs:documentation>An allele peak height in relative fluorescent units (RFUs), can be a negative or positive integer</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="DNAAlleleRequiredIndicator" type="niem-xs:boolean" nillable="true">
+    <xs:annotation>
+      <xs:documentation>True if this allele [in a mixture] is a required allele for searching; false otherwise. The indicator is used when the mixture cannot be deduced to a single-source profile, but this allele may be attributable to the perpetrator after using victim alleles to isolate alleles coming from unknown source.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="DNAAnalysis" type="biom:DNAAnalysisType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A description of the DNA analysis data or "raw" data</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="DNAAnalysisAugmentationPoint" abstract="true">
+    <xs:annotation>
+      <xs:documentation>An augmentation point for type biom:DNAAnalysisType</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="DNAAnalysisProcess" type="biom:DNAAnalysisProcessType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A description of the DNA analysis process used (e.g. DNA genotype analysis software, DNA mixture deconvolution software, etc.) to produce a DNA profile</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="DNAAnalysisProcessAugmentationPoint" abstract="true">
+    <xs:annotation>
+      <xs:documentation>An augmentation point for type biom:DNAAnalysisProcessType</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="DNAAnalysisProcessingEntity" type="nc:EntityType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>An organization and/or person that administered or executed the DNA Analysis process</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="DNAAnalysisProcessManufacturerName" type="nc:TextType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A name of the manufacturer of the process or software used to produce data</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="DNAAnalysisProcessSite" type="nc:SiteType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>An organization and/or location where the process is executed or performed</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="DNAAnalysisProcessSoftware" type="nc:SoftwareType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A computer application used to process DNA data and produce specialized DNA analysis and/or interpretation data.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
   <xs:element name="DNAAnalysisQuantityCode" type="biom:DNAAnalysisQuantityCodeType" nillable="true">
     <xs:annotation>
       <xs:documentation>A number of analyses in this record</xs:documentation>
@@ -14270,7 +15260,32 @@
   </xs:element>
   <xs:element name="DNABatchID" type="nc:TextType" nillable="true">
     <xs:annotation>
-      <xs:documentation>A identifier of the DNA batch to which a locus belongs</xs:documentation>
+      <xs:documentation>An identifier of the DNA batch to which a locus belongs</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="DNACartridge" type="biom:DNACartridgeType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A description of the DNA cartridge or chip used, usually, on a Rapid DNA instrument</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="DNACartridgeAugmentationPoint" abstract="true">
+    <xs:annotation>
+      <xs:documentation>An augmentation point for type biom:DNACartridgeType</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="DNACartridgeIdentification" type="nc:IdentificationType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>An identification that is a identifier, part number or version number of the DNA cartridge or chip used to produce a DNA profile. E.g. A0210001057.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="DNACartridgeName" type="nc:TextType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A name of a DNA cartridge.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="DNACategoryCode" type="biom:DNACategoryCodeType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A category of DNA data</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="DNACellularCategoryCode" type="biom:DNACellularCategoryCodeType" nillable="true">
@@ -14285,7 +15300,12 @@
   </xs:element>
   <xs:element name="DNACommentText" type="nc:TextType" nillable="true">
     <xs:annotation>
-      <xs:documentation>A kind of comment regarding a DNA sample</xs:documentation>
+      <xs:documentation>A kind of comment regarding DNA data</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="DNADataIdentification" type="nc:IdentificationType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A unique identification for the DNA profile or encoded DNA data for which the transaction is based, e.g. sample ID, barcode, or profile ID.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="DNADonor" type="biom:DNADonorType" nillable="true">
@@ -14321,6 +15341,11 @@
   <xs:element name="DNADonorStatusCode" type="biom:DNADonorStatusCodeType" nillable="true">
     <xs:annotation>
       <xs:documentation>A status of a DNA donor</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="DNADonorVitalityCode" type="biom:DNADonorVitalityCodeType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A vitality status of a DNA donor.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="DNAElectropherogram" type="biom:DNAElectropherogramType" nillable="true">
@@ -14368,6 +15393,46 @@
       <xs:documentation>An image of screenshot of a DNA electropherogram</xs:documentation>
     </xs:annotation>
   </xs:element>
+  <xs:element name="DNAEncoding" type="biom:DNAEncodingType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>An encoding or representation of the DNA data from a person (can be a composite profile based on multiple DNA samples) or a DNA sample (can be a single-source sample or a mixture sample from a crime scene).</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="DNAEncodingAugmentationPoint" abstract="true">
+    <xs:annotation>
+      <xs:documentation>An augmentation point for type biom:DNAEncodingType</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="DNAFragmentSequenceAnalysis" type="biom:DNAFragmentSequenceAnalysisType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A description of the DNA fragment sequence analysis (FSA) data</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="DNAFragmentSequenceAnalysisAugmentationPoint" abstract="true">
+    <xs:annotation>
+      <xs:documentation>An augmentation point for type biom:DNAFragmentSequenceAnalysisType</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="DNAFragmentSequenceAnalysisBinaryObject" type="niem-xs:base64Binary" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A base-64 representation of a DNA fragment sequence analysis (FSA)</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="DNAFragmentSequenceAnalysisCategoryCode" type="biom:DNAFragmentSequenceAnalysisCategoryCodeType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A category of fragment sequence analysis (FSA)</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="DNAFragmentSequenceAnalysisFileStorageText" type="nc:TextType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A kind of file type suffix for a DNA fragment sequence analysis (FSA)</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="DNAFragmentSequenceAnalysisID" type="niem-xs:string" nillable="true">
+    <xs:annotation>
+      <xs:documentation>An identifier for a DNA fragment sequence analysis (FSA)</xs:documentation>
+    </xs:annotation>
+  </xs:element>
   <xs:element name="DNAGenotypeAllelePair" type="biom:DNAGenotypeAllelePairType" nillable="true">
     <xs:annotation>
       <xs:documentation>A DNA genotype allele pair</xs:documentation>
@@ -14386,6 +15451,26 @@
   <xs:element name="DNAGenotypeDistributionCode" type="biom:DNAGenotypeDistributionCodeType" nillable="true">
     <xs:annotation>
       <xs:documentation>A kind of DNA genotype distribution</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="DNAInstrumentProcess" type="biom:DNAInstrumentProcessType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A description of the DNA instrument testing process used to produce DNA raw data and in some cases, a DNA profile</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="DNAInstrumentProcessAugmentationPoint" abstract="true">
+    <xs:annotation>
+      <xs:documentation>An augmentation point for type biom:DNAInstrumentProcessType</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="DNAInstrumentSite" type="nc:SiteType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>An organization and/or location where the instrument is located</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="DNAInstrumentSoftware" type="nc:SoftwareType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A computer application running on the DNA instrument used to process instrument data and produce DNA analysis data.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="DNAKit" type="biom:DNAKitType" nillable="true">
@@ -14468,14 +15553,39 @@
       <xs:documentation>A kind of DNA laboratory unit</xs:documentation>
     </xs:annotation>
   </xs:element>
+  <xs:element name="DNALocus" type="biom:DNALocusType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A description of STR locus data</xs:documentation>
+    </xs:annotation>
+  </xs:element>
   <xs:element name="DNALocusAnalysisIndicator" type="niem-xs:boolean" nillable="true">
     <xs:annotation>
       <xs:documentation>True if DNA locus is analyzed; false otherwise</xs:documentation>
     </xs:annotation>
   </xs:element>
+  <xs:element name="DNALocusAugmentationPoint" abstract="true">
+    <xs:annotation>
+      <xs:documentation>An augmentation point for type biom:DNALocusType</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="DNALocusCategoryCode" type="biom:DNALocusCategoryCodeType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A category of the locus, e.g. autosomal, X-STR, Y-STR, etc.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
   <xs:element name="DNALocusGenotypeProbabilityValue" type="biom:LocusGenotypeProbabilityValueType" nillable="true">
     <xs:annotation>
-      <xs:documentation>A probability of an individual having these alleles at a single locus. The frequency of the individual alleles is based on population statistics data. This probability can be calculated by various formulas that consider if the locus is homozygous or</xs:documentation>
+      <xs:documentation>A probability of an individual having these alleles at a single locus. The frequency of the individual alleles is based on population statistics data. This probability can be calculated by various formulas that consider if the locus is homozygous or heterozygous.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="DNALocusName" type="niem-xs:string" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A locus name, that is, the name of a fixed position on a chromosome where a particular gene or genetic marker is located</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="DNALocusQualityStatusCode" type="biom:DNALocusQualityStatusCodeType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A quality status for the locus data, e.g. normal, partial, etc.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="DNALocusReferenceID" type="biom:Integer1To999Type" nillable="true">
@@ -14533,9 +15643,124 @@
       <xs:documentation>A kind of DNA codes for mitochondrial DNA regions HV2 and HV3</xs:documentation>
     </xs:annotation>
   </xs:element>
+  <xs:element name="DNAMitoData" type="biom:DNAMitoDataType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A description of the mitochondria DNA (mtDNA) data</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="DNAMitoDataAugmentationPoint" abstract="true">
+    <xs:annotation>
+      <xs:documentation>An augmentation point for type biom:DNAMitoDataType</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="DNAMitoFragment" type="biom:DNAMitoFragmentType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A description of a mitochondria fragment data</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="DNAMitoFragmentAugmentationPoint" abstract="true">
+    <xs:annotation>
+      <xs:documentation>An augmentation point for type biom:DNAMitoFragmentType</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="DNAMitoFragmentEndNumeric" type="niem-xs:positiveInteger" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A number indicating the mitochondrial DNA fragment ending position</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="DNAMitoFragmentStartNumeric" type="niem-xs:positiveInteger" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A number indicating the mitochondrial DNA fragment starting position</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="DNAMitoPolymorphism" type="biom:DNAMitoPolymorphismType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A description of the differences between the mitochondria DNA data from the revised Cambridge reference sequence (rCRS)</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="DNAMitoPolymorphismAugmentationPoint" abstract="true">
+    <xs:annotation>
+      <xs:documentation>An augmentation point for type biom:DNAMitoPolymorphismType</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="DNAMitoPolymorphismBaseCode" type="biom:DNAMitoPolymorphismBaseCodeType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A code for the mitochondria base as defined by the International Union of Pure and Applied Chemistry (IUPAC)</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="DNAMitoPolymorphismOffsetNumeric" type="niem-xs:positiveInteger" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A number indicating the insertion of base needed at position to realign fragment with reference</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="DNAMitoPolymorphismSiteNumeric" type="niem-xs:positiveInteger" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A number indicating the site/position of the mitochondrial DNA polymorphism</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="DNAMitoReferenceSequenceText" type="nc:TextType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>An entire mitochondria reference sequence used for analysis (16569 characters)</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="DNAPedigree" type="biom:DNAPedigreeType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A description of a pedigree originating and held at a DNA laboratory</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="DNAPedigreeAugmentationPoint" abstract="true">
+    <xs:annotation>
+      <xs:documentation>An augmentation point for type biom:DNAPedigreeType</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="DNAPedigreeCommentText" type="nc:TextType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A descriptive comment about a DNA pedigree</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="DNAPedigreeFatherIndexNumeric" type="biom:Integer0To999Type" nillable="true">
+    <xs:annotation>
+      <xs:documentation>An index number that refers to the father of the subject of this DNA pedigree</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="DNAPedigreeID" type="nc:TextType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>An identifier (i.e., file number) of a DNA pedigree</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="DNAPedigreeMemberIndexNumeric" type="nc:TextType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>An index that refers to the DNA subject of the transaction and provides the ability to link pedigree information.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="DNAPedigreeMemberStatusCode" type="biom:DNAPedigreeMemberStatusCodeType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A status of a subject of a DNA pedigree</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="DNAPedigreeMotherIndexNumeric" type="biom:Integer0To999Type" nillable="true">
+    <xs:annotation>
+      <xs:documentation>An index number that refers to the mother of a subject of this DNA pedigree</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="DNAPedigreeSampleID" type="nc:TextType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>An Identifier for a DNA sample linking it to this related pedigree</xs:documentation>
+    </xs:annotation>
+  </xs:element>
   <xs:element name="DNAPreciseCallIndicator" type="niem-xs:boolean" nillable="true">
     <xs:annotation>
       <xs:documentation>True if DNA precise call has been determined; false otherwise</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="DNAProcess" type="biom:DNAProcessType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A description of the DNA testing and analysis process used to produce a DNA profile</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="DNAProcessAugmentationPoint" abstract="true">
+    <xs:annotation>
+      <xs:documentation>An augmentation point for type biom:DNAProcessType</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="DNAProfile" type="biom:DNAProfileType" nillable="true">
@@ -14578,6 +15803,16 @@
       <xs:documentation>A supplemental message in a DNA profile</xs:documentation>
     </xs:annotation>
   </xs:element>
+  <xs:element name="DNARecord" type="biom:DNARecordType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A description of DNA data record</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="DNARecordAugmentationPoint" abstract="true">
+    <xs:annotation>
+      <xs:documentation>An augmentation point for type biom:DNARecordType</xs:documentation>
+    </xs:annotation>
+  </xs:element>
   <xs:element name="DNASample" type="biom:DNASampleType" substitutionGroup="biom:BiometricDetailAbstract" nillable="true">
     <xs:annotation>
       <xs:documentation>A representation or an encoding of the DNA data of a biological sample. This may be the biological sample from a person (e.g. sample from an insurgent), or a mixed biological sample that may contain biological material from the person of interest (e</xs:documentation>
@@ -14588,9 +15823,44 @@
       <xs:documentation>An augmentation point for DNASampleType.</xs:documentation>
     </xs:annotation>
   </xs:element>
+  <xs:element name="DNASampleCollection" type="biom:DNASampleCollectionType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A description of the DNA sample collection</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="DNASampleCollectionAugmentationPoint" abstract="true">
+    <xs:annotation>
+      <xs:documentation>An augmentation point for type biom:DNASampleCollectionType</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="DNASampleCollectionCommentText" type="nc:TextType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A description, comments, or notes of the DNA sample collection</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="DNASampleCollectionDateEstimateRangeDuration" type="niem-xs:duration" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A range of uncertainty as to when the DNA sample was collected</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="DNASampleCollectionEntity" type="nc:EntityType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>An organization and/or person who administered/supervised or collected the DNA sample.  For example, the individual may collect the buccal swab himself/herself under the supervision of the "DNASampleCollectionEntity"</xs:documentation>
+    </xs:annotation>
+  </xs:element>
   <xs:element name="DNASampleCollectionMethodText" type="nc:TextType" nillable="true">
     <xs:annotation>
       <xs:documentation>A description of the method used to collect a DNA sample</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="DNASampleCollectionSite" type="nc:SiteType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>An organization and/or location where the DNA sample was collected</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="DNASampleCollectionUTCDate" type="nc:ZuluDateTimeType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A UTC date and time for a DNA sample collection</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="DNASampleOrigin" type="biom:DNASampleOriginType" nillable="true">
@@ -14608,6 +15878,51 @@
       <xs:documentation>An origin of a DNA sample</xs:documentation>
     </xs:annotation>
   </xs:element>
+  <xs:element name="DNASource" type="biom:DNASourceType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A description of the DNA source such as the source category person vs. stain; cellular orgin blood, etc</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="DNASourceAugmentationPoint" abstract="true">
+    <xs:annotation>
+      <xs:documentation>An augmentation point for type biom:DNASourceType</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="DNASourceCategoryCode" type="biom:DNASourceCategoryCodeType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A description of the DNA source category</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="DNASourceCompositeIndicator" type="niem-xs:boolean" nillable="true">
+    <xs:annotation>
+      <xs:documentation>True if the source is a composite of DNA profiles with multiple DNASourceCategoryCode elements; false otherwise.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="DNASourceIdentification" type="nc:IdentificationType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A unique identification for the DNA source such as the sample ID or barcode.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="DNASourceKnownIndicator" type="niem-xs:boolean" nillable="true">
+    <xs:annotation>
+      <xs:documentation>True if the source person of this DNA data is known; false otherwise.  This indicator can be used in the exchange of a forensic case data where the case has been solved.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="DNASTRData" type="biom:DNASTRDataType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A description of the DNA data from the short tandem repeat (STR) analysis on nuclear DNA</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="DNASTRDataAugmentationPoint" abstract="true">
+    <xs:annotation>
+      <xs:documentation>An augmentation point for type biom:DNASTRDataType</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="DNASTRLaneNumeric" type="niem-xs:nonNegativeInteger" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A lane number in which the sample is run in the STR typing process</xs:documentation>
+    </xs:annotation>
+  </xs:element>
   <xs:element name="DNASTRProfile" type="biom:DNASTRProfileType" nillable="true">
     <xs:annotation>
       <xs:documentation>An autosomal STR, X-STR, and Y-STR DNA profile</xs:documentation>
@@ -14623,9 +15938,19 @@
       <xs:documentation>A kind of autosomal STR, X-STR, and Y-STR DNA profile</xs:documentation>
     </xs:annotation>
   </xs:element>
+  <xs:element name="DNASTRProfilePartialIndicator" type="niem-xs:boolean" nillable="true">
+    <xs:annotation>
+      <xs:documentation>True if one or more loci in the Kit used for the STR typing did not yield result or yielded partial result; false otherwise. This indicator can be used to assess the quality of the STR profile.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
   <xs:element name="DNATypingTechnologyCategoryCode" type="biom:DNATypingTechnologyCategoryCodeType" nillable="true">
     <xs:annotation>
       <xs:documentation>A kind of typing technology used on a DNA sample</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="DNATypingTechnologyCode" type="biom:DNATypingTechnologyCodeType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A kind of typing technology used on a DNA sample.  DNATypingTechnologyCode is added in NIEM 5.1 to replace DNATypingTechnologyCategoryCode in the future.  This is because "Nuclear (including Autosomal STR, X-STR and Y-STR)" as a DNA Typing Technology Category is not specific enough.  DNA typing technology for nuclear DNA can be STR, or SNP or some other/future technology.  The "Nuclear" code value should be replaced by "STR" code value.  Similarly, the "mtDNA" code value should be replaced by "mtDNA First Generation" code value.  the code values "Electropherogram data" and "Electropherogram ladder" are not technologies and should be removed.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="DNAUserDefinedProfileAbstract" abstract="true">
@@ -17148,14 +18473,34 @@
       <xs:documentation>An identifier for a DNA sample linking it to this related pedigree.</xs:documentation>
     </xs:annotation>
   </xs:element>
+  <xs:element name="PedigreeFatherIdentification" type="nc:IdentificationType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>An identification of the father of the subject of this DNA pedigree</xs:documentation>
+    </xs:annotation>
+  </xs:element>
   <xs:element name="PedigreeFatherIndexNumeric" type="biom:Integer0To999Type" nillable="true">
     <xs:annotation>
       <xs:documentation>An index number that refers to the father of the subject of this pedigree.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="PedigreeID" type="nc:TextType" nillable="true">
+  <xs:element name="PedigreeIdentification" type="nc:IdentificationType" nillable="true">
     <xs:annotation>
-      <xs:documentation>An identifier (i.e., file number) of a pedigree.</xs:documentation>
+      <xs:documentation>An identification of a genetic pedigree</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="PedigreeMember" type="biom:PedigreeMemberType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A description of a member in the pedigree tree</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="PedigreeMemberAugmentationPoint" abstract="true">
+    <xs:annotation>
+      <xs:documentation>An augmentation point for type biom:PedigreeMemberType</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="PedigreeMemberIdentification" type="nc:IdentificationType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>An identification of a DNA pedigree</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="PedigreeMemberIndexNumeric" type="nc:TextType" nillable="true">
@@ -17166,6 +18511,11 @@
   <xs:element name="PedigreeMemberStatusCode" type="biom:PedigreeMemberStatusCodeType" nillable="true">
     <xs:annotation>
       <xs:documentation>A status of a subject of a pedigree.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="PedigreeMotherIdentification" type="nc:IdentificationType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>An identification of the mother of a subject of this DNA pedigree</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="PedigreeMotherIndexNumeric" type="biom:Integer0To999Type" nillable="true">
@@ -17181,6 +18531,11 @@
   <xs:element name="PedigreeResolutionText" type="nc:TextType" nillable="true">
     <xs:annotation>
       <xs:documentation>A resolution/decision from analyzing a pedigree.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="PedigreeStatusCode" type="biom:PedigreeStatusCodeType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A coding of a pedigree's veracity status</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="PersonAugmentation" type="biom:PersonAugmentationType" substitutionGroup="nc:PersonAugmentationPoint" nillable="true">
@@ -17473,9 +18828,9 @@
       <xs:documentation>A set of contact information for the organization that owns the biometric processing algorithm or latent workstation</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="ProcessUTCDate" type="nc:DateType" nillable="true">
+  <xs:element name="ProcessUTCDate" type="nc:ZuluDateTimeType" nillable="true">
     <xs:annotation>
-      <xs:documentation>A date and time for a biometric processing algorithm</xs:documentation>
+      <xs:documentation>A UTC date and time for a biometric processing algorithm</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="QualityAlgorithmProductID" type="niem-xs:unsignedShort" nillable="true">

@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema targetNamespace="http://release.niem.gov/niem/codes/stix/5.1/" version="1" xml:lang="en-US" xsi:schemaLocation="http://release.niem.gov/niem/appinfo/5.0/ ../utility/appinfo.xsd http://release.niem.gov/niem/conformanceTargets/3.0/ ../utility/conformanceTargets.xsd" ct:conformanceTargets="http://reference.niem.gov/niem/specification/naming-and-design-rules/5.0/#ReferenceSchemaDocument"
+  xmlns:appinfo="http://release.niem.gov/niem/appinfo/5.0/"
+  xmlns:ct="http://release.niem.gov/niem/conformanceTargets/3.0/"
+  xmlns:stix="http://release.niem.gov/niem/codes/stix/5.1/"
+  xmlns:structures="http://release.niem.gov/niem/structures/5.0/"
+  xmlns:xs="http://www.w3.org/2001/XMLSchema"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <xs:annotation>
+    <xs:documentation>Structured Threat Information Expression (STIX) codes</xs:documentation>
+  </xs:annotation>
+  <xs:import namespace="http://release.niem.gov/niem/structures/5.0/" schemaLocation="../utility/structures.xsd"/>
+  <xs:simpleType name="DiscoveryMethodCodeSimpleType">
+    <xs:annotation>
+      <xs:documentation>A data type for a method by which a cyber incident is discovered or detected</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="agent-disclosure">
+        <xs:annotation>
+          <xs:documentation>The incident was disclosed by the threat agent (e.g., public brag, private blackmail)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="antivirus">
+        <xs:annotation>
+          <xs:documentation>The incident was discovered by an antivirus system</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="audit">
+        <xs:annotation>
+          <xs:documentation>The incident was discovered during an external security audit or scan</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="customer">
+        <xs:annotation>
+          <xs:documentation>The incident was reported by a customer or partner affected by the incident</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="external-fraud-detection">
+        <xs:annotation>
+          <xs:documentation>The incident was discovered through external fraud detection means (e.g., Common Point of Purchase reporting)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="financial-audit">
+        <xs:annotation>
+          <xs:documentation>The incident was discovered during a financial audit and/or reconciliation process</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="hips">
+        <xs:annotation>
+          <xs:documentation>The incident was discovered from host-based IDS or file integrity monitoring</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="incident-response">
+        <xs:annotation>
+          <xs:documentation>The incident was discovered during the investigation of a separate incident</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="internal-fraud-detection">
+        <xs:annotation>
+          <xs:documentation>The incident was discovered through internal fraud detection means</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="it-audit">
+        <xs:annotation>
+          <xs:documentation>The incident was discovered by an internal IT audit or scan</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="law-enforcement">
+        <xs:annotation>
+          <xs:documentation>The incident was reported by law enforcement</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="log-review">
+        <xs:annotation>
+          <xs:documentation>The incident was discovered during a log review process or by a Security Information and Event Management (SIEM) tool</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="monitoring-service">
+        <xs:annotation>
+          <xs:documentation>The incident was reported by a managed security event monitoring service</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="nids">
+        <xs:annotation>
+          <xs:documentation>The incident was discovered by a network-based intrusion detection/prevention system</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="security-alarm">
+        <xs:annotation>
+          <xs:documentation>The incident was discovered by a physical security alarm</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="unknown">
+        <xs:annotation>
+          <xs:documentation>It is not known how this incident was discovered</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="unrelated-party">
+        <xs:annotation>
+          <xs:documentation>The incident was reported by an unrelated party</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="user">
+        <xs:annotation>
+          <xs:documentation>The incident was reported by a user</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="DiscoveryMethodCodeType">
+    <xs:annotation>
+      <xs:documentation>A data type for a method by which a cyber incident is discovered or detected</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="stix:DiscoveryMethodCodeSimpleType">
+        <xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+</xs:schema>

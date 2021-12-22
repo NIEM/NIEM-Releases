@@ -1,0 +1,677 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema targetNamespace="http://release.niem.gov/niem/codes/fema/5.1/" version="1" xml:lang="en-US" xsi:schemaLocation="http://release.niem.gov/niem/appinfo/5.0/ ../utility/appinfo.xsd http://release.niem.gov/niem/conformanceTargets/3.0/ ../utility/conformanceTargets.xsd" ct:conformanceTargets="http://reference.niem.gov/niem/specification/naming-and-design-rules/5.0/#ReferenceSchemaDocument"
+  xmlns:appinfo="http://release.niem.gov/niem/appinfo/5.0/"
+  xmlns:ct="http://release.niem.gov/niem/conformanceTargets/3.0/"
+  xmlns:fema="http://release.niem.gov/niem/codes/fema/5.1/"
+  xmlns:structures="http://release.niem.gov/niem/structures/5.0/"
+  xmlns:xs="http://www.w3.org/2001/XMLSchema"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <xs:annotation>
+    <xs:documentation>Federal Emergency Management Agency</xs:documentation>
+    <xs:appinfo>
+      <appinfo:LocalTerm term="CRS" literal="Community Rating System"/>
+      <appinfo:LocalTerm term="SFHA" literal="Special Flood Hazard Area"/>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:import namespace="http://release.niem.gov/niem/structures/5.0/" schemaLocation="../utility/structures.xsd"/>
+  <xs:simpleType name="BuildingBasementStructureCategoryCodeSimpleType">
+    <xs:annotation>
+      <xs:documentation>A data type for a kind of basement structure, defined as any level or story which has its floor subgrade on all sides.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:integer">
+      <xs:enumeration value="0">
+        <xs:annotation>
+          <xs:documentation>none</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="1">
+        <xs:annotation>
+          <xs:documentation>Finished Basement/Enclosure</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="2">
+        <xs:annotation>
+          <xs:documentation>Unfinished Basement/Enclosure</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="3">
+        <xs:annotation>
+          <xs:documentation>Crawlspace</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="4">
+        <xs:annotation>
+          <xs:documentation>Subgrade Crawlspace</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="BuildingBasementStructureCategoryCodeType">
+    <xs:annotation>
+      <xs:documentation>A data type for a kind of basement structure, defined as any level or story which has its floor subgrade on all sides.</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="fema:BuildingBasementStructureCategoryCodeSimpleType">
+        <xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:simpleType name="BuildingCommunityRatingSystemDiscountCodeSimpleType">
+    <xs:annotation>
+      <xs:documentation>A data type for a Community Rating System (CRS) Classification Credit Percentage used to rate the policy. The insurance premium credit is based on whether a property is in or out of the Special Flood Hazard Area (SFHA) as shown on the community's Flood Insurance Rate Map. The premium credit for properties in the SFHA increases according to a community's CRS class. **These percentages are subject to change. Always refer to the Flood Insurance Manual for the latest information.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:positiveInteger">
+      <xs:enumeration value="1">
+        <xs:annotation>
+          <xs:documentation>SFHA 45% ** Non SFHA 10% **</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="10">
+        <xs:annotation>
+          <xs:documentation>SFHA 0% Non SFHA 0%</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="2">
+        <xs:annotation>
+          <xs:documentation>SFHA 40% ** Non SFHA 10% **</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="3">
+        <xs:annotation>
+          <xs:documentation>SFHA 35% ** Non SFHA 10% **</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="4">
+        <xs:annotation>
+          <xs:documentation>SFHA 30% ** Non SFHA 10% **</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="5">
+        <xs:annotation>
+          <xs:documentation>SFHA 25% ** Non SFHA 10% **</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="6">
+        <xs:annotation>
+          <xs:documentation>SFHA 20% ** Non SFHA10% **</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="7">
+        <xs:annotation>
+          <xs:documentation>SFHA 15% ** Non SFHA 5% **</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="8">
+        <xs:annotation>
+          <xs:documentation>SFHA 10% ** Non SFHA 5% **</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="9">
+        <xs:annotation>
+          <xs:documentation>SFHA 5% Non SFHA 5%</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="BuildingCommunityRatingSystemDiscountCodeType">
+    <xs:annotation>
+      <xs:documentation>A data type for a Community Rating System (CRS) Classification Credit Percentage used to rate the policy. The insurance premium credit is based on whether a property is in or out of the Special Flood Hazard Area (SFHA) as shown on the community's Flood Insurance Rate Map. The premium credit for properties in the SFHA increases according to a community's CRS class.</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="fema:BuildingCommunityRatingSystemDiscountCodeSimpleType">
+        <xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:simpleType name="BuildingCondominiumCategoryCodeSimpleType">
+    <xs:annotation>
+      <xs:documentation>A data type for a kind of condominium property.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="A">
+        <xs:annotation>
+          <xs:documentation>The entire condominium building owned by the association insuring building common elements as well as building elements (additions and alterations) within all units in the building, not eligible under Condominium Master Policy</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="H">
+        <xs:annotation>
+          <xs:documentation>The entire residential condominium building owned by the association eligible under Condominium Master Policy, insuring the entire condominium building common elements as well as building elements (additions and alterations) within all units in the building, for High-Rise</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="L">
+        <xs:annotation>
+          <xs:documentation>The entire residential condominium building owned by the association eligible under Condominium Master Policy, insuring the entire condominium building common elements as well as building elements (additions and alterations) within all units in the building, for Low-Rise</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="N">
+        <xs:annotation>
+          <xs:documentation>Not a condominium</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="T">
+        <xs:annotation>
+          <xs:documentation>Townhouses</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="U">
+        <xs:annotation>
+          <xs:documentation>An individual condominium unit owned by a unit owner, or by a condominium association</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="BuildingCondominiumCategoryCodeType">
+    <xs:annotation>
+      <xs:documentation>A data type for a kind of condominium property.</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="fema:BuildingCondominiumCategoryCodeSimpleType">
+        <xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:simpleType name="BuildingContentsLocationCodeSimpleType">
+    <xs:annotation>
+      <xs:documentation>A data type for a location within a structure where contents are located.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="1">
+        <xs:annotation>
+          <xs:documentation>Basement/Enclosure/Crawlspace/Subgrade Crawlspace only</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="2">
+        <xs:annotation>
+          <xs:documentation>Basement/Enclosure/Crawlspace/Subgrade Crawlspace and above</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="3">
+        <xs:annotation>
+          <xs:documentation>Lowest floor only above ground level (No basement/enclosure/crawlspace/subgrade crawlspace)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="4">
+        <xs:annotation>
+          <xs:documentation>Lowest floor above ground level and higher floors (No basement/enclosure/crawlspace/subgrade crawlspace)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="5">
+        <xs:annotation>
+          <xs:documentation>Above ground level more than one full floor</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="6">
+        <xs:annotation>
+          <xs:documentation>Manufactured (mobile) home or travel trailer on foundation</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="BuildingContentsLocationCodeType">
+    <xs:annotation>
+      <xs:documentation>A data type for a location within a structure where contents are located.</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="fema:BuildingContentsLocationCodeSimpleType">
+        <xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:simpleType name="BuildingElevationCertificateCodeSimpleType">
+    <xs:annotation>
+      <xs:documentation>A data type for what kind of elevation certificate and rating appear on a policy.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:integer">
+      <xs:enumeration value="1">
+        <xs:annotation>
+          <xs:documentation>No Elevation Certificate, original effective date prior to October 1, 1982, with no break in insurance coverage or change in insurable interest. Policies will be rated using 'No Base Flood Elevation' +2 to +4 feet rates</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="2">
+        <xs:annotation>
+          <xs:documentation>No Elevation Certificate, original effective date on or after October 1, 1982, with no break in insurance coverage or change in insurable interest. Policies will be rated using 'No Elevation Certificate' rates</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="3">
+        <xs:annotation>
+          <xs:documentation>Elevation Certificate with BFE. Policies will be rated using 'With Base Flood Elevation' rates</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="4">
+        <xs:annotation>
+          <xs:documentation>Elevation Certificate without BFE. Policies will be rated using 'No Base Flood Elevation' rates</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="BuildingElevationCertificateCodeType">
+    <xs:annotation>
+      <xs:documentation>A data type for what kind of elevation certificate and rating appear on a policy.</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="fema:BuildingElevationCertificateCodeSimpleType">
+        <xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:simpleType name="BuildingFloodZoneSimpleType">
+    <xs:annotation>
+      <xs:documentation>A data type for a flood zone derived from the Flood Insurance Rate Map (FIRM) used to rate the property. *AHB, AOB, ARE, ARH, ARO, and ARA are not risk zones shown on a map, but are acceptable values for rating purposes</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:token">
+      <xs:pattern value="A">
+        <xs:annotation>
+          <xs:documentation>Special Flood with no Base Flood Elevation on FIRM</xs:documentation>
+        </xs:annotation>
+      </xs:pattern>
+      <xs:pattern value="A([1-9]|[1-2]\d|30)">
+        <xs:annotation>
+          <xs:documentation>A1-A30: Special Flood with Base Flood Elevation on FIRM</xs:documentation>
+        </xs:annotation>
+      </xs:pattern>
+      <xs:pattern value="A99">
+        <xs:annotation>
+          <xs:documentation>Special Flood with Protection Zone</xs:documentation>
+        </xs:annotation>
+      </xs:pattern>
+      <xs:pattern value="AE">
+        <xs:annotation>
+          <xs:documentation>Special Flood with Base Flood Elevation on FIRM.  New zone designation used on new maps starting January 1, 1986, in lieu of A1-A30.</xs:documentation>
+        </xs:annotation>
+      </xs:pattern>
+      <xs:pattern value="AH">
+        <xs:annotation>
+          <xs:documentation>Special Flood with Shallow Ponding</xs:documentation>
+        </xs:annotation>
+      </xs:pattern>
+      <xs:pattern value="AHB">
+        <xs:annotation>
+          <xs:documentation>Special Flood with Shallow Ponding</xs:documentation>
+        </xs:annotation>
+      </xs:pattern>
+      <xs:pattern value="AO">
+        <xs:annotation>
+          <xs:documentation>Special Flood with Sheet Flow</xs:documentation>
+        </xs:annotation>
+      </xs:pattern>
+      <xs:pattern value="AOB">
+        <xs:annotation>
+          <xs:documentation>Special Flood with Sheet Flow</xs:documentation>
+        </xs:annotation>
+      </xs:pattern>
+      <xs:pattern value="AR">
+        <xs:annotation>
+          <xs:documentation>A Special Flood Hazard Area that results from the decertification of a previously accredited flood protection system that is determined to be in the process of being restored to provide base flood protection</xs:documentation>
+        </xs:annotation>
+      </xs:pattern>
+      <xs:pattern value="AR/A">
+        <xs:annotation>
+          <xs:documentation>Area subject to flooding from failure of the flood protection system (Zone AR) which also overlap an existing Special Flood Hazard Area as a dual zone</xs:documentation>
+        </xs:annotation>
+      </xs:pattern>
+      <xs:pattern value="AR/A([1-9]|[1-2]\d|30)">
+        <xs:annotation>
+          <xs:documentation>AR/A1-A30: Area subject to flooding from failure of the flood protection system (Zone AR) which also overlap an existing Special Flood Hazard Area as a dual zone</xs:documentation>
+        </xs:annotation>
+      </xs:pattern>
+      <xs:pattern value="AR/AE">
+        <xs:annotation>
+          <xs:documentation>Area subject to flooding from failure of the flood protection system (Zone AR) which also overlap an existing Special Flood Hazard Area as a dual zone</xs:documentation>
+        </xs:annotation>
+      </xs:pattern>
+      <xs:pattern value="AR/AH">
+        <xs:annotation>
+          <xs:documentation>Area subject to flooding from failure of the flood protection system (Zone AR) which also overlap an existing Special Flood Hazard Area as a dual zone</xs:documentation>
+        </xs:annotation>
+      </xs:pattern>
+      <xs:pattern value="AR/AO">
+        <xs:annotation>
+          <xs:documentation>Area subject to flooding from failure of the flood protection system (Zone AR) which also overlap an existing Special Flood Hazard Area as a dual zone</xs:documentation>
+        </xs:annotation>
+      </xs:pattern>
+      <xs:pattern value="B">
+        <xs:annotation>
+          <xs:documentation>Moderate Flood from primary water source. Pockets of areas subject to drainage problems</xs:documentation>
+        </xs:annotation>
+      </xs:pattern>
+      <xs:pattern value="C">
+        <xs:annotation>
+          <xs:documentation>Minimal Flood from primary water source. Pockets of areas subject to drainage problems</xs:documentation>
+        </xs:annotation>
+      </xs:pattern>
+      <xs:pattern value="D">
+        <xs:annotation>
+          <xs:documentation>Possible Flood</xs:documentation>
+        </xs:annotation>
+      </xs:pattern>
+      <xs:pattern value="V">
+        <xs:annotation>
+          <xs:documentation>Velocity Flood with no Base Flood Elevation on FIRM</xs:documentation>
+        </xs:annotation>
+      </xs:pattern>
+      <xs:pattern value="V([1-9]|[1-2]\d|30)">
+        <xs:annotation>
+          <xs:documentation>V1-V30: Velocity Flood with Base Flood Elevation on FIRM</xs:documentation>
+        </xs:annotation>
+      </xs:pattern>
+      <xs:pattern value="VE">
+        <xs:annotation>
+          <xs:documentation>Velocity Flood with Base Flood Elevation on FIRM.  New zone designation used on new maps starting January 1, 1986, in lieu of V1-V30.</xs:documentation>
+        </xs:annotation>
+      </xs:pattern>
+      <xs:pattern value="X">
+        <xs:annotation>
+          <xs:documentation>Minimal or Moderate Flood from primary water source. Pockets of areas subject to drainage problems.  New zone designation used on new maps starting January 1, 1986, in lieu of B and C.</xs:documentation>
+        </xs:annotation>
+      </xs:pattern>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="BuildingFloodZoneType">
+    <xs:annotation>
+      <xs:documentation>A data type for a flood zone derived from the Flood Insurance Rate Map (FIRM) used to rate the property. *AHB, AOB, ARE, ARH, ARO, and ARA are not risk zones shown on a map, but are acceptable values for rating purposes</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="fema:BuildingFloodZoneSimpleType">
+        <xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:simpleType name="BuildingFloorQuantityCodeSimpleType">
+    <xs:annotation>
+      <xs:documentation>A data type for a number of floors in the building.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="1">
+        <xs:annotation>
+          <xs:documentation>One floor</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="2">
+        <xs:annotation>
+          <xs:documentation>Two floors</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="3">
+        <xs:annotation>
+          <xs:documentation>Three or more floors</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="4">
+        <xs:annotation>
+          <xs:documentation>Split-level</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="5">
+        <xs:annotation>
+          <xs:documentation>Manufactured (mobile) home or travel trailer on foundation</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="6">
+        <xs:annotation>
+          <xs:documentation>Townhouse/Rowhouse with three or more floors (RCBAP Low-rise only)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="BuildingFloorQuantityCodeType">
+    <xs:annotation>
+      <xs:documentation>A data type for a number of floors in the building.</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="fema:BuildingFloorQuantityCodeSimpleType">
+        <xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:simpleType name="BuildingObstructionCategoryCodeSimpleType">
+    <xs:annotation>
+      <xs:documentation>A data type for a kind of obstruction in a building or enclosure.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:integer">
+      <xs:enumeration value="15">
+        <xs:annotation>
+          <xs:documentation>With obstruction: enclosure/crawlspace with proper openings not used for rating (not applicable in V zones)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="20">
+        <xs:annotation>
+          <xs:documentation>With obstruction: less than 300 sq. ft. with breakaway walls, but no machinery or equipment attached to building below lowest elevated floor, or elevation of machinery/equipment is at or above Base Flood Elevation</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="24">
+        <xs:annotation>
+          <xs:documentation>With obstruction: less than 300 sq. ft. with breakaway walls or finished enclosure and with machinery or equipment attached to building below lowest elevated floor, and elevation of machinery/equipment is below Base Flood Elevation</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="30">
+        <xs:annotation>
+          <xs:documentation>With obstruction: 300 sq. ft. or more with breakaway walls, but no machinery or equipment attached to building below the Base Flood Elevation</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="34">
+        <xs:annotation>
+          <xs:documentation>With obstruction: 300 sq. ft. or more with breakaway walls or finished enclosure and with machinery or equipment attached to building below the Base Flood Elevation</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="40">
+        <xs:annotation>
+          <xs:documentation>With obstruction: no walls, but the elevation of machinery or equipment attached to building is below Base Flood Elevation (NOTE: Use Obstruction Type '10' and Without Obstruction Rate Table if the elevation of machinery/equipment is at or above Base Flood Elevation.)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="50">
+        <xs:annotation>
+          <xs:documentation>With obstruction: nonbreakaway walls/crawlspace or finished enclosure with no machinery or equipment attached to building below lowest elevated floor</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="54">
+        <xs:annotation>
+          <xs:documentation>With obstruction: nonbreakaway walls/crawlspace or finished enclosure with machinery or equipment attached to building below lowest elevated floor</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="60">
+        <xs:annotation>
+          <xs:documentation>With obstruction</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="70">
+        <xs:annotation>
+          <xs:documentation>With Certification subgrade crawlspace (AE, A01-A30, unnumbered A, AO, AH, AOB, AHB zones)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="80">
+        <xs:annotation>
+          <xs:documentation>Without Certification subgrade crawlspace (all zones)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="90">
+        <xs:annotation>
+          <xs:documentation>With Enclosure: Elevated buildings with elevator below the BFE in A zones. No other enclosure below the BFE.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="94">
+        <xs:annotation>
+          <xs:documentation>With Obstruction: Elevated buildings with elevator below the BFE in V zones. No other obstruction or machinery and equipment (ME) servicing the building located below the BFE.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="95">
+        <xs:annotation>
+          <xs:documentation>With Obstruction: Elevated buildings with elevator below the BFE in V zones. Breakaway wall obstruction is unfinished and elevator and obstruction are located below the BFE, but no machinery and equipment servicing the building is located below the BFE.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="96">
+        <xs:annotation>
+          <xs:documentation>With Obstruction: Elevated buildings with elevator below the BFE in V zones. Breakaway wall obstruction is finished or is used for other than parking, building access, or storage.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="97">
+        <xs:annotation>
+          <xs:documentation>With Obstruction: Elevated buildings with elevator below the BFE in V zones. No other obstruction, but has ME servicing the building located below the BFE.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="98">
+        <xs:annotation>
+          <xs:documentation>With Obstruction: Elevated buildings with elevator below the BFE in V zones. Breakaway walls obstruction and ME servicing the building are located below the BFE.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="BuildingObstructionCategoryCodeType">
+    <xs:annotation>
+      <xs:documentation>A data type for a kind of obstruction in a building or enclosure.</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="fema:BuildingObstructionCategoryCodeSimpleType">
+        <xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:simpleType name="BuildingOccupancyCategoryCodeSimpleType">
+    <xs:annotation>
+      <xs:documentation>A data type for a kind of use and occupancy type of a structure.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="1">
+        <xs:annotation>
+          <xs:documentation>1=single family residence</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="2">
+        <xs:annotation>
+          <xs:documentation>2 to 4 unit residential building</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="3">
+        <xs:annotation>
+          <xs:documentation>residential building with more than 4 units</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="4">
+        <xs:annotation>
+          <xs:documentation>Non-residential building</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="BuildingOccupancyCategoryCodeType">
+    <xs:annotation>
+      <xs:documentation>A data type for a kind of use and occupancy type of a structure.</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="fema:BuildingOccupancyCategoryCodeSimpleType">
+        <xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:simpleType name="BuildingPolicyRateMethodCodeSimpleType">
+    <xs:annotation>
+      <xs:documentation>A data type for a kind of policy rating method.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="1">
+        <xs:annotation>
+          <xs:documentation>Manual</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="2">
+        <xs:annotation>
+          <xs:documentation>Specific</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="3">
+        <xs:annotation>
+          <xs:documentation>Alternative</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="4">
+        <xs:annotation>
+          <xs:documentation>V-Zone Risk Factor Rating Form</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="5">
+        <xs:annotation>
+          <xs:documentation>Underinsured Condominium Master Policy</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="6">
+        <xs:annotation>
+          <xs:documentation>Provisional</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="7">
+        <xs:annotation>
+          <xs:documentation>Preferred Risk Policy (PRPs issued for eligible properties located within a non-Special Flood Hazard Area [non-SFHA])</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="8">
+        <xs:annotation>
+          <xs:documentation>Tentative</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="9">
+        <xs:annotation>
+          <xs:documentation>MPPP Policy</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="A">
+        <xs:annotation>
+          <xs:documentation>Optional Post-1981 V Zone</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="B">
+        <xs:annotation>
+          <xs:documentation>Pre-FIRM policies with elevation rating - Flood Insurance Manual rate tables</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="E">
+        <xs:annotation>
+          <xs:documentation>FEMA Pre-FIRM Special Rates</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="F">
+        <xs:annotation>
+          <xs:documentation>Leased Federal Property</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="G">
+        <xs:annotation>
+          <xs:documentation>Group Flood Insurance Policy (GFIP)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="P">
+        <xs:annotation>
+          <xs:documentation>Preferred Risk Policy (A PRP renewal issued in the first year following a map revision for an eligible property that was newly mapped into the SFHA by the map revision, or new business written for an eligible property that was newly mapped into the SFHA by a map revision effective on or after October 1, 2008 - PRP Eligibility Extension)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Q">
+        <xs:annotation>
+          <xs:documentation>Preferred Risk Policy (subsequent PRP renewals where the previous policy year was reported as a 'P' or 'Q')</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="S">
+        <xs:annotation>
+          <xs:documentation>FEMA Special Rates</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="T">
+        <xs:annotation>
+          <xs:documentation>Severe Repetitive Loss Properties (formerly Target Group Full Risk). Effective October 1, 2013, code will no longer be valid</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="W">
+        <xs:annotation>
+          <xs:documentation>Pre-FIRM policies with elevation rating - Submit-for-Rate procedures</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="BuildingPolicyRateMethodCodeType">
+    <xs:annotation>
+      <xs:documentation>A data type for a kind of policy rating method.</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="fema:BuildingPolicyRateMethodCodeSimpleType">
+        <xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+</xs:schema>

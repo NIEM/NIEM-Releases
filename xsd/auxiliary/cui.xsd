@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xs:schema targetNamespace="http://release.niem.gov/niem/auxiliary/cui/5.0/" version="1" xml:lang="en-US" xsi:schemaLocation="http://release.niem.gov/niem/appinfo/5.0/ ../utility/appinfo.xsd http://release.niem.gov/niem/conformanceTargets/3.0/ ../utility/conformanceTargets.xsd" ct:conformanceTargets="http://reference.niem.gov/niem/specification/naming-and-design-rules/5.0/#ReferenceSchemaDocument"
+<xs:schema targetNamespace="http://release.niem.gov/niem/auxiliary/cui/5.1/" version="1" xml:lang="en-US" xsi:schemaLocation="http://release.niem.gov/niem/appinfo/5.0/ ../utility/appinfo.xsd http://release.niem.gov/niem/conformanceTargets/3.0/ ../utility/conformanceTargets.xsd" ct:conformanceTargets="http://reference.niem.gov/niem/specification/naming-and-design-rules/5.0/#ReferenceSchemaDocument"
   xmlns:appinfo="http://release.niem.gov/niem/appinfo/5.0/"
   xmlns:ct="http://release.niem.gov/niem/conformanceTargets/3.0/"
-  xmlns:cui="http://release.niem.gov/niem/auxiliary/cui/5.0/"
+  xmlns:cui="http://release.niem.gov/niem/auxiliary/cui/5.1/"
   xmlns:genc="http://release.niem.gov/niem/codes/genc/5.0/"
   xmlns:nc="http://release.niem.gov/niem/niem-core/5.0/"
   xmlns:niem-xs="http://release.niem.gov/niem/proxy/niem-xs/5.0/"
@@ -474,34 +474,11 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-  <xs:complexType name="DocumentMarkingMetadataType">
-    <xs:annotation>
-      <xs:documentation>A data type for metadata about the Controlled Unclassified Information (CUI) marking of a document.</xs:documentation>
-    </xs:annotation>
-    <xs:complexContent>
-      <xs:extension base="structures:MetadataType">
-        <xs:sequence>
-          <xs:element ref="cui:SpecifiedCategoryMarkingCode" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="cui:BasicCategoryMarkingCode" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="cui:LDCMarking" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="cui:DesignatingEntityText" minOccurs="1" maxOccurs="unbounded"/>
-          <xs:element ref="cui:DecontrolSchedule" minOccurs="0" maxOccurs="1"/>
-          <xs:element ref="cui:RequiredIndicatorsText" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="cui:SupplementalAdministrativeMarkingAbstract" minOccurs="0" maxOccurs="unbounded"/>
-        </xs:sequence>
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
-  <xs:simpleType name="LDCCodeSimpleType">
+  <xs:simpleType name="DocumentMarkingLDCCodeSimpleType">
     <xs:annotation>
       <xs:documentation>A data type for a Controlled Unclassified Information (CUI) Executive Agent-approved control that agencies may use to limit or specify CUI dissemination.</xs:documentation>
     </xs:annotation>
     <xs:restriction base="xs:token">
-      <xs:enumeration value="AC">
-        <xs:annotation>
-          <xs:documentation>Portion marking abbreviation for Attorney Client. Dissemination of information protected by the attorney client privilege beyond the attorney, the attorney’s agents, or the client can result in the loss of the privilege and is prohibited by this marking, unless the agency's executive decision makers decide to disclose the information outside the bounds of its protection. Note: the Legal Privilege Category marking “PRIVILEGE” must be applied in order to use this limited dissemination control marking.</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
       <xs:enumeration value="Attorney-Client">
         <xs:annotation>
           <xs:documentation>Attorney Client. Dissemination of information protected by the attorney client privilege beyond the attorney, the attorney’s agents, or the client can result in the loss of the privilege and is prohibited by this marking, unless the agency's executive decision makers decide to disclose the information outside the bounds of its protection. Note: the Legal Privilege Category marking “PRIVILEGE” must be applied in order to use this limited dissemination control marking.</xs:documentation>
@@ -512,19 +489,104 @@
           <xs:documentation>Attorney Work Product. Dissemination of information protected by the Attorney Work Product Privilege beyond the attorney, the attorney’s agents, or the client can result in the loss of the privilege and is prohibited by this marking, unless specifically permitted by the overseeing attorney who originated the work product or their successor. Note: the Legal Privilege Category marking “PRIVILEGE” must be applied in order to use this limited dissemination control marking.</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
+      <xs:enumeration value="DISPLAY ONLY">
+        <xs:annotation>
+          <xs:documentation>Display only. Information is authorized for disclosure to a foreign recipient, but without providing the foreign recipient with a physical copy for retention, regardless of medium to the foreign country(ies)/international organization(s) indicated, through established foreign disclosure procedures and channels.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="DL ONLY">
+        <xs:annotation>
+          <xs:documentation>Dissemination List Controlled. Dissemination authorized only to those individuals, organizations, or entities included on an accompanying dissemination list. Note: Use of this limited dissemination control supersedes other limited dissemination controls, but cannot supersede dissemination stipulated in federal law, regulation, or Government-wide policy.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="FED ONLY">
+        <xs:annotation>
+          <xs:documentation>Federal Employees Only. Dissemination authorized only to (1) employees of United States Government Executive branch departments and agencies (as agency is defined in 5 U.S.C. 105), or (2) armed forces personnel of the United States or Active Guard and Reserve (as defined in 10 USC 101).</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="FEDCON">
+        <xs:annotation>
+          <xs:documentation>Federal Employees and Contractors Only. Dissemination authorized only to (1) employees of United States Government Executive branch departments and agencies (as agency is defined in 5 U.S.C. 105), (2) armed forces personnel of the United States or Active Guard and Reserve (as defined in 10 USC 101), or (3) individuals or employers who enter into a contract with the United States (any department or agency) to perform a specific job, supply labor and materials, or for the sale of products and services, so long as dissemination is in furtherance of that contractual purpose.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="NOCON">
+        <xs:annotation>
+          <xs:documentation>No dissemination to Contractors. No dissemination authorized to individuals or employers who enter into a contract with the United States (any department or agency) to perform a specific job, supply labor and materials, or for the sale of products and services. Note: This dissemination control is intended for use when dissemination is not permitted to federal contractors, but permits dissemination to State, local, or tribal employees.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="NOFORN">
+        <xs:annotation>
+          <xs:documentation>No foreign dissemination. Information may not be disseminated in any form to foreign governments, foreign nationals, foreign or international organizations, or non-US citizens.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="REL TO">
+        <xs:annotation>
+          <xs:documentation>Authorized for release to certain nationals only. Information has been predetermined by the designating agency to be releasable or has been released only to the foreign country(ies)/international organization(s) indicated, through established foreign disclosure procedures and channels. It is NOFORN to all foreign country(ies)/international organization(s) not indicated in the REL TO marking. USA must always appear first when using REL TO followed by additional permitted trigraph country codes in alphabetical order.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="RELIDO">
+        <xs:annotation>
+          <xs:documentation>Releasable by information disclosure official. A permissive foreign disclosure and release marking used on information to indicate that the originator has authorized a Senior Foreign Disclosure and Release Authority (SFDRA) to make further sharing decisions for uncaveated intelligence material (intelligence with no restrictive dissemination controls) in accordance with existing procedures, guidelines, and implementation guidance. Second party integrees (people who work solely under direction and operational control of the Director of the NSA/Chief of Central Security Service on cryptologic or information assurance activities) may access RELIDO information that is not classified military information (CMI) or signals intelligence (SIGINT) without a SFDRA review, including intelligence information created after 28 June 2010 - excluding SIGINT – which carries no foreign disclosure and release markings and hence is treated as if marked RELIDO. Note: Only agencies that are eligible to use RELIDO in the intelligence community (IC) classified information context may use this LDCM on CUI. It is defined and applied in the same manner as in the IC context.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="DocumentMarkingLDCCodeType">
+    <xs:annotation>
+      <xs:documentation>A data type for a Controlled Unclassified Information (CUI) Executive Agent-approved control that agencies may use to limit or specify CUI dissemination.</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="cui:DocumentMarkingLDCCodeSimpleType">
+        <xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="DocumentMarkingLDCType">
+    <xs:annotation>
+      <xs:documentation>A data type for any CUI Executive Agent-approved control that agencies may use to limit or specify CUI dissemination.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="structures:ObjectType">
+        <xs:sequence>
+          <xs:element ref="cui:DocumentMarkingLDCCode" minOccurs="1" maxOccurs="1"/>
+          <xs:element ref="cui:LDCForeignDisclosureToAbstract" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="cui:LDC-DLONLYText" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="cui:DocumentMarkingLDCAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="DocumentMarkingMetadataType">
+    <xs:annotation>
+      <xs:documentation>A data type for metadata about the Controlled Unclassified Information (CUI) marking of a document.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="structures:MetadataType">
+        <xs:sequence>
+          <xs:element ref="cui:SpecifiedCategoryMarkingCode" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="cui:BasicCategoryMarkingCode" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="cui:DocumentMarkingLDC" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="cui:DesignatingEntityText" minOccurs="1" maxOccurs="unbounded"/>
+          <xs:element ref="cui:DecontrolSchedule" minOccurs="0" maxOccurs="1"/>
+          <xs:element ref="cui:RequiredIndicatorsText" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="cui:SupplementalAdministrativeMarkingAbstract" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:simpleType name="PortionMarkingLDCCodeSimpleType">
+    <xs:annotation>
+      <xs:documentation>A data type for a Controlled Unclassified Information (CUI) Executive Agent-approved control that agencies may use to limit or specify CUI dissemination.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="AC">
+        <xs:annotation>
+          <xs:documentation>Portion marking abbreviation for Attorney Client. Dissemination of information protected by the attorney client privilege beyond the attorney, the attorney’s agents, or the client can result in the loss of the privilege and is prohibited by this marking, unless the agency's executive decision makers decide to disclose the information outside the bounds of its protection. Note: the Legal Privilege Category marking “PRIVILEGE” must be applied in order to use this limited dissemination control marking.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
       <xs:enumeration value="AWP">
         <xs:annotation>
           <xs:documentation>Portion marking abbreviation for Attorney Work Product. Dissemination of information protected by the Attorney Work Product Privilege beyond the attorney, the attorney’s agents, or the client can result in the loss of the privilege and is prohibited by this marking, unless specifically permitted by the overseeing attorney who originated the work product or their successor. Note: the Legal Privilege Category marking “PRIVILEGE” must be applied in order to use this limited dissemination control marking.</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="DELIB">
-        <xs:annotation>
-          <xs:documentation>Portion marking abbreviation for Deliberative Process. Dissemination of information protected by the deliberative process privilege beyond the department, agency, or U.S. Government decision maker who is part of the policy deliberation can result in the loss of the privilege and is prohibited by this marking, unless the executive decision makers at the agency decide to disclose the information outside the bounds of its protection. Note: the Legal Privilege Category marking “PRIVILEGE” must be applied in order to use this limited dissemination control marking.</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="Deliberative">
-        <xs:annotation>
-          <xs:documentation>Deliberative Process.  Dissemination of information protected by the deliberative process privilege beyond the department, agency, or U.S. Government decision maker who is part of the policy deliberation can result in the loss of the privilege and is prohibited by this marking, unless the executive decision makers at the agency decide to disclose the information outside the bounds of its protection. Note: the Legal Privilege Category marking “PRIVILEGE” must be applied in order to use this limited dissemination control marking.</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
       <xs:enumeration value="DISPLAY ONLY">
@@ -557,39 +619,39 @@
           <xs:documentation>No dissemination to Contractors. No dissemination authorized to individuals or employers who enter into a contract with the United States (any department or agency) to perform a specific job, supply labor and materials, or for the sale of products and services. Note: This dissemination control is intended for use when dissemination is not permitted to federal contractors, but permits dissemination to State, local, or tribal employees.</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
-      <xs:enumeration value="NOFORN">
-        <xs:annotation>
-          <xs:documentation>No foreign dissemination. Information may not be disseminated in any form to foreign governments, foreign nationals, foreign or international organizations, or non-US citizens.</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
       <xs:enumeration value="REL TO">
         <xs:annotation>
           <xs:documentation>Authorized for release to certain nationals only. Information has been predetermined by the designating agency to be releasable or has been released only to the foreign country(ies)/international organization(s) indicated, through established foreign disclosure procedures and channels. It is NOFORN to all foreign country(ies)/international organization(s) not indicated in the REL TO marking. USA must always appear first when using REL TO followed by additional permitted trigraph country codes in alphabetical order.</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
+      <xs:enumeration value="RELIDO">
+        <xs:annotation>
+          <xs:documentation>Releasable by information disclosure official. A permissive foreign disclosure and release marking used on information to indicate that the originator has authorized a Senior Foreign Disclosure and Release Authority (SFDRA) to make further sharing decisions for uncaveated intelligence material (intelligence with no restrictive dissemination controls) in accordance with existing procedures, guidelines, and implementation guidance. Second party integrees (people who work solely under direction and operational control of the Director of the NSA/Chief of Central Security Service on cryptologic or information assurance activities) may access RELIDO information that is not classified military information (CMI) or signals intelligence (SIGINT) without a SFDRA review, including intelligence information created after 28 June 2010 - excluding SIGINT – which carries no foreign disclosure and release markings and hence is treated as if marked RELIDO. Note: Only agencies that are eligible to use RELIDO in the intelligence community (IC) classified information context may use this LDCM on CUI. It is defined and applied in the same manner as in the IC context.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
     </xs:restriction>
   </xs:simpleType>
-  <xs:complexType name="LDCCodeType">
+  <xs:complexType name="PortionMarkingLDCCodeType">
     <xs:annotation>
       <xs:documentation>A data type for a Controlled Unclassified Information (CUI) Executive Agent-approved control that agencies may use to limit or specify CUI dissemination.</xs:documentation>
     </xs:annotation>
     <xs:simpleContent>
-      <xs:extension base="cui:LDCCodeSimpleType">
+      <xs:extension base="cui:PortionMarkingLDCCodeSimpleType">
         <xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
       </xs:extension>
     </xs:simpleContent>
   </xs:complexType>
-  <xs:complexType name="LDCType">
+  <xs:complexType name="PortionMarkingLDCType">
     <xs:annotation>
       <xs:documentation>A data type for any CUI Executive Agent-approved control that agencies may use to limit or specify CUI dissemination.</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
       <xs:extension base="structures:ObjectType">
         <xs:sequence>
-          <xs:element ref="cui:LDCCode" minOccurs="1" maxOccurs="1"/>
+          <xs:element ref="cui:PortionMarkingLDCCode" minOccurs="1" maxOccurs="1"/>
           <xs:element ref="cui:LDCForeignDisclosureToAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="cui:LDC-DLONLYText" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="cui:LDCAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="cui:PortionMarkingLDCAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -603,7 +665,7 @@
         <xs:sequence>
           <xs:element ref="cui:SpecifiedCategoryMarkingCode" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="cui:BasicCategoryMarkingCode" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="cui:LDCMarking" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="cui:PortionMarkingLDC" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -813,11 +875,6 @@
           <xs:documentation>Personnel Records. Related to the employees of federal agencies.</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
-      <xs:enumeration value="SP-PHYS">
-        <xs:annotation>
-          <xs:documentation>Physical Security. Related to protection of federal buildings, grounds or property.</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
       <xs:enumeration value="SP-PRIIG">
         <xs:annotation>
           <xs:documentation>Inspector General Protected. Related to the identity of a person making a report to the Inspector General of any Executive agency.</xs:documentation>
@@ -992,6 +1049,21 @@
       <xs:documentation>A CUI Designation Indicator. Must include the designator's agency and may take any form that identifies the designating agency.</xs:documentation>
     </xs:annotation>
   </xs:element>
+  <xs:element name="DocumentMarkingLDC" type="cui:DocumentMarkingLDCType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A document marking for a Controlled Unclassified Information (CUI) Executive Agent-approved control that agencies may use to limit or specify CUI dissemination.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="DocumentMarkingLDCAugmentationPoint" abstract="true">
+    <xs:annotation>
+      <xs:documentation>An augmentation point for type cui:DocumentMarkingLDCType</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="DocumentMarkingLDCCode" type="cui:DocumentMarkingLDCCodeType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A Controlled Unclassified Information (CUI) Executive Agent-approved control that agencies may use to limit or specify CUI dissemination.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
   <xs:element name="DocumentMarkingMetadata" type="cui:DocumentMarkingMetadataType" nillable="true">
     <xs:annotation>
       <xs:documentation>Metadata about Controlled Unclassified Information (CUI) marking of a document.</xs:documentation>
@@ -1000,16 +1072,6 @@
   <xs:element name="LDC-DLONLYText" type="nc:TextType" nillable="true">
     <xs:annotation>
       <xs:documentation>A list of individuals, organizations, or entities for which dissemination is authorized.</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="LDCAugmentationPoint" abstract="true">
-    <xs:annotation>
-      <xs:documentation>An augmentation point for type cui:LDCType</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="LDCCode" type="cui:LDCCodeType" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A Controlled Unclassified Information (CUI) Executive Agent-approved control that agencies may use to limit or specify CUI dissemination.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="LDCCountryCode" type="genc:CountryAlpha3CodeType" substitutionGroup="cui:LDCForeignDisclosureToAbstract" nillable="true">
@@ -1022,9 +1084,19 @@
       <xs:documentation>A data concept for a foreign country/international organization approved for the release or disclosure of classified information, for use with REL TO and DISPLAY ONLY limited dissemination controls for Controlled Unclassified Information (CUI).</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="LDCMarking" type="cui:LDCType" nillable="true">
+  <xs:element name="PortionMarkingLDC" type="cui:PortionMarkingLDCType" nillable="true">
     <xs:annotation>
-      <xs:documentation>A marking for a Controlled Unclassified Information (CUI) Executive Agent-approved control that agencies may use to limit or specify CUI dissemination.</xs:documentation>
+      <xs:documentation>A portion marking for a Controlled Unclassified Information (CUI) Executive Agent-approved control that agencies may use to limit or specify CUI dissemination.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="PortionMarkingLDCAugmentationPoint" abstract="true">
+    <xs:annotation>
+      <xs:documentation>An augmentation point for type cui:PortionMarkingLDCType</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="PortionMarkingLDCCode" type="cui:PortionMarkingLDCCodeType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A Controlled Unclassified Information (CUI) Executive Agent-approved control that agencies may use to limit or specify CUI dissemination.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="PortionMarkingMetadata" type="cui:PortionMarkingMetadataType" nillable="true">
