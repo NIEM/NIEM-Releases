@@ -7,7 +7,7 @@ In a minor release, content may be updated in domains and code tables.  Core, na
 
 ## Feedback
 
-Please submit feedback by Friday, August 12, 2022.  Feedback can be posted directly to the NIEM Releases [issue tracker](https://github.com/NIEM/NIEM-Releases/issues) (see [help](https://github.com/NIEM/NIEM-Releases/wiki/Issues)) or emailed to [niem-comments@lists.gatech.edu](niem-comments@lists.gatech.edu).
+Please submit feedback by Friday, August 26, 2022.  Feedback can be posted directly to the NIEM Releases [issue tracker](https://github.com/NIEM/NIEM-Releases/issues) (see [help](https://github.com/NIEM/NIEM-Releases/wiki/Issues)) or emailed to [niem-comments@lists.gatech.edu](niem-comments@lists.gatech.edu).
 
 ## Key changes
 
@@ -21,3 +21,4 @@ The following is a summary of the key changes made in this release.  More detail
 
 - **MilOps domain**
   - Added Minimum Essential Metadata (MEM) content ([#234](https://github.com/NIEM/NIEM-Releases/issues/234))
+  - Added U.S. Message Text Format (USMTF) content as a subdomain ([#236](https://github.com/NIEM/NIEM-Releases/issues/236))
