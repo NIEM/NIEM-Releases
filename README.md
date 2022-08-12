@@ -15,3 +15,6 @@ The following is a summary of the key changes made in this release.  More detail
 
 - **Cyber domain**
   - Added and modified content to support State, Local, Tribal, and Territorial (SLTT) Agency Cyber Incident Reporting Requirements (CIRR) and Cyber-Physical System (CPS) Incident Reporting Requirements ([#233](https://github.com/NIEM/NIEM-Releases/issues/233)).
+
+- **MilOps domain**
+  - Added Minimum Essential Metadata (MEM) content ([#234](https://github.com/NIEM/NIEM-Releases/issues/234))
