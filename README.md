@@ -13,6 +13,9 @@ Please submit feedback by Friday, August 26, 2022.  Feedback can be posted direc
 
 The following is a summary of the key changes made in this release.  More details are available from the [5.2 issues list](https://github.com/NIEM/NIEM-Releases/issues?page=1&q=is%3Aissue+label%3A5.2) in the NIEM Releases issue tracker, and the change log spreadsheet in the release package.
 
+- **Biometrics domain**
+  - Added and updated content for DNA categories and encodings. ([#238](https://github.com/NIEM/NIEM-Releases/issues/238))
+
 - **Cyber domain**
   - Added and modified content to support State, Local, Tribal, and Territorial (SLTT) Agency Cyber Incident Reporting Requirements (CIRR) and Cyber-Physical System (CPS) Incident Reporting Requirements ([#233](https://github.com/NIEM/NIEM-Releases/issues/233)).
 

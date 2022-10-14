@@ -2635,10 +2635,13 @@
       <xs:extension base="structures:ObjectType">
         <xs:sequence>
           <xs:element ref="biom:DNATypingTechnologyCode" minOccurs="1" maxOccurs="1"/>
+          <xs:element ref="biom:DNALaboratoryAccreditation" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="biom:DNASampleCollection" minOccurs="0" maxOccurs="1"/>
           <xs:element ref="biom:DNASource" minOccurs="0" maxOccurs="1"/>
           <xs:element ref="biom:DNAProcess" minOccurs="0" maxOccurs="1"/>
           <xs:element ref="biom:DNAAnalysis" minOccurs="0" maxOccurs="1"/>
+          <xs:element ref="biom:DNALowTemplateIndicator" minOccurs="0" maxOccurs="1"/>
+          <xs:element ref="biom:DNAProfilePartialIndicator" minOccurs="0" maxOccurs="1"/>
           <xs:element ref="biom:DNASTRData" minOccurs="0" maxOccurs="1"/>
           <xs:element ref="biom:DNAMitoData" minOccurs="0" maxOccurs="1"/>
           <xs:element ref="biom:DNAUserDefinedProfileAbstract" minOccurs="0" maxOccurs="1"/>
@@ -3415,7 +3418,7 @@
     <xs:complexContent>
       <xs:extension base="structures:ObjectType">
         <xs:sequence>
-          <xs:element ref="biom:DNACategoryCode" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="biom:DNACategoryAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="biom:DNADonor" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="biom:DNADataIdentification" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="biom:DNAEncoding" minOccurs="0" maxOccurs="unbounded"/>
@@ -15283,9 +15286,19 @@
       <xs:documentation>A name of a DNA cartridge.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="DNACategoryCode" type="biom:DNACategoryCodeType" nillable="true">
+  <xs:element name="DNACategoryAbstract" abstract="true">
     <xs:annotation>
-      <xs:documentation>A category of DNA data</xs:documentation>
+      <xs:documentation>A data concept for a kind of DNA data such as arrestee, forensic, convicted offender, unidentified human remains, etc.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="DNACategoryCode" type="biom:DNACategoryCodeType" substitutionGroup="biom:DNACategoryAbstract" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A kind of DNA data</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="DNACategoryText" type="niem-xs:string" substitutionGroup="biom:DNACategoryAbstract" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A kind of DNA data</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="DNACellularCategoryCode" type="biom:DNACellularCategoryCodeType" nillable="true">
@@ -15593,6 +15606,11 @@
       <xs:documentation>An identifier for a reference number of a DNA locus</xs:documentation>
     </xs:annotation>
   </xs:element>
+  <xs:element name="DNALowTemplateIndicator" type="niem-xs:boolean" nillable="true">
+    <xs:annotation>
+      <xs:documentation>True if the DNA amount is very small, typically less than 100 pg; false otherwise. This indicator is very useful in forensic casework.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
   <xs:element name="DNAMitoBaseAdenineQuantity" type="biom:Integer1To99Type" nillable="true">
     <xs:annotation>
       <xs:documentation>A count of the mitochondrial DNA base composition adenines in the region being amplified</xs:documentation>
@@ -15786,6 +15804,11 @@
   <xs:element name="DNAProfileID" type="nc:TextType" nillable="true">
     <xs:annotation>
       <xs:documentation>An identifier for uniquely identifying the profile or sample for which the transaction is based.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="DNAProfilePartialIndicator" type="niem-xs:boolean" nillable="true">
+    <xs:annotation>
+      <xs:documentation>True if DNA testing did not yield result or yielded partial result; false otherwise. This indicator can be used to assess the quality of the STR profile.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="DNAProfileResultCode" type="biom:DNAProfileResultCodeType" nillable="true">
