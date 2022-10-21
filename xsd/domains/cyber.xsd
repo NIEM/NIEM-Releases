@@ -1547,6 +1547,11 @@
           <xs:documentation>A breach of Criminal Justice Information System (CJIS) protected information as a result of a cyber incident</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
+      <xs:enumeration value="Cyber and Non-cyber related Personally Identifiable Information (PII)">
+        <xs:annotation>
+          <xs:documentation>A breach of Personally Identifiable Information as a result of both a cyber and non-cyber incident</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
       <xs:enumeration value="Cyber-related Personally Identifiable Information (PII)">
         <xs:annotation>
           <xs:documentation>A breach of Personally Identifiable Information as a result of a cyber incident</xs:documentation>
@@ -1562,17 +1567,12 @@
           <xs:documentation>A breach of Gramm-Leach-Bliley Act protected information as a result of a cyber incident</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
-      <xs:enumeration value="Hybrid">
-        <xs:annotation>
-          <xs:documentation>A breach of Personally Identifiable Information as a result of both a cyber and non-cyber incident</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
       <xs:enumeration value="Jurisdiction specifically protected information">
         <xs:annotation>
           <xs:documentation>A breach of tribally, locally, and/or regionally protected information as a result of a cyber incident</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
-      <xs:enumeration value="Non-Cyber PII">
+      <xs:enumeration value="Non-cyber related Personally Identifiable Information (PII)">
         <xs:annotation>
           <xs:documentation>A breach of Personally Identifiable Information as a result of a non-cyber incident</xs:documentation>
         </xs:annotation>
@@ -4747,6 +4747,7 @@
           <xs:element ref="cyber:CyberTTP" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="cyber:AdversaryCommunication" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="cyber:SecurityIncidentActualityCode" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="cyber:CompromisedDevice" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="cyber:CyberIncidentAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
       </xs:extension>
@@ -4860,6 +4861,7 @@
           <xs:element ref="cyber:CyberIndicatorPatternDiamondModelClassificationCode" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="cyber:TrafficLightProtocolCode" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="cyber:KillChainPhase" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="cyber:CyberIndicatorPatternDefensiveMeasureCode" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="cyber:CyberIndicatorPatternAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
       </xs:extension>
@@ -5789,6 +5791,7 @@
           <xs:element ref="cyber:VulnerabilityIsPublicIndicator" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="cyber:CommonVulnerabilityEnumeration" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="cyber:VulnerabilityExploitAvailability" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="cyber:VulnerabilityWidespreadCode" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="cyber:CyberVulnerabilityAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
       </xs:extension>
@@ -7049,6 +7052,9 @@
           <xs:element ref="cyber:MalwareName" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="cyber:MalwareDescriptionText" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="cyber:MalwareAliasName" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="cyber:RansomwareIndicator" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="cyber:MalwareHashText" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="cyber:MalwareHashAlgorithmText" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="cyber:MalwareAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
       </xs:extension>
@@ -8039,6 +8045,11 @@
   <xs:element name="CyberEnterpriseTechniqueOtherDescriptionText" type="nc:TextType" nillable="true">
     <xs:annotation>
       <xs:documentation>A description of another enterprise technique.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="CyberIncident" type="cyber:CyberIncidentType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A cyber event that may require a response</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="CyberIncidentAugmentationPoint" abstract="true">
@@ -9156,6 +9167,16 @@
       <xs:documentation>A description of a malware instance or family</xs:documentation>
     </xs:annotation>
   </xs:element>
+  <xs:element name="MalwareHashAlgorithmText" type="nc:TextType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>An algorithm used to produce a hash.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="MalwareHashText" type="nc:TextType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A hash value or code; a result of a function to map data of an arbitrary size to a fixed-size.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
   <xs:element name="MalwareName" type="nc:TextType" nillable="true">
     <xs:annotation>
       <xs:documentation>A name of a malware instance or family</xs:documentation>
@@ -9426,6 +9447,11 @@
       <xs:documentation>A name of a network protocol used for communication</xs:documentation>
     </xs:annotation>
   </xs:element>
+  <xs:element name="RansomwareIndicator" type="niem-xs:boolean" nillable="true">
+    <xs:annotation>
+      <xs:documentation>True if the malware is ransomware; false otherwise.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
   <xs:element name="ReportingOrganizationIdentification" type="nc:IdentificationType" nillable="true">
     <xs:annotation>
       <xs:documentation>An identification that references a reporting organization</xs:documentation>
@@ -9436,7 +9462,7 @@
       <xs:documentation>A reason for declaring an emergency incident according to local requirements</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="Responder" type="cyber:ResponderType" substitutionGroup="nc:Entity" nillable="true">
+  <xs:element name="Responder" type="cyber:ResponderType" nillable="true">
     <xs:annotation>
       <xs:documentation>An external entity assisting with a cyber incident</xs:documentation>
     </xs:annotation>
@@ -9444,11 +9470,6 @@
   <xs:element name="ResponderAugmentationPoint" abstract="true">
     <xs:annotation>
       <xs:documentation>An augmentation point for type cyber:ResponderType</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="ResponderEntity" type="nc:EntityType" nillable="true">
-    <xs:annotation>
-      <xs:documentation>An entity responding onsite to the incident</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="ResponderOnsiteEndDateTime" type="niem-xs:dateTime" nillable="true">
