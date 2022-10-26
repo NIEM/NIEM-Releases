@@ -7,7 +7,7 @@ In a minor release, content may be updated in domains and code tables.  Core, na
 
 ## Feedback
 
-Please submit feedback by Friday, August 26, 2022.  Feedback can be posted directly to the NIEM Releases [issue tracker](https://github.com/NIEM/NIEM-Releases/issues) (see [help](https://github.com/NIEM/NIEM-Releases/wiki/Issues)) or emailed to [niem-comments@lists.gatech.edu](niem-comments@lists.gatech.edu).
+Please submit feedback by Friday, August 26, 2022.  Feedback can be posted directly to the NIEM Releases [issue tracker](https://github.com/NIEM/NIEM-Releases/issues) (see [help](https://github.com/NIEM/NIEM-Releases/wiki/Issues)) or emailed to [niem-comments@lists.gatech.edu](mailto:niem-comments@lists.gatech.edu).
 
 ## Key changes
 
@@ -21,6 +21,9 @@ The following is a summary of the key changes made in this release.  More detail
 
 - **Learning and Development domain** (new)
   - Added content about courses, course sections, students, and employment positions. ([#235](https://github.com/NIEM/NIEM-Releases/issues/235))
+
+- **Justice domain**
+  - Updated the FBI's National Crime Information Center (NCIC) codes ([#239](https://github.com/NIEM/NIEM-Releases/issues/239))
 
 - **MilOps domain**
   - Added Minimum Essential Metadata (MEM) content ([#234](https://github.com/NIEM/NIEM-Releases/issues/234))
