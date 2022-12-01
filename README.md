@@ -28,3 +28,6 @@ The following is a summary of the key changes made in this release.  More detail
 - **MilOps domain**
   - Added Minimum Essential Metadata (MEM) content ([#234](https://github.com/NIEM/NIEM-Releases/issues/234))
   - Added U.S. Message Text Format (USMTF) content as a subdomain ([#236](https://github.com/NIEM/NIEM-Releases/issues/236))
+
+- **ISO 639-5 Language Family codes**
+  - Added the ISO 639-5 language family code set ([#240](https://github.com/NIEM/NIEM-Releases/issues/240))
