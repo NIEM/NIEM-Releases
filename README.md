@@ -31,3 +31,6 @@ The following is a summary of the key changes made in this release.  More detail
 
 - **ISO 639-5 Language Family codes**
   - Added the ISO 639-5 language family code set ([#240](https://github.com/NIEM/NIEM-Releases/issues/240))
+
+- **FIPS county codes**
+  - Updated FIPS 3-digit and 5-digit county codes ([#243](https://github.com/NIEM/NIEM-Releases/issues/243))
