@@ -24,6 +24,26 @@ The following is a summary of the key changes made in this release.  More detail
 
 - **Justice domain**
   - Updated the FBI's National Crime Information Center (NCIC) codes ([#239](https://github.com/NIEM/NIEM-Releases/issues/239))
+    - BMA - Boat Make
+    - BRA - Boat Parts Brand Name
+    - Construction - Vehicle Make/Brand Name for Construction Equipment and Parts
+    - Country
+    - DBN - One Crime Inquiry Database Name
+    - Farm - Vehicle Make/Brand Name for Farm and Garden Equipment and Parts
+    - HAIR - Hair Color
+    - MAK - Gun Make Field
+    - Motorcycle - Vehicle Make/Brand Name for Motorcycles and Parts
+    - ProhibitedPersonsCategory
+    - RACE - Race
+    - SMT - Scars, Marks, Tattoos, and Other Characteristics
+    - Snowmobile - Vehicle Make/Brand Name for Snowmobiles and Parts
+    - Trailers - Vehicle Make/Brand Name for Trailer Make
+    - Trucks - Vehicle Make/Brand Name for Trucks and Parts
+    - TYPE - Article Type
+    - VMA - Vehicle Make
+    - VMO - Vehicle Model for Automobiles, Light-Duty Vans, Light-Duty Trucks, and Parts
+    - VMOUsage - Vehicle Model Usage
+    - VST - Vehicle Style
 
 - **MilOps domain**
   - Added Minimum Essential Metadata (MEM) content ([#234](https://github.com/NIEM/NIEM-Releases/issues/234))
