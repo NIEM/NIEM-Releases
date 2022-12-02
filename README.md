@@ -1,13 +1,9 @@
 
-# NIEM 5.2 Beta 1
+# NIEM 5.2
 
-This is the beta 1 draft of the NIEM 5.2 minor release.
+This is the NIEM 5.2 minor release.
 
 In a minor release, content may be updated in domains and code tables.  Core, namespaces imported by Core, and the architecture, which is defined by the NIEM Naming and Design Rules (NDR), will remain locked until the next major release.
-
-## Feedback
-
-Please submit feedback by Monday, November 14, 2022.  Feedback can be posted directly to the NIEM Releases [issue tracker](https://github.com/NIEM/NIEM-Releases/issues) (see [help](https://github.com/NIEM/NIEM-Releases/wiki/Issues)) or emailed to [niem-comments@lists.gatech.edu](mailto:niem-comments@lists.gatech.edu).
 
 ## Key changes
 
@@ -47,10 +43,10 @@ The following is a summary of the key changes made in this release.  More detail
 
 - **MilOps domain**
   - Added Minimum Essential Metadata (MEM) content ([#234](https://github.com/NIEM/NIEM-Releases/issues/234))
-  - Added U.S. Message Text Format (USMTF) content as a subdomain ([#236](https://github.com/NIEM/NIEM-Releases/issues/236))
-
-- **ISO 639-5 Language Family codes**
-  - Added the ISO 639-5 language family code set ([#240](https://github.com/NIEM/NIEM-Releases/issues/240))
+  - Added U.S. Message Text Format (USMTF) content as a subdomain, with information about military operations, missions, resources, readiness, and training ([#236](https://github.com/NIEM/NIEM-Releases/issues/236))
 
 - **FIPS county codes**
   - Updated FIPS 3-digit and 5-digit county codes ([#243](https://github.com/NIEM/NIEM-Releases/issues/243))
+
+- **ISO 639-5 Language Family codes**
+  - Added the ISO 639-5 language family code set ([#240](https://github.com/NIEM/NIEM-Releases/issues/240))
