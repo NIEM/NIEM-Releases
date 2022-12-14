@@ -167,14 +167,6 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-  <xs:complexType name="EmploymentAssociationAugmentationType">
-    <xs:annotation>
-      <xs:documentation>A data type for additional information about an employment association.</xs:documentation>
-    </xs:annotation>
-    <xs:complexContent>
-      <xs:extension base="structures:AugmentationType"/>
-    </xs:complexContent>
-  </xs:complexType>
   <xs:complexType name="EmploymentPositionAugmentationType">
     <xs:annotation>
       <xs:documentation>A data type for additional information about an employment position.</xs:documentation>
@@ -610,11 +602,6 @@
   <xs:element name="CourseWorkloadText" type="nc:TextType" nillable="true">
     <xs:annotation>
       <xs:documentation>An amount of work expected of students using the course, often provided as a figure per week or per month, and may be broken down by type. For example, "2 hours of lectures, 1 hour of lab work and 3 hours of independent study per week".</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="EmploymentAssociationAugmentation" type="lrn-dev:EmploymentAssociationAugmentationType" substitutionGroup="nc:EmploymentAssociationAugmentationPoint" nillable="true">
-    <xs:annotation>
-      <xs:documentation>Additional information about an employment association.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="EmploymentPositionAugmentation" type="lrn-dev:EmploymentPositionAugmentationType" substitutionGroup="nc:EmploymentPositionAugmentationPoint" nillable="true">
