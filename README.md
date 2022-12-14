@@ -23,10 +23,11 @@ The following is a summary of the key changes made in this release.  More detail
     - BMA - Boat Make
     - BRA - Boat Parts Brand Name
     - Construction - Vehicle Make/Brand Name for Construction Equipment and Parts
-    - Country
+    - Country - Country Codes
     - DBN - One Crime Inquiry Database Name
     - Farm - Vehicle Make/Brand Name for Farm and Garden Equipment and Parts
     - HAIR - Hair Color
+    - Indian - Indian Nations
     - MAK - Gun Make Field
     - Motorcycle - Vehicle Make/Brand Name for Motorcycles and Parts
     - ProhibitedPersonsCategory
@@ -35,7 +36,8 @@ The following is a summary of the key changes made in this release.  More detail
     - Snowmobile - Vehicle Make/Brand Name for Snowmobiles and Parts
     - Trailers - Vehicle Make/Brand Name for Trailer Make
     - Trucks - Vehicle Make/Brand Name for Trucks and Parts
-    - TYPE - Article Type
+    - TYP - Article Type
+    - TYPE - Type of Output
     - VMA - Vehicle Make
     - VMO - Vehicle Model for Automobiles, Light-Duty Vans, Light-Duty Trucks, and Parts
     - VMOUsage - Vehicle Model Usage
