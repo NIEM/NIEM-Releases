@@ -3557,6 +3557,7 @@
           <xs:element ref="biom:DNAClaimedRelationshipCode" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="biom:DNAValidatedRelationshipCode" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="biom:Pedigree" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="biom:DNAPedigree" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="biom:DNASampleOrigin" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="biom:DNATypingTechnologyCategoryCode" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="biom:DNASampleCollectionMethodText" minOccurs="0" maxOccurs="unbounded"/>
@@ -15723,7 +15724,7 @@
   </xs:element>
   <xs:element name="DNAPedigree" type="biom:DNAPedigreeType" nillable="true">
     <xs:annotation>
-      <xs:documentation>A description of a pedigree originating and held at a DNA laboratory</xs:documentation>
+      <xs:documentation>A description of a pedigree originating and held at a DNA laboratory. This element is deprecated and biom:Pedigree should be used instead, but will remain in NIEM while it still exists in ANSI/NIST ITL.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="DNAPedigreeAugmentationPoint" abstract="true">
