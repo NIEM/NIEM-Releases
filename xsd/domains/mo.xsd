@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xs:schema targetNamespace="http://release.niem.gov/niem/domains/militaryOperations/5.1/" version="1" xml:lang="en-US" xsi:schemaLocation="http://release.niem.gov/niem/appinfo/5.0/ ../utility/appinfo.xsd http://release.niem.gov/niem/conformanceTargets/3.0/ ../utility/conformanceTargets.xsd" ct:conformanceTargets="http://reference.niem.gov/niem/specification/naming-and-design-rules/5.0/#ReferenceSchemaDocument"
+<xs:schema targetNamespace="http://release.niem.gov/niem/domains/militaryOperations/5.2/" version="1" xml:lang="en-US" xsi:schemaLocation="http://release.niem.gov/niem/appinfo/5.0/ ../utility/appinfo.xsd http://release.niem.gov/niem/conformanceTargets/3.0/ ../utility/conformanceTargets.xsd" ct:conformanceTargets="http://reference.niem.gov/niem/specification/naming-and-design-rules/5.0/#ReferenceSchemaDocument"
   xmlns:appinfo="http://release.niem.gov/niem/appinfo/5.0/"
   xmlns:ct="http://release.niem.gov/niem/conformanceTargets/3.0/"
   xmlns:geo="http://release.niem.gov/niem/adapters/geospatial/5.1/"
   xmlns:gml="http://www.opengis.net/gml/3.2"
   xmlns:iso_3166="http://release.niem.gov/niem/codes/iso_3166-1/5.0/"
-  xmlns:mo="http://release.niem.gov/niem/domains/militaryOperations/5.1/"
+  xmlns:mo="http://release.niem.gov/niem/domains/militaryOperations/5.2/"
   xmlns:nc="http://release.niem.gov/niem/niem-core/5.0/"
   xmlns:nga="http://release.niem.gov/niem/codes/nga/5.0/"
   xmlns:niem-xs="http://release.niem.gov/niem/proxy/niem-xs/5.0/"
@@ -28,6 +28,7 @@
       <appinfo:LocalTerm term="COLE" literal="Cyber Operations Lethality and Effectiveness"/>
       <appinfo:LocalTerm term="CPE" literal="Common Platform Enumeration"/>
       <appinfo:LocalTerm term="CRL" literal="Certificate Revocation List"/>
+      <appinfo:LocalTerm term="CUI" literal="Controlled Unclassified Information"/>
       <appinfo:LocalTerm term="CVE" literal="Common Vulnerabilities and Exposures"/>
       <appinfo:LocalTerm term="CWE" literal="Common Weakness Enumeration"/>
       <appinfo:LocalTerm term="CYBOX" literal="Cyber Observable eXpression"/>
@@ -38,6 +39,7 @@
       <appinfo:LocalTerm term="DSN" literal="Defense Switched Network"/>
       <appinfo:LocalTerm term="FISMA" literal="Federal Information Security Modernization Act"/>
       <appinfo:LocalTerm term="FMID" literal="Force Management Identifier"/>
+      <appinfo:LocalTerm term="FOIA" literal="Freedom of Information Act"/>
       <appinfo:LocalTerm term="FQDN" literal="Fully qualified domain name"/>
       <appinfo:LocalTerm term="GFM" literal="Global Force Management"/>
       <appinfo:LocalTerm term="IC" literal="Intelligence Community"/>
@@ -3772,6 +3774,18 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
+  <xs:complexType name="ClassificationReferenceDocumentType">
+    <xs:annotation>
+      <xs:documentation>A data type for a reference used to determine the classification (e.g. Policy, Security Classification Guide (SGC), etc.).</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="structures:ObjectType">
+        <xs:sequence>
+          <xs:element ref="mo:ClassificationReferenceDocumentAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
   <xs:complexType name="CodespaceCodePairType">
     <xs:annotation>
       <xs:documentation>A data type for a value from a specified controlled vocabulary.</xs:documentation>
@@ -4387,6 +4401,21 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
+  <xs:complexType name="DisclosureReleasabilityType">
+    <xs:annotation>
+      <xs:documentation>A data type for information pertaining to countries, organizations, or communities approved to receive the resource.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="structures:ObjectType">
+        <xs:sequence>
+          <xs:element ref="mo:DisclosureReleasabilityIndicator" minOccurs="1" maxOccurs="1"/>
+          <xs:element ref="mo:DisclosureText" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="mo:ReleasabilityText" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="mo:DisclosureReleasabilityAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
   <xs:complexType name="DistanceValueType">
     <xs:annotation>
       <xs:documentation>A data type for a distance measured in meters.</xs:documentation>
@@ -4646,6 +4675,32 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
+  <xs:complexType name="HandlingRestrictionsCUIType">
+    <xs:annotation>
+      <xs:documentation>A data type for a controlled unclassified information (CUI) handling restriction.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="structures:ObjectType">
+        <xs:sequence>
+          <xs:element ref="mo:HandlingRestrictionsCUIAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="HandlingRestrictionsType">
+    <xs:annotation>
+      <xs:documentation>A data type for limitations not related to classification or releasibility, such as Controlled Unclassified Information designations.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="structures:ObjectType">
+        <xs:sequence>
+          <xs:element ref="mo:HandlingRestrictionsIndicator" minOccurs="1" maxOccurs="1"/>
+          <xs:element ref="mo:HandlingRestrictionsAbstract" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="mo:HandlingRestrictionsAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
   <xs:complexType name="HardwareType">
     <xs:annotation>
       <xs:documentation>A data type for describing a specific piece of hardware using the Common Platform Enumeration (CPE) coding.</xs:documentation>
@@ -4757,6 +4812,18 @@
       <xs:extension base="structures:ObjectType">
         <xs:sequence>
           <xs:element ref="mo:JNKEOperationalEnvironmentModelBundleAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="LegalAuthorityType">
+    <xs:annotation>
+      <xs:documentation>A data type for the documented legal basis for mission activities associated with the creation, retention and use of a resource.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="structures:ObjectType">
+        <xs:sequence>
+          <xs:element ref="mo:LegalAuthorityAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -6777,6 +6844,26 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
+  <xs:complexType name="MinimumEssentialMetadataType">
+    <xs:annotation>
+      <xs:documentation>A data type for metadata about a data resource necessary to support the ‘must have’ functions for any data across DoD, joint, interagency, and coalition at the time of ‘creation’ that will be exchanged.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="structures:MetadataType">
+        <xs:sequence>
+          <xs:element ref="mo:ResourceGlobalIdentification" minOccurs="1" maxOccurs="1"/>
+          <xs:element ref="mo:ResourceDomainIdentification" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="mo:LegalAuthority" minOccurs="1" maxOccurs="1"/>
+          <xs:element ref="mo:Creator" minOccurs="1" maxOccurs="1"/>
+          <xs:element ref="mo:OfficeOfRecord" minOccurs="1" maxOccurs="1"/>
+          <xs:element ref="mo:ResourceFormat" minOccurs="1" maxOccurs="1"/>
+          <xs:element ref="mo:SecurityClassificationInformation" minOccurs="1" maxOccurs="1"/>
+          <xs:element ref="mo:DisclosureReleasability" minOccurs="1" maxOccurs="1"/>
+          <xs:element ref="mo:HandlingRestrictions" minOccurs="1" maxOccurs="1"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
   <xs:complexType name="MissionAugmentationType">
     <xs:annotation>
       <xs:documentation>A data type for additional information about a mission.</xs:documentation>
@@ -7985,6 +8072,32 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
+  <xs:complexType name="ResourceFormatType">
+    <xs:annotation>
+      <xs:documentation>A data type for information about the file format, physical medium, or dimensions of the resource.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="structures:ObjectType">
+        <xs:sequence>
+          <xs:element ref="mo:ResourceFormatAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="ResourceIdentificationType">
+    <xs:annotation>
+      <xs:documentation>A data type for identification of a resource.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="structures:ObjectType">
+        <xs:sequence>
+          <xs:element ref="mo:ResourceIDAbstract" minOccurs="1" maxOccurs="1"/>
+          <xs:element ref="mo:ResourceIdentificationAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+        <xs:attribute ref="mo:idSchemeURI" use="optional"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
   <xs:complexType name="ScanSectorType">
     <xs:annotation>
       <xs:documentation>A data type for a sector scanned by a device; defined by a radial sweep from the device location.</xs:documentation>
@@ -7999,6 +8112,77 @@
           <xs:element ref="mo:SectorElevationAngle" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="mo:SectorName" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="mo:ScanSectorAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:simpleType name="SecurityClassificationCodeSimpleType">
+    <xs:annotation>
+      <xs:documentation>A data type for an information security classification level.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="CONFIDENTIAL">
+        <xs:annotation>
+          <xs:documentation>Confidential.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CONTROLLED">
+        <xs:annotation>
+          <xs:documentation>Controlled Unclassified Information. Not a classfication marking; however, it can appear as a Banner Marking for controlled unclassified information.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CUI">
+        <xs:annotation>
+          <xs:documentation>Controlled Unclassified Information. Not a classfication marking; however, it can appear as a Banner Marking for controlled unclassified information.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="RESTRICTED">
+        <xs:annotation>
+          <xs:documentation>Restricted. Typically associated with NATO classifcation markings.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="SECRET">
+        <xs:annotation>
+          <xs:documentation>Secret.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="TOP SECRET">
+        <xs:annotation>
+          <xs:documentation>Top Secret.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="UNCLASSIFIED">
+        <xs:annotation>
+          <xs:documentation>Unclassified.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="SecurityClassificationCodeType">
+    <xs:annotation>
+      <xs:documentation>A data type for an information security classification level.</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="mo:SecurityClassificationCodeSimpleType">
+        <xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="SecurityClassificationInformationType">
+    <xs:annotation>
+      <xs:documentation>A data type for security classification information.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="structures:ObjectType">
+        <xs:sequence>
+          <xs:element ref="mo:SecurityClassificationAbstract" minOccurs="1" maxOccurs="1"/>
+          <xs:element ref="mo:ClassificationReferenceDocument" minOccurs="1" maxOccurs="unbounded"/>
+          <xs:element ref="mo:SpecialAccessRequirementText" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="mo:OriginalClassificationAuthority" minOccurs="1" maxOccurs="1"/>
+          <xs:element ref="mo:OriginatingAgency" minOccurs="0" maxOccurs="1"/>
+          <xs:element ref="mo:DerivativeClassificationAuthority" minOccurs="0" maxOccurs="1"/>
+          <xs:element ref="mo:RetentionDate" minOccurs="0" maxOccurs="1"/>
+          <xs:element ref="mo:SecurityClassificationInformationAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -9975,6 +10159,16 @@
       <xs:documentation>A identifier name or URI for a controlled vocabulary.</xs:documentation>
     </xs:annotation>
   </xs:attribute>
+  <xs:attribute name="idSchemeURI" type="xs:anyURI">
+    <xs:annotation>
+      <xs:documentation>A URI specifying the identification system or scheme used for the identifier.</xs:documentation>
+    </xs:annotation>
+  </xs:attribute>
+  <xs:element name="AdditionalContactInformation" type="mo:ContactInformationType" substitutionGroup="nc:ContactMeansAbstract" nillable="true">
+    <xs:annotation>
+      <xs:documentation>An additional means of contacting someone.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
   <xs:element name="Affiliation" type="mo:AffiliationType" nillable="true">
     <xs:annotation>
       <xs:documentation>An affiliation.</xs:documentation>
@@ -10320,6 +10514,16 @@
       <xs:documentation>A node that represents a civilian facility.</xs:documentation>
     </xs:annotation>
   </xs:element>
+  <xs:element name="ClassificationReferenceDocument" type="mo:ClassificationReferenceDocumentType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A reference used to determine the classification (e.g. Policy, Security Classification Guide (SGC), etc.).</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="ClassificationReferenceDocumentAugmentationPoint" abstract="true">
+    <xs:annotation>
+      <xs:documentation>An augmentation point for type mo:ClassificationReferenceDocumentType</xs:documentation>
+    </xs:annotation>
+  </xs:element>
   <xs:element name="CommentDestinationText" type="niem-xs:string" substitutionGroup="nc:CommentAugmentationPoint" nillable="true">
     <xs:annotation>
       <xs:documentation>An intended recipient of the comment.</xs:documentation>
@@ -10528,6 +10732,11 @@
   <xs:element name="CPEMatchConditionalSetAugmentationPoint" abstract="true">
     <xs:annotation>
       <xs:documentation>An augmentation point for type mo:CPEMatchConditionalSetType</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="Creator" type="nc:EntityType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>An entity primarily responsible for generating the resource.  For DoD, creator is synonymous with author, originator, and collector.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="CVEID" type="mo:CVEIDType" nillable="true">
@@ -10775,6 +10984,11 @@
       <xs:documentation>A Windows registry entry.</xs:documentation>
     </xs:annotation>
   </xs:element>
+  <xs:element name="DerivativeClassificationAuthority" type="nc:PersonType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A person who reproduces, extracts, or summarizes classified information, or who applies classification markings derived from source material or as directed by a classification guide, need not possess original classification authority. (Presidential Executive Order 13526)</xs:documentation>
+    </xs:annotation>
+  </xs:element>
   <xs:element name="DesiredPointOfImpactAimpoint" type="mo:AimpointType" nillable="true">
     <xs:annotation>
       <xs:documentation>A precise point, associated with a target and assigned as the impact point for a single unitary weapon to create a desired effect. Also called DPI.</xs:documentation>
@@ -10898,6 +11112,26 @@
   <xs:element name="DirectoryREGEXMatchPatternText" type="niem-xs:string" nillable="true">
     <xs:annotation>
       <xs:documentation>A regular expression pattern matching string for matching a directory path.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="DisclosureReleasability" type="mo:DisclosureReleasabilityType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A set of Information pertaining to countries, organizations, or communities approved to receive the resource.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="DisclosureReleasabilityAugmentationPoint" abstract="true">
+    <xs:annotation>
+      <xs:documentation>An augmentation point for type mo:DisclosureReleasabilityType</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="DisclosureReleasabilityIndicator" type="niem-xs:boolean" nillable="true">
+    <xs:annotation>
+      <xs:documentation>True if resource has disclosure and release markings; false otherwise.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="DisclosureText" type="nc:TextType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A element for disclosure information.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="EffectDuration" type="niem-xs:duration" nillable="true">
@@ -11180,6 +11414,41 @@
       <xs:documentation>An augmentation point for type mo:GroupSettingDataType</xs:documentation>
     </xs:annotation>
   </xs:element>
+  <xs:element name="HandlingRestrictions" type="mo:HandlingRestrictionsType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A limitation not related to classification or releasibility, such as Controlled Unclassified Information designations.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="HandlingRestrictionsAbstract" abstract="true">
+    <xs:annotation>
+      <xs:documentation>A data concept for handling restrictions.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="HandlingRestrictionsAugmentationPoint" abstract="true">
+    <xs:annotation>
+      <xs:documentation>An augmentation point for type mo:HandlingRestrictionsType</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="HandlingRestrictionsCUI" type="mo:HandlingRestrictionsCUIType" substitutionGroup="mo:HandlingRestrictionsAbstract" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A controlled unclassified information (CUI) handling restriction.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="HandlingRestrictionsCUIAugmentationPoint" abstract="true">
+    <xs:annotation>
+      <xs:documentation>An augmentation point for type mo:HandlingRestrictionsCUIType</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="HandlingRestrictionsIndicator" type="niem-xs:boolean" nillable="true">
+    <xs:annotation>
+      <xs:documentation>True if the resources has special handling restrictions; false otherwise.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="HandlingRestrictionsText" type="nc:TextType" substitutionGroup="mo:HandlingRestrictionsAbstract" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A special handling restriction.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
   <xs:element name="Hardware" type="mo:HardwareType" nillable="true">
     <xs:annotation>
       <xs:documentation>A detailed description of the hardware using the Common Platform Enumeration Standard</xs:documentation>
@@ -11323,6 +11592,16 @@
   <xs:element name="JSONEncodedText" type="nc:TextType" nillable="true">
     <xs:annotation>
       <xs:documentation>A JavaScript Object Notation (JSON) encoded string.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="LegalAuthority" type="mo:LegalAuthorityType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A documented legal basis for mission activities associated with the creation, retention and use of a resource.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="LegalAuthorityAugmentationPoint" abstract="true">
+    <xs:annotation>
+      <xs:documentation>An augmentation point for type mo:LegalAuthorityType</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="LinkConnectionMethodCode" type="mo:LinkConnectionMethodCodeType" nillable="true">
@@ -11518,6 +11797,11 @@
   <xs:element name="MILSTD2525-D-SIDC-Part3Code" type="mo:MILSTD2525-D-SIDC-PartType" nillable="true">
     <xs:annotation>
       <xs:documentation>An unsigned integer containing the third (conditionally optional) ten digits of a symbol identification code (SIDC).</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="MinimumEssentialMetadata" type="mo:MinimumEssentialMetadataType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>Metadata about a data resource necessary to support the ‘must have’ functions for any data across DoD, joint, interagency, and coalition at the time of ‘creation’ that will be exchanged.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="MissionAugmentation" type="mo:MissionAugmentationType" substitutionGroup="nc:MissionAugmentationPoint" nillable="true">
@@ -11975,6 +12259,11 @@
       <xs:documentation>An augmentation point for type mo:OEMNodeType</xs:documentation>
     </xs:annotation>
   </xs:element>
+  <xs:element name="OfficeOfRecord" type="nc:EntityType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>An entity that is legally responsible for making decisions related to the data asset (e.g. records management, declassification, eDiscovery, FOIA search, etc.).</xs:documentation>
+    </xs:annotation>
+  </xs:element>
   <xs:element name="OperatingSystem" type="mo:SoftwareType" nillable="true">
     <xs:annotation>
       <xs:documentation>A detailed description of the operating system using the Common Platform Enumeration Standard</xs:documentation>
@@ -12038,6 +12327,16 @@
   <xs:element name="OrganizationUniqueID" type="mo:ForceManagementIDType" nillable="true">
     <xs:annotation>
       <xs:documentation>An identifier to uniquely distinguish one DoD organizational element from another, allowing DoD systems to identify an organization individually across the DoD enterprise.  Also known as OUID.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="OriginalClassificationAuthority" type="nc:PersonType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>An individual authorized in writing, either by the President, the Vice President or by agency heads or other officials designated by the President, to classify information in the first instance.  (Presidential Executive Order 13526)</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="OriginatingAgency" type="nc:EntityType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>An agency and office of origin.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="PersonaGroupInterestAbstract" abstract="true">
@@ -12225,9 +12524,64 @@
       <xs:documentation>An augmentation point for type mo:RelativeOrientationType</xs:documentation>
     </xs:annotation>
   </xs:element>
+  <xs:element name="ReleasabilityText" type="nc:TextType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>An element for releasability information.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
   <xs:element name="RequiredLevelOfAccessCode" type="mo:AccessLevelCodeType" nillable="true">
     <xs:annotation>
       <xs:documentation>A level of target access required by the weapon.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="ResourceDomainIdentification" type="mo:ResourceIdentificationType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A domain specific identification of a resource.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="ResourceFormat" type="mo:ResourceFormatType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>An element for information about the file format, physical medium, or dimensions of the resource.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="ResourceFormatAugmentationPoint" abstract="true">
+    <xs:annotation>
+      <xs:documentation>An augmentation point for type mo:ResourceFormatType</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="ResourceGlobalIdentification" type="mo:ResourceIdentificationType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A universal, unambiguous (unique) reference identification of a resource.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="ResourceID" type="niem-xs:string" substitutionGroup="mo:ResourceIDAbstract" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A unique identifier of a resource.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="ResourceIDAbstract" abstract="true">
+    <xs:annotation>
+      <xs:documentation>A data concept for a resource identifier.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="ResourceIdentificationAugmentationPoint" abstract="true">
+    <xs:annotation>
+      <xs:documentation>An augmentation point for type mo:ResourceIdentificationType</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="ResourceURI" type="niem-xs:anyURI" substitutionGroup="mo:ResourceIDAbstract" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A uniform resource identifier (URI) of a resource.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="ResourceUUID" type="mo:UUIDType" substitutionGroup="mo:ResourceIDAbstract" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A 128-bit Universally Unique Identifier (UUID) of a resource.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="RetentionDate" type="nc:DateType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A date for the end of a specified retention period.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="RoleOfFacility" type="nc:FacilityType" substitutionGroup="nc:RoleOfAbstract" nillable="true">
@@ -12288,6 +12642,31 @@
   <xs:element name="SectorName" type="nc:TextType" nillable="true">
     <xs:annotation>
       <xs:documentation>A name of an area designated by boundaries within which a unit operates, and for which it is responsible.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="SecurityClassificationAbstract" abstract="true">
+    <xs:annotation>
+      <xs:documentation>A data concept for an information security classification level.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="SecurityClassificationCode" type="mo:SecurityClassificationCodeType" substitutionGroup="mo:SecurityClassificationAbstract" nillable="true">
+    <xs:annotation>
+      <xs:documentation>An information security classification level.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="SecurityClassificationInformation" type="mo:SecurityClassificationInformationType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>An element for security classification information.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="SecurityClassificationInformationAugmentationPoint" abstract="true">
+    <xs:annotation>
+      <xs:documentation>An augmentation point for type mo:SecurityClassificationInformationType</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="SecurityClassificationText" type="nc:TextType" substitutionGroup="mo:SecurityClassificationAbstract" nillable="true">
+    <xs:annotation>
+      <xs:documentation>An information security classification level.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="SecurityScopeCode" type="mo:SecurityScopeCodeType" nillable="true">
@@ -12488,6 +12867,11 @@
   <xs:element name="SortieIdentification" type="nc:IdentificationType" nillable="true">
     <xs:annotation>
       <xs:documentation>An identification for a Sortie.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="SpecialAccessRequirementText" type="nc:TextType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A program established for a specific class of classified information that imposes safeguarding and access requirements that exceed those normally required for information at the same classification level. (Presidential Executive Order 13526)</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="SpeedMeasureAugmentation" type="mo:SpeedMeasureAugmentationType" substitutionGroup="nc:SpeedMeasureAugmentationPoint" nillable="true">

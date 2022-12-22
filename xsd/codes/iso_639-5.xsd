@@ -1,0 +1,612 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema targetNamespace="http://release.niem.gov/niem/codes/iso_639-5/5.2/" version="1" xml:lang="en-US" xsi:schemaLocation="http://release.niem.gov/niem/appinfo/5.0/ ../utility/appinfo.xsd http://release.niem.gov/niem/conformanceTargets/3.0/ ../utility/conformanceTargets.xsd" ct:conformanceTargets="http://reference.niem.gov/niem/specification/naming-and-design-rules/5.0/#ReferenceSchemaDocument"
+  xmlns:appinfo="http://release.niem.gov/niem/appinfo/5.0/"
+  xmlns:ct="http://release.niem.gov/niem/conformanceTargets/3.0/"
+  xmlns:iso_639-5="http://release.niem.gov/niem/codes/iso_639-5/5.2/"
+  xmlns:lrn-dev="http://release.niem.gov/niem/domains/learn-dev/5.2/"
+  xmlns:structures="http://release.niem.gov/niem/structures/5.0/"
+  xmlns:xs="http://www.w3.org/2001/XMLSchema"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <xs:annotation>
+    <xs:documentation>Codes for the representation of names of languages</xs:documentation>
+  </xs:annotation>
+  <xs:import namespace="http://release.niem.gov/niem/domains/learn-dev/5.2/" schemaLocation="../domains/learn-dev.xsd"/>
+  <xs:import namespace="http://release.niem.gov/niem/structures/5.0/" schemaLocation="../utility/structures.xsd"/>
+  <xs:simpleType name="LanguageFamilyCodeSimpleType">
+    <xs:annotation>
+      <xs:documentation>A data type for the representation of names of living and extinct language families and groups.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="aav">
+        <xs:annotation>
+          <xs:documentation>Austro-Asiatic languages</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="afa">
+        <xs:annotation>
+          <xs:documentation>Afro-Asiatic languages</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="alg">
+        <xs:annotation>
+          <xs:documentation>Algonquian languages</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="alv">
+        <xs:annotation>
+          <xs:documentation>Atlantic-Congo languages</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="apa">
+        <xs:annotation>
+          <xs:documentation>Apache languages</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="aqa">
+        <xs:annotation>
+          <xs:documentation>Alacalufan languages</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="aql">
+        <xs:annotation>
+          <xs:documentation>Algic languages</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="art">
+        <xs:annotation>
+          <xs:documentation>Artificial languages</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ath">
+        <xs:annotation>
+          <xs:documentation>Athapascan languages</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="auf">
+        <xs:annotation>
+          <xs:documentation>Arauan languages</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="aus">
+        <xs:annotation>
+          <xs:documentation>Australian languages</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="awd">
+        <xs:annotation>
+          <xs:documentation>Arawakan languages</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="azc">
+        <xs:annotation>
+          <xs:documentation>Uto-Aztecan languages</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="bad">
+        <xs:annotation>
+          <xs:documentation>Banda languages</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="bai">
+        <xs:annotation>
+          <xs:documentation>Bamileke languages</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="bat">
+        <xs:annotation>
+          <xs:documentation>Baltic languages</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ber">
+        <xs:annotation>
+          <xs:documentation>Berber languages</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="bih">
+        <xs:annotation>
+          <xs:documentation>Bihari languages</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="bnt">
+        <xs:annotation>
+          <xs:documentation>Bantu languages</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="btk">
+        <xs:annotation>
+          <xs:documentation>Batak languages</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="cai">
+        <xs:annotation>
+          <xs:documentation>Central American Indian languages</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="cau">
+        <xs:annotation>
+          <xs:documentation>Caucasian languages</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="cba">
+        <xs:annotation>
+          <xs:documentation>Chibchan languages</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ccn">
+        <xs:annotation>
+          <xs:documentation>North Caucasian languages</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ccs">
+        <xs:annotation>
+          <xs:documentation>South Caucasian languages</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="cdc">
+        <xs:annotation>
+          <xs:documentation>Chadic languages</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="cdd">
+        <xs:annotation>
+          <xs:documentation>Caddoan languages</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="cel">
+        <xs:annotation>
+          <xs:documentation>Celtic languages</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="cmc">
+        <xs:annotation>
+          <xs:documentation>Chamic languages</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="cpe">
+        <xs:annotation>
+          <xs:documentation>Creoles and pidgins, English‑based</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="cpf">
+        <xs:annotation>
+          <xs:documentation>Creoles and pidgins, French‑based</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="cpp">
+        <xs:annotation>
+          <xs:documentation>Creoles and pidgins, Portuguese-based</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="crp">
+        <xs:annotation>
+          <xs:documentation>Creoles and pidgins</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="csu">
+        <xs:annotation>
+          <xs:documentation>Central Sudanic languages</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="cus">
+        <xs:annotation>
+          <xs:documentation>Cushitic languages</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="day">
+        <xs:annotation>
+          <xs:documentation>Land Dayak languages</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="dmn">
+        <xs:annotation>
+          <xs:documentation>Mande languages</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="dra">
+        <xs:annotation>
+          <xs:documentation>Dravidian languages</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="egx">
+        <xs:annotation>
+          <xs:documentation>Egyptian languages</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="esx">
+        <xs:annotation>
+          <xs:documentation>Eskimo-Aleut languages</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="euq">
+        <xs:annotation>
+          <xs:documentation>Basque (family)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="fiu">
+        <xs:annotation>
+          <xs:documentation>Finno-Ugrian languages</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="fox">
+        <xs:annotation>
+          <xs:documentation>Formosan languages</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="gem">
+        <xs:annotation>
+          <xs:documentation>Germanic languages</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="gme">
+        <xs:annotation>
+          <xs:documentation>East Germanic languages</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="gmq">
+        <xs:annotation>
+          <xs:documentation>North Germanic languages</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="gmw">
+        <xs:annotation>
+          <xs:documentation>West Germanic languages</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="grk">
+        <xs:annotation>
+          <xs:documentation>Greek languages</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="hmx">
+        <xs:annotation>
+          <xs:documentation>Hmong-Mien languages</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="hok">
+        <xs:annotation>
+          <xs:documentation>Hokan languages</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="hyx">
+        <xs:annotation>
+          <xs:documentation>Armenian (family)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="iir">
+        <xs:annotation>
+          <xs:documentation>Indo-Iranian languages</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ijo">
+        <xs:annotation>
+          <xs:documentation>Ijo languages</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="inc">
+        <xs:annotation>
+          <xs:documentation>Indic languages</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ine">
+        <xs:annotation>
+          <xs:documentation>Indo-European languages</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ira">
+        <xs:annotation>
+          <xs:documentation>Iranian languages</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="iro">
+        <xs:annotation>
+          <xs:documentation>Iroquoian languages</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="itc">
+        <xs:annotation>
+          <xs:documentation>Italic languages</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="jpx">
+        <xs:annotation>
+          <xs:documentation>Japanese (family)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="kar">
+        <xs:annotation>
+          <xs:documentation>Karen languages</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="kdo">
+        <xs:annotation>
+          <xs:documentation>Kordofanian languages</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="khi">
+        <xs:annotation>
+          <xs:documentation>Khoisan languages</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="kro">
+        <xs:annotation>
+          <xs:documentation>Kru languages</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="map">
+        <xs:annotation>
+          <xs:documentation>Austronesian languages</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="mkh">
+        <xs:annotation>
+          <xs:documentation>Mon-Khmer languages</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="mno">
+        <xs:annotation>
+          <xs:documentation>Manobo languages</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="mun">
+        <xs:annotation>
+          <xs:documentation>Munda languages</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="myn">
+        <xs:annotation>
+          <xs:documentation>Mayan languages</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="nah">
+        <xs:annotation>
+          <xs:documentation>Nahuatl languages</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="nai">
+        <xs:annotation>
+          <xs:documentation>North American Indian languages</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ngf">
+        <xs:annotation>
+          <xs:documentation>Trans-New Guinea languages</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="nic">
+        <xs:annotation>
+          <xs:documentation>Niger-Kordofanian languages</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="nub">
+        <xs:annotation>
+          <xs:documentation>Nubian languages</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="omq">
+        <xs:annotation>
+          <xs:documentation>Oto-Manguean languages</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="omv">
+        <xs:annotation>
+          <xs:documentation>Omotic languages</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="oto">
+        <xs:annotation>
+          <xs:documentation>Otomian languages</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="paa">
+        <xs:annotation>
+          <xs:documentation>Papuan languages</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="phi">
+        <xs:annotation>
+          <xs:documentation>Philippine languages</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="plf">
+        <xs:annotation>
+          <xs:documentation>Central Malayo-Polynesian languages</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="poz">
+        <xs:annotation>
+          <xs:documentation>Malayo-Polynesian languages</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="pqe">
+        <xs:annotation>
+          <xs:documentation>Eastern Malayo-Polynesian languages</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="pqw">
+        <xs:annotation>
+          <xs:documentation>Western Malayo-Polynesian languages</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="pra">
+        <xs:annotation>
+          <xs:documentation>Prakrit languages</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="qwe">
+        <xs:annotation>
+          <xs:documentation>Quechuan (family)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="roa">
+        <xs:annotation>
+          <xs:documentation>Romance languages</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="sai">
+        <xs:annotation>
+          <xs:documentation>South American Indian languages</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="sal">
+        <xs:annotation>
+          <xs:documentation>Salishan languages</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="sdv">
+        <xs:annotation>
+          <xs:documentation>Eastern Sudanic languages</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="sem">
+        <xs:annotation>
+          <xs:documentation>Semitic languages</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="sgn">
+        <xs:annotation>
+          <xs:documentation>sign languages</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="sio">
+        <xs:annotation>
+          <xs:documentation>Siouan languages</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="sit">
+        <xs:annotation>
+          <xs:documentation>Sino-Tibetan languages</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="sla">
+        <xs:annotation>
+          <xs:documentation>Slavic languages</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="smi">
+        <xs:annotation>
+          <xs:documentation>Sami languages</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="son">
+        <xs:annotation>
+          <xs:documentation>Songhai languages</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="sqj">
+        <xs:annotation>
+          <xs:documentation>Albanian languages</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ssa">
+        <xs:annotation>
+          <xs:documentation>Nilo-Saharan languages</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="syd">
+        <xs:annotation>
+          <xs:documentation>Samoyedic languages</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="tai">
+        <xs:annotation>
+          <xs:documentation>Tai languages</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="tbq">
+        <xs:annotation>
+          <xs:documentation>Tibeto-Burman languages</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="trk">
+        <xs:annotation>
+          <xs:documentation>Turkic languages</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="tup">
+        <xs:annotation>
+          <xs:documentation>Tupi languages</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="tut">
+        <xs:annotation>
+          <xs:documentation>Altaic languages</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="tuw">
+        <xs:annotation>
+          <xs:documentation>Tungus languages</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="urj">
+        <xs:annotation>
+          <xs:documentation>Uralic languages</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="wak">
+        <xs:annotation>
+          <xs:documentation>Wakashan languages</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="wen">
+        <xs:annotation>
+          <xs:documentation>Sorbian languages</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="xgn">
+        <xs:annotation>
+          <xs:documentation>Mongolian languages</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="xnd">
+        <xs:annotation>
+          <xs:documentation>Na-Dene languages</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ypk">
+        <xs:annotation>
+          <xs:documentation>Yupik languages</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="zhx">
+        <xs:annotation>
+          <xs:documentation>Chinese (family)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="zle">
+        <xs:annotation>
+          <xs:documentation>East Slavic languages</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="zls">
+        <xs:annotation>
+          <xs:documentation>South Slavic languages</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="zlw">
+        <xs:annotation>
+          <xs:documentation>West Slavic languages</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="znd">
+        <xs:annotation>
+          <xs:documentation>Zande languages</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="LanguageFamilyCodeType">
+    <xs:annotation>
+      <xs:documentation>A data type for the representation of names of living and extinct language families and groups.</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="iso_639-5:LanguageFamilyCodeSimpleType">
+        <xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:element name="LanguageFamilyCode" type="iso_639-5:LanguageFamilyCodeType" substitutionGroup="lrn-dev:LanguageFamilyAbstract" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A name of a living or extinct language family or group.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+</xs:schema>

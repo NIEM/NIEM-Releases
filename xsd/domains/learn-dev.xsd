@@ -1,0 +1,762 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema targetNamespace="http://release.niem.gov/niem/domains/learn-dev/5.2/" version="1" xml:lang="en-US" xsi:schemaLocation="http://release.niem.gov/niem/appinfo/5.0/ ../utility/appinfo.xsd http://release.niem.gov/niem/conformanceTargets/3.0/ ../utility/conformanceTargets.xsd" ct:conformanceTargets="http://reference.niem.gov/niem/specification/naming-and-design-rules/5.0/#ReferenceSchemaDocument"
+  xmlns:appinfo="http://release.niem.gov/niem/appinfo/5.0/"
+  xmlns:ct="http://release.niem.gov/niem/conformanceTargets/3.0/"
+  xmlns:j="http://release.niem.gov/niem/domains/jxdm/7.2/"
+  xmlns:lrn-dev="http://release.niem.gov/niem/domains/learn-dev/5.2/"
+  xmlns:nc="http://release.niem.gov/niem/niem-core/5.0/"
+  xmlns:niem-xs="http://release.niem.gov/niem/proxy/niem-xs/5.0/"
+  xmlns:structures="http://release.niem.gov/niem/structures/5.0/"
+  xmlns:xs="http://www.w3.org/2001/XMLSchema"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <xs:annotation>
+    <xs:documentation>Learning and Development</xs:documentation>
+    <xs:appinfo>
+      <appinfo:LocalTerm term="ACT" definition="A standardized test widely used for college admissions in the United States.  Formerly stood for American College Testing."/>
+      <appinfo:LocalTerm term="CIP" literal="Classification of Instructional Programs"/>
+      <appinfo:LocalTerm term="CTDL" literal="Credential Transparency Description Language"/>
+      <appinfo:LocalTerm term="SAT" definition="A standardized test widely used for college admissions in the United States.  Formerly stood for Scholastic Aptitude Test and later the Scholastic Assessment Test."/>
+      <appinfo:LocalTerm term="WCST" literal="Wisconsin Card Sorting Test"/>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:import namespace="http://release.niem.gov/niem/domains/jxdm/7.2/" schemaLocation="jxdm.xsd"/>
+  <xs:import namespace="http://release.niem.gov/niem/niem-core/5.0/" schemaLocation="../niem-core.xsd"/>
+  <xs:import namespace="http://release.niem.gov/niem/proxy/niem-xs/5.0/" schemaLocation="../adapters/niem-xs.xsd"/>
+  <xs:import namespace="http://release.niem.gov/niem/structures/5.0/" schemaLocation="../utility/structures.xsd"/>
+  <xs:simpleType name="CourseInteractionModeCodeSimpleType">
+    <xs:annotation>
+      <xs:documentation>A data type for a primary type of interaction, synchronous or asynchronous, defined for the course.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="asynchronous">
+        <xs:annotation>
+          <xs:documentation>asynchronous</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="synchronous">
+        <xs:annotation>
+          <xs:documentation>synchronous</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="CourseInteractionModeCodeType">
+    <xs:annotation>
+      <xs:documentation>A data type for a primary type of interaction, synchronous or asynchronous, defined for the course.</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="lrn-dev:CourseInteractionModeCodeSimpleType">
+        <xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:simpleType name="CourseRepeatCodeSimpleType">
+    <xs:annotation>
+      <xs:documentation>A data type for an indication that an academic course has been repeated by a student and how that repeat is to be computed in the student's academic grade average.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="no">
+        <xs:annotation>
+          <xs:documentation>no</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="yes-credit">
+        <xs:annotation>
+          <xs:documentation>yes-credit</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="yes-no credit">
+        <xs:annotation>
+          <xs:documentation>yes-no credit</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="CourseRepeatCodeType">
+    <xs:annotation>
+      <xs:documentation>A data type for an indication that an academic course has been repeated by a student and how that repeat is to be computed in the student's academic grade average.</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="lrn-dev:CourseRepeatCodeSimpleType">
+        <xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="CourseSectionType">
+    <xs:annotation>
+      <xs:documentation>A data type for an individual course offering, distinguished from other course sections by date, time, location, instructor, delivery mode, etc.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="structures:ObjectType">
+        <xs:sequence>
+          <xs:element ref="lrn-dev:CourseSectionID" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="lrn-dev:CourseSectionNumberID" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="lrn-dev:CourseSectionRequiredTimeCompletionMinutesQuantity" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="lrn-dev:CourseSectionInstructionMethodText" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="lrn-dev:CourseSectionEntryCategoryText" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="lrn-dev:CourseSectionExitWithdrawalDate" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="lrn-dev:CourseSectionExitCategoryText" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="lrn-dev:CourseSectionStartDate" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="lrn-dev:CourseSectionEndDate" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="lrn-dev:CourseSectionEnrollmentStatusCategoryText" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="lrn-dev:CourseSectionMaximumCapacityQuantity" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="lrn-dev:CourseSectionSingleSexClassStatusCode" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="lrn-dev:CourseSectionAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="CourseType">
+    <xs:annotation>
+      <xs:documentation>A data type for a collection of learning activities that are studied with the intention of achieving learning outcomes.  A course is often the unit of achievement for learning and training opportunities.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="structures:ObjectType">
+        <xs:sequence>
+          <xs:element ref="lrn-dev:CourseCodeSystemName" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="lrn-dev:CourseGradePointAverageApplicabilityIndicator" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="lrn-dev:CourseLevelCharacteristicText" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="lrn-dev:CourseSubjectAbbreviationText" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="lrn-dev:CourseTitleName" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="lrn-dev:CourseDescriptionText" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="lrn-dev:CourseApplicableEducationLevelText" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="lrn-dev:CourseCertificationDescriptionText" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="lrn-dev:CourseLevelCategoryText" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="lrn-dev:CourseNumberID" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="lrn-dev:CourseDepartmentName" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="lrn-dev:CourseRepeatabilityMaximumQuantity" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="lrn-dev:CourseCreditUnitsCode" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="lrn-dev:CourseCreditBasisCategoryText" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="lrn-dev:CourseCreditLevelCategoryText" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="lrn-dev:CourseBeginDate" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="lrn-dev:CourseEndDate" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="lrn-dev:CourseAcademicGradeScaleText" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="lrn-dev:CourseFundingProgramName" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="lrn-dev:CourseHonorsIndicator" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="lrn-dev:CourseInstructionMethodText" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="lrn-dev:CourseInstructionFacility" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="lrn-dev:CourseInteractionModeCode" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="lrn-dev:CourseNarrativeExplanationGradeText" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="lrn-dev:CourseAcademicGradeText" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="lrn-dev:CourseOverrideSchoolName" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="lrn-dev:CourseQualityPointsEarnedValue" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="lrn-dev:CourseRepeatCode" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="lrn-dev:CourseAcademicGradeStatusText" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="lrn-dev:CourseAddDate" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="lrn-dev:CourseDropDate" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="lrn-dev:CourseTrainingGroupName" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="lrn-dev:CourseWorkloadText" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="lrn-dev:CourseObjectiveText" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="lrn-dev:CourseAdditionalInformationText" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="lrn-dev:CourseSpecialNoteText" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="lrn-dev:CourseSubjectMatterName" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="lrn-dev:CourseSubjectAbbreviationID" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="lrn-dev:CourseSection" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="lrn-dev:CourseDistanceEducationProgramEnrollmentIndicator" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="lrn-dev:CourseAdministratorInstructionText" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="lrn-dev:CourseSecurityRequirementText" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="lrn-dev:CoursePrerequisiteText" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="lrn-dev:CourseCompletionSpecialRequirementText" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="lrn-dev:CourseUniformRequirementsText" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="lrn-dev:CourseLanguage" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="lrn-dev:CoursePreviousVersionDate" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="lrn-dev:CoursePublicationDate" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="lrn-dev:CourseExpirationIndicator" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="lrn-dev:CourseAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="EmploymentPositionAugmentationType">
+    <xs:annotation>
+      <xs:documentation>A data type for additional information about an employment position.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="structures:AugmentationType">
+        <xs:sequence>
+          <xs:element ref="lrn-dev:EmploymentPositionRelatedCompetencyText" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="lrn-dev:EmploymentPositionRequiredCompetencyText" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="lrn-dev:EmploymentPositionRequiredCredentialText" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:EmploymentPositionRequiredEducationText" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="nc:EmploymentPositionRequiredJobSkillText" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="InstructionalProgramType">
+    <xs:annotation>
+      <xs:documentation>A data type for a discipline and an organized sequence or grouping of courses leading to a defined objective such as a major, degree, certificate, license, the acquisition of selected knowledge or skills, or transfer to another institution of higher education.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="structures:ObjectType">
+        <xs:sequence>
+          <xs:element ref="lrn-dev:InstructionalProgramID" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="lrn-dev:Course" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="lrn-dev:InstructionalProgramAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="IntelligenceTestType">
+    <xs:annotation>
+      <xs:documentation>A data type for an intelligence test, now referred to as intelligence quotient (IQ) test, is the most widely-known and used measure for determining an individual’s intelligence. IQ scores are typically normally distributed, meaning that 95% of the population has IQ scores between 70 and 130.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="j:TestType">
+        <xs:sequence>
+          <xs:element ref="lrn-dev:IntelligenceTestCategoryText" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="lrn-dev:IntelligenceTestAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="LanguageAugmentationType">
+    <xs:annotation>
+      <xs:documentation>A data type for additional information about a language.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="structures:AugmentationType">
+        <xs:sequence>
+          <xs:element ref="lrn-dev:LanguageFamilyAbstract" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:simpleType name="SexCodeSimpleType">
+    <xs:annotation>
+      <xs:documentation>A data type for student sex codes.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="female">
+        <xs:annotation>
+          <xs:documentation>female</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="male">
+        <xs:annotation>
+          <xs:documentation>male</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="not applicable">
+        <xs:annotation>
+          <xs:documentation>not applicable</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="SexCodeType">
+    <xs:annotation>
+      <xs:documentation>A data type for student sex codes.</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="lrn-dev:SexCodeSimpleType">
+        <xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="StudentType">
+    <xs:annotation>
+      <xs:documentation>A data type for a person formally engaged in learning, especially one enrolled in a school or college.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="structures:ObjectType">
+        <xs:sequence>
+          <xs:element ref="nc:RoleOfPerson" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="lrn-dev:StudentID" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="lrn-dev:StudentIdentificationSystemName" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="lrn-dev:PersonGeneralIntelligenceText" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="lrn-dev:PersonIntelligenceTest" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="lrn-dev:PersonGeneralCognitiveAbilityText" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="lrn-dev:PersonSATScoreValue" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="lrn-dev:PersonACTScoreValue" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="lrn-dev:PersonWordFluencyText" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="lrn-dev:PersonVerbalComprehensionText" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="lrn-dev:PersonNumericalAbilityText" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="lrn-dev:PersonSpatialVisualizationText" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="lrn-dev:PersonPerceptualSpeedText" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="lrn-dev:PersonMemoryText" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="lrn-dev:PersonInductiveReasoningText" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="lrn-dev:PersonMetacognitionTest" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="lrn-dev:PersonWorkingMemoryCapacityTest" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="lrn-dev:PersonCognitiveFlexibilityTest" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="lrn-dev:StudentAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Course" type="lrn-dev:CourseType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A collection of learning activities that are studied with the intention of achieving learning outcomes.  A course is often the unit of achievement for learning and training opportunities.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="CourseAcademicGradeScaleText" type="nc:TextType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A grading scale used by an academic educational institution for an academic course.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="CourseAcademicGradeStatusText" type="nc:TextType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A set of additional information regarding the context of the given grade.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="CourseAcademicGradeText" type="nc:TextType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A final grade awarded for participation in the course.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="CourseAddDate" type="nc:DateType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A date an individual was added to an academic course at a school.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="CourseAdditionalInformationText" type="nc:TextType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A set of additional information regarding the course.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="CourseAdministratorInstructionText" type="nc:TextType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>An administrator instruction for the course</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="CourseApplicableEducationLevelText" type="nc:TextType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>An education level, grade level or primary instructional level at which a course is intended.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="CourseAugmentationPoint" abstract="true">
+    <xs:annotation>
+      <xs:documentation>An augmentation point for type CourseType</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="CourseBeginDate" type="nc:DateType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A year, month and day an instance of a course officially began.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="CourseCertificationDescriptionText" type="nc:TextType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A description of the certification or recognition associated with this course (ex. Networking, CAD, etc.).</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="CourseCodeSystemName" type="nc:TextType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A name of a system that is used to identify the organization of subject matter and related learning experiences provided for the instruction of students.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="CourseCompletionSpecialRequirementText" type="nc:TextType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A special requirement needed for completion of the course (e.g., Learner must score above 80% to pass the course).</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="CourseCreditBasisCategoryText" type="nc:TextType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A kind of enrollment associated with the credit hours for the course.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="CourseCreditLevelCategoryText" type="nc:TextType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A kind of level of credit associated with the credit hours earned for the course.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="CourseCreditUnitsCode" type="nc:TextType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A type of credit such as unit, semester, or quarter, associated with the credit hours earned for the course.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="CourseDepartmentName" type="nc:TextType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A name of a department with jurisdiction over this course.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="CourseDescriptionText" type="nc:TextType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A description of the course content and/or goals. Reference may be made to state or national content standards.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="CourseDistanceEducationProgramEnrollmentIndicator" type="niem-xs:boolean" nillable="true">
+    <xs:annotation>
+      <xs:documentation>True if an individual's enrollment in a program for which all the required coursework for program completion is able to be completed via distance education courses; false otherwise</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="CourseDropDate" type="nc:DateType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A date on which the individual drops or withdraws from the course.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="CourseEndDate" type="nc:DateType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A year, month and day an instance of a course ends.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="CourseExpirationIndicator" type="niem-xs:boolean" nillable="true">
+    <xs:annotation>
+      <xs:documentation>True if the learning course has expired; false otherwise.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="CourseFundingProgramName" type="nc:TextType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A name of a program through which the course is funded.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="CourseGradePointAverageApplicabilityIndicator" type="niem-xs:boolean" nillable="true">
+    <xs:annotation>
+      <xs:documentation>True if this course being described is included in the computation of the student’s Grade Point Average (GPA); false otherwise.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="CourseHonorsIndicator" type="niem-xs:boolean" nillable="true">
+    <xs:annotation>
+      <xs:documentation>True if a course is or can be counted as an honors course; false otherwise.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="CourseInstructionFacility" type="nc:FacilityType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A site at which a course is taught.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="CourseInstructionMethodText" type="nc:TextType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A primary method of instruction used for the course.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="CourseInteractionModeCode" type="lrn-dev:CourseInteractionModeCodeType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A primary type of interaction, synchronous or asynchronous, defined for the course.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="CourseLanguage" type="nc:LanguageType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A language in which a course is available.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="CourseLevelCategoryText" type="nc:TextType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A kind of level of work which is reflected in the credits associated with the academic course being described or the level of the typical individual taking the academic course.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="CourseLevelCharacteristicText" type="nc:TextType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>An indication of the general nature and difficulty of instruction provided throughout a course.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="CourseNarrativeExplanationGradeText" type="nc:TextType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A narrative of the grade awarded to an individual in an academic course in those cases where a course does not receive a letter or numeric grade included in the grading scale of the Course Academic Grade Qualifier.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="CourseNumberID" type="niem-xs:string" nillable="true">
+    <xs:annotation>
+      <xs:documentation>An official reference number portion of a course identifier. This number normally designates the level of the course as well as the level of the individual expected to enroll in the course.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="CourseObjectiveText" type="nc:TextType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A behavior, skill, or action that a student can demonstrate if they have achieved mastery of the objective.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="CourseOverrideSchoolName" type="nc:TextType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A name of a school where the credit was earned if different from the institution reporting.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="CoursePrerequisiteText" type="nc:TextType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A competency or other requirement a student must meet prior to enrollment. Entry conditions for enrollment into a credentialing program, a learning opportunity or an assessment including transcripts, records of previous experience, and lower-level learning opportunities</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="CoursePreviousVersionDate" type="nc:DateType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A date that the learning experience was last updated.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="CoursePublicationDate" type="nc:DateType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A date that the learning experience was published.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="CourseQualityPointsEarnedValue" type="niem-xs:decimal" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A numerical value assigned to a letter grade to provide a basis of quantitative determination of an average.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="CourseRepeatabilityMaximumQuantity" type="niem-xs:positiveInteger" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A maximum number of times the course may be taken or completed for credit.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="CourseRepeatCode" type="lrn-dev:CourseRepeatCodeType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>An indication that an academic course has been repeated by a student and how that repeat is to be computed in the student's academic grade average.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="CourseSection" type="lrn-dev:CourseSectionType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A sub-component of a course that is a logically structured to have its own specific learning outcomes.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="CourseSectionAugmentationPoint" abstract="true">
+    <xs:annotation>
+      <xs:documentation>An augmentation point for type CourseSectionType</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="CourseSectionEndDate" type="nc:DateType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A date on which the enrollment status ended related to a student enrolled in an instance of a course.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="CourseSectionEnrollmentStatusCategoryText" type="nc:TextType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A kind of status related to a student enrollment in an instance of a course.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="CourseSectionEntryCategoryText" type="nc:TextType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A kind of process by which a student enters a school (Course Section) during a given academic session.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="CourseSectionExitCategoryText" type="nc:TextType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A kind of circumstance under which the student exited from membership in a course section.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="CourseSectionExitWithdrawalDate" type="nc:DateType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A date for the first day after the date of a person's last enrollment in a course section.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="CourseSectionID" type="niem-xs:string" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A unique number or alphanumeric code identifier assigned by an institution, school, school system, state, or other agency or entity for a particular course-section.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="CourseSectionInstructionMethodText" type="nc:TextType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A primary method of instruction used for the course section.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="CourseSectionMaximumCapacityQuantity" type="nc:QuantityType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A maximum number of students the Course Section can maintain.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="CourseSectionNumberID" type="niem-xs:string" nillable="true">
+    <xs:annotation>
+      <xs:documentation>An identifier or number assigned to differentiate among distinct occurrences of courses that have the same course abbreviation and number but are considered to be different courses.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="CourseSectionRequiredTimeCompletionMinutesQuantity" type="nc:QuantityType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>An actual or estimated number of clock minutes required for course completion. This number is especially important for career and technical education course and may represent (in minutes) the clock hour requirement of the course, the number of minutes (or clock hours) of class time per week, times the number of equivalent weeks the class typically meets.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="CourseSectionSingleSexClassStatusCode" type="lrn-dev:SexCodeType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A section in a co-educational school where only male or only female students are permitted to take the course.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="CourseSectionStartDate" type="nc:DateType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A date on which the enrollment status began related to a student enrolled in an instance of a course.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="CourseSecurityRequirementText" type="nc:TextType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A security requirement necessary for the course.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="CourseSpecialNoteText" type="nc:TextType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A special note pertaining to the course.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="CourseSubjectAbbreviationID" type="niem-xs:string" nillable="true">
+    <xs:annotation>
+      <xs:documentation>An alphabetic abbreviation of the academic department or discipline offering the course. It is one part of the total course identifier number.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="CourseSubjectAbbreviationText" type="nc:TextType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>An alphabetic abbreviation of the academic department or discipline offering the course. It is one part of the total course identifier number.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="CourseSubjectMatterName" type="nc:TextType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A name of an academic topic or subject</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="CourseTitleName" type="nc:TextType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A descriptive name given to a course of study offered in a school or other institution or organization. In departmentalized classes at the elementary, secondary, and postsecondary levels (and for staff development activities), this refers to the name by which a course is identified (e.g., American History, English III). For elementary and other non-departmentalized classes, it refers to any portion of the instruction for which a grade or report is assigned (e.g., reading, composition, spelling, and language arts).</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="CourseTrainingGroupName" type="nc:TextType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A name of a training group for the course.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="CourseUniformRequirementsText" type="nc:TextType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A set of uniform requirements for the course.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="CourseWorkloadText" type="nc:TextType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>An amount of work expected of students using the course, often provided as a figure per week or per month, and may be broken down by type. For example, "2 hours of lectures, 1 hour of lab work and 3 hours of independent study per week".</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="EmploymentPositionAugmentation" type="lrn-dev:EmploymentPositionAugmentationType" substitutionGroup="nc:EmploymentPositionAugmentationPoint" nillable="true">
+    <xs:annotation>
+      <xs:documentation>Additional information about an employment position.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="EmploymentPositionRelatedCompetencyText" type="nc:TextType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A specific required and/or desired level of proficiency and has an explicit or implicit level of importance (weight) among sibling competencies associated with a position.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="EmploymentPositionRequiredCompetencyText" type="nc:TextType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>An acquired capability of an individual enabling task performance, attainment of which can be observed, measured, or otherwise assessed. Includes abilities, attitudes, knowledge, skills, tasks, and tools/technologies</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="EmploymentPositionRequiredCredentialText" type="nc:TextType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A required credentials needed for the job.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="InstructionalProgram" type="lrn-dev:InstructionalProgramType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A planned sequence of courses, services or activities designed to meet educational and employment objectives</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="InstructionalProgramAugmentationPoint" abstract="true">
+    <xs:annotation>
+      <xs:documentation>An augmentation point for type InstructionalProgramType</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="InstructionalProgramID" type="niem-xs:string" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A six-digit identifier in the form xx.xxxx that identifies instructional program specialties within educational institutions. Type of instructional program; select from an existing enumeration of such types. For U.S. credentials, best practice is to use a framework such as the CIP (Classification of Instructional Programs). Other credentials may use any framework of the class CTDL InstructionalProgramClassification. Code indicating a discipline or field of study assigned by the Classification of Instructional Programs by the US Department of Education’s National Center for Education Statistics.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="IntelligenceTestAugmentationPoint" abstract="true">
+    <xs:annotation>
+      <xs:documentation>An augmentation point for type IntelligenceTestType</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="IntelligenceTestCategoryText" type="nc:TextType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A kind of scale or other instrumentation used by the intelligence test.  Examples include: Binet-Simon Scale, Stanford-Binet Intelligence Scale, Wechsler Intelligence Scale for Children (WISC), Wechsler Adult Intelligence Scale (WAIS), etc.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="LanguageAugmentation" type="lrn-dev:LanguageAugmentationType" substitutionGroup="nc:LanguageAugmentationPoint" nillable="true">
+    <xs:annotation>
+      <xs:documentation>Additional information about a language.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="LanguageFamilyAbstract" abstract="true">
+    <xs:annotation>
+      <xs:documentation>A data concept for a group of different languages that all descend from a particular common language.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="LanguageFamilyText" type="nc:TextType" substitutionGroup="lrn-dev:LanguageFamilyAbstract" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A group of different languages that all descend from a particular common language.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="PersonACTScoreValue" type="niem-xs:positiveInteger" nillable="true">
+    <xs:annotation>
+      <xs:documentation>An overall score achieved on the ACT.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="PersonCognitiveFlexibilityTest" type="j:TestType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>An ability to switch between thinking about two different concepts or to think about multiple concepts simultaneously. This ability has predominantly been assessed by the WCST, the Intra-dimensional/Extra-dimensional (ID/ED) shift task, and the Task Switching paradigm. The Cognitive Flexibility Inventory (Dennis and Vander Wal, 2010) appears to be the only questionnaire to measure aspects of cognitive flexibility relevant to stressful, or difficult, situations.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="PersonGeneralCognitiveAbilityText" type="nc:TextType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A set of attributes such as working memory capacity, inductive reasoning skills, information processing speed, and associative learning ability (e.g., Shute, 1995).</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="PersonGeneralIntelligenceText" type="nc:TextType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A general intelligence, also known as g factor, which refers to the existence of a broad mental capacity that influences performance on cognitive ability measures.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="PersonInductiveReasoningText" type="nc:TextType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>An ability to derive general rules and principles from presented information.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="PersonIntelligenceTest" type="lrn-dev:IntelligenceTestType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>An intelligence test, now referred to as intelligence quotient (IQ) test, is the most widely-known and used measure for determining an individual’s intelligence. IQ scores are typically normally distributed, meaning that 95% of the population has IQ scores between 70 and 130.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="PersonMemoryText" type="nc:TextType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>An ability to recall information such as lists or words, mathematical formulas, and definitions.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="PersonMetacognitionTest" type="j:TestType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>An individual’s awareness of his/her learning processes. Does student seek the resources they require? The Metacognition Awareness Inventory (MAI) (Schraw &amp; Dennison, 1994) provides the means for identifying student’s planning, reflecting, and reasoning metacognitive skills.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="PersonNumericalAbilityText" type="nc:TextType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>An ability to use numbers to quickly computer answers to problems.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="PersonPerceptualSpeedText" type="nc:TextType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>An ability to grasp perceptual details quickly and accurately and to determine similarities and differences between stimuli.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="PersonSATScoreValue" type="niem-xs:positiveInteger" nillable="true">
+    <xs:annotation>
+      <xs:documentation>An overall score achieved on the SAT.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="PersonSpatialVisualizationText" type="nc:TextType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>An ability to visualize and manipulate patters and forms in space.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="PersonVerbalComprehensionText" type="nc:TextType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>An ability to understand the meaning of words, concepts, and ideas.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="PersonWordFluencyText" type="nc:TextType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>An ability to use words quickly and fluency in performing such tasks as rhyming, solving anagrams, and doing crossword puzzles.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="PersonWorkingMemoryCapacityTest" type="j:TestType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A cognitive system that stores information in an accessible state for utilization in complex mental tasks. Currently, the Wechsler Adult Intelligence Scale, 3rd edition (WAIS-III) is the most commonly used instrument in the armamentarium of clinical neuropsychologists (Camara et al., 2000; Rabin, Barr, &amp; Burton 2005). Therefore, the Working Memory Index (WMI) from that battery is commonly used to assess working memory ability.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="Student" type="lrn-dev:StudentType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A person formally engaged in learning, especially one enrolled in a school or college.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="StudentAugmentationPoint" abstract="true">
+    <xs:annotation>
+      <xs:documentation>An augmentation point for type StudentType</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="StudentID" type="niem-xs:string" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A unique identifier number or alphanumeric code assigned to a student by a school, school system, a state, or other agency or entity.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="StudentIdentificationSystemName" type="nc:TextType" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A name of a coding scheme that is used for identification and record-keeping purposes by schools, social services, or other agencies to refer to a student.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+</xs:schema>

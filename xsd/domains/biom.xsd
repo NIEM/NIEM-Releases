@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xs:schema targetNamespace="http://release.niem.gov/niem/domains/biometrics/5.1/" version="1" xml:lang="en-US" xsi:schemaLocation="http://release.niem.gov/niem/appinfo/5.0/ ../utility/appinfo.xsd http://release.niem.gov/niem/conformanceTargets/3.0/ ../utility/conformanceTargets.xsd" ct:conformanceTargets="http://reference.niem.gov/niem/specification/naming-and-design-rules/5.0/#ReferenceSchemaDocument"
+<xs:schema targetNamespace="http://release.niem.gov/niem/domains/biometrics/5.2/" version="1" xml:lang="en-US" xsi:schemaLocation="http://release.niem.gov/niem/appinfo/5.0/ ../utility/appinfo.xsd http://release.niem.gov/niem/conformanceTargets/3.0/ ../utility/conformanceTargets.xsd" ct:conformanceTargets="http://reference.niem.gov/niem/specification/naming-and-design-rules/5.0/#ReferenceSchemaDocument"
   xmlns:appinfo="http://release.niem.gov/niem/appinfo/5.0/"
-  xmlns:biom="http://release.niem.gov/niem/domains/biometrics/5.1/"
+  xmlns:biom="http://release.niem.gov/niem/domains/biometrics/5.2/"
   xmlns:ct="http://release.niem.gov/niem/conformanceTargets/3.0/"
   xmlns:iso_639-3="http://release.niem.gov/niem/codes/iso_639-3/5.1/"
-  xmlns:mo="http://release.niem.gov/niem/domains/militaryOperations/5.1/"
+  xmlns:mo="http://release.niem.gov/niem/domains/militaryOperations/5.2/"
   xmlns:nc="http://release.niem.gov/niem/niem-core/5.0/"
-  xmlns:ncic="http://release.niem.gov/niem/codes/ncic/5.1/"
+  xmlns:ncic="http://release.niem.gov/niem/codes/ncic/5.2/"
   xmlns:niem-xs="http://release.niem.gov/niem/proxy/niem-xs/5.0/"
   xmlns:structures="http://release.niem.gov/niem/structures/5.0/"
   xmlns:xs="http://www.w3.org/2001/XMLSchema"
@@ -65,8 +65,8 @@
     </xs:appinfo>
   </xs:annotation>
   <xs:import namespace="http://release.niem.gov/niem/codes/iso_639-3/5.1/" schemaLocation="../codes/iso_639-3.xsd"/>
-  <xs:import namespace="http://release.niem.gov/niem/codes/ncic/5.1/" schemaLocation="../codes/ncic.xsd"/>
-  <xs:import namespace="http://release.niem.gov/niem/domains/militaryOperations/5.1/" schemaLocation="mo.xsd"/>
+  <xs:import namespace="http://release.niem.gov/niem/codes/ncic/5.2/" schemaLocation="../codes/ncic.xsd"/>
+  <xs:import namespace="http://release.niem.gov/niem/domains/militaryOperations/5.2/" schemaLocation="mo.xsd"/>
   <xs:import namespace="http://release.niem.gov/niem/niem-core/5.0/" schemaLocation="../niem-core.xsd"/>
   <xs:import namespace="http://release.niem.gov/niem/proxy/niem-xs/5.0/" schemaLocation="../adapters/niem-xs.xsd"/>
   <xs:import namespace="http://release.niem.gov/niem/structures/5.0/" schemaLocation="../utility/structures.xsd"/>
@@ -2572,43 +2572,11 @@
           <xs:element ref="biom:DNADonorDentalRecordsAvailableCode" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="biom:DNADonorCollectionLocationDescriptionText" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="biom:DNADonorStatusCode" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:element ref="biom:DNADonorVitalityCode" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="biom:SubjectExistentialStatusCode" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="biom:DNADonorAugmentationPoint" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
-  </xs:complexType>
-  <xs:simpleType name="DNADonorVitalityCodeSimpleType">
-    <xs:annotation>
-      <xs:documentation>A data type for a DNA donor's vitality status code</xs:documentation>
-    </xs:annotation>
-    <xs:restriction base="xs:token">
-      <xs:enumeration value="Alive">
-        <xs:annotation>
-          <xs:documentation>Alive</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="Deceased">
-        <xs:annotation>
-          <xs:documentation>Deceased</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="Unknown">
-        <xs:annotation>
-          <xs:documentation>Unknown</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-    </xs:restriction>
-  </xs:simpleType>
-  <xs:complexType name="DNADonorVitalityCodeType">
-    <xs:annotation>
-      <xs:documentation>A data type for a DNA donor's vitality status code</xs:documentation>
-    </xs:annotation>
-    <xs:simpleContent>
-      <xs:extension base="biom:DNADonorVitalityCodeSimpleType">
-        <xs:attributeGroup ref="structures:SimpleObjectAttributeGroup"/>
-      </xs:extension>
-    </xs:simpleContent>
   </xs:complexType>
   <xs:complexType name="DNAElectropherogramType">
     <xs:annotation>
@@ -2635,10 +2603,13 @@
       <xs:extension base="structures:ObjectType">
         <xs:sequence>
           <xs:element ref="biom:DNATypingTechnologyCode" minOccurs="1" maxOccurs="1"/>
+          <xs:element ref="biom:DNALaboratoryAccreditation" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="biom:DNASampleCollection" minOccurs="0" maxOccurs="1"/>
           <xs:element ref="biom:DNASource" minOccurs="0" maxOccurs="1"/>
           <xs:element ref="biom:DNAProcess" minOccurs="0" maxOccurs="1"/>
           <xs:element ref="biom:DNAAnalysis" minOccurs="0" maxOccurs="1"/>
+          <xs:element ref="biom:DNALowTemplateIndicator" minOccurs="0" maxOccurs="1"/>
+          <xs:element ref="biom:DNAProfilePartialIndicator" minOccurs="0" maxOccurs="1"/>
           <xs:element ref="biom:DNASTRData" minOccurs="0" maxOccurs="1"/>
           <xs:element ref="biom:DNAMitoData" minOccurs="0" maxOccurs="1"/>
           <xs:element ref="biom:DNAUserDefinedProfileAbstract" minOccurs="0" maxOccurs="1"/>
@@ -3415,7 +3386,7 @@
     <xs:complexContent>
       <xs:extension base="structures:ObjectType">
         <xs:sequence>
-          <xs:element ref="biom:DNACategoryCode" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="biom:DNACategoryAbstract" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="biom:DNADonor" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="biom:DNADataIdentification" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="biom:DNAEncoding" minOccurs="0" maxOccurs="unbounded"/>
@@ -3554,6 +3525,7 @@
           <xs:element ref="biom:DNAClaimedRelationshipCode" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="biom:DNAValidatedRelationshipCode" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="biom:Pedigree" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="biom:DNAPedigree" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="biom:DNASampleOrigin" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="biom:DNATypingTechnologyCategoryCode" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="biom:DNASampleCollectionMethodText" minOccurs="0" maxOccurs="unbounded"/>
@@ -15283,9 +15255,19 @@
       <xs:documentation>A name of a DNA cartridge.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:element name="DNACategoryCode" type="biom:DNACategoryCodeType" nillable="true">
+  <xs:element name="DNACategoryAbstract" abstract="true">
     <xs:annotation>
-      <xs:documentation>A category of DNA data</xs:documentation>
+      <xs:documentation>A data concept for a kind of DNA data such as arrestee, forensic, convicted offender, unidentified human remains, etc.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="DNACategoryCode" type="biom:DNACategoryCodeType" substitutionGroup="biom:DNACategoryAbstract" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A kind of DNA data</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="DNACategoryText" type="niem-xs:string" substitutionGroup="biom:DNACategoryAbstract" nillable="true">
+    <xs:annotation>
+      <xs:documentation>A kind of DNA data</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="DNACellularCategoryCode" type="biom:DNACellularCategoryCodeType" nillable="true">
@@ -15341,11 +15323,6 @@
   <xs:element name="DNADonorStatusCode" type="biom:DNADonorStatusCodeType" nillable="true">
     <xs:annotation>
       <xs:documentation>A status of a DNA donor</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:element name="DNADonorVitalityCode" type="biom:DNADonorVitalityCodeType" nillable="true">
-    <xs:annotation>
-      <xs:documentation>A vitality status of a DNA donor.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="DNAElectropherogram" type="biom:DNAElectropherogramType" nillable="true">
@@ -15593,6 +15570,11 @@
       <xs:documentation>An identifier for a reference number of a DNA locus</xs:documentation>
     </xs:annotation>
   </xs:element>
+  <xs:element name="DNALowTemplateIndicator" type="niem-xs:boolean" nillable="true">
+    <xs:annotation>
+      <xs:documentation>True if the DNA amount is very small, typically less than 100 pg; false otherwise. This indicator is very useful in forensic casework.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
   <xs:element name="DNAMitoBaseAdenineQuantity" type="biom:Integer1To99Type" nillable="true">
     <xs:annotation>
       <xs:documentation>A count of the mitochondrial DNA base composition adenines in the region being amplified</xs:documentation>
@@ -15705,7 +15687,7 @@
   </xs:element>
   <xs:element name="DNAPedigree" type="biom:DNAPedigreeType" nillable="true">
     <xs:annotation>
-      <xs:documentation>A description of a pedigree originating and held at a DNA laboratory</xs:documentation>
+      <xs:documentation>A description of a pedigree originating and held at a DNA laboratory. This element is deprecated and biom:Pedigree should be used instead, but will remain in NIEM while it still exists in ANSI/NIST ITL.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="DNAPedigreeAugmentationPoint" abstract="true">
@@ -15786,6 +15768,11 @@
   <xs:element name="DNAProfileID" type="nc:TextType" nillable="true">
     <xs:annotation>
       <xs:documentation>An identifier for uniquely identifying the profile or sample for which the transaction is based.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="DNAProfilePartialIndicator" type="niem-xs:boolean" nillable="true">
+    <xs:annotation>
+      <xs:documentation>True if DNA testing did not yield result or yielded partial result; false otherwise. This indicator can be used to assess the quality of the STR profile.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:element name="DNAProfileResultCode" type="biom:DNAProfileResultCodeType" nillable="true">
